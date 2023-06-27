@@ -1,2 +1,3 @@
 # rapi
-Rozhlas REST API Python client 
+
+The Python client for <https://rapidoc.croapp.cz/>.
