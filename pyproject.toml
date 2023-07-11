@@ -1,0 +1,34 @@
+[project]
+name = "rapi"
+dynamic = ["version", "readme"]
+authors = [
+    {name = "Jan Kačaba", email = "jan.kacaba@gmail.com"},
+]
+description = "The Python client for <https://rapidoc.croapp.cz/>."
+requires-python = ">=3.11"
+keywords = ["REST", "API"]
+license = {text = "BSD-3-Clause"}
+dependencies = [
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "rapi.__version__"}
+readme = {file = ["README.rst", "USAGE.rst"]}
+
+[tool.setuptools.packages.find]
+# where = ["."] 
+where = ["src"] 
+namespaces = false  
+
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "isort"]
+
+[project.scripts]
+rapi = "rapi.__main__:main"
+
+[tool.pytest.ini_options]
+log_cli = false
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
