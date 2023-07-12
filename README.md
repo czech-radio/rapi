@@ -17,6 +17,15 @@ jako s objekty nikoliv jako s JSON.
 - Persons: Informace o osobách
 - Topics: Témata
 
+Doménový model tj. třídy (entity) reprezentující jednotlivé objekty vracející se z API se musí namodelovat s citem.
+Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (Schedule), Epizoda (Episode).
+
+Fakta:
+- Na stanici se vysílají epizody jednotliváýh pořadů.
+- Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zárověň (Plus/Radiožurnál a regionální stanice).
+- Každý pořad má přidělěn identifikátor.
+- Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéra a reprízy.
+
 ## Use cases
 
 - Získej všechny pořady aktuálně vysíláné na zadané stanici.
