@@ -2,7 +2,7 @@
 name = "rapi"
 dynamic = ["version", "readme"]
 authors = [
-    {name = "Jan Kačaba", email = "jan.kacaba@gmail.com"},
+    {name = "Jan Kačaba", email = "jan.kacaba@rozhlas.cz"},
 ]
 description = "The Python client for <https://rapidoc.croapp.cz/>."
 requires-python = ">=3.11"
@@ -16,10 +16,8 @@ version = {attr = "rapi.__version__"}
 readme = {file = ["README.rst", "USAGE.rst"]}
 
 [tool.setuptools.packages.find]
-# where = ["."] 
 where = ["src"] 
 namespaces = false  
-
 
 [project.optional-dependencies]
 dev = ["pytest", "black", "isort"]
