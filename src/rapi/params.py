@@ -44,9 +44,12 @@ def args_read() -> Dict[str, any]:
             const=".runtime/rapidev_cropapp.yml",
             )
     params = parser.parse_args()
+
+    ### no parameter given
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(0)
+
     return params
 
 

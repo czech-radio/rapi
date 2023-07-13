@@ -9,7 +9,7 @@ import requests
 # from swagger_parser import SwaggerParser
 from openapi_parser import parse as swparse
 
-def SwaggerDonwload(url: str):
+def SwaggerDownload(url: str):
     ### urls:
     #### https://rapidoc.croapp.cz/index.html ->
     #### url="https://rapidoc.croapp.cz/apifile/openapi.yaml"
@@ -22,7 +22,8 @@ def SwaggerDonwload(url: str):
         file.write(r.text)
 
 def SwaggerParse(swagger_file: str):
-
+    parser=swparse(swagger_file)
+    # pass
     # content = swparse(swagger_file)
     # parser=SwaggerParser(swagger_file)
 

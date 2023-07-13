@@ -44,7 +44,7 @@ Zatím identifikuji tyto filtry:
 * create virtual env  
 `python -m venv .venv`
 `source .venv/bin/activate`
--no sure if correct
+-not sure if correct
 `pip install --upgrade pip` ?
 
 * install required packages

@@ -6,7 +6,7 @@ from .logger import log_stderr as loge
 from . import station
 from . import params
 from .__init__ import __version__
-from . import swagger_parse as swp
+from . import swagger
 
 def main():
     pars = params.args_read()
@@ -19,11 +19,11 @@ def main():
         sys.exit(0)
     if pars.swagger_download:
         logo.info(f"downloading file: {pars.swagger_download}")
-        swp.DownloadApiDefinition()
+        swagger.SwaggerDownload(pars.swagger_download)
         sys.exit(0)
     if pars.swagger_parse:
-
-
+        logo.info(f"parsing swagger file: {pars.swagger_download}")
+        swagger.SwaggerParse(pars.swagger_parse)
 
 if __name__ == "__main__":
     main()
