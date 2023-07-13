@@ -3,6 +3,7 @@ name = "rapi"
 dynamic = ["version", "readme"]
 authors = [
     {name = "Jan Kačaba", email = "jan.kacaba@rozhlas.cz"},
+		{name = "Daniel Landa", email = "daniel.landa@rozhlas.cz"},
 ]
 description = "The Python client for <https://rapidoc.croapp.cz/>."
 requires-python = ">=3.11"

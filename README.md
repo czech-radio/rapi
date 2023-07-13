@@ -49,3 +49,5 @@ Zatím identifikuji tyto filtry:
 
 * install required packages
 `pip install -e .[dev]`
+
+
