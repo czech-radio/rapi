@@ -1,0 +1,5405 @@
+openapi: 3.0.2
+servers:
+  - url: 'https://rapidev.croapp.cz'
+    description: Develop server
+  - url: 'https://mockservice.croapp.cz/mock'
+    description: Mock with support mocking objects
+info:
+  contact:
+    email: some.email@address.cz
+  title: CR rAPI - public
+  version: 0.10.01
+  license:
+    name: TODO
+    url: 'http://TODO.cz'
+tags:
+  - name: Stations
+    description: Seznam stanic
+  - name: Shows
+    description: Pořady
+  - name: Serials
+    description: Seriály epizod
+  - name: Schedule
+    description: Program vysílání
+  - name: Episodes
+    description: Epizody pořadu
+  - name: Genres
+    description: Žánr
+  - name: Persons
+    description: Informace o osobách
+  - name: Topics
+    description: Témata
+  - name: Key words
+    description: Klíčová slova
+  - name: Fulltext search
+    description: Fulltextové vyhledávání
+  - name: Recomended
+    description: Doporučené
+  - name: Tutorial slides
+    description: Tutoriál pro mobilní aplikaci
+  - name: Deleted entities
+    description: Odstraněné entity
+  - name: Other services
+    description: Ostatní servisní služby
+  - name: Homepage (D8)
+    description: Data pro homepage stránku
+  - name: User customization (D8)
+    description: Uživatelská nastavení
+  - name: User account (D8)
+    description: Registrace uživatele
+  - name: Help
+    description: Odkaz na dokumentaci
+paths:
+  /stations:
+    x-object-type: station
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Stations
+      description: |
+        <b>Seznam stanic</b>
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+        <p>livestream </p>
+        <p>directstream</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/stations_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /stations-all:
+    get:
+      tags:
+        - Stations
+      description: |
+        <b>Seznam všech stanic</b>
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+        <p>livestream </p>
+        <p>directstream</p>
+      parameters: null
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/stations_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/stations/{id}':
+    x-object-type: station
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Stations
+      description: |
+        <b>Stanice dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/station_resp'
+        '404':
+          description: Not found
+  '/stations/{id}/shows':
+    x-object-type: station
+    x-related-types: show
+    x-related-id-show: 'relationships.stations.data.[*].id'
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetRelatedToMany(id, filter, sort, page)'
+      tags:
+        - Stations
+      description: |
+        <b>Všechny pořady stanice dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_shows_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/stations/{id}/participants':
+    x-object-type: station
+    x-related-types: person
+    x-reversed-id-person: 'relationships.participants.data.[*].id'
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetRelatedToMany(id, , ,   )'
+      tags:
+        - Stations
+      description: >
+        <b>Relace stanice a osob, včetně jejich role, dle parametru
+        <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_participatingPeson_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /shows:
+    x-object-type: show
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Shows
+      description: |
+        <b>Kolekce pořadů.</b>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+        - $ref: '#/components/parameters/includeParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/shows_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/shows/{id}':
+    x-object-type: show
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/includeParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Shows
+      description: |
+        <b>Pořad dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/show_resp'
+        '404':
+          description: Not found
+  '/shows/{id}/stations':
+    x-object-type: show
+    x-related-types: station
+    x-reversed-id-station: 'relationships.stations.data.[*].id'
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: 'GetRelatedToMany(id, , , )'
+      tags:
+        - Shows
+      description: |
+        <b>Všechny stanice pořadu dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_stations_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/shows/{id}/episodes':
+    x-object-type: show
+    x-related-types: episode
+    x-related-id-episode: relationships.show.data.id
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetRelatedToMany(id, filter, sort, page)'
+      tags:
+        - Shows
+      description: >
+        <b>Všechny episody pořadu dle parametru <code>id</code></b>
+
+        <p>Upozornění: Response obsahuje pouze epizody, které obsahují
+        přehratelná audia. tzn. uplatňuje se implicitní filtr -
+        filter[onlyplayable]=true.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_episodes_page_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/shows/{id}/serials':
+    x-object-type: show
+    x-related-types: serial
+    x-related-id-serial: relationships.show.data.id
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetRelatedToMany(id, filter, sort, page )'
+      tags:
+        - Shows
+      description: |
+        <b>Všechny seriály pořadu dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_serials_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/shows/{id}/participants':
+    x-object-type: show
+    x-related-types: person
+    x-reversed-id-person: 'relationships.participants.data.[*].id'
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: 'GetRelatedToMany(id, , ,  )'
+      tags:
+        - Shows
+      description: >
+        <b>Všechny osoby jenž se podílejí na pořadu, včetně jejich role, dle
+        parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_participatingPeson_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/shows/{id}/schedule-episodes':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      tags:
+        - Shows
+      description: >
+        <b>Kolekce programu epizod pro danný pořad</b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_items_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /serials:
+    x-object-type: serial
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Serials
+      description: |
+        <b>Kolekce seriálů.</b>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/serials_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/serials/{id}':
+    x-object-type: serial
+    x-related-types: episode
+    x-related-id-episode: relationships.serial.data.id
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Serials
+      description: |
+        <b>Seriál dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/serial_resp'
+        '404':
+          description: Not found
+  '/serials/{id}/episodes':
+    x-object-type: serial
+    x-related-types: episode
+    x-related-id-episode: relationships.serial.data.id
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+    get:
+      operationId: 'GetRelatedToMany(id, , , )'
+      tags:
+        - Serials
+      description: >
+        <b>Všechny epizody seriálu dle parametru <code>id</code></b>
+
+        <p>Upozornění: Response obsahuje pouze epizody, které obsahují
+        přehratelná audia. tzn. uplatňuje se implicitní filtr -
+        filter[onlyplayable]=true.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_episodes_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/serials/{id}/genres':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      tags:
+        - Serials
+      description: |
+        <b>Kolekce žánrů seriálu dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/serial_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /schedule:
+    x-object-type: scheduleEpisode
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Schedule
+      description: >
+        <b>Kolekce programu episod.</b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_items_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json: null
+            schema:
+              $ref: '#/components/schemas/errors_resp'
+  /program:
+    get:
+      tags:
+        - Schedule
+      description: >
+        <b>Kolekce programu episod.</b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_items_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /schedule-day:
+    get:
+      tags:
+        - Schedule
+      description: >
+        <b>Úplná kolekce programu episod pro danný den.</b>
+
+        <p>Lze využít implicitních filtrů <code>day, stations.id</code></p>
+
+        <p><code>filter[day]=YYYY-MM-DD</code> - pmezení pro konkrétní den</p>
+
+        <p>Není-li filtr specifikován, omezení pro aktuální den.</p>
+
+        <p><code>filter[stations.id]=UUID</code> - omezení pro konkrétní
+        stanici</p>
+
+        <p>Upozornění: omezení parametrem station=CODE a filter[stations.id]
+        nelze kombinovat. </p>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/stationCodeParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_day_items_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /schedule-day-flat:
+    get:
+      tags:
+        - Schedule
+      description: >
+        <b>Flat kolekce programu episod pro danný den.</b>
+
+        <p>Lze využít implicitních filtrů <code>day, stations.id</code></p>
+
+        <p><code>filter[day]=YYYY-MM-DD</code> - pmezení pro konkrétní den</p>
+
+        <p>Není-li filtr specifikován, omezení pro aktuální den.</p>
+
+        <p><code>filter[stations.id]=UUID</code> - omezení pro konkrétní
+        stanici</p>
+
+        <p>Upozornění: omezení parametrem station=CODE a filter[stations.id]
+        nelze kombinovat. </p>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/stationCodeParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_day_items_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /schedule-current:
+    x-object-type: scheduleEpisode
+    get:
+      operationId: 'GetFilterOrderPage(filter, , ,"And")'
+      tags:
+        - Schedule
+      description: >
+        <b>Aktuálně hranná a 1 následující episoda programu.</b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_day_items_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/schedule/{id}':
+    x-object-type: scheduleEpisode
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Schedule
+      description: >
+        <b>Epizoda dle parametru <code>id</code></b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/schedule_item_resp'
+        '404':
+          description: Not Found
+  /episodes:
+    x-object-type: episode
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Episodes
+      description: >
+        <b>Kolekce epizod.</b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/episodes_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/episodes/{id}':
+    x-object-type: episode
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Episodes
+      description: >
+        <b>Epizoda dle parametru <code>id</code></b>
+
+        <p>Dostupné typy <code>audioLinks</code>.</p>
+
+        <p>ondemand - ondemand wowza streaming.</p>
+
+        <p>download - formát vhodný pro stahování. </p>
+
+        <p>Poskytované formáty audií, <code>audioLinks</code>.</p>
+
+        <p>dash - MPEG-DASH, formát využívaný především produkty Android,
+        Windows os.</p>
+
+        <p>hls - HTTP Live Streaming, formát využívaný především produkty
+        Apple.</p>
+
+        <p>mp3 - MPEG Audio Layer III, formát vhodný pro stahování.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/episode_resp'
+        '404':
+          description: Not Found
+  '/episodes/{id}/keywords':
+    x-object-type: episode
+    x-related-types: keyword
+    x-reversed-id-keyword: 'relationships.keywords.data.[*].id'
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: 'GetRelatedToMany(id, , ,    )'
+      tags:
+        - Episodes
+      description: |
+        <b>Kolekce klíčových slov episody dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_keyword_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/episodes/{id}/genres':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      tags:
+        - Episodes
+      description: |
+        <b>Kolekce žánrů episody dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_genres_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /deleted-entities:
+    parameters:
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      tags:
+        - Deleted entities
+      description: |
+        <b>Odstraněné entiy</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/deleted_entity_resp'
+  /genres:
+    get:
+      tags:
+        - Genres
+      description: |
+        <b>Žánr</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/genres_resp'
+  /keywords:
+    x-object-type: keyword
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Key words
+      description: |
+        <b>Kolekce klíčových slov.</b>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/keywords_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/keywords/{id}':
+    x-object-type: keyword
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Key words
+      description: |
+        <b>Klíčové slovo dle <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/keyword_resp'
+        '404':
+          description: Not Found
+  /persons:
+    x-object-type: person
+    get:
+      operationId: 'GetFilterOrderPage(filter, sort, page,"And")'
+      tags:
+        - Persons
+      description: |
+        <b>Informace o osobách</b>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/persons_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/persons/{id}':
+    x-object-type: person
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      operationId: GetID(id)
+      tags:
+        - Persons
+      description: |
+        <b>Osoba dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/person_resp'
+        '404':
+          description: Not found
+  '/persons/{id}/participation':
+    x-object-type: person
+    x-related-types: 'station, show, episode'
+    x-related-id-station: 'relationships.participants.data.[*].id'
+    x-related-id-show: 'relationships.participants.data.[*].id'
+    x-related-id-episode: 'relationships.participants.data.[*].id'
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetRelatedToMany(id, , , )'
+      tags:
+        - Persons
+      description: |
+        <b>Všechny stanice pořadu dle parametru <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_station_show_episode_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /recommended/children:
+    get:
+      tags:
+        - Recomended
+      description: |
+        <b>Doporučené pro děti</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/recomended_children_resp'
+  /recommended/podcast:
+    get:
+      tags:
+        - Recomended
+      description: |
+        <b>Doporučené podcasty</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/recomended_podcast'
+  /search:
+    x-object-types: 'show, episode'
+    parameters:
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetSpecialFilterOrderPage(filter, "title", page,"And")'
+      tags:
+        - Fulltext search
+      description: >
+        <b>Full textové vyhledávání</b>
+
+        <p>Pro full textové vyhledávání lze využít implicitní filtr -
+        <code>fulltext</code>.  </p>
+
+        <p><code>filter[fulltext]=zpr saf buch</code> - pro vyhledání pořadů,
+        epizod ...</p>
+
+        <p><code>filter[type]=show</code> - pro filtrování konkrétního typu
+        objektu.</p>
+
+        <p>Objekty jsou řazeny dle relevance.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/search_resp'
+  /search-aggregation:
+    parameters:
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      tags:
+        - Fulltext search
+      description: >
+        <b>Full textové vyhledávání</b>
+
+        <p>Pro full textové vyhledávání lze využít implicitní filtr -
+        <code>fulltext</code>.  </p>
+
+        <p><code>filter[fulltext]=zpr saf buch</code> - pro vyhledání pořadů,
+        epizod ...</p>
+
+        <p><code>filter[type]=show</code> - pro filtrování konkrétního typu
+        objektu.</p>
+
+        <p>Objekty jsou řazeny dle relevance.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/search_aggregation_resp'
+  /topics:
+    get:
+      tags:
+        - Topics
+      description: |
+        <b>Kolekce témat.</b>
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+        - $ref: '#/components/parameters/sortParam'
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/topics_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  '/topics/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      tags:
+        - Topics
+      description: |
+        <b>Téma dle <code>id</code></b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/topic_resp'
+        '404':
+          description: Not Found
+  '/topics/{id}/episodes':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/filterParam'
+      - $ref: '#/components/parameters/sortParam'
+      - $ref: '#/components/parameters/pageParam'
+    get:
+      operationId: 'GetRelatedToMany(id, filter, sort, page)'
+      tags:
+        - Topics
+      description: >
+        <b>Všechny episody pro danné téma dle parametru <code>id</code></b>
+
+        <p>Upozornění: Response obsahuje pouze epizody, které obsahují
+        přehratelná audia. tzn. uplatňuje se implicitní filtr -
+        filter[onlyplayable]=true.</p>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/related_episodes_page_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '404':
+          description: Not found
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+  /homepage:
+    get:
+      tags:
+        - Homepage (D8)
+      description: |
+        <b>Data pro homepage. Carousel, dashboard, section_category</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/homepage_resp'
+  /homepage-full:
+    get:
+      tags:
+        - Homepage (D8)
+      description: |
+        <b>Data pro homepage. Carousel, dashboard, section_category</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/homepage_full_resp'
+  /help:
+    get:
+      tags:
+        - Help
+      description: |
+        <b>Odkaz na dokumentaci</b>
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: 'See https://rapidoc.croapp.cz'
+  /user/favourites:
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Všechny oblíbené episody uživatele</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/favourites_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    post:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Vloží episodu mezi oblíbené položky uživatele.</b>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/favourites_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/favourites_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Atomicky synchronizuje frontu uživatele s offline variantou.</b>
+
+        <p>Pro operaci delete jsou objekty attributes a relationships
+        nepovinné.</p>
+
+        <p>Pro operaci insert je attribut id nepocinný.</p>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/favourites_put'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/favourites_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - User customization (D8)
+      parameters:
+        - $ref: '#/components/parameters/filterParam'
+      description: |
+        <b>Odstraní položku z fronty uživatele na základě filtru.</b>
+        <p>Podporované varianty filtrování:</p>
+        <p>filter[playable.id] - dle id přehratelných entit.</p>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  '/user/favourites/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    patch:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Nastavení dalších attributů oblíbené</b>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/favourite_patch'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/favourite_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+        '409':
+          description: Conflict
+    delete:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Odstraní episodu z oblíbených</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /user/carmode:
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Všechny episody určené pro poslech v režimu automode</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/carmodes_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    post:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Vloží episodu pro poslech v režimu automode</b>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/carmodes_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/carmodes_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  '/user/carmode/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    delete:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Odstraní episodu z automode</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /user/subscriptions:
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Všechny odebírané pořady uživatele</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/subscriptions_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    post:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Vloží pořad k odebírání</b>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/subscription_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/subscriptions_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  '/user/subscriptions/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    delete:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Odstraní prořad z odebíraných</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /user/queue:
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Všechny episody uložené ve frontě pro přehrání</b>
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/queue_items_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    post:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Vloží episodu do fronty pro přehrání</b>
+
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+
+        <p>Typ fronty je FIFO.</p>
+
+        <p>Místo vložení lze určit pomocí objektu <code>insertPoint</code>.</p>
+
+        <p>Nebude-li místo vložení definováno bude položka vložena na poslední
+        pozici.</p>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/queue_item_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/queue_items_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Nahradí stávající frontu.</b>
+
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+
+        <p>Jedná se o atomickou operaci. Odstranění všech položek a vložení
+        položek z requestBody<p>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/queue_item_put'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/queue_items_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Odstraní všechny položky z fronty uživatele.</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  '/user/queue/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    patch:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Nastavení aktuální pozice přehrávané episody.</b>
+
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+
+        <p>Nastavení lze provádět jen u aktuálně přehrávané episody, tedy první
+        položky ve frontě.</p>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/queue_item_patch'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/queue_item_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+        '409':
+          description: Conflict
+    delete:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Odstraní episodu z fronty pro přehrání</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /user/unfinished:
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Právě přehrávaná episoda</b>
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/histories_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+  /user/history:
+    get:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Všechny episody, které byly přehrány úplně nebo z části jsou uložené
+        v historii'
+
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+      security:
+        - oauthAuth: []
+      parameters:
+        - $ref: '#/components/parameters/pageParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/histories_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    post:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Vloží episody, které byly přehrány úplně nebo z části do historie</b>
+
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+
+        <p>Hodnota pole <code>mediaTitle</code> odpovídá objektu v seznamu
+        episodes.media.</p>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/history_items_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/histories_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  '/user/history/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      tags:
+        - User customization (D8)
+      description: >
+        <b>Získání objektu z historie dle ID</b>
+
+        <p>Hodonta pole <code>progress</code> je v ms.</p>
+
+        <p>Hodnota pole <code>mediaTitle</code> odpovídá objektu v seznamu
+        episodes.media.</p>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/history_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /user/watchdog:
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Všechny episody pro připomenutí</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/watchdogs_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    post:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Vloží episodu pro připomenutí</b>
+      security:
+        - oauthAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/watchdog_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/watchdogs_resp'
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  '/user/watchdog/{id}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+    get:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Konkrétní pisodu pro připomenutí</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/watchdog_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - User customization (D8)
+      description: |
+        <b>Odstraní episodu z automode</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /account:
+    get:
+      tags:
+        - User account (D8)
+      description: |
+        <b>Informace o uživateli.</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/userData_resp'
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+    delete:
+      tags:
+        - User account (D8)
+      description: |
+        <b>Požadavek na odstranění uživatelského účtu</b>
+      security:
+        - oauthAuth: []
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/unauthorizedError'
+        '403':
+          $ref: '#/components/responses/forbidenError'
+        '404':
+          description: Not Found
+  /account/availability:
+    get:
+      tags:
+        - User account (D8)
+      description: |
+        <b>Ověření dostupnosti:</b>
+        <p>- emailové adresy</p>
+      parameters:
+        - $ref: '#/components/parameters/emailParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/availability_resp'
+        '400':
+          $ref: '#/components/responses/badRequestError'
+  /account/resetpassword:
+    put:
+      tags:
+        - User account (D8)
+      description: |
+        <b>Obnovení hesla</b>
+      parameters:
+        - $ref: '#/components/parameters/emailParam'
+      responses:
+        '202':
+          description: Accepted
+        '400':
+          $ref: '#/components/responses/badRequestError'
+  /account/resendemail:
+    get:
+      tags:
+        - User account (D8)
+      description: |
+        <b>Požadavek na opětovné zaslání registračního emailu.</b>
+      parameters:
+        - $ref: '#/components/parameters/emailParam'
+      responses:
+        '202':
+          description: Accepted
+        '400':
+          $ref: '#/components/responses/badRequestError'
+  /account/register:
+    post:
+      tags:
+        - User account (D8)
+      requestBody:
+        $ref: '#/components/requestBodies/register_post'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/userData_resp'
+        '400':
+          $ref: '#/components/responses/badRequestError'
+        '409':
+          $ref: '#/components/responses/conflictError'
+    patch:
+      tags:
+        - User account (D8)
+      requestBody:
+        $ref: '#/components/requestBodies/register_patch'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/userData_resp'
+        '204':
+          description: No Content
+        '404':
+          $ref: '#/components/responses/notFoundError'
+        '409':
+          $ref: '#/components/responses/conflictError'
+  '/image-resizer/{id}/{imageStyleName}':
+    parameters:
+      - $ref: '#/components/parameters/uuidParam'
+      - $ref: '#/components/parameters/imageStyleNameParam'
+    get:
+      tags:
+        - Other services
+      description: >
+        <b>Poskytuje asset v požadovaném stylu</b>
+
+        <p><code>id</code> assetu - např. epizody, pořadu, seriálu nebo
+        osoby</p>
+      responses:
+        '301':
+          description: Moved Permanently
+          headers:
+            Location:
+              type: string
+        '404':
+          description: Not Found
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: >-
+                      The entity with id 0d0f69c6-801a-3a33-972c-f37745af24a7
+                      wasn't found
+                  code:
+                    type: string
+                    example: entity_not_found
+  /tutorials:
+    get:
+      tags:
+        - Tutorial slides
+      description: |
+        <b>Průvodce nových vlasností mobilní aplikace.</b>
+      parameters:
+        - $ref: '#/components/parameters/appCurrentVersionParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/tutorials_resp'
+        '400':
+          description: Bad Request
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/errors_resp'
+components:
+  schemas:
+    stations_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/stationItem'
+    station_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/stationItem'
+    related_stations_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/stationItem_relationships'
+    related_station_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          $ref: '#/components/schemas/stationItem_relationships'
+    stationItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          example: station
+        id:
+          type: string
+          format: uuid
+          example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Český rozhlas Dvojka
+            shortTitle:
+              type: string
+              example: Dvojka
+            subtitle:
+              type: string
+              example: Český rozhlas
+            color:
+              type: string
+              example: '#85248F'
+            code:
+              type: string
+              pattern: '^[a-z]([0-9a-z]|-)*$'
+              example: dvojka
+            priority:
+              type: integer
+              format: int32
+              example: 2
+            stationType:
+              type: string
+              enum:
+                - allover
+                - regional
+                - foreing
+                - webradio
+            audioLinks:
+              type: array
+              items:
+                type: object
+                properties:
+                  variant:
+                    type: string
+                    enum:
+                      - acc
+                      - mp3
+                      - dash
+                      - hls
+                  bitrate:
+                    type: integer
+                    format: int32
+                    example: 128
+                  quality:
+                    type: string
+                    enum:
+                      - normal
+                      - low
+                  linkType:
+                    type: string
+                    enum:
+                      - livestream
+                      - directstream
+                      - timeshift
+                  url:
+                    type: string
+                    format: url
+            asset:
+              $ref: '#/components/schemas/assetItem'
+            contact:
+              type: object
+              properties:
+                web:
+                  type: string
+                  example: 'https://dvojka.rozhlas.cz'
+        meta:
+          type: object
+          properties:
+            ga:
+              type: object
+              properties:
+                siteBroadcastStation:
+                  type: string
+                  example: dvojka
+    terminatedItem:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Český rozhlas 2 - Praha
+        shortTitle:
+          type: string
+          example: Praha II
+        broadcasting:
+          type: object
+          properties:
+            active:
+              type: boolean
+              example: false
+            since:
+              type: string
+              format: date
+              example: '1952-03-10'
+            till:
+              type: string
+              format: date
+              example: '2011-01-31'
+    station_r_part:
+      type: object
+      properties:
+        station:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: object
+              nullable: true
+              properties:
+                type:
+                  type: string
+                  example: station
+                id:
+                  type: string
+                  format: uuid
+                  example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+    stations_r_part:
+      type: object
+      properties:
+        stations:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: station
+                  id:
+                    type: string
+                    format: uuid
+                    example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+    stationItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/stationItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/shows_r_part'
+                - $ref: '#/components/schemas/persons_r_part'
+    shows_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 2
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/showItem_relationships'
+    show_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/showItem_relationships'
+    related_show_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          $ref: '#/components/schemas/showItem_relationships'
+    related_shows_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/showItem_relationships'
+    showItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/showItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/stations_r_part'
+                - $ref: '#/components/schemas/serials_r_part'
+                - $ref: '#/components/schemas/episodes_r_part'
+                - $ref: '#/components/schemas/persons_r_part'
+    showItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          example: show
+        id:
+          type: string
+          format: uuid
+          example: beda0a73-069b-4b92-9582-33d88bc49916
+        attributes:
+          type: object
+          properties:
+            showType:
+              type: string
+              enum:
+                - stream
+                - show
+                - special
+                - podcast
+              example: stream
+            title:
+              type: string
+              example: Děrné štítky
+            active:
+              type: boolean
+              example: true
+            aired:
+              type: boolean
+              example: false
+            podcast:
+              type: boolean
+              example: false
+            description:
+              type: string
+              example: >-
+                Poslechněte si příběhy lidí, jejichž nápady či výrobky nás
+                obklopují leckdy už sto let.
+            shortDescription:
+              type: string
+              example: Testovací pořad mockup
+            asset:
+              $ref: '#/components/schemas/assetItem'
+            updated:
+              type: string
+              format: date-time
+              description: datum poslední aktualizace v rApi - ISO 8601
+    show_r_part:
+      type: object
+      properties:
+        show:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: object
+              nullable: true
+              properties:
+                type:
+                  type: string
+                  example: show
+                id:
+                  type: string
+                  format: uuid
+                  example: beda0a73-069b-4b92-9582-33d88bc49916
+    shows_r_part:
+      type: object
+      properties:
+        shows:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: show
+                  id:
+                    type: string
+                    format: uuid
+                    example: beda0a73-069b-4b92-9582-33d88bc49916
+    showItem_relationships_link:
+      allOf:
+        - type: object
+          properties:
+            links:
+              $ref: '#/components/schemas/selfLink'
+        - $ref: '#/components/schemas/showItem_relationships'
+    serials_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 2
+        links:
+          allOf:
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/serialItem_relationships'
+    serial_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          $ref: '#/components/schemas/serialItem_relationships'
+    related_serial_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          $ref: '#/components/schemas/serialItem_relationships'
+    related_serials_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/serialItem_relationships'
+    serialItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/serialItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/show_r_part'
+                - $ref: '#/components/schemas/episodes_r_part'
+                - $ref: '#/components/schemas/genres_r_part'
+    serialItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          example: serial
+        id:
+          type: string
+          format: uuid
+          example: 1aeafd46-d9af-4573-a740-3df4b5973984
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Testovací seriál mockup
+            totalParts:
+              type: integer
+              format: int32
+              example: 5
+            description:
+              type: string
+              example: Testovací seriál mockup
+            asset:
+              $ref: '#/components/schemas/assetItem'
+    serial_r_part:
+      type: object
+      properties:
+        serial:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: object
+              nullable: true
+              properties:
+                type:
+                  type: string
+                  example: serial
+                id:
+                  type: string
+                  format: uuid
+                  example: 1aeafd46-d9af-4573-a740-3df4b5973984
+    serials_r_part:
+      type: object
+      properties:
+        serials:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: serial
+                  id:
+                    type: string
+                    format: uuid
+                    example: 1aeafd46-d9af-4573-a740-3df4b5973984
+    serialItem_relationships_link:
+      allOf:
+        - type: object
+          properties:
+            links:
+              $ref: '#/components/schemas/selfLink'
+        - $ref: '#/components/schemas/serialItem_relationships'
+    schedule_items_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/scheduleItem_relationships'
+    schedule_day_items_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/scheduleItem_relationships'
+    schedule_current_items_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/scheduleItem_relationships'
+    schedule_item_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          $ref: '#/components/schemas/scheduleItem_relationships'
+    scheduleItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          example: scheduleEpisode
+        id:
+          type: string
+          format: uuid
+          example: e0808c94-2e3c-4980-8483-025d94bc7cf3
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Testovací epizoda mockup
+            description:
+              type: string
+              example: Testovací blok úseku mockup
+            station_code:
+              type: integer
+              format: int32
+              example: 23
+            since:
+              type: string
+              format: date-time
+              example: '2019-05-13T19:00:07+02:00'
+            till:
+              type: string
+              format: date-time
+              example: '2019-05-13T19:17:22+02:00'
+            mirroredShow:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Show name
+            asset:
+              $ref: '#/components/schemas/assetItem'
+            audioLinks:
+              type: array
+              items:
+                $ref: '#/components/schemas/audioLink_item'
+    scheduleItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/scheduleItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/show_r_part'
+                - $ref: '#/components/schemas/station_r_part'
+    episodes_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/episodeItem_relationships'
+    episode_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/episodeItem_relationships'
+    related_episode_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          $ref: '#/components/schemas/episodeItem_relationships'
+    related_episodes_page_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/episodeItem_relationships'
+    related_episodes_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/episodeItem_relationships'
+    related_episodes_timeGroup_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/episodeItem_relationships'
+              - $ref: '#/components/schemas/timeGroupItem_relationships'
+            discriminator:
+              propertyName: type
+              mapping:
+                episode: '#/components/schemas/episodeItem_relationships'
+                timeGroup: '#/components/schemas/timeGroupItem_relationships'
+    episodeItem:
+      allOf:
+        - $ref: '#/components/schemas/episodeId'
+        - $ref: '#/components/schemas/episodeData'
+        - $ref: '#/components/schemas/episodeMeta'
+    episodeType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: episode
+    episodeId:
+      allOf:
+        - $ref: '#/components/schemas/episodeType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: e0808c94-2e3c-4980-8483-025d94bc7cf3
+    episodeData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Testovací epizoda mockup
+            shortTitle:
+              type: string
+              example: Short varianta
+            description:
+              type: string
+              example: Popis episody
+            since:
+              type: string
+              format: date-time
+              example: '2019-05-13T19:00:07+02:00'
+            till:
+              type: string
+              format: date-time
+              example: '2019-05-13T19:17:22+02:00'
+            updated:
+              type: string
+              format: date-time
+              description: datum poslední aktualizace v rApi - ISO 8601
+            part:
+              type: integer
+              format: int32
+              minimum: 1
+              nullable: true
+            asset:
+              $ref: '#/components/schemas/assetItem'
+            mirroredShow:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Meteor
+            mirroredSerial:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Meteor
+                totalParts:
+                  type: integer
+                  format: int32
+                  example: 5
+            audioLinks:
+              type: array
+              items:
+                $ref: '#/components/schemas/audioLink_item'
+    episodeMeta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            ga:
+              type: object
+              properties:
+                contentCreator:
+                  type: string
+                contentId:
+                  type: string
+    parentEpisode_r_part:
+      type: object
+      properties:
+        parentEpisode:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: object
+              nullable: true
+              properties:
+                type:
+                  type: string
+                  example: episode
+                id:
+                  type: string
+                  format: uuid
+                  example: bc7c703f-4c2b-4a27-be93-acc493d0a881
+    episodesLink_r_part:
+      type: object
+      properties:
+        episodes:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+    episodesId_r_part:
+      type: object
+      properties:
+        episodes:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: episode
+                  id:
+                    type: string
+                    format: uuid
+                    example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+    episodes_r_part:
+      type: object
+      properties:
+        episodes:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            meta:
+              type: object
+              properties:
+                count:
+                  type: integer
+                  format: int32
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: episode
+                  id:
+                    type: string
+                    format: uuid
+                    example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+    episodeItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/episodeItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/show_r_part'
+                - $ref: '#/components/schemas/serial_r_part'
+                - $ref: '#/components/schemas/keywords_r_part'
+                - $ref: '#/components/schemas/genres_r_part'
+    episodeItem_relationships_link:
+      allOf:
+        - type: object
+          properties:
+            links:
+              $ref: '#/components/schemas/selfLink'
+        - $ref: '#/components/schemas/episodeItem_relationships'
+    deleted_entity_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 1
+        links:
+          allOf:
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            type: object
+            required:
+              - type
+              - id
+            properties:
+              type:
+                type: string
+                example: deletedEntity
+              id:
+                type: string
+                format: uuid
+              attributes:
+                type: object
+                properties:
+                  entityType:
+                    type: string
+                    enum:
+                      - episode
+                    example: episode
+                  entityId:
+                    type: string
+                    format: uuid
+    genres_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 2
+        links:
+          allOf:
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/genresItem'
+    related_genres_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/genresItem'
+    genresItem:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          example: genre
+        id:
+          type: string
+          format: uuid
+          example: b0a137c9-5918-438d-8c33-4a3889b80ea3
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Drama
+    genres_r_part:
+      type: object
+      properties:
+        genres:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                nullable: true
+                properties:
+                  type:
+                    type: string
+                    example: genre
+                  id:
+                    type: string
+                    format: uuid
+                    example: b0a137c9-5918-438d-8c33-4a3889b80ea3
+    keywords_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/keywordItem'
+    keyword_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/keywordItem'
+    related_keyword_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/keywordItem'
+    keywordItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/keywordItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/episodes_r_part'
+    keywordItem:
+      type: object
+      properties:
+        type:
+          type: string
+          example: keyword
+        id:
+          type: string
+          format: uuid
+          example: ec792f02-4cec-492d-8252-f88934e018c6
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+    keywords_r_part:
+      type: object
+      properties:
+        keywords:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: keyword
+                  id:
+                    type: string
+                    format: uuid
+                    example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+    persons_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/personItem_relationships'
+    person_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/personItem_relationships'
+    related_participatingPeson_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/personItem_meta_relationships'
+    related_station_show_episode_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/episodeItem_relationships'
+              - $ref: '#/components/schemas/showItem_relationships'
+              - $ref: '#/components/schemas/stationItem_relationships'
+            discriminator:
+              propertyName: type
+              mapping:
+                episode: '#/components/schemas/episodeItem_relationships'
+                show: '#/components/schemas/showItem_relationships'
+                station: '#/components/schemas/stationItem_relationships'
+    personItem:
+      allOf:
+        - $ref: '#/components/schemas/personId'
+        - $ref: '#/components/schemas/personData'
+    personType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: person
+    personId:
+      allOf:
+        - $ref: '#/components/schemas/personType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 52819a4a-d22d-486d-805b-1ea8e172870b
+    personData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Lucie Výborná
+            short_description:
+              type: string
+            description:
+              type: string
+            asset:
+              $ref: '#/components/schemas/assetItem'
+    personItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/personItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/participation_r_part'
+    personItem_meta_relationships:
+      allOf:
+        - $ref: '#/components/schemas/personItem'
+        - type: object
+          properties:
+            meta:
+              type: object
+              properties:
+                role:
+                  type: string
+                  enum:
+                    - autor
+                    - director
+                    - technician
+                    - announcer
+                    - editor
+                    - anchorperson
+                    - others
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/participation_r_part'
+    participation_r_part:
+      type: object
+      properties:
+        participation:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - station
+                      - show
+                      - episode
+                    example: episode
+                  id:
+                    type: string
+                    format: uuid
+                  meta:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        enum:
+                          - autor
+                          - director
+                          - technician
+                          - announcer
+                          - editor
+                          - moderator
+                          - anchorperson
+                          - others
+    persons_r_part:
+      type: object
+      properties:
+        participants:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: person
+                  id:
+                    type: string
+                    format: uuid
+                    example: a98dc5ba-c6d5-4035-ada1-ddabbe0c6eec
+                  meta:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        enum:
+                          - autor
+                          - director
+                          - technician
+                          - announcer
+                          - editor
+                          - anchorperson
+                          - others
+    recomended_children_resp:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/carousel_object'
+              - $ref: '#/components/schemas/children_shows'
+    recomended_podcast:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/carousel_object'
+              - $ref: '#/components/schemas/podcast_shows'
+    children_shows:
+      type: object
+      properties:
+        type:
+          type: string
+          example: children_shows
+        id:
+          type: integer
+          format: int32
+          example: 1
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Pořady pro děti
+    podcast_shows:
+      type: object
+      properties:
+        type:
+          type: string
+          example: podcast_shows
+        id:
+          type: integer
+          format: int32
+          example: 1
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Podcasty
+    search_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/showItem_relationships'
+              - $ref: '#/components/schemas/episodeItem_relationships'
+              - $ref: '#/components/schemas/serialItem_relationships'
+              - $ref: '#/components/schemas/personItem_relationships'
+              - $ref: '#/components/schemas/topicItem_relationships'
+              - $ref: '#/components/schemas/keywordItem'
+            discriminator:
+              propertyName: type
+              mapping:
+                show: '#/components/schemas/showItem_relationships'
+                episode: '#/components/schemas/episodeItem_relationships'
+                serial: '#/components/schemas/serialItem_relationships'
+                person: '#/components/schemas/personItem_relationships'
+                topic: '#/components/schemas/topicItem_relationships'
+                keyword: '#/components/schemas/keywordItem'
+    search_aggregation_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              attributes:
+                type: object
+                properties:
+                  title:
+                    type: string
+                    example: >-
+                      Informace o dopravní situaci volejte na bezplatnou linku
+                      800 553 553.
+              id:
+                type: string
+                format: uuid
+                example: b58caa32-1eb3-42e8-9908-dd8f70a90426
+              type:
+                type: string
+                enum:
+                  - episode
+                  - person
+                  - serial
+                  - show
+                example: episode
+    topics_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int32
+              example: 3
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/pageLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/topicItem_relationships'
+    topic_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/widgetTopicItem_relationships'
+    related_topic_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/relatedLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/topicItem'
+    widgetGroup:
+      oneOf:
+        - $ref: '#/components/schemas/carousel_widget'
+        - $ref: '#/components/schemas/showsList_widget'
+        - $ref: '#/components/schemas/section_category_object'
+      discriminator:
+        propertyName: type
+        mapping:
+          carousel: '#/components/schemas/carousel_widget'
+          show_list: '#/components/schemas/showsList_widget'
+          section_category: '#/components/schemas/section_category_object'
+    carousel_widget:
+      type: object
+      properties:
+        type:
+          type: string
+          example: carousel
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/carousel_audio_object'
+    showsList_widget:
+      type: object
+      properties:
+        type:
+          type: string
+          example: show_list
+        id:
+          type: string
+          format: uuid
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              type: array
+              items:
+                $ref: '#/components/schemas/showList_audio_object'
+    showList_audio_object:
+      type: object
+      properties:
+        itemType:
+          type: string
+          example: audio
+        url:
+          type: string
+          format: url
+        image:
+          type: string
+          format: url
+        title:
+          type: string
+        description:
+          type: string
+        entity:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - show
+            id:
+              type: string
+              format: uuid
+    topicItem:
+      type: object
+      properties:
+        type:
+          type: string
+          example: topic
+        id:
+          type: string
+          format: uuid
+          example: ec792f02-4cec-492d-8252-f88934e018c6
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            asset:
+              $ref: '#/components/schemas/assetItem'
+    widgetTopicItem:
+      type: object
+      properties:
+        type:
+          type: string
+          example: topic
+        id:
+          type: string
+          format: uuid
+          example: ec792f02-4cec-492d-8252-f88934e018c6
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            asset:
+              $ref: '#/components/schemas/assetItem'
+            widgets:
+              type: array
+              items:
+                $ref: '#/components/schemas/widgetGroup'
+    topics_r_part:
+      type: object
+      properties:
+        topics:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: topic
+                  id:
+                    type: string
+                    format: uuid
+                    example: 298f27ec-81a1-4e67-bdbe-89f05f3f5028
+    widgetTopicItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/widgetTopicItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/episodesLink_r_part'
+    topicItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/topicItem'
+        - type: object
+          properties:
+            relationships:
+              allOf:
+                - $ref: '#/components/schemas/episodesLink_r_part'
+    homepage_resp:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/homepageItem'
+    homepageItem:
+      oneOf:
+        - $ref: '#/components/schemas/carousel_object'
+        - $ref: '#/components/schemas/dashboard_object'
+        - $ref: '#/components/schemas/content_section_object'
+        - $ref: '#/components/schemas/section_category_object'
+      discriminator:
+        propertyName: type
+        mapping:
+          carousel: '#/components/schemas/carousel_object'
+          dashboard: '#/components/schemas/dashboard_object'
+          content_section: '#/components/schemas/content_section_object'
+          section_category: '#/components/schemas/section_category_object'
+    carousel_object:
+      type: object
+      properties:
+        type:
+          type: string
+          example: carousel
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                oneOf:
+                  - $ref: '#/components/schemas/carousel_audio_object'
+                  - $ref: '#/components/schemas/carousel_shirt_object'
+                discriminator:
+                  propertyName: itemType
+                  mapping:
+                    audio: '#/components/schemas/carousel_audio_object'
+                    shirt: '#/components/schemas/carousel_shirt_object'
+            title:
+              type: string
+    carousel_audio_object:
+      type: object
+      properties:
+        itemType:
+          type: string
+          example: audio
+        url:
+          type: string
+          format: url
+        image:
+          type: string
+          format: url
+        title:
+          type: string
+        description:
+          type: string
+        entity:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - episode
+                - show
+            id:
+              type: string
+              format: uuid
+    carousel_shirt_object:
+      type: object
+      properties:
+        itemType:
+          type: string
+          example: shirt
+        url:
+          type: string
+          format: url
+        image:
+          type: string
+          format: url
+        title:
+          type: string
+        description:
+          type: string
+        entity:
+          nullable: true
+          type: object
+          properties:
+            type:
+              type: string
+            id:
+              type: string
+              format: uuid
+    dashboard_object:
+      type: object
+      properties:
+        type:
+          type: string
+          example: dashboard
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                oneOf:
+                  - $ref: '#/components/schemas/dashboard_most_popular_object'
+                  - $ref: '#/components/schemas/dashboard_topic_object'
+                discriminator:
+                  propertyName: dashboardType
+                  mapping:
+                    dashboard_most_popular: '#/components/schemas/dashboard_most_popular_object'
+                    dashboard_topic: '#/components/schemas/dashboard_topic_object'
+    dashboard_most_popular_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_most_popular
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            episodes:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - episode
+                  id:
+                    type: string
+                    format: uuid
+    dashboard_show_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_show
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entity:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - show
+                id:
+                  type: string
+                  format: uuid
+                attributes:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    episodes:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            enum:
+                              - episode
+                          id:
+                            type: string
+                            format: uuid
+    dashboard_tags_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_tags
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - tag
+                  id:
+                    type: string
+                    format: uuid
+                  attributes:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      episodes:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              enum:
+                                - episode
+                            id:
+                              type: string
+                              format: uuid
+    dashboard_topic_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_topic
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entity:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - topic
+                id:
+                  type: string
+                  format: uuid
+                attributes:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      format: url
+                    episodes:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            enum:
+                              - episode
+                          id:
+                            type: string
+                            format: uuid
+    dashboard_selection_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_selection
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entity:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - selection
+                id:
+                  type: string
+                  format: uuid
+                attributes:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      format: url
+                    episodes:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            enum:
+                              - episode
+                          id:
+                            type: string
+                            format: uuid
+    dashboard_news_object:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        dashboardType:
+          type: string
+          example: dashboard_news
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - station
+                  id:
+                    type: string
+                    format: uuid
+                  attributes:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      episodes:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              enum:
+                                - episode
+                            id:
+                              type: string
+                              format: uuid
+    content_section_object:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        type:
+          type: string
+          example: content_section
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - episode
+                      - show
+                      - serial
+                  id:
+                    type: string
+                    format: uuid
+    section_category_object:
+      type: object
+      properties:
+        type:
+          type: string
+          example: section_category
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - show
+                      - episode
+                  id:
+                    type: string
+                    format: uuid
+    homepage_full_resp:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/homepage_fullItem'
+    homepage_fullItem:
+      oneOf:
+        - $ref: '#/components/schemas/carousel_full_object'
+        - $ref: '#/components/schemas/dashboard_full_object'
+        - $ref: '#/components/schemas/entity_list_full_object'
+        - $ref: '#/components/schemas/section_category_full_object'
+      discriminator:
+        propertyName: type
+        mapping:
+          carousel: '#/components/schemas/carousel_full_object'
+          dashboard: '#/components/schemas/dashboard_full_object'
+          entity_list: '#/components/schemas/entity_list_full_object'
+          section_category: '#/components/schemas/section_category_full_object'
+    carousel_full_object:
+      type: object
+      properties:
+        type:
+          type: string
+          example: carousel
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                oneOf:
+                  - $ref: '#/components/schemas/carousel_audio_full_object'
+                  - $ref: '#/components/schemas/carousel_shirt_full_object'
+                discriminator:
+                  propertyName: itemType
+                  mapping:
+                    audio: '#/components/schemas/carousel_audio_full_object'
+                    shirt: '#/components/schemas/carousel_shirt_full_object'
+            title:
+              type: string
+              example: Doporučujeme
+    carousel_audio_full_object:
+      type: object
+      properties:
+        itemType:
+          type: string
+          example: audio
+        url:
+          type: string
+          format: url
+        image:
+          type: string
+          format: url
+        title:
+          type: string
+        description:
+          type: string
+        entity:
+          $ref: '#/components/schemas/episodeItem_relationships'
+    carousel_shirt_full_object:
+      type: object
+      properties:
+        itemType:
+          type: string
+          example: shirt
+        url:
+          type: string
+          format: url
+        image:
+          type: string
+          format: url
+        title:
+          type: string
+        description:
+          type: string
+        entity:
+          $ref: '#/components/schemas/episodeItem_relationships'
+    dashboard_full_object:
+      type: object
+      properties:
+        type:
+          type: string
+          example: dashboard
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                oneOf:
+                  - $ref: '#/components/schemas/dashboard_most_popular_full_object'
+                  - $ref: '#/components/schemas/dashboard_topic_full_object'
+                discriminator:
+                  propertyName: dashboardType
+                  mapping:
+                    dashboard_most_popular: '#/components/schemas/dashboard_most_popular_full_object'
+                    dashboard_topic: '#/components/schemas/dashboard_topic_full_object'
+    dashboard_most_popular_full_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_most_popular
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            episodes:
+              type: array
+              items:
+                $ref: '#/components/schemas/episodeItem_relationships'
+    dashboard_topic_full_object:
+      type: object
+      properties:
+        dashboardType:
+          type: string
+          example: dashboard_topic
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entity:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - topic
+                id:
+                  type: string
+                  format: uuid
+                attributes:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      format: url
+                    episodes:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/episodeItem_relationships'
+    entity_list_full_object:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        type:
+          type: string
+          example: entity_list
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              type: array
+              items:
+                oneOf:
+                  - $ref: '#/components/schemas/episodeItem_relationships'
+                  - $ref: '#/components/schemas/serialItem'
+    section_category_full_object:
+      type: object
+      properties:
+        type:
+          type: string
+          example: section_category
+        id:
+          type: integer
+          format: int32
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            entities:
+              $ref: '#/components/schemas/showItem'
+    favourites_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/favouriteItem_relationships'
+        included:
+          $ref: '#/components/schemas/favourite_included_part'
+    favourite_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/favouriteItem_relationships'
+        included:
+          $ref: '#/components/schemas/favourite_included_part'
+    favouriteItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/favouriteItem'
+        - $ref: '#/components/schemas/favouriteRelationships'
+    favouriteItem:
+      allOf:
+        - $ref: '#/components/schemas/favouriteId'
+        - $ref: '#/components/schemas/favouriteData'
+    favouriteRelationships:
+      type: object
+      properties:
+        relationships:
+          type: object
+          properties:
+            playable:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - episode
+                    - show
+                    - serial
+                  example: episode
+                id:
+                  type: string
+                  format: uuid
+    favouriteType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: favourite
+    favouriteId:
+      allOf:
+        - $ref: '#/components/schemas/favouriteType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 6ffa4938-0f45-4d00-898b-5de49b8ddf0e
+    favouriteData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            created:
+              type: string
+              format: datetime
+              readOnly: true
+            top:
+              type: boolean
+    favouriteMeta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            operation:
+              type: string
+              enum:
+                - insert
+                - delete
+              writeOnly: true
+    favourite_included_part:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/components/schemas/episodeItem_relationships_link'
+          - $ref: '#/components/schemas/showItem_relationships_link'
+          - $ref: '#/components/schemas/serialItem_relationships_link'
+        discriminator:
+          propertyName: type
+          mapping:
+            episode: '#/components/schemas/episodeItem_relationships_link'
+            show: '#/components/schemas/showItem_relationships_link'
+            serial: '#/components/schemas/serialItem_relationships_link'
+    carmodes_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/carmodeItem_relationships'
+    carmode_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/carmodeItem_relationships'
+    carmodeItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/carmodeItem'
+        - $ref: '#/components/schemas/carmodeRelationships'
+    carmodeItem:
+      allOf:
+        - $ref: '#/components/schemas/carmodeId'
+        - $ref: '#/components/schemas/carmodeData'
+    carmodeRelationships:
+      type: object
+      properties:
+        relationships:
+          type: object
+          properties:
+            playable:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: episode
+                id:
+                  type: string
+                  format: uuid
+    carmodeType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: carMode
+    carmodeId:
+      allOf:
+        - $ref: '#/components/schemas/carmodeType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 6ffa4938-0f45-4d00-898b-5de49b8ddf0e
+    carmodeData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            created:
+              type: string
+              format: datetime
+              readOnly: true
+    watchdogs_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/watchdogItem_relationships'
+    watchdog_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/watchdogItem_relationships'
+    watchdogItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/watchdogItem'
+        - $ref: '#/components/schemas/watchdogRelationships'
+    watchdogItem:
+      allOf:
+        - $ref: '#/components/schemas/watchdogId'
+        - $ref: '#/components/schemas/watchdogData'
+    watchdogRelationships:
+      type: object
+      properties:
+        relationships:
+          type: object
+          properties:
+            playable:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: episode
+                id:
+                  type: string
+                  format: uuid
+    watchdogType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: watchdog
+    watchdogId:
+      allOf:
+        - $ref: '#/components/schemas/watchdogType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 6ffa4938-0f45-4d00-898b-5de49b8ddf0e
+    watchdogData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            created:
+              type: string
+              format: datetime
+              readOnly: true
+    subscriptions_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/subscriptionItem_relationships'
+    subscription_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/subscriptionItem_relationships'
+    subscriptionItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/subscriptionItem'
+        - $ref: '#/components/schemas/subscriptionRelationships'
+    subscriptionItem:
+      allOf:
+        - $ref: '#/components/schemas/subscriptionId'
+        - $ref: '#/components/schemas/subscriptionData'
+    subscriptionRelationships:
+      type: object
+      properties:
+        relationships:
+          type: object
+          properties:
+            playable:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: show
+                id:
+                  type: string
+                  format: uuid
+    subscriptionType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: subscription
+    subscriptionId:
+      allOf:
+        - $ref: '#/components/schemas/subscriptionType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 6ffa4938-0f45-4d00-898b-5de49b8ddf0e
+    subscriptionData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            created:
+              type: string
+              format: datetime
+              readOnly: true
+    queue_items_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/queueItem_relationships'
+    queue_item_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/queueItem_relationships'
+    queueItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/queueItem'
+        - $ref: '#/components/schemas/queueRelationships'
+    queueItem:
+      allOf:
+        - $ref: '#/components/schemas/queueId'
+        - $ref: '#/components/schemas/queueData'
+    queueRelationships:
+      type: object
+      properties:
+        relationships:
+          type: object
+          properties:
+            playable:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: episode
+                id:
+                  type: string
+                  format: uuid
+    queueType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: queue
+    queueId:
+      allOf:
+        - $ref: '#/components/schemas/queueType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 6ffa4938-0f45-4d00-898b-5de49b8ddf0e
+    queueData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            created:
+              type: string
+              format: datetime
+              readOnly: true
+            progress:
+              type: integer
+              format: int32
+    histories_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/historyItem_relationships'
+    history_resp:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+        data:
+          $ref: '#/components/schemas/historyItem_relationships'
+    historyItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/historyItem'
+        - $ref: '#/components/schemas/historyRelationships'
+    historyItem:
+      allOf:
+        - $ref: '#/components/schemas/historyId'
+        - $ref: '#/components/schemas/historyData'
+    historyRelationships:
+      type: object
+      properties:
+        relationships:
+          type: object
+          properties:
+            playable:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: episode
+                id:
+                  type: string
+                  format: uuid
+    historyType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: history
+    historyId:
+      allOf:
+        - $ref: '#/components/schemas/historyType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 6ffa4938-0f45-4d00-898b-5de49b8ddf0e
+    historyData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            created:
+              type: string
+              format: datetime
+            mediaTitle:
+              type: string
+            progress:
+              type: integer
+              format: int32
+            playedCount:
+              type: integer
+              format: int32
+    registerData_post:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          example: account
+        attributes:
+          type: object
+          required:
+            - name
+            - surname
+            - email
+            - password
+          properties:
+            name:
+              type: string
+            surname:
+              type: string
+            email:
+              type: string
+            password:
+              type: string
+    registerData_patch:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+          example: account
+        id:
+          type: string
+          format: uuid
+        attributes:
+          type: object
+          properties:
+            termsOfUse:
+              type: boolean
+            processingPersonalData:
+              type: boolean
+    availability_resp:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            available:
+              type: boolean
+              example: true
+    userData_resp:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            type:
+              type: string
+              example: account
+            id:
+              type: string
+              format: uuid
+            attributes:
+              type: object
+              properties:
+                name:
+                  type: string
+                surname:
+                  type: string
+                email:
+                  type: string
+                address:
+                  type: string
+                birthdate:
+                  type: string
+                termsOfUse:
+                  type: boolean
+                processingPersonalData:
+                  type: boolean
+    tutorials_resp:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/tutorialItem_relationships'
+    tutorialItem:
+      allOf:
+        - $ref: '#/components/schemas/tutorialId'
+        - $ref: '#/components/schemas/tutorialData'
+    tutorialType:
+      type: object
+      properties:
+        type:
+          type: string
+          example: tutorialSlide
+    tutorialId:
+      allOf:
+        - $ref: '#/components/schemas/tutorialType'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              example: 3269628c-b692-46c2-b308-8c19b7958b61
+    tutorialData:
+      type: object
+      properties:
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+              example: Máme pro vás dárek
+            description:
+              type: string
+            image:
+              type: string
+              format: url
+              example: >-
+                https://www.mujrozhlas.cz/sites/default/files/styles/teaser/public/2020-01/03454860.jpeg?itok=rjEJow1D
+            okButtonText:
+              type: string
+            cancelButtonText:
+              type: string
+    tutorialItem_relationships:
+      allOf:
+        - $ref: '#/components/schemas/tutorialItem'
+        - type: object
+          properties:
+            relationships:
+              type: object
+              properties:
+                entity:
+                  type: object
+                  properties:
+                    data:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                            - show
+                          example: show
+                        id:
+                          type: string
+                          format: uuid
+                          example: d0249823-0d33-4997-9df5-5e72c55e189c
+    errors_resp:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+                description: 'Optional, error id in log'
+              status:
+                type: string
+                description: Http status kód
+                example: '400'
+              code:
+                type: string
+                description: Kód chyby
+                example: ERROR_UNACTIVATED_ACCOUNT
+              title:
+                type: string
+                description: |
+                  Obecný popis chyby - asi enumerace?
+                  Např: out of range, limit exceeded,
+              detail:
+                type: string
+                description: 'Popis případu, kdy chyba vznikla'
+    relationships_resp:
+      allOf:
+        - $ref: '#/components/schemas/relationships_links'
+        - $ref: '#/components/schemas/resourceObjects'
+    relationships_related_resp:
+      allOf:
+        - type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+        - $ref: '#/components/schemas/resourceObjects'
+    relationships_self_resp:
+      allOf:
+        - type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/selfLink'
+        - $ref: '#/components/schemas/resourceObjects'
+    relationships_links:
+      type: object
+      properties:
+        links:
+          allOf:
+            - $ref: '#/components/schemas/selfLink'
+            - $ref: '#/components/schemas/relatedLink'
+    resourceObjects:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/resourceObjectItem'
+    resourceObject:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/resourceObjectItem'
+    resourceObjectItem:
+      type: object
+      properties:
+        type:
+          type: string
+        id:
+          type: string
+          format: uuid
+    assetItem:
+      type: object
+      nullable: true
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: ef2b07d0-94ba-44b8-a53c-eaf34bbe45ec
+        url:
+          type: string
+          format: url
+        width:
+          type: integer
+          format: int32
+          example: 2100
+        height:
+          type: integer
+          format: int32
+          example: 1400
+        credit:
+          type: object
+          properties:
+            author:
+              type: string
+            source:
+              type: string
+            license:
+              type: string
+            description:
+              type: string
+    audioLink_item:
+      type: object
+      properties:
+        linkType:
+          type: string
+          enum:
+            - ondemand
+            - download
+        bitrate:
+          deprecated: true
+          type: integer
+          format: int32
+          example: 128
+        quality:
+          type: string
+          enum:
+            - low
+            - high
+        variant:
+          type: string
+          enum:
+            - dash
+            - hls
+            - mp3
+        url:
+          type: string
+          format: url
+    timeLine_r_part:
+      type: object
+      properties:
+        timeLine:
+          type: object
+          properties:
+            links:
+              allOf:
+                - $ref: '#/components/schemas/relatedLink'
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: timeGroup
+                  id:
+                    type: string
+                    format: uuid
+                    example: 34b1a5e8-2b29-4370-88f1-a22eed8588cc
+    timespanItem:
+      type: object
+      properties:
+        origin:
+          type: string
+          enum:
+            - schedule
+            - ais
+            - av
+            - ams
+            - user
+        since:
+          type: string
+          format: date-time
+          example: '2019-05-13T19:00:07+02:00'
+        till:
+          type: string
+          format: date-time
+          example: '2019-05-13T19:17:22+02:00'
+    resourceIdentification_NoId:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+    resourceIdentification_Id:
+      type: object
+      required:
+        - type
+        - id
+      properties:
+        type:
+          type: string
+        id:
+          type: string
+          format: uuid
+    pageLink:
+      type: object
+      properties:
+        first:
+          type: string
+          format: url
+          nullable: true
+        prev:
+          type: string
+          format: url
+          nullable: true
+        next:
+          type: string
+          format: url
+          nullable: true
+        last:
+          type: string
+          format: url
+          nullable: true
+    selfLink:
+      type: object
+      properties:
+        self:
+          type: string
+          format: url
+    relatedLink:
+      type: object
+      readOnly: true
+      properties:
+        related:
+          type: string
+          format: url
+  requestBodies:
+    favourites_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/favouriteType'
+                    - $ref: '#/components/schemas/favouriteRelationships'
+    favourites_put:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/favouriteId'
+                    - $ref: '#/components/schemas/favouriteData'
+                    - $ref: '#/components/schemas/favouriteMeta'
+                    - $ref: '#/components/schemas/favouriteRelationships'
+    favourite_patch:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                allOf:
+                  - $ref: '#/components/schemas/favouriteId'
+                  - $ref: '#/components/schemas/favouriteData'
+    subscription_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                allOf:
+                  - $ref: '#/components/schemas/subscriptionType'
+                  - $ref: '#/components/schemas/subscriptionRelationships'
+    carmodes_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/carmodeType'
+                    - $ref: '#/components/schemas/carmodeRelationships'
+    watchdog_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/watchdogType'
+                    - $ref: '#/components/schemas/watchdogRelationships'
+    queue_item_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                allOf:
+                  - type: object
+                    properties:
+                      meta:
+                        type: object
+                        properties:
+                          insertionPoint:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                format: uuid
+                              mode:
+                                type: string
+                                default: after
+                                enum:
+                                  - after
+                                  - before
+                  - $ref: '#/components/schemas/queueType'
+                  - $ref: '#/components/schemas/queueRelationships'
+    queue_item_put:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/queueId'
+                    - $ref: '#/components/schemas/queueData'
+                    - $ref: '#/components/schemas/queueRelationships'
+    queue_item_patch:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                allOf:
+                  - $ref: '#/components/schemas/queueId'
+                  - $ref: '#/components/schemas/queueData'
+    history_items_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/historyType'
+                    - $ref: '#/components/schemas/historyData'
+                    - $ref: '#/components/schemas/historyRelationships'
+    register_post:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/registerData_post'
+    register_patch:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/registerData_patch'
+    relationships_toOne:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/resourceObject'
+    relationships_toMany:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/resourceObjects'
+  parameters:
+    emailParam:
+      name: email
+      in: query
+      description: Email address
+      required: true
+      schema:
+        type: string
+        format: email
+    uuidParam:
+      name: id
+      in: path
+      description: Identifikátor entity
+      required: true
+      schema:
+        type: string
+        format: uuid
+    imageStyleNameParam:
+      name: imageStyleName
+      in: path
+      description: Styl obrázku
+      required: true
+      schema:
+        type: string
+        enum:
+          - thumbnail-square
+          - large-square
+          - large-16x9
+    authTokenParam:
+      name: token
+      in: header
+      description: Autorizační token uživatele
+      required: true
+      schema:
+        type: string
+        format: uuid
+    pageParam:
+      name: page
+      in: query
+      description: >
+        <small><b>Stránkování:
+        <code>page[offset]=numValue&page[limit]=numValue</code></b>
+
+        <p>numValue - celočíslená hodnota.</p>
+
+        <p>page[offset] požadovaná pozice v kolekci. Hodnota numValue musí být z
+        intervalu <0..M>. Hodnota numValue nesmí být větší než je počet
+        stránek</p>
+
+        <p>page[limit] určuje počet entit na stránce. Hodnota numValue musí být
+        z intervalu <1..N>. Maximální hodnota numValue může být na serveru
+        omezena.</p></small>
+      schema:
+        type: object
+        properties:
+          offset:
+            type: integer
+            format: int32
+            example: 0
+          limit:
+            type: integer
+            format: int32
+            example: 4
+      style: deepObject
+      explode: true
+    filterParam:
+      name: filter
+      in: query
+      description: >
+        <small><b>Filtrování: <code>filter[{relatedObject.}fieldName |
+        implicitFilter]{[op]}=value</code></b>
+
+        <p>relatedObject - Název relationships objektu, ve kterém probíhá
+        filtrace. Neuvádí se je-li objektem filtrování pole primárních dat.</p>
+
+        <p>fieldName - Název pole.</p>
+
+        <p>implicitFilter - Název implicitního filtru.<br/>
+
+        Seznam:<br/>
+
+        onlyPlayable: true - entity obsahující přehratelné audio, false -
+        všechny entity.<br/>
+
+        fullText - fulltextové vyhledávání.<br/>
+
+        </p>
+
+        <p>op - operace pro vyhodnocení filtrované hodnoty value.<br/>
+
+        Kódy:<br/>
+          eq - hodnoty musí být shodné<br/>
+          ne - hodnoty nesmí být shodné<br/>
+          gt - hodnota pole je větší než value<br/>
+          ge - hodnota pole je větší nebo rovna než value<br/>
+          lt - hodnota pole je menší než value<br/>
+          le - hodnota pole je menší nebo rovna než value<br/>
+          like - hodnota pole obsahuje část řetězce value<br/>
+        Není-li uvedena, použije se operace eq</p>
+
+        <b>V případě vícenásobného použití se mezi jednotlivými případy
+        implicitně předpokládá logický součin.</b><br/>
+
+        <b>Příklady:<br/>
+
+        filter[title][eq]=Zprávy&filter[updated][gt]=2019-03-21T14:00<br/>
+
+        filter[fulltext]=buch zpra&filter[type]=episode
+
+        </b></small>
+      schema:
+        type: object
+      style: deepObject
+      explode: true
+    sortParam:
+      name: sort
+      in: query
+      description: >
+        <small><b>Řazeni: <code>sort={-}{relatedObject.}fieldName {,
+        ...}</code></b>
+
+        <p>Operator - (minus) označuje směr pro sestupné řezení.</p>
+
+        <p>relatedObject - Název relationships objektu, ve kterém probíhá
+        filtrace. Neuvádí se je-li objektem filtrování pole primárních dat.</p>
+
+        <p>fieldName - Název pole.</p>
+
+        <p>Příklad: sort=title, -updated</p></small>
+      schema:
+        type: string
+    includeParam:
+      name: include
+      in: query
+      description: >
+        <small><b>Vloží entity related objektů:
+        <code>include=relationshipsObject{, ...}</code></b>
+
+        <p>relatedObject - Název relationships objektu, který bude součástí
+        responsu. Tzv. compound documents.</p>
+
+        <p>Příklad: include=episodes,keywords</p>
+
+        <p>Příklad: include=items.entity</p></small>
+      schema:
+        type: string
+    audioFormatParam:
+      name: audioformat
+      in: query
+      description: |
+        <small><b>Formát a kvalita audio streamu/souboru.</b>
+        <p>Příklad: audioformat=mp31</p></small>
+      schema:
+        type: string
+        enum:
+          - mp31
+          - mp32
+          - aac
+          - ogg
+          - flac
+        default: mp31
+    stationCodeParam:
+      name: station
+      in: query
+      description: |
+        <small><b>Omezení dle kódu stanice</b>
+        <p>Příklad: station=radiozurnal</p></small>
+      schema:
+        type: string
+        default: radiozurnal
+    appCurrentVersionParam:
+      name: currentversion
+      in: query
+      description: |
+        <small><b>Aktuální verze aplikace. </b>
+        <p>Příklad: currentversion=2</p></small>
+      schema:
+        type: integer
+        format: int32
+        example: 2
+  securitySchemes:
+    oauthAuth:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /authentication
+          scopes: {}
+  responses:
+    badRequestError:
+      description: Bad Request
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/errors_resp'
+    notFoundError:
+      description: Not found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/errors_resp'
+    unauthorizedError:
+      description: Unauthorized
+    forbidenError:
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/errors_resp'
+    conflictError:
+      description: Conflict
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/errors_resp'

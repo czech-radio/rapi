@@ -8,7 +8,7 @@ default_format='%(asctime)s %(filename)s:%(funcName)s:%(lineno)d - %(message)s -
 ### FILE LOGGER
 log_file = logging.getLogger('log_file')
 log_file.setLevel(logging.DEBUG)
-debug_handler = logging.FileHandler('debug.log')
+debug_handler = logging.FileHandler('./runtime/debug.log')
 debug_handler.setLevel(logging.DEBUG)
 debug_formatter = logging.Formatter(default_format)
 debug_handler.setFormatter(debug_formatter)

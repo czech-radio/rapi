@@ -39,3 +39,13 @@ Zatím identifikuji tyto filtry:
 - *rozsah* (čas) např. od 12:00 do 15:00 
 - *název* pořadu např. Zprávy
 - *premiéra/repríza*
+
+## Installation
+* create virtual env  
+`python -m venv .venv`
+`source .venv/bin/activate`
+-no sure if correct
+`pip install --upgrade pip` ?
+
+* install required packages
+`pip install -e .[dev]`

@@ -9,6 +9,10 @@ requires-python = ">=3.11"
 keywords = ["REST", "API"]
 license = {text = "BSD-3-Clause"}
 dependencies = [
+	"requests","pyyaml",
+	"swagger_parser",
+	# "openapi_parser",
+	# "openapi3-parser",
 ]
 
 [tool.setuptools.dynamic]
