@@ -2031,12 +2031,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/errors_resp'
 components:
-  # schemas:
-    # timeGroupItem_relationships:
-      # type: object
-      # properties:
-        # meta:
-          # type: object
+  schemas:
     stations_resp:
       type: object
       properties:

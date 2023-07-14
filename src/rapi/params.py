@@ -43,6 +43,14 @@ def args_read() -> Dict[str, any]:
             help="parse swagger openapi definition yaml file",
             const="./runtime/rapidev_croapp.yml",
             )
+    parser.add_argument(
+            "--station",
+            required=False,
+            nargs='?', 
+            type=str,
+            help="request station data",
+            const="all",
+            )
     params = parser.parse_args()
 
     ### no parameter given
