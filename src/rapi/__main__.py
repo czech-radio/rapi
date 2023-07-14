@@ -22,8 +22,10 @@ def main():
         swagger.SwaggerDownload(pars.swagger_download)
         sys.exit(0)
     if pars.swagger_parse:
-        logo.info(f"parsing swagger file: {pars.swagger_download}")
+        # logo.info("hello")
+        logo.info(f"parsing swagger file: {pars.swagger_parse}")
         swagger.SwaggerParse(pars.swagger_parse)
+        sys.exit(0)
 
 if __name__ == "__main__":
     main()

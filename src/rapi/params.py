@@ -41,7 +41,7 @@ def args_read() -> Dict[str, any]:
             nargs='?', 
             type=str,
             help="parse swagger openapi definition yaml file",
-            const=".runtime/rapidev_cropapp.yml",
+            const="./runtime/rapidev_croapp.yml",
             )
     params = parser.parse_args()
 
