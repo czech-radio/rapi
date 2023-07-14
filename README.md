@@ -20,11 +20,11 @@ jako s objekty nikoliv jako s JSON.
 Doménový model tj. třídy (entity) reprezentující jednotlivé objekty vracející se z API se musí namodelovat s citem.
 Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (Schedule), Epizoda (Episode).
 
-Fakta:
-- Na stanici se vysílají epizody jednotliváýh pořadů.
-- Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zárověň (Plus/Radiožurnál a regionální stanice).
-- Každý pořad má přidělěn identifikátor.
-- Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéra a reprízy.
+### Fakta
+
+- Na stanici se vysílají epizody jednotlivých pořadů.
+- Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zárověň (např. Plus/Radiožurnál a regionální stanice).
+- Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéry a reprízy.
 
 ## Use cases
 
@@ -41,13 +41,42 @@ Zatím identifikuji tyto filtry:
 - *premiéra/repríza*
 
 ## Installation
-* create virtual env  
-`python -m venv .venv`
-`source .venv/bin/activate`
--not sure if correct
-`pip install --upgrade pip` ?
 
-* install required packages
-`pip install -e .[dev]`
+- Create a virtual environment (recommended).
 
+  Unix (Use desired version of Python e.g 3.11.)
+  ```shell
+  python -m venv .venv
+  ```
 
+  Windows (Use the [`py.exe`](https://docs.python.org/3/using/windows.html) launcher.)
+  ```powershell
+  py -3.11 -m venv .venv
+  ```
+- Activate the virtual environment.
+
+  Unix
+  ```shell
+  source .venv/bin/activate
+  ````
+
+  Windows
+  ```powershell
+  .venv\Scripts\activate
+  ```
+- Upgrade pip to latest version (recommended).
+    ```shell
+    pip install --upgrade pip
+    ````
+- Install required packages for development (editable mode).
+    ```shell
+    pip install -e .[dev]
+    ```
+- Run a tests.
+    ```shell
+    pytest
+    ```
+- Build documentation.
+    ```shell
+    todo
+    ```
