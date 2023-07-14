@@ -4,6 +4,8 @@ import sys
 import json
 import yaml
 import requests
+from .logger import log_stdout as logo
+from .logger import log_stderr as loge
 
 # import openapi3_parser
 # from swagger_parser import SwaggerParser
@@ -13,13 +15,28 @@ def SwaggerDownload(url: str):
     ### urls:
     #### https://rapidoc.croapp.cz/index.html ->
     #### url="https://rapidoc.croapp.cz/apifile/openapi.yaml"
-
-    ### download url
-    r = requests.get(url)
+    try:
+        ### download url
+        r = requests.get(url)
+    except requests.exceptions.HTTPError as errh:
+        loge.error(errh)
+        sys.exit(0)
+    except requests.exceptions.ConnectionError as errc:
+        loge.error(f'Connection Error: {errc}')
+        sys.exit(0)
+    except requests.exceptions.Timeout as errt:
+        loge.error(f'Timeout Error:{errt}')
+        sys.exit(0)
+    except requests.exceptions.RequestException as err:
+        loge.error(f'unknow exception:{err}')
+        sys.exit(0)
     ### save swagger definition file
     swagger_file="./runtime/rapidev_croapp.yml"
-    with open(swagger_file, "w",encoding='utf8') as file:
-        file.write(r.text)
+    try:
+        with open(swagger_file, "w",encoding='utf8') as file:
+            file.write(r.text)
+    except IOError as err:
+        loge.error(f'error saving the file:{err}')
 
 def SwaggerParse(swagger_file: str):
     parser=swparse(swagger_file)
