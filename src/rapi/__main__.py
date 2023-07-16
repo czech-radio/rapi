@@ -3,7 +3,7 @@ import logging
 logo=logging.getLogger("log_stdout")
 loge=logging.getLogger("log_stderr")
 
-from . import stations
+from . import broadcast
 from . import params
 from .__init__ import __version__
 from . import swagger
@@ -37,11 +37,10 @@ def main():
         logo.info(f"parsing swagger file: {pars.swagger_parse}")
         swagger.SwaggerParse(pars.swagger_parse)
         sys.exit(0)
-    if pars.station:
-        logo.info(f"requesting stations: {pars.station}")
-        st=stations.stations(pars)
-        # st.params_debug()
-        st.GetStations()
+    if pars.broadcast:
+        logo.info(f"requesting stations: {pars.broadcast}")
+        st=broadcast.broadcast(pars)
+        print(st.fields)
         sys.exit(0)
 
 if __name__ == "__main__":

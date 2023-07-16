@@ -45,13 +45,14 @@ def args_read() -> Dict[str, any]:
             const="./runtime/rapidev_croapp.yml",
             )
     parser.add_argument(
-            "--station",
+            "--broadcast",
             required=False,
-            nargs='?', 
-            type=str,
             help="request station data",
-            const="all",
+            action="store_true"
             )
+
+    # group = parser.add_mutually_exclusive_group()
+    # group.add_argument('-a', action='store_true')
     params = parser.parse_args()
 
     ### no parameter given
