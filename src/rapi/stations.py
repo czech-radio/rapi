@@ -1,6 +1,7 @@
 import requests, json
-from .logger import log_stdout as logo
-from .logger import log_stderr as loge
+import logging
+logo=logging.getLogger("log_stdout")
+loge=logging.getLogger("log_stderr")
 
 class stations:
     def __init__(self, pars):

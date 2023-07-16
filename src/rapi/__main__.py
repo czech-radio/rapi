@@ -1,6 +1,7 @@
 import os, sys
-from .logger import log_stdout as logo
-from .logger import log_stderr as loge
+import logging
+logo=logging.getLogger("log_stdout")
+loge=logging.getLogger("log_stderr")
 
 from . import stations
 from . import params
@@ -12,9 +13,21 @@ def main():
     if pars.version:
         print(__version__)
         sys.exit(0)
+    if pars.verbose==0:
+        loglevel=logging.WARN
+    if pars.verbose == 1:
+        loglevel=logging.INFO
+    if pars.verbose == 2:
+        loglevel=logging.DEBUG
+    logo.setLevel(loglevel)
+    loge.setLevel(loglevel)
     if pars.test_logs:
-        logo.info("kek")    
-        loge.error("jek")
+        print("log_out level",logo.level)
+        print("log_err level",loge.level)
+        logo.debug("debug_level")    
+        logo.info("info_level")    
+        logo.warn("warn_level")    
+        loge.error("error_level")
         sys.exit(0)
     if pars.swagger_download:
         logo.info(f"downloading file: {pars.swagger_download}")

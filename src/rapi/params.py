@@ -3,9 +3,6 @@ import os
 import sys
 from typing import Dict
 
-from .logger import log_stdout as logo
-from .logger import log_stderr as loge
-
 class HelpAction(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
         parser.print_help()
@@ -14,13 +11,17 @@ class HelpAction(argparse.Action):
 def args_read() -> Dict[str, any]:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-            "-v",
-            "--version",
+            "-V", "--version",
             required=False,
             help="version of program",
             action="store_true",
             )
-
+    parser.add_argument(
+            '-v', '--verbose',
+            action='count',
+            default=0,
+            help='logging verbosity (-v for INFO, -vv for DEBUG)'
+            )
     parser.add_argument(
             "--test-logs",
             required=False,
