@@ -41,6 +41,7 @@ def command(args: argparse.Namespace):
     if args.broadcast:
         logo.info(f"requesting stations: {args.broadcast}")
         st=Broadcast(args)
-        for i in st.Entities:
-            print(st.Entities[i])
+        st.station_ids_parse()
+        # for i in st.Entities:
+            # print(st.Entities[i])
         return

@@ -1,4 +1,6 @@
 import requests, json
+import os
+import csv
 import logging
 from .logger import log_stdout as logo
 from .logger import log_stdout as loge
@@ -10,6 +12,7 @@ class Broadcast:
         self.url_mock="https://mockservice.croapp.cz/mock"
         self.url_apidoc="https://rapidoc.croapp.cz"
         self.url_api="https://rapidev.croapp.cz"
+        self.station_ids_file="data/stations_ids_table.csv"
         logo.info("broadcast class initialized")
         self.raw_data=self.request_data()
         self.Entities=self.entities_parse_fields()
@@ -40,5 +43,14 @@ class Broadcast:
                     )
             stations[attr["code"]]=stdat
         return stations
+
+    def station_ids_parse(self):
+        path = os.path.abspath(self.station_ids_file)
+        logo.info("reading file {path}")
+        with open(path, "r") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                print(row)
+
     def get_station_by_code(self,station_code: str):
         return self.Entities[station_code]
