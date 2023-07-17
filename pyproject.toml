@@ -31,7 +31,10 @@ dev = ["pytest", "black", "isort"]
 rapi = "rapi.__main__:main"
 
 [tool.pytest.ini_options]
+### This settings affects both tested module logs and test module itself!? I would like to separate it.
 log_cli = true
 # log_cli_level = "INFO"
+log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
+# log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
 # log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
 # log_cli_date_format = "%Y-%m-%d %H:%M:%S"

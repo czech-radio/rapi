@@ -3,8 +3,17 @@ import sys
 import logging
 
 # default_format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-default_format='%(asctime)s %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
-# default_format='%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
+# default_format='%(asctime)s %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
+default_format='%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
+
+### ShortenedLevelFormatterA
+#### modify format fields
+class ShortenedLevelFormatter(logging.Formatter):
+    def format(self, record):
+        if record.levelname:
+            ### shorten lelvel name to one letter
+            record.levelname = record.levelname[0]
+        return super().format(record)
 
 ### FILE LOGGER
 log_file = logging.getLogger('log_file')
@@ -19,6 +28,7 @@ log_stdout = logging.getLogger('log_stdout')
 log_stdout.setLevel(logging.INFO)
 info_handler = logging.StreamHandler(sys.stdout)
 info_formatter = logging.Formatter(default_format)
+# info_formatter = ShortenedLevelFormatter(default_format)
 info_handler.setFormatter(info_formatter)
 log_stdout.addHandler(info_handler)
 
