@@ -12,7 +12,7 @@ class Broadcast:
         self.url_api="https://rapidev.croapp.cz"
         logo.info("broadcast class initialized")
         self.raw_data=self.request_data()
-        self.fields=self.parse_fields()
+        self.Entities=self.entities_parse_fields()
     def params_debug(self):
         print(json.dumps(self.params.__dict__))
     def request_data(self):
@@ -25,7 +25,7 @@ class Broadcast:
         else:
             loge.error("cannot get data from: {url}")
             return None
-    def parse_fields(self):
+    def entities_parse_fields(self):
         stations={}
         data=self.raw_data["data"]
         for k in data:
@@ -41,4 +41,4 @@ class Broadcast:
             stations[attr["code"]]=stdat
         return stations
     def get_station_by_code(self,station_code: str):
-        return self.fields[station_code]
+        return self.Entities[station_code]
