@@ -40,7 +40,8 @@ def main():
     if pars.broadcast:
         logo.info(f"requesting stations: {pars.broadcast}")
         st=broadcast.broadcast(pars)
-        print(st.fields)
+        rw=st.GetStationByCode("radiowave")
+        print(rw)
         sys.exit(0)
 
 if __name__ == "__main__":

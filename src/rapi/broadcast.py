@@ -16,7 +16,7 @@ class broadcast:
     def params_debug(self):
         print(json.dumps(self.params.__dict__))
     def RequestData(self):
-        url=self.api_url+'/stations'
+        url=self.api_url+'/stations-all'
         logo.info("requesitng url: {url}")
         response = requests.get(url)
         if response.status_code == 200:
@@ -26,18 +26,19 @@ class broadcast:
             loge.error("cannot get data from: {url}")
             return None
     def ParseFields(self):
-        stations=[]
+        stations={}
         data=self.request_data["data"]
         for k in data:
             attr=k["attributes"] 
             stdat=station.station_data(
                     id=k["id"],
+                    code=attr["code"],
                     title=attr["title"],
                     stitle=attr["shortTitle"],
                     priority=attr["priority"],
                     type=attr["stationType"],
                     )
-            stations.append(stdat)
+            stations[attr["code"]]=stdat
         return stations
-    def GetStation(station_name: str):
-        pass
+    def GetStationByCode(self,station_code: str):
+        return self.fields[station_code]
