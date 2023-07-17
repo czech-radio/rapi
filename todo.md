@@ -15,3 +15,5 @@ url="https://rapidoc.croapp.cz/apifile/openapi.yaml"
 Object at "/components/schemas" does not contain key: timeGroupItem_relationships'
 - it means there is missing definition for timeGroupItem_relationship. It is only referenced in schema.
 - will try adding dummy variable definition
+
+##

@@ -3,12 +3,13 @@ import os
 import sys
 from typing import Dict
 
-class HelpAction(argparse.Action):
+class HelpAction(argparse.Action): 
     def __call__(self, parser, namespace, values, option_string=None):
         parser.print_help()
         parser.exit()
 
-def args_read() -> Dict[str, any]:
+# def args_read() -> Dict[str, any]:
+def args_read() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
             "-V", "--version",
@@ -50,7 +51,8 @@ def args_read() -> Dict[str, any]:
             help="request station data",
             action="store_true"
             )
-
+    ##TODO: DT:2023/07/17_13:37:47, LV:1
+    ###SD: Add mutually exclusive command group
     # group = parser.add_mutually_exclusive_group()
     # group.add_argument('-a', action='store_true')
     params = parser.parse_args()

@@ -55,3 +55,6 @@ Zatím identifikuji tyto filtry:
 -when using curl on api provided at: https://rapidev.croapp.cz use -g, --globoff flag e.g.:
 
 curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"
+
+## Code conventions
+[https://realpython.com/python-pep8/

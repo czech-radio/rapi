@@ -1,22 +1,22 @@
 import requests, json
 import logging
-logo=logging.getLogger("log_stdout")
-loge=logging.getLogger("log_stderr")
-from . import station
+from .logger import log_stdout as logo
+from .logger import log_stdout as loge
+from . import model
 
-class broadcast:
+class Broadcast:
     def __init__(self, pars):
         self.params = pars
-        self.mock_url="https://mockservice.croapp.cz/mock"
-        self.apidoc_url="https://rapidoc.croapp.cz"
-        self.api_url="https://rapidev.croapp.cz"
+        self.url_mock="https://mockservice.croapp.cz/mock"
+        self.url_apidoc="https://rapidoc.croapp.cz"
+        self.url_api="https://rapidev.croapp.cz"
         logo.info("broadcast class initialized")
-        self.request_data=self.RequestData()
-        self.fields=self.ParseFields()
+        self.raw_data=self.request_data()
+        self.fields=self.parse_fields()
     def params_debug(self):
         print(json.dumps(self.params.__dict__))
-    def RequestData(self):
-        url=self.api_url+'/stations-all'
+    def request_data(self):
+        url=self.url_api+'/stations-all'
         logo.info("requesitng url: {url}")
         response = requests.get(url)
         if response.status_code == 200:
@@ -25,12 +25,12 @@ class broadcast:
         else:
             loge.error("cannot get data from: {url}")
             return None
-    def ParseFields(self):
+    def parse_fields(self):
         stations={}
-        data=self.request_data["data"]
+        data=self.raw_data["data"]
         for k in data:
             attr=k["attributes"] 
-            stdat=station.station_data(
+            stdat=model.station_data(
                     id=k["id"],
                     code=attr["code"],
                     title=attr["title"],
@@ -40,5 +40,5 @@ class broadcast:
                     )
             stations[attr["code"]]=stdat
         return stations
-    def GetStationByCode(self,station_code: str):
+    def get_station_by_code(self,station_code: str):
         return self.fields[station_code]

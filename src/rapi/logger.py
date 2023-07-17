@@ -4,6 +4,7 @@ import logging
 
 # default_format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 default_format='%(asctime)s %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
+# default_format='%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
 
 ### FILE LOGGER
 log_file = logging.getLogger('log_file')
@@ -32,4 +33,5 @@ log_stderr.addHandler(error_handler)
 ### Log some messages
 # log_file.debug('Debug message')
 # log_stdout.info('Info message')
+# log_stdout.warning('warning message')
 # log_stderr.error('Error message')
