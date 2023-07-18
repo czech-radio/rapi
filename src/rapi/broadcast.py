@@ -13,9 +13,9 @@ class Broadcast:
         self.url_apidoc="https://rapidoc.croapp.cz"
         self.url_api="https://rapidev.croapp.cz"
         self.station_ids_file="data/stations_ids_table.csv"
-        logo.info("broadcast class initialized")
         self.raw_data=self.request_data()
         self.Entities=self.entities_parse_fields()
+        logo.info("broadcast class initialized")
     def params_debug(self):
         print(json.dumps(self.params.__dict__))
     def request_data(self):
@@ -43,7 +43,6 @@ class Broadcast:
                     )
             stations[attr["code"]]=stdat
         return stations
-
     def station_ids_parse(self):
         path = os.path.abspath(self.station_ids_file)
         logo.info("reading file {path}")
@@ -51,6 +50,5 @@ class Broadcast:
             reader = csv.reader(f)
             for row in reader:
                 print(row)
-
     def get_station_by_code(self,station_code: str):
         return self.Entities[station_code]

@@ -32,7 +32,8 @@ Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (S
 - Získej všecny moderátory pro zadaný pořad.
 - Získej premiéry a reprízy pro zadaný pořad.
 
-Zatím identifikuji tyto filtry:
+## Zatím identifikuji tyto filtry:
+
 - *stanice* např Plus, Radiožurnál
 - *období* (dny) např. od 1. 1. 2023 do 1. 2. 2023 
 - *rozsah* (čas) např. od 12:00 do 15:00 
@@ -42,44 +43,59 @@ Zatím identifikuji tyto filtry:
 ## Installation
 
 - Create a virtual environment (recommended).
-  Unix (Use desired version of Python e.g 3.11.)
-  ```shell
-  python -m venv .venv
+  
+	Unix (Use desired version of Python e.g 3.11.)
+  
+	```shell
+	python -m venv .venv
   ```
   Windows (Use the [`py.exe`](https://docs.python.org/3/using/windows.html) launcher.)
-  ```powershell
-  py -3.11 -m venv .venv
+  
+	```powershell
+	py -3.11 -m venv .venv
   ```
  
 - Activate the virtual environment.
-  Unix
-  ```shell
-  source .venv/bin/activate
+  
+	Unix
+  
+	```shell
+	source .venv/bin/activate
   ````
   Windows
-  ```powershell
-  .venv\Scripts\activate
+  
+	```powershell
+	.venv\Scripts\activate
   ```
  
 - Upgrade pip to latest version (recommended).
-    ```shell
-    pip install --upgrade pip
-    ````
+
+	```shell
+	pip install --upgrade pip
+	```
+
 - Install required packages for development (editable mode).
-    ```shell
-    pip install -e .[dev]
-    ```
+	
+	```shell
+	pip install -e .[dev]
+	```
 - Run a tests.
-    ```shell
-    pytest
-    ```
+    
+	```shell
+	pytest
+	```
+
 - Build documentation.
-    ```shell
-    todo
-    ```
+	
+	```shell
+	todo
+	```
+
+
 ## Test
 ### test orig api
--when using curl on api provided at: https://rapidev.croapp.cz use -g, --globoff flag e.g.:
+- when using curl on api provided at: https://rapidev.croapp.cz use -g, --globoff flag e.g.:
+
 	```shell
 	curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"
 	```
