@@ -1,0 +1,770 @@
+{
+  "meta": {
+    "count": 9927
+  },
+  "links": {
+    "self": "https://rapidev.croapp.cz/persons?page%5Blimit%5D=30",
+    "first": null,
+    "prev": null,
+    "next": "https://rapidev.croapp.cz/persons?page%5Blimit%5D=30&page%5Boffset%5D=30",
+    "last": "https://rapidev.croapp.cz/persons?page%5Blimit%5D=30&page%5Boffset%5D=9900"
+  },
+  "data": [
+    {
+      "type": "person",
+      "id": "8bed7519-4284-32e5-a693-15144f7edc6d",
+      "attributes": {
+        "title": "31. pluk radiační, chemické a biologické ochrany Liberec",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "6008915"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/8bed7519-4284-32e5-a693-15144f7edc6d/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "ca53795a-04b2-3d1d-b746-cbf7bef0b5b8",
+      "attributes": {
+        "title": "43. výsadkový prapor Chrudim",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "5358477"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/ca53795a-04b2-3d1d-b746-cbf7bef0b5b8/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "dad5f500-b8db-3aae-8598-6b3d7387d25e",
+      "attributes": {
+        "title": "a další",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8059107"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/dad5f500-b8db-3aae-8598-6b3d7387d25e/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "ce899b04-9948-3e92-96a3-2eb43d86fa72",
+      "attributes": {
+        "title": "A.Rokosová",
+        "short_description": "",
+        "description": "<p>redaktorka zpravodajství</p>\n\n<p>V Českém rozhlasu Region pracuji jako <strong>redaktorka zpravodajství</strong> pro Příbramsko a Prahu-východ. Narodila jsem se v Praze, ale protože jsem většinu svého dosavadního života prožila na jejím okraji, „Pražák“ jsem pro všechny kromě „Pražáků“. Takže ani ryba, ani rak. Navíc lehce komplikovaný blíženec.</p>\n\n<p>S <strong>novinařinou</strong> jsem začala ve fakultním časopise, z něhož nepřímo vedla cesta do středočeské redakce MF DNES, kde jsem začínala jako student-elév a skončila u politiky. Strávila jsem tu celkem pět let. Rozhlasové vysílání mě vždycky lákalo, a tak když přišla možnost nastoupit do Českého rozhlasu, moc jsem se nerozmýšlela.</p>\n\n<p><strong>Film, co mne pořád baví:</strong> Samotáři a filmy, ve kterých od roku 2006 hrál DiCaprio nebo ty, které režíroval Christopher Nolan, Ridley Scott, Clint Eastwood, Woody Allen nebo Robert Sedláček. I když jsem asi něco jako filmový fanoušek, ráda objevuji nové věci, takže se moc často na filmy víckrát nedívám. A hlavně, mnohem větší vášní je pro mě divadlo.</p>\n\n<p><strong>Hudba, kterou mám ráda:</strong> Ačkoli zpívám vážně moc ráda, dost pravděpodobně mám něco jako absolutní hudební „hluch“, a tak si na muzice cením hlavně textů. Nejradši poslouchám české interprety jako jsou Kryštof, Tomáš Klus, Jaromír Nohavica, Szidi Tobias nebo Radůza. Ale chytly mě i ZAZ, Adele nebo Norah Jones.</p>\n\n<p><strong>Kniha, u níž nikdy neusnu:</strong> U Malého prince a knih od Milana Kundery (Směšné lásky můžu číst pořád dokola). V poslední době mě nadchnul Stín větru od Carlose Ruiz Zafóna nebo Vyhnání Gerty Schnirch od Kateřiny Tučkové.</p>\n\n<p><strong>Motto:</strong> Životní moudra a motta mě baví, ale upřímně, neumím se jimi řídit. Možná i proto mám nejradši tento výrok (ačkoli bych dost nerada dopadla jako jeho autor): Je lepší být nenáviděn pro to, jaký jsi, než být milován pro to, co nejsi.</p>\n\n",
+        "asset": {
+          "id": "640c1b94-1dce-36d2-9dbb-573aaaae64fa",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02863697.jpeg",
+          "width": 1200,
+          "height": 800,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Alena Rokosová",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "5003103"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/ce899b04-9948-3e92-96a3-2eb43d86fa72/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "2cacc5d9-622d-3b2a-a469-d6443804e026",
+      "attributes": {
+        "title": "Abdul 52",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "5313084"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/2cacc5d9-622d-3b2a-a469-d6443804e026/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "4a27dbc0-fa1d-3a15-a7aa-27b437e9a266",
+      "attributes": {
+        "title": "Abel Posse",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8384264"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/4a27dbc0-fa1d-3a15-a7aa-27b437e9a266/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "bf2b8163-56dc-3425-be6e-3ed4baafd316",
+      "attributes": {
+        "title": "Abu Bakr ibn Tufajl",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "7573649"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/bf2b8163-56dc-3425-be6e-3ed4baafd316/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "aa0d5b80-0378-3bbd-9fd2-db289f815ac6",
+      "attributes": {
+        "title": "Achim von Arnim",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "7581860"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/aa0d5b80-0378-3bbd-9fd2-db289f815ac6/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "1f94668f-fb69-3dce-aea7-894be640f3bf",
+      "attributes": {
+        "title": "Ad Hoc",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8167962"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/1f94668f-fb69-3dce-aea7-894be640f3bf/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "e123a380-5e4f-300d-a613-4bd1597388b4",
+      "attributes": {
+        "title": "Adalbert Stifter",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "5021271"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/e123a380-5e4f-300d-a613-4bd1597388b4/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "11e7ac4e-bda7-3e9a-b88c-879b30252458",
+      "attributes": {
+        "title": "Adam  Vidner",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "6834824"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/11e7ac4e-bda7-3e9a-b88c-879b30252458/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "d21e07db-cf13-3593-a977-cfb9e4476d6d",
+      "attributes": {
+        "title": "Adam Bejšovec",
+        "short_description": "<p>Redaktor</p><p> </p>",
+        "description": "<p>Pracuji jako redaktor zpravodajství především z Prahy, hlavně se starám a zajímám o politiku a dopravu.</p>\n\n<p>Odmala jsem v hlavě nosil naději, že ze mě jednou bude novinář; a přes práci s dětmi, práci na recepci hotelu, příležitostné psaní o hokeji a třech letech práce technika a zvukaře ve zpravodajství České televize, jsem se nakonec dostal až do Českého rozhlasu, který mi tu možnost dal. Tady mám konečně pocit, že dělám práci, která dává smysl, a porozuměl jsem díky ní i spoustě věcí nejen v kontextu Prahy - města, kde jsem se před několika kily a šedivými vlasy narodil a žiju.</p>\n\n<p>Když zrovna nepracuji, tak rád spím, nebo piju kafe. Případně se věnuji svojí kapele, čtu knihy, tetuju a kreslím, probírám hokejové archivy a statistiky, anebo píšu články do časopisu o videohrách a k tomu hledám nějakou klasickou počítačovou hru v původním balení do svojí skromné sbírky.</p>\n\n",
+        "asset": {
+          "id": "bdb482ef-f998-3668-af10-320dbe912b42",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/6c0f06c3171f1e982ac56f421ab5fc33.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "CZP",
+            "license": "",
+            "description": "Adam Bejšovec",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "8589697"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/d21e07db-cf13-3593-a977-cfb9e4476d6d/participation"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "f8b5ee83-c786-3c67-8e37-4fdee1007147",
+              "meta": {
+                "role": "Redaktoři zpravodajství"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "da0f5b76-9a20-304d-bcad-5b5276798377",
+      "attributes": {
+        "title": "Adam Bejšovec",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "7170079"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/da0f5b76-9a20-304d-bcad-5b5276798377/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "59e3ae24-d3c4-387f-bc84-243f432ab24c",
+      "attributes": {
+        "title": "Ádám Bodor",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "5985140"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/59e3ae24-d3c4-387f-bc84-243f432ab24c/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "8e855cf7-4c2a-36ec-80b9-9d57789750a7",
+      "attributes": {
+        "title": "Adam Borzič",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "7799688"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/8e855cf7-4c2a-36ec-80b9-9d57789750a7/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "da25099c-5c9a-3862-be15-86b3b4e138cd",
+      "attributes": {
+        "title": "Adam Carda",
+        "short_description": "<p>Moderuje Noční Radiožurnál</p>",
+        "description": "<p><strong>Co dělám v rozhlase</strong>: Noční radiožurnál, takže jsem tu pro všechny „nespavce“. </p>\n\n<p><strong>Před rozhlasem</strong>: Působil jsem v médiích v podstatě celý pracovní život. Byl jsem redaktorem v týdeníku, pracoval jsem v marketingu i na pozici tiskového mluvčí. K tomu jsem také 11 let působil za mikrofonem v soukromém rádiu a tato činnost si mě získala asi nadobro :-)</p>\n\n<p><strong>Co mě baví</strong>: Setkávání s přáteli, rodina, hudba, film a také sport, akorát čím jsem starší, tím jsem línější.</p>\n\n<p><strong>Co mě nejvíce dostane</strong>: Chvíle, kdy nemusím nic dělat mohu jen odpočívat… ideálně s dobrým filmem.</p>\n\n",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8083465"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/da25099c-5c9a-3862-be15-86b3b4e138cd/participation"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "4082f63f-30e8-375d-a326-b32cf7d86e02",
+              "meta": {
+                "role": "Moderátoři"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "4a607526-95da-340c-9b26-3dee328f4e90",
+      "attributes": {
+        "title": "Adam Černý",
+        "short_description": "<p>Připravuje komentáře pro Názory a argumenty na Plusu a Jak to vidí... na Dvojce.</p>",
+        "description": "<p>Přispívá především do pořadu <a href=\"https://plus.rozhlas.cz/nazory-a-argumenty-6504158\">Názory a argumenty</a>. Je jedním z pravidlených hostů pořadu <a href=\"https://dvojka.rozhlas.cz/jak-vidi-5001081\">Jak to vidí...</a> Zabývá se evropskou politikou, zvláště s ohledem na Francii a Německo. </p>\n\n<p>Pracoval jako komentátor v různých denících i v České televizi, od roku 1999 je komentátorem Hospodářských novin.  </p>\n\n<p class=\"para-last\">Za rok 2005 získal prestižní novinářské ocenění – Cenu Ferdinanda Peroutky.</p>\n\n",
+        "asset": {
+          "id": "bc927c98-89b2-3eb0-a966-bf2fd4068803",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03781042_0.jpeg",
+          "width": 2100,
+          "height": 1402,
+          "focal_point": "48,38",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Předseda Syndikátu novinářů ČR Adam Černý",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "5003325"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/4a607526-95da-340c-9b26-3dee328f4e90/participation"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "c639d927-f37b-3db8-a64f-1d64ee1469b2",
+              "meta": {
+                "role": "Komentátoři"
+              }
+            },
+            {
+              "type": "station",
+              "id": "17821883-be2d-3880-b971-eceb794388fa",
+              "meta": {
+                "role": "Jaktovidiči"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "582372b8-db67-3157-8dbd-d2539881a8a8",
+      "attributes": {
+        "title": "Adam Doksanský",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "7631760"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/582372b8-db67-3157-8dbd-d2539881a8a8/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "603e09ff-f492-3c3b-96fd-5b37b3bfbeec",
+      "attributes": {
+        "title": "Adam Doucha",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8627377"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/603e09ff-f492-3c3b-96fd-5b37b3bfbeec/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "d3a0d142-d34b-3b05-8d78-54b7753331e8",
+      "attributes": {
+        "title": "Adam Drda",
+        "short_description": "",
+        "description": "<p>\nSpolu s Mikulášem Kroupou připravuji dokumentární cyklus <a href=\"http://hledani.rozhlas.cz/iradio/?defaultNavigation=+generic2%3A%5E%22%C4%8CRo+R%C3%A1dio+%C4%8Cesko%22%24&query=&from=&to=&porad=3108x_P%C5%99%C3%ADb%C4%9Bhy+20.+stolet%C3%AD\">Příběhy 20. století</a>, který vzniká převážně na základě vzpomínek pamětníků nacismu a komunismu.\n</p>\n\n<p>\nOd roku 1989 jsem pracoval v redakcích časopisů Střední Evropa a Babylon, též v Českém deníku a v Lidových novinách. V letech 1999-2005 jsem byl zaměstnán jako analytik domácí politiky a reportér v české redakci BBC. Dlouhodobě a pravidelně jsem přispíval do týdeníku Respekt, dosud píšu do LN, Hospodářských novin a do Revolver Revue. Od roku 2006 působím převážně v Českém rozhlase, jako scénárista jsem se podílel  na řadě dokumentárních filmů (cyklus České televize Neznámí hrdinové - Pohnuté osudy). Od roku 2007 úzce spolupracuji se společností Člověk v tísni.\n</p>\n\n",
+        "asset": {
+          "id": "30890790-84f8-38a0-b473-5088896c210e",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03336357.jpeg",
+          "width": 1200,
+          "height": 800,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Alžběta Švarcová",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Adam Drda",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "5004015"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/d3a0d142-d34b-3b05-8d78-54b7753331e8/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "9b50a366-8499-3e32-8937-ba58444b601e",
+      "attributes": {
+        "title": "Adam Fritscher",
+        "short_description": "",
+        "description": "<p>\nNarodil jsem se 25. prosince 1975 v Olomouci a jsem velký olomoucký patriot.\n</p>\n\n<p>\nSlyšet mě můžete ve sportovním zpravodajství.\n</p>\n\n<p>\nVystudoval jsem gymnázium a právnickou fakultu Univerzity Karlovy v Praze. V rozhlase působím od roku 1999.\n</p>\n\n<p>\nMezi mé koníčky patří literatura, vojenská historie, běh na dlouhých tratích a fotbal.\n</p>\n\n",
+        "asset": {
+          "id": "1d3a0e5c-3364-3443-97fa-c4fcd185d8ee",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02159776.jpeg",
+          "width": 300,
+          "height": 200,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "",
+            "license": "",
+            "description": "Fotografie není k dispozici",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "5006757"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/9b50a366-8499-3e32-8937-ba58444b601e/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "402e85dd-aaff-36e0-ab13-aaf0384c9c0d",
+      "attributes": {
+        "title": "Adam Gebert",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8955588"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/402e85dd-aaff-36e0-ab13-aaf0384c9c0d/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "869b5e9c-9868-3d26-b1fc-48693114924a",
+      "attributes": {
+        "title": "Adam Gebrian",
+        "short_description": "<p>Na Radiu Wave moderuji pořad <a href=\"https://wave.rozhlas.cz/bourani-5183538\" target=\"_blank\" rel=\"noopener noreferrer\">Bourání</a>.</p>",
+        "description": "<p><strong>Jsem ročník: </strong><br />\n1979 </p>\n\n<p><strong>Na Radiu Wave zastávám práci? </strong><br />\nPráce? Neznám. A už vůbec ne pro někoho jiného. </p>\n\n<p><strong>Předtím jsem stihnul?</strong> <br />\n5x trvale změnit zemi pobytu, vystudovat dvě vysoké školy, setkat se s řadou zajímavých lidí a částečně porozumět vlastním ambicím. Od té doby co říkám ano na všechno, se mi žije lépe. </p>\n\n<p><strong>Nejraději poslouchám? </strong><br />\nInteligentní a zábavné lidi. Většinou jsou to ti samí. </p>\n\n<p><strong>Mé nejoblíbenější filmy? </strong><br />\nVšechny, kromě těch špatných. </p>\n\n<p><strong>Jestli čtu, tak většinou? </strong><br />\nKrátce, ale často a rád. </p>\n\n<p><strong>Když mám volný čas, tak ho trávím? </strong><br />\nTo bych taky rád věděl. Budu se na to muset víc soustředit. </p>\n\n<p><strong>K jídlu a pití si nejraději dopřávám? </strong><br />\nJídlo a pití. Pití častěji. </p>\n\n<p><strong>Co bych chtěl sdělit světu? </strong><br />\nNostalgie už není co bývala. Co je zadarmo, to nemá žádnou hodnotu. A že můžete vědět buď něco o všem, nebo vše o ničem. Ale je dobré si vybrat. A pro architekty poučku z Los Angeles: \"Zemětřesení lidi nezabíjí, to dělají padající domy.\" </p>\n\n",
+        "asset": {
+          "id": "4115394d-df65-3dcc-b1ef-61a7a57c13f2",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03780118.jpeg",
+          "width": 1152,
+          "height": 768,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Barbora Linková",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Adam Gebrian",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "5000385"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/869b5e9c-9868-3d26-b1fc-48693114924a/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "de779f2e-685e-3cc9-8662-2b41c970ed4c",
+      "attributes": {
+        "title": "Adam Haslett",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "7642204"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/de779f2e-685e-3cc9-8662-2b41c970ed4c/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "68caf156-9ef5-3148-a64f-6a3ae226f1c8",
+      "attributes": {
+        "title": "Adam Hradilek",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8300325"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/68caf156-9ef5-3148-a64f-6a3ae226f1c8/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "90bbdd2a-6a53-3526-b37e-e034604e7f74",
+      "attributes": {
+        "title": "Adam Javůrek",
+        "short_description": "<p>Analytik webu</p>",
+        "description": "",
+        "asset": {
+          "id": "b00be907-1607-3986-b883-f1c786d10c7d",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03989978.jpeg",
+          "width": 803,
+          "height": 553,
+          "focal_point": "50,49",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "",
+            "license": "",
+            "description": "Analytik Českého rozhlasu Adam Javůrek",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {},
+        "profile_id": "5999160"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/90bbdd2a-6a53-3526-b37e-e034604e7f74/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "c03e27e9-28bb-385f-b5fb-1884b2f6fa03",
+      "attributes": {
+        "title": "Adam Kajumi",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8743822"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/c03e27e9-28bb-385f-b5fb-1884b2f6fa03/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "51a68c97-a63f-3014-9b20-9c4a60b8be75",
+      "attributes": {
+        "title": "Adam Kebrt",
+        "short_description": "<p>Krotitel dravých redaktorů na Rádiu Junior</p>",
+        "description": "<p><strong>Životní motto:</strong><br />\n Půjčené, ale pravdivé: „Všichni dospělí byli dětmi, ale málokdo si na to pamatuje“.</p>\n\n<p><strong>Co dělám v rozhlase:</strong><br />\n Společně s kolegy se staráme o nejmenší posluchače. Učíme je kouzlu rozhlasového vysílaní. A nejen to… další slova jsou zbytečná, raději si pusťte Rádio Junior Junior :-)</p>\n\n<p><strong>Před rozhlasem:</strong><br />\n „Před rozhlasem rozhlas.“ Na Vinohradské 12. jsem se poprvé ukázal v roce 2009. Začínal jsem externí redaktor Moto žurnálu. Získal jsem tam, hlavně díky kolegům z redakce, první rozhlasácké zkušenosti. Potom jsem si na dva roky odběhl do neziskového sektoru, kde jsem pracoval na dětských projektech, abych se zpět do Českého rozhlasu v roce 2013 s radostí vrátil. V internetové redakci jsme s kolegy nastartovali sociální sítě Dvojky. Připravoval jsem také pravidelné redaktorské vstupy do ranního a dopoledního vysílání Dvojky. Moderoval jsem brzkou Ranní Dvojku.</p>\n\n<p><strong>Co mě baví:</strong><br />\n Rozhlas, motorismus, sport, legrace, dobré jídlo a hlavně moje rodina a zlobivé děti :-)</p>\n\n",
+        "asset": {
+          "id": "337f6027-b90a-3eae-9af5-8cdf82755452",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/0aea689ec24af3a563f5b19a4fd76921.jpg",
+          "width": 1746,
+          "height": 1746,
+          "focal_point": "50,32",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Adam Kebrt",
+            "origin_url": ""
+          }
+        },
+        "assetHost": {
+          "id": "ff5eecc7-0be3-3e77-bf4a-7f20c3719255",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/7731380847d5fa9d554b7d28dcc87158.png",
+          "width": 400,
+          "height": 400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas Dvojka",
+            "license": "",
+            "description": "Adam Kebrt",
+            "origin_url": ""
+          }
+        },
+        "profile_id": "5000073"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/51a68c97-a63f-3014-9b20-9c4a60b8be75/participation"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "598a62af-86b5-3485-b89d-65379562694a",
+              "meta": {
+                "role": "Šéfredaktor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "83a09232-8430-3500-976f-b7a65e0e83a9",
+      "attributes": {
+        "title": "Adam Michna z Otradovic",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8456274"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/83a09232-8430-3500-976f-b7a65e0e83a9/participation"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "person",
+      "id": "a3917625-7d9e-302a-8413-9a282ad6974c",
+      "attributes": {
+        "title": "Adam Mickiewicz",
+        "short_description": "",
+        "description": "",
+        "asset": {},
+        "assetHost": {},
+        "profile_id": "8197452"
+      },
+      "relationships": {
+        "participation": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/persons/a3917625-7d9e-302a-8413-9a282ad6974c/participation"
+          },
+          "data": []
+        }
+      }
+    }
+  ]
+}

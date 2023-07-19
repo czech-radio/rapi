@@ -1,0 +1,121 @@
+{
+  "links": {
+    "self": "https://rapidev.croapp.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02"
+  },
+  "data": {
+    "type": "station",
+    "id": "4082f63f-30e8-375d-a326-b32cf7d86e02",
+    "attributes": {
+      "title": "Český rozhlas Radiožurnál",
+      "shortTitle": "Radiožurnál",
+      "subtitle": "",
+      "color": "#ED2E38",
+      "code": "radiozurnal",
+      "priority": 1,
+      "stationType": "allover",
+      "audioLinks": [
+        {
+          "variant": "aac",
+          "bitrate": 160,
+          "quality": "normal",
+          "linkType": "directstream",
+          "url": "https://rozhlas.stream/radiozurnal_high.aac"
+        },
+        {
+          "variant": "aac",
+          "bitrate": 64,
+          "quality": "low",
+          "linkType": "livestream",
+          "url": "https://rozhlas.stream/radiozurnal_aac_64.aac.m3u"
+        },
+        {
+          "variant": "aac",
+          "bitrate": 64,
+          "quality": "low",
+          "linkType": "directstream",
+          "url": "https://rozhlas.stream/radiozurnal_low.aac"
+        },
+        {
+          "variant": "mp3",
+          "bitrate": 128,
+          "quality": "normal",
+          "linkType": "livestream",
+          "url": "https://rozhlas.stream/radiozurnal_mp3_128.mp3.m3u"
+        },
+        {
+          "variant": "mp3",
+          "bitrate": 128,
+          "quality": "normal",
+          "linkType": "directstream",
+          "url": "https://rozhlas.stream/radiozurnal.mp3"
+        },
+        {
+          "variant": "aac",
+          "bitrate": 128,
+          "quality": "normal",
+          "linkType": "livestream",
+          "url": "https://rozhlas.stream/radiozurnal_aac_128.aac.m3u"
+        },
+        {
+          "variant": "aac",
+          "bitrate": 32,
+          "quality": "low",
+          "linkType": "livestream",
+          "url": "https://rozhlas.stream/radiozurnal_aac_32.aac.m3u"
+        },
+        {
+          "variant": "mp3",
+          "bitrate": 64,
+          "quality": "low",
+          "linkType": "livestream",
+          "url": "https://rozhlas.stream/radiozurnal_mp3_64.mp3.m3u"
+        },
+        {
+          "variant": "mp3",
+          "bitrate": 32,
+          "quality": "low",
+          "linkType": "livestream",
+          "url": "https://rozhlas.stream/radiozurnal_mp3_32.mp3.m3u"
+        },
+        {
+          "variant": "dash",
+          "bitrate": 64,
+          "quality": "low",
+          "linkType": "timeshift",
+          "url": "https://wowza.radia.cz/CRo/Zurnal.stream/manifest.mpd?DVR"
+        },
+        {
+          "variant": "hls",
+          "bitrate": 64,
+          "quality": "low",
+          "linkType": "timeshift",
+          "url": "https://wowza.radia.cz/CRo/Zurnal.stream/playlist.m3u8?DVR"
+        }
+      ],
+      "asset": {
+        "id": "3e911e16-fcd0-4320-910e-75f58bcc47c3",
+        "url": "https://data.rozhlas.cz/api/v2/asset/station/radiozurnal.jpg",
+        "width": 2048,
+        "height": 1365,
+        "focal_point": "50,50",
+        "credit": {
+          "author": "",
+          "source": "",
+          "license": "",
+          "description": "Logo - Radiožurnál",
+          "origin_url": ""
+        }
+      },
+      "logo": "https://mujrozhlas:nasr0zhlas@stage.mujrozhlas.cz/sites/default/files/station/logo/radiozurnal.svg",
+      "logoIcon": "https://portal.rozhlas.cz/sites/default/files/images/logoikona/podcast-radiozurnal.jpg",
+      "contact": {
+        "web": "https://radiozurnal.rozhlas.cz"
+      }
+    },
+    "meta": {
+      "ga": {
+        "siteBroadcastStation": "radiozurnal"
+      }
+    }
+  }
+}

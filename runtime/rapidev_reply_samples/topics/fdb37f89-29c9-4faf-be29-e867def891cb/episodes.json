@@ -1,0 +1,2539 @@
+{
+  "meta": {
+    "count": 100
+  },
+  "links": {
+    "self": "https://rapidev.croapp.cz/topics/fdb37f89-29c9-4faf-be29-e867def891cb/episodes?page%5Blimit%5D=30",
+    "first": null,
+    "prev": null,
+    "next": "https://rapidev.croapp.cz/topics/fdb37f89-29c9-4faf-be29-e867def891cb/episodes?page%5Blimit%5D=30&page%5Boffset%5D=30",
+    "last": "https://rapidev.croapp.cz/topics/fdb37f89-29c9-4faf-be29-e867def891cb/episodes?page%5Blimit%5D=30&page%5Boffset%5D=90"
+  },
+  "data": [
+    {
+      "type": "episode",
+      "id": "57600f26-66b7-37b2-8563-f0b486364fde",
+      "attributes": {
+        "title": "Jako když se otevře okno... Příběh pedagožky Hany Jüptnerové z Vrchlabí",
+        "shortTitle": "Jako když se otevře okno... Příběh pedagožky Hany Jüptnerové z Vrchlabí",
+        "description": "<p>Brzy uplyne pětatřicet let od pohřbu disidenta Pavla Wonky. Konal se ve Vrchlabí 6. května 1988 a stal se velkou pokojnou manifestací proti komunistickému režimu.<br>\nAdam Drda, Michaela Čaňková</p>",
+        "since": "2023-03-26T21:05:00+02:00",
+        "till": "2023-03-26T21:53:51+02:00",
+        "updated": "2023-03-26T21:20:15+02:00",
+        "part": null,
+        "asset": {
+          "id": "bc5dd731-374a-3083-99d9-542b639224a4",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/cbf125c412cc1cf9ec9694e9b5a892e8.jpg",
+          "width": 2400,
+          "height": 1744,
+          "focal_point": "45,30",
+          "credit": {
+            "author": "",
+            "source": "Post Bellum",
+            "license": "",
+            "description": "Hana Jüptnerová se syny Janem a Petrem, Vrchlabí 1981",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Příběhy 20. století"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 2931,
+            "bitrate": 128,
+            "url": "https://portal.rozhlas.cz/sites/default/files/audios/8d65048172a91ecd6364ada110b8df84.mp3"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "plus",
+          "contentId": "10655277",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225"
+          },
+          "data": {
+            "type": "show",
+            "id": "d200d0b5-78d5-3cca-9052-834f13135225"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/57600f26-66b7-37b2-8563-f0b486364fde/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/57600f26-66b7-37b2-8563-f0b486364fde/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "af6276ff-ba17-37fe-b4f2-4037a670f3fb",
+      "attributes": {
+        "title": "1053. schůzka: Laurin & Klement jest nejlepší značkou světa",
+        "shortTitle": "1053. schůzka: Laurin & Klement jest nejlepší značkou světa",
+        "description": "<p>V dnešní schůzce s českou historií zavítáme na konec 19. století, v kterémžto čase žili a pracovali dva nadmíru pozoruhodní mužové. Nepsali básně, aniž skládali hudbu, nic z toho, jejich původ i rodiny byly české, ale stejně jako mateřštinou se uměli domluvit i německy, i když… raději se bavili po česku.&nbsp;</p>",
+        "since": "2023-03-24T20:00:00+01:00",
+        "till": "2023-03-24T20:25:30+01:00",
+        "updated": "2023-03-24T20:00:15+01:00",
+        "part": null,
+        "series_episode_number": 1053,
+        "asset": {
+          "id": "139cc133-5168-3455-8cfb-a89ce3147a11",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/2409d20fc64be4ca2c30a73501fb7c51.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "",
+            "description": "Laurin a Klement",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/00e1dc0f-1e72-4ce7-b262-4f6f82f58122.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/00e1dc0f-1e72-4ce7-b262-4f6f82f58122.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10614549",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/af6276ff-ba17-37fe-b4f2-4037a670f3fb/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/af6276ff-ba17-37fe-b4f2-4037a670f3fb/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "048bf493-9c8c-32ce-a78c-0643d83bf473",
+      "attributes": {
+        "title": "Dita Skálová a její pořady na pomezí reality a fikce",
+        "shortTitle": "Dita Skálová a její pořady na pomezí reality a fikce",
+        "description": "<p>Dita Skálová je další z&nbsp;velké skupiny redaktorů a tvůrčích pracovníků, kteří byli vyhozeni z&nbsp;rozhlasu pro roce 1968. Tehdy musely odejít stovky lidí na vrcholu kariéry. Dita Skálová, kterou jako Židovku nacisté poslali na léta do koncentračních táborů, měla před sebou další temné období. Nesměla do rozhlasu, aby mohla tvořit a psát, musela se skrývat pod jmény jiných lidí.<br>\nBronislava Janečková</p>",
+        "since": "2023-03-24T11:00:00+01:00",
+        "till": "2023-03-24T11:23:22+01:00",
+        "updated": "2023-03-24T11:20:17+01:00",
+        "part": null,
+        "asset": {
+          "id": "bb9cff4e-53c8-35d9-a645-7745b801c737",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02525802.jpeg",
+          "width": 1402,
+          "height": 906,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Archivní a programové fondy Českého rozhlasu",
+            "source": "",
+            "license": "",
+            "description": "Sedmilháři-Zd.Jirotka (stojící)",
+            "origin_url": ""
+          }
+        },
+        "artworkTitle": "",
+        "mirroredShow": {
+          "title": "Archiv Plus"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 1402,
+            "bitrate": 128,
+            "url": "https://portal.rozhlas.cz/sites/default/files/audios/c12699c9d274dfa370d24dd082e82aa3.mp3"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "plus",
+          "contentId": "10650564",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3"
+          },
+          "data": {
+            "type": "show",
+            "id": "69ba5aa0-c837-3db0-ba91-f1b2051d0bb3"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/048bf493-9c8c-32ce-a78c-0643d83bf473/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/048bf493-9c8c-32ce-a78c-0643d83bf473/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "bbe82eb7-dd5c-3044-ac54-a2658f8427fb",
+      "attributes": {
+        "title": "1052. schůzka: Víc vědět a umět",
+        "shortTitle": "1052. schůzka: Víc vědět a umět",
+        "description": "<p>Po celé 19. století bylo vzdělání dívek vůči chlapeckému na nižší úrovni. Oproti osmiletým gymnáziím, sedmiletým reálkám, technicky zaměřeným průmyslovkám se děvčatům nabízely v podstatě ústavy, nepřekračující úroveň měšťanek. Původně propastná nerovnováha se sice zmenšovala, přetrvala však až do rozpadu Rakouska–Uherska.</p>",
+        "since": "2023-03-23T20:00:00+01:00",
+        "till": "2023-03-23T20:25:30+01:00",
+        "updated": "2023-03-23T20:00:16+01:00",
+        "part": null,
+        "series_episode_number": 1052,
+        "asset": {
+          "id": "741ef893-1ff9-39e6-bffd-e44521a899a9",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/cb6c63f737f12221bd54051bb240d893.jpg",
+          "width": 1000,
+          "height": 579,
+          "focal_point": "51,46",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Základní škola",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/d62ef984-82cf-4311-9fb6-cda9f9f0ead4.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/d62ef984-82cf-4311-9fb6-cda9f9f0ead4.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10614546",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/bbe82eb7-dd5c-3044-ac54-a2658f8427fb/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/bbe82eb7-dd5c-3044-ac54-a2658f8427fb/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "1da84882-2665-348a-b072-6617a789f4c7",
+      "attributes": {
+        "title": "1051. schůzka: Průlom do zakázaného území",
+        "shortTitle": "1051. schůzka: Průlom do zakázaného území",
+        "description": "<p>Tyto Toulky budou pojednávat o tom, co až do druhé poloviny 19. století nestálo za nic. A skoro nikoho, ani úřady, to nepálilo. Muže, no tak ty už vůbec ne. Ledy absolutismu se pohnuly až po únorové ústavě v roce 1861 a po ústavě prosincové v roce 1867. Zprvu nesměle, ale tak stále šířeji a do hloubky docházelo k „Průlomu do zakázaného území.“ To „zakázané území“, na nějž nebylo radno dosud vkročit, bylo vzdělávání dívek a žen.</p>",
+        "since": "2023-03-22T20:00:00+01:00",
+        "till": "2023-03-22T20:25:30+01:00",
+        "updated": "2023-03-22T20:00:27+01:00",
+        "part": null,
+        "series_episode_number": 1051,
+        "asset": {
+          "id": "ef49282d-3faa-3443-84db-26f750b4e529",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/8e31a2b2ce05444854254c16b66c264d.jpg",
+          "width": 4000,
+          "height": 3000,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Anděla Blažková",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Ve škole před 100 lety",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/687ff939-b9fb-463e-8e73-bb5cc71aa754.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/687ff939-b9fb-463e-8e73-bb5cc71aa754.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10614543",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/1da84882-2665-348a-b072-6617a789f4c7/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/1da84882-2665-348a-b072-6617a789f4c7/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "2c14bbe8-7dae-3723-be93-a4625786a468",
+      "attributes": {
+        "title": "1050. schůzka: Povídka O šedivé paní",
+        "shortTitle": "1050. schůzka: Povídka O šedivé paní",
+        "description": "<p>Na této schůzce si povšimneme ženy, která se v průvodu významných osobností národa českého v jeho čele příliš nevyskytovala.</p>",
+        "since": "2023-03-21T20:00:00+01:00",
+        "till": "2023-03-21T20:25:30+01:00",
+        "updated": "2023-03-21T20:00:17+01:00",
+        "part": null,
+        "series_episode_number": 1050,
+        "asset": {
+          "id": "2fdce5dd-3b95-3f38-8dae-500109e847d3",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/da5f1256f571ca00f4fc97f51772613c.jpg",
+          "width": 1191,
+          "height": 1431,
+          "focal_point": "53,46",
+          "credit": {
+            "author": "R. Boček",
+            "source": "eSbírky – kulturní dědictví on-line,Národní muzeum - Historické muzeum",
+            "license": "CC BY 4.0",
+            "description": "Marie Aloisie Riegrová-Palacká na portrétu od Josefa Mánese",
+            "origin_url": "https://www.esbirky.cz/predmet/5237214"
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/edef9321-105d-4773-b393-cedcc6a8c094.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/edef9321-105d-4773-b393-cedcc6a8c094.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611042",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/2c14bbe8-7dae-3723-be93-a4625786a468/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/2c14bbe8-7dae-3723-be93-a4625786a468/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "94b551f2-a2d3-3c7b-b6f4-6650cfe3713e",
+      "attributes": {
+        "title": "1049. schůzka: Takový nešťastný příběh první české učitelky",
+        "shortTitle": "1049. schůzka: Takový nešťastný příběh první české učitelky",
+        "description": "<p>Úsměvnými slovy, totiž aby „z žen člověkové byli“, zdůvodnil záměr nabídnout ženám vzdělávací kursy vizionář Karel Slavoj Amerling, pedagog a lékař, když kdysi rozjížděl svůj chimérický projekt takzvané Budče – velkorysého vševědného učiliště v Praze. S týmž velikášstvím, s jakým tento „malý Komenský“ plán rozjel, přivedl ovšem rádoby slavnou a učenou Budeč do dluhů a k brzkému krachu.</p>",
+        "since": "2023-03-20T20:00:00+01:00",
+        "till": "2023-03-20T20:25:30+01:00",
+        "updated": "2023-03-20T20:00:20+01:00",
+        "part": null,
+        "series_episode_number": 1049,
+        "asset": {
+          "id": "a3d71c01-bf08-30b2-9018-afe11d7bcb28",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/3eaf761e0832c38c3176f47114da4958.jpg",
+          "width": 1870,
+          "height": 1204,
+          "focal_point": "42,29",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "",
+            "description": "Pomník Boženy Němcové na Slovanském ostrově v Praze",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/e37296ec-bb62-4ff6-9a99-0871541c3c1a.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/e37296ec-bb62-4ff6-9a99-0871541c3c1a.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611039",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/94b551f2-a2d3-3c7b-b6f4-6650cfe3713e/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/94b551f2-a2d3-3c7b-b6f4-6650cfe3713e/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "101f08d6-dbbc-33d3-985a-fc5d6575df57",
+      "attributes": {
+        "title": "Za pravdivé svědectví o komunistické šikaně šel tatínek a jeho dcera do kriminálu",
+        "shortTitle": "Za pravdivé svědectví o komunistické šikaně šel tatínek a jeho dcera do kriminálu",
+        "description": "<p>Jarmila Kovářová prožila za komunismu pět let ve slovenských věznicích Leopoldově a Želiezovcích. Čím se provinila? Její tatínek nechtěl po roce 1948 odevzdat rodinný statek do JZD a sepsal o komunistické šikaně písemné svědectví.<br>\nMikuláš Kroupa</p>",
+        "since": "2023-03-19T20:05:00+01:00",
+        "till": "2023-03-19T20:52:35+01:00",
+        "updated": "2023-03-20T15:00:17+01:00",
+        "part": null,
+        "asset": {
+          "id": "f1081c9d-ea5e-3267-a52b-a810896344ed",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/50f3538a9fcc985f62d0738d0d99cabf.jpg",
+          "width": 2115,
+          "height": 2400,
+          "focal_point": "56,39",
+          "credit": {
+            "author": "",
+            "source": "Post Bellum",
+            "license": "",
+            "description": "Jarmila Kovářová",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Příběhy 20. století"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 2855,
+            "bitrate": 128,
+            "url": "https://portal.rozhlas.cz/sites/default/files/audios/bea45c983ea11bd2e6b82c9527653919.mp3"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "plus",
+          "contentId": "10637763",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225"
+          },
+          "data": {
+            "type": "show",
+            "id": "d200d0b5-78d5-3cca-9052-834f13135225"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/101f08d6-dbbc-33d3-985a-fc5d6575df57/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/101f08d6-dbbc-33d3-985a-fc5d6575df57/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "71a37884-c909-38d4-be20-eb8d67078198",
+      "attributes": {
+        "title": "1048. schůzka: Bezohledně charakterní kumštýř",
+        "shortTitle": "1048. schůzka: Bezohledně charakterní kumštýř",
+        "description": "<p>Již před nějakým tím stoletím utrousil jistý anglický politik Oliver Cromwell myšlenku, jež nám slouží v našem putování jako spolehlivá směrovka: „Jít daleko je možné jen tehdy, když víme, kam vede cesta.“</p>",
+        "since": "2023-03-17T20:00:00+01:00",
+        "till": "2023-03-17T20:25:30+01:00",
+        "updated": "2023-03-17T20:00:15+01:00",
+        "part": null,
+        "series_episode_number": 1048,
+        "asset": {
+          "id": "f66f1437-9257-36c1-bb83-55bcf193ddf7",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/0e5cd73f40f235be36d92d20987cd90e.jpg",
+          "width": 1500,
+          "height": 1000,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Tereza Brázdová",
+            "source": "",
+            "license": "",
+            "description": "Volákův kopec na obrazu Antonína Slavíčka U nás v Kameničkách z roku 1904",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/d9928405-ac57-49dd-bcd4-ca2224911882.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/d9928405-ac57-49dd-bcd4-ca2224911882.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611036",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/71a37884-c909-38d4-be20-eb8d67078198/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/71a37884-c909-38d4-be20-eb8d67078198/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "3db2ac7d-cff6-3adf-9359-5eb49c76bcc3",
+      "attributes": {
+        "title": "Rudolf Battěk – veselý moralista, který tu chybí",
+        "shortTitle": "Rudolf Battěk – veselý moralista, který tu chybí",
+        "description": "<p>Komunisté se s&nbsp;Rudolfem Battěkem nemazlili. Jako autenticky levicový odpůrce režimu, který ale nikdy nepodlehl vábení ideologie KSČ, měl na problémy zaděláno. Nejenom, že se střetům s&nbsp;mocí nevyhýbal, ale navíc jimi prošel se statečností, která dodnes budí respekt.<br>\nJan Sedmidubský</p>",
+        "since": "2023-03-17T11:00:00+01:00",
+        "till": "2023-03-17T11:24:00+01:00",
+        "updated": "2023-03-17T11:20:13+01:00",
+        "part": null,
+        "asset": {
+          "id": "05039d9c-5c29-3a7a-9854-793df332cce0",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/3d22fb2ae4b9e128523af46c79ab16b6.jpg",
+          "width": 2676,
+          "height": 2032,
+          "focal_point": "58,34",
+          "credit": {
+            "author": "",
+            "source": "Fotobanka Profimedia",
+            "license": "",
+            "description": "Rudolf Battěk ve Federálním shromáždění 17. února 1992",
+            "origin_url": ""
+          }
+        },
+        "artworkTitle": "",
+        "mirroredShow": {
+          "title": "Archiv Plus"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 1440,
+            "bitrate": 128,
+            "url": "https://portal.rozhlas.cz/sites/default/files/audios/205418c1dfe48c0da90dafe8ee9dee4a.mp3"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "plus",
+          "contentId": "10642956",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3"
+          },
+          "data": {
+            "type": "show",
+            "id": "69ba5aa0-c837-3db0-ba91-f1b2051d0bb3"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/3db2ac7d-cff6-3adf-9359-5eb49c76bcc3/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/3db2ac7d-cff6-3adf-9359-5eb49c76bcc3/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "00558632-a854-3d52-bc60-4f6ad99e0dca",
+      "attributes": {
+        "title": "A v každém čistém srdci je nekonečná láska k němu…",
+        "shortTitle": "A v každém čistém srdci je nekonečná láska k němu…",
+        "description": "<p><span><span><span><span>Smuteční průvod zakončil oficiální část své cesty na Václavském náměstí, kde před mohutným davem přednesli projevy zástupci KSČ a KSSS. Atmosféru shromáždění přenášel z&nbsp;místa reportér Bohuš Ujček. Ten za zvuků Čajkovského „Patetické“ přednesl připravený text, který se následující den v&nbsp;drobně pozměněné úpravě objevil i v&nbsp;Rudém právu (Václavské náměstí, 19. 3. 1953, po 17. hodině).</span></span></span></span></p>\r\n",
+        "since": "2023-03-17T06:00:00+01:00",
+        "till": "2023-03-17T06:04:08+01:00",
+        "updated": "2023-03-17T14:21:28+01:00",
+        "part": 5,
+        "asset": {
+          "id": "1d8e2490-42a5-38ec-97d5-6f459f6ee2ea",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/b532ee8852f9ab2b1295107d0881c140.png",
+          "width": 2668,
+          "height": 1498,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Prvomájové oslavy 1949",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Rozhlasové sbohem Klementu Gottwaldovi",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 248,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/11ce5137-3aaf-4690-a853-6b4ce27fd038.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 248,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/11ce5137-3aaf-4690-a853-6b4ce27fd038.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 248,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/11ce5137-3aaf-4690-a853-6b4ce27fd038.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "029a947c-cb18-4eec-a074-83a439286962",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          },
+          "data": {
+            "type": "serial",
+            "id": "00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/00558632-a854-3d52-bc60-4f6ad99e0dca/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/00558632-a854-3d52-bc60-4f6ad99e0dca/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "6952fc1e-739c-340f-b836-e35eb747bd7a",
+      "attributes": {
+        "title": "Epilog",
+        "shortTitle": "Epilog",
+        "description": "<p><span><span><span><span>Jedinými pasážemi z rozhlasového přenosu Gottwaldova pohřbu, kde v&nbsp;podkresu nezněla vážná hudba, byly projevy politiků. Na tento „žánr“ byli tehdejší posluchači zvyklí, desítky minut trvající proslovy komunistických pohlavárů plnily rozhlasové vysílání zkraje padesátých let často. Jedním takovým přenos z&nbsp;rozloučení s&nbsp;Gottwaldem také končil – postaral se o něj předseda vlády Antonín Zápotocký (Václavské náměstí, 19. 3. 1953, po 17. hodině, ukázka redakčně krácena).</span></span></span></span></p>\r\n",
+        "since": "2023-03-17T06:00:00+01:00",
+        "till": "2023-03-17T06:07:15+01:00",
+        "updated": "2023-03-17T14:21:28+01:00",
+        "part": 6,
+        "asset": {
+          "id": "e070eac8-03fa-36ec-aadf-477f008efc7d",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/477f86614527dcbf30e55c764ed5b9b9.png",
+          "width": 2655,
+          "height": 1491,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Prvomájové oslavy 1949",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Rozhlasové sbohem Klementu Gottwaldovi",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 435,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/aeabcd5b-85b1-4f32-87f5-107f53ddf429.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 435,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/aeabcd5b-85b1-4f32-87f5-107f53ddf429.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 435,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/aeabcd5b-85b1-4f32-87f5-107f53ddf429.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "5a16ebff-d2c5-4e0c-bca1-6e5fb26a4835",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          },
+          "data": {
+            "type": "serial",
+            "id": "00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/6952fc1e-739c-340f-b836-e35eb747bd7a/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/6952fc1e-739c-340f-b836-e35eb747bd7a/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "5cc811f9-c155-374b-ac15-7f3f595f36fb",
+      "attributes": {
+        "title": "K noze zbraň!",
+        "shortTitle": "K noze zbraň!",
+        "description": "<p><span><span><span>Gottwaldův pohřeb byl inscenován v&nbsp;armádním duchu. Ve zvuku tento rozměr vyjadřovali pochodující vojáci. A nebylo to poprvé. Využití kulisy na zem dopadajících podrážek pro rozhlasový přenos známe už např. z&nbsp;19. března (sic!) 1939 – vojenské přehlídky Wehrmachtu na Václavském náměstí (Letenská pláň, 19. 3. 1953, po 14. hodině).</span></span></span></p>\r\n",
+        "since": "2023-03-17T06:00:00+01:00",
+        "till": "2023-03-17T06:04:42+01:00",
+        "updated": "2023-03-17T14:21:28+01:00",
+        "part": 3,
+        "asset": {
+          "id": "fd5ed331-9ef0-3561-9c87-fd906446e833",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/19302825170a02bea0a0332df7370511.png",
+          "width": 1908,
+          "height": 1071,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Tryzna za Klementa Gottwalda, březen 1953",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Rozhlasové sbohem Klementu Gottwaldovi",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 282,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/53c7c000-5d33-49f5-a785-4840d1215353.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 282,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/53c7c000-5d33-49f5-a785-4840d1215353.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 282,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/53c7c000-5d33-49f5-a785-4840d1215353.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "24ae23c1-172f-4db1-8160-6061462fd238",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          },
+          "data": {
+            "type": "serial",
+            "id": "00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/5cc811f9-c155-374b-ac15-7f3f595f36fb/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/5cc811f9-c155-374b-ac15-7f3f595f36fb/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "10ba132e-c829-3d5c-b89a-ea7d674b64b7",
+      "attributes": {
+        "title": "Entrée",
+        "shortTitle": "Entrée",
+        "description": "<p>Přenos posledního rozloučení s Klementem Gottwaldem začal na Pražském hradě a přenášely ho všechny rozhlasové stanice. Po krátkém úvodu hlasatele, herce Antonína Zíba, se rozezněly státní hymny (Španělský sál Pražského hradu, 19. 3. 1953, 13. hodina).</p>\r\n",
+        "since": "2023-03-17T06:00:00+01:00",
+        "till": "2023-03-17T06:04:23+01:00",
+        "updated": "2023-03-17T14:21:27+01:00",
+        "part": 1,
+        "asset": {
+          "id": "c13f098c-93a5-3874-a950-aaa00fedfbba",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/e6a9422c36f7473d62d86639e0fee79f.png",
+          "width": 628,
+          "height": 353,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Část scénáře poledních zpráv Československého rozhlasu z 19. března 1953",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Rozhlasové sbohem Klementu Gottwaldovi",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 263,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/5823ea4b-98ad-4d08-af23-f624225ec7a2.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 263,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/5823ea4b-98ad-4d08-af23-f624225ec7a2.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 263,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/5823ea4b-98ad-4d08-af23-f624225ec7a2.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "a60563a3-96d5-491a-96b0-2851ba0da8c5",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          },
+          "data": {
+            "type": "serial",
+            "id": "00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/10ba132e-c829-3d5c-b89a-ea7d674b64b7/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/10ba132e-c829-3d5c-b89a-ea7d674b64b7/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "83021dcb-78a7-3114-ac26-1a0021c50455",
+      "attributes": {
+        "title": "Nezemřel, protože strana žije!",
+        "shortTitle": "Nezemřel, protože strana žije!",
+        "description": "<p><span><span><span>Gottwaldův pohřeb byl v&nbsp;dobových médiích zobrazován jako posvátný moment, kdy se lid loučí se svým nejdražším soudruhem – spasitelem, pokořitelem dějin, přemožitelem stávajícího řádu. Základní poselství smuteční události nicméně spočívalo v&nbsp;tezi, že jeho odkaz žije dál skrze Komunistickou stranu Československa. V&nbsp;rozhlasovém provedení lze tento rys sledovat ve vstupu Antonína Zíba ve chvíli, kdy průvod prochází kolem budovy Ústředního výboru KSČ. V&nbsp;podkresu zní předehra symfonické básně Petra Iljiče Čajkovského Romeo a Julie (19. 3. 1953, kolem 16. hodiny).</span></span></span></p>\r\n",
+        "since": "2023-03-17T06:00:00+01:00",
+        "till": "2023-03-17T06:02:07+01:00",
+        "updated": "2023-03-17T14:21:28+01:00",
+        "part": 4,
+        "asset": {
+          "id": "e8bac13d-e281-3975-84f5-da62e1c9b304",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/ebc102e040e230cb702e7fe4b706ebc4.png",
+          "width": 1928,
+          "height": 1083,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Smuteční procesí v Balbínově ulici, březen 1953",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Rozhlasové sbohem Klementu Gottwaldovi",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 127,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/4d397a44-1b35-476d-8ada-e953cf7a3fb7.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 127,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/4d397a44-1b35-476d-8ada-e953cf7a3fb7.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 127,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/4d397a44-1b35-476d-8ada-e953cf7a3fb7.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "1563e978-1751-438d-bdbb-82768411ee5c",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          },
+          "data": {
+            "type": "serial",
+            "id": "00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/83021dcb-78a7-3114-ac26-1a0021c50455/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/83021dcb-78a7-3114-ac26-1a0021c50455/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "662f7de1-6943-3a0c-920f-e9ce01e64f9d",
+      "attributes": {
+        "title": "Pochodem v chod!",
+        "shortTitle": "Pochodem v chod!",
+        "description": "<p><span><span><span>S Klementem Gottwaldem se členové jeho rodiny a tehdejší političtí činitelé loučili za zvuků Pochodu padlých revolucionářů. Dokola se opakující hudební kulisa, kterou jen poskrovnu doplňoval komentářem o dění v&nbsp;sále Antonín Zíb, posiluje bizarní vyznění přenosu. Hlasatelé se totiž museli držet přesně stanoveného scénáře vstupů, kterých bylo v&nbsp;kontextu trvání přenosu žalostně málo (Španělský sál Pražského hradu, 19. 3. 1953, po 13. hodině).</span></span></span></p>\r\n",
+        "since": "2023-03-17T06:00:00+01:00",
+        "till": "2023-03-17T06:07:43+01:00",
+        "updated": "2023-03-17T14:21:27+01:00",
+        "part": 2,
+        "asset": {
+          "id": "051e4a90-13af-3335-bacf-121bf1585eb6",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/ea7eafc6cae47f8be5568d416c6f0f41.png",
+          "width": 3402,
+          "height": 1910,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Část plánu vysílání Československého rozhlasu z 19. března 1953",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Rozhlasové sbohem Klementu Gottwaldovi",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 463,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/822c385c-e0b7-403b-9145-6744bffa95c9.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 463,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/822c385c-e0b7-403b-9145-6744bffa95c9.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 463,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/822c385c-e0b7-403b-9145-6744bffa95c9.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "4eaa941d-b50c-4be2-8d36-e1bf8464c501",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          },
+          "data": {
+            "type": "serial",
+            "id": "00ac7a59-a90e-3a32-a5e8-39210e2b6cfc"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/662f7de1-6943-3a0c-920f-e9ce01e64f9d/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/662f7de1-6943-3a0c-920f-e9ce01e64f9d/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "b1f07536-c88b-3380-b421-cd12288b6839",
+      "attributes": {
+        "title": "1047. schůzka – Sta a sta ulic, sadů, náměstí, nábřeží, ba i jedno divadlo",
+        "shortTitle": "1047. schůzka – Sta a sta ulic, sadů, náměstí, nábřeží, ba i divadlo",
+        "description": "<p>Nebude jiný svět!</p>",
+        "since": "2023-03-16T20:00:00+01:00",
+        "till": "2023-03-16T20:25:30+01:00",
+        "updated": "2023-03-16T20:00:27+01:00",
+        "part": null,
+        "series_episode_number": 1047,
+        "asset": {
+          "id": "3ef2b7a4-06b3-39a6-969a-a3e5a5821368",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/0de5d0ea63b5f1d46155e4e9e99dffb7.jpg",
+          "width": 2100,
+          "height": 1341,
+          "focal_point": "58,14",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "",
+            "description": "Smrt Jaroslava Vrchlického",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/15360f36-5a75-4876-820d-ad9b51c39e83.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/15360f36-5a75-4876-820d-ad9b51c39e83.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611033",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/b1f07536-c88b-3380-b421-cd12288b6839/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/b1f07536-c88b-3380-b421-cd12288b6839/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "bdb7bc3a-3c24-3a0f-9f26-c626a02cd541",
+      "attributes": {
+        "title": "1046. schůzka: Mně v mozku stále skáčou rýmy",
+        "shortTitle": "1046. schůzka: Mně v mozku stále skáčou rýmy",
+        "description": "<p>Když už měl Vrchlický zajištěn pevný příjem na postu sekretáře vysokého učení technické v Praze, mohl pomýšlet na ženění. Lásku a věrnost na celý život si šestadvacetiletý básník s osmnáctiletou krasavicí Ludmilou Podlipskou odpřisáhli 4. srpna 1879. Svědky na svatbě byli přátelé spisovatel Julius Zeyer a sochař Josef Mauder. Byly to pro Emila Frídu dny naplněné štěstím. Což lze vyčíst z cyklu tří svatebních písní ze sbírky Poutí k Eldoradu.</p>",
+        "since": "2023-03-15T20:00:00+01:00",
+        "till": "2023-03-15T20:25:30+01:00",
+        "updated": "2023-03-15T20:00:19+01:00",
+        "part": null,
+        "series_episode_number": 1046,
+        "asset": {
+          "id": "8454c0a3-146c-31ec-8bf5-2e7c2733903f",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03643362.jpeg",
+          "width": 2100,
+          "height": 1395,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Šárka Kuchtová",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Jaroslav Vrchlický jezdil na letní byt do Slatiňan v letech 1890 až 1909",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/f1535ef2-ddba-4c46-9ad2-43b3fbbabb70.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/f1535ef2-ddba-4c46-9ad2-43b3fbbabb70.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611030",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/bdb7bc3a-3c24-3a0f-9f26-c626a02cd541/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/bdb7bc3a-3c24-3a0f-9f26-c626a02cd541/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "2198b80e-9f30-34ba-9e31-06ce4e638efe",
+      "attributes": {
+        "title": "1045. schůzka: Kníže českých básníků No. 2",
+        "shortTitle": "1045. schůzka: Kníže českých básníků No. 2",
+        "description": "<p>Pouze třem českým mistrům poezie udělil národ čestný, byť neoficiální titul „kníže českých básníků.“ Tedy, abychom byli úplně přesní, tak všichni tři byli čeští, ale jeden z nich byl ještě nadto moravský, totiž Jan Skácel. Tu tradici zahájil nesmrtelný Karel Hynek Mácha. Uprostřed se nachází poněkud kontroverzní Emil Frída, uměleckým jménem Jaroslav Vrchlický. A právě o něm vám chceme dnes podruhé vyprávět.</p>",
+        "since": "2023-03-14T20:00:00+01:00",
+        "till": "2023-03-14T20:25:30+01:00",
+        "updated": "2023-03-14T20:00:19+01:00",
+        "part": null,
+        "series_episode_number": 1045,
+        "asset": {
+          "id": "86feee7a-db04-3d7a-b5e6-31aa4a40dcce",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/c07491612e04215302a840df19894c8e.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Fotobanka Pixabay",
+            "license": "",
+            "description": "rukopis",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/85280b46-674a-4e70-a45d-7b458476337b.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/85280b46-674a-4e70-a45d-7b458476337b.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611027",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/2198b80e-9f30-34ba-9e31-06ce4e638efe/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/2198b80e-9f30-34ba-9e31-06ce4e638efe/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "8f93a08e-ed5f-4886-ba83-4785a37cd176",
+      "attributes": {
+        "title": "27. 4. 1946 – Frankova závěrečná řeč",
+        "shortTitle": "27. 4. 1946 – Frankova závěrečná řeč",
+        "description": "<p><span><span><span>Osmadvacátý den procesu bylo Frankovi umožněno, aby pronesl závěrečnou řeč. Stylizoval se v&nbsp;ní do role věrného služebníka německé vlasti, který má sám před sebou svědomí čisté. Za války prý pouze plnil rozkazy. Přelíčení bylo poté na téměř měsíc přerušeno. Dopoledne 22. května 1946 byl Frank odsouzen k trestu smrti a ještě téhož dne byl rozsudek na dvoře pankrácké věznice vykonán.</span></span></span></p>\r\n",
+        "since": "2023-03-14T06:00:00+01:00",
+        "till": "2023-03-14T06:02:35+01:00",
+        "updated": "2023-03-14T17:55:01+01:00",
+        "part": 6,
+        "asset": {
+          "id": "5bd2833e-984c-3edf-92ec-784bd8e12995",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/24eacd56179f4c9d32f4ef2884968cd6.jpg",
+          "width": 1448,
+          "height": 813,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Knihovna Českého rozhlasu",
+            "license": "",
+            "description": "Dobový novinový titulek",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Proces s K. H. Frankem",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 155,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/be8f0054-3a4b-4bf3-8ed0-c2b9a8ba28b3.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 155,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/be8f0054-3a4b-4bf3-8ed0-c2b9a8ba28b3.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 155,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/be8f0054-3a4b-4bf3-8ed0-c2b9a8ba28b3.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "c076d52b-90ed-47f9-80ea-818a14003324",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          },
+          "data": {
+            "type": "serial",
+            "id": "5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/8f93a08e-ed5f-4886-ba83-4785a37cd176/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/8f93a08e-ed5f-4886-ba83-4785a37cd176/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "ca8bb93a-455d-4cca-99b6-7ecb10f946ca",
+      "attributes": {
+        "title": "15. 3. 1946 – proklamace žaloby",
+        "shortTitle": "15. 3. 1946 – proklamace žaloby",
+        "description": "<p><em><span><span><span>„Tento arcivrah si dnes o sobě myslí, že je Napoleon, kterého pošleme na nějaký osamělý ostrov, aby tam v klidu dožil zbytek svého života.“</span></span></span></em><span><span><span> Poslechněte si úvod reportáže, kterou Josef Cincibus natočil v&nbsp;porotní síni na Pankráci, kde byl K. H. Frank veřejně seznámen se svou obžalobou. Stalo se tak symbolicky v&nbsp;den, kdy uplynulo sedm let od vzniku protektorátu.</span></span></span></p>\r\n",
+        "since": "2023-03-14T06:00:00+01:00",
+        "till": "2023-03-14T06:03:18+01:00",
+        "updated": "2023-03-14T15:55:01+01:00",
+        "part": 1,
+        "asset": {
+          "id": "2b6fc287-8f29-3eeb-8d11-7f9bdea774c6",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/be49e86063025cbbf0f16f48689a5030.jpeg",
+          "width": 1280,
+          "height": 718,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Knihovna Českého rozhlasu",
+            "license": "",
+            "description": "Dobový novinový titulek",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Proces s K. H. Frankem",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 198,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/67e6e99c-5e75-4840-a140-d31424347495.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 198,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/67e6e99c-5e75-4840-a140-d31424347495.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 198,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/67e6e99c-5e75-4840-a140-d31424347495.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "d92b8d11-ae1c-4d67-a9fc-c06f1f072f9e",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          },
+          "data": {
+            "type": "serial",
+            "id": "5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/ca8bb93a-455d-4cca-99b6-7ecb10f946ca/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/ca8bb93a-455d-4cca-99b6-7ecb10f946ca/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "2ff2d8fd-1cb8-4f08-ab96-c35517dce4b7",
+      "attributes": {
+        "title": "2. 4. 1946 – svědectví Milady Horákové",
+        "shortTitle": "2. 4. 1946 – svědectví Milady Horákové",
+        "description": "<p><span><span><span>Na desátý den přelíčení byla pozvána poslankyně a místopředsedkyně Svazu osvobozených politických vězňů Milada Horáková. Jako svědkyně obžaloby věnovala své téměř hodinové vystoupení poměrům v&nbsp;Terezíně, kde byla za války kvůli zapojení do protiněmeckého odboje vězněna. V jeho části, jíž si můžete poslechnout, hovořila o tamní situaci v druhé polovině roku 1942 a na jaře 1943.</span></span></span></p>\r\n",
+        "since": "2023-03-14T06:00:00+01:00",
+        "till": "2023-03-14T06:07:10+01:00",
+        "updated": "2023-03-14T16:45:01+01:00",
+        "part": 4,
+        "asset": {
+          "id": "8db59fc7-acc9-3e60-bec8-c5c464f47db3",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/0298d01ef070b1eab9bb3f3ab08b0fd7.jpg",
+          "width": 1040,
+          "height": 584,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Milada Horáková v Terezíně (16. září 1945, pohřeb exhumovaných obětí)",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Proces s K. H. Frankem",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 430,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/30327923-ea44-4d16-aef7-dea8835b377d.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 430,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/30327923-ea44-4d16-aef7-dea8835b377d.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 430,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/30327923-ea44-4d16-aef7-dea8835b377d.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "400b0b23-6252-4f34-ab19-fe65379c1ff9",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          },
+          "data": {
+            "type": "serial",
+            "id": "5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/2ff2d8fd-1cb8-4f08-ab96-c35517dce4b7/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/2ff2d8fd-1cb8-4f08-ab96-c35517dce4b7/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "45bdfad9-45dd-4050-95e5-caddcc94e0c2",
+      "attributes": {
+        "title": "22. 3. 1946 – zahájení procesu",
+        "shortTitle": "22. 3. 1946 – zahájení procesu",
+        "description": "<p><span><span><span>Během prvního dne přelíčení vystoupil v&nbsp;roli znaleckého svědka generál justiční služby Bohuslav Ečer. Jako československý zástupce u norimberského Mezinárodního vojenského tribunálu vysvětlil, proč má být Frank souzen v&nbsp;Československu, a nikoli v&nbsp;Norimberku.</span></span></span></p>\r\n",
+        "since": "2023-03-14T06:00:00+01:00",
+        "till": "2023-03-14T06:02:37+01:00",
+        "updated": "2023-03-15T13:15:10+01:00",
+        "part": 2,
+        "asset": {
+          "id": "7daac8be-4317-3be9-b684-c68ef64436cb",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/1c7e5784127c08d543ddd92f0e65940c.jpg",
+          "width": 9573,
+          "height": 5376,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Plán vysílání Československého rozhlasu z 22. 3. 1946. Výňatky z prvního dne procesu s K. H. Frankem se vysílaly ve večerních hodinách",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Proces s K. H. Frankem",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 157,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/92aa8bad-cbb3-44ab-9406-3f4b71e07cd0.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 157,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/92aa8bad-cbb3-44ab-9406-3f4b71e07cd0.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 157,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/92aa8bad-cbb3-44ab-9406-3f4b71e07cd0.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "ff3a8228-aad4-4fab-85d7-8c71ccf3e4b1",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          },
+          "data": {
+            "type": "serial",
+            "id": "5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/45bdfad9-45dd-4050-95e5-caddcc94e0c2/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/45bdfad9-45dd-4050-95e5-caddcc94e0c2/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "79bbbd45-c8f8-4664-90df-7dc963247407",
+      "attributes": {
+        "title": "3. 4. 1946 – výpovědi lidických žen",
+        "shortTitle": "3. 4. 1946 – výpovědi lidických žen",
+        "description": "<p><span><span><span>Během jedenáctého dne procesu vystoupila se svědeckými výpověďmi trojice lidických žen. Vedle Marie Kohlíčkové a Anny Hroníkové hovořila o německém přepadení Lidic, bolestném odebrání dětí a transportu do koncentračního tábora Ravensbrück také Jarmila Nová, jíž si můžete poslechnout.</span></span></span></p>\r\n",
+        "since": "2023-03-14T06:00:00+01:00",
+        "till": "2023-03-14T06:04:49+01:00",
+        "updated": "2023-03-15T12:46:48+01:00",
+        "part": 5,
+        "asset": {
+          "id": "85184b67-0f76-3b1e-8157-984cb19d8e48",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/a7af67b73f1b8a8aa52fc964d8151677.JPG",
+          "width": 1040,
+          "height": 584,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Tomáš Vodňanský",
+            "source": "Archiv Českého rozhlasu",
+            "license": "",
+            "description": "Jedna z fólií zvukového záznamu procesu s K. H. Frankem",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Proces s K. H. Frankem",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 289,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/12ec74a0-a048-49fd-82fc-1756bcddc6ea.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 289,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/12ec74a0-a048-49fd-82fc-1756bcddc6ea.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 289,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/12ec74a0-a048-49fd-82fc-1756bcddc6ea.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "6f06ffcd-95cd-47fa-a0df-ffacec68ae38",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          },
+          "data": {
+            "type": "serial",
+            "id": "5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/79bbbd45-c8f8-4664-90df-7dc963247407/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/79bbbd45-c8f8-4664-90df-7dc963247407/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "39edf9c2-1f75-462d-a632-176fce387066",
+      "attributes": {
+        "title": "1. 4. 1946 – Frankova krátká paměť",
+        "shortTitle": "1. 4. 1946 – Frankova krátká paměť",
+        "description": "<p><span><span><span><span>Na otázky, které se týkaly&nbsp;jeho osobní odpovědnosti, odpovídal Frank velmi vyhýbavě. Často tvrdil, že si některé skutečnosti nepamatuje, a to i tehdy, když byl konfrontován s&nbsp;přímými důkazy. Týkalo se to i jeho rozkazu k&nbsp;vyhlazení Lidic, který byl projednáván během devátého dne procesu.</span></span></span></span></p>\r\n",
+        "since": "2023-03-14T06:00:00+01:00",
+        "till": "2023-03-14T06:04:14+01:00",
+        "updated": "2023-03-14T16:35:01+01:00",
+        "part": 3,
+        "asset": {
+          "id": "9d912671-bdba-3a72-ae2f-1702abeb6155",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/6998ffabe768afd8f89fa54435ac2b5f.jpg",
+          "width": 1092,
+          "height": 613,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "autor neznámý",
+            "source": "Knihovna Českého rozhlasu",
+            "license": "",
+            "description": "K. H. Frank",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "mirroredSerial": {
+          "title": "Proces s K. H. Frankem",
+          "totalParts": 6
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 254,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/7ed6bdc9-55da-41f8-9453-f90f9bdd99d8.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 254,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/7ed6bdc9-55da-41f8-9453-f90f9bdd99d8.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 254,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/7ed6bdc9-55da-41f8-9453-f90f9bdd99d8.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "f19ea391-14c5-4d5e-a9d6-14f43c2a752c",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/serials/5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          },
+          "data": {
+            "type": "serial",
+            "id": "5e8b59cd-b0f1-3751-8d7d-412610b2536b"
+          }
+        },
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/39edf9c2-1f75-462d-a632-176fce387066/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/39edf9c2-1f75-462d-a632-176fce387066/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "e6173096-528e-3ef5-8052-ed3fe0327458",
+      "attributes": {
+        "title": "1044. schůzka: Za trochu lásky",
+        "shortTitle": "1044. schůzka: Za trochu lásky",
+        "description": "<p>Máme před sebou máme další výpravu, během níž bychom se měli setkat s další osobností naší kultury, jejíž jméno nelze minout bez povšimnutí (byť tak činí v současnosti stále víc Čechů). Onen muž však patří nejenom do historie, on má co říct též moderní, ba i postmoderní době. Jeho pravé jméno, Emil Frída, říká málo i dnešním maturantům; umělecké jméno Jaroslav Vrchlický by si však měli pamatovat. A nejenom oni.</p>",
+        "since": "2023-03-13T20:00:00+01:00",
+        "till": "2023-03-13T20:25:30+01:00",
+        "updated": "2023-03-13T20:00:18+01:00",
+        "part": null,
+        "series_episode_number": 1044,
+        "asset": {
+          "id": "0cf0c474-5a6c-3a7b-a851-e448613defb0",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/630e3c4ef461e868d65124cfc0c02855.jpg",
+          "width": 3507,
+          "height": 2338,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "",
+            "description": "Rozkvetlá třešeň, jaro, první máj (ilustrační foto)",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/93071062-0d35-4f7c-8efe-89d47f36a8dc.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/93071062-0d35-4f7c-8efe-89d47f36a8dc.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611024",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/e6173096-528e-3ef5-8052-ed3fe0327458/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/e6173096-528e-3ef5-8052-ed3fe0327458/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "f26ce4ab-fdd7-3f7f-9794-8cf1fbe0fb0b",
+      "attributes": {
+        "title": "Mně se oškliví každý dotek mužského… Příběh Jarmily Semotamové, vězněné za to, že neudala rodiče",
+        "shortTitle": "Mně se oškliví každý dotek mužského… Příběh Jarmily Semotamové, vězněné za to, že neudala rodiče",
+        "description": "<p>Příběhy jsou tentokrát věnovány vzpomínkám 89leté Jarmily Semotamové ze Znojma. V&nbsp;roce 1952, kdy zapálení českoslovenští komunisté naplno budovali lepší svět, byla jako devatenáctiletá dívka z&nbsp;politických důvodů zatčena a týrána svými vyšetřovateli. Ve znojemské věznici se na ní i na její matce Anastazii dopustili bachaři sexuálního násilí.<br>\nAdam Drda, Rostislav Šíma</p>",
+        "since": "2023-03-12T20:05:00+01:00",
+        "till": "2023-03-12T20:52:23+01:00",
+        "updated": "2023-03-13T10:00:28+01:00",
+        "part": null,
+        "asset": {
+          "id": "3efd39b6-d06d-3694-a602-5cdd28fc9d6a",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/32b53f30eac8297f8c19ab2b70b3a03b.JPG",
+          "width": 3159,
+          "height": 2434,
+          "focal_point": "50,35",
+          "credit": {
+            "author": "",
+            "source": "Post Bellum",
+            "license": "",
+            "description": "Dvě bývalé politické vězenkyně – Jarmila Semotamová se svou matkou Anastázií Šárkovou, rok 1969",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Příběhy 20. století"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 2843,
+            "bitrate": 128,
+            "url": "https://portal.rozhlas.cz/sites/default/files/audios/0bec9988e36933334755cc250b4589cf.mp3"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "plus",
+          "contentId": "10636056",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225"
+          },
+          "data": {
+            "type": "show",
+            "id": "d200d0b5-78d5-3cca-9052-834f13135225"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/f26ce4ab-fdd7-3f7f-9794-8cf1fbe0fb0b/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/f26ce4ab-fdd7-3f7f-9794-8cf1fbe0fb0b/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "3cfb2225-0eaa-37dd-a945-7bfccae56e91",
+      "attributes": {
+        "title": "1043. schůzka: Moravský (potažmo rakouský) Manchester",
+        "shortTitle": "1043. schůzka: Moravský (potažmo rakouský) Manchester",
+        "description": "<p>Tak jsme nazvali dnešní kapitolu podle epitetonu constans, kteréžto ozdobné pojmenování se přimklo v hloubi 19. století ke jménu města Brna.</p>",
+        "since": "2023-03-10T20:00:00+01:00",
+        "till": "2023-03-10T20:25:30+01:00",
+        "updated": "2023-03-10T20:00:28+01:00",
+        "part": null,
+        "series_episode_number": 1043,
+        "asset": {
+          "id": "2fd337c1-98ea-30db-97bd-c328e25fb587",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/e61b4fb5c4c206b36c5db07ba0cee5c7.jpg",
+          "width": 3000,
+          "height": 2000,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Radek Bortlík",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Pohled na centrum Brna ze střechy Českého rozhlasu Brno",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Toulky českou minulostí"
+        },
+        "audioLinks": [
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/cb06dcb8-046c-43e7-8175-e9d2dfb99828.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 1530,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/cb06dcb8-046c-43e7-8175-e9d2dfb99828.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "dvojka",
+          "contentId": "10611021",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          },
+          "data": {
+            "type": "show",
+            "id": "97e4e533-1cf0-3bbb-8026-c3e22ff82ad0"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/3cfb2225-0eaa-37dd-a945-7bfccae56e91/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/3cfb2225-0eaa-37dd-a945-7bfccae56e91/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "513b4c24-61b2-3f53-aca9-75a899186a74",
+      "attributes": {
+        "title": "Tři pohledy rozhlasu na legendární bitvu u Sokolova",
+        "shortTitle": "Tři pohledy rozhlasu na legendární bitvu u Sokolova",
+        "description": "<p>Přes 80 lety splnili českoslovenští vojáci svůj první bojový úkol na východní frontě druhé světové války. Sovětské velení jim nařídilo nepustit nacistické jednotky za ukrajinskou říčku Mžu, u které leží osada Sokolovo. 8. března 1943 začala slavná bitva, ze které komunistické sdělovací prostředky udělaly legendu.<br>\nJiří Zeman</p>",
+        "since": "2023-03-10T11:00:00+01:00",
+        "till": "2023-03-10T11:23:53+01:00",
+        "updated": "2023-03-10T11:20:12+01:00",
+        "part": null,
+        "asset": {
+          "id": "180da8f9-d4ef-3660-a90b-0bbb0a36a6f3",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/aa41041ac43c75aff34340c7e212b3f2.jpg",
+          "width": 3507,
+          "height": 2514,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "ČTK",
+            "license": "",
+            "description": "Nadporučík Otakar Jaroš padl v bitvě u Sokolova",
+            "origin_url": ""
+          }
+        },
+        "artworkTitle": "",
+        "mirroredShow": {
+          "title": "Archiv Plus"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 1433,
+            "bitrate": 128,
+            "url": "https://portal.rozhlas.cz/sites/default/files/audios/f81a1d0564aea16d3604d1881d51f18d.mp3"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "plus",
+          "contentId": "10632642",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3"
+          },
+          "data": {
+            "type": "show",
+            "id": "69ba5aa0-c837-3db0-ba91-f1b2051d0bb3"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/513b4c24-61b2-3f53-aca9-75a899186a74/keywords"
+          },
+          "data": [
+            {
+              "id": "bf3e0720-bee0-33a1-9c77-f7cf9515e3ab",
+              "type": "keyword",
+              "attributes": {
+                "title": "druhá světová válka"
+              }
+            }
+          ]
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/513b4c24-61b2-3f53-aca9-75a899186a74/genres"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "episode",
+      "id": "ce254f23-2b47-4c6d-9274-b8473a150c74",
+      "attributes": {
+        "title": "1948 – umírá Jan Masaryk",
+        "shortTitle": "1948 – umírá Jan Masaryk",
+        "description": "<p><span><span><span>Před 75 lety bylo pod okny&nbsp;Černínského paláce nalezeno bezvládné tělo diplomata Jana Masaryka. Poslechněte si, co nedlouho před svou smrtí vzkázal československé mládeži (Vzpomínka na TGM, 14. 9. 1947). </span></span></span></p>\r\n",
+        "since": "2023-03-10T06:00:00+01:00",
+        "till": "2023-03-10T06:05:12+01:00",
+        "updated": "2023-03-10T12:30:01+01:00",
+        "part": null,
+        "asset": {
+          "id": "9bedbb8e-b2a7-3505-9daf-24e8e9d03d48",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/66ba55da37d828ef97ba7585d41cef1c.jpeg",
+          "width": 800,
+          "height": 596,
+          "focal_point": "58,30",
+          "credit": {
+            "author": "Archivní a programové fondy Českého rozhlasu",
+            "source": "Archivní a programové fondy Českého rozhlasu",
+            "license": "",
+            "description": "Jan Masaryk",
+            "origin_url": ""
+          }
+        },
+        "mirroredShow": {
+          "title": "Auditorium"
+        },
+        "audioLinks": [
+          {
+            "linkType": "download",
+            "variant": "mp3",
+            "duration": 312,
+            "bitrate": 256,
+            "url": "https://croaod.cz/download/6864e0f8-8397-4a06-a36c-15c9faf4aa7b.mp3"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "dash",
+            "duration": 312,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/6864e0f8-8397-4a06-a36c-15c9faf4aa7b.m4a/manifest.mpd"
+          },
+          {
+            "linkType": "ondemand",
+            "variant": "hls",
+            "duration": 312,
+            "bitrate": 128,
+            "url": "https://croaod.cz/stream/6864e0f8-8397-4a06-a36c-15c9faf4aa7b.m4a/playlist.m3u8"
+          }
+        ]
+      },
+      "meta": {
+        "ga": {
+          "contentCreator": "mujrozhlas",
+          "contentId": "4a5d91f7-befc-4114-81ea-7039deadeec7",
+          "baseId": null
+        }
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f9c19efd-0242-3bce-8894-23e519548510"
+          },
+          "data": {
+            "type": "show",
+            "id": "f9c19efd-0242-3bce-8894-23e519548510"
+          }
+        },
+        "serial": {},
+        "keywords": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/ce254f23-2b47-4c6d-9274-b8473a150c74/keywords"
+          },
+          "data": []
+        },
+        "genres": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/episodes/ce254f23-2b47-4c6d-9274-b8473a150c74/genres"
+          },
+          "data": []
+        }
+      }
+    }
+  ]
+}

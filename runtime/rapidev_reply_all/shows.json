@@ -1,0 +1,3388 @@
+{
+  "meta": {
+    "count": 1071
+  },
+  "links": {
+    "self": "https://rapidev.croapp.cz/shows?page%5Blimit%5D=30",
+    "first": null,
+    "prev": null,
+    "next": "https://rapidev.croapp.cz/shows?page%5Blimit%5D=30&page%5Boffset%5D=30",
+    "last": "https://rapidev.croapp.cz/shows?page%5Blimit%5D=30&page%5Boffset%5D=1050"
+  },
+  "data": [
+    {
+      "type": "show",
+      "id": "8143bd60-9bc5-32f5-b0af-f8beb358491d",
+      "attributes": {
+        "showType": "show",
+        "showContent": false,
+        "title": "(Ne)vinný dotazník Radka Brzobohatého",
+        "active": true,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Přátelé vína mají pro svou „slabost“ většinou rčení, že ve víně je pravda. Pro setkávání Radka Brzobohatého s přáteli by se spíše hodilo jiné: Víno jazyk rozvazuje.",
+        "shortDescription": "Přátelé vína mají pro svou „slabost“ většinou rčení, že ve víně je pravda. Pro setkávání Radka Brzobohatého s přáteli by se spíše hodilo jiné: Víno jazyk rozvazuje.",
+        "asset": {
+          "id": "4ba86bcf-eae0-3ddf-902f-2d81066c4d5b",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/afc5b397e5926e6ecdcec069ae5765d8.jpg",
+          "width": 1800,
+          "height": 1253,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Profimeda",
+            "license": "",
+            "description": "Radoslav Brzobohatý",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-08-29T14:30:01+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8143bd60-9bc5-32f5-b0af-f8beb358491d/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "ebbbe99a-bf40-30b4-9e90-a9406b20e5a2"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8143bd60-9bc5-32f5-b0af-f8beb358491d/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8143bd60-9bc5-32f5-b0af-f8beb358491d/episodes"
+          },
+          "meta": {
+            "count": 0
+          },
+          "data": []
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8143bd60-9bc5-32f5-b0af-f8beb358491d/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "d91f0e7c-8b1c-3707-a60d-6e4e5410c28f",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "(Ne)vinný dotazník Radka Brzobohatého",
+        "active": false,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "vysíláno do června 2008",
+        "shortDescription": "vysíláno do června 2008",
+        "asset": {
+          "id": "41ee8b7a-8897-3376-8ac2-936d3e0789a2",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02353943.jpeg",
+          "width": 684,
+          "height": 456,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Yvona Žertová",
+            "source": "",
+            "license": "",
+            "description": "Radek Brzobohatý a Hana Gregorová",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-03-21T00:00:45+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d91f0e7c-8b1c-3707-a60d-6e4e5410c28f/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "17821883-be2d-3880-b971-eceb794388fa"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d91f0e7c-8b1c-3707-a60d-6e4e5410c28f/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d91f0e7c-8b1c-3707-a60d-6e4e5410c28f/episodes"
+          },
+          "meta": {
+            "count": 32
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "01d7ca99-97c5-37b6-8f99-5963d7c1b504"
+            },
+            {
+              "type": "episode",
+              "id": "078dd8f9-d898-30b7-9fdf-e144c2047715"
+            },
+            {
+              "type": "episode",
+              "id": "0b28084a-6d2a-35d5-bd35-3e7eb420dd0e"
+            },
+            {
+              "type": "episode",
+              "id": "0e1600c4-6a78-31a5-a76a-6cf28edd2291"
+            },
+            {
+              "type": "episode",
+              "id": "1986da6e-1d5f-3273-a5df-208966bab6e7"
+            },
+            {
+              "type": "episode",
+              "id": "1b57ee65-50fd-3e9a-ae9c-b958566fee6d"
+            },
+            {
+              "type": "episode",
+              "id": "1ba98712-f4f5-3ea4-8a3c-9c4957f7a2d4"
+            },
+            {
+              "type": "episode",
+              "id": "209f7834-087a-3587-86ae-ef435f8fd6a1"
+            },
+            {
+              "type": "episode",
+              "id": "3dfbdd2a-0d35-36da-a34c-18ff8cc36f87"
+            },
+            {
+              "type": "episode",
+              "id": "4af97556-6d3c-368f-b3d5-1bc4da0322fc"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d91f0e7c-8b1c-3707-a60d-6e4e5410c28f/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "#PijuPrameny",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Pro vodu, za kterou se mnozí vydávají tisíce kilometrů, místní nechtějí ujet i třeba jen pár zastávek autobusem. Infocentrum Karlovy Vary přichází s výzvou k jarní očistě a Český rozhlas Karlovy Vary je její mediálním partnerem. V našem vysílání se můžete těšit na různé soutěže, rozhovory i reportáže z průběhu programu #PijuPrameny.",
+        "shortDescription": "Pro vodu, za kterou se mnozí vydávají tisíce kilometrů, místní nechtějí ujet i třeba jen pár zastávek autobusem. Infocentrum Karlovy Vary přichází s výzvou k jarní očistě.",
+        "asset": {
+          "id": "dfa472a1-d0db-3a6e-bd2a-c1b60c061cb7",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/fd9dfe36b33a67f965aa434a85ca1abb.JPG",
+          "width": 2100,
+          "height": 1391,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Libuše Ernestová",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Karlovy Vary (ilustrační foto)",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-02-03T10:45:02+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "663e7133-bb52-3477-8d7f-635e43371962"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4/episodes"
+          },
+          "meta": {
+            "count": 2
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "613fe60f-b199-30e9-81bd-fd1889cfcd69"
+            },
+            {
+              "type": "episode",
+              "id": "ff9924bc-49d7-355e-907a-0ec53b7cdbee"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "f887afa1-7cce-3ea9-b67c-09a1c2970848",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "c7f376fa-4fa5-36e1-a7dd-3fcc23b0f447",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "100 hitů republiky",
+        "active": true,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Největší anketa populární hudby v dějinách Českého rozhlasu a zároveň encyklopedie naší populární hudby.",
+        "shortDescription": "Největší anketa populární hudby v dějinách Českého rozhlasu a zároveň encyklopedie naší populární hudby.",
+        "asset": {
+          "id": "0ffe3bb0-9be2-3059-836c-bcf6a0feffc1",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03994015.jpeg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Český rozhlas",
+            "source": "",
+            "license": "",
+            "description": "100 hitů republiky",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-03-21T00:00:31+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c7f376fa-4fa5-36e1-a7dd-3fcc23b0f447/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "17821883-be2d-3880-b971-eceb794388fa"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c7f376fa-4fa5-36e1-a7dd-3fcc23b0f447/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c7f376fa-4fa5-36e1-a7dd-3fcc23b0f447/episodes"
+          },
+          "meta": {
+            "count": 13
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "11941d9f-6c84-31f9-9bb8-71761864275f"
+            },
+            {
+              "type": "episode",
+              "id": "14ebda6b-37ed-3fa4-a808-9e99de6c6492"
+            },
+            {
+              "type": "episode",
+              "id": "24972cb1-8e24-35d9-8787-97e8d41c944c"
+            },
+            {
+              "type": "episode",
+              "id": "5edc64c1-ea9d-301f-ba69-24f0393b5ee9"
+            },
+            {
+              "type": "episode",
+              "id": "694c3435-2c6f-31d5-a5e5-e503f28b4465"
+            },
+            {
+              "type": "episode",
+              "id": "7b32601f-003b-32da-ad51-e2dd604cbc79"
+            },
+            {
+              "type": "episode",
+              "id": "9388ef75-1da1-3327-be69-16454c7f37ea"
+            },
+            {
+              "type": "episode",
+              "id": "9b80a1f9-f426-36bd-b62d-eedea317bcd8"
+            },
+            {
+              "type": "episode",
+              "id": "ab2f0e0c-b4c0-39a7-a677-62a50ff8f30c"
+            },
+            {
+              "type": "episode",
+              "id": "b4757ba5-540a-3dae-be4d-89392e67c18b"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c7f376fa-4fa5-36e1-a7dd-3fcc23b0f447/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "8ba0fa70-92d0-3623-b9e1-f0083cb1c1a6",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "100 let české státnosti ve Středočeském kraji",
+        "active": true,
+        "aired": false,
+        "podcast": false,
+        "priority": 6,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Navštivte s námi atraktivní místa a připomeňte si zajímavé události ve středních Čechách od vzniku samostatného Československa až do současnosti.",
+        "shortDescription": "Navštivte s námi atraktivní místa a připomeňte si zajímavé události ve středních Čechách od vzniku samostatného Československa až do současnosti.",
+        "asset": {
+          "id": "863ed004-dc56-3d97-9dd9-a0cabff450de",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02658402.jpeg",
+          "width": 1500,
+          "height": 1000,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Václav Žmolík",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Jižní průčelí lánského zámku je orientováno směrem do rozlehlého parku",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-12-15T11:30:07+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8ba0fa70-92d0-3623-b9e1-f0083cb1c1a6/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "f8b5ee83-c786-3c67-8e37-4fdee1007147"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8ba0fa70-92d0-3623-b9e1-f0083cb1c1a6/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8ba0fa70-92d0-3623-b9e1-f0083cb1c1a6/episodes"
+          },
+          "meta": {
+            "count": 9
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "55972a31-427f-3d94-9503-d2365831e03d"
+            },
+            {
+              "type": "episode",
+              "id": "7242c14a-605b-36e7-8ec5-6f82717d22a2"
+            },
+            {
+              "type": "episode",
+              "id": "78901f02-315b-39d8-887f-88eb8dc3f968"
+            },
+            {
+              "type": "episode",
+              "id": "853827ee-0adc-3951-a6c5-e541f2574c17"
+            },
+            {
+              "type": "episode",
+              "id": "9281bf9f-3bb4-37e2-98ac-1a236f207fa8"
+            },
+            {
+              "type": "episode",
+              "id": "b0da5969-0230-3faa-bdd8-35179f9cab9b"
+            },
+            {
+              "type": "episode",
+              "id": "c02d7d3e-5bc3-337e-b004-129791033094"
+            },
+            {
+              "type": "episode",
+              "id": "c1c186dc-7ef2-3e78-bbe2-3ddf07bb9ac6"
+            },
+            {
+              "type": "episode",
+              "id": "fcd951e5-f91a-3ed9-ace1-b537617add8a"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8ba0fa70-92d0-3623-b9e1-f0083cb1c1a6/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "34034bc6-7c6c-327e-95ce-595cd15c426f",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "c753885c-5aaa-3cb7-b437-9a2d94a2a552",
+      "attributes": {
+        "showType": "show",
+        "showContent": false,
+        "title": "100 let Ústí nad Labem",
+        "active": true,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Český rozhlas slaví 100. let, a to je jen začátek. Proto jsme si pro vás připravili seriál z Ústí nad Labem.",
+        "shortDescription": "Český rozhlas slaví 100. let, a to je jen začátek. Proto jsme si pro vás připravili seriál z Ústí nad Labem.",
+        "asset": {
+          "id": "8a220de5-a331-325c-9d22-1bcaa62d67b8",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/c4c6e55262a04a5d61c07fab21e76930.jpg",
+          "width": 2922,
+          "height": 1948,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Muzeum města Ústí nad Labem",
+            "license": "",
+            "description": "Stavba Masarykova zdymadla u hradu Střekov",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-03-21T11:45:02+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c753885c-5aaa-3cb7-b437-9a2d94a2a552/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "5e94e06f-5435-3291-87c5-aeca8bc9c884"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c753885c-5aaa-3cb7-b437-9a2d94a2a552/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c753885c-5aaa-3cb7-b437-9a2d94a2a552/episodes"
+          },
+          "meta": {
+            "count": 1
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "9c59698c-eb70-3a59-8b60-1393cf8bfa1c"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c753885c-5aaa-3cb7-b437-9a2d94a2a552/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "0b522f32-2ec6-3700-b14d-c1f757fb8cec",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "100 příběhů z protektorátu",
+        "active": true,
+        "aired": false,
+        "podcast": true,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Co všechno lidé slyšeli z rozhlasu v letech druhé světové války? Připomeneme si každodennost protektorátu i velké dějinné události. ",
+        "shortDescription": "Co všechno lidé slyšeli z rozhlasu v letech druhé světové války? Připomeneme si každodennost protektorátu i velké dějinné události. ",
+        "asset": {
+          "id": "63be4f36-b7f1-35fc-b9b1-f2a862f10329",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/c4788c1d0b070737b876c43a5df500b2.jpg",
+          "width": 5701,
+          "height": 4207,
+          "focal_point": "49,28",
+          "credit": {
+            "author": "",
+            "source": "Vojenský historický ústav",
+            "license": "",
+            "description": "Protektorátní prezident Emil Hácha a nacistický vůdce Adolf Hitler",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-04-04T18:00:29+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b522f32-2ec6-3700-b14d-c1f757fb8cec/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "c639d927-f37b-3db8-a64f-1d64ee1469b2"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b522f32-2ec6-3700-b14d-c1f757fb8cec/serials"
+          },
+          "data": [
+            {
+              "type": "serial",
+              "id": "a5d6feb4-70fa-37c7-966e-cdf89e1bbeb2"
+            }
+          ]
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b522f32-2ec6-3700-b14d-c1f757fb8cec/episodes"
+          },
+          "meta": {
+            "count": 105
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "04bcac06-8dbe-3ae1-b932-dc170b9ed20f"
+            },
+            {
+              "type": "episode",
+              "id": "06035256-1d1a-3342-b7be-92a6a4543010"
+            },
+            {
+              "type": "episode",
+              "id": "0b1033c7-035d-3869-9882-66e8de4cf30c"
+            },
+            {
+              "type": "episode",
+              "id": "0c2222a3-d131-3656-8e3f-6df29da8351e"
+            },
+            {
+              "type": "episode",
+              "id": "0fade151-439b-309c-a08a-f41eb99b692f"
+            },
+            {
+              "type": "episode",
+              "id": "18401006-aafa-379a-96d3-057a406aa017"
+            },
+            {
+              "type": "episode",
+              "id": "18e1ad0d-b536-37d7-afb8-dffbeb3bb1ad"
+            },
+            {
+              "type": "episode",
+              "id": "1acbaaed-dbaa-3840-9194-cb8f0e9d6fc0"
+            },
+            {
+              "type": "episode",
+              "id": "1f810a87-1ab9-341a-9da9-e138918d9954"
+            },
+            {
+              "type": "episode",
+              "id": "21d623bd-6936-329b-a3ef-3ff8d5bc58d2"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b522f32-2ec6-3700-b14d-c1f757fb8cec/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "1cb35d9d-fb24-37ee-8993-9f74e57ab2c7",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "7b9d1544-8aab-3730-8f0a-4d0b463322be",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "c5b35399-08c6-3057-8145-c6aaaac76d4d",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "fcb6babc-e5f6-3b30-b126-583885584454",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "c239aa59-bc78-3180-9b58-5c911846630d",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "100 statečných",
+        "active": false,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "100 hostů, 52 hodin a dva zkušení moderátoři.",
+        "shortDescription": "100 hostů, 52 hodin a dva zkušení moderátoři.",
+        "asset": {
+          "id": "105b333f-424f-39e3-a6eb-123297067d44",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02890481.jpeg",
+          "width": 1200,
+          "height": 798,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Filip Jandourek",
+            "source": "",
+            "license": "",
+            "description": "Skleněné studio Českého rozhlasu na Václavském náměstí",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-03-20T23:30:09+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "4082f63f-30e8-375d-a326-b32cf7d86e02"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/episodes"
+          },
+          "meta": {
+            "count": 102
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "041646b3-759d-33db-8a48-bcd318244417"
+            },
+            {
+              "type": "episode",
+              "id": "05f667a9-66cf-30b5-ae18-a9db0b8bfd05"
+            },
+            {
+              "type": "episode",
+              "id": "05fecaed-5b3f-357b-a585-a0a8b315a037"
+            },
+            {
+              "type": "episode",
+              "id": "09c6c60f-d69f-3eac-b9b1-135996ffc2e4"
+            },
+            {
+              "type": "episode",
+              "id": "0b033e8e-8456-3b48-9789-cbbfcf44d0f0"
+            },
+            {
+              "type": "episode",
+              "id": "0dbc9b4c-15c7-3182-8e49-a91b73bebd45"
+            },
+            {
+              "type": "episode",
+              "id": "123b1d26-ebdf-3429-9e73-00a1f1eb33dd"
+            },
+            {
+              "type": "episode",
+              "id": "128efc0d-a0be-3f78-8d29-c4f142facbd0"
+            },
+            {
+              "type": "episode",
+              "id": "14039ead-cdac-386d-a1e9-c776a65b6db9"
+            },
+            {
+              "type": "episode",
+              "id": "15281918-b39e-3504-bdc5-75bcd06d1331"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "b09c98c7-eebf-36db-992e-3d1fbb43eeaa",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "2 x 2",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Petr Šimůnek, šéfredaktor časopisu Forbes, se ptá českých podnikatelů na jejich úspěchy i pády. ",
+        "shortDescription": "Petr Šimůnek, šéfredaktor časopisu Forbes, se ptá českých podnikatelů na jejich úspěchy i pády. ",
+        "asset": {
+          "id": "0d802435-969f-300b-bf5e-d59a3ab9fed5",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/5d6ebd5c21fc71b94e6905ff9ebc314d.jpg",
+          "width": 3003,
+          "height": 2002,
+          "focal_point": "60,51",
+          "credit": {
+            "author": "Kateřina Cibulka",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Petr Šimůnek",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-10-12T13:45:01+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b09c98c7-eebf-36db-992e-3d1fbb43eeaa/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "c639d927-f37b-3db8-a64f-1d64ee1469b2"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b09c98c7-eebf-36db-992e-3d1fbb43eeaa/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b09c98c7-eebf-36db-992e-3d1fbb43eeaa/episodes"
+          },
+          "meta": {
+            "count": 41
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "07a12b99-5ebf-33f1-ac69-3e81674b1f00"
+            },
+            {
+              "type": "episode",
+              "id": "15629ff9-40d4-3488-8ce6-c0329b07abd1"
+            },
+            {
+              "type": "episode",
+              "id": "26252e85-5b5f-38de-bc8e-73015508d5c5"
+            },
+            {
+              "type": "episode",
+              "id": "293bee51-4db6-32c6-a8f5-faf83cbf9107"
+            },
+            {
+              "type": "episode",
+              "id": "2e89ed5d-c29e-3a70-82d3-19e97d6419ce"
+            },
+            {
+              "type": "episode",
+              "id": "2eda0182-2eee-3945-953e-01a726b4f3bf"
+            },
+            {
+              "type": "episode",
+              "id": "3a5cdc71-14e1-3fd2-a8eb-e6c89c7ced21"
+            },
+            {
+              "type": "episode",
+              "id": "454eeff9-1c5d-3f09-8dbc-c16d731bbfdb"
+            },
+            {
+              "type": "episode",
+              "id": "4e02c34c-51af-3b77-9088-6ff897f467f9"
+            },
+            {
+              "type": "episode",
+              "id": "4f6ce97a-954e-3c54-b1ea-0af71edb4fa5"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b09c98c7-eebf-36db-992e-3d1fbb43eeaa/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "faca0491-662d-31b3-86bd-e328471bc0be",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "41f7d7ed-6a8e-3ad9-9eb0-26b62fcc80ef",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "30 let sami a přece spolu",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Společné česko-slovenské vysílání Rádia Regina Stred a Českého rozhlasu Ostrava.",
+        "shortDescription": "Společné česko-slovenské vysílání Rádia Regina Stred a Českého rozhlasu Ostrava.",
+        "asset": {
+          "id": "596a1f42-032e-333b-93eb-7bb95c97c298",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/d1421b504b921a22a520c38a6bef45af.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Česko-Slovensko",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-02-25T09:45:01+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/41f7d7ed-6a8e-3ad9-9eb0-26b62fcc80ef/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "318fc506-4dc9-33c6-b0f4-88df17cafa20"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/41f7d7ed-6a8e-3ad9-9eb0-26b62fcc80ef/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/41f7d7ed-6a8e-3ad9-9eb0-26b62fcc80ef/episodes"
+          },
+          "meta": {
+            "count": 2
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "31e53f85-438b-3854-ae89-b644c5cac7b0"
+            },
+            {
+              "type": "episode",
+              "id": "9d2db086-9145-3e9e-a887-60a937166786"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/41f7d7ed-6a8e-3ad9-9eb0-26b62fcc80ef/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "589c255a-b930-3cff-b224-d922a82a3275",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "908b0462-aacb-3fe4-93e4-106bd51f3299",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "30 минут о Чехии",
+        "active": true,
+        "aired": true,
+        "podcast": true,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Все новости политики, культуры, спорта и науки Чехии, подробные репортажи и увлекательные интервью на Radio Prague International. Все, что вам нужно знать о Чешской Республике. По будням и субботам.",
+        "shortDescription": "Все новости чешской политики, культуры, спорта и науки, интервью и репортажи на Radio Prague International. Все, что вам нужно знать о Чехии. По будням и субботам.",
+        "asset": {
+          "id": "267d0e52-4ea0-3d8b-a496-3cde20d33b40",
+          "url": "https://cesky.radio.cz/sites/default/files/images/4025ec4e5adb20983962f519ceae3c5f.png",
+          "width": 1920,
+          "height": 1080,
+          "focal_point": "43,47",
+          "credit": {
+            "author": "",
+            "source": "",
+            "license": "",
+            "description": "",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-08-04T14:29:52+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/908b0462-aacb-3fe4-93e4-106bd51f3299/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "6731e7ee-98e7-36c3-993b-3122ad1317d1"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/908b0462-aacb-3fe4-93e4-106bd51f3299/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/908b0462-aacb-3fe4-93e4-106bd51f3299/episodes"
+          },
+          "meta": {
+            "count": 671
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "00412d91-010f-35f0-a265-0d560fa734c5"
+            },
+            {
+              "type": "episode",
+              "id": "011e4910-98df-3701-8394-778fd05999c9"
+            },
+            {
+              "type": "episode",
+              "id": "013ba1b3-34df-3108-a069-ee0b131cf6ba"
+            },
+            {
+              "type": "episode",
+              "id": "01858ab7-d0b1-3717-9445-3d2b8d60e80e"
+            },
+            {
+              "type": "episode",
+              "id": "0190303b-8134-3835-93b5-8ffbabd15aa3"
+            },
+            {
+              "type": "episode",
+              "id": "01d1bf16-1257-3d93-9239-8c51babf874a"
+            },
+            {
+              "type": "episode",
+              "id": "024c5058-ac3a-3ec5-8d43-edca17419e87"
+            },
+            {
+              "type": "episode",
+              "id": "027da3a6-9523-3c9e-9d78-b98fc0518611"
+            },
+            {
+              "type": "episode",
+              "id": "02b2bac4-b8bb-3bbc-b593-bbc9e969e113"
+            },
+            {
+              "type": "episode",
+              "id": "02c53098-f8f1-346f-a8af-0ac49f9f41de"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/908b0462-aacb-3fe4-93e4-106bd51f3299/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "7179494b-1cba-3e6d-ab07-9b64e2efd5f6",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "550 sonát Domenica Scarlattiho - nepouzivat",
+        "active": false,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "",
+        "shortDescription": "",
+        "asset": {
+          "id": "a375e5d4-8546-4d7e-94cb-a93955e78273",
+          "url": "https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png",
+          "width": 1280,
+          "height": 900,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "",
+            "license": "",
+            "description": "",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-03-26T20:13:21+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/7179494b-1cba-3e6d-ab07-9b64e2efd5f6/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "f1d1e3eb-866b-4f55-b104-df42e302c317"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/7179494b-1cba-3e6d-ab07-9b64e2efd5f6/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/7179494b-1cba-3e6d-ab07-9b64e2efd5f6/episodes"
+          },
+          "meta": {
+            "count": 0
+          },
+          "data": []
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/7179494b-1cba-3e6d-ab07-9b64e2efd5f6/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "ac6d72de-5f28-3c3b-82c9-ef371d1548ee",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "75. výročí Českého rozhlasu Plzeň",
+        "active": false,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Český rozhlas slaví v letošním roce 75 let. Takové výročí stojí určitě za ohlédnutí. Připravili jsme pro vás cyklus, který mapuje rozhlasovou historii od svých počátků. Jeden díl vždy představuje jeden rok historického vývoje.",
+        "shortDescription": "Plzeňský rozhlas letos slaví 75 let od svého vzniku. Na pozadí naší i světové historie vám přibližujeme, co všechno se v plzeňském rozhlasu za tu dobu událo...",
+        "asset": {
+          "id": "2f62035b-5586-3161-bc80-ef2ac4d12617",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/8e04911076aeb6c6e8e5de2f6e20ca62.jpg",
+          "width": 1959,
+          "height": 1102,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Hanna Kovtun,Jan Macku,Martina Skutková,Tatina Pavlova,Tereza Přibilíková",
+            "source": "Český rozhlas Plzeň,Fakulty designu a umění Ladislava Sutnara ZČU v Plzni",
+            "license": "",
+            "description": "Vizuál pořadu 75. výročí Českého rozhlasu Plzeň",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-07-29T08:00:04+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/ac6d72de-5f28-3c3b-82c9-ef371d1548ee/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "bbe67c0f-4848-355e-a0ab-28f40ade3d38"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/ac6d72de-5f28-3c3b-82c9-ef371d1548ee/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/ac6d72de-5f28-3c3b-82c9-ef371d1548ee/episodes"
+          },
+          "meta": {
+            "count": 72
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "004bc9ca-f2c5-360e-82a3-d2254cc7484d"
+            },
+            {
+              "type": "episode",
+              "id": "07fd78fc-ff1c-3766-bebe-7833691e1c1e"
+            },
+            {
+              "type": "episode",
+              "id": "0efee2c1-ce9f-334d-9dba-2b5a34699a0e"
+            },
+            {
+              "type": "episode",
+              "id": "13e10cb5-ee2a-3f56-8d74-23cbc81bcd58"
+            },
+            {
+              "type": "episode",
+              "id": "169bd36b-b1da-32c1-ae81-e428d2ef0aa1"
+            },
+            {
+              "type": "episode",
+              "id": "170b1c97-0876-3f4b-9c3e-930959e11add"
+            },
+            {
+              "type": "episode",
+              "id": "1abcd11a-b9a2-3789-b96b-228bcd936d0b"
+            },
+            {
+              "type": "episode",
+              "id": "1b9a7df8-4c44-3be4-8666-ecaca7de6913"
+            },
+            {
+              "type": "episode",
+              "id": "22937e68-602a-3f2e-b7a3-cb5d8c95e1f1"
+            },
+            {
+              "type": "episode",
+              "id": "238719b5-3fb5-3dc1-8b12-cc5d5bd97153"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/ac6d72de-5f28-3c3b-82c9-ef371d1548ee/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "af62bd59-1e49-3dae-a68b-90b11f5d2ae6",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "90 statečných",
+        "active": false,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!",
+        "shortDescription": "Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!",
+        "asset": {
+          "id": "105b333f-424f-39e3-a6eb-123297067d44",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02890481.jpeg",
+          "width": 1200,
+          "height": 798,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Filip Jandourek",
+            "source": "",
+            "license": "",
+            "description": "Skleněné studio Českého rozhlasu na Václavském náměstí",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-03-20T23:30:09+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "4082f63f-30e8-375d-a326-b32cf7d86e02"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/episodes"
+          },
+          "meta": {
+            "count": 92
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "04412d26-e25f-3b4f-ac82-0fff35ce37f8"
+            },
+            {
+              "type": "episode",
+              "id": "04a97c03-e891-3766-9310-ddf712a09c8e"
+            },
+            {
+              "type": "episode",
+              "id": "051dd261-7b0b-307d-be46-5368563fc838"
+            },
+            {
+              "type": "episode",
+              "id": "075852a7-45b7-3003-83e4-5d48c592063e"
+            },
+            {
+              "type": "episode",
+              "id": "0bc32cd7-e4f8-317b-a362-6aab3cf74339"
+            },
+            {
+              "type": "episode",
+              "id": "0c17efb8-6e71-3ad8-85c1-2b6d3077e42d"
+            },
+            {
+              "type": "episode",
+              "id": "11c80d41-9cc0-3cbe-81d8-0cecd8762d43"
+            },
+            {
+              "type": "episode",
+              "id": "1f155c16-1222-3d57-a670-91b6e7c06463"
+            },
+            {
+              "type": "episode",
+              "id": "1f9a9198-2daa-3f43-ba60-858bbdada7c2"
+            },
+            {
+              "type": "episode",
+              "id": "1fdc4a96-5885-3e25-aa3d-638d5053013d"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "0b01491b-0fb9-3f3b-ba16-7389c7d77d49",
+      "attributes": {
+        "showType": "show",
+        "showContent": false,
+        "title": "A léta běží, vážení...",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 17,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Životní portréty významných osobností.",
+        "shortDescription": "Životní portréty významných osobností.",
+        "asset": {
+          "id": "d3bd1411-3dfb-3952-a2c7-f583d2795f5e",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03477543.jpeg",
+          "width": 1920,
+          "height": 1440,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "power-1,CC0 Public domain",
+            "source": "",
+            "license": "",
+            "description": "Starý rádiový přijímač",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-03-21T12:00:14+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b01491b-0fb9-3f3b-ba16-7389c7d77d49/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "ebbbe99a-bf40-30b4-9e90-a9406b20e5a2"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b01491b-0fb9-3f3b-ba16-7389c7d77d49/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b01491b-0fb9-3f3b-ba16-7389c7d77d49/episodes"
+          },
+          "meta": {
+            "count": 0
+          },
+          "data": []
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0b01491b-0fb9-3f3b-ba16-7389c7d77d49/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "6dfaa292-7a70-372c-bbba-83ff86ef9635",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Abeceda potravin",
+        "active": true,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Přední gastromanažer a kuchař Karel Šimůnek poodkrývá známá i neznámá fakta o potravinách.",
+        "shortDescription": "Přední gastromanažer a kuchař Karel Šimůnek poodkrývá známá i neznámá fakta o potravinách.",
+        "asset": {
+          "id": "ece557d1-5b82-3339-b9a9-1718d022387d",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/cd63efa5650d467254ea9841f1663ddc.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,21",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas Dvojka",
+            "license": "",
+            "description": "Abeceda potravin s Karlem Šimůnkem",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-03-21T00:01:21+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6dfaa292-7a70-372c-bbba-83ff86ef9635/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "17821883-be2d-3880-b971-eceb794388fa"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6dfaa292-7a70-372c-bbba-83ff86ef9635/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6dfaa292-7a70-372c-bbba-83ff86ef9635/episodes"
+          },
+          "meta": {
+            "count": 24
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "13d86759-f153-349e-a905-dff0e3419570"
+            },
+            {
+              "type": "episode",
+              "id": "17c989a0-dfc6-3cb9-8340-882fc3d263a6"
+            },
+            {
+              "type": "episode",
+              "id": "195c0b3f-419a-36a6-b89c-ae9449211e8d"
+            },
+            {
+              "type": "episode",
+              "id": "2b2effa1-7029-350e-991e-9c51d4778b4f"
+            },
+            {
+              "type": "episode",
+              "id": "300f8a4e-32b5-32cd-b437-daead5a053d0"
+            },
+            {
+              "type": "episode",
+              "id": "3f784240-bb39-366a-91c9-cb5f2be0fe45"
+            },
+            {
+              "type": "episode",
+              "id": "44790e40-d842-3838-b309-8e05f8100acd"
+            },
+            {
+              "type": "episode",
+              "id": "4d9c4377-8840-348a-887e-8b37ab8b4b34"
+            },
+            {
+              "type": "episode",
+              "id": "5f2b4bcc-1ac2-3ce2-a154-a138006d9418"
+            },
+            {
+              "type": "episode",
+              "id": "6c8a57e9-cbca-3e6e-9441-90921ef46f6f"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6dfaa292-7a70-372c-bbba-83ff86ef9635/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "17531829-f8e1-3a9d-8d6e-d5977fc8c091",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "1cf522a7-def3-3aed-8570-fdf666daef68",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "5d38c483-77ef-3692-87d7-f08db00c5fa8",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "96105c33-2ee7-3805-97be-c41a54fc788d",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "093f7f41-a78e-32ef-bc3a-573edb7ef308",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Akademie",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Hudební večer, jednotně koncipovaný a moderovaný, obvykle zaměřený tematicky. ",
+        "shortDescription": "Hudební večer, jednotně koncipovaný a moderovaný, obvykle zaměřený tematicky. ",
+        "asset": {
+          "id": "3d1aa0c8-8188-3f09-a179-a6c3cfaf1a32",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/be991c7e542c3df0bf8ac99b94d49f1c.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "37,56",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "",
+            "description": "Akademie",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-11-29T13:45:02+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/093f7f41-a78e-32ef-bc3a-573edb7ef308/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "0134ce01-8684-3556-b568-f208392ac0bd"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/093f7f41-a78e-32ef-bc3a-573edb7ef308/serials"
+          },
+          "data": [
+            {
+              "type": "serial",
+              "id": "72f4c4d3-b5a3-39d3-86ec-cc7ed01f75cb"
+            },
+            {
+              "type": "serial",
+              "id": "843b89a9-100e-3f68-91fd-f37fd84c9752"
+            },
+            {
+              "type": "serial",
+              "id": "d18ade51-f25a-394c-899f-2607d7989c77"
+            }
+          ]
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/093f7f41-a78e-32ef-bc3a-573edb7ef308/episodes"
+          },
+          "meta": {
+            "count": 223
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "00507d83-f62a-3f4e-9b81-4d2683e1e1b3"
+            },
+            {
+              "type": "episode",
+              "id": "00951b1e-37d5-39ef-98c5-2c984ef01700"
+            },
+            {
+              "type": "episode",
+              "id": "00a388f9-c3f6-3915-bf6e-0901d55b8dee"
+            },
+            {
+              "type": "episode",
+              "id": "03408da7-0be2-3f8a-b082-d4b4ec058530"
+            },
+            {
+              "type": "episode",
+              "id": "0429ee97-d804-32cb-970a-0f32de9702b8"
+            },
+            {
+              "type": "episode",
+              "id": "04d03582-c106-3454-a8cc-ac5f4a22b08f"
+            },
+            {
+              "type": "episode",
+              "id": "05c0085d-c60d-31a8-ad95-b9f3369fd001"
+            },
+            {
+              "type": "episode",
+              "id": "06856156-3bc4-3434-af04-9af9b970dbf5"
+            },
+            {
+              "type": "episode",
+              "id": "07cafe32-6897-3ac5-a9ab-36a0d2c8ad8c"
+            },
+            {
+              "type": "episode",
+              "id": "095fa7f3-ed0e-3c54-b531-2f4fd91f8ec6"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/093f7f41-a78e-32ef-bc3a-573edb7ef308/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "1b6fd915-c3c5-389d-b46f-a4b07ae30155",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "3bd31c20-a845-3070-9f93-27c23f39c9af",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "4c8e5b1d-e508-337b-b902-6371df18516a",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "6db60f56-924f-3faf-be1d-23b84dc9e44d",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "9cd9eeda-8f30-3c41-9fcd-c5a5efd2b748",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "aa5c507f-0237-33a9-aea3-627244902bcb",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "b01ecc79-bf0c-3ea0-b1c2-6886682d5049",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "b4daceff-6cae-3e5d-849e-9b647f8cf102",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "c0d4ac70-807a-3baa-9eb5-0a35693f2820",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "c2f6ba0c-4e81-3033-bc1e-200697d30812",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "d95919e3-b467-330c-b942-d59cedb35b2a",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "b7de83f6-24ea-3767-a77f-e411dff7ed2b",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Akcent",
+        "active": true,
+        "aired": true,
+        "podcast": true,
+        "priority": 45,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Podcast, ve kterém si na jedno kulturní téma posvítíme z více úhlů pohledu. Poslouchejte od pondělí do pátku od 16:30 živě na Vltavě nebo ze záznamu na našem webu, v aplikaci mujRozhlas a na dalších podcastových platformách. ",
+        "shortDescription": "Podcast, ve kterém si na jedno kulturní téma posvítíme z více úhlů pohledu. ",
+        "asset": {
+          "id": "ffa064fe-d01d-3b52-98fd-759d897aab7b",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/77601bf3b5e0f1bd66e6259d5e0aa82e.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Tomáš Vodňanský",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Saša Michailidis",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-02-16T09:45:01+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b7de83f6-24ea-3767-a77f-e411dff7ed2b/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "0134ce01-8684-3556-b568-f208392ac0bd"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b7de83f6-24ea-3767-a77f-e411dff7ed2b/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b7de83f6-24ea-3767-a77f-e411dff7ed2b/episodes"
+          },
+          "meta": {
+            "count": 442
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "000a678b-5ed8-3375-b333-4eb9450822e3"
+            },
+            {
+              "type": "episode",
+              "id": "00419501-4914-3694-badc-a0bd60097cea"
+            },
+            {
+              "type": "episode",
+              "id": "0078b807-a3a1-3783-a553-d72b6dee65c6"
+            },
+            {
+              "type": "episode",
+              "id": "0100e3bd-0776-3983-bd12-e8df807926fb"
+            },
+            {
+              "type": "episode",
+              "id": "011db09a-2ad1-3ac8-8e3e-fb5e9afda8cc"
+            },
+            {
+              "type": "episode",
+              "id": "019b2325-a293-3258-90b6-7bf798901b00"
+            },
+            {
+              "type": "episode",
+              "id": "0200b1eb-0318-30f6-aa5d-0aa76e514063"
+            },
+            {
+              "type": "episode",
+              "id": "023fae17-de92-3181-878a-b3cc60093ea4"
+            },
+            {
+              "type": "episode",
+              "id": "033ff4db-182a-3c05-a3ef-7a8a9e8b643e"
+            },
+            {
+              "type": "episode",
+              "id": "03d2082e-04e7-3ce8-a06c-758d80b28285"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b7de83f6-24ea-3767-a77f-e411dff7ed2b/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "4f8c1a13-02c6-3dcb-9089-a693629c712f",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Album dne",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 3,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Recenze nových desek nejen klasické hudby.",
+        "shortDescription": "Recenze nových desek nejen klasické hudby.",
+        "asset": {
+          "id": "8649e4dd-e885-3766-8c06-2ff4a87d1c19",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/d0deef84f7ec19839fd1ffd160423048.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "",
+            "description": "Album dne",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-06-16T09:54:01+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/4f8c1a13-02c6-3dcb-9089-a693629c712f/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "0134ce01-8684-3556-b568-f208392ac0bd"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/4f8c1a13-02c6-3dcb-9089-a693629c712f/serials"
+          },
+          "data": [
+            {
+              "type": "serial",
+              "id": "678da0b4-a76b-3817-af1c-06fb2c56ccf7"
+            }
+          ]
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/4f8c1a13-02c6-3dcb-9089-a693629c712f/episodes"
+          },
+          "meta": {
+            "count": 836
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "004664e2-7977-32db-8878-dac7e45c3070"
+            },
+            {
+              "type": "episode",
+              "id": "004af4c5-7442-3ffb-8d69-f70568b2a065"
+            },
+            {
+              "type": "episode",
+              "id": "0081c6c0-5a2f-35b0-8e52-1802656e1ae1"
+            },
+            {
+              "type": "episode",
+              "id": "00f651dc-cb1f-3dfe-81e3-9dd9d91d0fb1"
+            },
+            {
+              "type": "episode",
+              "id": "013c364b-47a7-301d-8b2e-47bc999ed244"
+            },
+            {
+              "type": "episode",
+              "id": "016a9f32-2f33-381a-b15a-3a0da6f2363c"
+            },
+            {
+              "type": "episode",
+              "id": "01b25da3-ba92-3429-92fa-3f67b6dea92e"
+            },
+            {
+              "type": "episode",
+              "id": "02725b7c-aa67-3d5e-b75a-9600a2a33bdd"
+            },
+            {
+              "type": "episode",
+              "id": "02817415-156e-3012-bfbf-a2df55080455"
+            },
+            {
+              "type": "episode",
+              "id": "02978f67-4f4d-31f9-bb19-f2ad1a87d605"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/4f8c1a13-02c6-3dcb-9089-a693629c712f/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "7ffb6718-5ce2-3896-be8b-128e35f34701",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "6941b521-fb49-3f31-b659-cf4399211d07",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Alex a host",
+        "active": true,
+        "aired": true,
+        "podcast": true,
+        "priority": 35,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Rozhovory s osobnostmi.",
+        "shortDescription": "Rozhovory s osobnostmi.",
+        "asset": {
+          "id": "1f15788c-56c9-34a7-81f4-91e09d3206f9",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/00a271785eb01db60137d0edcc39f128.jpg",
+          "width": 2400,
+          "height": 1600,
+          "focal_point": "50,48",
+          "credit": {
+            "author": "Rostislav Šebesta",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Alex Mynářová ve studiu",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-03-14T14:45:02+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6941b521-fb49-3f31-b659-cf4399211d07/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "f8b5ee83-c786-3c67-8e37-4fdee1007147"
+            },
+            {
+              "type": "station",
+              "id": "184a888f-3d06-3a88-a07f-901bd9b09396"
+            },
+            {
+              "type": "station",
+              "id": "1e6c0c0b-aba4-3357-95fc-c64edc9e75e6"
+            },
+            {
+              "type": "station",
+              "id": "a831a457-9b80-3271-b153-ddf0ee63a18c"
+            },
+            {
+              "type": "station",
+              "id": "663e7133-bb52-3477-8d7f-635e43371962"
+            },
+            {
+              "type": "station",
+              "id": "ad541211-198e-30b7-995c-10bf08c3aea0"
+            },
+            {
+              "type": "station",
+              "id": "c49f6468-acd3-3f98-9db9-92d5e5c0f038"
+            },
+            {
+              "type": "station",
+              "id": "318fc506-4dc9-33c6-b0f4-88df17cafa20"
+            },
+            {
+              "type": "station",
+              "id": "67e26b4a-af56-3153-bb09-eaaaa61a7fc7"
+            },
+            {
+              "type": "station",
+              "id": "bbe67c0f-4848-355e-a0ab-28f40ade3d38"
+            },
+            {
+              "type": "station",
+              "id": "5e94e06f-5435-3291-87c5-aeca8bc9c884"
+            },
+            {
+              "type": "station",
+              "id": "36dc9675-1fe8-3c69-b362-ee6784b04ef0"
+            },
+            {
+              "type": "station",
+              "id": "b0f03203-0809-3363-bb3d-ccda436d6760"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6941b521-fb49-3f31-b659-cf4399211d07/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6941b521-fb49-3f31-b659-cf4399211d07/episodes"
+          },
+          "meta": {
+            "count": 270
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "00edd05c-1cc1-359a-ae8b-5357ab768529"
+            },
+            {
+              "type": "episode",
+              "id": "02160608-ee29-3345-bb3c-8f5ffe4c32d7"
+            },
+            {
+              "type": "episode",
+              "id": "03c84493-a22b-3d6e-905f-70422aa6add4"
+            },
+            {
+              "type": "episode",
+              "id": "04268271-018e-3c9c-a19f-d4e9503b4943"
+            },
+            {
+              "type": "episode",
+              "id": "07a84c80-853a-365b-b8b6-3e68387e02d8"
+            },
+            {
+              "type": "episode",
+              "id": "08255cb9-38ad-3631-a6e8-06275f4922f3"
+            },
+            {
+              "type": "episode",
+              "id": "0af9d696-d4e1-39bd-b5e6-f924e6b13ad5"
+            },
+            {
+              "type": "episode",
+              "id": "0b0b9b43-be96-3512-b804-5f7e67a57a56"
+            },
+            {
+              "type": "episode",
+              "id": "0ba06ba8-e6b5-3dc3-bf50-8aef34055d8e"
+            },
+            {
+              "type": "episode",
+              "id": "0d2906f1-fbac-31ee-ad9f-d0dc8a822adf"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/6941b521-fb49-3f31-b659-cf4399211d07/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "7415c8da-f85d-339b-ae78-f9484071a88b",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "3f3064c7-6217-33ca-805a-468dbb8e4962",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Alpské lyže",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Půlhodina věnovaná sjezdovému lyžování nejen pro profesionály, ale i pro rekreační sportovce. Postřehy osobností, názory odborníků, zpravodajské informace a zajímavosti.",
+        "shortDescription": "Půlhodina věnovaná sjezdovému lyžování nejen pro profesionály, ale i pro rekreační sportovce. Postřehy osobností, názory odborníků, zpravodajské informace a zajímavosti.",
+        "asset": {
+          "id": "62d5871a-bc7f-337b-8683-ccb86cbb188e",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/ae672dac0a7da00115bc3c9a16916359.jpg",
+          "width": 2112,
+          "height": 1355,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Alpské lyže",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-05-21T11:14:10+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/3f3064c7-6217-33ca-805a-468dbb8e4962/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "93eabdcd-ccc5-311d-825b-6f5d6509db53"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/3f3064c7-6217-33ca-805a-468dbb8e4962/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/3f3064c7-6217-33ca-805a-468dbb8e4962/episodes"
+          },
+          "meta": {
+            "count": 0
+          },
+          "data": []
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/3f3064c7-6217-33ca-805a-468dbb8e4962/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "c5651691-7b60-39ce-8e6b-72611dbff51c",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Anglická liga",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Půlhodina věnovaná Premier League – postřehy osobností, názory odborníků, zpravodajské informace a zajímavosti.",
+        "shortDescription": "Půlhodina věnovaná Premier League – postřehy osobností, názory odborníků, zpravodajské informace a zajímavosti.",
+        "asset": {
+          "id": "379952ef-1b11-36de-ad8a-fdc3f27e7cfa",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/8c940abb071fd15a40f0a12c3afa4d77.jpg",
+          "width": 3577,
+          "height": 2209,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Anglická liga",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-05-21T11:14:10+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c5651691-7b60-39ce-8e6b-72611dbff51c/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "93eabdcd-ccc5-311d-825b-6f5d6509db53"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c5651691-7b60-39ce-8e6b-72611dbff51c/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c5651691-7b60-39ce-8e6b-72611dbff51c/episodes"
+          },
+          "meta": {
+            "count": 0
+          },
+          "data": []
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c5651691-7b60-39ce-8e6b-72611dbff51c/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "b14c9c6d-ecbf-3e4a-be09-f80e642b3d25",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Angličtina s Rádiem Junior",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 52,
+        "childFriendly": true,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Každý týden si Kiki a Mr. Suits povídají o jiném tématu, které vás zajímá. Angličtina s touhle ztřeštěnou dvojicí rozhodně není nuda.",
+        "shortDescription": "Každý týden si Kiki a Mr. Suits povídají o jiném tématu, které vás zajímá. Angličtina s touhle ztřeštěnou dvojicí rozhodně není nuda.",
+        "asset": {
+          "id": "e3db2216-f820-3645-9273-cb2cfb0719ee",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/00821dcbb5a932db366cfe8c20fedd8d.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Vladimír Staněk",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Angličtina s Rádiem Junior vás bude bavit!",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-07-14T18:30:02+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b14c9c6d-ecbf-3e4a-be09-f80e642b3d25/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "598a62af-86b5-3485-b89d-65379562694a"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b14c9c6d-ecbf-3e4a-be09-f80e642b3d25/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b14c9c6d-ecbf-3e4a-be09-f80e642b3d25/episodes"
+          },
+          "meta": {
+            "count": 62
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "0a09d272-6646-3665-9e36-4b34d0e83f72"
+            },
+            {
+              "type": "episode",
+              "id": "0c2786ae-78f2-326d-b544-ec8156fcbd94"
+            },
+            {
+              "type": "episode",
+              "id": "16a4900d-1cb9-3620-b8fa-32ff13d1ed78"
+            },
+            {
+              "type": "episode",
+              "id": "19bf014f-31ac-3766-9150-99566f65f371"
+            },
+            {
+              "type": "episode",
+              "id": "215570e9-4be5-3fa8-a173-0e50b82999af"
+            },
+            {
+              "type": "episode",
+              "id": "21632a62-eec4-3f3f-adeb-be4829858684"
+            },
+            {
+              "type": "episode",
+              "id": "2232f177-af87-3281-9431-739489a1226c"
+            },
+            {
+              "type": "episode",
+              "id": "23915683-572d-38a9-8756-436f3668870b"
+            },
+            {
+              "type": "episode",
+              "id": "254236ab-6f54-3b74-a1ee-c65d63f1dc52"
+            },
+            {
+              "type": "episode",
+              "id": "296be34e-8136-3f67-9085-27d0396d88a4"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b14c9c6d-ecbf-3e4a-be09-f80e642b3d25/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "318a41e3-9309-30d8-a994-ea23f0040f67",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "89b10513-46f2-38ef-8aaf-d874c03b4b9b",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "283fa760-b7a7-3291-9c15-ec11917a083a",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Apatyka",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Magazín o zdraví a zdravém životním stylu. Novinky z oblasti medicíny, rady lékařů a odborníků.",
+        "shortDescription": "Magazín o zdraví a zdravém životním stylu. Novinky z oblasti medicíny, rady lékařů a odborníků.",
+        "asset": {
+          "id": "1c697a74-4b9c-30e2-a4da-330c2b54e8bb",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03988843.jpeg",
+          "width": 994,
+          "height": 663,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "CC0 Public domain",
+            "source": "",
+            "license": "",
+            "description": "bylinný čaj",
+            "origin_url": ""
+          }
+        },
+        "updated": "2022-04-05T01:00:12+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/283fa760-b7a7-3291-9c15-ec11917a083a/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "c49f6468-acd3-3f98-9db9-92d5e5c0f038"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/283fa760-b7a7-3291-9c15-ec11917a083a/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/283fa760-b7a7-3291-9c15-ec11917a083a/episodes"
+          },
+          "meta": {
+            "count": 196
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "01ca06af-3780-3060-8e81-68671c023f8e"
+            },
+            {
+              "type": "episode",
+              "id": "025a0ddb-1e7d-3115-b376-eefcd0c448c1"
+            },
+            {
+              "type": "episode",
+              "id": "0264f619-a035-35ff-8968-227694289555"
+            },
+            {
+              "type": "episode",
+              "id": "0498f496-2cca-3463-84b3-968e15092781"
+            },
+            {
+              "type": "episode",
+              "id": "0605795f-2e05-395c-a21d-f9a6c5dd9b80"
+            },
+            {
+              "type": "episode",
+              "id": "06971a56-1a1c-334c-aa12-f5f361f6a0d5"
+            },
+            {
+              "type": "episode",
+              "id": "07233ee4-e2bf-3ec0-8489-2700a230e3f5"
+            },
+            {
+              "type": "episode",
+              "id": "0756f39a-be4c-36a3-b48f-0aeeaac7241a"
+            },
+            {
+              "type": "episode",
+              "id": "08ed9734-7370-326f-95fc-d2269193f560"
+            },
+            {
+              "type": "episode",
+              "id": "0bb775a2-90f5-30ea-ab9c-3103781a4b10"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/283fa760-b7a7-3291-9c15-ec11917a083a/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "0277b5c2-cc2b-328f-82ff-10480c77ad32",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "7d863a08-6a64-37f1-8146-22f9a0367f29",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "05612f14-6269-3379-963b-e1a7a0276a1c",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Apetýt",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 100,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Apetýt patří mezi pořady brněnského rozhlasu k legendám. A zájem posluchačů potvrzuje, že právem. Oceňují ho všichni, kteří se chtějí pobavit, potěšit, ale také dozvědět zajímavé a užitečné informace jak od osobností a odborníků, tak od dalších posluchačů.",
+        "shortDescription": "Apetýt patří mezi pořady brněnského rozhlasu k legendám. A zájem posluchačů potvrzuje, že právem.",
+        "asset": {
+          "id": "ad1f0f57-0f6e-3877-b171-a7296cd3fe2a",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/ada45875eeef2038158a36dbca918669.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "53,27",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "",
+            "license": "",
+            "description": "Moderátorky pořadu Apetýt",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-03-20T08:45:01+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/05612f14-6269-3379-963b-e1a7a0276a1c/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "184a888f-3d06-3a88-a07f-901bd9b09396"
+            },
+            {
+              "type": "station",
+              "id": "b0f03203-0809-3363-bb3d-ccda436d6760"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/05612f14-6269-3379-963b-e1a7a0276a1c/serials"
+          },
+          "data": [
+            {
+              "type": "serial",
+              "id": "381a4c1f-29e5-339b-957e-226c6aa8a5ae"
+            },
+            {
+              "type": "serial",
+              "id": "822529ff-d354-3d33-b15d-f23ca10382ed"
+            },
+            {
+              "type": "serial",
+              "id": "86d380c6-b8cd-3581-8cd9-3b78334d855a"
+            },
+            {
+              "type": "serial",
+              "id": "e2281ac4-8d43-33de-b8d1-4bcf1fde98d9"
+            },
+            {
+              "type": "serial",
+              "id": "eaa62d00-ae51-31c4-ac87-6486883d438f"
+            }
+          ]
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/05612f14-6269-3379-963b-e1a7a0276a1c/episodes"
+          },
+          "meta": {
+            "count": 7630
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "000843ed-53da-3137-a46e-ba06289d124e"
+            },
+            {
+              "type": "episode",
+              "id": "001e6c8d-88f4-37f0-8e56-3ecc915c0bb1"
+            },
+            {
+              "type": "episode",
+              "id": "002189d8-e027-3dfb-9d4d-f852076bda24"
+            },
+            {
+              "type": "episode",
+              "id": "00246a86-c20d-3350-a2ed-288a13ad00e2"
+            },
+            {
+              "type": "episode",
+              "id": "002c1ccb-536f-35bb-ae13-ccfa37ddeb6f"
+            },
+            {
+              "type": "episode",
+              "id": "002eade2-54cc-39e9-9d70-1f403eab0b18"
+            },
+            {
+              "type": "episode",
+              "id": "002ec5ee-3778-3660-83c6-9c58c0f2a50b"
+            },
+            {
+              "type": "episode",
+              "id": "004053f0-1d90-3194-a717-61d1a41056ec"
+            },
+            {
+              "type": "episode",
+              "id": "0044462c-921b-37a1-b5df-698145fb77f2"
+            },
+            {
+              "type": "episode",
+              "id": "004d4008-7363-3ae5-a768-4c1cf7ef5c8d"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/05612f14-6269-3379-963b-e1a7a0276a1c/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "0b1cb43b-9cd6-3052-a8f5-81deb2344e8a",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "32e9f09c-5b9a-353c-a579-4df90701f148",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "71a4e5a9-d959-3929-abda-b0435c8ccebe",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "98ed9682-4a7a-340f-81cb-6a911c3ea1ed",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "f52eeec4-535a-3de1-8319-cf5a6bf0b106",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "c6fe127a-d882-3d86-929f-fc6bfbd91d49",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Archiv dětem",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": true,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Archivní pohádky pro větší i ty nejmenší děti.",
+        "shortDescription": "Archivní pohádky pro větší i ty nejmenší děti.",
+        "asset": {
+          "id": "65d86518-44f8-3e75-ac00-032c25a98733",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/72f31368c7ea4b797781c7ed6a90c142.jpg",
+          "width": 5000,
+          "height": 2500,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Filip Sodomka",
+            "source": "",
+            "license": "",
+            "description": "Archiv detem.jpg",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-06-30T13:18:19+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c6fe127a-d882-3d86-929f-fc6bfbd91d49/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "f1d1e3eb-866b-4f55-b104-df42e302c317"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c6fe127a-d882-3d86-929f-fc6bfbd91d49/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c6fe127a-d882-3d86-929f-fc6bfbd91d49/episodes"
+          },
+          "meta": {
+            "count": 161
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "02ddcd14-6997-3c42-a2e4-d0ed174f5cd7"
+            },
+            {
+              "type": "episode",
+              "id": "083920ab-0384-4e3e-88e9-98f68ed139b0"
+            },
+            {
+              "type": "episode",
+              "id": "0892711d-9174-4d73-bee6-bf8c9ae9b476"
+            },
+            {
+              "type": "episode",
+              "id": "0a14b783-4bb8-3a1a-923d-4ac51f91d10a"
+            },
+            {
+              "type": "episode",
+              "id": "0b508c72-ce34-4c75-88a1-1bbe9c9e3dd6"
+            },
+            {
+              "type": "episode",
+              "id": "0df8eaf3-d6e5-440d-b9f7-28d2bd183dbc"
+            },
+            {
+              "type": "episode",
+              "id": "0ef9a857-b136-4bee-951a-923d2691677f"
+            },
+            {
+              "type": "episode",
+              "id": "122c38e2-936d-3f23-9c1b-c5dedcceae29"
+            },
+            {
+              "type": "episode",
+              "id": "16b89eb3-1ce8-358c-816e-16eeee9d1537"
+            },
+            {
+              "type": "episode",
+              "id": "1839739c-fa77-36ef-a20a-5f320445949d"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/c6fe127a-d882-3d86-929f-fc6bfbd91d49/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "69ba5aa0-c837-3db0-ba91-f1b2051d0bb3",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Archiv Plus",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Přibližujeme to nejzajímavější, co nabízí zvukový archiv Českého rozhlasu.",
+        "shortDescription": "Přibližujeme to nejzajímavější, co nabízí zvukový archiv Českého rozhlasu.",
+        "asset": {
+          "id": "211cb67b-dbf9-3fd7-b2e0-139e485e6dd8",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03ad134867c7c2187969ac9d9c213f6e.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Eliška Fenclová",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Archiv Plus",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-02-24T16:45:01+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "c639d927-f37b-3db8-a64f-1d64ee1469b2"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3/episodes"
+          },
+          "meta": {
+            "count": 300
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "005d1a36-2a9a-3c74-ad41-bb94f8308285"
+            },
+            {
+              "type": "episode",
+              "id": "01bcbd6d-989f-3ec0-acb2-1094f8eba52f"
+            },
+            {
+              "type": "episode",
+              "id": "02779e70-04ef-3a55-9ee4-88c03057ea4c"
+            },
+            {
+              "type": "episode",
+              "id": "02fcd54a-a6f2-397a-839f-19ab00520ab4"
+            },
+            {
+              "type": "episode",
+              "id": "0368660c-0966-36db-9a17-9ca3115d5487"
+            },
+            {
+              "type": "episode",
+              "id": "03720775-53a7-3e94-827c-e449fd17a2c7"
+            },
+            {
+              "type": "episode",
+              "id": "048bf493-9c8c-32ce-a78c-0643d83bf473"
+            },
+            {
+              "type": "episode",
+              "id": "04b51023-bcde-3b36-8fb4-d7220157b884"
+            },
+            {
+              "type": "episode",
+              "id": "05912ac9-9676-3d96-9e06-133420986e0f"
+            },
+            {
+              "type": "episode",
+              "id": "072a1c86-6452-3dbb-8968-0540cc8305c1"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "1cb35d9d-fb24-37ee-8993-9f74e57ab2c7",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "1f2a481d-956d-3a2a-bd68-801355cb87c8",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "604fa2cb-533b-3f58-9928-d4aff6514687",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "7b9d1544-8aab-3730-8f0a-4d0b463322be",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "c5b35399-08c6-3057-8145-c6aaaac76d4d",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "5f2219b0-1e8e-3f32-8b6e-b8ef5601e4d0",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Archivní Vánoce",
+        "active": false,
+        "aired": false,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Výběr zajímavostí z archivu Českého rozhlasu s vánoční tématikou",
+        "shortDescription": "Výběr zajímavostí z archivu Českého rozhlasu s vánoční tématikou",
+        "asset": {
+          "id": "2c51dd41-1e62-467f-85f1-8d146c1ba513",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03268008.jpeg",
+          "width": 1200,
+          "height": 800,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Filip Jandourek",
+            "source": "",
+            "license": "",
+            "description": "Vánoce, vánoční svátky,",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-07-28T11:20:01+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/5f2219b0-1e8e-3f32-8b6e-b8ef5601e4d0/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "f1d1e3eb-866b-4f55-b104-df42e302c317"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/5f2219b0-1e8e-3f32-8b6e-b8ef5601e4d0/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/5f2219b0-1e8e-3f32-8b6e-b8ef5601e4d0/episodes"
+          },
+          "meta": {
+            "count": 15
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "1b1ad58c-397f-3d18-a4a4-bc3033679be8"
+            },
+            {
+              "type": "episode",
+              "id": "27593f6e-bfe0-3ba7-9140-0d31ec607cf9"
+            },
+            {
+              "type": "episode",
+              "id": "2dc8ad40-b391-3941-9784-364aa8cd9a5d"
+            },
+            {
+              "type": "episode",
+              "id": "3b1d8c47-d953-3bea-a56b-27f51432baf2"
+            },
+            {
+              "type": "episode",
+              "id": "3cabd0e0-9705-3fc6-ad69-20f34ab13943"
+            },
+            {
+              "type": "episode",
+              "id": "4aef8c01-78ac-3ced-96cc-9ac38c1ab254"
+            },
+            {
+              "type": "episode",
+              "id": "697fe3df-402c-374f-8b3e-3cb61298054d"
+            },
+            {
+              "type": "episode",
+              "id": "7adbbf17-13e6-3daa-827b-a852d56561c2"
+            },
+            {
+              "type": "episode",
+              "id": "958ebd6d-4717-376a-9157-ac1bec2cdbe6"
+            },
+            {
+              "type": "episode",
+              "id": "9876ead6-9c3c-35ad-a07f-aed8ea31a89c"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/5f2219b0-1e8e-3f32-8b6e-b8ef5601e4d0/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "20ead869-6f23-3412-bbb4-341b48c230ad",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "ArtCafé",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 36,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Objevujte témata a osobnosti mimo hlavní kulturní proud.",
+        "shortDescription": "Objevujte témata a osobnosti mimo hlavní kulturní proud.",
+        "asset": {
+          "id": "bb28b418-9e74-301f-9026-9e1b82cd7c60",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/53798ec64c8fa66c514eac24db79e698.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Tomáš Vodňanský",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "ArtCafé",
+            "origin_url": ""
+          }
+        },
+        "updated": "2023-03-06T14:45:02+01:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/20ead869-6f23-3412-bbb4-341b48c230ad/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "0134ce01-8684-3556-b568-f208392ac0bd"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/20ead869-6f23-3412-bbb4-341b48c230ad/serials"
+          },
+          "data": [
+            {
+              "type": "serial",
+              "id": "67ed24d1-44ee-3890-947d-6cc2d50090fb"
+            }
+          ]
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/20ead869-6f23-3412-bbb4-341b48c230ad/episodes"
+          },
+          "meta": {
+            "count": 1271
+          },
+          "data": [
+            {
+              "type": "episode",
+              "id": "002ff564-67fc-383d-b0b8-05ababafae36"
+            },
+            {
+              "type": "episode",
+              "id": "00b4ef0b-e972-3e1a-88d4-4f55863a6461"
+            },
+            {
+              "type": "episode",
+              "id": "00d35827-0027-326f-859a-699284e8cb9b"
+            },
+            {
+              "type": "episode",
+              "id": "00e6b9d4-e16f-3213-a089-4c1f7b6c8a3e"
+            },
+            {
+              "type": "episode",
+              "id": "0102c76b-20b2-3dce-87c1-1d7607eb0c37"
+            },
+            {
+              "type": "episode",
+              "id": "01b438a5-c92f-3243-bf0d-e4890fc24547"
+            },
+            {
+              "type": "episode",
+              "id": "02074d76-a001-364a-a2fc-646ca29a8dd6"
+            },
+            {
+              "type": "episode",
+              "id": "0225af4c-2008-3741-b1df-572b48e3ec2f"
+            },
+            {
+              "type": "episode",
+              "id": "023564ed-84af-3b90-9020-f772713f2b77"
+            },
+            {
+              "type": "episode",
+              "id": "023a240b-8a9b-33e3-8189-c62a68b08801"
+            }
+          ]
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/20ead869-6f23-3412-bbb4-341b48c230ad/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "019e6c54-c937-328a-bd01-da0d1ab1711e",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "02368686-a923-3536-ba36-547e86e6e174",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "2b6c3de2-fbe3-34dd-ae8d-ea2ba62cd873",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "73dd2efe-2ca9-38e8-9021-3e3d0fb84d0f",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "7d69159e-b1ad-3c6b-a883-2ab7f33c1784",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "842aeca5-a179-34bc-812a-5b79544ee3e1",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "86b4e05a-fc4b-315d-bfaf-5955edb4ecc7",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "aa4f194e-e99d-3843-8b43-de5f3dfb5a1c",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "adc61b12-9c2e-3e98-97e6-5c7650e2ca76",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "b9b9dc73-61b1-3a02-8c71-b72c882d7d3a",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "ba50f9a6-6e5c-351c-8a3c-6eb8ce1f6983",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "c170aa60-dd97-3db5-9423-b7101841aa51",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "c17ba6d2-1109-3489-8986-7e2b14fec19b",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "ce5b34da-a4bb-37d9-9d7b-7f5236e7132d",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "d48ca1e1-4a44-31c7-a5cb-992de02556e5",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "f3894bc3-09a7-35d8-984f-bbc3b6136428",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "f8b5ae99-a913-34c3-ac16-9d964fcdc72f",
+              "meta": {
+                "role": "moderator"
+              }
+            },
+            {
+              "type": "person",
+              "id": "fa5fb03a-b348-3197-8980-32f9c338a7a2",
+              "meta": {
+                "role": "moderator"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "show",
+      "id": "b1dac4af-6e77-3b8a-8d5a-761f4ab4b383",
+      "attributes": {
+        "showType": "show",
+        "showContent": true,
+        "title": "Atletický magazín",
+        "active": true,
+        "aired": true,
+        "podcast": false,
+        "priority": 0,
+        "childFriendly": false,
+        "sortedBySeriesEpisodeNumber": false,
+        "description": "Půlhodina zasvěcená královně sportu. Postřehy osobností, názory odborníků, zpravodajské informace a zajímavosti.",
+        "shortDescription": "Půlhodina zasvěcená královně sportu. Postřehy osobností, názory odborníků, zpravodajské informace a zajímavosti.",
+        "asset": {
+          "id": "559b57ed-a9f8-33b2-988c-cd5b43be9ef1",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/b687061c195beb2a4e89b2619a394043.jpg",
+          "width": 4468,
+          "height": 2234,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Atletický magazín",
+            "origin_url": ""
+          }
+        },
+        "updated": "2021-05-21T11:14:10+02:00"
+      },
+      "relationships": {
+        "stations": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b1dac4af-6e77-3b8a-8d5a-761f4ab4b383/stations"
+          },
+          "data": [
+            {
+              "type": "station",
+              "id": "93eabdcd-ccc5-311d-825b-6f5d6509db53"
+            }
+          ]
+        },
+        "serials": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b1dac4af-6e77-3b8a-8d5a-761f4ab4b383/serials"
+          },
+          "data": []
+        },
+        "episodes": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b1dac4af-6e77-3b8a-8d5a-761f4ab4b383/episodes"
+          },
+          "meta": {
+            "count": 0
+          },
+          "data": []
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b1dac4af-6e77-3b8a-8d5a-761f4ab4b383/participants"
+          },
+          "data": []
+        }
+      }
+    }
+  ]
+}

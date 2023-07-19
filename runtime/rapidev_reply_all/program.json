@@ -1,0 +1,1564 @@
+{
+  "meta": {
+    "count": 270168
+  },
+  "links": {
+    "self": "https://rapidev.croapp.cz/schedule?page%5Blimit%5D=30",
+    "first": null,
+    "prev": null,
+    "next": "https://rapidev.croapp.cz/schedule?page%5Blimit%5D=30&page%5Boffset%5D=30",
+    "last": "https://rapidev.croapp.cz/schedule?page%5Blimit%5D=30&page%5Boffset%5D=270150"
+  },
+  "data": [
+    {
+      "type": "scheduleEpisode",
+      "id": "00000a80-9454-3298-9111-6624ef12a08a",
+      "attributes": {
+        "title": "Posílejte blízkým i známým hudební dárky živě",
+        "description": "Telefon 221 554 222, e-mail pisnickyprovas@pl.rozhlas.cz. Písničky pro vás vybírá a moderuje Jaroslav Kopejtko",
+        "station_code": 5,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-18T17:04:00+01:00",
+        "till": "2022-11-18T17:30:00+01:00",
+        "mirroredShow": {
+          "title": "Písničky pro vás"
+        },
+        "asset": {
+          "id": "19df9489-68da-3e16-b791-978f3a71c518",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03241252.jpeg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "",
+            "license": "",
+            "description": "Písničky provás",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/bbe67c0f-4848-355e-a0ab-28f40ade3d38"
+          },
+          "data": {
+            "type": "station",
+            "id": "bbe67c0f-4848-355e-a0ab-28f40ade3d38"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00000a80-9454-3298-9111-6624ef12a08a/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00003ca7-7367-3d48-915b-34ca7cb746ee",
+      "attributes": {
+        "title": "Aktuální reportáže a nejrychlejší zpravodajství",
+        "description": "Moderuje Zuzana Burešová.",
+        "station_code": 1,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-10-04T22:05:00+02:00",
+        "till": "2022-10-04T23:00:00+02:00",
+        "mirroredShow": {
+          "title": "Večerní Radiožurnál"
+        },
+        "asset": {
+          "id": "7759bcae-9589-34a7-bc2d-8be2f1a968b0",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03239482.jpeg",
+          "width": 2048,
+          "height": 1365,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Filip Sodomka",
+            "source": "",
+            "license": "",
+            "description": "Večerní Radiožurnál",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8e483c21-6368-31a0-9392-b60c7c148142"
+          },
+          "data": {
+            "type": "show",
+            "id": "8e483c21-6368-31a0-9392-b60c7c148142"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02"
+          },
+          "data": {
+            "type": "station",
+            "id": "4082f63f-30e8-375d-a326-b32cf7d86e02"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00003ca7-7367-3d48-915b-34ca7cb746ee/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00003eba-991b-3cf1-ba75-263fc434c181",
+      "attributes": {
+        "title": "nejčerstvější zprávy Radiožurnálu, Zelená vlna, předpověď počasí",
+        "description": "",
+        "station_code": 120,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-20T20:30:00+01:00",
+        "till": "2022-11-20T20:33:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/93eabdcd-ccc5-311d-825b-6f5d6509db53"
+          },
+          "data": {
+            "type": "station",
+            "id": "93eabdcd-ccc5-311d-825b-6f5d6509db53"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00003eba-991b-3cf1-ba75-263fc434c181/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00004622-799e-3679-8b9d-54fde4e9f776",
+      "attributes": {
+        "title": "Vojta Kotek připomíná významné osobnosti, události, objevy, vynálezy, technické novinky a stavby, které se pojí s naší historií",
+        "description": "",
+        "station_code": 23,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-03-12T08:10:00+01:00",
+        "till": "2023-03-12T08:15:00+01:00",
+        "mirroredShow": {
+          "title": "Návraty do minulosti 026."
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/663e7133-bb52-3477-8d7f-635e43371962"
+          },
+          "data": {
+            "type": "station",
+            "id": "663e7133-bb52-3477-8d7f-635e43371962"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00004622-799e-3679-8b9d-54fde4e9f776/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00006a58-d093-34ce-9e80-c68857009b83",
+      "attributes": {
+        "title": "Vybírejte si scénky v hodině plné humoru na přání",
+        "description": "Scénky vám nabízí Petra Černocká a moderuje Patrik Rozehnal. Hlasujte formou SMS ve tvaru HUMOR A nebo B na číslo 90 011 04 nebo volejte 731 800 900",
+        "station_code": 8,
+        "showPriority": 55,
+        "showTimes": null,
+        "since": "2022-10-25T16:04:00+02:00",
+        "till": "2022-10-25T17:00:00+02:00",
+        "mirroredShow": {
+          "title": "Humoriáda"
+        },
+        "asset": {
+          "id": "3ad49ed5-d3c6-38c1-b585-4a73459920cd",
+          "url": "https://portal.rozhlas.cz/sites/default/files/d2b660c1e372d920d0c8039dbe7b5580.jpeg",
+          "width": 950,
+          "height": 633,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Ogilvy",
+            "source": "",
+            "license": "",
+            "description": "Humoriáda",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/b98c9765-2565-341c-928d-de8e3773ae54"
+          },
+          "data": {
+            "type": "show",
+            "id": "b98c9765-2565-341c-928d-de8e3773ae54"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/a831a457-9b80-3271-b153-ddf0ee63a18c"
+          },
+          "data": {
+            "type": "station",
+            "id": "a831a457-9b80-3271-b153-ddf0ee63a18c"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00006a58-d093-34ce-9e80-c68857009b83/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "41091130-e886-3597-a22d-12429564b5e5",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "000081be-137d-35fa-bf6a-92e0177a7ecb",
+      "attributes": {
+        "title": "Nejnovější zprávy z Libereckého kraje, z domova i ze světa",
+        "description": "",
+        "station_code": 28,
+        "showPriority": 11,
+        "showTimes": null,
+        "since": "2023-02-03T06:30:00+01:00",
+        "till": "2023-02-03T06:32:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy pro Liberecký kraj"
+        },
+        "asset": {
+          "id": "ecda4045-b271-3bb7-a451-d5f3fedd9b4b",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03225437.jpeg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Aleš Vavřík",
+            "source": "",
+            "license": "",
+            "description": "Zprávy Sever Liberec Ústí",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/951343b3-7de8-3afd-acee-1a4e8ea632ea"
+          },
+          "data": {
+            "type": "show",
+            "id": "951343b3-7de8-3afd-acee-1a4e8ea632ea"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/ad541211-198e-30b7-995c-10bf08c3aea0"
+          },
+          "data": {
+            "type": "station",
+            "id": "ad541211-198e-30b7-995c-10bf08c3aea0"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/000081be-137d-35fa-bf6a-92e0177a7ecb/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00009dfe-fa9b-396c-9dea-802fdc4d403e",
+      "attributes": {
+        "title": "Buchty z festivalu Mezipatra",
+        "description": "Ivana Veselková a Zuzana Fuksová tentokrát vyrazily se studia do Kina Art v Brně a před diváky si povídaly s vývojářkou Lenkou Královou o tom, jak se u nás žije trans lidem a taky o tom, na co se koho ptát ve a neptat ve firemní kuchyňce. (repríza)",
+        "station_code": 19,
+        "showPriority": 100,
+        "showTimes": null,
+        "since": "2022-11-19T19:00:00+01:00",
+        "till": "2022-11-19T20:00:00+01:00",
+        "mirroredShow": {
+          "title": "Buchty"
+        },
+        "asset": {
+          "id": "cd996ca9-ed43-37a3-9bea-60276417029f",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/165190e2d9a0893fb45b740ab11ac429.jpg",
+          "width": 2000,
+          "height": 1333,
+          "focal_point": "51,31",
+          "credit": {
+            "author": "Adam Křena",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Buchty",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/e3542ad9-f33b-39ee-b601-504593e8f6cc"
+          },
+          "data": {
+            "type": "show",
+            "id": "e3542ad9-f33b-39ee-b601-504593e8f6cc"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/6ab28be7-cdc8-3222-bd6e-c229553125fb"
+          },
+          "data": {
+            "type": "station",
+            "id": "6ab28be7-cdc8-3222-bd6e-c229553125fb"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00009dfe-fa9b-396c-9dea-802fdc4d403e/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0000c26e-946c-3b4e-bca5-b59336cddae7",
+      "attributes": {
+        "title": "Pravidelná rubrika o krásách i záludnostech naší mateřštiny",
+        "description": "",
+        "station_code": 83,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-03-20T19:10:00+01:00",
+        "till": "2023-03-20T19:13:00+01:00",
+        "mirroredShow": {
+          "title": "Hezky česky"
+        },
+        "asset": {
+          "id": "13840978-89e5-31c0-b590-ec3c0a0539a5",
+          "url": "https://portal.rozhlas.cz/sites/default/files/6804f882f1e7d8909da98348b3525c68.jpg",
+          "width": 1920,
+          "height": 1440,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Fotobanka Pixabay",
+            "source": "",
+            "license": "",
+            "description": "Abeceda",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/be34cf52-bef9-3232-870c-02e009f565b5"
+          },
+          "data": {
+            "type": "show",
+            "id": "be34cf52-bef9-3232-870c-02e009f565b5"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/67e26b4a-af56-3153-bb09-eaaaa61a7fc7"
+          },
+          "data": {
+            "type": "station",
+            "id": "67e26b4a-af56-3153-bb09-eaaaa61a7fc7"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0000c26e-946c-3b4e-bca5-b59336cddae7/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0000f8bc-9e32-3b50-9a6c-b4282c7da570",
+      "attributes": {
+        "title": "Zprávy - 21. 10. 2022",
+        "description": "",
+        "station_code": 2,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-10-21T05:30:00+02:00",
+        "till": "2022-10-21T05:33:00+02:00",
+        "mirroredShow": {
+          "title": "Zprávy"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/17821883-be2d-3880-b971-eceb794388fa"
+          },
+          "data": {
+            "type": "station",
+            "id": "17821883-be2d-3880-b971-eceb794388fa"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0000f8bc-9e32-3b50-9a6c-b4282c7da570/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0000fb93-21a3-3ee7-898f-2bfe1c36a0c6",
+      "attributes": {
+        "title": "Z domova i ze světa",
+        "description": "Sport, Zelená vlna a počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.",
+        "station_code": 1,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-10-22T21:00:00+02:00",
+        "till": "2022-10-22T21:05:00+02:00",
+        "mirroredShow": {
+          "title": "Zprávy"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02"
+          },
+          "data": {
+            "type": "station",
+            "id": "4082f63f-30e8-375d-a326-b32cf7d86e02"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0000fb93-21a3-3ee7-898f-2bfe1c36a0c6/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00010038-4f7d-3a84-8fee-fade0fb31a1c",
+      "attributes": {
+        "title": "Vše, co každé ráno potřebujete: zprávy, informace o počasí, dopravní situace, přehled tisku, zajímavosti z regionu, soutěže a příjemná hudba",
+        "description": "Moderuje Jakub Schmidt.",
+        "station_code": 8,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-03-17T07:04:00+01:00",
+        "till": "2023-03-17T08:00:00+01:00",
+        "mirroredShow": {
+          "title": "Dobré ráno"
+        },
+        "asset": {
+          "id": "e1c10ba6-ea4d-3f67-9d73-744d1b35eacd",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03232257.jpeg",
+          "width": 2100,
+          "height": 1401,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Milan Baják",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Hodiny",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/a0be765a-a8be-3de3-ab2a-b46b069a365c"
+          },
+          "data": {
+            "type": "show",
+            "id": "a0be765a-a8be-3de3-ab2a-b46b069a365c"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/a831a457-9b80-3271-b153-ddf0ee63a18c"
+          },
+          "data": {
+            "type": "station",
+            "id": "a831a457-9b80-3271-b153-ddf0ee63a18c"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00010038-4f7d-3a84-8fee-fade0fb31a1c/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "155db11e-19ac-37bc-8136-4fed13db99eb",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0001080e-1928-3b55-88b9-e796ec2d9f98",
+      "attributes": {
+        "title": "Dopravní informace každých 15 minut",
+        "description": "Zavolejte i vy 800 553 553",
+        "station_code": 122,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-03-07T16:03:00+01:00",
+        "till": "2023-03-07T16:04:00+01:00",
+        "mirroredShow": {
+          "title": "Doprava"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/ddbecf17-6f48-3ac5-9b79-33b954245943"
+          },
+          "data": {
+            "type": "station",
+            "id": "ddbecf17-6f48-3ac5-9b79-33b954245943"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0001080e-1928-3b55-88b9-e796ec2d9f98/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00012a2e-5d3f-3a5b-a020-c15415f1ffef",
+      "attributes": {
+        "title": "Aktuální informace z jižních Čech, předpověď počasí",
+        "description": "",
+        "station_code": 6,
+        "showPriority": 57,
+        "showTimes": null,
+        "since": "2022-12-17T18:00:00+01:00",
+        "till": "2022-12-17T18:03:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy z jižních Čech"
+        },
+        "asset": {
+          "id": "eb2af870-8249-3653-9a87-159a954ceeff",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03227065.jpeg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Aleš Vavřík",
+            "source": "",
+            "license": "",
+            "description": "Zprávy Český rozhlas České Budějovice",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/3af5f1c1-6c47-35cd-b3fd-0a1de596f23c"
+          },
+          "data": {
+            "type": "show",
+            "id": "3af5f1c1-6c47-35cd-b3fd-0a1de596f23c"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/1e6c0c0b-aba4-3357-95fc-c64edc9e75e6"
+          },
+          "data": {
+            "type": "station",
+            "id": "1e6c0c0b-aba4-3357-95fc-c64edc9e75e6"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00012a2e-5d3f-3a5b-a020-c15415f1ffef/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0001a31d-7544-3583-81c6-63ac62ee8f63",
+      "attributes": {
+        "title": "Koncertní ozvěny od Tří lvů - 8. 4. 2023",
+        "description": "",
+        "station_code": 6,
+        "showPriority": 57,
+        "showTimes": null,
+        "since": "2023-04-08T18:30:00+02:00",
+        "till": "2023-04-08T19:00:00+02:00",
+        "mirroredShow": {
+          "title": "Koncertní ozvěny od Tří lvů"
+        },
+        "asset": {
+          "id": "98e4eba4-35b4-3843-ac35-a0a346103583",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/a10c2b678cc34ad8f460cc3b329a0bfb.JPG",
+          "width": 5184,
+          "height": 2916,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Andrea Poláková",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Mistr zvuku Roman Kamba v režii při nahrávání koncertu v sále Českého rozhlasu České Budějovice",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/e14fc4b9-87d0-309d-ad2d-a90b8c2e23dc"
+          },
+          "data": {
+            "type": "show",
+            "id": "e14fc4b9-87d0-309d-ad2d-a90b8c2e23dc"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/1e6c0c0b-aba4-3357-95fc-c64edc9e75e6"
+          },
+          "data": {
+            "type": "station",
+            "id": "1e6c0c0b-aba4-3357-95fc-c64edc9e75e6"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0001a31d-7544-3583-81c6-63ac62ee8f63/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0001abb6-0bc5-33bd-877d-8a3cc48938f9",
+      "attributes": {
+        "title": "Nejnovější informace o dění v regionu, doma a ve sportu",
+        "description": "Součástí je i počasí a dopravní informace. O dění na silnici nám zavolejte na bezplatnou řidičskou linku 800 553 553.",
+        "station_code": 23,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-10-30T07:30:00+01:00",
+        "till": "2022-10-30T07:32:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy pro Karlovarský kraj"
+        },
+        "asset": {
+          "id": "53c2a529-4cc3-3881-9d86-756acaf6525f",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03226075.jpeg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Aleš Vavřík",
+            "source": "",
+            "license": "",
+            "description": "Zprávy z Karlovarského kraje",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/67b4d8ba-23f9-3aa8-8cbe-f1d19746f56f"
+          },
+          "data": {
+            "type": "show",
+            "id": "67b4d8ba-23f9-3aa8-8cbe-f1d19746f56f"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/663e7133-bb52-3477-8d7f-635e43371962"
+          },
+          "data": {
+            "type": "station",
+            "id": "663e7133-bb52-3477-8d7f-635e43371962"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0001abb6-0bc5-33bd-877d-8a3cc48938f9/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0001e541-d421-3113-9139-7afea1581089",
+      "attributes": {
+        "title": "Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.",
+        "description": "",
+        "station_code": 1,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-02-10T07:05:30+01:00",
+        "till": "2023-02-10T07:06:00+01:00",
+        "mirroredShow": {
+          "title": "Zelená vlna"
+        },
+        "asset": {
+          "id": "dc77b378-28d7-36eb-aeb0-cd1292b941ba",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03694997.jpeg",
+          "width": 1280,
+          "height": 833,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "CC0 1.0",
+            "description": "Dopravní nehoda (ilustrační foto)",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b"
+          },
+          "data": {
+            "type": "show",
+            "id": "48678000-b905-3b68-9b80-f4d20326f03b"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02"
+          },
+          "data": {
+            "type": "station",
+            "id": "4082f63f-30e8-375d-a326-b32cf7d86e02"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0001e541-d421-3113-9139-7afea1581089/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0002a31c-6ef0-3b77-89b0-758abe2ae301",
+      "attributes": {
+        "title": "Důležité sportovní události dne ve třech minutách",
+        "description": "",
+        "station_code": 120,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-12-28T18:40:00+01:00",
+        "till": "2022-12-28T18:43:00+01:00",
+        "mirroredShow": {
+          "title": "Sportovní přehled"
+        },
+        "asset": {
+          "id": "e195c676-a1eb-31ef-955c-1f596ae45d07",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/5e3676cad52856a0fef1f3ab906f398c.jpg",
+          "width": 5472,
+          "height": 3648,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Sportovní přehled",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d7c7ad91-cd13-374d-8658-4695153892f2"
+          },
+          "data": {
+            "type": "show",
+            "id": "d7c7ad91-cd13-374d-8658-4695153892f2"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/93eabdcd-ccc5-311d-825b-6f5d6509db53"
+          },
+          "data": {
+            "type": "station",
+            "id": "93eabdcd-ccc5-311d-825b-6f5d6509db53"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0002a31c-6ef0-3b77-89b0-758abe2ae301/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0002a5df-ff7f-3f78-a7ee-cd10c2695b29",
+      "attributes": {
+        "title": "Seriál mapující skoro šedesátiletou historii ankety popularity českých a slovenských hudebních interpretů",
+        "description": "Pořad připravil Martin Hrdinka.",
+        "station_code": 23,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-21T03:00:00+01:00",
+        "till": "2022-11-21T04:00:00+01:00",
+        "mirroredShow": {
+          "title": "Slavíci v krabici"
+        },
+        "asset": {
+          "id": "924cd87c-238c-3951-8cb1-acf236481f51",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/18a8ba57beedc462d478eafd246cca45.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Jaroslav Hoření",
+            "source": "",
+            "license": "",
+            "description": "Český slavík se líhne v Turnově",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0438670c-654e-3521-867e-23ae66bfbfe2"
+          },
+          "data": {
+            "type": "show",
+            "id": "0438670c-654e-3521-867e-23ae66bfbfe2"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/663e7133-bb52-3477-8d7f-635e43371962"
+          },
+          "data": {
+            "type": "station",
+            "id": "663e7133-bb52-3477-8d7f-635e43371962"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0002a5df-ff7f-3f78-a7ee-cd10c2695b29/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "f7d43ceb-4c11-3469-8865-be27137b0e40",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0002b8c7-96a1-3a37-8bcb-32c5da5e8bff",
+      "attributes": {
+        "title": "Životní osudy našich známých herců a komiků",
+        "description": "Moderuje Patrik Rozehnal. Dnes: S tebou mě baví svět",
+        "station_code": 43,
+        "showPriority": 20,
+        "showTimes": null,
+        "since": "2022-12-26T04:00:00+01:00",
+        "till": "2022-12-26T05:00:00+01:00",
+        "mirroredShow": {
+          "title": "Hvězdné návraty"
+        },
+        "asset": {
+          "id": "f463d80f-bee4-3318-93eb-55bc631a5d02",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/02863713.jpeg",
+          "width": 1200,
+          "height": 800,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Patrik Rozehnal",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/f8b5ee83-c786-3c67-8e37-4fdee1007147"
+          },
+          "data": {
+            "type": "station",
+            "id": "f8b5ee83-c786-3c67-8e37-4fdee1007147"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0002b8c7-96a1-3a37-8bcb-32c5da5e8bff/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "41091130-e886-3597-a22d-12429564b5e5",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0002ba18-04e2-380e-93e9-2f9bd50268e5",
+      "attributes": {
+        "title": "Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.",
+        "description": "",
+        "station_code": 1,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-12-05T17:32:00+01:00",
+        "till": "2022-12-05T17:32:30+01:00",
+        "mirroredShow": {
+          "title": "Zelená vlna"
+        },
+        "asset": {
+          "id": "dc77b378-28d7-36eb-aeb0-cd1292b941ba",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03694997.jpeg",
+          "width": 1280,
+          "height": 833,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Profimedia",
+            "license": "CC0 1.0",
+            "description": "Dopravní nehoda (ilustrační foto)",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b"
+          },
+          "data": {
+            "type": "show",
+            "id": "48678000-b905-3b68-9b80-f4d20326f03b"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02"
+          },
+          "data": {
+            "type": "station",
+            "id": "4082f63f-30e8-375d-a326-b32cf7d86e02"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0002ba18-04e2-380e-93e9-2f9bd50268e5/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0002d269-f130-3235-8e63-68ba82d1106d",
+      "attributes": {
+        "title": "Každé dopoledne s námi je svátek!",
+        "description": "Nabízíme humor, poučení, aktuální informace a příjemnou hudbu. Moderuje Bořek Volný.",
+        "station_code": 11,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-11T09:00:00+01:00",
+        "till": "2022-11-11T12:00:00+01:00",
+        "mirroredShow": {
+          "title": "Dobré dopoledne s ČRo Olomouc"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/c49f6468-acd3-3f98-9db9-92d5e5c0f038"
+          },
+          "data": {
+            "type": "station",
+            "id": "c49f6468-acd3-3f98-9db9-92d5e5c0f038"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0002d269-f130-3235-8e63-68ba82d1106d/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "0277b5c2-cc2b-328f-82ff-10480c77ad32",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "000354b2-0ccd-382f-b61f-d03eea894dbb",
+      "attributes": {
+        "title": "Nejnovější informace z Prahy i celého světa",
+        "description": "",
+        "station_code": 122,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-01-10T18:00:00+01:00",
+        "till": "2023-01-10T18:03:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy Rádia Praha"
+        },
+        "asset": {
+          "id": "43b678cc-1173-3b47-9ade-14863a2ec32d",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03227005.jpeg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Aleš Vavřík",
+            "source": "",
+            "license": "",
+            "description": "Zprávy - Český rozhlas Regina",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/ff0f14ed-add6-3eeb-b5a7-662364f24fb8"
+          },
+          "data": {
+            "type": "show",
+            "id": "ff0f14ed-add6-3eeb-b5a7-662364f24fb8"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/ddbecf17-6f48-3ac5-9b79-33b954245943"
+          },
+          "data": {
+            "type": "station",
+            "id": "ddbecf17-6f48-3ac5-9b79-33b954245943"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/000354b2-0ccd-382f-b61f-d03eea894dbb/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "0003a955-f128-3dfe-b531-006b8332867c",
+      "attributes": {
+        "title": "Důležité sportovní události dne ve třech minutách",
+        "description": "",
+        "station_code": 120,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-12T23:40:00+01:00",
+        "till": "2022-11-12T23:43:00+01:00",
+        "mirroredShow": {
+          "title": "Sportovní přehled"
+        },
+        "asset": {
+          "id": "e195c676-a1eb-31ef-955c-1f596ae45d07",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/5e3676cad52856a0fef1f3ab906f398c.jpg",
+          "width": 5472,
+          "height": 3648,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "",
+            "source": "Shutterstock",
+            "license": "",
+            "description": "Sportovní přehled",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/d7c7ad91-cd13-374d-8658-4695153892f2"
+          },
+          "data": {
+            "type": "show",
+            "id": "d7c7ad91-cd13-374d-8658-4695153892f2"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/93eabdcd-ccc5-311d-825b-6f5d6509db53"
+          },
+          "data": {
+            "type": "station",
+            "id": "93eabdcd-ccc5-311d-825b-6f5d6509db53"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/0003a955-f128-3dfe-b531-006b8332867c/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "000400f4-791a-3ff6-8740-09a9e6574766",
+      "attributes": {
+        "title": "Městečko Lážoplážo II",
+        "description": "(2/11) - Tajemství Lážopláža. Lážoplážo je zpátky! Zlatá velryba i nadále spokojeně žije v místním moři a plní přání obyvatel městečka. Hned první z nich však do Lážopláža přivede dávno ztraceného obyvatele, který zná přístup do tajné místnosti na radnici města. A tehdy se začnou dít věci, které městečko ještě nezažilo. S otevřením těžkých zapomenutých dveří se totiž do města vrátí i křáp Pařát. Nejhorší z křápů, kteří dosud žili kousek za městem. Podaří se panu starostovi a ostatním obyvatelům zlého Pařáta porazit? Co všechno budou muset pro záchranu města obětovat? Dozvíte se v pohádkovém seriálu. Napsala Tereza Pařízková. Režie Apolena Novotná. Účinkuje Michal Zelenka.",
+        "station_code": 96,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-15T21:00:00+01:00",
+        "till": "2022-11-15T21:20:00+01:00",
+        "mirroredShow": {
+          "title": "Čtení na pokračování"
+        },
+        "asset": {
+          "id": "be5a1e2f-034b-366e-b177-3041f54cc8ee",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/5ebe7c22889cdebd1a8d49379da4617d.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "51,54",
+          "credit": {
+            "author": "Fotobanka Pixabay",
+            "source": "",
+            "license": "CC0 1.0",
+            "description": "Zaposlouchejte se do super seriálů",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/8d56cfad-703a-3935-9af4-0cac899d717b"
+          },
+          "data": {
+            "type": "show",
+            "id": "8d56cfad-703a-3935-9af4-0cac899d717b"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/598a62af-86b5-3485-b89d-65379562694a"
+          },
+          "data": {
+            "type": "station",
+            "id": "598a62af-86b5-3485-b89d-65379562694a"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/000400f4-791a-3ff6-8740-09a9e6574766/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "fa65dcac-2ccf-37f3-a8e5-d7f09f2707cf",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00040f57-f7a8-3613-b6a7-58baf2606d22",
+      "attributes": {
+        "title": "Zprávy - 24. 1. 2023",
+        "description": "",
+        "station_code": 2,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-01-24T05:00:00+01:00",
+        "till": "2023-01-24T05:04:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/17821883-be2d-3880-b971-eceb794388fa"
+          },
+          "data": {
+            "type": "station",
+            "id": "17821883-be2d-3880-b971-eceb794388fa"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00040f57-f7a8-3613-b6a7-58baf2606d22/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00041196-f657-39a0-ade5-01a72b33fba7",
+      "attributes": {
+        "title": "Magazín o Českém rozhlase",
+        "description": "Pojďte nahlédnout do rozhlasové kuchyně. Uvádí Jan Kovařík.",
+        "station_code": 28,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-27T19:08:00+01:00",
+        "till": "2022-11-27T19:45:00+01:00",
+        "mirroredShow": {
+          "title": "eRko"
+        },
+        "asset": {
+          "id": "c7868752-df05-3431-a451-984feb6f6528",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/03256174.jpeg",
+          "width": 2100,
+          "height": 1402,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "eRko",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/f2f850ad-2c8b-3b1b-a375-2ff66e23df5e"
+          },
+          "data": {
+            "type": "show",
+            "id": "f2f850ad-2c8b-3b1b-a375-2ff66e23df5e"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/ad541211-198e-30b7-995c-10bf08c3aea0"
+          },
+          "data": {
+            "type": "station",
+            "id": "ad541211-198e-30b7-995c-10bf08c3aea0"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00041196-f657-39a0-ade5-01a72b33fba7/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "000417c8-a576-3d38-8cb6-b756da366196",
+      "attributes": {
+        "title": "Zprávy - 14. 2. 2023",
+        "description": "",
+        "station_code": 2,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-02-14T14:00:00+01:00",
+        "till": "2023-02-14T14:04:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/17821883-be2d-3880-b971-eceb794388fa"
+          },
+          "data": {
+            "type": "station",
+            "id": "17821883-be2d-3880-b971-eceb794388fa"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/000417c8-a576-3d38-8cb6-b756da366196/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "000421df-4d0c-3fa8-a611-df137b302b04",
+      "attributes": {
+        "title": "Obchodníci se strachem",
+        "description": "Kdo jsou čeští dezinformátoři? Za co bojují, proč se hádají a jak ovlivňují společnost? Jací lidé jim věří? A kolik jich je? To všechno dlouhodobě zajímá Lukáše Valáška, investigativního reportéra webu SeznamZprávy.cz. Ptá se ho Matěj Skalický.",
+        "station_code": 97,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-11-04T14:33:00+01:00",
+        "till": "2022-11-04T15:00:00+01:00",
+        "mirroredShow": {
+          "title": "Podcast Vinohradská 12"
+        },
+        "asset": {},
+        "audioLinks": []
+      },
+      "relationships": {
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/c639d927-f37b-3db8-a64f-1d64ee1469b2"
+          },
+          "data": {
+            "type": "station",
+            "id": "c639d927-f37b-3db8-a64f-1d64ee1469b2"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/000421df-4d0c-3fa8-a611-df137b302b04/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "00043ac7-3054-3512-8aa0-caed98b8cc67",
+      "attributes": {
+        "title": "Zprávy ze Zlínského kraje - 18. 12. 2022",
+        "description": "",
+        "station_code": 27,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2022-12-18T05:00:00+01:00",
+        "till": "2022-12-18T05:04:00+01:00",
+        "mirroredShow": {
+          "title": "Zprávy ze Zlínského kraje"
+        },
+        "asset": {
+          "id": "7608eae9-9ee0-3b64-adc9-fa731d421c93",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/663e16aab4cb0a40c0ec5dfb04f2634a.jpg",
+          "width": 1600,
+          "height": 1067,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Khalil Baalbaki",
+            "source": "Český rozhlas",
+            "license": "",
+            "description": "Český rozhlas Zlín, studio",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/dfc4d8cd-3dee-3fa5-93b2-4c81ef1c0c61"
+          },
+          "data": {
+            "type": "show",
+            "id": "dfc4d8cd-3dee-3fa5-93b2-4c81ef1c0c61"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/b0f03203-0809-3363-bb3d-ccda436d6760"
+          },
+          "data": {
+            "type": "station",
+            "id": "b0f03203-0809-3363-bb3d-ccda436d6760"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/00043ac7-3054-3512-8aa0-caed98b8cc67/participants"
+          },
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "scheduleEpisode",
+      "id": "000448e3-99f1-3aac-bac2-edf3be93647d",
+      "attributes": {
+        "title": "Seriál mapující skoro šedesátiletou historii ankety popularity českých a slovenských hudebních interpretů",
+        "description": "Pořad připravil Martin Hrdinka.",
+        "station_code": 9,
+        "showPriority": 0,
+        "showTimes": null,
+        "since": "2023-03-06T03:00:00+01:00",
+        "till": "2023-03-06T04:00:00+01:00",
+        "mirroredShow": {
+          "title": "Slavíci v krabici"
+        },
+        "asset": {
+          "id": "924cd87c-238c-3951-8cb1-acf236481f51",
+          "url": "https://portal.rozhlas.cz/sites/default/files/images/18a8ba57beedc462d478eafd246cca45.jpg",
+          "width": 2100,
+          "height": 1400,
+          "focal_point": "50,50",
+          "credit": {
+            "author": "Jaroslav Hoření",
+            "source": "",
+            "license": "",
+            "description": "Český slavík se líhne v Turnově",
+            "origin_url": ""
+          }
+        },
+        "audioLinks": []
+      },
+      "relationships": {
+        "show": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/shows/0438670c-654e-3521-867e-23ae66bfbfe2"
+          },
+          "data": {
+            "type": "show",
+            "id": "0438670c-654e-3521-867e-23ae66bfbfe2"
+          }
+        },
+        "station": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/stations/184a888f-3d06-3a88-a07f-901bd9b09396"
+          },
+          "data": {
+            "type": "station",
+            "id": "184a888f-3d06-3a88-a07f-901bd9b09396"
+          }
+        },
+        "participants": {
+          "links": {
+            "related": "https://rapidev.croapp.cz/schedule-episode/000448e3-99f1-3aac-bac2-edf3be93647d/participants"
+          },
+          "data": [
+            {
+              "type": "person",
+              "id": "f7d43ceb-4c11-3469-8865-be27137b0e40",
+              "meta": {
+                "role": "host"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
