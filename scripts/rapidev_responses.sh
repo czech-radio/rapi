@@ -1,7 +1,15 @@
 #!/bin/bash
+scriptpath="${BASH_SOURCE[0]:-$0}"
+scriptdir="${scriptpath%/*}"
+if [[ "$scriptdir" == "." ]] ; then
+  repodir=".."
+else
+  repodir="."
+fi
 
-dstdir_reply_all='./runtime/rapidev_reply_all'
-dstdir_reply_samples='./runtime/rapidev_reply_samples'
+dstdir_reply_all="${repodir}/runtime/rapidev_reply_all"
+dstdir_reply_samples="${repodir}/runtime/rapidev_reply_samples"
+
 api_doc='https://rapidoc.croapp.cz'
 api_dev='https://rapidev.croapp.cz'
 
@@ -33,11 +41,20 @@ GetAll(){
     local url_part="$i"
     local url_whole="${api_dev}/${url_part}"
     echo "DOWNLOADING: ${url_whole}"
+    echo "DST: ${dstdir_reply_all}"
+
+    # dstdir_reply_all="$(realpath "${dstdir_reply_all}")"
+    if [[ ! -d "$dstdir_reply_all" ]]; then
+      echo creating directory "$dstdir_reply_all"
+      mkdir "$dstdir_reply_all"
+    fi
+
     curl -g -X GET "${url_whole}" -H "accept: application/vnd.api+json" | jq '.' > "${dstdir_reply_all}/${url_part}.json"
     echo
   done
 }
 
+# x-object-type
 ### type: station
 sample_station="4082f63f-30e8-375d-a326-b32cf7d86e02"
 ### type: show
@@ -77,7 +94,7 @@ GetSamples(){
   # set -x
   for i in "${url_sample_sublinks[@]}"; do
     echo
-    echo ${i^^}
+    echo "${i^^}"
     local url_part="$i"
     local url_whole="${api_dev}/${url_part}"
     local url_main="${url_part%%/*}"
@@ -85,22 +102,30 @@ GetSamples(){
     local id=${rem%/*}
     local url_sub="${rem#*/}"
 
-    local dst="${dstdir_reply_samples}/${url_main}"
-    local dstdir="${dst}/${id}"
+    local dstmain="${dstdir_reply_samples}/${url_main}"
+    local dstid="${dstmain}/${id}"
 
-    if [[ ! -d "$dst" ]]; then
+    ### Create directories
+    if [[ ! -d "${dstdir_reply_samples}" ]]; then
       echo creating directory "$dstdir"
-      mkdir "$dst"
+      mkdir "$dstdir_reply_samples"
     fi
-    if [[ ! -d "$dstdir" ]]; then
-      echo creating directory "$dstdir"
-      mkdir "$dstdir"
+    if [[ ! -d "$dstmain" ]]; then
+      echo creating directory "$dstmain"
+      mkdir "$dstmain"
     fi
-    dstfile="${dstdir}/${url_sub}.json"
+    if [[ ! -d "$dstid" ]]; then
+      echo creating directory "$dstid"
+      mkdir "$dstid"
+    fi
+    
+    ### Download files
+    dstfile="${dstid}/${url_sub}.json"
     curl -g -X GET "${url_whole}" \
       -H "accept: application/vnd.api+json" \
       | jq '.' >  "${dstfile}"
   done
 }
+
 "$@"
 

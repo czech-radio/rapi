@@ -33,5 +33,5 @@ deactivate () {
         unset -f deactivate
     fi
 }
-echo deactivating
+echo deactivating python environment
 deactivate

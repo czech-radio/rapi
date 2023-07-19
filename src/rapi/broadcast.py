@@ -5,9 +5,10 @@ import logging
 from .logger import log_stdout as logo
 from .logger import log_stdout as loge
 from . import model
+import argparse
 
 class Broadcast:
-    def __init__(self, pars):
+    def __init__(self, pars: argparse.Namespace):
         self.params = pars
         self.url_mock="https://mockservice.croapp.cz/mock"
         self.url_apidoc="https://rapidoc.croapp.cz"
