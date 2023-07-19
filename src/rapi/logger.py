@@ -1,10 +1,11 @@
+import logging
 import os
 import sys
-import logging
 
 # default_format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 # default_format='%(asctime)s %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
-default_format='%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s'
+default_format = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s"
+
 
 ### ShortenedLevelFormatterA
 #### modify format fields
@@ -15,16 +16,17 @@ class ShortenedLevelFormatter(logging.Formatter):
             record.levelname = record.levelname[0]
         return super().format(record)
 
+
 ### FILE LOGGER
-log_file = logging.getLogger('log_file')
+log_file = logging.getLogger("log_file")
 log_file.setLevel(logging.DEBUG)
-debug_handler = logging.FileHandler('./runtime/debug.log')
+debug_handler = logging.FileHandler("./runtime/debug.log")
 debug_formatter = logging.Formatter(default_format)
 debug_handler.setFormatter(debug_formatter)
 log_file.addHandler(debug_handler)
 
 ### STDOUT LOGGER
-log_stdout = logging.getLogger('log_stdout')
+log_stdout = logging.getLogger("log_stdout")
 log_stdout.setLevel(logging.INFO)
 info_handler = logging.StreamHandler(sys.stdout)
 info_formatter = logging.Formatter(default_format)
@@ -33,7 +35,7 @@ info_handler.setFormatter(info_formatter)
 log_stdout.addHandler(info_handler)
 
 ### STDERR LOGGER
-log_stderr = logging.getLogger('log_stderr')
+log_stderr = logging.getLogger("log_stderr")
 log_stderr.setLevel(logging.ERROR)
 error_handler = logging.StreamHandler()
 error_formatter = logging.Formatter(default_format)

@@ -1,12 +1,14 @@
-import os, sys
 import argparse
-from .__init__ import __version__
-from .broadcast import Broadcast
+import logging
+import os
+import sys
 import time
 
-import logging
-from .logger import log_stdout as logo
+from .__init__ import __version__
+from .broadcast import Broadcast
 from .logger import log_stdout as loge
+from .logger import log_stdout as logo
+
 
 def command(args: argparse.Namespace):
     ### version
@@ -14,18 +16,18 @@ def command(args: argparse.Namespace):
         print(__version__)
         return
     ### logs settings
-    if args.verbose==0:
-        loglevel=logging.WARN
+    if args.verbose == 0:
+        loglevel = logging.WARN
     if args.verbose == 1:
-        loglevel=logging.INFO
+        loglevel = logging.INFO
     if args.verbose == 2:
-        loglevel=logging.DEBUG
+        loglevel = logging.DEBUG
     logo.setLevel(loglevel)
     loge.setLevel(loglevel)
     if args.test_logs:
-        logo.debug("this is debug_level message")    
-        logo.info("this is info_level message")    
-        logo.warning("this is warning_level message")    
+        logo.debug("this is debug_level message")
+        logo.info("this is info_level message")
+        logo.warning("this is warning_level message")
         loge.error("this is error_level message")
         return
     ### swagger parser
@@ -40,8 +42,8 @@ def command(args: argparse.Namespace):
     ### broacast class
     if args.broadcast:
         logo.info(f"requesting stations: {args.broadcast}")
-        st=Broadcast(args)
+        st = Broadcast(args)
         st.station_ids_parse()
         # for i in st.Entities:
-            # print(st.Entities[i])
+        # print(st.Entities[i])
         return
