@@ -13,7 +13,7 @@ from .logger import log_stderr as loge
 from .logger import log_stdout as logo
 
 
-def SwaggerDownload(url: str):
+def swagger_download(url: str):
     ### urls:
     #### https://rapidoc.croapp.cz/index.html ->
     #### url="https://rapidoc.croapp.cz/apifile/openapi.yaml"
@@ -41,7 +41,7 @@ def SwaggerDownload(url: str):
         loge.error(f"error saving the file:{err}")
 
 
-def SwaggerParse(swagger_file: str):
+def swagger_parse(swagger_file: str):
     parser = swparse(swagger_file)
     # pass
     # content = swparse(swagger_file)

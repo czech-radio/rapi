@@ -161,3 +161,5 @@ cython_debug/
 deactivate.sh
 
 .log
+
+out

@@ -12,7 +12,7 @@ from .logger import log_stdout as logo
 
 
 class Broadcast:
-    def __init__(self, pars: argparse.Namespace):
+    def __init__(self, pars: argparse.Namespace) -> None:
         self.params = pars
         self.url_mock = "https://mockservice.croapp.cz/mock"
         self.url_apidoc = "https://rapidoc.croapp.cz"
@@ -22,10 +22,10 @@ class Broadcast:
         self.Entities = self.entities_parse_fields()
         logo.info("broadcast class initialized")
 
-    def params_debug(self):
+    def params_debug(self) -> None:
         print(json.dumps(self.params.__dict__))
 
-    def request_data(self) -> Dict:
+    def request_data(self) -> dict:
         url = self.url_api + "/stations-all"
         logo.info("requesitng url: {url}")
         response = requests.get(url)
@@ -34,9 +34,9 @@ class Broadcast:
             return json_data
         else:
             loge.error("cannot get data from: {url}")
-            return None
+            return {}
 
-    def entities_parse_fields(self) -> model.station_data:
+    def entities_parse_fields(self) -> dict:
         stations = {}
         data = self.raw_data["data"]
         for k in data:
@@ -52,7 +52,7 @@ class Broadcast:
             stations[attr["code"]] = stdat
         return stations
 
-    def station_ids_parse(self):
+    def station_ids_parse(self) -> None:
         path = os.path.abspath(self.station_ids_file)
         logo.info("reading file {path}")
         with open(path, "r") as f:

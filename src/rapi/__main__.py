@@ -3,11 +3,12 @@ import os
 import sys
 
 from . import command, params
-from .logger import log_stdout as loge
-from .logger import log_stdout as logo
+
+# from .logger import log_stdout as loge
+# from .logger import log_stdout as logo
 
 
-def main():
+def main() -> None:
     pars = params.args_read()
     command.command(pars)
 

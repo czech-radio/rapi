@@ -3,7 +3,7 @@ name = "rapi"
 dynamic = ["version", "readme"]
 authors = [
     {name = "Jan Kačaba", email = "jan.kacaba@rozhlas.cz"},
-		{name = "Daniel Landa", email = "daniel.landa@rozhlas.cz"},
+		{name = "David Landa", email = "david.landa@rozhlas.cz"},
 ]
 description = "The Python client for <https://rapidoc.croapp.cz/>."
 requires-python = ">=3.11"
@@ -11,6 +11,7 @@ keywords = ["REST", "API"]
 license = {text = "BSD-3-Clause"}
 dependencies = [
 	"requests","pyyaml",
+	"types-requests",
 	"swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",
@@ -25,7 +26,7 @@ where = ["src"]
 namespaces = false  
 
 [project.optional-dependencies]
-dev = ["pytest", "black", "isort"]
+dev = ["pytest", "black", "isort", "mypy"]
 
 [project.scripts]
 rapi = "rapi.__main__:main"

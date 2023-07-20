@@ -9,6 +9,7 @@ else
   repodir="."
 fi
 pip install -e "${repodir}/[dev]"
+mypy --install-types
 
 
 
