@@ -24,4 +24,15 @@ b) https://rapidoc.croapp.cz/stations-all
 - missing or incompatible data for some stations
 - the compiled table should be checked by someone else
 
+## src/rapi/__init__.py
+-there is problem using mypy.
+-importing __version__ from __init__.py to use it in command.py to print version results in error:
+
+src/rapi/command.py:9: error: Skipping analyzing "rapi.__init__": module is installed, but missing library stubs or py.typed marker  [import]
+src/rapi/command.py:9: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+
+-without iporting __version__ checking with mypy is susccesful
+
+-will have to find another way automatic versioning using "single point of truth" to update: git tag, projcet.toml version, hardcoded version in code, version in README.md
+
 

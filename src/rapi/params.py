@@ -50,7 +50,10 @@ def args_read() -> argparse.Namespace:
         const="./runtime/rapidev_croapp.yml",
     )
     parser.add_argument(
-        "--broadcast", required=False, help="request station data", action="store_true"
+        "--broadcast",
+        required=False,
+        help="request station data",
+        action="store_true",
     )
     ##TODO: DT:2023/07/17_13:37:47, LV:1
     ###SD: Add mutually exclusive command group
