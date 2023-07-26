@@ -6,7 +6,7 @@ import os
 
 import requests
 
-from . import model
+from . import constants, model
 from .logger import log_stdout as loge
 from .logger import log_stdout as logo
 

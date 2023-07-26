@@ -7,7 +7,7 @@ import requests
 import yaml
 # import openapi3_parser
 # from swagger_parser import SwaggerParser
-from openapi_parser import parse as swparse
+# from openapi_parser import parse as swparse
 
 from .logger import log_stderr as loge
 from .logger import log_stdout as logo
@@ -41,8 +41,8 @@ def swagger_download(url: str):
         loge.error(f"error saving the file:{err}")
 
 
-def swagger_parse(swagger_file: str):
-    parser = swparse(swagger_file)
+# def swagger_parse(swagger_file: str):
+    # parser = swparse(swagger_file)
     # pass
     # content = swparse(swagger_file)
     # parser=SwaggerParser(swagger_file)

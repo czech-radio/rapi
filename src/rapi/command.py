@@ -6,7 +6,7 @@ import time
 
 # from .__init__ import __version__
 # from . import __init__ as kak
-from . import swagger
+from . import constants, swagger
 from .broadcast import Broadcast
 from .logger import log_stdout as loge
 from .logger import log_stdout as logo
@@ -15,7 +15,7 @@ from .logger import log_stdout as logo
 def command(args: argparse.Namespace) -> None:
     ### version
     if args.version:
-        # print(__version__)
+        print(constants.__version__)
         return
     ### logs settings
     if args.verbose == 0:
