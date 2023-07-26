@@ -91,7 +91,6 @@ Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (S
 	todo
 	```
 
-
 ## Test
 ### test orig api
 - when using curl on api provided at: https://rapidev.croapp.cz use -g, --globoff flag e.g.:
@@ -101,4 +100,11 @@ Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (S
 	```
 
 ## Code conventions
-[https://realpython.com/python-pep8/
+[https://realpython.com/python-pep8/]
+
+[https://docs.python-guide.org/writing/structure/]
+
+## Make file
+[https://earthly.dev/blog/python-makefile/]
+
+[https://stackoverflow.com/questions/24736146/how-to-use-virtualenv-in-makefile]

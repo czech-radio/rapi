@@ -5,12 +5,13 @@ import sys
 
 import requests
 import yaml
-# import openapi3_parser
-# from swagger_parser import SwaggerParser
-# from openapi_parser import parse as swparse
 
 from .logger import log_stderr as loge
 from .logger import log_stdout as logo
+
+# import openapi3_parser
+# from swagger_parser import SwaggerParser
+# from openapi_parser import parse as swparse
 
 
 def swagger_download(url: str):
@@ -42,41 +43,41 @@ def swagger_download(url: str):
 
 
 # def swagger_parse(swagger_file: str):
-    # parser = swparse(swagger_file)
-    # pass
-    # content = swparse(swagger_file)
-    # parser=SwaggerParser(swagger_file)
+# parser = swparse(swagger_file)
+# pass
+# content = swparse(swagger_file)
+# parser=SwaggerParser(swagger_file)
 
-    # data = yaml.safe_load(response.content)
-    # ystr=yaml.dump(data,allow_unicode=True)
-    # print(data)
-    # print(ystr)
-    # swagger_orig_file="swagger_orig.yaml"
-    # with open(swagger_orig_file, "w",encoding='utf8') as file:
-    # file.write(ystr)
-    # print(response)
-    # print("hell")
-    # print(response.content)
-    # data = yaml.safe_load(response.content)
-    # print(data)
-    # parser=SwaggerParser(response.content)
-    # parser=SwaggerParser(url)
-    # print(dir(openapi_parser))
-    # print(openapi_parser.__builtins__)
-    # print(openapi_parser.version_info)
-    # print(openapi_parser.__pdoc__)
-    # content=openapi_parser.parse(data)
-    # content=parse(data)
-    # content = parse('swagger.yml')
-    # print(content)
+# data = yaml.safe_load(response.content)
+# ystr=yaml.dump(data,allow_unicode=True)
+# print(data)
+# print(ystr)
+# swagger_orig_file="swagger_orig.yaml"
+# with open(swagger_orig_file, "w",encoding='utf8') as file:
+# file.write(ystr)
+# print(response)
+# print("hell")
+# print(response.content)
+# data = yaml.safe_load(response.content)
+# print(data)
+# parser=SwaggerParser(response.content)
+# parser=SwaggerParser(url)
+# print(dir(openapi_parser))
+# print(openapi_parser.__builtins__)
+# print(openapi_parser.version_info)
+# print(openapi_parser.__pdoc__)
+# content=openapi_parser.parse(data)
+# content=parse(data)
+# content = parse('swagger.yml')
+# print(content)
 
-    # print(data)
-    # if response.status_code == 200:
-    # with open(filename, "wb") as file:
-    # file.write(response.content)
-    # print("File downloaded successfully.")
-    # else:
-    # print("Failed to download the file. Status code:", response.status_code)
+# print(data)
+# if response.status_code == 200:
+# with open(filename, "wb") as file:
+# file.write(response.content)
+# print("File downloaded successfully.")
+# else:
+# print("Failed to download the file. Status code:", response.status_code)
 
 
 # DownloadApiDefinition()

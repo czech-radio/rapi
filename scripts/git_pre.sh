@@ -17,4 +17,4 @@ isort "$repodir"
 
 ### mypy: static type checks
 mypy --install-types
-mypy -v --no-namespace-packages "$repodir"
+mypy --no-namespace-packages "$repodir"

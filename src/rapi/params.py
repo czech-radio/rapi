@@ -28,6 +28,18 @@ def args_read() -> argparse.Namespace:
         help="logging verbosity (-v for INFO, -vv for DEBUG)",
     )
     parser.add_argument(
+        "--dummy",
+        required=False,
+        help="dummy run",
+        action="store_true",
+    ),
+    parser.add_argument(
+        "--cfg-file",
+        required=False,
+        type=str,
+        help="specify config file",
+    ),
+    parser.add_argument(
         "--test-logs",
         required=False,
         help="testing logging",

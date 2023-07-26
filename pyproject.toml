@@ -12,13 +12,15 @@ license = {text = "BSD-3-Clause"}
 dependencies = [
 	"requests","pyyaml",
 	"types-requests",
+	"types-PyYAML",
+	"configparser",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "rapi.constants.__version__"}
+version = {attr = "rapi.config.__version__"}
 readme = {file = ["README.rst", "USAGE.rst"]}
 
 [tool.setuptools.packages.find]
