@@ -3,6 +3,8 @@ import os
 import sys
 from typing import Dict
 
+from . import config
+
 
 class HelpAction(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):

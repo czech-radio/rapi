@@ -31,12 +31,14 @@ def command(args: argparse.Namespace) -> None:
         loge.error("this is error_level message")
         return
 
+    if args.cfg_file is None:
+        pass
+        # cfgfile = config.get_env_var("RAPI_CFG_FILE", ".config.ini")
+
     ### dummy parser
-    cfgfile = args.cfg_file
-    if cfgfile is None:
-        cfgfile = config.get_env_var_or_default("RAPI_CFG_FILE", ".config.ini")
     if args.dummy:
-        print(cfgfile)
+        # print(cfgfile)
+        return
 
     ### swagger parser
     if args.swagger_download:

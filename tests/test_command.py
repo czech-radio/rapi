@@ -12,8 +12,6 @@ from rapi import command, params
 
 logt = logging.getLogger("log_test")
 logt.setLevel(logging.INFO)
-# from rapi.logger import log_stdout as logo
-# from rapi.logger import log_stdout as loge
 
 
 @pytest.fixture(autouse=True)
