@@ -17,9 +17,31 @@ def is_file_readable(file_path: str) -> bool:
     return os.path.isfile(file_path) and os.access(file_path, os.R_OK)
 
 
-def load_from_cfg(config, section, key) -> str:
+def str_join_no_empty(*args: str) -> str:
+    non_empty_strings = [s for s in args if s]
+    return "_".join(non_empty_strings)
+
+
+def var_from_env(section: str, key: str) -> str:
+    var = str_join_no_empty(section, key)
+    return os.environ.get(var, default="")
+
+
+def var_from_cfg(config, section: str, key: str) -> str:
     env_key = f"{section.upper()}_{key.upper()}"
     return os.environ.get(env_key, config.get(section, key))
+
+
+# def var_get():
+
+
+def get_cfg_vars(cfg_file: str) -> dict:
+    config = configparser.ConfigParser()
+    config.read(cfg_file)
+    for var, section, default in cfg_vars:
+        print(var)
+        print(section, default)
+    return {}
 
 
 # def get_env_var(env_var: str, cfg_file: str, default: str) -> str:
@@ -36,13 +58,7 @@ def load_from_cfg(config, section, key) -> str:
 #     return value
 
 
-def get_cfg_vars(cfg_file: str) -> dict:
-    config = configparser.ConfigParser()
-    config.read(cfg_file)
-    for var, section, default in cfg_vars:
-        print(var, section, default)
-    return {}
-    # load_from_cfg(config)
+# load_from_cfg(config)
 
 
 # def get_env_var(env_var, default):
