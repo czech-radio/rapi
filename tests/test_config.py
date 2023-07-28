@@ -30,16 +30,19 @@ def test_var_from_cfg() -> None:
 
 
 def test_get_var() -> None:
-    ### var only in config
+    ### VAR NOT DEFINED
+    var = config.get_var("", "dummy_val", cfg)
+    assert var is None
+
+    ### VAR ONLY IN CONFIG
+    var = None
     var = config.get_var("test", "cfg_loaded", cfg)
-    print(var)
     assert var
 
-    ### var only in env
+    ### VAR ONLY IN ENV
     var = None
     myvar_name = "MY_VARIABLE"
     myvar_value = "Hello, World!"
     os.environ[myvar_name] = myvar_value
     var = config.get_var(myvar_name, "", cfg)
-    assert var
-    var = None
+    assert var == myvar_value
