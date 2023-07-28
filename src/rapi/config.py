@@ -2,46 +2,56 @@ import configparser
 import logging
 import os
 
+from . import helpers
+
 logt = logging.getLogger("log_test")
 logt.setLevel(logging.INFO)
 
 __version__ = "0.0.1"
 
-cfg_vars = [
-    ("apiurl_mock", "api_urls", ""),
-    ("apiurl_doc", "api_urls", ""),
-]
 
-
-def is_file_readable(file_path: str) -> bool:
-    return os.path.isfile(file_path) and os.access(file_path, os.R_OK)
-
-
-def str_join_no_empty(*args: str) -> str:
-    non_empty_strings = [s for s in args if s]
-    return "_".join(non_empty_strings)
-
-
-def var_from_env(section: str, key: str) -> str:
-    var = str_join_no_empty(section, key)
-    return os.environ.get(var, default="")
-
-
-def var_from_cfg(config, section: str, key: str) -> str:
-    env_key = f"{section.upper()}_{key.upper()}"
-    return os.environ.get(env_key, config.get(section, key))
-
-
-# def var_get():
-
-
-def get_cfg_vars(cfg_file: str) -> dict:
+def config_parse(cfg_file: str) -> configparser.ConfigParser:
     config = configparser.ConfigParser()
     config.read(cfg_file)
-    for var, section, default in cfg_vars:
-        print(var)
-        print(section, default)
-    return {}
+    return config
+
+
+# def var_from_env(section: str, key: str) -> str:
+# var = helpers.str_join_no_empty(section, key)
+# return os.environ.get(var, default="")
+# env_key = f"{section.upper()}_{key.upper()}"
+
+
+# def var_from_env(key: str, default: str="") -> str:
+def var_from_env(
+        section: str, key: str,
+        default: str | None = None
+        ) -> str:
+    sec_key = helpers.str_join_no_empty(section, key)
+    return os.environ.get(sec_key, default)
+
+
+def var_from_cfg(section: str, key: str, config: configparser.ConfigParser) -> str:
+    return os.environ.get(key, config.get(section, key))
+
+
+def get_var(section: str, key: str, config: configparser.ConfigParser) -> str:
+    # key="mekt"
+    value = var_from_env(section, key)
+    return value
+    # if len(kak) == 0:
+    # print("kek")
+    # return value
+    # if value
+
+
+# def get_cfg_vars(cfg_file: str) -> dict:
+# config = configparser.ConfigParser()
+# config.read(cfg_file)
+# for var, section, default in cfg_vars:
+# print(var)
+# print(section, default)
+# return {}
 
 
 # def get_env_var(env_var: str, cfg_file: str, default: str) -> str:
@@ -49,7 +59,7 @@ def get_cfg_vars(cfg_file: str) -> dict:
 #     value = os.environ.get(env_var)
 #     ### 2. from cfg file if exists
 #     if value is None:
-#         if is_file_readable(cfg_file):
+#         if helpers.is_file_readable(cfg_file):
 #             value = load_from_cfg(cfg_file, env_var)
 #     ### 3. defalt value or fail
 #     if value is None:

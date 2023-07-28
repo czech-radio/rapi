@@ -91,6 +91,19 @@ Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (S
 	todo
 	```
 
+## Usage
+
+### Config
+ 
+runtime variables are assigned in following order:
+ 
+1. flags
+2. environment
+3. config file
+4. hardcoded defaults
+
+### How to run
+
 ## Test
 ### test orig api
 - when using curl on api provided at: https://rapidev.croapp.cz use -g, --globoff flag e.g.:
