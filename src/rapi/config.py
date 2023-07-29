@@ -1,7 +1,7 @@
 import configparser
 import logging
 import os
-from typing import Union, Optional
+from typing import Optional, Union
 
 from . import helpers
 
@@ -9,6 +9,11 @@ logt = logging.getLogger("log_test")
 logt.setLevel(logging.INFO)
 
 __version__ = "0.0.1"
+
+from importlib.resources import files
+
+data_text = files("data").joinpath("defaults.ini").read_text()
+print(data_text)
 
 
 def config_parse(cfg_file: str) -> configparser.ConfigParser:
@@ -24,20 +29,19 @@ def config_parse(cfg_file: str) -> configparser.ConfigParser:
 
 
 def var_from_env(
-        section: str, key: str,
-        default: Optional[str] = None
-        ) -> Union[str, None]:
+    section: str, key: str, default: Optional[str] = None
+) -> Union[str, None]:
     sec_key = helpers.str_join_no_empty(section, key)
     return os.environ.get(sec_key, default)
 
 
 def var_from_cfg(
-        section: str, key: str,
-        config: configparser.ConfigParser
-        ) -> Union[str,None]:
+    section: str, key: str, config: configparser.ConfigParser
+) -> Union[str, None]:
     if section == "":
         return None
     return os.environ.get(key, config.get(section, key))
+
 
 ### from:
 #### 1. argparser
@@ -46,15 +50,15 @@ def var_from_cfg(
 #### 4. default value
 #### 5. Empty or panicfail
 
+
 def get_var(
-        section: str, key: str,
-        config: configparser.ConfigParser
-        ) -> Union[str,None]:
-    ### ENV 
+    section: str, key: str, config: configparser.ConfigParser
+) -> Union[str, None]:
+    ### ENV
     val = var_from_env(section, key)
     ### CFG
     if val is None or len(val) == 0:
-        val=var_from_cfg(section,key,config)
+        val = var_from_cfg(section, key, config)
     ### NONE
     if val is None:
         ValueError(f"mandatory variable not defined: {val}")

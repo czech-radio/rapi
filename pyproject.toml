@@ -27,11 +27,17 @@ readme = {file = ["README.rst", "USAGE.rst"]}
 where = ["src"] 
 namespaces = false  
 
+# [tool.setuptools.package-data]
+# data = ["defaults.ini"]
+
 [project.optional-dependencies]
 dev = ["pytest", "black", "isort", "mypy"]
 
 [project.scripts]
 rapi = "rapi.__main__:main"
+
+[tool.black]
+line-length = 79
 
 [tool.pytest.ini_options]
 ### This settings affects both tested module logs and test module itself!? I would like to separate it.
@@ -41,3 +47,4 @@ log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:
 # log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
 # log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
 # log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+

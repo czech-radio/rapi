@@ -19,5 +19,6 @@ clean:
 	rm -rf ./src/rapi.egg-info/
 	rm -rf ./.pytest_cache/
 	rm -rf ./.mypy_cache/
+	rm -rf .venv/
 
 

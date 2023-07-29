@@ -6,7 +6,7 @@ import pytest
 
 from rapi import config
 
-cfgfile = "./config.ini"
+cfgfile = "./defaults.ini"
 cfg = config.config_parse(cfgfile)
 assert os.path.exists(cfgfile), f"File '{cfgfile}' does not exist."
 cfg.read(cfgfile)
@@ -20,7 +20,7 @@ def test_cfg() -> None:
 
 
 def test_var_from_env() -> None:
-    var = config.var_from_env("","PATH")
+    var = config.var_from_env("", "PATH")
     assert var
 
 
