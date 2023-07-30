@@ -11,10 +11,18 @@ from rapi import helpers, params
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
-# import argparse
-
-
 __version__ = "0.0.1"
+
+
+def dict_get(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
+    dicw = dictr
+    for i in sections:
+        resdict = dicw.get(i, None)
+        if resdict is None:
+            return resdict
+        else:
+            dicw = resdict
+    return resdict
 
 
 def config_ini_default() -> configparser.ConfigParser:
@@ -38,9 +46,9 @@ def config_yml_default():
 class Cfg_default:
     def __init__(self):
         self.cfg = config_yml_default()
-
-    def get_value(self, section: str, key: str) -> str:
-        return self.cfg[section][key]
+        self.get_value = lambda sections, dictr=self.cfg: dict_get(
+            dictr, sections
+        )
 
 
 ### config from user provided file
@@ -53,9 +61,9 @@ def config_yml_file(file: str) -> dict:
 class Cfg_file:
     def __init__(self, file: str):
         self.cfg = config_yml_file(file)
-
-    def get_value(self, section: str, key: str) -> str:
-        return self.cfg[section][key]
+        self.get_value = lambda sections, dictr=self.cfg: dict_get(
+            dictr, sections
+        )
 
 
 ### config from env
@@ -64,10 +72,10 @@ def var_from_env(key: str) -> Union[str, None]:
 
 
 def env_vars(cfg_in, section: str = "") -> dict:
+    print(cfg_in)
     cfg = cfg_in
     for k in cfg:
-        ### simple string
-        if isinstance(cfg[k], str) or cfg[k] is True:
+        if isinstance(cfg[k],(str,int,bool)):
             keyname = helpers.str_join_no_empty(section, k)
             env_val = var_from_env(keyname)
             if env_val is not None:
@@ -76,39 +84,44 @@ def env_vars(cfg_in, section: str = "") -> dict:
         ### is dict
         elif isinstance(cfg[k], dict):
             keyname = helpers.str_join_no_empty(section, k)
-            logo.info(f"recursive call for keyname: {keyname}!")
+            logo.info(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
             modscfg = env_vars(scfg, keyname)
             cfg[k] = modscfg
+        ### not implemented
+        else:
+            raise TypeError(f"cannot parse type: {type(cfg[k])}")
     return cfg
 
 
 class Cfg_env:
     def __init__(self):
         self.cfg = env_vars(config_yml_default())
-
-    def get_value(self, section: str, key: str) -> str:
-        return self.cfg[section][key]
-
+        self.get_value = lambda sections, dictr=self.cfg: dict_get(
+            dictr, sections
+        )
 
 ### config from pars
 def pars_vars(cfg_in: dict, pars: dict, section: str = ""):
     cfg = cfg_in
     for k in cfg:
         ### simple string
-        if isinstance(cfg[k], str) or cfg[k] is True:
+        if isinstance(cfg[k],(str,int,bool)):
             keyname = helpers.str_join_no_empty(section, k)
             val = pars.get(keyname, None)
             if val is not None:
-                logo.info(f"taking var from env: {k}, value: {val}")
+                logo.info(f"taking var from par: {k}, value: {val}")
                 cfg[k] = val
         ### is dict
         elif isinstance(cfg[k], dict):
             keyname = helpers.str_join_no_empty(section, k)
-            logo.info(f"recursive call for keyname: {keyname}!")
+            logo.info(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
             modscfg = pars_vars(scfg, pars, keyname)
             cfg[k] = modscfg
+        ### not implemented
+        else:
+            raise TypeError(f"cannot parse type: {type(cfg[k])}")
     return cfg
 
 
@@ -116,10 +129,9 @@ class Cfg_params:
     def __init__(self):
         pars = vars(params.args_read())
         self.cfg = pars_vars(config_yml_default(), pars, "")
-
-    def get_value(self, section: str, key: str) -> str:
-        return self.cfg[key]
-
+        self.get_value = lambda sections, dictr=self.cfg: dict_get(
+            dictr, sections
+        )
 
 class CFG:
     # def __init__(self, cfg_sources: Union[list[dict[str,any]], None] = None):

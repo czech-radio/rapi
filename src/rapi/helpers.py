@@ -12,11 +12,11 @@ def str_join_no_empty(*args: str) -> str:
 
 
 def dict_get(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
-    dicw=dictr
+    dicw = dictr
     for i in sections:
-        resdict=dicw.get(i, None)
+        resdict = dicw.get(i, None)
         if resdict is None:
             return resdict
         else:
-            dicw=resdict
+            dicw = resdict
     return resdict
