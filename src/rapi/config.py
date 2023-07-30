@@ -75,7 +75,7 @@ def env_vars(cfg_in, section: str = "") -> dict:
     print(cfg_in)
     cfg = cfg_in
     for k in cfg:
-        if isinstance(cfg[k],(str,int,bool)):
+        if isinstance(cfg[k], (str, int, bool)):
             keyname = helpers.str_join_no_empty(section, k)
             env_val = var_from_env(keyname)
             if env_val is not None:
@@ -101,12 +101,13 @@ class Cfg_env:
             dictr, sections
         )
 
+
 ### config from pars
 def pars_vars(cfg_in: dict, pars: dict, section: str = ""):
     cfg = cfg_in
     for k in cfg:
         ### simple string
-        if isinstance(cfg[k],(str,int,bool)):
+        if isinstance(cfg[k], (str, int, bool)):
             keyname = helpers.str_join_no_empty(section, k)
             val = pars.get(keyname, None)
             if val is not None:
@@ -133,13 +134,17 @@ class Cfg_params:
             dictr, sections
         )
 
+
 class CFG:
     # def __init__(self, cfg_sources: Union[list[dict[str,any]], None] = None):
-    def __init__(self, cfg_sources):
+    def __init__(self):
         self.cfg_default = Cfg_default()
         self.cfg_runtime = self.cfg_default
-        # self.cfg_sources = Union[list[dict], None]
-        self.cfg_sources = cfg_sources
+        self.cfg_sources = Union[list[dict], None]
 
     def add_source(self, cfg_sources):
         self.cfg_sources = cfg_sources
+
+    # def set_cfg_runtime(self):
+        # for i in self.cfg_sources:
+            # print(i)

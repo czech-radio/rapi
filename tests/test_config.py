@@ -20,15 +20,18 @@ def test_config_yml_default():
 
 t1 = ["test", "cfg_loaded"]
 
+
 def test_Cfg_default():
     cfg = config.Cfg_default()
     val = cfg.get_value(t1)
     assert val
 
+
 def test_Cfg_file():
     cfg = config.Cfg_file("./defaults_alt.yml")
     val = cfg.get_value(t1)
     assert val
+
 
 def test_Cfg_env():
     print()
@@ -50,16 +53,28 @@ def test_Cfg_params():
     sys.argv = ["test3.py", "-vv"]
     cfg = config.Cfg_params()
     val = cfg.get_value(["verbose"])
-    assert val==2
+    assert val == 2
 
 
 def test_CFG() -> None:
-    cfg = config.CFG(None)
-    val = cfg.cfg_default.get_value(*t1)
+    cfg = config.CFG()
+    val = cfg.cfg_default.get_value(t1)
     assert val
+    # print(val)
 
     ### add source
-    cfgy = config.config_yml_file("./defaults_alt.yml")
-    cfg.add_source([cfgy])
-    val = cfg.cfg_runtime.get_value(*t1)
-    assert val
+    #### param source
+    sys.argv = ["test3.py", "-vv"]
+    cfgp = config.Cfg_params()
+    #### env source
+    myvar_name = "test_cfg_loaded"
+    myvar_value = "ich_bin_loaded"
+    os.environ[myvar_name] = myvar_value
+    cfge = config.Cfg_env()
+    #### file source
+    cfgf = config.Cfg_file("./defaults_alt.yml")
+    cfg.add_source([cfgf,cfge])
+
+    for i in cfg.cfg_sources:
+        print(i.get_value(["test"]))
+    # cfg.set_cfg_runtime()
