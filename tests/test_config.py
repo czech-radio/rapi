@@ -4,14 +4,14 @@ import os
 
 import pytest
 
-from rapi import config
+from rapi import config, params
 
 ### fixtures
-cfg = config.config_default_parse()
+cfg = config.config_default()
 
 
 def test_config_default_parse():
-    cfg = config.config_default_parse()
+    cfg = config.config_default()
     assert cfg is not None
 
 
@@ -32,6 +32,12 @@ def test_var_from_cfg() -> None:
     assert var
 
 
+def test_Cfg_default():
+    CFG = config.Cfg_default()
+    val = CFG.get_var("test", "cfg_loaded")
+    print(val)
+
+
 def test_get_var() -> None:
     ### VAR NOT DEFINED
     var = config.get_var("", "dummy_val", cfg)
@@ -49,3 +55,12 @@ def test_get_var() -> None:
     os.environ[myvar_name] = myvar_value
     var = config.get_var(myvar_name, "", cfg)
     assert var == myvar_value
+
+
+def test_set_runtime_var() -> None:
+    var_sources = [
+        config.config_default,
+        params.args_read,
+    ]
+    var = config.set_runtime_var("test", "cfg_loaded", var_sources)
+    print(var)

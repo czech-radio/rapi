@@ -2,6 +2,7 @@ import configparser
 import logging
 import os
 import pkgutil
+import types
 from typing import Optional, Union
 
 from rapi import helpers, params
@@ -12,27 +13,19 @@ logt.setLevel(logging.INFO)
 __version__ = "0.0.1"
 
 
-
 def config_parse(cfg_file: str) -> configparser.ConfigParser:
     cfg_parser = configparser.ConfigParser()
     cfg_parser.read(cfg_file)
     return cfg_parser
 
 
-def config_default_parse() -> configparser.ConfigParser:
+def config_default() -> configparser.ConfigParser:
     cfg_parser = configparser.ConfigParser()
     dats = pkgutil.get_data(__name__, "data/defaults.ini")
     assert dats is not None
     dats_txt = dats.decode("utf-8")
     cfg_parser.read_string(dats_txt)
     return cfg_parser
-
-
-def var_from_env(
-    section: str, key: str, default: Optional[str] = None
-) -> Union[str, None]:
-    sec_key = helpers.str_join_no_empty(section, key)
-    return os.environ.get(sec_key, default)
 
 
 def var_from_cfg(
@@ -42,6 +35,26 @@ def var_from_cfg(
         return None
     return os.environ.get(key, config.get(section, key))
 
+
+class Cfg_default:
+    def __init__(self):
+        ### add function to class with default param
+        self.get_var = (
+            lambda section, key, config=config_default(): var_from_cfg(
+                section, key, config
+            )
+        )
+
+
+def var_from_env(
+    section: str, key: str, default: Optional[str] = None
+) -> Union[str, None]:
+    sec_key = helpers.str_join_no_empty(section, key)
+    return os.environ.get(sec_key, default)
+
+
+# class  Var_from_cfg():
+# def __init__(self,section,key,k):
 
 ### from:
 #### 1. argparser
@@ -65,3 +78,7 @@ def get_var(
     return val
 
 
+def set_runtime_var(section: str, key: str, var_sources: list):
+    for vsrc in var_sources:
+        print(vsrc)
+    return
