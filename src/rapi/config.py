@@ -6,11 +6,13 @@ import types
 from typing import Optional, Union
 
 import yaml
-# import argparse
 
 from rapi import helpers, params
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
+
+# import argparse
+
 
 __version__ = "0.0.1"
 
@@ -90,13 +92,13 @@ class Cfg_env:
 
 
 ### config from pars
-def pars_vars(cfg_in: dict,pars: dict,section: str = ""):
+def pars_vars(cfg_in: dict, pars: dict, section: str = ""):
     cfg = cfg_in
     for k in cfg:
         ### simple string
         if isinstance(cfg[k], str) or cfg[k] is True:
             keyname = helpers.str_join_no_empty(section, k)
-            val=pars.get(keyname,None)
+            val = pars.get(keyname, None)
             if val is not None:
                 logo.info(f"taking var from env: {k}, value: {val}")
                 cfg[k] = val
@@ -105,14 +107,15 @@ def pars_vars(cfg_in: dict,pars: dict,section: str = ""):
             keyname = helpers.str_join_no_empty(section, k)
             logo.info(f"recursive call for keyname: {keyname}!")
             scfg = cfg[k]
-            modscfg = pars_vars(scfg,pars, keyname)
+            modscfg = pars_vars(scfg, pars, keyname)
             cfg[k] = modscfg
     return cfg
+
 
 class Cfg_params:
     def __init__(self):
         pars = vars(params.args_read())
-        self.cfg = pars_vars(config_yml_default(),pars,"")
+        self.cfg = pars_vars(config_yml_default(), pars, "")
 
     def get_value(self, section: str, key: str) -> str:
         return self.cfg[key]

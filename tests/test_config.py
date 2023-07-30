@@ -7,6 +7,7 @@ import pytest
 
 from rapi import config, params
 
+
 def test_config_yml_default():
     cfg = config.config_yml_default()
     test = cfg["test"]
@@ -15,19 +16,6 @@ def test_config_yml_default():
     val = test["cfg_loaded"]
     assert val
     print(val)
-
-
-def test_CFG() -> None:
-    t1 = ["test", "cfg_loaded"]
-    cfg = config.CFG(None)
-    val = cfg.cfg_default.get_value(*t1)
-    assert val
-
-    ### add source
-    cfgy = config.config_yml_file("./defaults_alt.yml")
-    cfg.add_source([cfgy])
-    val = cfg.cfg_runtime.get_value(*t1)
-    assert val
 
 
 def test_Cfg_env():
@@ -50,5 +38,18 @@ def test_Cfg_params():
     sys.argv = ["test3.py", "-vv"]
     print()
     cfg = config.Cfg_params()
-    val=cfg.get_value("","verbose")
+    val = cfg.get_value("", "verbose")
     print(val)
+
+
+def test_CFG() -> None:
+    t1 = ["test", "cfg_loaded"]
+    cfg = config.CFG(None)
+    val = cfg.cfg_default.get_value(*t1)
+    assert val
+
+    ### add source
+    cfgy = config.config_yml_file("./defaults_alt.yml")
+    cfg.add_source([cfgy])
+    val = cfg.cfg_runtime.get_value(*t1)
+    assert val
