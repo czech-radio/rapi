@@ -3,7 +3,8 @@
 
 ### config
 # pytest --capture=tee-sys tests/test_config.py 
-pytest --capture=tee-sys tests/test_config.py::test_Cfg_env
+# pytest --capture=tee-sys tests/test_config.py::test_Cfg_env
+pytest --capture=tee-sys tests/test_config.py::test_Cfg_params
 # pytest --capture=tee-sys tests/test_config.py::test_set_runtime_var
 # pytest --capture=tee-sys tests/test_config.py::test_Cfg_default
 # pytest tests/test_command.py

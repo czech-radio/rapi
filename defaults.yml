@@ -1,3 +1,4 @@
+verbose: 3
 nomek: kak
 runtime:
   hello1: "ahoj"

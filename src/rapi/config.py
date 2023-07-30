@@ -6,6 +6,7 @@ import types
 from typing import Optional, Union
 
 import yaml
+# import argparse
 
 from rapi import helpers, params
 from rapi.logger import log_stdout as loge
@@ -73,7 +74,7 @@ def env_vars(cfg_in, section: str = "") -> dict:
         ### is dict
         elif isinstance(cfg[k], dict):
             keyname = helpers.str_join_no_empty(section, k)
-            logo.info(f"recursive call for keyname: {keyname}")
+            logo.info(f"recursive call for keyname: {keyname}!")
             scfg = cfg[k]
             modscfg = env_vars(scfg, keyname)
             cfg[k] = modscfg
@@ -82,8 +83,39 @@ def env_vars(cfg_in, section: str = "") -> dict:
 
 class Cfg_env:
     def __init__(self):
-        self.cfg = config_yml_default()
         self.cfg = env_vars(config_yml_default())
+
+    def get_value(self, section: str, key: str) -> str:
+        return self.cfg[section][key]
+
+
+### config from pars
+def pars_vars(cfg_in: dict,pars: dict,section: str = ""):
+    cfg = cfg_in
+    for k in cfg:
+        ### simple string
+        if isinstance(cfg[k], str) or cfg[k] is True:
+            keyname = helpers.str_join_no_empty(section, k)
+            val=pars.get(keyname,None)
+            if val is not None:
+                logo.info(f"taking var from env: {k}, value: {val}")
+                cfg[k] = val
+        ### is dict
+        elif isinstance(cfg[k], dict):
+            keyname = helpers.str_join_no_empty(section, k)
+            logo.info(f"recursive call for keyname: {keyname}!")
+            scfg = cfg[k]
+            modscfg = pars_vars(scfg,pars, keyname)
+            cfg[k] = modscfg
+    return cfg
+
+class Cfg_params:
+    def __init__(self):
+        pars = vars(params.args_read())
+        self.cfg = pars_vars(config_yml_default(),pars,"")
+
+    def get_value(self, section: str, key: str) -> str:
+        return self.cfg[key]
 
 
 class CFG:

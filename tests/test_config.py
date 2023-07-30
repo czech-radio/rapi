@@ -1,11 +1,11 @@
 import configparser
 import json
 import os
+import sys
 
 import pytest
 
 from rapi import config, params
-
 
 def test_config_yml_default():
     cfg = config.config_yml_default()
@@ -44,3 +44,11 @@ def test_Cfg_env():
     print("results")
     for k in cfg.cfg:
         print(cfg.cfg[k])
+
+
+def test_Cfg_params():
+    sys.argv = ["test3.py", "-vv"]
+    print()
+    cfg = config.Cfg_params()
+    val=cfg.get_value("","verbose")
+    print(val)
