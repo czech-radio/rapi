@@ -6,9 +6,9 @@ import os
 
 import requests
 
-from . import config, model
-from .logger import log_stdout as loge
-from .logger import log_stdout as logo
+from rapi import config, model
+from rapi.logger import log_stdout as loge
+from rapi.logger import log_stdout as logo
 
 
 class Broadcast:

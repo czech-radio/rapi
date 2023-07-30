@@ -3,7 +3,7 @@ import os
 import sys
 from typing import Dict
 
-from . import config
+from rapi import config
 
 
 class HelpAction(argparse.Action):

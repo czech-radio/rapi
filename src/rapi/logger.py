@@ -18,12 +18,13 @@ class ShortenedLevelFormatter(logging.Formatter):
 
 
 ### FILE LOGGER
-log_file = logging.getLogger("log_file")
-log_file.setLevel(logging.DEBUG)
-debug_handler = logging.FileHandler("./runtime/debug.log")
-debug_formatter = logging.Formatter(default_format)
-debug_handler.setFormatter(debug_formatter)
-log_file.addHandler(debug_handler)
+#### NOTE: dir path must exist. Maybe use /tmp as default ?
+# log_file = logging.getLogger("log_file")
+# log_file.setLevel(logging.DEBUG)
+# debug_handler = logging.FileHandler("./runtime/debug.log")
+# debug_formatter = logging.Formatter(default_format)
+# debug_handler.setFormatter(debug_formatter)
+# log_file.addHandler(debug_handler)
 
 ### STDOUT LOGGER
 log_stdout = logging.getLogger("log_stdout")

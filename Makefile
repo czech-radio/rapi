@@ -14,11 +14,16 @@ $(VENV)/bin/activate:
 run:
 	$(VENV)/bin/rapi -V
 
+build:
+	$(PIP) install --upgrade build
+	$(PYTHON) -m build
+
 clean:
 	rm -rf ./src/rapi/__pycache__/
 	rm -rf ./src/rapi.egg-info/
 	rm -rf ./.pytest_cache/
 	rm -rf ./.mypy_cache/
 	rm -rf .venv/
+	rm -rf ./tests/__pycache__/
 
 

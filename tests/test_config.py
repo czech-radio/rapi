@@ -6,10 +6,13 @@ import pytest
 
 from rapi import config
 
-cfgfile = "./defaults.ini"
-cfg = config.config_parse(cfgfile)
-assert os.path.exists(cfgfile), f"File '{cfgfile}' does not exist."
-cfg.read(cfgfile)
+### fixtures
+cfg = config.config_default_parse()
+
+
+def test_config_default_parse():
+    cfg = config.config_default_parse()
+    assert cfg is not None
 
 
 def test_cfg() -> None:

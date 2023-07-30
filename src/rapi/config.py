@@ -1,31 +1,31 @@
 import configparser
 import logging
 import os
+import pkgutil
 from typing import Optional, Union
 
-from . import helpers
+from rapi import helpers, params
 
 logt = logging.getLogger("log_test")
 logt.setLevel(logging.INFO)
 
 __version__ = "0.0.1"
 
-from importlib.resources import files
-
-data_text = files("data").joinpath("defaults.ini").read_text()
-print(data_text)
 
 
 def config_parse(cfg_file: str) -> configparser.ConfigParser:
-    config = configparser.ConfigParser()
-    config.read(cfg_file)
-    return config
+    cfg_parser = configparser.ConfigParser()
+    cfg_parser.read(cfg_file)
+    return cfg_parser
 
 
-# def var_from_env(section: str, key: str) -> str:
-# var = helpers.str_join_no_empty(section, key)
-# return os.environ.get(var, default="")
-# env_key = f"{section.upper()}_{key.upper()}"
+def config_default_parse() -> configparser.ConfigParser:
+    cfg_parser = configparser.ConfigParser()
+    dats = pkgutil.get_data(__name__, "data/defaults.ini")
+    assert dats is not None
+    dats_txt = dats.decode("utf-8")
+    cfg_parser.read_string(dats_txt)
+    return cfg_parser
 
 
 def var_from_env(
@@ -65,10 +65,3 @@ def get_var(
     return val
 
 
-# def get_cfg_vars(cfg_file: str) -> dict:
-# config = configparser.ConfigParser()
-# config.read(cfg_file)
-# for var, section, default in cfg_vars:
-# print(var)
-# print(section, default)
-# return {}

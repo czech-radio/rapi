@@ -4,10 +4,10 @@ import os
 import sys
 import time
 
-from . import config, swagger
-from .broadcast import Broadcast
-from .logger import log_stdout as loge
-from .logger import log_stdout as logo
+from rapi import config, swagger
+from rapi.broadcast import Broadcast
+from rapi.logger import log_stdout as loge
+from rapi.logger import log_stdout as logo
 
 
 def command(args: argparse.Namespace) -> None:
