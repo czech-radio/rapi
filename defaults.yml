@@ -1,0 +1,7 @@
+nomek: kak
+runtime:
+  hello1: "ahoj"
+  hello2: "teho"
+test:
+  heroku: "kakoj"
+  cfg_loaded: True

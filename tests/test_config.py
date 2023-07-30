@@ -6,61 +6,41 @@ import pytest
 
 from rapi import config, params
 
-### fixtures
-cfg = config.config_default()
 
-
-def test_config_default_parse():
-    cfg = config.config_default()
-    assert cfg is not None
-
-
-def test_cfg() -> None:
-    print()
-    pdic = {section: dict(cfg[section]) for section in cfg.sections()}
-    pdicj = json.dumps(pdic, indent=4)
-    print(pdicj)
-
-
-def test_var_from_env() -> None:
-    var = config.var_from_env("", "PATH")
-    assert var
-
-
-def test_var_from_cfg() -> None:
-    var = config.var_from_cfg("test", "cfg_loaded", cfg)
-    assert var
-
-
-def test_Cfg_default():
-    CFG = config.Cfg_default()
-    val = CFG.get_var("test", "cfg_loaded")
+def test_config_yml_default():
+    cfg = config.config_yml_default()
+    test = cfg["test"]
+    assert test
+    print(test)
+    val = test["cfg_loaded"]
+    assert val
     print(val)
 
 
-def test_get_var() -> None:
-    ### VAR NOT DEFINED
-    var = config.get_var("", "dummy_val", cfg)
-    assert var is None
+def test_CFG() -> None:
+    t1 = ["test", "cfg_loaded"]
+    cfg = config.CFG(None)
+    val = cfg.cfg_default.get_value(*t1)
+    assert val
 
-    ### VAR ONLY IN CONFIG
-    var = None
-    var = config.get_var("test", "cfg_loaded", cfg)
-    assert var
+    ### add source
+    cfgy = config.config_yml_file("./defaults_alt.yml")
+    cfg.add_source([cfgy])
+    val = cfg.cfg_runtime.get_value(*t1)
+    assert val
 
-    ### VAR ONLY IN ENV
-    var = None
-    myvar_name = "MY_VARIABLE"
+
+def test_Cfg_env():
+    print()
+    myvar_name = "nomek"
     myvar_value = "Hello, World!"
     os.environ[myvar_name] = myvar_value
-    var = config.get_var(myvar_name, "", cfg)
-    assert var == myvar_value
+    myvar_name = "test_cfg_loaded"
+    myvar_value = "ich_bin_loaded"
+    os.environ[myvar_name] = myvar_value
 
-
-def test_set_runtime_var() -> None:
-    var_sources = [
-        config.config_default,
-        params.args_read,
-    ]
-    var = config.set_runtime_var("test", "cfg_loaded", var_sources)
-    print(var)
+    cfg = config.Cfg_env()
+    print()
+    print("results")
+    for k in cfg.cfg:
+        print(cfg.cfg[k])
