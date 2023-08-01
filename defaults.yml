@@ -1,5 +1,6 @@
 verbose: 0
-nomek: kak
+nomek: "kak"
+tatek: "sek" 
 # runtime:
   # hello1: "ahoj"
   # hello2: "teho"
@@ -9,3 +10,13 @@ test:
   def: "fdef"
   alt: "fdef"
   cfg_loaded: "defaults.yml"
+  nest:
+    jek: "kek"
+    tek: "jekl"
+    subtek:
+      mok: "pek"
+      jok: "sek"
+  kru: "kol"
+  lek: 
+  smek: "dkfa"
+

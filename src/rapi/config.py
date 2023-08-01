@@ -6,11 +6,13 @@ import types
 from typing import Optional, Union
 
 import yaml
-from mergedeep import merge
 
 from rapi import helpers, params
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
+
+# from mergedeep import merge
+
 
 __version__ = "0.0.1"
 
@@ -72,9 +74,47 @@ class Cfg_file:
 def env_var(key: str) -> Union[str, None]:
     return os.environ.get(key, None)
 
+### env_vars_paths:
+#### Try to find env var predefined in input dictionary. The env var name is constructed from joined dictionary path
+def env_vars_paths(dcfg: dict, pathlists: list = [], pathidx: int=0,cnames: list=[]) -> list:
+    ps=pathlists
+    pi=pathidx
+    for key,val in dcfg.items():
+        if pi+1 > len(ps):
+            ps.append([])
+        if isinstance(val, (str, int, bool)):
+            envname=helpers.str_join_no_empty([*cnames,key])
+            env_val=env_var(envname)
+            if env_val is not None :
+                if len(cnames) > 1:
+                    ps[pi]=ps[pi]+cnames
+                ps[pi].append(key)
+                pi=pi+1
+        if isinstance(val, dict):
+            cn=cnames.copy()
+            cn.append(key)
+            ps=env_vars_paths(val,ps,pi,cn)
+    return ps
 
-def env_vars(cfg_in, section: str = "") -> dict:
-    print(cfg_in)
+def dict_add_path(dictr: dict,path: list,val: str="kek"):
+    n=0
+    for level in path:
+        n=n+1
+        if level and len(path)>n:
+            dictr=dictr.setdefault(level, dict())
+        else: 
+            dictr=dictr.setdefault(level, val)
+
+def env_vars(dcfg: dict)->dict:
+    paths=env_vars_paths(dcfg)
+    dictr={}
+    for p in paths:
+        envval=env_var("_".join(p))
+        dict_add_path(dictr,p,envval)
+    return dictr
+
+
+def env_vars2(cfg_in, section: str = "") -> dict:
     cfg = cfg_in
     for k in cfg:
         ### is atom -> get value
@@ -89,7 +129,7 @@ def env_vars(cfg_in, section: str = "") -> dict:
             keyname = helpers.str_join_no_empty([section, k])
             logo.debug(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
-            modscfg = env_vars(scfg, keyname)
+            modscfg = env_vars2(scfg, keyname)
             cfg[k] = modscfg
         ### not implemented for other types
         else:
@@ -149,13 +189,9 @@ class CFG:
         self.cfg_sources = cfg_sources
 
     def set_cfg_runtime(self):
-        print()
-        print(self.cfg_runtime.cfg)
-        cfgin=self.cfg_runtime.cfg
+        # print()
+        # print(self.cfg_runtime.cfg)
+        cfgin = self.cfg_runtime.cfg
         for s in reversed(self.cfg_sources):
-            mekt=helpers.deep_merge_dicts(cfgin,s.cfg)
-            print(mekt)
-            # cfgin=mekt
-            # print(cfgin)
-
-
+            mekt = helpers.deep_merge_dicts(cfgin, s.cfg)
+            # print(mekt)
