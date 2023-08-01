@@ -5,7 +5,7 @@ import sys
 
 import pytest
 
-from rapi import config, params
+from rapi import config, helpers, params
 
 
 def test_config_yml_default():
@@ -18,35 +18,52 @@ def test_config_yml_default():
     print(val)
 
 
-t1 = ["test", "cfg_loaded"]
+### TESTS PREPARE
+TCASES = [
+    ["test", "cfg_loaded"],
+    "ich_bin_loaded",
+    ["nomek"],
+    "Hello, world!",
+]
+TIN = []
+TOUT = []
+EVARS = []
+for t in range(0, len(TCASES), 2):
+    ### CREATE INPUTS
+    var_path_list = TCASES[t]
+    TIN.append(var_path_list)
+    ### CREATE OUTPUTS
+    var_value = TCASES[t + 1]
+    TOUT.append(var_value)
+    ### CREATE ENV
+    var_path_srt = helpers.str_join_no_empty(var_path_list)
+    EVARS.append(var_path_srt)
 
 
+### TESTS
 def test_Cfg_default():
     cfg = config.Cfg_default()
-    val = cfg.get_value(t1)
+    val = cfg.get_value(TIN[0])
     assert val
 
 
 def test_Cfg_file():
     cfg = config.Cfg_file("./defaults_alt.yml")
-    val = cfg.get_value(t1)
+    val = cfg.get_value(TIN[0])
     assert val
 
 
 def test_Cfg_env():
-    print()
-    myvar_name = "nomek"
-    myvar_value = "Hello, World!"
-    os.environ[myvar_name] = myvar_value
-    myvar_name = "test_cfg_loaded"
-    myvar_value = "ich_bin_loaded"
-    os.environ[myvar_name] = myvar_value
-
+    ### prepare
+    for i in range(len(TIN)):
+        os.environ[EVARS[i]] = TOUT[i]
+    ### test
     cfg = config.Cfg_env()
     for k in cfg.cfg:
         print(cfg.cfg[k])
-    val = cfg.get_value(t1)
-    assert val == myvar_value
+    for i in range(len(TIN)):
+        val = cfg.get_value(TIN[i])
+        assert val == TOUT[i]
 
 
 def test_Cfg_params():
@@ -57,24 +74,28 @@ def test_Cfg_params():
 
 
 def test_CFG() -> None:
+    ### prepare
+    for i in range(len(TIN)):
+        os.environ[EVARS[i]] = TOUT[i]
     cfg = config.CFG()
-    val = cfg.cfg_default.get_value(t1)
-    assert val
-    # print(val)
 
-    ### add source
+    ### test
+    val = cfg.cfg_default.get_value(TIN[0])
+    assert val
+
+    ### add sources
     #### param source
     sys.argv = ["test3.py", "-vv"]
     cfgp = config.Cfg_params()
+
     #### env source
-    myvar_name = "test_cfg_loaded"
-    myvar_value = "ich_bin_loaded"
-    os.environ[myvar_name] = myvar_value
     cfge = config.Cfg_env()
+
     #### file source
     cfgf = config.Cfg_file("./defaults_alt.yml")
-    cfg.add_source([cfgf,cfge])
+    cfg.add_sources([cfgp,cfgf, cfge])
 
+    ### get value from all sources
     for i in cfg.cfg_sources:
-        print(i.get_value(["test"]))
-    # cfg.set_cfg_runtime()
+        print("fuckit",i.get_value(["test"]))
+
