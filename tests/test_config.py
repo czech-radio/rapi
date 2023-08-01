@@ -20,10 +20,10 @@ def test_config_yml_default():
 
 ### TESTS PREPARE
 TCASES = [
-    ["test", "cfg_loaded"],
-    "ich_bin_loaded",
-    ["nomek"],
-    "Hello, world!",
+    # ["test", "cfg_loaded"], "ich_bin_loaded",
+    ["test", "cfg_loaded"], "fenv",
+    ["test", "env"], "fenv",
+    ["nomek"], "Hello, world!",
 ]
 TIN = []
 TOUT = []
@@ -76,7 +76,7 @@ def test_Cfg_params():
 def test_CFG() -> None:
     ### prepare
     for i in range(len(TIN)):
-        os.environ[EVARS[i]] = TOUT[i]
+        os.environ[EVARS[i]] = str(TOUT[i])
     cfg = config.CFG()
 
     ### test
@@ -85,7 +85,7 @@ def test_CFG() -> None:
 
     ### add sources
     #### param source
-    sys.argv = ["test3.py", "-vv"]
+    sys.argv = ["test3.py", "--test-par", "-vv"]
     cfgp = config.Cfg_params()
 
     #### env source
@@ -93,9 +93,10 @@ def test_CFG() -> None:
 
     #### file source
     cfgf = config.Cfg_file("./defaults_alt.yml")
-    cfg.add_sources([cfgp,cfgf, cfge])
 
-    ### get value from all sources
-    for i in cfg.cfg_sources:
-        print("fuckit",i.get_value(["test"]))
+    ### add sources in order of preference
+    # cfg.add_sources([cfge,cfgp,cfgf])
+    # cfg.add_sources([cfge,cfgp,cfgf])
+    cfg.add_sources([cfgf])
 
+    cfg.set_cfg_runtime()

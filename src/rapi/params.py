@@ -30,6 +30,11 @@ def args_read() -> argparse.Namespace:
         help="logging verbosity (-v for INFO, -vv for DEBUG)",
     )
     parser.add_argument(
+        "--test-par",
+        required=False,
+        action='store_true',
+    ),
+    parser.add_argument(
         "--dummy",
         required=False,
         help="dummy run",

@@ -1,2 +1,7 @@
 test:
-  cfg_loaded: "lemon"
+  par: "falt"
+  env: "falt"
+  def: "falt"
+  alt: "falt"
+  cfg_loaded: "defaults_alt.yml"
+

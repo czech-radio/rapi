@@ -6,6 +6,7 @@ import types
 from typing import Optional, Union
 
 import yaml
+from mergedeep import merge
 
 from rapi import helpers, params
 from rapi.logger import log_stdout as loge
@@ -81,12 +82,12 @@ def env_vars(cfg_in, section: str = "") -> dict:
             keyname = helpers.str_join_no_empty([section, k])
             env_val = env_var(keyname)
             if env_val is not None:
-                logo.info(f"taking var from env: {k}, value: {env_val}")
+                logo.debug(f"taking var from env: {k}, value: {env_val}")
                 cfg[k] = env_val
         ### is dict -> recurse
         elif isinstance(cfg[k], dict):
             keyname = helpers.str_join_no_empty([section, k])
-            logo.info(f"recursive call for keyname!: {keyname}")
+            logo.debug(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
             modscfg = env_vars(scfg, keyname)
             cfg[k] = modscfg
@@ -113,12 +114,12 @@ def params_vars(cfg_in: dict, pars: dict, section: str = ""):
             keyname = helpers.str_join_no_empty([section, k])
             val = pars.get(keyname, None)
             if val is not None:
-                logo.info(f"taking var from par: {k}, value: {val}")
+                logo.debug(f"taking var from par: {k}, value: {val}")
                 cfg[k] = val
         ### is dict
         elif isinstance(cfg[k], dict):
             keyname = helpers.str_join_no_empty([section, k])
-            logo.info(f"recursive call for keyname!: {keyname}")
+            logo.debug(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
             modscfg = params_vars(scfg, pars, keyname)
             cfg[k] = modscfg
@@ -147,6 +148,14 @@ class CFG:
     def add_sources(self, cfg_sources):
         self.cfg_sources = cfg_sources
 
-    # def set_cfg_runtime(self):
-    # for i in self.cfg_sources:
-    # print(i)
+    def set_cfg_runtime(self):
+        print()
+        print(self.cfg_runtime.cfg)
+        cfgin=self.cfg_runtime.cfg
+        for s in reversed(self.cfg_sources):
+            mekt=helpers.deep_merge_dicts(cfgin,s.cfg)
+            print(mekt)
+            # cfgin=mekt
+            # print(cfgin)
+
+

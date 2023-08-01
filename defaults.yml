@@ -1,8 +1,11 @@
 verbose: 0
 nomek: kak
-runtime:
-  hello1: "ahoj"
-  hello2: "teho"
+# runtime:
+  # hello1: "ahoj"
+  # hello2: "teho"
 test:
-  heroku: "kakoj"
-  cfg_loaded: True
+  par: "fdef"
+  env: "fdef"
+  def: "fdef"
+  alt: "fdef"
+  cfg_loaded: "defaults.yml"
