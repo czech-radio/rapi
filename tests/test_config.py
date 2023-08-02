@@ -13,19 +13,20 @@ def test_config_yml_default():
     test = cfg["test"]
     assert test
     print(test)
-    val = test["cfg_loaded"]
+    val = test["cfg_prio"]
     assert val
     print(val)
 
 
 ### TESTS PREPARE
 TCASES = [
-    # ["test", "cfg_loaded"], "ich_bin_loaded",
-    ["test", "cfg_loaded"],
-    "fenv",
+    ["test", "cfg_prio"],
+    "env",
     ["test", "env"],
-    "fenv",
+    "env",
     ["nomek"],
+    "fenv",
+    ["only_in_env"],
     "fenv",
     # ["tatek"],
     # "fenv",
@@ -56,13 +57,13 @@ for t in range(0, len(TCASES), 2):
 ### TESTS
 def test_Cfg_default():
     cfg = config.Cfg_default()
-    val = cfg.get_value(TIN[0])
+    val = cfg.get(TIN[0])
     assert val
 
 
 def test_Cfg_file():
     cfg = config.Cfg_file("./defaults_alt.yml")
-    val = cfg.get_value(TIN[0])
+    val = cfg.get(TIN[0])
     assert val
 
 
@@ -77,28 +78,29 @@ def test_Cfg_env():
     # for k in cfg.cfg:
     # print(f"{k}: {cfg.cfg[k]}")
     # for i in range(len(TIN)):
-    # val = cfg.get_value(TIN[i])
+    # val = cfg.get(TIN[i])
     # assert val == TOUT[i]
 
 
 def test_Cfg_params():
     sys.argv = ["test3.py", "-vv"]
     cfg = config.Cfg_params()
-    val = cfg.get_value(["verbose"])
+    val = cfg.get(["verbose"])
     assert val == 2
 
 
 def test_CFG() -> None:
+    print()
     ### prepare
-    print(EVARS)
+    # print(EVARS)
     for i in range(len(EVARS)):
         os.environ[EVARS[i]] = str(TOUT[i])
-    cfg = config.CFG()
+    Cfg = config.CFG()
     # for i in EVARS:
-        # print(i)
+    # print(i)
 
     ### test
-    val = cfg.cfg_default.get_value(TIN[0])
+    val = Cfg.cfg_default.get(TIN[0])
     assert val
 
     ### add sources
@@ -109,16 +111,15 @@ def test_CFG() -> None:
 
     #### env source
     cfge = config.Cfg_env()
-    print(cfge.cfg)
     # print(cfge.cfg)
 
     #### file source
-    # cfgf = config.Cfg_file("./defaults_alt.yml")
+    cfgf = config.Cfg_file("./defaults_alt.yml")
 
     ### add sources in order of preference
-    # cfg.add_sources([cfge])
-    # cfg.add_sources([cfge,cfgp,cfgf])
-    # cfg.add_sources([cfge,cfgp,cfgf])
-    # cfg.add_sources([cfgf])
+    # Cfg.add_sources([cfge,cfgp,cfgf])
+    # Cfg.add_sources([cfge,cfgf])
+    Cfg.add_sources([cfgf])
 
-    # cfg.cfg_runtime_set()
+    Cfg.cfg_runtime_set()
+    print(Cfg.cfg_runtime)

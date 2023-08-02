@@ -21,18 +21,12 @@ def dict_get(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
             dicw = resdict
     return resdict
 
-
-def deep_merge_dicts(dict1, dict2):
-    result = dict1.copy()
-
-    for key, value in dict2.items():
-        if (
-            key in result
-            and isinstance(result[key], dict)
-            and isinstance(value, dict)
-        ):
-            result[key] = deep_merge_dicts(result[key], value)
+def deep_merge_dicts(source,destination):
+    for key, value in source.items():
+        if isinstance(value, dict):
+            # get node or create one
+            node = destination.setdefault(key, {})
+            deep_merge_dicts(value, node)
         else:
-            result[key] = value
-
-    return result
+            destination[key] = value
+    return destination

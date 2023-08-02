@@ -3,7 +3,7 @@ import logging
 import os
 import pkgutil
 import types
-from typing import Optional, Union
+from typing import Any, Optional, Union
 
 import yaml
 
@@ -17,10 +17,10 @@ from rapi.logger import log_stdout as logo
 __version__ = "0.0.1"
 
 
-### dict_get: get subset of dictionary giving list of sections or keyname
-def dict_get(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
+### dict_get: get subset of dictionary giving list of path or keyname
+def dict_get(dictr: dict, path: list[str]) -> Union[dict, list, str, None]:
     dicw = dictr
-    for i in sections:
+    for i in path:
         resdict = dicw.get(i, None)
         if resdict is None:
             return resdict
@@ -50,9 +50,7 @@ def config_yml_default():
 class Cfg_default:
     def __init__(self):
         self.cfg = config_yml_default()
-        self.get_value = lambda sections, dictr=self.cfg: dict_get(
-            dictr, sections
-        )
+        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
 
 
 ### config from user provided file
@@ -65,9 +63,7 @@ def config_yml_file(file: str) -> dict:
 class Cfg_file:
     def __init__(self, file: str):
         self.cfg = config_yml_file(file)
-        self.get_value = lambda sections, dictr=self.cfg: dict_get(
-            dictr, sections
-        )
+        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
 
 
 ### config from env
@@ -97,7 +93,6 @@ def env_vars_cfg_paths(
             cn = cnames.copy()
             cn.append(key)
             ps = env_vars_cfg_paths(val, ps, pi, cn)
-    # print("paths",ps)
     return ps
 
 
@@ -147,9 +142,7 @@ def env_vars_cfg_union(cfg_in: dict, section: str = "") -> dict:
 class Cfg_env:
     def __init__(self):
         self.cfg = env_vars_intersection(config_yml_default())
-        self.get_value = lambda sections, dictr=self.cfg: dict_get(
-            dictr, sections
-        )
+        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
 
 
 ### config from commandline params (flags)
@@ -180,22 +173,31 @@ class Cfg_params:
     def __init__(self):
         pars = vars(params.args_read())
         self.cfg = params_vars_cfg_union(config_yml_default(), pars, "")
-        self.get_value = lambda sections, dictr=self.cfg: dict_get(
-            dictr, sections
-        )
+        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
 
 
 class CFG:
     # def __init__(self, cfg_sources: Union[list[dict[str,any]], None] = None):
-    def __init__(self):
+    def __init__(self) -> None:
         self.cfg_default = Cfg_default()
-        self.cfg_runtime = self.cfg_default
-        self.cfg_sources = Union[list[dict], None]
+        self.cfg_sources: list = []
+        self.cfg_runtime: dict = {}
 
-    def add_sources(self, cfg_sources):
-        self.cfg_sources = cfg_sources
+    def add_sources(self, cfg_sources: list[Any]) -> None:
+        # NOTE: mayebe add check if type implements interface method get or has dict
+        for s in cfg_sources:
+            if s is not None:
+                self.cfg_sources.append(s)
 
-    def cfg_runtime_set(self):
-        cfgin = self.cfg_runtime.cfg
-        for s in reversed(self.cfg_sources):
-            mekt = helpers.deep_merge_dicts(cfgin, s.cfg)
+    def cfg_runtime_set(self) -> None:
+        srcs = self.cfg_sources
+        res: dict = {}
+        ### merge all sources
+        if srcs is None or len(srcs) == 0:
+            self.cfg_runtime = self.cfg_default.cfg
+        else:
+            if self.cfg_default.cfg is not None:
+                srcs.append(self.cfg_default)
+            for s in reversed(srcs):
+                res=helpers.deep_merge_dicts(s.cfg, res)
+        self.cfg_runtime=res

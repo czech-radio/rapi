@@ -1,7 +1,5 @@
+nomek: "alt"
 test:
-  par: "falt"
-  env: "falt"
-  def: "falt"
-  alt: "falt"
-  cfg_loaded: "defaults_alt.yml"
+  alt: "alt"
+  cfg_prio: "alt.yml"
 

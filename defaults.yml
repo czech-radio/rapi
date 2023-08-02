@@ -4,12 +4,15 @@ tatek: "sek"
 runtime:
   hello1: "ahoj"
   hello2: "teho"
+uniqdef: "def"
+uniqdef_sub:
+  uniqdef: "def"
 test:
-  par: "fdef"
-  env: "fdef"
-  def: "fdef"
-  alt: "fdef"
-  cfg_loaded: "defaults.yml"
+  par: "def"
+  env: "def"
+  def: "def"
+  alt: "def"
+  cfg_prio: "def.yml"
   nest:
     jek: "kek"
     tek: "jekl"
