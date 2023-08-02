@@ -29,8 +29,8 @@ def test_deep_merge_dicts():
     merged_dict = helpers.deep_merge_dicts(dict1, dict2)
     print(merged_dict)
 
-def test_dict_paths_vectors()-> None:
-    print()
-    res=helpers.dict_paths_vectors(nested_dict)
-    print(res)
 
+def test_dict_paths_vectors() -> None:
+    print()
+    res = helpers.dict_paths_vectors(nested_dict)
+    print(res)

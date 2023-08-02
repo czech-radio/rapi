@@ -18,7 +18,9 @@ __version__ = "0.0.1"
 
 
 ### dict_get_path: get subset of dictionary giving list of path or keyname
-def dict_get_path(dictr: dict, path: list[str]) -> Union[dict, list, str, None]:
+def dict_get_path(
+    dictr: dict, path: list[str]
+) -> Union[dict, list, str, None]:
     dicw = dictr
     for i in path:
         resdict = dicw.get(i, None)
@@ -66,13 +68,6 @@ class Cfg_file:
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
 
-### dict_paths_list_str:
-def dict_paths_strings(dictr: dict,delim: str="_") -> list[str]:
-    for key, val in dictr.items():
-        pass
-
-
-
 #### Try to find env var predefined in input dictionary. The env var name is constructed from joined dictionary path
 def env_vars_cfg_paths(
     dcfg: dict, pathlists: list = [], pathidx: int = 0, cnames: list = []
@@ -112,7 +107,9 @@ class Cfg_env:
         self.cfg = env_vars_intersection(config_yml_default())
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
+
 # def params_vars_cfg_intersection():
+
 
 ### config from commandline params (flags) union with default config
 def params_vars_cfg_union(cfg_in: dict, pars: dict, section: str = ""):
@@ -168,5 +165,5 @@ class CFG:
             if self.cfg_default.cfg is not None:
                 srcs.append(self.cfg_default)
             for s in reversed(srcs):
-                res=helpers.deep_merge_dicts(s.cfg, res)
-        self.cfg_runtime=res
+                res = helpers.deep_merge_dicts(s.cfg, res)
+        self.cfg_runtime = res

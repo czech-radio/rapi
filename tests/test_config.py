@@ -113,7 +113,7 @@ def test_CFG() -> None:
 
     ### add sources in order of preference
     # Cfg.add_sources([cfge,cfgp,cfgf])
-    Cfg.add_sources([cfge,cfgf])
+    Cfg.add_sources([cfge, cfgf])
     # Cfg.add_sources([cfgf])
 
     Cfg.cfg_runtime_set()
