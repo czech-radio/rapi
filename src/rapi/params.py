@@ -33,6 +33,7 @@ def args_read() -> argparse.Namespace:
         "--test-par",
         required=False,
         action="store_true",
+        help="testing parameter",
     ),
     parser.add_argument(
         "--dummy",

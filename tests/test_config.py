@@ -56,7 +56,8 @@ def test_Cfg_default():
 
 
 def test_Cfg_file():
-    cfg = config.Cfg_file("./defaults_alt.yml")
+    # cfg = config.Cfg_file("./defaults_alt.yml")
+    cfg = config.Cfg_file("./tests/defaults_alt.yml")
     val = cfg.get(TIN[0])
     assert val
 
@@ -103,7 +104,7 @@ def test_CFG() -> None:
     # print(cfge.cfg)
 
     #### file source
-    cfgf = config.Cfg_file("./defaults_alt.yml")
+    cfgf = config.Cfg_file("./tests/defaults_alt.yml")
 
     ### add sources in order of preference
     Cfg.add_sources([cfge, cfgp, cfgf])
