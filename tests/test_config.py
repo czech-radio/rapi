@@ -26,15 +26,15 @@ TCASES = [
     ["test", "env"],
     "fenv",
     ["nomek"],
-    "Hello, world!",
-    ["tatek"],
-    "Hello, again!",
-    ["test","nest","jek"],
-    "Hello, again!",
-    ["test","nest","subtek","mok"],
-    "Hello, again!",
-    ["test","nest","subtek","jok"],
-    "Hello, again!",
+    "fenv",
+    # ["tatek"],
+    # "fenv",
+    # ["test", "nest", "jek"],
+    # "fenv",
+    # ["test", "nest", "subtek", "mok"],
+    # "fenv",
+    # ["test", "nest", "subtek", "jok"],
+    # "fenv",
 ]
 TIN = []
 TOUT = []
@@ -43,9 +43,11 @@ for t in range(0, len(TCASES), 2):
     ### CREATE INPUTS
     var_path_list = TCASES[t]
     TIN.append(var_path_list)
+
     ### CREATE OUTPUTS
     var_value = TCASES[t + 1]
     TOUT.append(var_value)
+
     ### CREATE ENV
     var_path_srt = helpers.str_join_no_empty(var_path_list)
     EVARS.append(var_path_srt)
@@ -73,10 +75,10 @@ def test_Cfg_env():
     cfg = config.Cfg_env()
     print(cfg.cfg)
     # for k in cfg.cfg:
-        # print(f"{k}: {cfg.cfg[k]}")
+    # print(f"{k}: {cfg.cfg[k]}")
     # for i in range(len(TIN)):
-        # val = cfg.get_value(TIN[i])
-        # assert val == TOUT[i]
+    # val = cfg.get_value(TIN[i])
+    # assert val == TOUT[i]
 
 
 def test_Cfg_params():
@@ -88,9 +90,12 @@ def test_Cfg_params():
 
 def test_CFG() -> None:
     ### prepare
-    for i in range(len(TIN)):
+    print(EVARS)
+    for i in range(len(EVARS)):
         os.environ[EVARS[i]] = str(TOUT[i])
     cfg = config.CFG()
+    # for i in EVARS:
+        # print(i)
 
     ### test
     val = cfg.cfg_default.get_value(TIN[0])
@@ -99,18 +104,21 @@ def test_CFG() -> None:
     ### add sources
     #### param source
     sys.argv = ["test3.py", "--test-par", "-vv"]
-    cfgp = config.Cfg_params()
+    # cfgp = config.Cfg_params()
     # print(cfgp.cfg)
 
     #### env source
     cfge = config.Cfg_env()
+    print(cfge.cfg)
+    # print(cfge.cfg)
 
     #### file source
-    cfgf = config.Cfg_file("./defaults_alt.yml")
+    # cfgf = config.Cfg_file("./defaults_alt.yml")
 
     ### add sources in order of preference
+    # cfg.add_sources([cfge])
     # cfg.add_sources([cfge,cfgp,cfgf])
     # cfg.add_sources([cfge,cfgp,cfgf])
-    cfg.add_sources([cfgf])
+    # cfg.add_sources([cfgf])
 
-    cfg.set_cfg_runtime()
+    # cfg.cfg_runtime_set()

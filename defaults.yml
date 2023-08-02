@@ -1,9 +1,9 @@
 verbose: 0
 nomek: "kak"
 tatek: "sek" 
-# runtime:
-  # hello1: "ahoj"
-  # hello2: "teho"
+runtime:
+  hello1: "ahoj"
+  hello2: "teho"
 test:
   par: "fdef"
   env: "fdef"

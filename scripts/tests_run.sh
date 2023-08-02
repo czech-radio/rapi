@@ -15,10 +15,10 @@ ptest="${pytestcmd[@]}"
 #### config.Cfg_?
 # $ptest tests/test_config.py::test_Cfg_default
 # $ptest tests/test_config.py::test_Cfg_file
-$ptest tests/test_config.py::test_Cfg_env
+# $ptest tests/test_config.py::test_Cfg_env
 # $ptest tests/test_config.py::test_Cfg_params
 
 #### config.CFG
-# $ptest tests/test_config.py::test_CFG
+$ptest tests/test_config.py::test_CFG
 
 

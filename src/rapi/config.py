@@ -71,56 +71,63 @@ class Cfg_file:
 
 
 ### config from env
-def env_var(key: str) -> Union[str, None]:
+def env_var_get(key: str) -> Union[str, None]:
     return os.environ.get(key, None)
 
-### env_vars_paths:
+
+### env_vars_cfg_paths:
 #### Try to find env var predefined in input dictionary. The env var name is constructed from joined dictionary path
-def env_vars_paths(dcfg: dict, pathlists: list = [], pathidx: int=0,cnames: list=[]) -> list:
-    ps=pathlists
-    pi=pathidx
-    for key,val in dcfg.items():
-        if pi+1 > len(ps):
+def env_vars_cfg_paths(
+    dcfg: dict, pathlists: list = [], pathidx: int = 0, cnames: list = []
+) -> list:
+    ps = pathlists
+    pi = pathidx
+    for key, val in dcfg.items():
+        if pi + 1 > len(ps):
             ps.append([])
         if isinstance(val, (str, int, bool)):
-            envname=helpers.str_join_no_empty([*cnames,key])
-            env_val=env_var(envname)
-            if env_val is not None :
-                if len(cnames) > 1:
-                    ps[pi]=ps[pi]+cnames
+            envname = helpers.str_join_no_empty([*cnames, key])
+            env_val = env_var_get(envname)
+            if env_val is not None:
+                if len(cnames) > 0:
+                    ps[pi] = ps[pi] + cnames
                 ps[pi].append(key)
-                pi=pi+1
-        if isinstance(val, dict):
-            cn=cnames.copy()
+                pi = pi + 1
+        elif isinstance(val, dict):
+            cn = cnames.copy()
             cn.append(key)
-            ps=env_vars_paths(val,ps,pi,cn)
+            ps = env_vars_cfg_paths(val, ps, pi, cn)
+    # print("paths",ps)
     return ps
 
-def dict_add_path(dictr: dict,path: list,val: str="kek"):
-    n=0
-    for level in path:
-        n=n+1
-        if level and len(path)>n:
-            dictr=dictr.setdefault(level, dict())
-        else: 
-            dictr=dictr.setdefault(level, val)
 
-def env_vars(dcfg: dict)->dict:
-    paths=env_vars_paths(dcfg)
-    dictr={}
+def dict_add_path(dictr: dict, path: list, val: str = "kek"):
+    n = 0
+    for level in path:
+        n = n + 1
+        if level and len(path) > n:
+            dictr = dictr.setdefault(level, dict())
+        else:
+            dictr = dictr.setdefault(level, val)
+
+
+def env_vars_intersection(dcfg: dict) -> dict:
+    paths = env_vars_cfg_paths(dcfg)
+    dictr: dict = {}
     for p in paths:
-        envval=env_var("_".join(p))
-        dict_add_path(dictr,p,envval)
+        envval = env_var_get("_".join(p))
+        if envval is not None:
+            dict_add_path(dictr, p, envval)
     return dictr
 
 
-def env_vars2(cfg_in, section: str = "") -> dict:
+def env_vars_cfg_union(cfg_in: dict, section: str = "") -> dict:
     cfg = cfg_in
     for k in cfg:
         ### is atom -> get value
         if isinstance(cfg[k], (str, int, bool)):
             keyname = helpers.str_join_no_empty([section, k])
-            env_val = env_var(keyname)
+            env_val = env_var_get(keyname)
             if env_val is not None:
                 logo.debug(f"taking var from env: {k}, value: {env_val}")
                 cfg[k] = env_val
@@ -129,7 +136,7 @@ def env_vars2(cfg_in, section: str = "") -> dict:
             keyname = helpers.str_join_no_empty([section, k])
             logo.debug(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
-            modscfg = env_vars2(scfg, keyname)
+            modscfg = env_vars_cfg_union(scfg, keyname)
             cfg[k] = modscfg
         ### not implemented for other types
         else:
@@ -139,14 +146,14 @@ def env_vars2(cfg_in, section: str = "") -> dict:
 
 class Cfg_env:
     def __init__(self):
-        self.cfg = env_vars(config_yml_default())
+        self.cfg = env_vars_intersection(config_yml_default())
         self.get_value = lambda sections, dictr=self.cfg: dict_get(
             dictr, sections
         )
 
 
 ### config from commandline params (flags)
-def params_vars(cfg_in: dict, pars: dict, section: str = ""):
+def params_vars_cfg_union(cfg_in: dict, pars: dict, section: str = ""):
     cfg = cfg_in
     for k in cfg:
         ### simple string
@@ -161,7 +168,7 @@ def params_vars(cfg_in: dict, pars: dict, section: str = ""):
             keyname = helpers.str_join_no_empty([section, k])
             logo.debug(f"recursive call for keyname!: {keyname}")
             scfg = cfg[k]
-            modscfg = params_vars(scfg, pars, keyname)
+            modscfg = params_vars_cfg_union(scfg, pars, keyname)
             cfg[k] = modscfg
         ### not implemented for other types
         else:
@@ -172,7 +179,7 @@ def params_vars(cfg_in: dict, pars: dict, section: str = ""):
 class Cfg_params:
     def __init__(self):
         pars = vars(params.args_read())
-        self.cfg = params_vars(config_yml_default(), pars, "")
+        self.cfg = params_vars_cfg_union(config_yml_default(), pars, "")
         self.get_value = lambda sections, dictr=self.cfg: dict_get(
             dictr, sections
         )
@@ -188,10 +195,7 @@ class CFG:
     def add_sources(self, cfg_sources):
         self.cfg_sources = cfg_sources
 
-    def set_cfg_runtime(self):
-        # print()
-        # print(self.cfg_runtime.cfg)
+    def cfg_runtime_set(self):
         cfgin = self.cfg_runtime.cfg
         for s in reversed(self.cfg_sources):
             mekt = helpers.deep_merge_dicts(cfgin, s.cfg)
-            # print(mekt)
