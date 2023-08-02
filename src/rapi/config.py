@@ -17,8 +17,8 @@ from rapi.logger import log_stdout as logo
 __version__ = "0.0.1"
 
 
-### dict_get: get subset of dictionary giving list of path or keyname
-def dict_get(dictr: dict, path: list[str]) -> Union[dict, list, str, None]:
+### dict_get_path: get subset of dictionary giving list of path or keyname
+def dict_get_path(dictr: dict, path: list[str]) -> Union[dict, list, str, None]:
     dicw = dictr
     for i in path:
         resdict = dicw.get(i, None)
@@ -50,7 +50,7 @@ def config_yml_default():
 class Cfg_default:
     def __init__(self):
         self.cfg = config_yml_default()
-        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
+        self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
 
 ### config from user provided file
@@ -63,15 +63,16 @@ def config_yml_file(file: str) -> dict:
 class Cfg_file:
     def __init__(self, file: str):
         self.cfg = config_yml_file(file)
-        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
+        self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
 
-### config from env
-def env_var_get(key: str) -> Union[str, None]:
-    return os.environ.get(key, None)
+### dict_paths_list_str:
+def dict_paths_strings(dictr: dict,delim: str="_") -> list[str]:
+    for key, val in dictr.items():
+        pass
 
 
-### env_vars_cfg_paths:
+
 #### Try to find env var predefined in input dictionary. The env var name is constructed from joined dictionary path
 def env_vars_cfg_paths(
     dcfg: dict, pathlists: list = [], pathidx: int = 0, cnames: list = []
@@ -83,7 +84,7 @@ def env_vars_cfg_paths(
             ps.append([])
         if isinstance(val, (str, int, bool)):
             envname = helpers.str_join_no_empty([*cnames, key])
-            env_val = env_var_get(envname)
+            env_val = helpers.env_var_get(envname)
             if env_val is not None:
                 if len(cnames) > 0:
                     ps[pi] = ps[pi] + cnames
@@ -96,56 +97,24 @@ def env_vars_cfg_paths(
     return ps
 
 
-def dict_add_path(dictr: dict, path: list, val: str = "kek"):
-    n = 0
-    for level in path:
-        n = n + 1
-        if level and len(path) > n:
-            dictr = dictr.setdefault(level, dict())
-        else:
-            dictr = dictr.setdefault(level, val)
-
-
 def env_vars_intersection(dcfg: dict) -> dict:
     paths = env_vars_cfg_paths(dcfg)
     dictr: dict = {}
     for p in paths:
-        envval = env_var_get("_".join(p))
+        envval = helpers.env_var_get("_".join(p))
         if envval is not None:
-            dict_add_path(dictr, p, envval)
+            helpers.dict_create_path(dictr, p, envval)
     return dictr
-
-
-def env_vars_cfg_union(cfg_in: dict, section: str = "") -> dict:
-    cfg = cfg_in
-    for k in cfg:
-        ### is atom -> get value
-        if isinstance(cfg[k], (str, int, bool)):
-            keyname = helpers.str_join_no_empty([section, k])
-            env_val = env_var_get(keyname)
-            if env_val is not None:
-                logo.debug(f"taking var from env: {k}, value: {env_val}")
-                cfg[k] = env_val
-        ### is dict -> recurse
-        elif isinstance(cfg[k], dict):
-            keyname = helpers.str_join_no_empty([section, k])
-            logo.debug(f"recursive call for keyname!: {keyname}")
-            scfg = cfg[k]
-            modscfg = env_vars_cfg_union(scfg, keyname)
-            cfg[k] = modscfg
-        ### not implemented for other types
-        else:
-            raise TypeError(f"cannot parse type: {type(cfg[k])}")
-    return cfg
 
 
 class Cfg_env:
     def __init__(self):
         self.cfg = env_vars_intersection(config_yml_default())
-        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
+        self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
+# def params_vars_cfg_intersection():
 
-### config from commandline params (flags)
+### config from commandline params (flags) union with default config
 def params_vars_cfg_union(cfg_in: dict, pars: dict, section: str = ""):
     cfg = cfg_in
     for k in cfg:
@@ -173,7 +142,7 @@ class Cfg_params:
     def __init__(self):
         pars = vars(params.args_read())
         self.cfg = params_vars_cfg_union(config_yml_default(), pars, "")
-        self.get = lambda path, dictr=self.cfg: dict_get(dictr, path)
+        self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
 
 class CFG:

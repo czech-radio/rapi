@@ -10,8 +10,12 @@ def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)
 
+### config from env
+def env_var_get(key: str) -> Union[str, None]:
+    return os.environ.get(key, None)
 
-def dict_get(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
+### dict_get_path: get subset of dictionary giving list of path or keyname
+def dict_get_path(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
@@ -20,6 +24,48 @@ def dict_get(dictr: dict, sections: list[str]) -> Union[dict, list, str, None]:
         else:
             dicw = resdict
     return resdict
+
+
+def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
+    n = 0
+    for level in key_path:
+        n = n + 1
+        if level and len(key_path) > n:
+            dictr = dictr.setdefault(level, dict())
+        else:
+            dictr = dictr.setdefault(level, val)
+
+# def dict_paths_vectors(dictr: dict,p_list: list=[],cpos: int=0) -> list[str]:
+def dict_paths_vectors_works(dictr: dict, p_list: list=[], p_idx: int=0, c_vec: list=[]) -> list[str]:
+    pi=p_idx
+    for key, val in dictr.items():
+        if len(p_list) < pi + 1:
+            p_list.append([])
+        if isinstance(val,dict):
+            cv=c_vec.copy()
+            cv.append(key)
+            p_list=dict_paths_vectors(val,p_list,len(p_list),cv)
+        else:
+            if len(c_vec) > 0:
+                p_list[pi]=p_list[pi]+c_vec
+            p_list[pi].append(key)
+            pi=pi+1
+    return p_list
+
+def dict_paths_vectors(dictr: dict, p_list: list=[], c_vec: list=[]) -> list[str]:
+    for key, val in dictr.items():
+        if isinstance(val,dict):
+            cv=c_vec.copy()
+            cv.append(key)
+            p_list=dict_paths_vectors(val,p_list,cv)
+        else:
+            p_list.append([])
+            pi=len(p_list)-1
+            print(pi)
+            if len(c_vec) > 0:
+                p_list[pi]=p_list[pi]+c_vec
+            p_list[pi].append(key)
+    return p_list
 
 def deep_merge_dicts(source,destination):
     for key, value in source.items():

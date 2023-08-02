@@ -75,11 +75,6 @@ def test_Cfg_env():
     ### test
     cfg = config.Cfg_env()
     print(cfg.cfg)
-    # for k in cfg.cfg:
-    # print(f"{k}: {cfg.cfg[k]}")
-    # for i in range(len(TIN)):
-    # val = cfg.get(TIN[i])
-    # assert val == TOUT[i]
 
 
 def test_Cfg_params():
@@ -118,8 +113,8 @@ def test_CFG() -> None:
 
     ### add sources in order of preference
     # Cfg.add_sources([cfge,cfgp,cfgf])
-    # Cfg.add_sources([cfge,cfgf])
-    Cfg.add_sources([cfgf])
+    Cfg.add_sources([cfge,cfgf])
+    # Cfg.add_sources([cfgf])
 
     Cfg.cfg_runtime_set()
     print(Cfg.cfg_runtime)
