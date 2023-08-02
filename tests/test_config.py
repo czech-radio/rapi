@@ -28,18 +28,12 @@ TCASES = [
     "fenv",
     ["only_in_env"],
     "fenv",
-    # ["tatek"],
-    # "fenv",
-    # ["test", "nest", "jek"],
-    # "fenv",
-    # ["test", "nest", "subtek", "mok"],
-    # "fenv",
-    # ["test", "nest", "subtek", "jok"],
-    # "fenv",
 ]
+
 TIN = []
 TOUT = []
 EVARS = []
+
 for t in range(0, len(TCASES), 2):
     ### CREATE INPUTS
     var_path_list = TCASES[t]
@@ -78,21 +72,21 @@ def test_Cfg_env():
 
 
 def test_Cfg_params():
-    sys.argv = ["test3.py", "-vv"]
+    print()
+    sys.argv = ["test3.py", "-vv", "--test-par"]
     cfg = config.Cfg_params()
     val = cfg.get(["verbose"])
     assert val == 2
+    val = cfg.get(["test", "par"])
+    assert val is True
 
 
 def test_CFG() -> None:
     print()
     ### prepare
-    # print(EVARS)
     for i in range(len(EVARS)):
         os.environ[EVARS[i]] = str(TOUT[i])
     Cfg = config.CFG()
-    # for i in EVARS:
-    # print(i)
 
     ### test
     val = Cfg.cfg_default.get(TIN[0])
@@ -101,7 +95,7 @@ def test_CFG() -> None:
     ### add sources
     #### param source
     sys.argv = ["test3.py", "--test-par", "-vv"]
-    # cfgp = config.Cfg_params()
+    cfgp = config.Cfg_params()
     # print(cfgp.cfg)
 
     #### env source
@@ -112,8 +106,8 @@ def test_CFG() -> None:
     cfgf = config.Cfg_file("./defaults_alt.yml")
 
     ### add sources in order of preference
-    # Cfg.add_sources([cfge,cfgp,cfgf])
-    Cfg.add_sources([cfge, cfgf])
+    Cfg.add_sources([cfge, cfgp, cfgf])
+    # Cfg.add_sources([cfge, cfgf])
     # Cfg.add_sources([cfgf])
 
     Cfg.cfg_runtime_set()

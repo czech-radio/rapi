@@ -42,7 +42,7 @@ def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
 
 def dict_paths_vectors(
     dictr: dict, p_list: list = [], c_vec: list = []
-) -> list[str]:
+) -> list:
     for key, val in dictr.items():
         if isinstance(val, dict):
             cv = c_vec.copy()

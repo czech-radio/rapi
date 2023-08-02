@@ -11,7 +11,7 @@ ptest="${pytestcmd[@]}"
 # $ptest tests/test_helper.py
 
 ### config
-# $ptest tests/test_config.py 
+$ptest tests/test_config.py 
 #### config.Cfg_?
 # $ptest tests/test_config.py::test_Cfg_default
 # $ptest tests/test_config.py::test_Cfg_file
@@ -22,5 +22,5 @@ ptest="${pytestcmd[@]}"
 # $ptest tests/test_config.py::test_CFG
 
 #### helper
-$ptest tests/test_helper.py::test_dict_paths_vectors
+# $ptest tests/test_helper.py::test_dict_paths_vectors
 
