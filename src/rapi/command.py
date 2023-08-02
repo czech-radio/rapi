@@ -10,7 +10,33 @@ from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
 
-def command(args: argparse.Namespace) -> None:
+def set_loglevel(level: int = 0):
+    if level == 0:
+        loglevel = logging.WARN
+    if level == 1:
+        loglevel = logging.INFO
+    if level == 2:
+        loglevel = logging.DEBUG
+    logo.setLevel(loglevel)
+    loge.setLevel(loglevel)
+
+
+def test_logs(run: bool):
+    if run:
+        logo.debug("this is debug_level message")
+        logo.info("this is info_level message")
+        logo.warning("this is warning_level message")
+        loge.error("this is error_level message")
+
+
+def command(Cfg: config.CFG) -> None:
+    getv = Cfg.runtime_get
+    vlevel = getv(["verbose"])
+    set_loglevel(vlevel)
+    test_logs(getv(["test", "logs"]))
+
+
+def command2(args: argparse.Namespace) -> None:
     ### version
     if args.version:
         print(config.__version__)

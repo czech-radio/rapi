@@ -1,7 +1,11 @@
 verbose: 0
+version: false
+debug:
+  cfg: false
 test:
   par: "def"
   env: "def"
   def: "def"
   alt: "def"
   cfg_prio: "def.yml"
+  logs: false

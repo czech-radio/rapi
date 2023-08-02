@@ -107,7 +107,8 @@ def test_CFG() -> None:
     cfgf = config.Cfg_file("./tests/defaults_alt.yml")
 
     ### add sources in order of preference
-    Cfg.add_sources([cfge, cfgp, cfgf])
+    # Cfg.add_sources([cfge, cfgp, cfgf])
+    Cfg.add_sources([cfge])
     # Cfg.add_sources([cfge, cfgf])
     # Cfg.add_sources([cfgf])
 

@@ -93,7 +93,7 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
         if val is not None:
             # print("mec",val)
             helpers.dict_create_path(dictr, p, val)
-    print(dictr)
+    # print(dictr)
     return dictr
 
 
@@ -112,6 +112,7 @@ class CFG:
 
     def add_sources(self, cfg_sources: list[Any]) -> None:
         # NOTE: mayebe add check if type implements interface method get or has dict
+        # print(cfg_sources)
         for s in cfg_sources:
             if s is not None:
                 self.cfg_sources.append(s)
@@ -128,3 +129,8 @@ class CFG:
             for s in reversed(srcs):
                 res = helpers.deep_merge_dicts(s.cfg, res)
         self.cfg_runtime = res
+
+    def runtime_get(self, path: list):
+        val = helpers.dict_get_path(self.cfg_runtime, path)
+        return val
+        # pass

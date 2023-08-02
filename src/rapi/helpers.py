@@ -19,7 +19,7 @@ def env_var_get(key: str) -> Union[str, None]:
 ### dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(
     dictr: dict, sections: list[str]
-) -> Union[dict, list, str, None]:
+) -> Union[dict, list, str, bool, int, None]:
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
