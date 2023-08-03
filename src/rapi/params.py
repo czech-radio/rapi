@@ -13,6 +13,7 @@ class HelpAction(argparse.Action):
 
 
 # def args_read() -> Dict[str, any]:
+### TODO: eliminate this, parse params from default config
 def args_read() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(

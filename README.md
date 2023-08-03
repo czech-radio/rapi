@@ -1,5 +1,7 @@
 # rapi
 
+- home: <https://github.com/czech-radio/rapi>
+
 The Python client for <https://rapidoc.croapp.cz/>.
 
 ## Zadání
