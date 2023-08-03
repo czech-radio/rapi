@@ -2,6 +2,14 @@ verbose: 0
 version: false
 debug:
   cfg: false
+broadcast: false
+apis:
+  croapp:
+    urls:
+      mock: "https://mockservice.croapp.cz/mock"
+      doc: "https://rapidoc.croapp.cz"
+      api: "https://rapidev.croapp.cz"
+
 test:
   par: "def"
   env: "def"

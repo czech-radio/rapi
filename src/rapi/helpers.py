@@ -1,6 +1,10 @@
 import os
 from typing import Optional, Sequence, Union
+import json
 
+def pprint(data: dict):
+    data_formated = json.dumps(data, indent=2)
+    print(data_formated)
 
 def is_file_readable(file_path: str) -> bool:
     return os.path.isfile(file_path) and os.access(file_path, os.R_OK)

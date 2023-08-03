@@ -5,13 +5,14 @@ import os
 import sys
 import time
 
-from rapi import config, swagger
+from rapi import config, swagger, helpers
 from rapi.broadcast import Broadcast
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
 
 def set_loglevel(level: int = 0):
+    # NOTE: maybe the loglevel maybe set directly
     if level == 0:
         loglevel = logging.WARN
     if level == 1:
@@ -36,10 +37,8 @@ def debug_cfg(run: bool, cfg: config.CFG):
     if run is False:
         return
     data = cfg.cfg_runtime
-    data_formated = json.dumps(data, indent=4)
-    print(data_formated)
+    helpers.pprint(data)
     sys.exit(0)
-
 
 def command(Cfg: config.CFG) -> None:
     getv = Cfg.runtime_get
@@ -52,37 +51,21 @@ def command(Cfg: config.CFG) -> None:
     ###
     run = getv(["debug", "cfg"])
     debug_cfg(run, Cfg)
+    ###
+    # run = getv(["swagger","download"])
+    run=getv(["broadcast"])
+    if run:
+        # logo.info(f"requesting stations: {args.broadcast}")
+        bdata=Cfg.runtime_get(["apis","croapp"])
+        helpers.pprint(bdata)
+        # st = Broadcast(args)
+        # st.station_ids_parse()
 
 
 def command2(args: argparse.Namespace) -> None:
-    ### version
-    if args.version:
-        print(config.__version__)
-        return
-    ### logs settings
-    if args.verbose == 0:
-        loglevel = logging.WARN
-    if args.verbose == 1:
-        loglevel = logging.INFO
-    if args.verbose == 2:
-        loglevel = logging.DEBUG
-    logo.setLevel(loglevel)
-    loge.setLevel(loglevel)
-    if args.test_logs:
-        logo.debug("this is debug_level message")
-        logo.info("this is info_level message")
-        logo.warning("this is warning_level message")
-        loge.error("this is error_level message")
-        return
-
     if args.cfg_file is None:
         pass
         # cfgfile = config.get_env_var("RAPI_CFG_FILE", ".config.ini")
-
-    ### dummy parser
-    if args.dummy:
-        # print(cfgfile)
-        return
 
     ### swagger parser
     if args.swagger_download:

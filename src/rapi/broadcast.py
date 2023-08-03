@@ -10,8 +10,11 @@ from rapi import config, model
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
-
 class Broadcast:
+    def __init__(self,cfg: dict) -> None:
+        self.cfg=cfg
+
+class Broadcast2:
     def __init__(self, pars: argparse.Namespace) -> None:
         self.params = pars
         self.url_mock = "https://mockservice.croapp.cz/mock"
