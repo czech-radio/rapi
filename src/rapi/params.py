@@ -13,7 +13,20 @@ class HelpAction(argparse.Action):
 
 
 # def args_read() -> Dict[str, any]:
-### TODO: eliminate this, parse params from default config
+### TODO: try to eliminate this, parse params from default config
+# 1. short version will be constructed only for atomic word without delim "_" and first letter will be taken. (multiple words with same starting letter?)
+# 2. required will be allways False
+# 3. type will be taken from defcfg type
+# 4. default value will be taken from defcfg value
+# 5. action will be always store
+# 6. how to treat nargs?
+# 7. help string? maybe from comment above the name in yaml?
+# 8. mutually exlusive group?
+# 9. list of allowed values? from comment above: e.g.:
+# verbose: [1:3]
+# verbose: [1,2,3]
+# 10. explore if code ijections is not possible, otherwise it must be treated.
+
 def args_read() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
