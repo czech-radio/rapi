@@ -20,13 +20,16 @@ class HelpAction(argparse.Action):
 # 3. type will be taken from defcfg type
 # 4. default value will be taken from defcfg value
 # 5. action will be always store
-# 6. how to treat nargs? int, '?', '*', or '+'
+# 6. how to treat nargs? (int, '?', '*', or '+')
 # 7. help string? maybe from comment above the name in yaml?
 # 8. mutually exlusive group?
 # 9. choises? from comment above: e.g.:
 # verbose: [1:3]
 # verbose: [1,2,3]
 # 10. explore if code ijections is not possible, otherwise it must be treated.
+# 11. count? (from comment above)
+# 12. yaml parser which can parse comments or try to parse using reading line by line
+
 
 def args_read() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -45,27 +48,27 @@ def args_read() -> argparse.Namespace:
         help="logging verbosity (-v for INFO, -vv for DEBUG)",
     )
     parser.add_argument(
-        "--test-par",
-        required=False,
-        action="store_true",
-        help="testing parameter",
-    ),
-    parser.add_argument(
-        "--dummy",
-        required=False,
-        help="dummy run",
-        action="store_true",
-    ),
-    parser.add_argument(
         "--cfg-file",
         required=False,
         type=str,
         help="specify config file",
     ),
     parser.add_argument(
+        "--test-par",
+        required=False,
+        action="store_true",
+        help="testing parameter",
+    ),
+    parser.add_argument(
         "--test-logs",
         required=False,
         help="testing logging",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--debug-cfg",
+        required=False,
+        help="debug cfg, print cfg",
         action="store_true",
     )
     parser.add_argument(

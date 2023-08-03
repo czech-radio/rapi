@@ -136,4 +136,3 @@ class CFG:
     def runtime_get(self, path: list):
         val = helpers.dict_get_path(self.cfg_runtime, path)
         return val
-        # pass

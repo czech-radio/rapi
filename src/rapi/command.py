@@ -1,4 +1,5 @@
 import argparse
+import json
 import logging
 import os
 import sys
@@ -22,18 +23,35 @@ def set_loglevel(level: int = 0):
 
 
 def test_logs(run: bool):
-    if run:
-        logo.debug("this is debug_level message")
-        logo.info("this is info_level message")
-        logo.warning("this is warning_level message")
-        loge.error("this is error_level message")
+    if run is False:
+        return
+    logo.debug("this is debug_level message")
+    logo.info("this is info_level message")
+    logo.warning("this is warning_level message")
+    loge.error("this is error_level message")
+    sys.exit(0)
+
+
+def debug_cfg(run: bool, cfg: config.CFG):
+    if run is False:
+        return
+    data = cfg.cfg_runtime
+    data_formated = json.dumps(data, indent=4)
+    print(data_formated)
+    sys.exit(0)
 
 
 def command(Cfg: config.CFG) -> None:
     getv = Cfg.runtime_get
+    ###
     vlevel = getv(["verbose"])
     set_loglevel(vlevel)
-    test_logs(getv(["test", "logs"]))
+    ###
+    run = getv(["test", "logs"])
+    test_logs(run)
+    ###
+    run = getv(["debug", "cfg"])
+    debug_cfg(run, Cfg)
 
 
 def command2(args: argparse.Namespace) -> None:

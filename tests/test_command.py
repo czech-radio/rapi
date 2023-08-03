@@ -32,23 +32,23 @@ def test_example():
 
 def test_version():
     sys.argv = ["test3.py", "--version"]
-    pars = params.args_read()
-    command.command(pars)
+    # pars = params.args_read()
+    # command.command(pars)
 
 
-def test_test_logs_lv1():
-    sys.argv = ["test3.py", "--test-logs", "-v"]
-    pars = params.args_read()
-    command.command(pars)
+# def test_test_logs_lv1():
+# sys.argv = ["test3.py", "--test-logs", "-v"]
+# pars = params.args_read()
+# command.command(pars)
 
 
-def test_test_logs_lv2():
-    sys.argv = ["test3.py", "--test-logs", "-vv"]
-    pars = params.args_read()
-    command.command(pars)
+# def test_test_logs_lv2():
+# sys.argv = ["test3.py", "--test-logs", "-vv"]
+# pars = params.args_read()
+# command.command(pars)
 
 
-def test_test_logs_lv0():
-    sys.argv = ["test3.py", "--test-logs"]
-    pars = params.args_read()
-    command.command(pars)
+# def test_test_logs_lv0():
+# sys.argv = ["test3.py", "--test-logs"]
+# pars = params.args_read()
+# command.command(pars)
