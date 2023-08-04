@@ -1,10 +1,53 @@
-import os
-from typing import Optional, Sequence, Union
+import csv
 import json
+import os
+import pkgutil
+from io import StringIO
+from typing import Any, Optional, Sequence, Union
+
+from rapi.logger import log_stdout as loge
+from rapi.logger import log_stdout as logo
+
 
 def pprint(data: dict):
     data_formated = json.dumps(data, indent=2)
     print(data_formated)
+
+
+def analyze(obj: Any):
+    print(f"value: {obj}")
+    print(f"type{type(obj)}")
+
+
+### files
+def read_csv_imported_to_ram(fname: str) -> Union[csv.DictReader, None]:
+    dbytes = pkgutil.get_data(__name__, fname)
+    if dbytes is not None:
+        dtxt = dbytes.decode("utf-8")
+        csvdata = StringIO(dtxt)
+        csv_reader = csv.DictReader(csvdata, delimiter=";")
+        return csv_reader
+    return None
+
+
+def read_csv_path_to_ram(fname: str) -> csv.DictReader:
+    path = os.path.abspath(fname)
+    logo.info("reading file {path}")
+    with open(path, "r") as f:
+        fdata = f.read()
+    csv_reader = csv.DictReader(fdata, delimiter=";")
+    return csv_reader
+
+
+def read_csv_fspath_or_package_to_ram(
+    fspath: str, pkgpath: str
+) -> Union[csv.DictReader, None]:
+    if fspath is None or fspath == "":
+        csvreader = read_csv_imported_to_ram(pkgpath)
+    else:
+        csvreader = read_csv_path_to_ram(fspath)
+    return csvreader
+
 
 def is_file_readable(file_path: str) -> bool:
     return os.path.isfile(file_path) and os.access(file_path, os.R_OK)
@@ -19,10 +62,11 @@ def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
 def env_var_get(key: str) -> Union[str, None]:
     return os.environ.get(key, None)
 
-def get_first_not_none(path: list,cfg_srcs: list)-> any:
-    res=None
+
+def get_first_not_none(path: list, cfg_srcs: list) -> Any:
+    res = None
     for s in cfg_srcs:
-        res=s.get(path)
+        res = s.get(path)
         if res is not None:
             break
     return res

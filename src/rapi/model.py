@@ -1,5 +1,8 @@
 from dataclasses import asdict, dataclass
 
+# @dataclass
+# class stations
+
 
 @dataclass
 class station_data:

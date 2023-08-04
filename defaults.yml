@@ -2,7 +2,9 @@ verbose: 0
 version: false
 debug:
   cfg: false
-broadcast: false
+broadcast:
+  # station_ids_csv: "./src/rapi/data/stations_ids.csv"
+  station_ids_csv: ""
 cfg:
   file: "./tests/defaults_alt.yml"
 apis:
