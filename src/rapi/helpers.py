@@ -19,6 +19,14 @@ def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
 def env_var_get(key: str) -> Union[str, None]:
     return os.environ.get(key, None)
 
+def get_first_not_none(path: list,cfg_srcs: list)-> any:
+    res=None
+    for s in cfg_srcs:
+        res=s.get(path)
+        if res is not None:
+            break
+    return res
+
 
 ### dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(

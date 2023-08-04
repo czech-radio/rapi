@@ -3,6 +3,8 @@ version: false
 debug:
   cfg: false
 broadcast: false
+cfg:
+  file: "./tests/defaults_alt.yml"
 apis:
   croapp:
     urls:

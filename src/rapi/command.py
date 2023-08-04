@@ -56,8 +56,8 @@ def command(Cfg: config.CFG) -> None:
     run=getv(["broadcast"])
     if run:
         # logo.info(f"requesting stations: {args.broadcast}")
-        bdata=Cfg.runtime_get(["apis","croapp"])
-        helpers.pprint(bdata)
+        bcdata=Cfg.runtime_get(["apis","croapp"])
+        helpers.pprint(bcdata)
         # st = Broadcast(args)
         # st.station_ids_parse()
 
