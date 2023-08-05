@@ -1,32 +1,32 @@
-code;stitle;name1;idn;id
-;;UN-všem-univerzální;3;
-;;CRo-Český rozhlas;5;
-radiozurnal;Radiožurnál;RZ-Radiožurnál;11;4082f63f-30e8-375d-a326-b32cf7d86e02
-plus;Plus;PS-Plus;13;c639d927-f37b-3db8-a64f-1d64ee1469b2
-dvojka;Dvojka;DV-Dvojka;15;17821883-be2d-3880-b971-eceb794388fa
-vltava;Vltava;VL-Vltava;17;0134ce01-8684-3556-b568-f208392ac0bd
-radiowave;Radio Wave;WA-Wave;19;6ab28be7-cdc8-3222-bd6e-c229553125fb
-radiojunior;Rádio Junioru;RJ-Rádio Junior;21;598a62af-86b5-3485-b89d-65379562694a
-cro7;Radio Prague Int.;ZV-Radio Prague International;23;6731e7ee-98e7-36c3-993b-3122ad1317d1
-;;RD-Radio DAB Praha;31;
-strednicechy;Region;SC-Region Střední Čechy;33;f8b5ee83-c786-3c67-8e37-4fdee1007147
-plzen;Plzeň;PN-Plzeň;35;bbe67c0f-4848-355e-a0ab-28f40ade3d38
-kv;Karlovy Vary;KV-Karlovy Vary;37;663e7133-bb52-3477-8d7f-635e43371962
-sever;Sever;SE-Sever;39;5e94e06f-5435-3291-87c5-aeca8bc9c884
-liberec;Liberec;LB-Liberec;41;ad541211-198e-30b7-995c-10bf08c3aea0
-hradec;Hradec Králové;HK-Hradec Králové;43;a831a457-9b80-3271-b153-ddf0ee63a18c
-pardubice;Pardubice;PC-Pardubice;45;67e26b4a-af56-3153-bb09-eaaaa61a7fc7
-cb;České Budějovice;CB-České Budějovice;47;1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
-vysocina;Vysočina;VY-Vysočina;49;36dc9675-1fe8-3c69-b362-ee6784b04ef0
-brno;Brno;BO-Brno;51;184a888f-3d06-3a88-a07f-901bd9b09396
-olomouc;Olomouc;OL-Olomouc;53;c49f6468-acd3-3f98-9db9-92d5e5c0f038
-ostrava;Ostrava;OV-Ostrava;55;318fc506-4dc9-33c6-b0f4-88df17cafa20
-zlín;Zlín;ZL-Zlín;57;b0f03203-0809-3363-bb3d-ccda436d6760
-;;REG-všem regionům;73;
-;;REGIONY-NOC;75;
-;;SP-RŽ Sport;25;
-;;PO-Pohoda;27;
-leonardo;Leonardo;;;8639fa73-56e3-4e4a-aa30-381356bc1623
-cro6;Český rozhlas 6;;;aec8e19c-85c2-4f57-8149-b15590242d46
-radio-ua;Rádio Ukrajina;;;e48436b0-281b-49fd-ad11-6bd2145be928
-Radio-cesko;Rádio Česko;;;a2a7e2ce-9dbf-3677-8705-08f2589cc26b
+openmedia_stanice;openmedia_id;croapp_code;croapp_shortTitle;croapp_id
+UN-všem-univerzální;3;;;
+CRo-Český rozhlas;5;;;
+RZ-Radiožurnál;11;radiozurnal;Radiožurnál;4082f63f-30e8-375d-a326-b32cf7d86e02
+PS-Plus;13;plus;Plus;c639d927-f37b-3db8-a64f-1d64ee1469b2
+DV-Dvojka;15;dvojka;Dvojka;17821883-be2d-3880-b971-eceb794388fa
+VL-Vltava;17;vltava;Vltava;0134ce01-8684-3556-b568-f208392ac0bd
+WA-Wave;19;radiowave;Radio Wave;6ab28be7-cdc8-3222-bd6e-c229553125fb
+RJ-Rádio Junior;21;radiojunior;Rádio Junioru;598a62af-86b5-3485-b89d-65379562694a
+ZV-Radio Prague International;23;cro7;Radio Prague Int.;6731e7ee-98e7-36c3-993b-3122ad1317d1
+RD-Radio DAB Praha;31;;;
+SC-Region Střední Čechy;33;strednicechy;Region;f8b5ee83-c786-3c67-8e37-4fdee1007147
+PN-Plzeň;35;plzen;Plzeň;bbe67c0f-4848-355e-a0ab-28f40ade3d38
+KV-Karlovy Vary;37;kv;Karlovy Vary;663e7133-bb52-3477-8d7f-635e43371962
+SE-Sever;39;sever;Sever;5e94e06f-5435-3291-87c5-aeca8bc9c884
+LB-Liberec;41;liberec;Liberec;ad541211-198e-30b7-995c-10bf08c3aea0
+HK-Hradec Králové;43;hradec;Hradec Králové;a831a457-9b80-3271-b153-ddf0ee63a18c
+PC-Pardubice;45;pardubice;Pardubice;67e26b4a-af56-3153-bb09-eaaaa61a7fc7
+CB-České Budějovice;47;cb;České Budějovice;1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
+VY-Vysočina;49;vysocina;Vysočina;36dc9675-1fe8-3c69-b362-ee6784b04ef0
+BO-Brno;51;brno;Brno;184a888f-3d06-3a88-a07f-901bd9b09396
+OL-Olomouc;53;olomouc;Olomouc;c49f6468-acd3-3f98-9db9-92d5e5c0f038
+OV-Ostrava;55;ostrava;Ostrava;318fc506-4dc9-33c6-b0f4-88df17cafa20
+ZL-Zlín;57;zlín;Zlín;b0f03203-0809-3363-bb3d-ccda436d6760
+REG-všem regionům;73;;;
+REGIONY-NOC;75;;;
+SP-RŽ Sport;25;;;
+PO-Pohoda;27;;;
+;;leonardo;Leonardo;8639fa73-56e3-4e4a-aa30-381356bc1623
+;;cro6;Český rozhlas 6;aec8e19c-85c2-4f57-8149-b15590242d46
+;;radio-ua;Rádio Ukrajina;e48436b0-281b-49fd-ad11-6bd2145be928
+;;Radio-cesko;Rádio Česko;a2a7e2ce-9dbf-3677-8705-08f2589cc26b

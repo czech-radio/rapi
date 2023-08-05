@@ -83,6 +83,8 @@ class Cfg_env:
     # TODO: maybe use alt method when using runtime_cfg_set:
     # traverse the default config constructing path vectors along the way, then try using the vector and concatenated vector to get value i.e. Cfg_?.get_path_value(vec,cvec) if not None skip trying the remaining Cfg_? sources. Then construct the particular cfg dict from path or incorporate the value to default cfg.
     # (This would eliminate traversing default cfg each time.)
+    # or maybe use dict.update(odict)
+    # maybe crreate package config/env.py, config/file.py, cofig/cfg.py
     def __init__(self):
         self.cfg = env_vars_dict_intersec(config_yml_default())
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)

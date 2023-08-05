@@ -14,6 +14,10 @@ def pprint(data: dict):
     print(data_formated)
 
 
+def analyze_type(obj: Any):
+    print(f"type{type(obj)}")
+
+
 def analyze(obj: Any):
     print(f"value: {obj}")
     print(f"type{type(obj)}")
@@ -37,6 +41,21 @@ def read_csv_path_to_ram(fname: str) -> csv.DictReader:
         fdata = f.read()
     csv_reader = csv.DictReader(fdata, delimiter=";")
     return csv_reader
+
+
+def csv_is_row_valid(row: dict) -> bool:
+    for ckey, cval in row.items():
+        if cval == "":
+            return False
+    return True
+
+
+def csv_valid_rows(csv: csv.DictReader) -> list:
+    out: list = []
+    for row in csv:
+        if csv_is_row_valid(row):
+            out.append(row)
+    return out
 
 
 def read_csv_fspath_or_package_to_ram(
