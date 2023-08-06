@@ -49,30 +49,30 @@ for t in range(0, len(TCASES), 2):
 
 
 ### TESTS
-def test_Cfg_default():
+def test_Cfg_default() -> None:
     cfg = config.Cfg_default()
     val = cfg.get(TIN[0])
     assert val
 
 
-def test_Cfg_file():
+def test_Cfg_file() -> None:
     # cfg = config.Cfg_file("./defaults_alt.yml")
-    cfg = config.Cfg_file("./tests/defaults_alt.yml")
+    cfg = config.Cfg_file("./tests/data/defaults_alt.yml")
     val = cfg.get(TIN[0])
     assert val
 
 
-def test_Cfg_env():
+def test_Cfg_env() -> None:
     print()
     ### prepare
     for i in range(len(TIN)):
-        os.environ[EVARS[i]] = TOUT[i]
+        os.environ[EVARS[i]] = str(TOUT[i])
     ### test
     cfg = config.Cfg_env()
     print(cfg.cfg)
 
 
-def test_Cfg_params():
+def test_Cfg_params() -> None:
     print()
     sys.argv = ["test3.py", "-vv", "--test-par"]
     cfg = config.Cfg_params()
@@ -104,13 +104,13 @@ def test_CFG() -> None:
     # print(cfge.cfg)
 
     #### file source
-    cfgf = config.Cfg_file("./tests/defaults_alt.yml")
+    cfgf = config.Cfg_file("./tests/data/defaults_alt.yml")
 
     ### add sources in order of preference
-    # Cfg.add_sources([cfge, cfgp, cfgf])
-    Cfg.add_sources([cfge])
-    # Cfg.add_sources([cfge, cfgf])
+    # Cfg.add_sources([cfge])
     # Cfg.add_sources([cfgf])
+    # Cfg.add_sources([cfge, cfgf])
+    Cfg.add_sources([cfgp, cfge, cfgf])
 
     Cfg.cfg_runtime_set()
-    print(Cfg.cfg_runtime)
+    helpers.pprint(Cfg.cfg_runtime)

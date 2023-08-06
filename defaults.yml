@@ -3,8 +3,9 @@ version: false
 debug:
   cfg: false
 broadcast:
-  station_ids_csv: "default"
-  station_ids_pkey: "openmedia_id"
+  station_ids:
+    csv: "default"
+    pkey: "openmedia_id"
 cfgi:
   file: "./tests/defaults_alt.yml"
 apis:

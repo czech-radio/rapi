@@ -7,8 +7,8 @@ def main() -> None:
     Cfg = config.CFG()
     os.environ["test_env"] = "env"
     ### initialize cfg sources
-    cfge = config.Cfg_env()
     cfgp = config.Cfg_params()
+    cfge = config.Cfg_env()
     cfgd = config.Cfg_default()
     ### print current version of program
     if cfgp.cfg.get("version"):

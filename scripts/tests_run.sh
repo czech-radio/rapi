@@ -6,10 +6,12 @@ declare -a pytestcmd=(
 ptest="${pytestcmd[@]}"
 
 ### modules
-$ptest tests/
+# $ptest tests/
 # $ptest tests/test_command.py 
 # $ptest tests/test_config.py 
 # $ptest tests/test_helper.py
+# $ptest tests/test_main.py
+# $ptest tests/test_broadcast.py
 
 ### config
 # $ptest tests/test_config.py 
@@ -21,6 +23,17 @@ $ptest tests/
 
 #### config.CFG
 # $ptest tests/test_config.py::test_CFG
+
+### broadcast
+par="tests/test_broadcast.py::"
+$ptest tests/test_broadcast.py
+
+### stationIDs
+par="tests/test_station_ids.py::"
+# $ptest "${par}test_get_pkey_list"
+# $ptest "${par}test_get_table"
+# $ptest "${par}test_get_row_by_pkey"
+# $ptest "${par}test_get_fkey"
 
 #### helper
 # $ptest tests/test_helper.py::test_dict_paths_vectors

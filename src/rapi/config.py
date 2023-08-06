@@ -96,9 +96,7 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
     for p in paths:
         val = pars.get("_".join(p))
         if val is not None:
-            # print("mec",val)
             helpers.dict_create_path(dictr, p, val)
-    # print(dictr)
     return dictr
 
 
@@ -117,7 +115,6 @@ class CFG:
 
     def add_sources(self, cfg_sources: list[Any]) -> None:
         # NOTE: maybe add check if type implements interface method get or has dict
-        # print(cfg_sources)
         for s in cfg_sources:
             if s is not None:
                 self.cfg_sources.append(s)

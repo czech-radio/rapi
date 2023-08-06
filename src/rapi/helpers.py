@@ -9,7 +9,8 @@ from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
 
-def pprint(data: dict):
+### printers
+def pprint(data: Any):
     data_formated = json.dumps(data, indent=2)
     print(data_formated)
 
@@ -23,7 +24,7 @@ def analyze(obj: Any):
     print(f"type{type(obj)}")
 
 
-### files
+### csv files
 def read_csv_imported_to_ram(fname: str) -> Union[csv.DictReader, None]:
     dbytes = pkgutil.get_data(__name__, fname)
     if dbytes is not None:
@@ -91,7 +92,8 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
     return res
 
 
-### dict_get_path: get subset of dictionary giving list of path or keyname
+### dict helpers
+#### dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(
     dictr: dict, sections: list[str]
 ) -> Union[dict, list, str, bool, int, None]:

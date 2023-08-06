@@ -3,11 +3,11 @@ import json
 import logging
 import os
 import pkgutil
-from typing import Any
+from typing import Any, Union
 
 import requests
 
-from rapi import config, helpers, model
+from rapi import config, helpers, model, station_ids
 from rapi.helpers import analyze as an
 from rapi.helpers import analyze_type as ant
 from rapi.logger import log_stdout as loge
@@ -17,62 +17,13 @@ from rapi.logger import log_stdout as logo
 class Broadcast:
     def __init__(self, cfg: config.CFG) -> None:
         self.Cfg = cfg
-        self.StationIDs = StationIDs(cfg)
-        # self.StationIDs.ids_primary_list()
-        # print(self.StationIDs)
-
-
-class StationIDs:
-    def __init__(self, cfg: config.CFG) -> None:
-        self.Cfg = cfg
-        self.DBpath = self.Cfg.runtime_get(["broadcast", "station_ids_csv"])
-        self.DB_global_id = self.Cfg.runtime_get(
-            ["broadcast", "station_ids_pkey"]
-        )
-        self.DB = self.db_csv_init(self.DBpath)
-        pkeys=self.pkey_list()
-        print(pkeys)
-
-    def db_csv_init(self, fspath: str = "default") -> list:
-        if fspath == "default":
-            pkgpath = "data/stations_ids.csv"
-            fspath = ""
-        csvr = helpers.read_csv_fspath_or_package_to_ram(
-            fspath,
-            pkgpath,
-        )
-        if csvr is None:
-            loge.error("cannot parse station_ids_csv")
-            raise ValueError
-        return helpers.csv_valid_rows(csvr)
-
-    def pkey_list(self) -> list:
-        pkey = self.DB_global_id
-        out = []
-        for row in self.DB:
-            out.append(row[pkey])
-        return out
-
-    # def get_station(self, station_id: str):
-        # id_field_name = self.Cfg.runtime_get(
-            # ["broadcast", "station_id_global_fieldname"]
-        # )
-        # print(id_field_name)
+        self.StationIDs = station_ids.StationIDs(cfg)
 
 
 # class Broadcast2:
 # def __init__(self, pars: argparse.Namespace) -> None:
-# self.params = pars
-# self.url_mock = "https://mockservice.croapp.cz/mock"
-# self.url_apidoc = "https://rapidoc.croapp.cz"
-# self.url_api = "https://rapidev.croapp.cz"
-# self.station_ids_file = "data/stations_ids_table.csv"
 # self.raw_data = self.request_data()
 # self.Entities = self.entities_parse_fields()
-# logo.info("broadcast class initialized")
-
-# def params_debug(self) -> None:
-# print(json.dumps(self.params.__dict__))
 
 # def request_data(self) -> dict:
 # url = self.url_api + "/stations-all"
