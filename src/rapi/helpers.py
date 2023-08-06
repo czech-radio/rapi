@@ -2,8 +2,11 @@ import csv
 import json
 import os
 import pkgutil
+import sys
 from io import StringIO
 from typing import Any, Optional, Sequence, Union
+
+import requests
 
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
@@ -15,7 +18,7 @@ def pprint(data: Any):
     print(data_formated)
 
 
-def analyze_type(obj: Any):
+def ptype(obj: Any):
     print(f"type{type(obj)}")
 
 
@@ -30,6 +33,7 @@ def read_csv_imported_to_ram(fname: str) -> Union[csv.DictReader, None]:
     if dbytes is not None:
         dtxt = dbytes.decode("utf-8")
         csvdata = StringIO(dtxt)
+        # reader = csv.reader(f)
         csv_reader = csv.DictReader(csvdata, delimiter=";")
         return csv_reader
     return None
@@ -143,3 +147,32 @@ def deep_merge_dicts(source, destination):
         else:
             destination[key] = value
     return destination
+
+
+### http request
+def request_url(url: str) -> requests.models.Response:
+    try:
+        ### download url data
+        logo.info(f"requesting url: {url}")
+        response = requests.get(url)
+    except requests.exceptions.HTTPError as errh:
+        loge.error(errh)
+        sys.exit(0)
+    except requests.exceptions.ConnectionError as errc:
+        loge.error(f"Connection Error: {errc}")
+    except requests.exceptions.Timeout as errt:
+        loge.error(f"Timeout Error:{errt}")
+    except requests.exceptions.RequestException as err:
+        loge.error(f"unknow exception:{err}")
+    response.raise_for_status()
+    return response
+
+
+def request_url_json(url: str) -> Union[dict, None]:
+    response = request_url(url)
+    # json_data = json.loads(response.text)
+    jdata = response.json()
+    return jdata
+
+
+# def request_url_yaml()

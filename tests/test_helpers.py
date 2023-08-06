@@ -1,4 +1,9 @@
+from typing import Union
+
 from rapi import helpers
+from rapi.helpers import analyze as an
+from rapi.helpers import pprint as pp
+from rapi.helpers import ptype as pt
 
 nested_dict = {
     "dummy": "hello_dumm",
@@ -34,3 +39,25 @@ def test_dict_paths_vectors() -> None:
     print()
     res = helpers.dict_paths_vectors(nested_dict)
     print(res)
+
+
+def test_request_url() -> None:
+    print()
+    url = "https://rapidev.croapp.cz/stations?"
+    # url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
+    # url = "https://rapidev.croapp.cz/stat?"
+    req = helpers.request_url(url)
+    helpers.ptype(req.headers)
+    helpers.pprint(dict(req.headers))
+    print(req.status_code)
+    print(req.reason)
+
+
+def test_request_url_json() -> None:
+    print()
+    url = "https://rapidev.croapp.cz/stations?"
+    # url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
+    jdata = helpers.request_url_json(url)
+    assert jdata
+    an(jdata)
+    pp(jdata)

@@ -9,7 +9,7 @@ import requests
 
 from rapi import config, helpers, model
 from rapi.helpers import analyze as an
-from rapi.helpers import analyze_type as ant
+from rapi.helpers import ptype as ant
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 

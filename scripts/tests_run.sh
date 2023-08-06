@@ -25,16 +25,18 @@ ptest="${pytestcmd[@]}"
 # $ptest tests/test_config.py::test_CFG
 
 ### broadcast
-par="tests/test_broadcast.py::"
-$ptest tests/test_broadcast.py
+par="tests/test_broadcast.py"
+# $ptest $par
 
 ### stationIDs
-par="tests/test_station_ids.py::"
-# $ptest "${par}test_get_pkey_list"
-# $ptest "${par}test_get_table"
-# $ptest "${par}test_get_row_by_pkey"
-# $ptest "${par}test_get_fkey"
+par="tests/test_station_ids.py"
+# $ptest "${par}::test_get_pkey_list"
+# $ptest "${par}::test_get_table"
+# $ptest "${par}::test_get_row_by_pkey"
+# $ptest "${par}::test_get_fkey"
 
 #### helper
-# $ptest tests/test_helper.py::test_dict_paths_vectors
-
+par="tests/test_helpers.py"
+# $ptest $par
+# $ptest ${par}::test_request_url
+$ptest ${par}::test_request_url_json

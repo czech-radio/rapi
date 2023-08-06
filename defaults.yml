@@ -2,6 +2,9 @@ verbose: 0
 version: false
 debug:
   cfg: false
+workdir:
+  use: false
+  dir: "./runtime/"
 broadcast:
   station_ids:
     csv: "default"
