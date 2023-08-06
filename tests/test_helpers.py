@@ -5,6 +5,13 @@ from rapi.helpers import analyze as an
 from rapi.helpers import pprint as pp
 from rapi.helpers import ptype as pt
 
+# data = [
+# {'name': 'John', 'age': 30, 'city': 'New York'},
+# {'name': 'Jane', 'age': 25, 'city': 'Los Angeles'},
+# {'name': 'Michael', 'age': 40, 'city': 'Chicago'},
+# {'name': 'Emily', 'age': 22, 'city': 'San Francisco'}
+# ]
+
 nested_dict = {
     "dummy": "hello_dumm",
     "person1": {
@@ -58,8 +65,12 @@ def test_request_url_json() -> None:
     # url="https://rapidev.croapp.cz/stations?page[1]=0&page[limit]=1"
     jdata = helpers.request_url_json(url)
     assert jdata
-    an(jdata)
-    pp(jdata)
+    # an(jdata)
+    # pp(jdata)
+    # pp(jdata[0])
+    # for i in jdata:
+    # print(i)
+    # break
 
 
 def test_request_url_yaml() -> None:
@@ -69,3 +80,27 @@ def test_request_url_yaml() -> None:
     url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     ydata = helpers.request_url_yaml(url)
     pp(ydata)
+
+
+def test_dict_list_to_rows():
+    url = "https://rapidev.croapp.cz/stations?"
+    jdata = helpers.request_url_json(url)
+    sdata = jdata["data"]
+    rows, header = helpers.dict_list_to_rows(sdata)
+    helpers.save_rows_to_csv("./runtime2/stations.csv", rows, header)
+    tdata = helpers.rows_transpose([header])
+    helpers.save_rows_to_csv("./runtime2/stations_fields.csv", tdata)
+
+
+def test_json_to_csv() -> None:
+    url = "https://rapidev.croapp.cz/stations?"
+    jdata = helpers.request_url_json(url)
+    if jdata is None:
+        return
+    paths = helpers.dict_paths_vectors(jdata)
+    print(paths)
+    # print(jdata['data'])
+    paths = helpers.dict_paths_vectors(jdata["data"][0])
+    print(paths)
+    # helpers.dict_to_csv(jdata)
+    # helpers.dict_to_csv(jdata['meta'])

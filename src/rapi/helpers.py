@@ -4,8 +4,9 @@ import os
 import pkgutil
 import sys
 from io import StringIO
-from typing import Any, Optional, Sequence, Union
+from typing import Any, Optional, Sequence, Tuple, Union
 
+import numpy as np
 import requests
 import yaml
 
@@ -139,6 +140,14 @@ def dict_paths_vectors(
     return p_list
 
 
+def dict_paths_to_strings(lst: list) -> list:
+    out: list = []
+    for p in lst:
+        stro = ".".join(p)
+        out.append(stro)
+    return out
+
+
 def deep_merge_dicts(source, destination):
     for key, value in source.items():
         if isinstance(value, dict):
@@ -190,5 +199,51 @@ def request_url_yaml(url: str) -> Union[dict, None]:
 # file.write(r.text)
 # except IOError as err:
 # loge.error(f"error saving the file:{err}")
-
 # ystr=yaml.dump(data,allow_unicode=True)
+
+
+def dict_to_row(dictr: dict, sections: list) -> list:
+    row: list = []
+    for s in sections:
+        row.append(dict_get_path(dictr, s))
+    return row
+
+
+# Convert list of dictionaries to a NumPy array
+# array_data = np.array([(d['name'], d['age'], d['city']) for d in data], dtype=[('name', 'U10'), ('age', int), ('city', 'U20')])
+
+
+def dict_list_to_rows(
+    lstarr: list[dict], check_type: Union[Any, None] = None
+) -> Tuple[list, list]:
+    logo.info("converting")
+    paths = dict_paths_vectors(lstarr[0])
+    header = dict_paths_to_strings(paths)
+    rows: list = []
+    for l in lstarr:
+        row = dict_to_row(l, paths)
+        rows.append(row)
+    return rows, header
+
+
+def rows_transpose(rows: list, header: list = []) -> list:
+    if len(header) > 0:
+        data = [header] + rows
+    else:
+        data = rows
+    cols: list = []
+    for c in range(len(data[0])):
+        row = list()
+        for i in range(len(data)):
+            row.append(data[i][c])
+        cols.append(row)
+    return cols
+
+
+def save_rows_to_csv(fname: str, rows: list, header: list = []):
+    with open(fname, "w", newline="") as file:
+        # writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer = csv.writer(file)
+        if len(header) > 0:
+            writer.writerow(header)  # Writing header
+        writer.writerows(rows)

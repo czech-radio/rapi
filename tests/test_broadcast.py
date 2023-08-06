@@ -10,8 +10,6 @@ sys.argv = [
     "test3.py",
     "--broadcast",
     "-vv",
-    # "broadcast-st=10",
-    # "--broadcast-station_ids_pkey=openmedia_id",
 ]
 cfgp = config.Cfg_params()
 cfge = config.Cfg_env()

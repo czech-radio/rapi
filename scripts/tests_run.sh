@@ -40,4 +40,7 @@ par="tests/test_helpers.py"
 # $ptest $par
 # $ptest ${par}::test_request_url
 # $ptest ${par}::test_request_url_json
-$ptest ${par}::test_request_url_yaml
+# $ptest ${par}::test_request_url_yaml
+# $ptest ${par}::test_json_to_csv
+$ptest ${par}::test_dict_list_to_rows
+

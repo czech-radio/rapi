@@ -15,6 +15,7 @@ dependencies = [
 	"types-PyYAML",
 	"configparser",
 	"mergedeep",
+	"numpy",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",
