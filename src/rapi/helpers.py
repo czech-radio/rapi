@@ -7,6 +7,7 @@ from io import StringIO
 from typing import Any, Optional, Sequence, Union
 
 import requests
+import yaml
 
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
@@ -151,6 +152,9 @@ def deep_merge_dicts(source, destination):
 
 ### http request
 def request_url(url: str) -> requests.models.Response:
+    # headers = {}
+    # params = {}
+    # response = requests.get(url, headers=headers, params=params)
     try:
         ### download url data
         logo.info(f"requesting url: {url}")
@@ -175,4 +179,16 @@ def request_url_json(url: str) -> Union[dict, None]:
     return jdata
 
 
-# def request_url_yaml()
+def request_url_yaml(url: str) -> Union[dict, None]:
+    response = request_url(url)
+    ydata = yaml.safe_load(response.content)
+    return ydata
+
+
+# try:
+# with open(swagger_file, "w", encoding="utf8") as file:
+# file.write(r.text)
+# except IOError as err:
+# loge.error(f"error saving the file:{err}")
+
+# ystr=yaml.dump(data,allow_unicode=True)

@@ -52,38 +52,10 @@ def command(Cfg: config.CFG) -> None:
     ###
     run = getv(["debug", "cfg"])
     debug_cfg(run, Cfg)
+
     ### broadcast
-    # run = getv(["swagger","download"])
     if getv(["broadcast"]):
         bc = Broadcast(Cfg)
-        # bc.station_ids_
         # logo.info(f"requesting stations: {args.broadcast}")
         # bcdata=Cfg.runtime_get(["apis","croapp"])
         # helpers.pprint(bcdata)
-        # st = Broadcast(args)
-        # st.station_ids_parse()
-
-
-# def command2(args: argparse.Namespace) -> None:
-# if args.cfg_file is None:
-# pass
-# cfgfile = config.get_env_var("RAPI_CFG_FILE", ".config.ini")
-
-### swagger parser
-# if args.swagger_download:
-# logo.info(f"downloading file: {args.swagger_download}")
-# swagger.swagger_download(args.swagger_download)
-# return
-# if args.swagger_parse:
-# logo.info(f"parsing swagger file: {args.swagger_parse}")
-# swagger.swagger_parse(args.swagger_parse)
-# return
-
-### broacast class
-# if args.broadcast:
-# logo.info(f"requesting stations: {args.broadcast}")
-# st = Broadcast(args)
-# st.station_ids_parse()
-# for i in st.Entities:
-# print(st.Entities[i])
-# return

@@ -44,7 +44,6 @@ def test_dict_paths_vectors() -> None:
 def test_request_url() -> None:
     print()
     url = "https://rapidev.croapp.cz/stations?"
-    # url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     # url = "https://rapidev.croapp.cz/stat?"
     req = helpers.request_url(url)
     helpers.ptype(req.headers)
@@ -56,8 +55,17 @@ def test_request_url() -> None:
 def test_request_url_json() -> None:
     print()
     url = "https://rapidev.croapp.cz/stations?"
-    # url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
+    # url="https://rapidev.croapp.cz/stations?page[1]=0&page[limit]=1"
     jdata = helpers.request_url_json(url)
     assert jdata
     an(jdata)
     pp(jdata)
+
+
+def test_request_url_yaml() -> None:
+    ### urls:
+    # https://rapidoc.croapp.cz/index.html ->
+    # url="https://rapidoc.croapp.cz/apifile/openapi.yaml"
+    url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
+    ydata = helpers.request_url_yaml(url)
+    pp(ydata)
