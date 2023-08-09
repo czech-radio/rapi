@@ -113,6 +113,18 @@ class CFG:
         self.cfg_sources: list = []
         self.cfg_runtime: dict = {}
 
+    def cfg_runtime_set_defaults(self):
+        cfgp = Cfg_params()
+        cfge = Cfg_env()
+        path = ["cfg", "file"]
+        cfgd = Cfg_default()
+        cfg_fname = helpers.get_first_not_none(path, [cfgp, cfge, cfgd])
+        cfgf = None
+        if cfg_fname is not None:
+            cfgf = Cfg_file(cfg_fname)
+        self.add_sources([cfgp, cfge, cfgf])
+        self.cfg_runtime_set()
+
     def add_sources(self, cfg_sources: list[Any]) -> None:
         # NOTE: maybe add check if type implements interface method get or has dict
         for s in cfg_sources:

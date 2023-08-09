@@ -24,6 +24,7 @@ class StationIDs:
         self.DB = self.db_csv_init(self.DBpath)
 
     def db_csv_init(self, fspath: str = "default") -> list:
+        ### parse default or user specified table
         if fspath == "default":
             pkgpath = "data/stations_ids.csv"
             fspath = ""

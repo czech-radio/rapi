@@ -1,4 +1,5 @@
 import csv
+import errno
 import json
 import os
 import pkgutil
@@ -124,20 +125,21 @@ def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
 
 
 def dict_paths_vectors(
-    dictr: dict, p_list: list = [], c_vec: list = []
+    dictr: dict, p_list: list = list(), c_vec: list = []
 ) -> list:
+    plist=p_list
     for key, val in dictr.items():
         if isinstance(val, dict):
             cv = c_vec.copy()
             cv.append(key)
-            p_list = dict_paths_vectors(val, p_list, cv)
+            p_list = dict_paths_vectors(val, plist, cv)
         else:
             p_list.append([])
-            pi = len(p_list) - 1
+            pi = len(plist) - 1
             if len(c_vec) > 0:
-                p_list[pi] = p_list[pi] + c_vec
-            p_list[pi].append(key)
-    return p_list
+                plist[pi] = plist[pi] + c_vec
+            plist[pi].append(key)
+    return plist
 
 
 def dict_paths_to_strings(lst: list) -> list:
@@ -194,14 +196,6 @@ def request_url_yaml(url: str) -> Union[dict, None]:
     return ydata
 
 
-# try:
-# with open(swagger_file, "w", encoding="utf8") as file:
-# file.write(r.text)
-# except IOError as err:
-# loge.error(f"error saving the file:{err}")
-# ystr=yaml.dump(data,allow_unicode=True)
-
-
 def dict_to_row(dictr: dict, sections: list) -> list:
     row: list = []
     for s in sections:
@@ -217,7 +211,7 @@ def dict_list_to_rows(
     lstarr: list[dict], check_type: Union[Any, None] = None
 ) -> Tuple[list, list]:
     logo.info("converting")
-    paths = dict_paths_vectors(lstarr[0])
+    paths = dict_paths_vectors(lstarr[0],list())
     header = dict_paths_to_strings(paths)
     rows: list = []
     for l in lstarr:
@@ -239,9 +233,38 @@ def rows_transpose(rows: list, header: list = []) -> list:
         cols.append(row)
     return cols
 
+def mkdir_parent_panic(path: str):
+    try:
+        os.makedirs(path,exist_ok=True)
+        logo.info(f"Created '{path}'")
+    except OSError as e:
+        loge.error(f"Error creating directory '{path}': {e}")
+        sys.exit(1)
+
+def save_txt_data(file_path: str, data: str):
+    try:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "w", encoding="utf8") as file:
+            file.write(data)
+        logo.info("data saved to:", file_path)
+
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            loge.error("error saving the file:", e)
+
+    except IOError as e:
+        loge.error("error saving the file:", e)
+
+    except Exception as e:
+        loge.error("unknown error", e)
+
+
+# ystr=yaml.dump(data,allow_unicode=True)
+
 
 def save_rows_to_csv(fname: str, rows: list, header: list = []):
-    with open(fname, "w", newline="") as file:
+    # with open(fname, "w", newline="") as file:
+    with open(fname, mode="a", newline="") as file:
         # writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer = csv.writer(file)
         if len(header) > 0:
