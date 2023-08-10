@@ -127,7 +127,7 @@ def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
 def dict_paths_vectors(
     dictr: dict, p_list: list = list(), c_vec: list = []
 ) -> list:
-    plist=p_list
+    plist = p_list
     for key, val in dictr.items():
         if isinstance(val, dict):
             cv = c_vec.copy()
@@ -187,6 +187,12 @@ def request_url_json(url: str) -> Union[dict, None]:
     response = request_url(url)
     # json_data = json.loads(response.text)
     jdata = response.json()
+    if jdata is None:
+        loge.warning(f"no json data to parse: {url}")
+        return None
+    if len(jdata) == 0:
+        logo.info("no data to parse: {endp}")
+        return None
     return jdata
 
 
@@ -211,7 +217,7 @@ def dict_list_to_rows(
     lstarr: list[dict], check_type: Union[Any, None] = None
 ) -> Tuple[list, list]:
     logo.info("converting")
-    paths = dict_paths_vectors(lstarr[0],list())
+    paths = dict_paths_vectors(lstarr[0], list())
     header = dict_paths_to_strings(paths)
     rows: list = []
     for l in lstarr:
@@ -233,13 +239,15 @@ def rows_transpose(rows: list, header: list = []) -> list:
         cols.append(row)
     return cols
 
+
 def mkdir_parent_panic(path: str):
     try:
-        os.makedirs(path,exist_ok=True)
+        os.makedirs(path, exist_ok=True)
         logo.info(f"Created '{path}'")
     except OSError as e:
         loge.error(f"Error creating directory '{path}': {e}")
         sys.exit(1)
+
 
 def save_txt_data(file_path: str, data: str):
     try:

@@ -16,25 +16,25 @@ apis:
     urls:
       mock: "https://mockservice.croapp.cz/mock"
       doc: "https://rapidoc.croapp.cz"
-      api: 'https://rapidev.croapp.cz'
+      api: "https://rapidev.croapp.cz"
     update_local_db: true
     # update_local_db: "daily"
     # update_local_db: [true, false, daily]
     endpoints: [
-      # "stations-all",
+      "stations-all",
       "stations",
       "shows",
-      # "serials",
-      # "schedule",
-      # "program",
+      "serials",
+      "schedule",
+      "program",
       # "schedule-day",
       # "schedule-day-flat",
       # "schedule-current",
-      # "episodes",
-      # "genres",
-      # "persons",
-      # "topics",
-      # "keywords",
+      "episodes",
+      "genres",
+      "persons",
+      "topics",
+      "keywords",
     ]
 
 test:
