@@ -1,11 +1,12 @@
 import argparse as AP
 import os
 import sys
-from typing import Dict
+from typing import Dict, Union
 
 from rapi import config, helpers
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
+
 
 class HelpAction(AP.Action):
     def __call__(self, parser, namespace, values, option_string=None):
@@ -117,23 +118,26 @@ def args_read() -> AP.Namespace:
     return params
 
 
-def parse_all(commands_definition: dict)->AP.Namespace:
+def parse_all(commands_definition: dict) -> AP.Namespace:
     parser = AP.ArgumentParser()
-    parse_commands(commands_definition,parser)
+    parse_commands(commands_definition, parser)
     args = parser.parse_args()
     return args
 
-def parse_commands(cmds: dict, parser: AP.ArgumentParser=None):
+
+def parse_commands(cmds: dict, parser: Union[AP.ArgumentParser, None] = None):
     if parser is None:
         parser = AP.ArgumentParser()
-    subp=parser.add_subparsers(title="subcommands")
+    subp = parser.add_subparsers(title="subcommands")
     for cmd in cmds:
-        cmdp=subp.add_parser(cmd,help="request "+cmd)
-        cmdp.add_argument("-f","--filter",type=str)
+        cmdp = subp.add_parser(cmd, help="request " + cmd)
+        cmdp.add_argument("-f", "--filter", type=str)
     return parser
+
 
 def pars_command(cmdname: str):
     pass
+
 
 # def parse_defaults(parser: AP.ArgumentParser):
 # pass

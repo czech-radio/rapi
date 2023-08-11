@@ -20,14 +20,18 @@ def pp(data: Any):
     data_formated = json.dumps(data, indent=2)
     print(data_formated)
 
+
 def pt(obj: Any):
     print(f"type{type(obj)}")
+
 
 def pdict(obj: Any):
     pp(obj.__dict__)
 
+
 def pdir(obj: Any):
     pp(dir(obj))
+
 
 def an(obj: Any):
     print(f"value: {obj}")
