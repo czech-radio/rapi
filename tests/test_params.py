@@ -27,7 +27,10 @@ def test_parse_all() -> None:
     print()
     # sys.argv = ["test3.py","--verbose","station", "-f=hello"]
     # sys.argv = ["test3.py","station", "-f=hello"]
-    sys.argv = ["test3.py", "show", "-f=hello"]
+    # sys.argv = ["test3.py","--verbose", "show", "-f=hello"]
+    # sys.argv = ["test3.py","--verbose","show"]
+    # sys.argv = ["test3.py","--verbose","station","-f"]
+    sys.argv = ["test3.py","--verbose","station","-f=kfda"]
     args = params.parse_all(cfg.cfg)
     # argsp=params.parse_commands(cmds)
     # argsp.add_argument(

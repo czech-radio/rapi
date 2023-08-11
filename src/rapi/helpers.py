@@ -133,7 +133,7 @@ def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
 
 
 def dict_paths_vectors(
-    dictr: dict, p_list: list = list(), c_vec: list = []
+    dictr: dict, p_list: list, c_vec: list = []
 ) -> list:
     plist = p_list
     for key, val in dictr.items():

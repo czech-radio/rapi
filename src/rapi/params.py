@@ -121,15 +121,30 @@ def args_read() -> AP.Namespace:
 
 def parse_all(cfg: dict) -> AP.Namespace:
     parser = AP.ArgumentParser()
+
+    parse_flags(cfg,parser)
     cmds = cfg.get("commands")
     parse_commands(cmds, parser)
-    parse_flags(cfg,parser)
+
     args = parser.parse_args()
     return args
 
 def parse_flags(config: dict,parser: Union[AP.ArgumentParser, None] = None):
-    for c in config:
-        print(c)
+    paths=helpers.dict_paths_vectors(config,list())
+    for path in paths:
+        if path[0] !="commands":
+            pathstr="--"+"-".join(path)
+            parser.add_argument(
+                    pathstr,
+                "-v",
+                # "--verbose",
+                action="count",
+                default=0,
+                help="logging verbosity (-v for INFO, -vv for DEBUG)",
+            )
+            break
+            # parser.add_argument(p[0],action="store_true")
+    return parser
 
 def parse_commands(cmds: dict, parser: Union[AP.ArgumentParser, None] = None):
     if parser is None:
@@ -140,9 +155,6 @@ def parse_commands(cmds: dict, parser: Union[AP.ArgumentParser, None] = None):
         cmdp.add_argument("-f", "--filter", type=str)
     return parser
 
-
-def pars_command(cmdname: str):
-    pass
 
 
 # def parse_defaults(parser: AP.ArgumentParser):
