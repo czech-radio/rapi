@@ -6,6 +6,7 @@ from typing import Dict, Union
 from rapi import config, helpers
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
+from rapi import helpers as hp
 
 
 class HelpAction(AP.Action):
@@ -118,12 +119,17 @@ def args_read() -> AP.Namespace:
     return params
 
 
-def parse_all(commands_definition: dict) -> AP.Namespace:
+def parse_all(cfg: dict) -> AP.Namespace:
     parser = AP.ArgumentParser()
-    parse_commands(commands_definition, parser)
+    cmds = cfg.get("commands")
+    parse_commands(cmds, parser)
+    parse_flags(cfg,parser)
     args = parser.parse_args()
     return args
 
+def parse_flags(config: dict,parser: Union[AP.ArgumentParser, None] = None):
+    for c in config:
+        print(c)
 
 def parse_commands(cmds: dict, parser: Union[AP.ArgumentParser, None] = None):
     if parser is None:

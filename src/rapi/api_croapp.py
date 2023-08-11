@@ -31,7 +31,6 @@ class API:
         data = get(url).json()["data"]
         return data
         # for d in data:
-
         # ms=model.Station_data()
         # for i in ms.__dict__:
         # print(i)
