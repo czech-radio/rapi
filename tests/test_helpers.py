@@ -1,9 +1,6 @@
 from typing import Union
 
 from rapi import helpers
-from rapi.helpers import analyze as an
-from rapi.helpers import pprint as pp
-from rapi.helpers import ptype as pt
 
 # data = [
 # {'name': 'John', 'age': 30, 'city': 'New York'},
@@ -53,8 +50,8 @@ def test_request_url() -> None:
     url = "https://rapidev.croapp.cz/stations?"
     # url = "https://rapidev.croapp.cz/stat?"
     req = helpers.request_url(url)
-    helpers.ptype(req.headers)
-    helpers.pprint(dict(req.headers))
+    helpers.pt(req.headers)
+    helpers.pp(dict(req.headers))
     print(req.status_code)
     print(req.reason)
 
@@ -72,7 +69,7 @@ def test_request_url_yaml() -> None:
     # https://rapidoc.croapp.cz/index.html ->
     url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     ydata = helpers.request_url_yaml(url)
-    pp(ydata)
+    helpers.pp(ydata)
 
 
 def test_dict_list_to_rows():

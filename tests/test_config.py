@@ -10,6 +10,7 @@ from rapi import config, helpers, params
 
 def test_config_yml_default():
     cfg = config.config_yml_default()
+    helpers.pp(cfg)
     test = cfg["test"]
     assert test
     print(test)
@@ -113,4 +114,4 @@ def test_CFG() -> None:
     Cfg.add_sources([cfgp, cfge, cfgf])
 
     Cfg.cfg_runtime_set()
-    helpers.pprint(Cfg.cfg_runtime)
+    helpers.pp(Cfg.cfg_runtime)

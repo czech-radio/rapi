@@ -13,13 +13,19 @@ ptest="${pytestcmd[@]}"
 # $ptest tests/test_main.py
 # $ptest tests/test_broadcast.py
 
+### params
+par="tests/test_params.py"
+# $ptest $par
+$ptest "${par}::test_parse_all"
+
 ### config
-# $ptest tests/test_config.py 
+par="tests/test_config.py"
 #### config.Cfg_?
-# $ptest tests/test_config.py::test_Cfg_default
-# $ptest tests/test_config.py::test_Cfg_file
-# $ptest tests/test_config.py::test_Cfg_env
-# $ptest tests/test_config.py::test_Cfg_params
+# $ptest $par::test_config_yml_default
+# $ptest $par::test_Cfg_default
+# $ptest $par::test_Cfg_file
+# $ptest $par::test_Cfg_env
+# $ptest $par::test_Cfg_params
 
 #### config.CFG
 # $ptest tests/test_config.py::test_CFG
@@ -47,4 +53,7 @@ par="tests/test_helpers.py"
 
 #### api_croapp
 par="tests/test_croapp.py"
-$ptest ${par}
+# $ptest ${par}
+# $ptest ${par}::test_DB_local_csv
+# $ptest ${par}::test_API
+

@@ -8,8 +8,6 @@ from typing import Any, Union
 import requests
 
 from rapi import config, helpers, model
-from rapi.helpers import analyze as an
-from rapi.helpers import ptype as ant
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
@@ -17,10 +15,13 @@ from rapi.logger import log_stdout as logo
 class StationIDs:
     def __init__(self, cfg: config.CFG) -> None:
         self.Cfg = cfg
-        self.DBpath = self.Cfg.runtime_get(["broadcast", "station_ids", "csv"])
-        self.DB_global_id = self.Cfg.runtime_get(
-            ["broadcast", "station_ids", "pkey"]
-        )
+        # self.DBpath = self.Cfg.runtime_get(["broadcast", "station_ids", "csv"])
+        # self.DB_pkey = self.Cfg.runtime_get(
+        # ["broadcast", "station_ids", "pkey"]
+        # )
+        bpath = ["apis", "common"]
+        self.DBpath = self.Cfg.runtime_get(bpath + ["csv"])
+        self.DB_pkey = self.Cfg.runtime_get(bpath + ["pkey"])
         self.DB = self.db_csv_init(self.DBpath)
 
     def db_csv_init(self, fspath: str = "default") -> list:
@@ -38,7 +39,7 @@ class StationIDs:
         return helpers.csv_valid_rows(csvr)
 
     def get_pkey_list(self) -> list:
-        pkey = self.DB_global_id
+        pkey = self.DB_pkey
         out: list = []
         for row in self.DB:
             val = row.get(pkey, None)
@@ -53,7 +54,7 @@ class StationIDs:
         return out
 
     def get_row_by_pkey(self, pkey: str) -> Union[dict, None]:
-        pkey_name = self.DB_global_id
+        pkey_name = self.DB_pkey
         for row in self.DB:
             val = row.get(pkey_name, None)
             if val == str(pkey):
@@ -61,6 +62,8 @@ class StationIDs:
         return None
 
     def get_fkey(self, pkey: str, fkey_name: str) -> Union[str, None]:
+        ### pkey: field value of global primary key used by user
+        ### fkey: fieldname of primary key used in particular database
         row = self.get_row_by_pkey(pkey)
         if row is not None:
             return row.get(fkey_name, None)

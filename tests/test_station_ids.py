@@ -1,8 +1,6 @@
 import sys
 
 from rapi import broadcast, config, helpers, model, params
-from rapi.helpers import analyze as an
-from rapi.helpers import pprint as pp
 from rapi.station_ids import StationIDs
 
 ### test setup
@@ -26,14 +24,14 @@ def test_get_pkey_list() -> None:
     print()
     pkeys = Sids.get_pkey_list()
     assert pkeys
-    helpers.pprint(pkeys)
+    helpers.pp(pkeys)
 
 
 def test_get_table() -> None:
     print()
     table = Sids.get_table()
     assert table
-    helpers.pprint(table)
+    helpers.pp(table)
 
 
 def test_get_row_by_pkey() -> None:
@@ -45,7 +43,7 @@ def test_get_row_by_pkey() -> None:
 
 def test_get_fkey() -> None:
     print()
-    si = model.station_ids()
+    si = model.Station_ids()
     sid = si.__dict__
     for k in sid:
         val = Sids.get_fkey("11", sid[k])

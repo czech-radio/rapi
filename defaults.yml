@@ -11,7 +11,16 @@ broadcast:
     pkey: "openmedia_id"
 cfgi:
   file: "./tests/defaults_alt.yml"
+commands:
+  station:
+    filter:
+  show:
+    filter:
 apis:
+  common:
+    station_ids:
+    csv: "default"
+    pkey: "openmedia_id"
   croapp:
     urls:
       mock: "https://mockservice.croapp.cz/mock"
@@ -20,6 +29,9 @@ apis:
     update_local_db: true
     # update_local_db: "daily"
     # update_local_db: [true, false, daily]
+    # filter: ""
+    # stations: 
+      # id: "11"
     endpoints: [
       "stations-all",
       "stations",

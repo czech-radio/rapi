@@ -1,3 +1,4 @@
+import argparse
 import configparser
 import logging
 import os
@@ -41,7 +42,7 @@ def config_ini_default() -> configparser.ConfigParser:
 
 
 ### default config
-def config_yml_default():
+def config_yml_default() -> dict:
     dats = pkgutil.get_data(__name__, "data/defaults.yml")
     assert dats is not None
     # cfg=yaml.load(dats,Loader=yaml.FullLoader)
@@ -102,7 +103,9 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
 
 class Cfg_params:
     def __init__(self):
-        pars = vars(params.args_read())
+        pars = params.args_read()
+        # print(pars)
+        pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 

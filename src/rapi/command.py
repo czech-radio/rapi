@@ -4,8 +4,9 @@ import logging
 import os
 import sys
 import time
+from typing import Type
 
-from rapi import config, helpers, swagger
+from rapi import api_croapp, config, helpers, swagger
 from rapi.broadcast import Broadcast
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
@@ -37,7 +38,7 @@ def debug_cfg(run: bool, cfg: config.CFG):
     if run is False:
         return
     data = cfg.cfg_runtime
-    helpers.pprint(data)
+    helpers.pp(data)
     sys.exit(0)
 
 
@@ -56,6 +57,19 @@ def command(Cfg: config.CFG) -> None:
     ### broadcast
     if getv(["broadcast"]):
         bc = Broadcast(Cfg)
+
+    ### croapp
+    cmd = getv(["apis", "croapp", "stations"])
+    if cmd:
+        pass
+
+        # print(cmd)
+        # croapp = api_croapp.API(Cfg)
+        # st=croapp.get_station("11")
+        # print(st)
         # logo.info(f"requesting stations: {args.broadcast}")
         # bcdata=Cfg.runtime_get(["apis","croapp"])
         # helpers.pprint(bcdata)
+
+
+# def filter_cmd(cmd: str)->Type:

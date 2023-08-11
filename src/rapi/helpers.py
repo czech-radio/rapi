@@ -5,7 +5,7 @@ import os
 import pkgutil
 import sys
 from io import StringIO
-from typing import Any, Optional, Sequence, Tuple, Union
+from typing import Any, Optional, Sequence, Tuple, Type, Union
 
 import numpy as np
 import requests
@@ -16,16 +16,20 @@ from rapi.logger import log_stdout as logo
 
 
 ### printers
-def pprint(data: Any):
+def pp(data: Any):
     data_formated = json.dumps(data, indent=2)
     print(data_formated)
 
-
-def ptype(obj: Any):
+def pt(obj: Any):
     print(f"type{type(obj)}")
 
+def pdict(obj: Any):
+    pp(obj.__dict__)
 
-def analyze(obj: Any):
+def pdir(obj: Any):
+    pp(dir(obj))
+
+def an(obj: Any):
     print(f"value: {obj}")
     print(f"type{type(obj)}")
 
@@ -200,6 +204,10 @@ def request_url_yaml(url: str) -> Union[dict, None]:
     response = request_url(url)
     ydata = yaml.safe_load(response.content)
     return ydata
+
+
+def dict_to_dataclass(dictr: dict, model: Type):
+    pass
 
 
 def dict_to_row(dictr: dict, sections: list) -> list:
