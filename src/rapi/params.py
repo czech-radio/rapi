@@ -111,7 +111,7 @@ def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
     for key in cm.ca.items:
         ### NOTE: sometimes in ca.items[n] n is 3
         ### precise meaning of returned list unknown
-        ### 1. noparsed: lone comment on line is n=1
+        ### 1. not parsed: lone comment on line is n=1
         ### 2. parsed: normalinline comment
         ### with following lines if any
         ### 3. noparse: complex key without inline comment
@@ -119,8 +119,9 @@ def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
         # debug_unparsed_comment(cm.ca.items[key])
         comment = cm.ca.items[key][2]
         if key == "commands":
+            # ### TODO: parse subcommand flags from comment?
             parse_commands(cm[key], ap)
-            return
+            continue
         if comment is not None:
             ### check type of input againts specified in config
             cvec = parse_comment(comment)
