@@ -23,92 +23,7 @@ class HelpAction(AP.Action):
         parser.exit()
 
 
-def args_read() -> AP.Namespace:
-    parser = AP.ArgumentParser()
-    parser.add_argument(
-        "-V",
-        "--version",
-        required=False,
-        help="version of program",
-        action="store_true",
-    )
-    parser.add_argument(
-        "-v",
-        "--verbose",
-        action="count",
-        default=0,
-        help="logging verbosity (-v for INFO, -vv for DEBUG)",
-    )
-    parser.add_argument(
-        "--cfg-file",
-        required=False,
-        type=str,
-        help="specify config file",
-    ),
-    parser.add_argument(
-        "--test-par",
-        required=False,
-        action="store_true",
-        help="testing parameter",
-    ),
-    parser.add_argument(
-        "--test-logs",
-        required=False,
-        help="testing logging",
-        action="store_true",
-    )
-    parser.add_argument(
-        "--debug-cfg",
-        required=False,
-        help="debug cfg, print cfg",
-        action="store_true",
-    )
-    # helpers.ptype(parser)
-    # parser.add_argument(
-    # "--swagger-download",
-    # required=False,
-    # nargs="?",
-    # type=str,
-    # help="download swagger openapi definition yaml file",
-    # const="https://rapidoc.croapp.cz/apifile/openapi.yaml",
-    # )
-    # parser.add_argument(
-    # "--swagger-parse",
-    # required=False,
-    # nargs="?",
-    # type=str,
-    # help="parse swagger openapi definition yaml file",
-    # const="./runtime/rapidev_croapp.yml",
-    # )
-    # parser.add_argument(
-    # "--broadcast",
-    # required=False,
-    # help="request station data",
-    # action="store_true",
-    # )
-    # parser.add_argument(
-    # "--apis-croapp-stations",
-    # required=False,
-    # help="request station data",
-    # action="store",
-    # )
-
-    ##TODO: DT:2023/07/17_13:37:47, LV:1
-    ###SD: Add mutually exclusive command group
-    # group = parser.add_mutually_exclusive_group()
-    # group.add_argument('-a', action='store_true')
-    params = parser.parse_args()
-
-    ### no parameter given
-    if len(sys.argv) == 1:
-        parser.print_help()
-        sys.exit(0)
-    # helpers.pprint(vars(params))
-    return params
-
-
-# def args_read() -> Dict[str, any]:
-### TODO: try to eliminate this, parse params from default config
+### NOTE: try to eliminate this, parse params from default config
 # https://docs.python.org/3/library/argparse.html#action
 # 1. short version will be constructed only for atomic word without delim "_" and first letter will be taken. (multiple words with same starting letter?)
 # 2. required will be allways False
@@ -132,40 +47,13 @@ def args_read() -> AP.Namespace:
 def parse_all(cfg: dict) -> AP.Namespace:
     parser = AP.ArgumentParser()
 
-    parse_flags(cfg, parser)
+    # parse_flags(cfg, parser)
     cmds = cfg.get("commands", None)
     if cmds is not None:
         parse_commands(cmds, parser)
 
     args = parser.parse_args()
     return args
-
-
-def parse_flags(
-    config: dict, parser: Union[AP.ArgumentParser, None] = None
-) -> AP.ArgumentParser:
-    if parser is None:
-        parser = AP.ArgumentParser()
-    pvs = helpers.dict_paths_vectors(config, list())
-    for pvec in pvs:
-        basep = pvec[0]
-        if basep != "commands":
-            # pathstr="--"+"-".join(pvec)
-            default = (helpers.dict_get_path(config, pvec),)
-            # print(pvec,str(default[0]))
-            hp.pt(default[0])
-            # parser.add_argument(
-            # pathstr,
-            # "-v",
-            # action="count",
-            # default=helpers.dict_get_path(config,pvec),
-            # required=False,
-            # help="logging verbosity (-v for INFO, -vv for DEBUG)",
-            # )
-
-    #  break
-    # parser.add_argument(p[0],action="store_true")
-    return parser
 
 
 def parse_commands(
@@ -196,18 +84,7 @@ def parse_comment(comm: CommentToken):
     return cvec
 
 
-def param_specs(commvec: list, key: str):
-    # pass
-    res = list()
-    if len(commvec) == 4:
-        ### short version
-        res.append("-" + commvec[0])
-        ### long version
-        # res.append("--"+key)
-    return res
-
-
-def params_yml_config():
+def params_yml_config() -> AP.ArgumentParser:
     dats = pkgutil.get_data(__name__, "data/defaults.yml")
     argpars = AP.ArgumentParser()
     # y = YAML(typ='safe')
@@ -219,8 +96,11 @@ def params_yml_config():
     return argpars
 
 
-def argp_add_argument(
-    ap: AP.ArgumentParser, cvec: list, key: str, keyval: Any,
+def params_add_argument(
+    ap: AP.ArgumentParser,
+    cvec: list,
+    key: str,
+    keyval: Any,
 ):
     ap.add_argument(
         cvec[0],
@@ -236,23 +116,39 @@ def argp_add_argument(
     return ap
 
 
+def params_join_keys(pkey, key):
+    if pkey != "":
+        akey = pkey + "-" + key
+    else:
+        akey = "--" + key
+    return akey
+
+
+def debug_unparsed_comment(cmv):
+    assert len(cmv) == 4
+    for i in [0, 1, 3]:
+        if cmv[i] is not None:
+            logo.info(f"{i}: {cmv[i]}")
+
+
 def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
     for key in cm.ca.items:
-        print()
+        ### NOTE: sometimes in ca.items[n] n is 3
+        ### precise meaning of returned list unknown
+        ### 1. noparsed: lone comment on line is n=1
+        ### 2. parsed: normalinline comment
+        ### with following lines if any
+        ### 3. noparse: complex key without inline comment
+        ### if comment follows on next line the comment is n=3
+        debug_unparsed_comment(cm.ca.items[key])
         comment = cm.ca.items[key][2]
         if comment is not None:
             ### check type of input againts specified in config
             cvec = parse_comment(comment)
             if len(cvec) > 3:
-                if pkey != "":
-                    akey=pkey+"-"+key
-                else:
-                    akey="--"+key
-                argp_add_argument(ap, cvec,akey, cm[key])
+                akey = params_join_keys(pkey, key)
+                params_add_argument(ap, cvec, akey, cm[key])
 
         if type(cm[key]) is CommentedMap:
-            if pkey != "":
-                akey=pkey+"-"+key
-            else:
-                akey="--"+key
-            params_yml_comments(cm[key],ap,akey)
+            akey = params_join_keys(pkey, key)
+            params_yml_comments(cm[key], ap, akey)
