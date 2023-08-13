@@ -44,30 +44,6 @@ class HelpAction(AP.Action):
 ### maybe use inline comment and split the string
 
 
-def parse_all(cfg: dict) -> AP.Namespace:
-    parser = AP.ArgumentParser()
-
-    # parse_flags(cfg, parser)
-    cmds = cfg.get("commands", None)
-    if cmds is not None:
-        parse_commands(cmds, parser)
-
-    args = parser.parse_args()
-    return args
-
-
-def parse_commands(
-    cmds: dict, parser: Union[AP.ArgumentParser, None] = None
-) -> AP.ArgumentParser:
-    if parser is None:
-        parser = AP.ArgumentParser()
-    subp = parser.add_subparsers(title="subcommands")
-    for cmd in cmds:
-        cmdp = subp.add_parser(cmd, help="request " + cmd)
-        cmdp.add_argument("-f", "--filter", type=str)
-    return parser
-
-
 def parse_comment(comm: CommentToken):
     cline = comm.value
     strip_leading = r"^#\s*"
@@ -140,8 +116,11 @@ def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
         ### with following lines if any
         ### 3. noparse: complex key without inline comment
         ### if comment follows on next line the comment is n=3
-        debug_unparsed_comment(cm.ca.items[key])
+        # debug_unparsed_comment(cm.ca.items[key])
         comment = cm.ca.items[key][2]
+        if key == "commands":
+            parse_commands(cm[key], ap)
+            return
         if comment is not None:
             ### check type of input againts specified in config
             cvec = parse_comment(comment)
@@ -152,3 +131,15 @@ def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
         if type(cm[key]) is CommentedMap:
             akey = params_join_keys(pkey, key)
             params_yml_comments(cm[key], ap, akey)
+
+
+def parse_commands(cmds: dict, parser: AP.ArgumentParser):
+    subp = parser.add_subparsers(title="subcommands")
+    for cmd in cmds:
+        cmdp = subp.add_parser(cmd, help="request " + cmd)
+        cmdp.add_argument("-f", "--filter", type=str)
+
+
+def parse_command(argp: AP.ArgumentParser, cmdname: str):
+    subp = argp.add_subparsers(title="subcommands")
+    subp.add_parser(cmdname, help="request " + cmdname)

@@ -15,8 +15,8 @@ broadcast:
     pkey: "openmedia_id"
 cfgi:
   file: "./tests/defaults_alt.yml"
-commands:
-  station:
+commands: # subcommands
+  station: # filter stations
     filter:
   show:
     filter:
