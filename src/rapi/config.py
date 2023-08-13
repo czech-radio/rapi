@@ -116,8 +116,7 @@ class Cfg_params:
     def __init__(self):
         argpars = params.params_yml_config()
         pars = argpars.parse_args()
-        # pars = params.args_read()
-        # print(pars)
+        self.pars = pars
         pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)

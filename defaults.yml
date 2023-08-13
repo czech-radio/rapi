@@ -1,13 +1,9 @@
 verbose: 0      # -v; int; count; log level;
 version: false  # -V; bool; store_true; print version of program
 debug:          #debug_lv0_line1
-  cfg: false    #debug_lv1_cfg_line1
-                #debug_lv1_cfg_line2
+  cfg: false    # -dc; bool; store_true; debug runtime config
 workdir:
-# workdir_comment1 pos3
-# workdir_comment2
   use: false
-# workdir_comment2
   dir: "./runtime2/"
 broadcast:
   station_ids:
@@ -31,11 +27,7 @@ apis:
       doc: "https://rapidoc.croapp.cz"
       api: "https://rapidev.croapp.cz"
     update_local_db: true
-    # update_local_db: "daily"
     # update_local_db: [true, false, daily]
-    # filter: ""
-    # stations: 
-      # id: "11"
     endpoints: [
       "stations-all",
       "stations",
@@ -52,6 +44,7 @@ apis:
       "topics",
       "keywords",
     ]
+
 # FOR TESTING
 ## DEBUGING CONFIG FILE
 test:

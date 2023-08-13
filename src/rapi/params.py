@@ -10,7 +10,6 @@ from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
 from ruamel.yaml.tokens import CommentToken
 
-from rapi import config
 from rapi import helpers
 from rapi import helpers as hp
 from rapi.logger import log_stdout as loge
@@ -135,7 +134,7 @@ def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
 
 
 def parse_commands(cmds: dict, parser: AP.ArgumentParser):
-    subp = parser.add_subparsers(title="subcommands")
+    subp = parser.add_subparsers(dest='subcommand',title="subcommands")
     for cmd in cmds:
         cmdp = subp.add_parser(cmd, help="request " + cmd)
         cmdp.add_argument("-f", "--filter", type=str)

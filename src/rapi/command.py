@@ -1,4 +1,4 @@
-import argparse
+import argparse as AP
 import json
 import logging
 import os
@@ -41,8 +41,10 @@ def debug_cfg(run: bool, cfg: config.CFG):
     helpers.pp(data)
     sys.exit(0)
 
+# def check_subcommand(cmdname: str)->bool:
+    # if 
 
-def command(Cfg: config.CFG) -> None:
+def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
     getv = Cfg.runtime_get
     ###
     vlevel = getv(["verbose"])
@@ -54,22 +56,19 @@ def command(Cfg: config.CFG) -> None:
     run = getv(["debug", "cfg"])
     debug_cfg(run, Cfg)
 
-    ### broadcast
-    if getv(["broadcast"]):
-        bc = Broadcast(Cfg)
+    ### subcommands
+    subc=vars(ap).get("subcommand")
+    if  "station" == subc:
+        logo.info(f"running command: {subc}")
 
-    ### croapp
-    cmd = getv(["apis", "croapp", "stations"])
-    if cmd:
-        pass
+    if  "show" == subc:
+        logo.info(f"running command: {subc}")
 
-        # print(cmd)
-        # croapp = api_croapp.API(Cfg)
-        # st=croapp.get_station("11")
-        # print(st)
-        # logo.info(f"requesting stations: {args.broadcast}")
-        # bcdata=Cfg.runtime_get(["apis","croapp"])
-        # helpers.pprint(bcdata)
+# croapp = api_croapp.API(Cfg)
+# st=croapp.get_station("11")
+# print(st)
+# logo.info(f"requesting stations: {args.broadcast}")
+# bcdata=Cfg.runtime_get(["apis","croapp"])
+# helpers.pprint(bcdata)
 
 
-# def filter_cmd(cmd: str)->Type:

@@ -22,7 +22,7 @@ def main() -> None:
         cfgf = config.Cfg_file(cfg_fname)
     Cfg.add_sources([cfge, cfgp, cfgf])
     Cfg.cfg_runtime_set()
-    command.command(Cfg)
+    command.command(Cfg, cfgp.pars)
 
 
 if __name__ == "__main__":
