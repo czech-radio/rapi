@@ -1,11 +1,13 @@
 import argparse as AP
+import builtins
 import os
 import pkgutil
 import re
 import sys
-from typing import Dict, Union
+from typing import Any, Dict, Union
 
 from ruamel.yaml import YAML
+from ruamel.yaml.comments import CommentedMap
 from ruamel.yaml.tokens import CommentToken
 
 from rapi import config
@@ -13,7 +15,6 @@ from rapi import helpers
 from rapi import helpers as hp
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
-import builtins
 
 
 class HelpAction(AP.Action):
@@ -194,47 +195,64 @@ def parse_comment(comm: CommentToken):
         cvec[i] = sc
     return cvec
 
-def param_specs(commvec: list,key: str):
+
+def param_specs(commvec: list, key: str):
     # pass
-    res=list()
-    if len(commvec)==4:
+    res = list()
+    if len(commvec) == 4:
         ### short version
-        res.append("-"+commvec[0])
+        res.append("-" + commvec[0])
         ### long version
         # res.append("--"+key)
     return res
 
-def params_add_argument(ap: AP.ArgumentParser,commvec: list,key: str):
-    # ap.add_argument(
-            # )
-    return ap
 
 def params_yml_config():
     dats = pkgutil.get_data(__name__, "data/defaults.yml")
     argpars = AP.ArgumentParser()
     # y = YAML(typ='safe')
     # y = YAML(typ='rt')
+    # print("hex",getattr(builtins,"int"))
     yl = YAML()
     cfg = yl.load(dats)
-    # print("hex",getattr(builtins,"int"))
-    for i in cfg.ca.items:
-        comment = cfg.ca.items[i][2]
-        if comment is not None:
-            # print(i, cfg[i])
-            ### check type of input againts specified in config
-            c = parse_comment(comment)
-            if len(c) > 3:
-                print(c)
-                argpars.add_argument(
-                    ### short version
-                    c[0],
-                    ### long version
-                    "--" + i,
-                    required=False,
-                    default=cfg[i],
-                    action=c[2],
-                    help=c[3]
-### type converts param value to type or with callable function
-                    ### choices
-                )
+    params_yml_comments(cfg, argpars, "")
     return argpars
+
+
+def argp_add_argument(
+    ap: AP.ArgumentParser, cvec: list, key: str, keyval: Any,
+):
+    ap.add_argument(
+        cvec[0],
+        ### long version
+        key,
+        required=False,
+        default=keyval,
+        action=cvec[2],
+        help=cvec[3]
+        ### type converts param value to type or with callable function
+        ### choices
+    )
+    return ap
+
+
+def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
+    for key in cm.ca.items:
+        print()
+        comment = cm.ca.items[key][2]
+        if comment is not None:
+            ### check type of input againts specified in config
+            cvec = parse_comment(comment)
+            if len(cvec) > 3:
+                if pkey != "":
+                    akey=pkey+"-"+key
+                else:
+                    akey="--"+key
+                argp_add_argument(ap, cvec,akey, cm[key])
+
+        if type(cm[key]) is CommentedMap:
+            if pkey != "":
+                akey=pkey+"-"+key
+            else:
+                akey="--"+key
+            params_yml_comments(cm[key],ap,akey)

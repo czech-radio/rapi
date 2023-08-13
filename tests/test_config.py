@@ -78,11 +78,10 @@ def test_Cfg_env() -> None:
 
 def test_Cfg_params() -> None:
     print()
-    # sys.argv = ["test3.py", "-vv", "--test-par"]
-    sys.argv = ["test3.py", "-vv"]
+    sys.argv = ["test3.py", "-vv", "--test-par","-di"]
+    # sys.argv = ["test3.py", "-vv"]
     cfg = config.Cfg_params()
     val = cfg.get(["verbose"])
-    # print(val)
     assert val == 2
     # val = cfg.get(["test", "par"])
     # assert val is True

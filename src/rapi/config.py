@@ -114,8 +114,8 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
 
 class Cfg_params:
     def __init__(self):
-        argpars=params.params_yml_config()
-        pars=argpars.parse_args()
+        argpars = params.params_yml_config()
+        pars = argpars.parse_args()
         # pars = params.args_read()
         # print(pars)
         pars = vars(pars)
