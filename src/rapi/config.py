@@ -7,6 +7,7 @@ import types
 from typing import Any, Optional, Union
 
 import yaml
+from ruamel.yaml import YAML
 
 from rapi import helpers, params
 from rapi.logger import log_stdout as loge
@@ -41,6 +42,16 @@ def config_ini_default() -> configparser.ConfigParser:
     return cfg_parser
 
 
+def parse_yaml_comments():
+    dats = pkgutil.get_data(__name__, "data/defaults.yml")
+    return dats
+    # y = YAML(typ='safe')  # Use 'safe' type to preserve comments
+    # y = YAML(typ='rt')  # Use 'safe' type to preserve comments
+    # assert dats is not None
+    # cfg = y.load(dats)
+    # return cfg
+
+
 ### default config
 def config_yml_default() -> dict:
     dats = pkgutil.get_data(__name__, "data/defaults.yml")
@@ -71,7 +82,7 @@ class Cfg_file:
 
 #### Try to find env var predefined in input dictionary. The env var name is constructed from joined dictionary path
 def env_vars_dict_intersec(dcfg: dict) -> dict:
-    paths = helpers.dict_paths_vectors(dcfg)
+    paths = helpers.dict_paths_vectors(dcfg, list())
     dictr: dict = {}
     for p in paths:
         val = helpers.env_var_get("_".join(p))
@@ -92,7 +103,7 @@ class Cfg_env:
 
 
 def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
-    paths = helpers.dict_paths_vectors(dcfg)
+    paths = helpers.dict_paths_vectors(dcfg, list())
     dictr: dict = {}
     for p in paths:
         val = pars.get("_".join(p))
@@ -103,7 +114,9 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
 
 class Cfg_params:
     def __init__(self):
-        pars = params.args_read()
+        argpars=params.params_yml_config()
+        pars=argpars.parse_args()
+        # pars = params.args_read()
         # print(pars)
         pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)

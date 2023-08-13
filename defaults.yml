@@ -1,9 +1,13 @@
-verbose: 0
-version: false
-debug:
-  cfg: false
+verbose: 0      # -v; int; count; log level;
+version: false  # -V; bool; store_true; print version of program
+debug:          #debug_lv0_line1
+  cfg: false    #debug_lv1_cfg_line1
+                #debug_lv1_cfg_line2
 workdir:
+# workdir_comment1 pos3
+# workdir_comment2
   use: false
+# workdir_comment2
   dir: "./runtime2/"
 broadcast:
   station_ids:
@@ -49,6 +53,8 @@ apis:
       "keywords",
     ]
 
+# FOR TESTING
+## DEBUGING CONFIG FILE
 test:
   par: "def"
   env: "def"
@@ -56,3 +62,6 @@ test:
   alt: "def"
   cfg_prio: "def.yml"
   logs: false
+## TESTING PARAMS DEFINITION
+dbool: false      # -db; none; store_true; dummy boolean;
+dint: 10          # -di; int; store; dummy int;

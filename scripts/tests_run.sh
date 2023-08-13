@@ -16,11 +16,14 @@ ptest="${pytestcmd[@]}"
 ### params
 par="tests/test_params.py"
 # $ptest $par
-$ptest "${par}::test_parse_all"
+# $ptest "${par}::test_parse_all"
+$ptest "${par}::test_params_yml_config"
 
 ### config
-par="tests/test_config.py"
+# par="tests/test_config.py"
+####
 #### config.Cfg_?
+# $ptest $par
 # $ptest $par::test_config_yml_default
 # $ptest $par::test_Cfg_default
 # $ptest $par::test_Cfg_file

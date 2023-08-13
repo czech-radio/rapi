@@ -1,11 +1,26 @@
 import sys
 
+import argparse as AP
 from rapi import config
 from rapi import helpers as hp
 from rapi import params
 
 cfg = config.Cfg_default()
 cmds = cfg.get(["commands"])
+
+
+def test_params_yml_config() -> None:
+    print()
+    # sys.argv = ["test3.py", "--dbool"]
+    sys.argv = ["test3.py", "-vv"]
+    # sys.argv = ["test3.py", "-vv","--dbool", "--dint=hello"]
+    # sys.argv = ["test3.py", "--dint"]
+    argp = params.params_yml_config()
+    pars=argp.parse_args()
+    print(pars)
+    print(vars(pars))
+    # dats=config.parse_yaml_comments()
+    # hp.pl(cfg["debug"].ca)
 
 
 def test_parse_commands() -> None:
@@ -30,7 +45,8 @@ def test_parse_all() -> None:
     # sys.argv = ["test3.py","--verbose", "show", "-f=hello"]
     # sys.argv = ["test3.py","--verbose","show"]
     # sys.argv = ["test3.py","--verbose","station","-f"]
-    sys.argv = ["test3.py","--verbose","station","-f=kfda"]
+    # sys.argv = ["test3.py","--verbose","station","-f=kfda"]
+    sys.argv = ["test3.py"]
     args = params.parse_all(cfg.cfg)
     # argsp=params.parse_commands(cmds)
     # argsp.add_argument(

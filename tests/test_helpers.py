@@ -41,7 +41,7 @@ def test_deep_merge_dicts():
 
 def test_dict_paths_vectors() -> None:
     print()
-    res = helpers.dict_paths_vectors(nested_dict)
+    res = helpers.dict_paths_vectors(nested_dict, list())
     print(res)
 
 
@@ -87,10 +87,10 @@ def test_json_to_csv() -> None:
     jdata = helpers.request_url_json(url)
     if jdata is None:
         return
-    paths = helpers.dict_paths_vectors(jdata)
+    paths = helpers.dict_paths_vectors(jdata, list())
     print(paths)
     # print(jdata['data'])
-    paths = helpers.dict_paths_vectors(jdata["data"][0])
+    paths = helpers.dict_paths_vectors(jdata["data"][0], list())
     print(paths)
     # helpers.dict_to_csv(jdata)
     # helpers.dict_to_csv(jdata['meta'])

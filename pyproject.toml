@@ -17,6 +17,7 @@ dependencies = [
 	"configparser",
 	"mergedeep",
 	"numpy",
+	"ruamel.yaml",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",

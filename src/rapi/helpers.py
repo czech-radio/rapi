@@ -16,6 +16,10 @@ from rapi.logger import log_stdout as logo
 
 
 ### printers
+def pl(data: Any):
+    logo.info(data)
+
+
 def pp(data: Any):
     data_formated = json.dumps(data, indent=2)
     print(data_formated)
@@ -36,6 +40,23 @@ def pdir(obj: Any):
 def an(obj: Any):
     print(f"value: {obj}")
     print(f"type{type(obj)}")
+
+
+def type_by_name(type_name):
+    type_map = {
+        "int": int,
+        "float": float,
+        "str": str,
+        "bool": bool,
+        "list": list,
+        "dict": dict,
+        "tuple": tuple,
+    }
+
+    if type_name in type_map:
+        return type_map[type_name]
+    else:
+        raise NameError(f"{type_name} not implemented")
 
 
 ### csv files
@@ -110,8 +131,10 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
 ### dict helpers
 #### dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(
-    dictr: dict, sections: list[str]
-) -> Union[dict, list, str, bool, int, None]:
+    dictr: dict,
+    sections: list[str]
+    # ) -> Union[dict, list, str, bool, int, None]:
+) -> Any:
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
@@ -132,9 +155,7 @@ def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
             dictr = dictr.setdefault(level, val)
 
 
-def dict_paths_vectors(
-    dictr: dict, p_list: list, c_vec: list = []
-) -> list:
+def dict_paths_vectors(dictr: dict, p_list: list, c_vec: list = []) -> list:
     plist = p_list
     for key, val in dictr.items():
         if isinstance(val, dict):

@@ -4,13 +4,16 @@ import os
 import sys
 
 import pytest
+from ruamel.yaml import YAML
 
-from rapi import config, helpers, params
+from rapi import config
+from rapi import helpers as hp
+from rapi import params
 
 
 def test_config_yml_default():
     cfg = config.config_yml_default()
-    helpers.pp(cfg)
+    hp.pp(cfg)
     test = cfg["test"]
     assert test
     print(test)
@@ -45,7 +48,7 @@ for t in range(0, len(TCASES), 2):
     TOUT.append(var_value)
 
     ### CREATE ENV
-    var_path_srt = helpers.str_join_no_empty(var_path_list)
+    var_path_srt = hp.str_join_no_empty(var_path_list)
     EVARS.append(var_path_srt)
 
 
@@ -75,12 +78,14 @@ def test_Cfg_env() -> None:
 
 def test_Cfg_params() -> None:
     print()
-    sys.argv = ["test3.py", "-vv", "--test-par"]
+    # sys.argv = ["test3.py", "-vv", "--test-par"]
+    sys.argv = ["test3.py", "-vv"]
     cfg = config.Cfg_params()
     val = cfg.get(["verbose"])
+    # print(val)
     assert val == 2
-    val = cfg.get(["test", "par"])
-    assert val is True
+    # val = cfg.get(["test", "par"])
+    # assert val is True
 
 
 def test_CFG() -> None:
@@ -114,4 +119,4 @@ def test_CFG() -> None:
     Cfg.add_sources([cfgp, cfge, cfgf])
 
     Cfg.cfg_runtime_set()
-    helpers.pp(Cfg.cfg_runtime)
+    hp.pp(Cfg.cfg_runtime)
