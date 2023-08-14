@@ -49,6 +49,7 @@ par="tests/test_station_ids.py"
 #### helper
 par="tests/test_helpers.py"
 # $ptest $par
+# $ptest $par::test_extract_link_path
 # $ptest ${par}::test_request_url
 # $ptest ${par}::test_request_url_json
 # $ptest ${par}::test_request_url_yaml
@@ -66,5 +67,10 @@ par="tests/test_croapp.py"
 # $ptest ${par}::test_DB_local_endpoint_get_json
 # $ptest ${par}::test_DB_local_endpoint_save_json
 # $ptest ${par}::test_DB_local_endpoints_save_json
-$ptest ${par}::test_DB_local
+# $ptest ${par}::test_DB_local_csv_update
 
+#### api_croapp_api
+par="tests/test_croapp_api.py"
+# $ptest ${par}
+# $ptest ${par}::test_get_station
+$ptest ${par}::test_get_station_shows

@@ -40,7 +40,7 @@ def test_get_row_by_pkey() -> None:
 
 def test_get_fkey() -> None:
     print()
-    si = model.Station_ids()
+    si = model.StationIDs()
     sid = si.__dict__
     for k in sid:
         val = Sids.get_fkey("11", sid[k])

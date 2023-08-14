@@ -1,4 +1,5 @@
 from typing import Union
+import re
 
 from rapi import helpers
 
@@ -56,6 +57,12 @@ def test_request_url() -> None:
     print(req.status_code)
     print(req.reason)
 
+
+def test_extract_link_path():
+    print()
+    url="stations/4082f63f-30e8-375d-a326-b32cf7d86e02/shows"
+    out = re.sub(r'[^/]+/', '',url) 
+    print(out)
 
 def test_request_url_json() -> None:
     print()

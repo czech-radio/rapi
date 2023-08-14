@@ -33,20 +33,21 @@ apis:
       limit: 500
       limit_str: "?page%5Blimit%5D="
     endpoints: [
-      "stations-all",
-      "stations",
-      "shows",
-      "serials",
-      "schedule",
-      "program",
+      # "stations-all",
+      # "stations",
+      "stations/4082f63f-30e8-375d-a326-b32cf7d86e02/shows",
+      # "shows",
+      # "serials",
+      # "schedule",
+      # "program",
       # "schedule-day",
       # "schedule-day-flat",
       # "schedule-current",
-      "episodes",
-      "genres",
-      "persons",
-      "topics",
-      "keywords",
+      # "episodes",
+      # "genres",
+      # "persons",
+      # "topics",
+      # "keywords",
     ]
 
 # FOR TESTING

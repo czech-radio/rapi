@@ -140,8 +140,11 @@ def parse_commands(cmds: dict, ap: AP.ArgumentParser):
         cmdp.add_argument("-f", "--filter", type=str)
         cmp = cmds.get(cmd, None)
         if cmp is not None:
-            print(cmd, cmp.ca)
+            ##TODO: DT:2023/08/14_18:40:13, LV:1
+            ###SD: Parse subcommands flags
+            # print(cmd, cmp.ca)
             # params_yml_comments(cmp,ap,"")
+            pass
 
 
 def parse_command(argp: AP.ArgumentParser, cmdname: str):

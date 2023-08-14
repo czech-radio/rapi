@@ -2,7 +2,7 @@ from dataclasses import asdict, dataclass
 
 
 @dataclass
-class Station_ids:
+class StationIDs:
     ### OPENMEDIA:
     #### src: [https://github.com/czech-radio/organization/blob/main/analytics/reporting/specification.md#stanice]
     openmedia_id: str = "openmedia_id"
@@ -21,13 +21,35 @@ class Station_ids:
 
 
 @dataclass
-class Station_data:
-    type: str = ""
+class Station:
     id: str = ""
-    # code: str=""
-    # title: str=""
-    # stitle: str=""
-    # priority: str=""
+    title: str = ""
+    short_title: str = ""
+    subtitle: str = ""
+    color: str = ""
+    code: str = ""
+    priority: int = 0
+    station_type: str = ""
 
-    # def Print(self):
-    # print("hello")
+
+@dataclass
+class Show:
+    id: str = ""
+    showType: str=""
+    showContent: bool=False
+    title: bool=False
+    active: bool=False 
+    aired: bool=False
+    podcast: bool=False
+    priority: int=0
+    childFriendly: bool=False
+    description: str=""
+    shortDescription: str=""
+
+
+class Episode:
+    pass
+
+
+class Schedule:
+    pass

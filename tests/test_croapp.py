@@ -45,13 +45,7 @@ def test_DB_local_endpoints_save_json() -> None:
     acr.endpoints_save_json(300)
 
 
-def test_DB_local() -> None:
+def test_DB_local_csv_update() -> None:
     print()
     acr = api_croapp.DB_local(Cfg)
     acr.endpoints_csv_update(10)
-
-
-def test_API() -> None:
-    api = api_croapp.API(Cfg)
-    api.get_station("11")
-    # api.get_station_guid("11")

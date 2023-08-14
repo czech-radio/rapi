@@ -1,0 +1,5388 @@
+data:
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Filip Jandourek
+        description: "Sklen\u011Bn\xE9 studio \u010Cesk\xE9ho rozhlasu na V\xE1clavsk\xE9\
+          m n\xE1m\u011Bst\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 798
+      id: 105b333f-424f-39e3-a6eb-123297067d44
+      url: https://portal.rozhlas.cz/sites/default/files/images/02890481.jpeg
+      width: 1200
+    childFriendly: false
+    description: "100 host\u016F, 52 hodin a dva zku\u0161en\xED moder\xE1to\u0159\
+      i."
+    podcast: false
+    priority: 0
+    shortDescription: "100 host\u016F, 52 hodin a dva zku\u0161en\xED moder\xE1to\u0159\
+      i."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "100 state\u010Dn\xFDch"
+    updated: '2021-03-20T23:30:09+01:00'
+  id: c239aa59-bc78-3180-9b58-5c911846630d
+  relationships:
+    episodes:
+      data:
+      - id: 041646b3-759d-33db-8a48-bcd318244417
+        type: episode
+      - id: 05f667a9-66cf-30b5-ae18-a9db0b8bfd05
+        type: episode
+      - id: 05fecaed-5b3f-357b-a585-a0a8b315a037
+        type: episode
+      - id: 09c6c60f-d69f-3eac-b9b1-135996ffc2e4
+        type: episode
+      - id: 0b033e8e-8456-3b48-9789-cbbfcf44d0f0
+        type: episode
+      - id: 0dbc9b4c-15c7-3182-8e49-a91b73bebd45
+        type: episode
+      - id: 123b1d26-ebdf-3429-9e73-00a1f1eb33dd
+        type: episode
+      - id: 128efc0d-a0be-3f78-8d29-c4f142facbd0
+        type: episode
+      - id: 14039ead-cdac-386d-a1e9-c776a65b6db9
+        type: episode
+      - id: 15281918-b39e-3504-bdc5-75bcd06d1331
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/episodes
+      meta:
+        count: 102
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c239aa59-bc78-3180-9b58-5c911846630d/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Filip Jandourek
+        description: "Sklen\u011Bn\xE9 studio \u010Cesk\xE9ho rozhlasu na V\xE1clavsk\xE9\
+          m n\xE1m\u011Bst\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 798
+      id: 105b333f-424f-39e3-a6eb-123297067d44
+      url: https://portal.rozhlas.cz/sites/default/files/images/02890481.jpeg
+      width: 1200
+    childFriendly: false
+    description: "Dok\xE1zali jsme to a vytvo\u0159ili jsme nov\xFD rekord v rozhlasov\xE9\
+      m moderov\xE1n\xED!"
+    podcast: false
+    priority: 0
+    shortDescription: "Dok\xE1zali jsme to a vytvo\u0159ili jsme nov\xFD rekord v\
+      \ rozhlasov\xE9m moderov\xE1n\xED!"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "90 state\u010Dn\xFDch"
+    updated: '2021-03-20T23:30:09+01:00'
+  id: af62bd59-1e49-3dae-a68b-90b11f5d2ae6
+  relationships:
+    episodes:
+      data:
+      - id: 04412d26-e25f-3b4f-ac82-0fff35ce37f8
+        type: episode
+      - id: 04a97c03-e891-3766-9310-ddf712a09c8e
+        type: episode
+      - id: 051dd261-7b0b-307d-be46-5368563fc838
+        type: episode
+      - id: 075852a7-45b7-3003-83e4-5d48c592063e
+        type: episode
+      - id: 0bc32cd7-e4f8-317b-a362-6aab3cf74339
+        type: episode
+      - id: 0c17efb8-6e71-3ad8-85c1-2b6d3077e42d
+        type: episode
+      - id: 11c80d41-9cc0-3cbe-81d8-0cecd8762d43
+        type: episode
+      - id: 1f155c16-1222-3d57-a670-91b6e7c06463
+        type: episode
+      - id: 1f9a9198-2daa-3f43-ba60-858bbdada7c2
+        type: episode
+      - id: 1fdc4a96-5885-3e25-aa3d-638d5053013d
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/episodes
+      meta:
+        count: 92
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/af62bd59-1e49-3dae-a68b-90b11f5d2ae6/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Bona Dea
+    updated: '2021-03-21T00:00:23+01:00'
+  id: 1bb635cd-7e8d-3ee2-a226-7a4ed1703481
+  relationships:
+    episodes:
+      data:
+      - id: 00d2b7b2-baa7-321b-88b4-e60ff6183b92
+        type: episode
+      - id: 00fe613e-8156-3efd-b3be-04d21469d9e1
+        type: episode
+      - id: 01b91e03-1c65-3923-be02-f6c7eafb2cd9
+        type: episode
+      - id: 01c8a3d6-ce31-3702-a7bd-513fb829c4bb
+        type: episode
+      - id: 01f35ab4-c264-30ae-a7e7-fe07002bdd28
+        type: episode
+      - id: 06cdc5f8-ac91-3a81-a14a-f1397c58e6f8
+        type: episode
+      - id: 0a5d4dfc-28e5-3a92-bddb-1547f1343d42
+        type: episode
+      - id: 0b068121-41b0-3f13-b7b8-643a670fd1d7
+        type: episode
+      - id: 0dab8240-2fdc-3008-bfd2-67a21b918153
+        type: episode
+      - id: 0dcdc8ab-af88-3c14-ab95-29528b769dee
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1bb635cd-7e8d-3ee2-a226-7a4ed1703481/episodes
+      meta:
+        count: 159
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1bb635cd-7e8d-3ee2-a226-7a4ed1703481/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1bb635cd-7e8d-3ee2-a226-7a4ed1703481/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1bb635cd-7e8d-3ee2-a226-7a4ed1703481/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: ''
+        description: "Bruselsk\xE9 chleb\xED\u010Dky, podcast \u010Cesk\xE9ho rozhlasu"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 47,51
+      height: 1400
+      id: dc90ed63-876f-3348-9f97-a59ef97e9e4c
+      url: https://portal.rozhlas.cz/sites/default/files/images/3e16f3c84ebdc1502ccee7f1919e4948.jpg
+      width: 2100
+    childFriendly: false
+    description: "Bruselsk\xE9 chleb\xED\u010Dky jsou autorsk\xFDm podcastem \u010C\
+      esk\xE9ho rozhlasu, kter\xFD p\u0159ipravuj\xED dva b\xFDval\xED zpravodajov\xE9\
+      \ Filip Nerad a Viktor Dan\u011Bk a sou\u010Dasn\xE1 zpravodajka v Bruselu Zde\u0148\
+      ka Trachtov\xE1. Se znalost\xED v\u011Bci i s nadhledem rozeb\xEDraj\xED ka\u017E\
+      d\xFD t\xFDden se sv\xFDmi hosty aktu\xE1ln\xED d\u011Bn\xED v Evropsk\xE9 unii\
+      \ a p\u0159ehlednou formou serv\xEDruj\xED ty nejd\u016Fle\u017Eit\u011Bj\u0161\
+      \xED ud\xE1losti i zaj\xEDmavosti ze z\xE1kulis\xED evropsk\xE9 politiky. M\xE1\
+      te post\u0159ehy, tipy nebo p\u0159ipom\xEDnky? Napi\u0161te n\xE1m na bruselske.chlebicky@rozhlas.cz."
+    podcast: true
+    priority: 0
+    shortDescription: "S nadhledem ka\u017Ed\xFD t\xFDden rozeb\xEDraj\xED aktu\xE1\
+      ln\xED d\u011Bn\xED v Evropsk\xE9 unii a p\u0159ehledn\u011B serv\xEDruj\xED\
+      \ ty nejd\u016Fle\u017Eit\u011Bj\u0161\xED ud\xE1losti i zaj\xEDmavosti ze z\xE1\
+      kulis\xED evropsk\xE9 politiky."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Bruselsk\xE9 chleb\xED\u010Dky"
+    updated: '2023-07-14T17:00:12+02:00'
+  id: 63d91d32-e7cc-3e12-beb1-5378c4945ccb
+  relationships:
+    episodes:
+      data:
+      - id: 0b130359-406b-35f3-b3f4-17ec7a3d076a
+        type: episode
+      - id: 12146189-7564-350d-ab65-80c94ad7ab7c
+        type: episode
+      - id: 12aedd3c-5afc-3931-87ef-456d45a35074
+        type: episode
+      - id: 22395983-20a5-324b-aacb-4c723f2e28ac
+        type: episode
+      - id: 29a5a146-ade9-3013-8fe0-59c6f16ca8b8
+        type: episode
+      - id: 31430f12-27a5-3ee8-af3b-388ee9b4c7a8
+        type: episode
+      - id: 3149f061-8300-3a41-958c-495f21db4f53
+        type: episode
+      - id: 32f0e67d-acde-3fd4-a61c-2dbbed8d2732
+        type: episode
+      - id: 33b61b74-37b8-321a-a141-1a86b0c475ca
+        type: episode
+      - id: 3eca46cc-1af8-3bbf-b7e7-668e40aa8f95
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/63d91d32-e7cc-3e12-beb1-5378c4945ccb/episodes
+      meta:
+        count: 59
+    participants:
+      data:
+      - id: 418169e3-5756-3cab-a7a6-bac539f2b286
+        meta:
+          role: moderator
+        type: person
+      - id: 774e350e-c3ca-3d34-9e06-c20123ff1b18
+        meta:
+          role: moderator
+        type: person
+      - id: efda662a-09de-3bc5-97cc-1cedadde905a
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/63d91d32-e7cc-3e12-beb1-5378c4945ccb/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/63d91d32-e7cc-3e12-beb1-5378c4945ccb/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/63d91d32-e7cc-3e12-beb1-5378c4945ccb/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: "Podcast Budoucnos R moderuje Vojt\u011Bch Koval"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 4c4deac0-586a-3e74-98f8-a9f15e0193b4
+      url: https://portal.rozhlas.cz/sites/default/files/images/0457654d79ed0a109733fb7534c7b887.jpg
+      width: 2100
+    childFriendly: false
+    description: "\u017Dijeme v dob\u011B, kdy se v podstat\u011B ka\u017Ed\xFD t\xFD\
+      den p\u0159edstav\xED nov\xE1 technologie nebo inovace, nov\xE1 l\xE9\u010D\
+      ba z\xE1va\u017En\xE9 nemoci, nebo t\u0159eba za\u0159\xEDzen\xED, kter\xE9\
+      \ vy\u010Dist\xED oce\xE1ny. Sta\u010D\xED to ale na to, aby i dal\u0161\xED\
+      \ generace mohly \u017E\xEDt na planet\u011B zemi tak, jak ji zn\xE1me? Co by\
+      \ m\u011Bl b\xFDt prvn\xED krok k tomu, abychom se vyhnuli momentu, kdy n\xE1\
+      \u0161 sv\u011Bt p\u0159estane\_b\xFDt obyvateln\xFD? Podcast Budoucnost R se\
+      \ pt\xE1 v\u011Bdeck\xFDch osobnost\xED z r\u016Fzn\xFDch obor\u016F\_\u2013\
+      \ od genetiky a\u017E po mobilitu. Odpov\u011B\u010F toti\u017E rozhodn\u011B\
+      \ nen\xED jen jedna\u2026"
+    podcast: true
+    priority: 0
+    shortDescription: "V\u011Bdecko-technick\xFD podcast Radio\u017Eurn\xE1lu. Ka\u017E\
+      d\xFD t\xFDden nav\u0161t\xEDv\xEDme jednu osobnost z v\u011Bdy a techniky z\
+      \ \u010CR i ze zahrani\u010D\xED a pt\xE1me se: Co budoucnost p\u0159in\xE1\u0161\
+      \xED?"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Budoucnost R
+    updated: '2021-08-18T10:00:04+02:00'
+  id: ca875c03-d58a-3d5b-a483-fdcb8d178db6
+  relationships:
+    episodes:
+      data:
+      - id: 01fdf5f3-2082-3fed-8151-4a14f807e5cc
+        type: episode
+      - id: 0ddc2e07-3a07-342f-9a6a-8a31a70a569c
+        type: episode
+      - id: 143c07fb-877c-3005-a1f3-1132781a6f57
+        type: episode
+      - id: 1851ba4d-8732-3ed3-867f-0150ee82781e
+        type: episode
+      - id: 1979493c-43e5-34dd-8bb4-a98151324580
+        type: episode
+      - id: 19ace2aa-c38e-34f1-86cb-511ba4104f85
+        type: episode
+      - id: 2c1290ed-0456-38eb-a511-a0a0edc350f4
+        type: episode
+      - id: 2f144830-7771-376d-a8c5-f8fa8c81e299
+        type: episode
+      - id: 347270b4-527f-3535-819d-5c0115836654
+        type: episode
+      - id: 36185707-3691-3edb-9bac-9ddb2cd45bd9
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ca875c03-d58a-3d5b-a483-fdcb8d178db6/episodes
+      meta:
+        count: 75
+    participants:
+      data:
+      - id: 10b5d97c-5b49-3f59-b976-a0bf71fd394f
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ca875c03-d58a-3d5b-a483-fdcb8d178db6/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ca875c03-d58a-3d5b-a483-fdcb8d178db6/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ca875c03-d58a-3d5b-a483-fdcb8d178db6/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "po\u0159ad byl jako samostatn\xFD vys\xEDl\xE1n do prosince 2007To\
+      \ nejpodstatn\u011Bj\u0161\xED, o \u010Dem p\xED\u0161\xED dom\xE1c\xED noviny,\
+      \ se dozv\xEDte ka\u017Ed\xE9 r\xE1no na vln\xE1ch \u010Cesk\xE9ho Rozhlasu\
+      \ 1 - Radio\u017Eurn\xE1lu."
+    podcast: false
+    priority: 0
+    shortDescription: "po\u0159ad byl jako samostatn\xFD vys\xEDl\xE1n do prosince\
+      \ 2007. To nejpodstatn\u011Bj\u0161\xED, o \u010Dem p\xED\u0161\xED dom\xE1\
+      c\xED noviny, se dozv\xEDte ka\u017Ed\xE9 r\xE1no na vln\xE1ch \u010Cesk\xE9\
+      ho Rozhlasu 1 - Radio\u017Eurn\xE1lu."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "\u010Cteme z dom\xE1c\xEDho tisku"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 9de06fed-3aad-34c2-85dd-5c78c018a8b9
+  relationships:
+    episodes:
+      data:
+      - id: 01b7a99f-94cc-3e84-9391-7fa963861155
+        type: episode
+      - id: 07983c9f-352b-3b05-85d6-3375ca35e35b
+        type: episode
+      - id: 0f6b12d4-d689-39ae-a780-b1d053cd32e5
+        type: episode
+      - id: 1124ede3-1c97-3d30-ad98-38b98004eb17
+        type: episode
+      - id: 155d9911-1c2b-3faf-b8cf-d41f77f06f6c
+        type: episode
+      - id: 191353e8-964e-30d7-a5a0-f3b13049e53e
+        type: episode
+      - id: 1ef0f836-e1bf-3b88-8077-e666838e6d0d
+        type: episode
+      - id: 1fef5bad-9782-3b1e-a176-b6548b2be59a
+        type: episode
+      - id: 26c7ae4b-535e-3f41-a0b7-17b25fd80126
+        type: episode
+      - id: 29c6deb4-737d-3c6b-9eaf-e56822768b7d
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9de06fed-3aad-34c2-85dd-5c78c018a8b9/episodes
+      meta:
+        count: 98
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9de06fed-3aad-34c2-85dd-5c78c018a8b9/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9de06fed-3aad-34c2-85dd-5c78c018a8b9/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9de06fed-3aad-34c2-85dd-5c78c018a8b9/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Design, architektura, stavebnictv\xED"
+    updated: '2021-03-20T23:30:08+01:00'
+  id: 04ae61d9-b01a-3ab5-b389-99577bfc355b
+  relationships:
+    episodes:
+      data:
+      - id: 00213717-d29a-3ae6-8f6d-9fb79e245cf1
+        type: episode
+      - id: 0273e61c-901a-3719-ae3a-b31f1e035b86
+        type: episode
+      - id: 030f9811-9732-3016-bc43-6061ba6bd62e
+        type: episode
+      - id: 055be908-4242-3e4b-a073-2152cc25d53d
+        type: episode
+      - id: 05d2e875-5cfc-30b9-98fb-e059f9accd28
+        type: episode
+      - id: 06e87e4c-0909-331f-8be6-bcac6658f6f4
+        type: episode
+      - id: 079e64e8-906e-3cf3-933e-8b41fc03de60
+        type: episode
+      - id: 07af8bb0-cee0-34d8-9a61-b81c07a1053d
+        type: episode
+      - id: 07bf590c-766c-377b-8cdd-eb34b3d6ddb9
+        type: episode
+      - id: 080b840b-3001-3c50-a354-b5729b863a82
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/04ae61d9-b01a-3ab5-b389-99577bfc355b/episodes
+      meta:
+        count: 265
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/04ae61d9-b01a-3ab5-b389-99577bfc355b/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/04ae61d9-b01a-3ab5-b389-99577bfc355b/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/04ae61d9-b01a-3ab5-b389-99577bfc355b/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Tv\u016Frci podcastu D\u011Bti se ptaj\xED"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 51,47
+      height: 1067
+      id: 3815cb30-c9c1-3df2-97ff-1cd08fde0527
+      url: https://portal.rozhlas.cz/sites/default/files/images/ae6b23767250be2a14cefcc248f6b44e.jpg
+      width: 1600
+    childFriendly: false
+    description: "Speci\xE1ln\xED podcast Dismanova rozhlasov\xE9ho d\u011Btsk\xE9\
+      ho souboru \u010Cesk\xE9ho rozhlasu odpov\xEDd\xE1 na to, co d\u011Bti doopravdy\
+      \ zaj\xEDm\xE1."
+    podcast: true
+    priority: 0
+    shortDescription: "Speci\xE1ln\xED podcast Dismanova rozhlasov\xE9ho d\u011Btsk\xE9\
+      ho souboru \u010Cesk\xE9ho rozhlasu odpov\xEDd\xE1 na to, co d\u011Bti doopravdy\
+      \ zaj\xEDm\xE1."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "D\u011Bti se ptaj\xED"
+    updated: '2023-07-14T17:45:09+02:00'
+  id: 772701e9-bef2-38bf-9709-1ad69b227d59
+  relationships:
+    episodes:
+      data:
+      - id: 083b97f5-0d40-3841-9888-1dd046a62ca2
+        type: episode
+      - id: 19a82f6e-ccce-32ec-aa30-deecc6932337
+        type: episode
+      - id: 1b19bfa8-0608-3215-84bf-7ecb431cafdf
+        type: episode
+      - id: 1e952be4-cc35-3bf7-8d13-f1e94bdc134d
+        type: episode
+      - id: 28b26da3-f579-3f26-b77c-5d5486dac5f2
+        type: episode
+      - id: 3ce8380a-7219-36e1-872b-90604821c008
+        type: episode
+      - id: 4c0da0aa-3599-3a16-a556-c351d0813194
+        type: episode
+      - id: 524de575-8b30-343a-b345-5be7f0d21621
+        type: episode
+      - id: 5b94cd06-b267-3df4-8ada-2f7948ab544e
+        type: episode
+      - id: 6fceac7d-ef20-364e-9acd-3391419bfca2
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/772701e9-bef2-38bf-9709-1ad69b227d59/episodes
+      meta:
+        count: 22
+    participants:
+      data:
+      - id: a0bc1e7c-599a-3fc2-a2f1-efcfc42514e7
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/772701e9-bef2-38bf-9709-1ad69b227d59/participants
+    serials:
+      data:
+      - id: 5a9b1de3-85b3-3c1d-9feb-76d66a8ecafa
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/772701e9-bef2-38bf-9709-1ad69b227d59/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/772701e9-bef2-38bf-9709-1ad69b227d59/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "Archiv \u010CRo"
+        description: "D\u011Bti v\xE1m to \u0159eknou"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 400
+      id: 3893f1c4-78bd-38aa-ae8a-3bae2a38b4ed
+      url: https://portal.rozhlas.cz/sites/default/files/images/02450574.jpeg
+      width: 600
+    childFriendly: false
+    description: "Ve vys\xEDl\xE1n\xED Radio\u017Eurn\xE1lu dost\xE1vaj\xED prostor\
+      \ politici r\u016Fzn\xFDch stran, odborn\xEDci rozmanit\xFDch profes\xED, v\u011B\
+      t\u0161iny i men\u0161iny, \u017Eeny a mu\u017Ei. Ve v\u0161edn\xED dny p\u0159\
+      ed polednem a sobotu po ob\u011Bd\u011B se k nim p\u0159id\xE1vaj\xED d\u011B\
+      ti."
+    podcast: false
+    priority: 0
+    shortDescription: "Ve vys\xEDl\xE1n\xED Radio\u017Eurn\xE1lu dost\xE1vaj\xED prostor\
+      \ politici r\u016Fzn\xFDch stran, odborn\xEDci rozmanit\xFDch profes\xED, v\u011B\
+      t\u0161iny i men\u0161iny, \u017Eeny a mu\u017Ei. Ve v\u0161edn\xED dny p\u0159\
+      ed polednem a sobo..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "D\u011Bti v\xE1m to \u0159eknou"
+    updated: '2021-03-20T23:30:10+01:00'
+  id: b51fb1c9-3126-3536-b880-cbcf8e6da9e4
+  relationships:
+    episodes:
+      data:
+      - id: 002c2ca1-6158-3b2a-9ea3-b24d7b67946d
+        type: episode
+      - id: 003d39ab-db78-3139-b57c-3703b19f3957
+        type: episode
+      - id: 0055c770-50e8-30d2-9886-326d7f4c043a
+        type: episode
+      - id: 007c4744-fcb0-350e-999f-009a605ac862
+        type: episode
+      - id: 007fc848-1225-3857-866a-e4f197c3f0ee
+        type: episode
+      - id: 010fea18-f5d1-3c9a-8cf7-c88c172f693c
+        type: episode
+      - id: 016e3157-3255-34da-9ddb-5ddc072b7b53
+        type: episode
+      - id: 0182df50-1118-3237-aeef-add7d1381b5d
+        type: episode
+      - id: 0189e4e1-b47c-32f5-9ad0-5ff06b42561e
+        type: episode
+      - id: 01c9f149-ba5f-3819-bcbe-61e202f10496
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/b51fb1c9-3126-3536-b880-cbcf8e6da9e4/episodes
+      meta:
+        count: 1044
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/b51fb1c9-3126-3536-b880-cbcf8e6da9e4/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/b51fb1c9-3126-3536-b880-cbcf8e6da9e4/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/b51fb1c9-3126-3536-b880-cbcf8e6da9e4/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Filip Sodomka
+        description: "Dopoledn\xED Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1365
+      id: 1d409c68-ad2a-3de4-83ce-ffe8257b5955
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239471.jpeg
+      width: 2048
+    childFriendly: false
+    description: "Aktu\xE1ln\xED zpravodajstv\xED, report\xE1\u017Ee a zaj\xEDmav\xED\
+      \ host\xE9. Moderuje Ji\u0159\xED Chum."
+    podcast: false
+    priority: 0
+    shortDescription: "Aktu\xE1ln\xED zpravodajstv\xED, report\xE1\u017Ee a zaj\xED\
+      mav\xED host\xE9. Moderuje Ji\u0159\xED Chum."
+    showContent: false
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Dopoledn\xED Radio\u017Eurn\xE1l"
+    updated: '2023-07-14T16:00:10+02:00'
+  id: c7374f41-ae14-3b5c-8c04-385e3241deb4
+  relationships:
+    episodes:
+      data:
+      - id: 0047c324-c1c5-31b8-b64d-aa1ec2ea313d
+        type: episode
+      - id: 00a2354f-fa38-315b-a91a-e24971497b55
+        type: episode
+      - id: 00e22800-d670-35df-a3ba-f0be14e30b29
+        type: episode
+      - id: 010dbe25-7d86-3053-9284-8bd13fb82500
+        type: episode
+      - id: 01a3121b-7769-32a3-a82a-0b185770da0a
+        type: episode
+      - id: 0229e193-40bb-3450-be3b-f07160c415af
+        type: episode
+      - id: 026cf99d-b78f-3c63-9b97-ceeb84212ed6
+        type: episode
+      - id: 0311d8aa-8e0f-30dc-8808-47dce6f36de6
+        type: episode
+      - id: 0319380a-47bf-36c3-8706-06e2efe3e802
+        type: episode
+      - id: 03911279-bf2b-3bf1-b03c-3bbfcfa12598
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c7374f41-ae14-3b5c-8c04-385e3241deb4/episodes
+      meta:
+        count: 599
+    participants:
+      data:
+      - id: 4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c7374f41-ae14-3b5c-8c04-385e3241deb4/participants
+    serials:
+      data:
+      - id: 75c4893e-89fa-3f75-8a70-c2a8f4e33507
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c7374f41-ae14-3b5c-8c04-385e3241deb4/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c7374f41-ae14-3b5c-8c04-385e3241deb4/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Fotobanka stock.xchng
+        description: "n\xE1bo\u017Eenstv\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1443
+      id: c082d9cf-40de-3956-8aef-d498139932fb
+      url: https://portal.rozhlas.cz/sites/default/files/images/03188572.jpeg
+      width: 2165
+    childFriendly: false
+    description: "Doteky v\xEDry zklid\u0148uj\xED tempo Radio\u017Eurn\xE1lu. Ka\u017E\
+      dou sobotu a ned\u011Bli po dvaadvac\xE1t\xE9 hodin\u011B v\xE1m Doteky v\xED\
+      ry nab\xEDzej\xED pov\xEDd\xE1n\xED o v\u011Bcech mezi nebem a zem\xED. A tak\xE9\
+      \ o \u010Dlov\u011Bku a jeho neklidn\xE9m putov\xE1n\xED \u017Eivotem, o jeho\
+      \ mnohdy nelehk\xE9m \xFAd\u011Blu, ale tak\xE9 o zdroj\xEDch \u0161t\u011B\
+      st\xED, harmonie a l\xE1sky."
+    podcast: false
+    priority: 0
+    shortDescription: "Doteky v\xEDry zklid\u0148uj\xED tempo Radio\u017Eurn\xE1lu.\
+      \ Ka\u017Edou sobotu a ned\u011Bli po\_22. hodin\u011B v\xE1m Doteky v\xEDry\
+      \ nab\xEDzej\xED pov\xEDd\xE1n\xED o v\u011Bcech mezi nebem a zem\xED. A tak\xE9\
+      \ o \u010Dlov\u011Bku."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Doteky v\xEDry"
+    updated: '2021-03-20T23:30:09+01:00'
+  id: 6950f239-d234-331b-b20e-2067b498ffb3
+  relationships:
+    episodes:
+      data:
+      - id: 000b9458-dbb5-3b46-a39d-2eda5912c01f
+        type: episode
+      - id: 00378b67-d6a7-3688-b10f-7b7519688532
+        type: episode
+      - id: 007aaab9-048e-344f-8a87-c5680ad8c90f
+        type: episode
+      - id: 00847be5-815a-3f72-b6b1-1665048b05e2
+        type: episode
+      - id: 01309b79-e26f-3eba-a8f0-bb632ffa8d0b
+        type: episode
+      - id: 0145a328-09a1-33ff-b147-09f83a251dfb
+        type: episode
+      - id: 014dfa15-2326-326e-b63e-a8c0095f6daa
+        type: episode
+      - id: 0181e396-f6bc-3fe7-9fd1-b5d69383c88d
+        type: episode
+      - id: 0184ccf4-8322-3930-8298-c1aa49afc02d
+        type: episode
+      - id: 018a380d-f8a4-3798-aedb-d30eb8ad6697
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6950f239-d234-331b-b20e-2067b498ffb3/episodes
+      meta:
+        count: 1063
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6950f239-d234-331b-b20e-2067b498ffb3/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6950f239-d234-331b-b20e-2067b498ffb3/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6950f239-d234-331b-b20e-2067b498ffb3/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "po\u0159ad byl vys\xEDl\xE1n do prosince 2007Poznejte lidi, kter\xE9\
+      \ sice mo\u017En\xE1 zn\xE1te, ale rozhodn\u011B o nich nev\xEDte v\u0161echno.\
+      \ Zn\xE1m\xE9 a zaj\xEDmav\xE9 osobnosti - herci, zp\u011Bv\xE1ci, spisovatel\xE9\
+      , v\xFDtvarn\xEDci, politici \u010Di cestovatel\xE9 - v palb\u011B nekonformn\xED\
+      ch ot\xE1zek dvou moder\xE1tor\u016F. Curiculum vitae ve t\u0159iceti minut\xE1\
+      ch v\xE1m p\u0159edstav\xED zn\xE1m\xE9 lidi \"trochu jinak\"."
+    podcast: false
+    priority: 0
+    shortDescription: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Poznejte lidi,\
+      \ kter\xE9 sice mo\u017En\xE1 zn\xE1te, ale rozhodn\u011B o nich nev\xEDte v\u0161\
+      echno. Zn\xE1m\xE9 a zaj\xEDmav\xE9 osobnosti - herci, zp\u011Bv\xE1ci, spisovatel\xE9\
+      ..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Dva na jednoho
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 6e0350d0-d9a7-3a27-8cd3-252a763f48ea
+  relationships:
+    episodes:
+      data:
+      - id: 03a7f790-c2cf-346e-bd76-9aa25d937a48
+        type: episode
+      - id: 0511c61f-3639-3869-9568-65be767cf7a9
+        type: episode
+      - id: 05433b3a-b834-3afa-be17-29ffaf5c48e6
+        type: episode
+      - id: 0799df44-0e1f-3ae3-a0fa-e4d44e5428cb
+        type: episode
+      - id: 0975b3a5-1091-3f60-b60e-6601db52b8ff
+        type: episode
+      - id: 0a2fcf11-1c4d-32e6-bcb1-6da55387996d
+        type: episode
+      - id: 0a3f8e01-e51a-34a3-9ab9-e26eb8991d56
+        type: episode
+      - id: 0a6c27f8-31bd-3e55-aaa9-0b72ca19f988
+        type: episode
+      - id: 0f376269-834a-3f96-9cea-d88cee8a1d0f
+        type: episode
+      - id: 10a1b778-18d4-3adb-9a54-4315157a92d0
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6e0350d0-d9a7-3a27-8cd3-252a763f48ea/episodes
+      meta:
+        count: 102
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6e0350d0-d9a7-3a27-8cd3-252a763f48ea/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6e0350d0-d9a7-3a27-8cd3-252a763f48ea/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6e0350d0-d9a7-3a27-8cd3-252a763f48ea/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Dvacet minut Radio\u017Eurn\xE1lu"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 6382e1ce-7e10-34aa-8f2a-b31c5111d1eb
+      url: https://portal.rozhlas.cz/sites/default/files/images/03238922.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Autorsk\xFD rozhovor jeden na jednoho s\_akt\xE9ry kl\xED\u010D\
+      ov\xFDch ud\xE1lost\xED ve\u0159ejn\xE9ho d\u011Bn\xED."
+    podcast: false
+    priority: 90
+    shortDescription: "Autorsk\xFD rozhovor jeden na jednoho s\_akt\xE9ry kl\xED\u010D\
+      ov\xFDch ud\xE1lost\xED ve\u0159ejn\xE9ho d\u011Bn\xED."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Dvacet minut Radio\u017Eurn\xE1lu"
+    updated: '2023-07-14T16:00:10+02:00'
+  id: 5734245c-946d-3b10-9bfb-d295580f3752
+  relationships:
+    episodes:
+      data:
+      - id: 0002f8a8-a986-31c3-accd-4a02339c27b7
+        type: episode
+      - id: 0009c272-af9f-356b-9c3c-8e7fd50d8f6d
+        type: episode
+      - id: 002949e3-5e9c-3d36-b349-393d4b1af486
+        type: episode
+      - id: 0065323b-e16f-3ffa-a608-5f35abaae5c1
+        type: episode
+      - id: 0069e4e0-dfd3-3587-9c93-2e9459cc31d0
+        type: episode
+      - id: 007f8776-0c37-3abd-b3fc-bdfc57454209
+        type: episode
+      - id: 00b10865-2f3f-3fc6-be29-47c7dbe46396
+        type: episode
+      - id: 00d3c69f-1daa-350d-beb5-760a3c45d6bb
+        type: episode
+      - id: 00d5c1fa-12e8-3d45-ad35-93bbdc6cb083
+        type: episode
+      - id: 00f31bb3-5798-3512-907b-bf79cc50c6d1
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/5734245c-946d-3b10-9bfb-d295580f3752/episodes
+      meta:
+        count: 2707
+    participants:
+      data:
+      - id: dcd22621-d490-3145-ac3c-689b6e8242de
+        meta:
+          role: moderator
+        type: person
+      - id: de4615a1-2c77-3f48-9d16-8074a4ce0d62
+        meta:
+          role: moderator
+        type: person
+      - id: ee903fcd-967d-35fa-955b-1f0d43456887
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/5734245c-946d-3b10-9bfb-d295580f3752/participants
+    serials:
+      data:
+      - id: fbb6896e-aad0-3ca3-9fc5-236458e27f2c
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/5734245c-946d-3b10-9bfb-d295580f3752/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      - id: c639d927-f37b-3db8-a64f-1d64ee1469b2
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/5734245c-946d-3b10-9bfb-d295580f3752/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Fotobanka stock.xchng
+        description: "koala - koalov\xE9 - koaly"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1000
+      id: 62c0a291-408b-395b-bcbb-7a335a326dcf
+      url: https://portal.rozhlas.cz/sites/default/files/images/03159852.jpeg
+      width: 1500
+    childFriendly: false
+    description: "Ot\xE1zky, kter\xE9 si snad ka\u017Ed\xFD z n\xE1s u\u017E n\u011B\
+      kdy polo\u017Eil, ale m\xE1lokdo zn\xE1 odpov\u011B\u010F."
+    podcast: false
+    priority: 0
+    shortDescription: "Ot\xE1zky, kter\xE9 si snad ka\u017Ed\xFD z n\xE1s u\u017E\
+      \ n\u011Bkdy polo\u017Eil, ale m\xE1lokdo zn\xE1 odpov\u011B\u010F."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Encyklopedie Radio\u017Eurn\xE1lu"
+    updated: '2021-03-05T00:00:17+01:00'
+  id: ed4623ee-2379-35af-af56-32c7644eed5c
+  relationships:
+    episodes:
+      data:
+      - id: 047e7fa5-c19c-3c77-81f2-8bfe2d76f11b
+        type: episode
+      - id: 0482a658-7b41-3f33-bb07-1c13d0a3daf2
+        type: episode
+      - id: 05f20d64-e909-3aa5-ab6d-42044e9a0d31
+        type: episode
+      - id: 070a38f0-16ce-3fdc-8f5a-bc8f9d265201
+        type: episode
+      - id: 077dc901-a29e-3d28-9724-645d4bf9fdf1
+        type: episode
+      - id: 0b8aecc8-16b5-3f9a-90b3-203ae28c1d2b
+        type: episode
+      - id: 0c37425d-a829-3227-b128-3fd95f908c0b
+        type: episode
+      - id: 0c8fc982-a837-3448-a8cb-fd65c91415c7
+        type: episode
+      - id: 0dd6119a-0702-3100-a48f-b5503c8ebec5
+        type: episode
+      - id: 0dee39cb-40a9-3ff6-9eed-c0992383af3f
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ed4623ee-2379-35af-af56-32c7644eed5c/episodes
+      meta:
+        count: 214
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ed4623ee-2379-35af-af56-32c7644eed5c/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ed4623ee-2379-35af-af56-32c7644eed5c/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ed4623ee-2379-35af-af56-32c7644eed5c/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "Krist\xFDna Makov\xE1"
+        description: "Karlovarsk\xFD filmov\xFD festival, vstup do hotelu Thermal"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 533
+      id: 11ff1b02-09f9-3392-8082-eb95e1f73d8b
+      url: https://portal.rozhlas.cz/sites/default/files/images/03160457.jpeg
+      width: 800
+    childFriendly: false
+    description: "Jak\xE1 je historie karlovarsk\xE9ho festivalu?"
+    podcast: false
+    priority: 0
+    shortDescription: "Jak\xE1 je historie karlovarsk\xE9ho festivalu?"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Filmov\xE9 klapky"
+    updated: '2021-03-20T23:30:08+01:00'
+  id: 9e69ad1e-d1b4-3b51-bb34-1c4b90119f5c
+  relationships:
+    episodes:
+      data:
+      - id: 2e2b281a-ea61-3599-95d1-ed01735b5123
+        type: episode
+      - id: 37677ff8-05d7-38d6-bf25-846500cd161b
+        type: episode
+      - id: 4a72baba-2166-3f8b-8176-ccba9f75d836
+        type: episode
+      - id: 7e12248a-942d-32b0-aca1-54643ddc3a80
+        type: episode
+      - id: 8190a2c6-dd17-36dc-b4e9-639659dbb0f2
+        type: episode
+      - id: 823e6c13-99c0-38c4-a147-0f6109bdf844
+        type: episode
+      - id: 88728b18-6f46-3e89-af39-800fa35f06cc
+        type: episode
+      - id: ad0bdbe6-1346-3042-b43e-1f6f18d671f2
+        type: episode
+      - id: b5df28f5-ed85-39b8-8c5f-a4f46fd65b84
+        type: episode
+      - id: cffa7762-6934-3b34-8422-484be39099d8
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9e69ad1e-d1b4-3b51-bb34-1c4b90119f5c/episodes
+      meta:
+        count: 12
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9e69ad1e-d1b4-3b51-bb34-1c4b90119f5c/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9e69ad1e-d1b4-3b51-bb34-1c4b90119f5c/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9e69ad1e-d1b4-3b51-bb34-1c4b90119f5c/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Tereza Kunderov\xE1"
+        description: "Pavel Sladk\xFD, \u010Cesk\xFD rozhlas"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 55,49
+      height: 4030
+      id: 6ebd031f-4603-38fe-84e9-636622dfd08b
+      url: https://portal.rozhlas.cz/sites/default/files/images/d43e596cac0ea04c635d586d300a694f.JPG
+      width: 6044
+    childFriendly: false
+    description: "Filmov\xFD kritik Radio\u017Eurn\xE1lu p\u0159edstavuje nejnov\u011B\
+      j\u0161\xED sn\xEDmky, kter\xE9 vstupuj\xED do \u010Desk\xFDch kin."
+    podcast: true
+    priority: 0
+    shortDescription: "Filmov\xFD kritik Radio\u017Eurn\xE1lu p\u0159edstavuje nejnov\u011B\
+      j\u0161\xED sn\xEDmky, kter\xE9 vstupuj\xED do \u010Desk\xFDch kin."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Filmov\xE9 premi\xE9ry Pavla Sladk\xE9ho"
+    updated: '2023-07-14T17:00:12+02:00'
+  id: aaeb0f7c-371f-3114-aef7-9e07bd92ab08
+  relationships:
+    episodes:
+      data:
+      - id: 00395bc4-802a-3c1f-930d-71cfacf1befd
+        type: episode
+      - id: 05445ae5-d9d7-3ad6-bb6d-00a8c395d5dd
+        type: episode
+      - id: 0cf0d4a2-da79-3cd3-9d7b-c9b4569b308b
+        type: episode
+      - id: 24357e91-5bbd-3647-8e4a-e0b54e71feef
+        type: episode
+      - id: 2d43b253-cd96-313b-a003-863e2f99b658
+        type: episode
+      - id: 40214ac5-7c92-38ad-acdd-c57126253cae
+        type: episode
+      - id: 4262a231-573e-3188-85dc-8a5b5a32f62c
+        type: episode
+      - id: 48c56fe9-43fb-3045-8859-794c0ced243e
+        type: episode
+      - id: 4c629d1e-5892-3f59-a841-b8f036d7690b
+        type: episode
+      - id: 627c4bac-8ada-3c12-b54f-4c38042e76c6
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aaeb0f7c-371f-3114-aef7-9e07bd92ab08/episodes
+      meta:
+        count: 37
+    participants:
+      data:
+      - id: aba66b1d-8cef-36c1-9002-244eed4f83ef
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aaeb0f7c-371f-3114-aef7-9e07bd92ab08/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aaeb0f7c-371f-3114-aef7-9e07bd92ab08/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aaeb0f7c-371f-3114-aef7-9e07bd92ab08/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Film\u017Eurn\xE1l"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: eea3bcb1-bb0c-39a2-856b-ebe82e6a1704
+  relationships:
+    episodes:
+      data:
+      - id: 013fbe55-0d38-30ad-8c75-15831326a4f9
+        type: episode
+      - id: 01e76da9-3aa6-3281-a737-7f9564cfa77e
+        type: episode
+      - id: 02003c52-8a59-32cf-b793-8321c4466167
+        type: episode
+      - id: 029b2772-042f-3832-9d37-c5a15c329a96
+        type: episode
+      - id: 03ec18c4-9876-33e6-8edc-e8474cf14a5f
+        type: episode
+      - id: 041e6a43-026d-31b8-b4e1-58b8c622f225
+        type: episode
+      - id: 0426fed1-d701-37f9-b2e5-f0b3da8a5882
+        type: episode
+      - id: 044bb496-917e-3fcb-94ea-16baff4068e7
+        type: episode
+      - id: 057a0c8a-9aa1-383f-95ee-4a657aec8288
+        type: episode
+      - id: 06508f58-ba89-3154-8eac-d31896e03c4e
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/eea3bcb1-bb0c-39a2-856b-ebe82e6a1704/episodes
+      meta:
+        count: 210
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/eea3bcb1-bb0c-39a2-856b-ebe82e6a1704/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/eea3bcb1-bb0c-39a2-856b-ebe82e6a1704/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/eea3bcb1-bb0c-39a2-856b-ebe82e6a1704/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: stock exchange
+        description: "\u010Derven\xE9 v\xEDno"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1400
+      id: 825ea27a-1c41-3f63-a62d-3da093c4c2cb
+      url: https://portal.rozhlas.cz/sites/default/files/images/03313312.jpeg
+      width: 2100
+    childFriendly: false
+    description: "M\xE1te r\xE1di v\xEDno?"
+    podcast: false
+    priority: 0
+    shortDescription: "M\xE1te r\xE1di v\xEDno?"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Glosa Bogdana Trojaka
+    updated: '2021-03-20T23:30:08+01:00'
+  id: e269785f-cff6-3e5a-bdc9-c33f4e3e984c
+  relationships:
+    episodes:
+      data:
+      - id: 1c8b3366-39b1-3fa7-a8fd-cad949a55383
+        type: episode
+      - id: 226f2fb5-797f-3ac9-adb3-6c724d507964
+        type: episode
+      - id: 5097bc3a-b4ea-38b6-b016-4f1bfef22c13
+        type: episode
+      - id: 86f64343-cf99-3274-8120-79ea035a4a32
+        type: episode
+      - id: 870e602a-b56b-3a33-ad5a-3afda1d2f975
+        type: episode
+      - id: db2c23bc-ae51-33d9-850c-4e74b7c8ef0d
+        type: episode
+      - id: e7a3d335-b3ff-36c1-a688-3c69ff4db9ef
+        type: episode
+      - id: f062561e-1fb5-3df4-ace7-6b482cfcaea3
+        type: episode
+      - id: f9c6d7bf-0330-3998-bbb3-2c280371f14d
+        type: episode
+      - id: fca4e87b-0ca7-3af5-83af-178c70ae76aa
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e269785f-cff6-3e5a-bdc9-c33f4e3e984c/episodes
+      meta:
+        count: 11
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e269785f-cff6-3e5a-bdc9-c33f4e3e984c/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e269785f-cff6-3e5a-bdc9-c33f4e3e984c/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e269785f-cff6-3e5a-bdc9-c33f4e3e984c/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "\u0160\xE1rka \u0160ev\u010D\xEDkov\xE1"
+        description: "Dominik Duka, kardin\xE1l a arcibiskup pra\u017Esk\xFD"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 7c3cbc1d-16c3-30ea-be4f-7ceca4404f73
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239022.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Sv\xE1te\u010Dn\xED zamy\u0161len\xED arcibiskupa pra\u017Esk\xE9\
+      ho a primase \u010Desk\xE9ho kardin\xE1la Dominika Duky."
+    podcast: false
+    priority: 0
+    shortDescription: "Sv\xE1te\u010Dn\xED zamy\u0161len\xED arcibiskupa pra\u017E\
+      sk\xE9ho a primase \u010Desk\xE9ho kardin\xE1la Dominika Duky."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Glosa Dominika Duky
+    updated: '2021-03-20T23:30:09+01:00'
+  id: 73639267-69a4-3302-b461-5b08e10f090e
+  relationships:
+    episodes:
+      data:
+      - id: 010a0265-8d1a-324b-903d-baf95cf1e5b7
+        type: episode
+      - id: 023160b6-6ba5-32c2-9b7d-584de6ad3295
+        type: episode
+      - id: 024eb0d1-d1e3-30fb-af14-d4e68337fe0a
+        type: episode
+      - id: 0638672e-7e87-30a5-916e-08b329c83b82
+        type: episode
+      - id: 09deb04f-eb3d-304f-9944-f3d2da78a340
+        type: episode
+      - id: 0beadd4e-8dcb-3e18-915d-231cb55217cc
+        type: episode
+      - id: 0cefff56-141c-3e28-97cd-8d57de2a9419
+        type: episode
+      - id: 0d174142-f807-312a-af4f-a036c7d31bbd
+        type: episode
+      - id: 0d21d8c5-2f68-3226-b89e-ed81baa72553
+        type: episode
+      - id: 0e529f81-d434-3a93-82df-fd4eb4f63154
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73639267-69a4-3302-b461-5b08e10f090e/episodes
+      meta:
+        count: 207
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73639267-69a4-3302-b461-5b08e10f090e/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73639267-69a4-3302-b461-5b08e10f090e/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73639267-69a4-3302-b461-5b08e10f090e/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "Tom\xE1\u0161 Nov\xE1k"
+        description: "Pavel Maurer ka\u017Edou sobotu a ned\u011Bli po 12. hodin\u011B\
+          \ vyz\xFDv\xE1: Nejezte blb\u011B!"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1573
+      id: 281dbd21-f20d-3c99-86f1-3850196c55c9
+      url: https://portal.rozhlas.cz/sites/default/files/images/03220809.jpeg
+      width: 2360
+    childFriendly: false
+    description: "Nejezte blb\u011B! V\xEDkendov\xE9 kulin\xE1\u0159sk\xE9 glosy zn\xE1\
+      m\xE9ho gastronauta. (Vys\xEDl\xE1n\xED v dob\u011B pandemie covid-19 pozastaveno.)"
+    podcast: false
+    priority: 5
+    shortDescription: "Nejezte blb\u011B! V\xEDkendov\xE9 kulin\xE1\u0159sk\xE9 glosy\
+      \ zn\xE1m\xE9ho gastronauta. (Vys\xEDl\xE1n\xED v dob\u011B pandemie covid-19\
+      \ pozastaveno.)"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Glosa Pavla Maurera
+    updated: '2022-03-29T10:00:12+02:00'
+  id: 276c3b16-1e33-302c-98f7-8b68e0782623
+  relationships:
+    episodes:
+      data:
+      - id: 004a0b5a-0f39-30da-aff6-90e8fbaee3d3
+        type: episode
+      - id: 006583cd-bb06-3266-90cc-63a96e40c7d0
+        type: episode
+      - id: 0073d35d-d30d-3b13-89fe-26c44c6b304d
+        type: episode
+      - id: 00a212c3-8293-3c52-99f3-51fdc3a33bb2
+        type: episode
+      - id: 00cbba73-e6b1-3593-8a8a-864f2f946d6c
+        type: episode
+      - id: 00d4a985-6754-3dcc-a344-5cad1b5b1c04
+        type: episode
+      - id: 01d32994-6778-3aed-b143-7a00cbffefbd
+        type: episode
+      - id: 01e4de53-de47-3202-8cbc-2ccd31fddf32
+        type: episode
+      - id: 02445fd0-3093-3242-8ec2-c2b4de18257a
+        type: episode
+      - id: 036338ff-8a47-3a86-9cda-9022db5e8ace
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/276c3b16-1e33-302c-98f7-8b68e0782623/episodes
+      meta:
+        count: 756
+    participants:
+      data:
+      - id: 61773bc4-1870-36d8-9c0d-81150fd97d15
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/276c3b16-1e33-302c-98f7-8b68e0782623/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/276c3b16-1e33-302c-98f7-8b68e0782623/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/276c3b16-1e33-302c-98f7-8b68e0782623/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Po\u0159ad, kter\xFD chce odstra\u0148ovat bari\xE9ry mezi zdrav\xFD\
+      mi a zdravotn\u011B posti\u017Een\xFDmi. Um\xEDme se chovat k lidem s posti\u017E\
+      en\xEDm? Je soucit to, co od n\xE1s pot\u0159ebuj\xED? A um\xEDme pomoci spr\xE1\
+      vn\u011B a v pravou chv\xEDli?HandyCamping jsme vys\xEDlali do prosince 2010.\
+      \ Od ledna 2011 je tematika sou\u010D\xE1st\xED Ve\u010Dern\xEDho Radio\u017E\
+      urn\xE1lu."
+    podcast: false
+    priority: 0
+    shortDescription: "Po\u0159ad, kter\xFD chce odstra\u0148ovat bari\xE9ry mezi\
+      \ zdrav\xFDmi a zdravotn\u011B posti\u017Een\xFDmi. Um\xEDme se chovat k lidem\
+      \ s posti\u017Een\xEDm? Je soucit to, co od n\xE1s pot\u0159ebuj\xED? A um\xED\
+      me pomoci spr\xE1vn\u011B"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: HandyCamping
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 686fab67-09df-3c7d-bac1-ddfc0ab9992a
+  relationships:
+    episodes:
+      data:
+      - id: 000d6c9b-03fe-34bc-8bd2-080d8ec3755d
+        type: episode
+      - id: 005634f2-057f-38ca-bc85-7eb11905dc33
+        type: episode
+      - id: 009192bb-8cc6-33c0-9f19-636830033802
+        type: episode
+      - id: 011fdf95-30d4-3147-9775-bc5c13c8789e
+        type: episode
+      - id: 01d8e6ac-a4e4-3ff4-b11c-ab03af8088f1
+        type: episode
+      - id: 029014c2-1d9f-3051-88ff-0d2bc9c337dc
+        type: episode
+      - id: 02b2e7dc-cbad-3eb3-909e-995214c31d89
+        type: episode
+      - id: 02de55b6-bf80-37ce-83aa-50d02e66acab
+        type: episode
+      - id: 03994249-27e7-3150-a4bb-710b3adc7091
+        type: episode
+      - id: 046c3c34-7444-3369-901f-01b860e98e1b
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/686fab67-09df-3c7d-bac1-ddfc0ab9992a/episodes
+      meta:
+        count: 396
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/686fab67-09df-3c7d-bac1-ddfc0ab9992a/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/686fab67-09df-3c7d-bac1-ddfc0ab9992a/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/686fab67-09df-3c7d-bac1-ddfc0ab9992a/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "Ale\u0161 Vav\u0159\xEDk"
+        description: "Hlavn\xED zpr\xE1vy"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1400
+      id: 80cf105b-c7c9-3333-8a38-4af913488cfa
+      url: https://portal.rozhlas.cz/sites/default/files/images/03238750.jpeg
+      width: 2100
+    childFriendly: false
+    description: "V\xEDme, co se d\u011Bje!\_Poslechn\u011Bte si souhrn toho nejd\u016F\
+      le\u017Eit\u011Bj\u0161\xEDho, co se za cel\xFD den stalo. Informace v souvislostech\
+      \ \u2013 zpravodajsk\xE9 \u0161oty report\xE9r\u016F, telefon\xE1ty zahrani\u010D\
+      n\xEDch i region\xE1ln\xEDch zpravodaj\u016F\u2026\_"
+    podcast: false
+    priority: 0
+    shortDescription: "V\xEDme, co se d\u011Bje!"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Hlavn\xED zpr\xE1vy"
+    updated: '2021-03-20T23:30:07+01:00'
+  id: bcb42b61-7227-32a5-8371-fb582584116f
+  relationships:
+    episodes:
+      data:
+      - id: 00058ec1-f877-33dd-8b67-ef495049b36b
+        type: episode
+      - id: 000deabe-a4f0-3e12-9f2a-2314099a0180
+        type: episode
+      - id: 001e521f-e00c-3e55-be63-1f34e6b68373
+        type: episode
+      - id: 00222a3f-17be-3404-9c41-d113f5fc572e
+        type: episode
+      - id: 00722fcc-a678-3ef7-b9c0-86b76687dad3
+        type: episode
+      - id: 00b88270-d241-36a6-beba-d1f22532d92c
+        type: episode
+      - id: 00bf2c75-2c03-3b8c-bd60-2168a5007a50
+        type: episode
+      - id: 00c16615-f1ea-3b11-98a5-1fa9dd8b10de
+        type: episode
+      - id: 00c73d36-48f4-32da-af6f-f302251eaf5a
+        type: episode
+      - id: 00cccb79-91b5-3324-a00a-b7b503931c8d
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bcb42b61-7227-32a5-8371-fb582584116f/episodes
+      meta:
+        count: 4185
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bcb42b61-7227-32a5-8371-fb582584116f/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bcb42b61-7227-32a5-8371-fb582584116f/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bcb42b61-7227-32a5-8371-fb582584116f/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Ale\u0161 Vav\u0159\xEDk"
+        description: "\u010Cesk\xFD rozhlas Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1400
+      id: 628c6604-cab9-35a6-941c-83330044dbcb
+      url: https://portal.rozhlas.cz/sites/default/files/images/03238749.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Koment\xE1\u0159e, anal\xFDzy, rozhovory. Publicistick\xFD souhrn\
+      \ nejd\u016Fle\u017Eit\u011Bj\u0161\xEDch kauz dne."
+    podcast: false
+    priority: 0
+    shortDescription: "Koment\xE1\u0159e, anal\xFDzy, rozhovory. Publicistick\xFD\
+      \ souhrn nejd\u016Fle\u017Eit\u011Bj\u0161\xEDch kauz dne."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Hlavn\xED zpr\xE1vy - rozhovory a koment\xE1\u0159e"
+    updated: '2022-06-09T13:48:57+02:00'
+  id: 1a8454bd-0751-39ff-b5e6-4bd8cd89c672
+  relationships:
+    episodes:
+      data:
+      - id: 000ca42f-cae9-304b-ad08-041fa5c7f918
+        type: episode
+      - id: 00132bb2-f3ca-3baf-9e11-0bb05f27b0cd
+        type: episode
+      - id: 00247005-3439-33a0-832b-9f99533e9056
+        type: episode
+      - id: 0050a668-8e83-3f9f-b12a-7c15e116714a
+        type: episode
+      - id: 00791935-902c-30d5-a25e-3973fdf75e04
+        type: episode
+      - id: 0093fbad-873d-3180-af04-57fa76238a8e
+        type: episode
+      - id: 0094574d-0172-3923-b887-3b76747cd307
+        type: episode
+      - id: 00aac6cc-a685-3c91-aff2-768af773eca7
+        type: episode
+      - id: 00bea86f-6240-347b-9381-d4860688744c
+        type: episode
+      - id: 00cd3482-581d-3f2a-9021-28c2461dfd6c
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1a8454bd-0751-39ff-b5e6-4bd8cd89c672/episodes
+      meta:
+        count: 3074
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1a8454bd-0751-39ff-b5e6-4bd8cd89c672/participants
+    serials:
+      data:
+      - id: a99d49ff-cd88-3a45-957a-512adac9c078
+        type: serial
+      - id: f273e558-d85f-3d76-ba54-8335bacf28f6
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1a8454bd-0751-39ff-b5e6-4bd8cd89c672/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      - id: c639d927-f37b-3db8-a64f-1d64ee1469b2
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1a8454bd-0751-39ff-b5e6-4bd8cd89c672/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "po\u0159ad byl vys\xEDl\xE1n do prosince 2007Dvacetiminutov\xFD\
+      \ rozhovor se vys\xEDl\xE1 od ledna 2007 v sobotu v 17.10 hodin. Sna\u017E\xED\
+      me se v n\u011Bm p\u0159edstavovat jednak osobnosti zn\xE1m\xE9 tak, jak je\
+      \ dosud nezn\xE1te, jednak osobnosti, kter\xE9 dosud nezn\xE1te, ale m\u011B\
+      li byste je zn\xE1t."
+    podcast: false
+    priority: 0
+    shortDescription: "po\u0159ad byl vys\xEDl\xE1n do prosince 2007Dvacetiminutov\xFD\
+      \ rozhovor se vys\xEDl\xE1 od ledna 2007 v sobotu v 17.10 hodin. Sna\u017E\xED\
+      me se v n\u011Bm p\u0159edstavovat jednak osobnosti zn\xE1m\xE9 tak,..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Host Jany Klus\xE1kov\xE9"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 98826987-3209-3d70-8fbe-0b5020ba1449
+  relationships:
+    episodes:
+      data:
+      - id: 0146b26e-3272-34b8-a24d-81fd1cb52ceb
+        type: episode
+      - id: 0502dd86-d189-386b-9772-1460d1e9506a
+        type: episode
+      - id: 0a2a859d-e36d-3938-99f5-e6ae9073da16
+        type: episode
+      - id: 0c1c84e4-87f5-3bf5-8574-342aea6685a5
+        type: episode
+      - id: 0dcc1fd1-6cbe-3cef-9a37-bc13d91bf9f9
+        type: episode
+      - id: 2016d5e7-6587-32cc-97b7-e2a56824302c
+        type: episode
+      - id: 2309c848-adf9-3a15-b151-6d36c920b2ff
+        type: episode
+      - id: 230a7c30-1adf-37ac-a631-505a63878a74
+        type: episode
+      - id: 2877283c-5cda-397a-866d-b75da82e551b
+        type: episode
+      - id: 2a47a992-bc89-301e-9a08-097ea242e9b3
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/98826987-3209-3d70-8fbe-0b5020ba1449/episodes
+      meta:
+        count: 79
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/98826987-3209-3d70-8fbe-0b5020ba1449/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/98826987-3209-3d70-8fbe-0b5020ba1449/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/98826987-3209-3d70-8fbe-0b5020ba1449/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Lucie V\xFDborn\xE1"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1402
+      id: 0e3e5c7a-f2c7-362b-a6e5-a1f3555bad13
+      url: https://portal.rozhlas.cz/sites/default/files/images/03823770.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Rozhovory Lucie V\xFDborn\xE9. Zaj\xEDmav\xE9 osobnosti mluv\xED\
+      \ o v\u011Bcech, jim\u017E rozum\u011Bj\xED.\_Sv\xE9 dotazy pokl\xE1dejte p\u0159\
+      es formul\xE1\u0159 na webu."
+    podcast: false
+    priority: 100
+    shortDescription: "Rozhovory Lucie V\xFDborn\xE9. Zaj\xEDmav\xE9 osobnosti mluv\xED\
+      \ o v\u011Bcech, jim\u017E rozum\u011Bj\xED.\_Sv\xE9 dotazy pokl\xE1dejte p\u0159\
+      es formul\xE1\u0159\_n\xED\u017Ee."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Host Lucie V\xFDborn\xE9"
+    updated: '2023-05-15T14:45:01+02:00'
+  id: c0e403a9-9dea-365b-96ff-545320a69b4e
+  relationships:
+    episodes:
+      data:
+      - id: 00083a27-241d-36b9-9dc8-f53ffb5a8671
+        type: episode
+      - id: 00089787-6222-30ea-b091-aa1c071bc789
+        type: episode
+      - id: 0009cfdc-8949-3e96-a662-408177da842d
+        type: episode
+      - id: 0015c34f-59d2-3da4-a2bf-515798b34854
+        type: episode
+      - id: 002aa1ce-57bf-3d3d-a51a-3933cb7d8af4
+        type: episode
+      - id: 002e75cb-0c54-3510-a8c2-6d5537136d90
+        type: episode
+      - id: 005c51a7-1afa-3826-81b6-f3c9fa2e70f4
+        type: episode
+      - id: 006113bf-4195-3f97-a830-09eb03609775
+        type: episode
+      - id: 007cbc88-d1ad-3001-aa9f-b80985d34db7
+        type: episode
+      - id: 008a37a5-1b1e-3d5e-82a7-4cc924dc4f71
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c0e403a9-9dea-365b-96ff-545320a69b4e/episodes
+      meta:
+        count: 5506
+    participants:
+      data:
+      - id: 5e63f805-942d-374e-8668-66eaae919b2f
+        meta:
+          role: moderator
+        type: person
+      - id: ff7689f3-e5b8-34d0-8bac-4761ad2da163
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c0e403a9-9dea-365b-96ff-545320a69b4e/participants
+    serials:
+      data:
+      - id: a1e4a3a4-ace6-3f5a-9e4b-161163ac5077
+        type: serial
+      - id: d8b2c8f3-04fc-3bef-a968-6dd48e201b7f
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c0e403a9-9dea-365b-96ff-545320a69b4e/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c0e403a9-9dea-365b-96ff-545320a69b4e/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Host Radio\u017Eurn\xE1lu"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 930
+      id: 508cf188-ef34-3978-84fb-29121946bd87
+      url: https://portal.rozhlas.cz/sites/default/files/images/8bdb4bd2dda11948497a4f8835dc0b07.jpg
+      width: 1395
+    childFriendly: false
+    description: "Pravideln\xE9 dopoledn\xED a ve\u010Dern\xED rozhovory s hosty,\
+      \ kter\xE9 nikde jinde neusly\u0161\xEDte.\_Ka\u017Ed\xFD v\u0161edn\xED a sobotn\xED\
+      \ ve\u010Der p\u0159iv\xEDtaj\xED moder\xE1to\u0159i zaj\xEDmav\xE9 hosty nap\u0159\
+      \xED\u010D profesemi i obory. Sv\xE9 dotazy pokl\xE1dejte p\u0159es formul\xE1\
+      \u0159."
+    podcast: false
+    priority: 80
+    shortDescription: "Pravideln\xE9 dopoledn\xED a\_ve\u010Dern\xED rozhovory s hosty,\
+      \ kter\xE9 nikde jinde neusly\u0161\xEDte. Sv\xE9 dotazy pokl\xE1dejte p\u0159\
+      es formul\xE1\u0159\_n\xED\u017Ee."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Host Radio\u017Eurn\xE1lu"
+    updated: '2022-06-09T13:48:54+02:00'
+  id: d152812c-5997-3cbb-8729-205c164bd789
+  relationships:
+    episodes:
+      data:
+      - id: 000d8cc7-09a6-39b7-87d6-1eaab033d89a
+        type: episode
+      - id: 00870fdc-fe5c-3fc6-9ad4-8e272d8e0b11
+        type: episode
+      - id: 00a8c4c8-8605-30a8-9788-4ef42861bc37
+        type: episode
+      - id: 00ada89f-98b9-3b2e-99bb-78ce75e24cde
+        type: episode
+      - id: 00d2eadd-cf2e-3926-9698-260d51989d65
+        type: episode
+      - id: 00d6b96d-5d4d-3840-b424-343547ec3963
+        type: episode
+      - id: 00eca7e0-4bb9-373d-a65c-baf3792627a5
+        type: episode
+      - id: 00f65660-1492-312e-a68f-18b45ba87d55
+        type: episode
+      - id: 014eb82c-aebf-3d4b-9fea-c50d9e3d9cbd
+        type: episode
+      - id: 0157582b-05f7-3a94-8abb-058a8c9510d2
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d152812c-5997-3cbb-8729-205c164bd789/episodes
+      meta:
+        count: 1434
+    participants:
+      data:
+      - id: 0b0b0fe2-16db-3996-8b91-eab0933d8480
+        meta:
+          role: moderator
+        type: person
+      - id: 3f801f2a-5ffb-3637-b7a5-be700f403cae
+        meta:
+          role: moderator
+        type: person
+      - id: 5e63f805-942d-374e-8668-66eaae919b2f
+        meta:
+          role: moderator
+        type: person
+      - id: a1e05e5c-6546-33e2-8a8b-34e6b73449ae
+        meta:
+          role: moderator
+        type: person
+      - id: d7d68ba0-a7b1-3c95-8991-17cb99862a69
+        meta:
+          role: moderator
+        type: person
+      - id: dcd22621-d490-3145-ac3c-689b6e8242de
+        meta:
+          role: moderator
+        type: person
+      - id: f96d8cef-22c1-336f-b437-e8384440211f
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d152812c-5997-3cbb-8729-205c164bd789/participants
+    serials:
+      data:
+      - id: 7391310d-e280-35b5-a390-14986a82df16
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d152812c-5997-3cbb-8729-205c164bd789/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d152812c-5997-3cbb-8729-205c164bd789/stations
+  type: show
+- attributes:
+    active: true
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: "Exkluzivn\xED rozhovory s hosty ze sportovn\xEDho prost\u0159\
+          ed\xED na Radio\u017Eurn\xE1lu Sport"
+        license: ''
+        origin_url: ''
+        source: Shutterstock
+      focal_point: 50,50
+      height: 3319
+      id: bfe5cb28-691b-3749-a06f-14bd159b98d1
+      url: https://portal.rozhlas.cz/sites/default/files/images/6b38d7d60d9ea23c9bc7c263d7c7df07.jpg
+      width: 5760
+    childFriendly: false
+    description: "Dopoledn\xED rozhovory s hosty ze sportovn\xEDho prost\u0159ed\xED\
+      , kter\xE9 nikde jinde neusly\u0161\xEDte."
+    podcast: false
+    priority: 0
+    shortDescription: "Dopoledn\xED rozhovory s hosty ze sportovn\xEDho prost\u0159\
+      ed\xED, kter\xE9 nikde jinde neusly\u0161\xEDte."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Host Radio\u017Eurn\xE1lu Sport"
+    updated: '2022-04-04T18:00:24+02:00'
+  id: ee9948d3-a358-3a22-b9d2-fba99b441e28
+  relationships:
+    episodes:
+      data:
+      - id: 048eeab0-b2bb-3f1b-ba01-3393b15b4f70
+        type: episode
+      - id: 073f479f-cbd4-3a37-ac68-0bf21f06c1b0
+        type: episode
+      - id: 0bbd9dde-5f55-35a0-9381-c7821c229d4c
+        type: episode
+      - id: 0bf7e0d6-58c4-3ed4-a08b-acc05e6d6bc2
+        type: episode
+      - id: 0e1db99a-d8dd-3e3c-85ae-3150f5d3835d
+        type: episode
+      - id: 11e56153-4900-3d09-9757-ae919ae446e2
+        type: episode
+      - id: 1614291a-33b4-36b6-9cad-e4b661c0fef2
+        type: episode
+      - id: 18d691a4-0712-3884-a8cb-4fd18403bbf6
+        type: episode
+      - id: 18d771c2-76ff-3b24-aa0c-5291bce96701
+        type: episode
+      - id: 1b4bf345-440b-3360-911a-8884ba19cb6c
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee9948d3-a358-3a22-b9d2-fba99b441e28/episodes
+      meta:
+        count: 71
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee9948d3-a358-3a22-b9d2-fba99b441e28/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee9948d3-a358-3a22-b9d2-fba99b441e28/serials
+    stations:
+      data:
+      - id: 93eabdcd-ccc5-311d-825b-6f5d6509db53
+        type: station
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee9948d3-a358-3a22-b9d2-fba99b441e28/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "N\xE1rodn\xED archiv Nizozemsko"
+        description: "Gramofon spojen\xFD s filmov\xFDm projektorem (1929)"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 890
+      id: f8ba852f-9ad9-3105-af18-706bc8a4a81a
+      url: https://portal.rozhlas.cz/sites/default/files/images/02978590.jpeg
+      width: 1200
+    childFriendly: false
+    description: "Jak si p\u0159edchoz\xED generace p\u0159edstavovaly \u017Eivot\
+      \ v na\u0161\xED zemi? V \u010Dem se jejich progn\xF3zy m\xFDlily a kde se naopak\
+      \ trefily do \u010Dern\xE9ho? Jan Herget v\xE1s v 10 d\xEDlech na\u0161eho seri\xE1\
+      lu provede bohat\xFDm rozhlasov\xFDm arch\xEDvem."
+    podcast: false
+    priority: 0
+    shortDescription: "Jak si p\u0159edchoz\xED generace p\u0159edstavovaly \u017E\
+      ivot v na\u0161\xED zemi? V \u010Dem se jejich progn\xF3zy m\xFDlily a kde se\
+      \ naopak trefily do \u010Dern\xE9ho? Jan Herget v\xE1s v 10 d\xEDlech na\u0161\
+      eho ser..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Jak se prognostici m\xFDlili"
+    updated: '2021-03-20T23:30:09+01:00'
+  id: c8b55621-253f-3ae7-90c1-d7efca90528d
+  relationships:
+    episodes:
+      data:
+      - id: 0134e532-8d08-3af6-bb34-5725ceec0ef6
+        type: episode
+      - id: 0468abe7-9c3c-34ec-bb61-aaebeeaa1044
+        type: episode
+      - id: 1f79fb9a-d550-368a-94b8-8f6293f9292e
+        type: episode
+      - id: 29b1eee0-d310-3a02-adc0-3b33617bca7b
+        type: episode
+      - id: 4189bc86-1df5-362d-a286-557dbd2c246b
+        type: episode
+      - id: 4794a577-3112-3421-baf1-2d7baeee173f
+        type: episode
+      - id: 4a5ef394-9c4b-3e63-9302-fdc164c81ce1
+        type: episode
+      - id: 5c48a1fa-aac6-375b-a829-144b9fcbbf93
+        type: episode
+      - id: 6e5ee6dd-780e-3e5b-b024-602c69102848
+        type: episode
+      - id: 87d2476d-f693-340a-900c-a1019b778a0c
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c8b55621-253f-3ae7-90c1-d7efca90528d/episodes
+      meta:
+        count: 20
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c8b55621-253f-3ae7-90c1-d7efca90528d/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c8b55621-253f-3ae7-90c1-d7efca90528d/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/c8b55621-253f-3ae7-90c1-d7efca90528d/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Julie Kalodov\xE1"
+        description: Epidemiolog Petr Smejkal
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 65de0c00-78ac-30cd-9c4b-cf214c34c7bb
+      url: https://portal.rozhlas.cz/sites/default/files/images/4f7ba39d4d224cbc8d0bb0d5fa8a6f0c.jpg
+      width: 2100
+    childFriendly: false
+    description: "Nov\xFD po\u0159ad Radio\u017Eurn\xE1lu\_s vl\xE1dn\xED tv\xE1\u0159\
+      \xED boje proti pandemii Petrem Smejkalem. Epidemiolog pra\u017Esk\xE9ho Institutu\
+      \ klinick\xE9 a experiment\xE1ln\xED medic\xEDny (IKEM)\_srozumiteln\u011B\_\
+      \_vysv\u011Btluje sou\u010Dasn\xE1 opat\u0159en\xED a to, jak v praxi funguj\xED\
+      .\_Jak nepodcenit riziko n\xE1kazy? A jak\xE9 jsou moment\xE1ln\xED vyhl\xED\
+      dky \u010Ceska na zvl\xE1dnut\xED pandemie? Poslouchejte ka\u017Edou st\u0159\
+      edu v\u017Edy po zpr\xE1v\xE1ch v 11 hodin."
+    podcast: true
+    priority: 0
+    shortDescription: "Nov\xFD po\u0159ad Radio\u017Eurn\xE1lu\_s vl\xE1dn\xED tv\xE1\
+      \u0159\xED boje proti pandemii Petrem Smejkalem. Epidemiolog IKEM\_srozumiteln\u011B\
+      \_\_vysv\u011Btluje sou\u010Dasn\xE1 opat\u0159en\xED a to, jak v praxi funguj\xED\
+      ."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Jak zvl\xE1dnout pandemii"
+    updated: '2022-06-09T13:48:57+02:00'
+  id: 3c4cd8b7-e45a-3f76-8f13-26e441d0def8
+  relationships:
+    episodes:
+      data:
+      - id: 169b9412-6bc8-399e-8623-09bc06523b8d
+        type: episode
+      - id: 25b61745-6f11-3baf-97e1-108ddabe3654
+        type: episode
+      - id: 3b5af490-6083-30fd-9196-31e019fb7900
+        type: episode
+      - id: 41a8090e-763a-3080-a502-151084f2304d
+        type: episode
+      - id: 50472e69-701d-3be8-8d6f-2faf93954773
+        type: episode
+      - id: 55e4bda8-61ff-3831-8b68-51ff464b77b4
+        type: episode
+      - id: 5cdc0d87-17f0-3168-b70f-53770762eb49
+        type: episode
+      - id: 65599557-dbd7-319b-a23f-8dbe60cb4a1b
+        type: episode
+      - id: 744d5d40-7f3d-36d2-8ddf-40116acae8cf
+        type: episode
+      - id: 7a87d30d-7d5b-35de-8350-6f71e8b834e5
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3c4cd8b7-e45a-3f76-8f13-26e441d0def8/episodes
+      meta:
+        count: 17
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3c4cd8b7-e45a-3f76-8f13-26e441d0def8/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3c4cd8b7-e45a-3f76-8f13-26e441d0def8/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3c4cd8b7-e45a-3f76-8f13-26e441d0def8/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Tento po\u0159ad se vys\xEDlal do roku 2014."
+    podcast: false
+    priority: 0
+    shortDescription: "Tento po\u0159ad se vys\xEDlal do roku 2014."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "K\u0159es\u0165ansk\xFD t\xFDden\xEDk"
+    updated: '2021-03-20T23:30:09+01:00'
+  id: 00670b4b-d74d-32d8-aebf-e2c4b22678ff
+  relationships:
+    episodes:
+      data:
+      - id: 00431a2b-5b6c-314f-aaef-4bacb3a1c28e
+        type: episode
+      - id: 00822636-ae1d-3335-88cc-187586005746
+        type: episode
+      - id: 00adf7b4-1eb8-3bb9-85b3-2b3b90c1d118
+        type: episode
+      - id: 00aeb21c-27b4-3e39-bf35-baa553113b31
+        type: episode
+      - id: 00b92b38-a299-3bf9-93ee-bd5200db4a52
+        type: episode
+      - id: 00c0179e-e0f1-3695-ae58-598af1f9e5a5
+        type: episode
+      - id: 012d5e36-e4e8-39f9-b675-d99ab80140f5
+        type: episode
+      - id: 01ab6032-83aa-3846-af31-be9742f5aa9c
+        type: episode
+      - id: 01c20131-7823-3e0e-b349-c38f12da899a
+        type: episode
+      - id: 01f53e7e-5f29-339b-9d6b-eb78bdf4260a
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/00670b4b-d74d-32d8-aebf-e2c4b22678ff/episodes
+      meta:
+        count: 993
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/00670b4b-d74d-32d8-aebf-e2c4b22678ff/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/00670b4b-d74d-32d8-aebf-e2c4b22678ff/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/00670b4b-d74d-32d8-aebf-e2c4b22678ff/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Vojt\u011Bch Koval"
+        description: "Robotick\xE9 rameno s mikrofonem \u010Cesk\xE9ho rozhlasu"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 64,48
+      height: 1400
+      id: 284c78b3-2c95-300f-82b1-188f54347f12
+      url: https://portal.rozhlas.cz/sites/default/files/images/4398b552f0789139918e938f29a7e49b.jpg
+      width: 2100
+    childFriendly: false
+    description: "V\u011Bdecko-technologick\xFD magaz\xEDn\_Radio\u017Eurn\xE1lu.\
+      \ Zab\xFDv\xE1me se\_nejnov\u011Bj\u0161\xEDmi vyn\xE1lezy a zji\u0161\u0165\
+      ujeme, nad \u010D\xEDm b\xE1daj\xED nejen \u010De\u0161t\xED v\u011Bdci. Zaj\xED\
+      m\xE1 n\xE1s tak\xE9 z\xE1kulis\xED v\u011Bdy, jak vlastn\u011B \u017Eij\xED\
+      \ lid\xE9, kte\u0159\xED zasv\u011Btili \u017Eivot v\u011Bd\u011B a jak funguj\xED\
+      \ \u0161pi\u010Dkov\xE9 laborato\u0159e. Nezapom\xEDn\xE1me ani na modern\xED\
+      \ technologie \u2013 jak\xE9 je \u010Dek\xE1 budoucnost, jak budou slou\u017E\
+      it \u010Dlov\u011Bku\u2026 nebo to bude jinak?"
+    podcast: false
+    priority: 80
+    shortDescription: "V\u011Bdecko-technologick\xFD magaz\xEDn. Rozhovory s v\u011B\
+      deck\xFDmi \u0161pi\u010Dkami a report\xE1\u017Ee ze z\xE1kulis\xED v\u011B\
+      dy."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Magaz\xEDn Experiment"
+    updated: '2023-04-18T14:45:02+02:00'
+  id: 907bf24f-9bcf-3ea9-af9e-d98533093dad
+  relationships:
+    episodes:
+      data:
+      - id: 00ac8a3a-0aed-3205-ab64-905e5077d771
+        type: episode
+      - id: 00ec1509-51db-3506-a013-14ca285a8f82
+        type: episode
+      - id: 0180d41f-5379-364a-ab4c-d87f687bb930
+        type: episode
+      - id: 02028a27-4901-304e-9a72-f335a21d67b3
+        type: episode
+      - id: 0263ea64-7709-3074-bbfb-e7316b501275
+        type: episode
+      - id: 02b0cad0-99cb-399b-b9e0-c5a0edeaff34
+        type: episode
+      - id: 03750820-9fce-3e44-894e-6168530833fe
+        type: episode
+      - id: 038fc12a-c9f6-359f-90b9-65236e0d8d12
+        type: episode
+      - id: 03f08e90-7120-3223-a796-8f1979ae99cf
+        type: episode
+      - id: 0484515b-0f4f-3a4c-ad15-7155260e7134
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/907bf24f-9bcf-3ea9-af9e-d98533093dad/episodes
+      meta:
+        count: 593
+    participants:
+      data:
+      - id: a0477ad5-20d8-3548-83e0-654d9860e9ee
+        meta:
+          role: moderator
+        type: person
+      - id: d8769b33-6cc7-395f-b1fb-58ed5f262251
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/907bf24f-9bcf-3ea9-af9e-d98533093dad/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/907bf24f-9bcf-3ea9-af9e-d98533093dad/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/907bf24f-9bcf-3ea9-af9e-d98533093dad/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Filip Sodomka
+        description: "No\u010Dn\xED Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1365
+      id: c10e1a89-602a-38b1-8bc5-a398e5887d0d
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239474.jpeg
+      width: 2048
+    childFriendly: false
+    description: "Aktu\xE1ln\xED zpravodajstv\xED i v noci! Na moder\xE1torsk\xE9\
+      \ \u017Eidli se st\u0159\xEDdaj\xED Ji\u0159\xED \u0160tefl a Adam Carda."
+    podcast: false
+    priority: 0
+    shortDescription: "Aktu\xE1ln\xED zpravodajstv\xED i v noci! Na moder\xE1torsk\xE9\
+      \ \u017Eidli se st\u0159\xEDdaj\xED Ji\u0159\xED \u0160tefl a Adam Carda."
+    showContent: false
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "No\u010Dn\xED Radio\u017Eurn\xE1l"
+    updated: '2023-07-14T16:00:10+02:00'
+  id: 94913c5f-941a-3dbb-a8a9-51fd42b7872a
+  relationships:
+    episodes:
+      data:
+      - id: 6c8bcb91-b411-3980-8ebd-c2295b9ba3c1
+        type: episode
+      - id: 91bacbac-96bf-3f8a-b25d-a87f065cf636
+        type: episode
+      - id: babfaa2f-e092-3e01-841d-80e35811edd6
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/94913c5f-941a-3dbb-a8a9-51fd42b7872a/episodes
+      meta:
+        count: 3
+    participants:
+      data:
+      - id: ac71a192-9707-3c12-a219-5b490629b24b
+        meta:
+          role: moderator
+        type: person
+      - id: da25099c-5c9a-3862-be15-86b3b4e138cd
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/94913c5f-941a-3dbb-a8a9-51fd42b7872a/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/94913c5f-941a-3dbb-a8a9-51fd42b7872a/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/94913c5f-941a-3dbb-a8a9-51fd42b7872a/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Romsk\xE9 d\u011Bti z chrudimsk\xE9ho projektu \u0160ance pro\
+          \ tebe"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1484
+      id: a3749562-f07e-3039-a662-5a7a9670d792
+      url: https://portal.rozhlas.cz/sites/default/files/images/03865498.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Vys\xEDl\xE1n\xED o Romech pro Romy, ale nejen pro n\u011B\u2026\
+      \ i pro \u0161irokou ve\u0159ejnost."
+    podcast: false
+    priority: 0
+    shortDescription: "Vys\xEDl\xE1n\xED o Romech pro Romy, ale nejen pro n\u011B\u2026\
+      \ i pro \u0161irokou ve\u0159ejnost."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: O Roma vakeren
+    updated: '2023-03-08T16:45:02+01:00'
+  id: aee3c53f-8e2f-3529-ab57-5eb90e704bc3
+  relationships:
+    episodes:
+      data:
+      - id: 00171c36-3d8c-349c-b516-fa0502176f03
+        type: episode
+      - id: 004c8377-375d-3906-a52a-9b573bf8d98a
+        type: episode
+      - id: 005ee1da-901c-3253-b3f3-8d5fa39254ca
+        type: episode
+      - id: 00661109-c617-3ec3-bf06-0472c62564c4
+        type: episode
+      - id: 006d696f-c26f-3516-9c07-8496e51e3f0b
+        type: episode
+      - id: 007463ea-54a5-3a13-9e80-108f90c32992
+        type: episode
+      - id: 00792432-0f00-3b81-b4e2-acf1cbea9b15
+        type: episode
+      - id: 00ac4a05-bf0d-3da6-8704-c195fe3f0ae1
+        type: episode
+      - id: 00b337d2-4466-36be-8bc9-51b7e75fa059
+        type: episode
+      - id: 0134b7dd-4f12-3cc5-9b1d-97c640a32a07
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aee3c53f-8e2f-3529-ab57-5eb90e704bc3/episodes
+      meta:
+        count: 1435
+    participants:
+      data:
+      - id: 2bbe5528-ee2d-3315-a66a-cd75000f705e
+        meta:
+          role: moderator
+        type: person
+      - id: 3b40eca0-c1b0-3e16-9f40-932b68941f9c
+        meta:
+          role: moderator
+        type: person
+      - id: 5e052fae-3c6b-363e-8bf0-60af11c0e7ed
+        meta:
+          role: moderator
+        type: person
+      - id: 5f0edded-8af3-3871-9c7d-e6a36b8a7717
+        meta:
+          role: moderator
+        type: person
+      - id: 6893cd7a-6e23-32ce-a848-643654c8e59d
+        meta:
+          role: moderator
+        type: person
+      - id: 9b77a0a5-c2ea-3859-8064-ea983a26f848
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aee3c53f-8e2f-3529-ab57-5eb90e704bc3/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aee3c53f-8e2f-3529-ab57-5eb90e704bc3/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      - id: f8b5ee83-c786-3c67-8e37-4fdee1007147
+        type: station
+      - id: 184a888f-3d06-3a88-a07f-901bd9b09396
+        type: station
+      - id: 1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
+        type: station
+      - id: a831a457-9b80-3271-b153-ddf0ee63a18c
+        type: station
+      - id: 663e7133-bb52-3477-8d7f-635e43371962
+        type: station
+      - id: ad541211-198e-30b7-995c-10bf08c3aea0
+        type: station
+      - id: 318fc506-4dc9-33c6-b0f4-88df17cafa20
+        type: station
+      - id: c49f6468-acd3-3f98-9db9-92d5e5c0f038
+        type: station
+      - id: 67e26b4a-af56-3153-bb09-eaaaa61a7fc7
+        type: station
+      - id: bbe67c0f-4848-355e-a0ab-28f40ade3d38
+        type: station
+      - id: 5e94e06f-5435-3291-87c5-aeca8bc9c884
+        type: station
+      - id: 36dc9675-1fe8-3c69-b362-ee6784b04ef0
+        type: station
+      - id: b0f03203-0809-3363-bb3d-ccda436d6760
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aee3c53f-8e2f-3529-ab57-5eb90e704bc3/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Filip Sodomka
+        description: "Odpoledn\xED Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1365
+      id: 5e9018fb-ede4-3111-8395-0a9e7b127a80
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239476.jpeg
+      width: 2048
+    childFriendly: false
+    description: "Aktu\xE1ln\xED zpravodajstv\xED a report\xE1\u017Ee. Moderuj\xED\
+      \ obvykle Hanka Sh\xE1n\u011Blov\xE1 a \u0160t\u011Bp\xE1n Pokorn\xFD."
+    podcast: false
+    priority: 0
+    shortDescription: "Aktu\xE1ln\xED zpravodajstv\xED a report\xE1\u017Ee. Moderuj\xED\
+      \ obvykle Hanka Sh\xE1n\u011Blov\xE1 a \u0160t\u011Bp\xE1n Pokorn\xFD."
+    showContent: false
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Odpoledn\xED Radio\u017Eurn\xE1l"
+    updated: '2022-06-09T13:48:58+02:00'
+  id: 2226c3be-7f0d-3c82-af47-0ec6abe992a8
+  relationships:
+    episodes:
+      data:
+      - id: 006c4c7e-f973-36a0-9fbe-eb4481eb1dc5
+        type: episode
+      - id: 01557f65-91e2-3151-8d1d-d81a14c85cd2
+        type: episode
+      - id: 04763a72-4ad1-30ee-9068-211a8be868a6
+        type: episode
+      - id: 06425578-6461-3330-a440-dc18c538df7e
+        type: episode
+      - id: 07071c73-70ab-3c41-a1f1-0acad3c4285b
+        type: episode
+      - id: 072f38a9-8f63-3682-8cf3-f38e8b3b7cf1
+        type: episode
+      - id: 0add731a-99b8-3d0d-8cce-a7078319419c
+        type: episode
+      - id: 0b02ea55-0ddd-34e9-b279-9d1e284d74d3
+        type: episode
+      - id: 0c6b3c0c-5029-3174-9ac4-2ac7e047c2ab
+        type: episode
+      - id: 0ce28e5e-dfb6-36d1-9f5e-3b93111cfdf8
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2226c3be-7f0d-3c82-af47-0ec6abe992a8/episodes
+      meta:
+        count: 101
+    participants:
+      data:
+      - id: b1bfda84-649b-3cb6-a015-e0ff00ca4e84
+        meta:
+          role: moderator
+        type: person
+      - id: fac983cc-a9fd-3014-92df-3e039a08f934
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2226c3be-7f0d-3c82-af47-0ec6abe992a8/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2226c3be-7f0d-3c82-af47-0ec6abe992a8/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2226c3be-7f0d-3c82-af47-0ec6abe992a8/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Filip Sodomka
+        description: "Odpoledn\xED Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1365
+      id: 5e9018fb-ede4-3111-8395-0a9e7b127a80
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239476.jpeg
+      width: 2048
+    childFriendly: false
+    description: "Hanka Sh\xE1n\u011Blov\xE1 pond\u011Bl\xED\u2013p\xE1tek 15\u2013\
+      19 hodin"
+    podcast: false
+    priority: 0
+    shortDescription: "Hanka Sh\xE1n\u011Blov\xE1 pond\u011Bl\xED\u2013p\xE1tek 15\u2013\
+      19 hodin"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Odpoledn\xED Radio\u017Eurn\xE1l s Hankou Sh\xE1n\u011Blovou"
+    updated: '2021-03-20T23:30:07+01:00'
+  id: 067b38a3-49c5-3358-b2be-3a2a8317d9cd
+  relationships:
+    episodes:
+      data:
+      - id: 00080e4c-c321-34fe-9fd9-ba87f0e345dc
+        type: episode
+      - id: 0008c4bf-c9df-375f-96d8-f195fa60ac3f
+        type: episode
+      - id: 000bc77c-8861-398f-9958-d0bac414776d
+        type: episode
+      - id: 000d60cc-7e7f-3b22-8a2b-ffd5af84335f
+        type: episode
+      - id: 00149814-1f38-31eb-9664-a6f642986ef0
+        type: episode
+      - id: 0022692a-9ee1-378a-9cdb-fe14e12e77fa
+        type: episode
+      - id: 0025dc84-4941-3e4c-b653-b42c79fef5a1
+        type: episode
+      - id: 0033a34c-0950-332c-a48b-6d533982de72
+        type: episode
+      - id: 0035803c-c8a0-384a-9ccd-92a1cb3e97ec
+        type: episode
+      - id: 0038f276-e23f-3eb3-baea-df5b710fbd8a
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/067b38a3-49c5-3358-b2be-3a2a8317d9cd/episodes
+      meta:
+        count: 7176
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/067b38a3-49c5-3358-b2be-3a2a8317d9cd/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/067b38a3-49c5-3358-b2be-3a2a8317d9cd/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/067b38a3-49c5-3358-b2be-3a2a8317d9cd/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "Michaela Danelov\xE1"
+        description: "Sportovn\xED redakto\u0159i Radio\u017Eurn\xE1lu"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 85,37
+      height: 1400
+      id: e857d1cc-b1a2-33b2-ac03-82ea266febd5
+      url: https://portal.rozhlas.cz/sites/default/files/images/3b07e3f5415a008332703e8c656e933f.jpg
+      width: 2100
+    childFriendly: false
+    description: "Sport nen\xED jen o g\xF3lech, bodech, \u010Dasech, v\xFDhr\xE1\
+      ch, prohr\xE1ch a rekordech. Sportovci jsou tak\xE9 lidi s oby\u010Dejn\xFD\
+      mi starostmi, zaj\xEDmav\xFDmi z\xE1\u017Eitky a inspiruj\xEDc\xEDmi p\u0159\
+      \xEDb\u011Bhy. Report\xE9\u0159i Radio\u017Eurn\xE1lu jsou s nimi po cel\xFD\
+      \ rok nejen p\u0159i z\xE1pasech a sout\u011B\u017E\xEDch, \u010Dasto dojde\
+      \ i na hovory o\_\u017Eivot\u011B a z\xE1kulis\xED\_sportu. V Olympijsk\xE9\
+      m podcastu otev\u0159e sportovn\xED redakce Radio\u017Eurn\xE1lu sportovn\xED\
+      \ sv\u011Bt i \u201Enesportovn\u011B\u201C a pro ka\u017Ed\xE9ho. Poslouchejte\
+      \ ka\u017Ed\xFD t\xFDden na webu Radio\u017Eurn\xE1lu a v na\u0161ich aplikac\xED\
+      ch."
+    podcast: true
+    priority: 0
+    shortDescription: "Sport\_nejsou jen g\xF3ly, body, \u010Dasy, v\xFDhry, prohry\
+      \ a rekordy. Otev\xEDr\xE1me sportovn\xED sv\u011Bt a jeho osobnosti i nesportovn\u011B\
+      \ a pro ka\u017Ed\xE9ho, koho zaj\xEDm\xE1 tak\xE9 z\xE1kulis\xED a kontext."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Olympijsk\xFD podcast Radio\u017Eurn\xE1lu"
+    updated: '2021-10-20T16:30:03+02:00'
+  id: db41a784-5efd-3974-8545-557085ba0bb2
+  relationships:
+    episodes:
+      data:
+      - id: 0343dfed-01fa-3386-b897-c4b72c605851
+        type: episode
+      - id: 0860eeb9-8694-3284-8115-04378fb4e133
+        type: episode
+      - id: 09e9f044-3ac3-352c-aefe-7daa8de4a385
+        type: episode
+      - id: 0c70182b-2cf6-3c3e-acb6-a628cff73e45
+        type: episode
+      - id: 0d2f047f-9247-3f4d-92ff-7878165a7d1c
+        type: episode
+      - id: 0d6f035c-2c19-3b2e-ab5a-8918160eeb41
+        type: episode
+      - id: 10952671-8a9f-3a30-8fab-bed0f6a45c80
+        type: episode
+      - id: 124b549b-6532-32f3-879a-48f49668fe8f
+        type: episode
+      - id: 170433c8-d873-3b96-9a32-d727b6878856
+        type: episode
+      - id: 1c417179-b06f-33e1-a209-c56b4a5dcc80
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/db41a784-5efd-3974-8545-557085ba0bb2/episodes
+      meta:
+        count: 91
+    participants:
+      data:
+      - id: 01b05a2d-27e3-3c47-885f-5cc91b40004a
+        meta:
+          role: moderator
+        type: person
+      - id: 0d93a861-269b-3f78-ad33-40c30e193f8b
+        meta:
+          role: moderator
+        type: person
+      - id: 10f616a2-9241-3db5-857d-15d9f1991850
+        meta:
+          role: moderator
+        type: person
+      - id: 7fd6f3cc-9cb7-3645-922a-13268139b3c7
+        meta:
+          role: moderator
+        type: person
+      - id: 91d00881-47e2-3739-adb3-3e987451e240
+        meta:
+          role: moderator
+        type: person
+      - id: a63cc014-1b0b-3e72-b617-9b30a9dceb76
+        meta:
+          role: moderator
+        type: person
+      - id: a912cd00-a811-33f2-b2cc-d7206cfc8009
+        meta:
+          role: moderator
+        type: person
+      - id: c230d14f-ce44-3a49-bda5-f873fe5c434f
+        meta:
+          role: moderator
+        type: person
+      - id: c9152541-26c8-35f3-94e9-492cf176fdd7
+        meta:
+          role: moderator
+        type: person
+      - id: c99976c6-a5e4-3d5c-9d48-97549b9cd445
+        meta:
+          role: moderator
+        type: person
+      - id: e301e8d6-14ac-37b7-b7bb-e3d406e7b7b3
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/db41a784-5efd-3974-8545-557085ba0bb2/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/db41a784-5efd-3974-8545-557085ba0bb2/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/db41a784-5efd-3974-8545-557085ba0bb2/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: ''
+        description: "Olympijsk\xE9 kruhy p\u0159ed n\xE1rodn\xEDm stadionem v Tokiu"
+        license: ''
+        origin_url: ''
+        source: Profimedia
+      focal_point: 56,54
+      height: 2333
+      id: 3d1ff8d0-66f3-32ae-9621-d19a411bd958
+      url: https://portal.rozhlas.cz/sites/default/files/images/95ea20de3eb8e5d18f250bf2f9a1aa01.jpg
+      width: 3507
+    childFriendly: false
+    description: "M\u011Bs\xEDce tr\xE9ninku a lad\u011Bn\xED formy vyst\u0159\xED\
+      dalo zklam\xE1n\xED. Rok 2020 m\u011Bl b\xFDt pro nejlep\u0161\xED \u010Desk\xE9\
+      \ sportovce korunov\xE1n \xFA\u010Dast\xED na olympi\xE1d\u011B v Tokiu. Pandemie\
+      \ koronaviru ale nejprve zastavila jejich intenzivn\xED jarn\xED p\u0159\xED\
+      pravu a nakonec odsunula i kon\xE1n\xED olympijsk\xFDch her o rok.\_Sportovn\xED\
+      \ redakto\u0159i od zimy sleduj\xED\_deset \u010Desk\xFDch sportovc\u016F, kte\u0159\
+      \xED v t\u011Bchto dnech m\u011Bli usilovat\_o medaile. Jak se vyrovn\xE1vaj\xED\
+      \ s nenad\xE1lou zm\u011Bnou?"
+    podcast: false
+    priority: 0
+    shortDescription: "Jak ovlivnila pandemie \u017Eivoty \u010Desk\xFDch sportovc\u016F\
+      \ a jejich cesty za \xFAsp\u011Bchem na olympi\xE1d\u011B v Tokiu?"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Olympijsk\xFD rok"
+    updated: '2023-07-14T16:45:04+02:00'
+  id: aba1a33f-8706-3559-a222-52754426147c
+  relationships:
+    episodes:
+      data:
+      - id: 01a537c1-9c44-3248-84ae-f83b0b78b25f
+        type: episode
+      - id: 03f08ba1-bc7c-3456-9465-e71396a80a01
+        type: episode
+      - id: 04b56159-c898-3250-8c27-fd6602f661b8
+        type: episode
+      - id: 05113194-cdc6-3a2b-89c4-5217a3160b46
+        type: episode
+      - id: 05135c30-9f3e-352e-8af1-045859ca3db8
+        type: episode
+      - id: 052883d7-b853-3b5b-9005-57cd8f56d5ef
+        type: episode
+      - id: 05560c6e-923b-364e-a49c-e198eae42bdc
+        type: episode
+      - id: 086abb59-8b5e-3316-80f6-92753ebf5518
+        type: episode
+      - id: 0b23ae3e-bf46-3f83-9bae-292f997850d2
+        type: episode
+      - id: 0b9438ac-dd26-3345-80ef-64ee29a2da29
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aba1a33f-8706-3559-a222-52754426147c/episodes
+      meta:
+        count: 199
+    participants:
+      data:
+      - id: 80429377-f5d9-3cf6-9ebf-f92fbbcaeebd
+        meta:
+          role: moderator
+        type: person
+      - id: 91d00881-47e2-3739-adb3-3e987451e240
+        meta:
+          role: moderator
+        type: person
+      - id: 9b05cdbd-2fe7-325c-a26f-beeaf5cadc72
+        meta:
+          role: moderator
+        type: person
+      - id: 9d3353c2-8c93-3bdb-8a2d-91e62e33bfca
+        meta:
+          role: moderator
+        type: person
+      - id: a63cc014-1b0b-3e72-b617-9b30a9dceb76
+        meta:
+          role: moderator
+        type: person
+      - id: a912cd00-a811-33f2-b2cc-d7206cfc8009
+        meta:
+          role: moderator
+        type: person
+      - id: c9152541-26c8-35f3-94e9-492cf176fdd7
+        meta:
+          role: moderator
+        type: person
+      - id: c99976c6-a5e4-3d5c-9d48-97549b9cd445
+        meta:
+          role: moderator
+        type: person
+      - id: e301e8d6-14ac-37b7-b7bb-e3d406e7b7b3
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aba1a33f-8706-3559-a222-52754426147c/participants
+    serials:
+      data:
+      - id: 058b13cd-0426-3067-86cb-1da2c9a900dc
+        type: serial
+      - id: 3b84ebd1-4078-3dcd-9475-51c9307ac1a7
+        type: serial
+      - id: 55dcb073-59d5-33cd-8036-2d3ce26bd7dd
+        type: serial
+      - id: 7b760f0f-6c9b-3259-8e72-3b1ed0501dc4
+        type: serial
+      - id: 806b1720-67bb-3006-acc1-e4fd6ab6e15f
+        type: serial
+      - id: 8fd86dee-83c3-32bf-8783-5821a2d0a9c6
+        type: serial
+      - id: 93496548-f636-3a48-9289-167d0120cbf8
+        type: serial
+      - id: 97f553bf-6c62-3be9-8219-8ecff7753069
+        type: serial
+      - id: e8cb0d88-5ecf-30be-a948-e0f11499c28f
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aba1a33f-8706-3559-a222-52754426147c/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aba1a33f-8706-3559-a222-52754426147c/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Presti\u017En\xED\
+      \ po\u0159ad Ot\xE1zka dne vys\xEDl\xE1me v Rann\xEDm Radio\u017Eurn\xE1lu.\
+      \ Je to \u017Eiv\xFD rozhovor moder\xE1tora s p\u0159\xEDm\xFDm akt\xE9rem nejd\u016F\
+      le\u017Eit\u011Bj\u0161\xED nebo nejzaj\xEDmav\u011Bj\u0161\xED ud\xE1losti,\
+      \ kter\xE1 se pr\xE1v\u011B stala nebo se b\u011Bhem nadch\xE1zej\xEDc\xEDho\
+      \ dne stane."
+    podcast: false
+    priority: 0
+    shortDescription: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Presti\u017E\
+      n\xED po\u0159ad Ot\xE1zka dne vys\xEDl\xE1me v Rann\xEDm Radio\u017Eurn\xE1\
+      lu. Je to \u017Eiv\xFD rozhovor moder\xE1tora s p\u0159\xEDm\xFDm akt\xE9rem\
+      \ nejd\u016Fle\u017Eit\u011Bj\u0161\xED nebo ne..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Ot\xE1zka dne"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 8c88ace6-c8a8-3ed1-b51d-85bdccefe20e
+  relationships:
+    episodes:
+      data:
+      - id: 0017b2d0-f5c1-38c4-aecc-602cdde8949e
+        type: episode
+      - id: 013f2f75-9038-3f57-9980-87f2949540a0
+        type: episode
+      - id: 01eb5f7c-71d5-391a-ad0a-952bc3bed911
+        type: episode
+      - id: 022427c0-1509-3746-94f5-f7b0c402db7f
+        type: episode
+      - id: 03c8f21a-dd3f-3208-a551-b4de474a8a2f
+        type: episode
+      - id: 048de59e-9379-3c38-917c-e9097e0c70a2
+        type: episode
+      - id: 05bd9f68-8540-3cd1-8845-d2e652e3ca87
+        type: episode
+      - id: 0a0393db-bac9-3e8a-93bd-7b3db38b99ec
+        type: episode
+      - id: 0a9a385b-ec5b-3f58-a1ab-8c8f4b8fdb9a
+        type: episode
+      - id: 0b916387-3a5c-3102-881c-5491d4021737
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8c88ace6-c8a8-3ed1-b51d-85bdccefe20e/episodes
+      meta:
+        count: 199
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8c88ace6-c8a8-3ed1-b51d-85bdccefe20e/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8c88ace6-c8a8-3ed1-b51d-85bdccefe20e/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8c88ace6-c8a8-3ed1-b51d-85bdccefe20e/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: AG Geronimo
+        description: "Jan Bumba a Veronika Sedl\xE1\u010Dkov\xE1"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 300
+      id: c242a3bb-c64b-3618-825a-4fccc8935c97
+      url: https://portal.rozhlas.cz/sites/default/files/images/01050191.jpeg
+      width: 400
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Ozv\u011Bny dne"
+    updated: '2022-06-14T12:45:47+02:00'
+  id: fa69549d-0be2-3b9c-abb1-3134397518ca
+  relationships:
+    episodes:
+      data:
+      - id: 00259a23-f7fc-3be7-af4f-881ddf39091a
+        type: episode
+      - id: 006095fb-faea-37c9-abb4-4daba056b254
+        type: episode
+      - id: 0090c91c-abe5-3308-a327-be992676a44b
+        type: episode
+      - id: 00a75c6e-5611-39f9-9d47-78eeee89369b
+        type: episode
+      - id: 00c265fc-e59f-3f8a-97ff-2bc45ccf499e
+        type: episode
+      - id: 00efd3a5-b992-33ca-bdbb-ea3d2f5f6c13
+        type: episode
+      - id: 00f99a0a-578d-3c8a-a0c6-480b1753ee4e
+        type: episode
+      - id: 010296fe-249a-3989-8a5f-cefecc151941
+        type: episode
+      - id: 011073ab-6f56-36d3-acef-13f77f6ac5d3
+        type: episode
+      - id: 016d6d30-88a2-32e7-b1d2-feda2da426fa
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/fa69549d-0be2-3b9c-abb1-3134397518ca/episodes
+      meta:
+        count: 1626
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/fa69549d-0be2-3b9c-abb1-3134397518ca/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/fa69549d-0be2-3b9c-abb1-3134397518ca/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/fa69549d-0be2-3b9c-abb1-3134397518ca/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Eli\u0161ka Fenclov\xE1"
+        description: "P\u0159\xEDb\u011Bhy 20. stolet\xED"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: cd153dc1-43ca-3b9c-911f-244e61687e15
+      url: https://portal.rozhlas.cz/sites/default/files/images/81dadf0c7ba6b2b8820aa193f1ddc09e.jpg
+      width: 2100
+    childFriendly: false
+    description: "Vypr\xE1v\xEDme p\u0159\xEDb\u011Bhy, na kter\xE9 se zapomn\u011B\
+      lo, nebo se na n\u011B m\u011Blo zapomenout."
+    podcast: false
+    priority: 87
+    shortDescription: "Vypr\xE1v\xEDme p\u0159\xEDb\u011Bhy, na kter\xE9 se zapomn\u011B\
+      lo, nebo se na n\u011B m\u011Blo zapomenout."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "P\u0159\xEDb\u011Bhy 20. stolet\xED"
+    updated: '2023-07-14T16:45:05+02:00'
+  id: d200d0b5-78d5-3cca-9052-834f13135225
+  relationships:
+    episodes:
+      data:
+      - id: 0011daff-2a55-3f2b-b911-6c8042c84be5
+        type: episode
+      - id: 01596343-fce7-35b7-8dab-9c379f1d7ae5
+        type: episode
+      - id: 01945e4a-4101-3f08-90a8-155b50a4c8f4
+        type: episode
+      - id: 01ab4cc5-9b4a-3e3a-b803-392c54cb040f
+        type: episode
+      - id: 032d467b-193a-324e-b766-6d00774a61eb
+        type: episode
+      - id: 04c82a4c-89d0-36aa-9016-c47739dc86be
+        type: episode
+      - id: 05240ad7-bcb7-311c-8d1c-6c071d1daec5
+        type: episode
+      - id: 05fd2c0c-5136-343e-9a23-7cc3bda3ee8f
+        type: episode
+      - id: 06ae8997-a0a5-3d09-b405-4e9dfbcc7a9f
+        type: episode
+      - id: 07097b2d-8fbf-3c7e-894e-47d5822a7a0e
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225/episodes
+      meta:
+        count: 384
+    participants:
+      data:
+      - id: 1f2a481d-956d-3a2a-bd68-801355cb87c8
+        meta:
+          role: moderator
+        type: person
+      - id: 874ba02b-82a6-3bef-8f3c-70c680d0ea2e
+        meta:
+          role: moderator
+        type: person
+      - id: d3a0d142-d34b-3b05-8d78-54b7753331e8
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225/participants
+    serials:
+      data:
+      - id: 9306c2fa-cdfc-31ae-835e-73496310b648
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225/serials
+    stations:
+      data:
+      - id: c639d927-f37b-3db8-a64f-1d64ee1469b2
+        type: station
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d200d0b5-78d5-3cca-9052-834f13135225/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Ji\u0159\xED Chum"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 61,36
+      height: 1400
+      id: 5196ed54-3c7c-3e3d-867b-9f282ab1fd43
+      url: https://portal.rozhlas.cz/sites/default/files/images/7edc3b0d678cb654e3a53a89a42a51eb.jpg
+      width: 2100
+    childFriendly: false
+    description: "Na \u017Eivot v \u010Cesku se d\xE1 d\xEDvat z mnoha \xFAhl\u016F\
+      . Co zaj\xEDmav\xE9ho podnikaj\xED vynal\xE9zav\xED lid\xE9 kolem n\xE1s? Jak\xE9\
+      \ to je, postavit se odhodlan\u011B nelehk\xE9mu osudu, kter\xFD\_n\u011Bkter\xFD\
+      m z n\xE1s do cesty postavil p\u0159ek\xE1\u017Eky v podob\u011B hendikepu,\
+      \ nemoci nebo t\u0159eba\_slo\u017Eit\xE9 ekonomick\xE9 \u010Di rodinn\xE9 situace?\
+      \ Kter\xE1 m\xEDsta v \u010Cesku stoj\xED za to nav\u0161t\xEDvit a s jak\xFD\
+      mi lidsk\xFDmi p\u0159\xEDb\u011Bhy jsou spojen\xE1?\_T\xEDm nejlep\u0161\xED\
+      m, co na\u0161i report\xE9\u0159i nato\u010Dili pro\_seri\xE1lov\xE9 \u0159\
+      ady Radio\u017Eurn\xE1lu, v\xE1s v bonusov\xE9m podcastu provede Ji\u0159\xED\
+      \ Chum.\_"
+    podcast: true
+    priority: 0
+    shortDescription: "T\xEDm nejlep\u0161\xEDm, co na\u0161i report\xE9\u0159i nato\u010D\
+      ili pro\_seri\xE1lov\xE9 \u0159ady Radio\u017Eurn\xE1lu, v\xE1s v bonusov\xE9\
+      m podcastu provede Ji\u0159\xED Chum."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "P\u0159\xEDb\u011Bhy Radio\u017Eurn\xE1lu"
+    updated: '2023-07-14T17:00:12+02:00'
+  id: d390683e-b259-326f-9cac-92dd9be66d79
+  relationships:
+    episodes:
+      data:
+      - id: 0fc50b7d-a5f1-3a2f-b9a2-f03c1197f5ca
+        type: episode
+      - id: 1b8cd8ad-e614-307a-ac82-726513369da6
+        type: episode
+      - id: 2bdc7fee-5301-30a2-8145-4eb47ad27648
+        type: episode
+      - id: 4d5b83a7-0bf0-385d-aecf-57c33c4cd726
+        type: episode
+      - id: 5acbebb4-c500-3464-8223-93ddc7f1ac62
+        type: episode
+      - id: 7cb6354a-3702-31d2-8a97-241c4e2f55db
+        type: episode
+      - id: 9de8949e-e962-3591-845f-f294ed7dd8ef
+        type: episode
+      - id: b05655ba-a2d2-3aba-8fd8-7a03850db4d6
+        type: episode
+      - id: c76ec031-bc49-3032-bbf5-e52863d7d150
+        type: episode
+      - id: ec6f9325-bd4f-3a5c-85ce-f44dfcc551ab
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d390683e-b259-326f-9cac-92dd9be66d79/episodes
+      meta:
+        count: 10
+    participants:
+      data:
+      - id: 4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d390683e-b259-326f-9cac-92dd9be66d79/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d390683e-b259-326f-9cac-92dd9be66d79/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d390683e-b259-326f-9cac-92dd9be66d79/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Radiorada
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 2b17b3ab-2dfa-3e2b-92d5-bbb205fca8f7
+  relationships:
+    episodes:
+      data:
+      - id: 0648f871-e203-30b9-8f26-a8b29eb68379
+        type: episode
+      - id: 06a043da-89f8-3a4c-8ae7-0d97afe657d0
+        type: episode
+      - id: 0ea7c915-45f9-3547-90f4-243220d83802
+        type: episode
+      - id: 104148c9-c0ae-35cf-b0e4-c0691a33a231
+        type: episode
+      - id: 1f99df02-7702-33df-8704-92c342cf2cda
+        type: episode
+      - id: 22728e58-ff48-33e6-81e1-84e750814962
+        type: episode
+      - id: 413023c8-e8d1-3e44-b134-5d970bc959e1
+        type: episode
+      - id: 4afdd285-85c4-3dbd-9a89-9279c59df1a5
+        type: episode
+      - id: 4c49c165-ac27-3933-b47c-2ee6207031b2
+        type: episode
+      - id: 4fdea366-b99d-3159-86d0-d51a4ba0b681
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2b17b3ab-2dfa-3e2b-92d5-bbb205fca8f7/episodes
+      meta:
+        count: 42
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2b17b3ab-2dfa-3e2b-92d5-bbb205fca8f7/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2b17b3ab-2dfa-3e2b-92d5-bbb205fca8f7/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/2b17b3ab-2dfa-3e2b-92d5-bbb205fca8f7/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: CC0 Public domain,Fotobanka Unsplash
+        description: "cestov\xE1n\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 853
+      id: 03772cf7-b633-3cdf-93f1-6568be212f3d
+      url: https://portal.rozhlas.cz/sites/default/files/images/03418034.jpeg
+      width: 1280
+    childFriendly: false
+    description: "Velk\xE1 rozhlasov\xE1 \u201Eroad movie\u201C!"
+    podcast: false
+    priority: 0
+    shortDescription: "Velk\xE1 rozhlasov\xE1 \u201Eroad movie\u201C!"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Radio\u017Eurn\xE1l na cest\u011B"
+    updated: '2021-03-20T23:30:08+01:00'
+  id: 460e1258-f164-3c4e-87b5-e4737fa746f2
+  relationships:
+    episodes:
+      data:
+      - id: 09667027-bb49-3535-bd4b-e0a27f931aef
+        type: episode
+      - id: 0b1df4a2-8d1b-3343-92f4-37ddb2271edb
+        type: episode
+      - id: 1582fcfc-7518-3ef7-8e50-93eda0798481
+        type: episode
+      - id: 15e4be01-94df-3c5e-9ee5-9f93c8df9215
+        type: episode
+      - id: 165b1639-5b84-3ddf-977e-e55371d17c4c
+        type: episode
+      - id: 188df675-6568-3c34-90cf-262c5ecfbe80
+        type: episode
+      - id: 1ad32a67-3660-3626-aae8-8e676602ed28
+        type: episode
+      - id: 1b5b323e-f8cd-3447-9ea1-4694286a1f1c
+        type: episode
+      - id: 1be0fe30-e2ea-3c20-9913-fe03a27e53d5
+        type: episode
+      - id: 1dacd46d-4b8b-3a8f-948e-927544c5f2bb
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/460e1258-f164-3c4e-87b5-e4737fa746f2/episodes
+      meta:
+        count: 109
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/460e1258-f164-3c4e-87b5-e4737fa746f2/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/460e1258-f164-3c4e-87b5-e4737fa746f2/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/460e1258-f164-3c4e-87b5-e4737fa746f2/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Rann\xED interview"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: ac91a11b-3216-300a-87c5-2ff852414bee
+      url: https://portal.rozhlas.cz/sites/default/files/images/03238923.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Ka\u017Ed\xE9 r\xE1no se pt\xE1me na nejd\u016Fle\u017Eit\u011B\
+      j\u0161\xED ud\xE1losti posledn\xEDch hodin."
+    podcast: false
+    priority: 60
+    shortDescription: "Ka\u017Ed\xE9 r\xE1no se pt\xE1me na nejd\u016Fle\u017Eit\u011B\
+      j\u0161\xED ud\xE1losti posledn\xEDch hodin."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Rann\xED interview"
+    updated: '2022-06-09T13:48:55+02:00'
+  id: e22d3ce6-e61c-3674-a481-2165e55130c7
+  relationships:
+    episodes:
+      data:
+      - id: 0002594d-176e-3b55-acf9-960630fa04af
+        type: episode
+      - id: 00040a76-e670-35ff-ac56-d2d646dfb8b1
+        type: episode
+      - id: 00081976-ae23-396b-bc39-2a9addb65ea4
+        type: episode
+      - id: 00098147-b55d-34c6-b311-ce86a5667ffb
+        type: episode
+      - id: 000ceccb-de94-3585-ae47-db1094c8da14
+        type: episode
+      - id: 000d1c7b-7506-3532-8e1c-a809f2517820
+        type: episode
+      - id: 00126969-329c-36d0-8af7-152961d0c80c
+        type: episode
+      - id: 0027e87e-80c0-3f78-b0b4-12ddaf988eef
+        type: episode
+      - id: 00282f06-04dc-3fe4-80f3-33e83e16454a
+        type: episode
+      - id: 002a4b85-f9c4-3905-a884-e568749dff34
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e22d3ce6-e61c-3674-a481-2165e55130c7/episodes
+      meta:
+        count: 7619
+    participants:
+      data:
+      - id: 4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f
+        meta:
+          role: moderator
+        type: person
+      - id: dcd22621-d490-3145-ac3c-689b6e8242de
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e22d3ce6-e61c-3674-a481-2165e55130c7/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e22d3ce6-e61c-3674-a481-2165e55130c7/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e22d3ce6-e61c-3674-a481-2165e55130c7/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Nej\u010Dast\u011B\
+      j\u0161\xED ot\xE1zkou, kterou dost\xE1v\xE1 Ivan Hoffman nejen od koleg\u016F\
+      , je: Jak to m\u016F\u017Ee\u0161 zvl\xE1dnout?"
+    podcast: false
+    priority: 0
+    shortDescription: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Nej\u010Dast\u011B\
+      j\u0161\xED ot\xE1zkou, kterou dost\xE1v\xE1 Ivan Hoffman nejen od koleg\u016F\
+      , je: Jak to m\u016F\u017Ee\u0161 zvl\xE1dnout?"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Rann\xED pozn\xE1mka Ivana Hoffmana"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 42feeb29-171d-3e08-965c-61e8a214bb54
+  relationships:
+    episodes:
+      data:
+      - id: 00eff0a9-db23-3c1b-b1d5-b47bb415ddac
+        type: episode
+      - id: 030992f8-ecdf-3934-a169-80ea7a97f03f
+        type: episode
+      - id: 04513f13-d2e8-3a00-ab61-24298ad8b5e3
+        type: episode
+      - id: 0481848d-b21d-3343-adf0-3675dd39918d
+        type: episode
+      - id: 05cdb5ed-7f03-33f1-9177-ee6bd47b77ea
+        type: episode
+      - id: 06660e90-0f13-325c-83ca-83cceacbea37
+        type: episode
+      - id: 06cb513e-81a9-342b-aa86-81073aa37edc
+        type: episode
+      - id: 06fcf394-7def-384c-a013-8e333afbcc1d
+        type: episode
+      - id: 08ddbbb4-7ec6-3f10-ad04-57b78993ae82
+        type: episode
+      - id: 0a563cb8-b57e-3896-8a27-d7cbd5970cfd
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/42feeb29-171d-3e08-965c-61e8a214bb54/episodes
+      meta:
+        count: 236
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/42feeb29-171d-3e08-965c-61e8a214bb54/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/42feeb29-171d-3e08-965c-61e8a214bb54/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/42feeb29-171d-3e08-965c-61e8a214bb54/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Filip Sodomka
+        description: "Rann\xED Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1365
+      id: cdb853ca-a896-3a3c-a00e-44438f0a6da8
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239480.jpeg
+      width: 2048
+    childFriendly: false
+    description: "Po cel\xFD den pro v\xE1s vys\xEDl\xE1me to nejrychlej\u0161\xED\
+      \ zpravodajstv\xED. Moderuje Petr Kr\xE1l."
+    podcast: false
+    priority: 0
+    shortDescription: "Po cel\xFD den pro v\xE1s vys\xEDl\xE1me to nejrychlej\u0161\
+      \xED zpravodajstv\xED. Moderuje Petr Kr\xE1l."
+    showContent: false
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Rann\xED Radio\u017Eurn\xE1l"
+    updated: '2023-07-14T16:00:10+02:00'
+  id: 6d53be2a-43da-340b-be7f-5f9cfc4059b9
+  relationships:
+    episodes:
+      data:
+      - id: 03812562-6bc8-371c-8648-7e6df4720988
+        type: episode
+      - id: 03cc67d3-147e-3b41-9816-2d10c99ff4b2
+        type: episode
+      - id: 06c79c3e-2071-3def-a2ed-4cf1e5ebc0d8
+        type: episode
+      - id: 070af50e-f889-3695-a6bb-57f39d67cb68
+        type: episode
+      - id: 075d3de7-69f4-3db7-b184-fa09214cc1f0
+        type: episode
+      - id: 08bfcbf3-9934-3d82-ab69-8a164ee5d7df
+        type: episode
+      - id: 09761a9d-f31e-35be-b87a-9847b246f4e5
+        type: episode
+      - id: 09f932c5-6430-3b26-8f1b-81176d962f19
+        type: episode
+      - id: 0b50b08d-fd64-34f6-9cfc-8469658be9b2
+        type: episode
+      - id: 0b9e35f7-11eb-3c85-b9e2-7cdab8552c52
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6d53be2a-43da-340b-be7f-5f9cfc4059b9/episodes
+      meta:
+        count: 185
+    participants:
+      data:
+      - id: d7d68ba0-a7b1-3c95-8991-17cb99862a69
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6d53be2a-43da-340b-be7f-5f9cfc4059b9/participants
+    serials:
+      data:
+      - id: 0a68a7ff-eb14-33e1-9581-7c2c5b979489
+        type: serial
+      - id: 5fdfcac9-95df-3c66-9272-ee2314ff831e
+        type: serial
+      - id: 68d67cb1-3526-3052-8677-010521a11874
+        type: serial
+      - id: b445158d-12ec-34c6-8edc-a951d2c3e4a5
+        type: serial
+      - id: bc4229a4-ee04-3f75-a5bd-ce961cec77b0
+        type: serial
+      - id: c8967727-ec24-3b7b-b666-8b361fa61864
+        type: serial
+      - id: c994cd7a-2823-3e32-b037-3bdee29346f4
+        type: serial
+      - id: ed4b298b-b2f4-3852-9e89-a72b9f7d70bf
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6d53be2a-43da-340b-be7f-5f9cfc4059b9/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/6d53be2a-43da-340b-be7f-5f9cfc4059b9/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "nahr\xE1vadlo, mikrofon, sluch\xE1tka"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1128
+      id: ee815dc2-0850-3b55-bbe9-a26d367778fa
+      url: https://portal.rozhlas.cz/sites/default/files/images/88001425614581a830397613499f5a49.jpg
+      width: 2006
+    childFriendly: false
+    description: "Vyb\xEDr\xE1me to nejzaj\xEDmav\u011Bj\u0161\xED z vys\xEDl\xE1\
+      n\xED! Report\xE1\u017Ee,\_jednotliv\xE9 d\xEDly seri\xE1l\u016F a rozhovory\
+      \ z m\xEDsta d\u011Bn\xED, kter\xE9 jste b\u011Bhem dne sly\u0161eli\_na vln\xE1\
+      ch Radio\u017Eurn\xE1lu."
+    podcast: false
+    priority: 30
+    shortDescription: "Vyb\xEDr\xE1me to nejzaj\xEDmav\u011Bj\u0161\xED z vys\xED\
+      l\xE1n\xED! Report\xE1\u017Ee a rozhovory z m\xEDsta d\u011Bn\xED, kter\xE9\
+      \ jste b\u011Bhem dne sly\u0161eli\_na vln\xE1ch Radio\u017Eurn\xE1lu."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Report\xE1\u017Ee Radio\u017Eurn\xE1lu"
+    updated: '2022-06-09T13:48:55+02:00'
+  id: 703e572a-515d-3c31-8857-4e18b42d3b60
+  relationships:
+    episodes:
+      data:
+      - id: 004cd106-1b69-38dc-89ef-d4fb7cbe2820
+        type: episode
+      - id: 00681ed5-5b36-3a64-ada2-0208f7346fbb
+        type: episode
+      - id: 006a19fe-e826-389b-97f3-72a495c8a091
+        type: episode
+      - id: 00d4d55f-1e8b-362a-a7d7-6992f955a7ab
+        type: episode
+      - id: 010c25f6-6967-3bd1-a5e3-930cf9a8fbe2
+        type: episode
+      - id: 01c78cba-5cdb-34cc-b6a1-241bda09a2e3
+        type: episode
+      - id: 01d05879-1cc1-33de-a093-5ad8f5efba99
+        type: episode
+      - id: 02b5a020-56e9-3de1-b74e-cf7d1ba0880e
+        type: episode
+      - id: 02e04b3c-e2fd-30a9-bc41-7b685b36365f
+        type: episode
+      - id: 0328b9c0-654e-3650-9417-098f4552bb88
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/703e572a-515d-3c31-8857-4e18b42d3b60/episodes
+      meta:
+        count: 998
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/703e572a-515d-3c31-8857-4e18b42d3b60/participants
+    serials:
+      data:
+      - id: 047295e3-d998-3a47-8390-222debb7bff9
+        type: serial
+      - id: 386546dd-d077-3b35-93d1-0b770b91b1c0
+        type: serial
+      - id: 7cd60ee9-6e76-349e-85f7-e147f65cc346
+        type: serial
+      - id: 81f51ac0-c377-362d-ae44-e2477488826d
+        type: serial
+      - id: c360ae67-e91f-3f1e-bbc4-8fcf28c6e539
+        type: serial
+      - id: e05c45fe-1f7c-37c0-a18b-99bfd5fa5f10
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/703e572a-515d-3c31-8857-4e18b42d3b60/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/703e572a-515d-3c31-8857-4e18b42d3b60/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: ''
+        description: "Rok ve v\xE1lce"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,42
+      height: 1400
+      id: 9f6feca4-0385-3910-af6e-f5c1d7e676cc
+      url: https://portal.rozhlas.cz/sites/default/files/images/d7b6080b1588bbca2ee492776053c958.jpg
+      width: 2100
+    childFriendly: false
+    description: "Unik\xE1tn\xED sv\u011Bdectv\xED o konfliktu na Ukrajin\u011B. \u010C\
+      ty\u0159d\xEDln\xE9 vypr\xE1v\u011Bn\xED, na jeho\u017E po\u010D\xE1tku byly\
+      \ telefonick\xE9 rozhovory moder\xE1tora Jana Pokorn\xE9ho a v\xE1le\u010Dn\xE9\
+      ho zpravodaje Radio\u017Eurn\xE1lu Martina Doraz\xEDna ve vys\xEDl\xE1n\xED\
+      \ i mimo n\u011Bj.\_P\u0159ehled v\xFDvoje konfliktu na pozad\xED hovor\u016F\
+      \ o hr\u016Fz\xE1ch, kter\xE9 v\xE1lka p\u0159in\xE1\u0161\xED i o odvaze, state\u010D\
+      nosti, strachu a \u017Eivot\u011B speci\xE1ln\xEDho v\xE1le\u010Dn\xE9ho zpravodaje.\
+      \ Poslouchejte ka\u017Ed\xFD p\xE1tek v 15:00 ve vys\xEDl\xE1n\xED, v\_aplikaci\
+      \ mujRozhlas i dal\u0161\xEDch podcastov\xFDch aplikac\xEDch."
+    podcast: true
+    priority: 0
+    shortDescription: "Unik\xE1tn\xED sv\u011Bdectv\xED o konfliktu na Ukrajin\u011B\
+      . \u010Cty\u0159d\xEDln\xE9 vypr\xE1v\u011Bn\xED, na jeho\u017E po\u010D\xE1\
+      tku byly telefonick\xE9 rozhovory Jana Pokorn\xE9ho a Martina Doraz\xEDna."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Rok ve v\xE1lce"
+    updated: '2023-07-14T17:45:10+02:00'
+  id: ae782b41-453a-3d51-a852-935749361d0b
+  relationships:
+    episodes:
+      data:
+      - id: 146c750c-5bf2-3868-8fb5-5ac055dcf68a
+        type: episode
+      - id: 7a025892-202b-3467-8320-32f3856b80a1
+        type: episode
+      - id: 8dc45825-83d1-32d8-9afc-6da88efc111f
+        type: episode
+      - id: b0712916-8069-3643-8d92-2402cc07b3bf
+        type: episode
+      - id: f62da6fc-15a3-3f27-ba53-79b9ebf9e352
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ae782b41-453a-3d51-a852-935749361d0b/episodes
+      meta:
+        count: 5
+    participants:
+      data:
+      - id: 0b0b0fe2-16db-3996-8b91-eab0933d8480
+        meta:
+          role: moderator
+        type: person
+      - id: 2c4cf46c-33a9-3ff4-89cf-d5c64bb688da
+        meta:
+          role: moderator
+        type: person
+      - id: 7aab98d3-fd28-317b-99f2-8dd17344fa2e
+        meta:
+          role: moderator
+        type: person
+      - id: 93191891-f7aa-3970-8cee-f33b24f102a5
+        meta:
+          role: moderator
+        type: person
+      - id: a3b28fdb-7a48-3cbb-9cc9-8c5d4a307b19
+        meta:
+          role: moderator
+        type: person
+      - id: f36290c0-225c-395a-ab3b-7e4c3a3a90ed
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ae782b41-453a-3d51-a852-935749361d0b/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ae782b41-453a-3d51-a852-935749361d0b/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ae782b41-453a-3d51-a852-935749361d0b/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "P\u0159edvolebn\xED debata, Radio\u017Eurn\xE1l, on air, vys\xED\
+          l\xE1n\xED, mikrofony Plus"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 5d6277ee-b60f-3a03-a00b-b9c117af7bdd
+      url: https://portal.rozhlas.cz/sites/default/files/images/cd55d934b0f1b3c9c1a107cbd8103d23.jpg
+      width: 2100
+    childFriendly: false
+    description: "Pt\xE1me se na v\u0161echno, co v\xE1s zaj\xEDm\xE1. Ka\u017Ed\xFD\
+      \ den se sna\u017E\xEDme kontaktovat politiky, specialisty a odborn\xEDky z\
+      \ nejr\u016Fzn\u011Bj\u0161\xEDch profes\xED, abychom v\xE1m nab\xEDdli jejich\
+      \ n\xE1zory a pohledy na nejaktu\xE1ln\u011Bj\u0161\xED t\xE9mata."
+    podcast: false
+    priority: 0
+    shortDescription: "Ka\u017Ed\xFD den se sna\u017E\xEDme kontaktovat politiky,\
+      \ specialisty a odborn\xEDky z nejr\u016Fzn\u011Bj\u0161\xEDch profes\xED, abychom\
+      \ v\xE1m nab\xEDdli jejich n\xE1zory a pohledy na nejaktu\xE1ln\u011Bj\u0161\
+      \xED t\xE9mata."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Rozhovory Radio\u017Eurn\xE1lu"
+    updated: '2023-07-14T17:00:12+02:00'
+  id: 739a46c7-35e3-336e-a7d5-08a20b7e7677
+  relationships:
+    episodes:
+      data:
+      - id: 036a7f04-ed74-35a1-9923-0e8210d42435
+        type: episode
+      - id: 07c812e2-6bc3-3f22-bb18-b7ec85c6cddc
+        type: episode
+      - id: 143dc660-137c-3e51-8243-8436c068977f
+        type: episode
+      - id: 16df9e3d-b6e3-33af-994d-1aa1ccb4d25a
+        type: episode
+      - id: 18a283e5-7bfd-3dff-b61b-5883be5c928c
+        type: episode
+      - id: 19c600d1-c560-3ac0-93f3-a8b4e03d78b3
+        type: episode
+      - id: 1b17dfe5-ac15-3b67-8f19-89372c7f6de6
+        type: episode
+      - id: 1dad3780-859d-32a2-a1c5-b2f2bac15383
+        type: episode
+      - id: 1e328f42-be57-3e61-ab87-59fdc8200070
+        type: episode
+      - id: 1ebd3d43-fc96-3e19-a494-73916e389a3e
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/739a46c7-35e3-336e-a7d5-08a20b7e7677/episodes
+      meta:
+        count: 103
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/739a46c7-35e3-336e-a7d5-08a20b7e7677/participants
+    serials:
+      data:
+      - id: 3453821a-1381-3790-8461-ba0c79acf89e
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/739a46c7-35e3-336e-a7d5-08a20b7e7677/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/739a46c7-35e3-336e-a7d5-08a20b7e7677/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "nahr\xE1vadlo, mikrofon, sluch\xE1tka"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1128
+      id: ee815dc2-0850-3b55-bbe9-a26d367778fa
+      url: https://portal.rozhlas.cz/sites/default/files/images/88001425614581a830397613499f5a49.jpg
+      width: 2006
+    childFriendly: false
+    description: "Pravideln\xE9 seri\xE1ly z vys\xEDl\xE1n\xED Radio\u017Eurn\xE1\
+      lu. Zaj\xEDmav\xE1 t\xE9mata, report\xE1\u017Ee z va\u0161eho kraje, kulturn\xED\
+      ch akc\xED i historie.\_Jednotliv\xE9 d\xEDly seri\xE1l\u016F vys\xEDl\xE1me\
+      \ b\u011Bhem rann\xEDho, dopoledn\xEDho, odpoledn\xEDho, ve\u010Dern\xEDho i\
+      \ no\u010Dn\xEDho a v\xEDkendov\xE9ho proudov\xE9ho vys\xEDl\xE1n\xED.\_V\u0161\
+      echny z\xE1znamy epizod najdete na webu."
+    podcast: false
+    priority: 0
+    shortDescription: "Pravideln\xE9 seri\xE1ly z vys\xEDl\xE1n\xED Radio\u017Eurn\xE1\
+      lu. Zaj\xEDmav\xE1 t\xE9mata, report\xE1\u017Ee z va\u0161eho kraje, kulturn\xED\
+      ch akc\xED i historie."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Seri\xE1l Radio\u017Eurn\xE1lu"
+    updated: '2022-04-04T17:30:17+02:00'
+  id: 816732b1-04cc-3f40-972a-ba16bf5a6eb1
+  relationships:
+    episodes:
+      data:
+      - id: 00deb4bb-65d2-30a0-aefa-97464eb8ea58
+        type: episode
+      - id: 00fd4f68-35b1-3905-bada-e42c6ccdeff4
+        type: episode
+      - id: 01279718-8678-3903-9347-cc429069201e
+        type: episode
+      - id: 01cea6ae-1a5d-3392-9f22-fbed74f9df3d
+        type: episode
+      - id: 01d50254-c1f6-351e-94eb-663023612d1b
+        type: episode
+      - id: 01d93ecc-5b0a-3843-aeb4-160bad993504
+        type: episode
+      - id: 0208b7cc-1362-3e4a-bf31-6c6d472ca025
+        type: episode
+      - id: 02342814-a54d-3875-9717-48de1f64891a
+        type: episode
+      - id: 02970aa3-642e-3a82-9193-6a79f0cdd7bb
+        type: episode
+      - id: 02d11ad9-74f1-3272-bc1f-9de3a9f666eb
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/816732b1-04cc-3f40-972a-ba16bf5a6eb1/episodes
+      meta:
+        count: 1371
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/816732b1-04cc-3f40-972a-ba16bf5a6eb1/participants
+    serials:
+      data:
+      - id: 020e5b84-78b3-3d1f-bb7a-309f049b3129
+        type: serial
+      - id: 024b8ee5-5fee-3001-aa9b-51a4bdd48ecd
+        type: serial
+      - id: 04342c29-4f87-34d8-ac5a-f233f9023cdb
+        type: serial
+      - id: 0930f04f-c792-3af5-8d5f-9a296e5a8dfd
+        type: serial
+      - id: 0c92bebd-f5f3-341b-8ffb-0e10d0d7155b
+        type: serial
+      - id: 0da80427-0e52-39fa-a47a-6891a8abc060
+        type: serial
+      - id: 0e1981eb-217f-3747-b0c5-badd8c29f583
+        type: serial
+      - id: 0fb3ea94-fa7c-3b11-aaad-e17ccd5a715e
+        type: serial
+      - id: 1151af25-73f9-30e9-8f02-c2df71e4e845
+        type: serial
+      - id: 13b0a798-1ed2-3ef6-a912-ec0e7fcc8785
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/816732b1-04cc-3f40-972a-ba16bf5a6eb1/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/816732b1-04cc-3f40-972a-ba16bf5a6eb1/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "P\u0159edvolebn\xED debata, Radio\u017Eurn\xE1l, on air, vys\xED\
+          l\xE1n\xED"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 29,57
+      height: 1400
+      id: 4e662157-cb83-3737-bf12-249defe77d95
+      url: https://portal.rozhlas.cz/sites/default/files/images/bbcdeeefe890c2de03f4600bab908180.jpg
+      width: 2100
+    childFriendly: false
+    description: "Speci\xE1ln\xED vys\xEDl\xE1n\xED k r\u016Fzn\xFDm ud\xE1lostem.\
+      \ Komplexn\xED pohled na aktu\xE1ln\xED t\xE9mata, politick\xE9 debaty i p\u0159\
+      enos p\u0159\xEDmo z m\xEDsta d\u011Bn\xED."
+    podcast: false
+    priority: 10
+    shortDescription: "Speci\xE1ln\xED vys\xEDl\xE1n\xED k r\u016Fzn\xFDm ud\xE1lostem.\
+      \ Komplexn\xED pohled na aktu\xE1ln\xED t\xE9mata, politick\xE9 debaty i p\u0159\
+      enos p\u0159\xEDmo z m\xEDsta d\u011Bn\xED."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Speci\xE1l Radio\u017Eurn\xE1lu"
+    updated: '2022-06-09T13:48:56+02:00'
+  id: 37830b29-65e6-36f9-8fdf-4869d32ce617
+  relationships:
+    episodes:
+      data:
+      - id: 00e31bc5-6d98-312a-b2e3-b0da96361b9e
+        type: episode
+      - id: 0168fd7b-9f14-300b-aff1-81da6c7859d5
+        type: episode
+      - id: 0230a1c1-e1de-32e2-8793-f6570f74859f
+        type: episode
+      - id: 02756cce-d510-3eec-aba9-5c03323c5b3f
+        type: episode
+      - id: 0286b2b7-2959-33de-997c-b780c12e9be4
+        type: episode
+      - id: 02bf672f-6bff-3f81-a1f3-8a2acb027eec
+        type: episode
+      - id: 02de4b87-359d-3c2f-84b2-e504f856e27b
+        type: episode
+      - id: 0466911e-f560-3366-8086-fa0c3c62ed92
+        type: episode
+      - id: 0589367c-ce03-33e5-8d2c-0a0a275960f9
+        type: episode
+      - id: 05bb3d06-680a-35f5-b039-59b75f5b7b9e
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/37830b29-65e6-36f9-8fdf-4869d32ce617/episodes
+      meta:
+        count: 531
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/37830b29-65e6-36f9-8fdf-4869d32ce617/participants
+    serials:
+      data:
+      - id: 00cbe80f-2519-3f0b-9151-ef97a04a0e43
+        type: serial
+      - id: 02e586d3-fa77-3fd4-8fe4-71a62aa42b0d
+        type: serial
+      - id: 07072d8e-6a7f-327d-bcf8-b722a39f40fa
+        type: serial
+      - id: 0a8402a7-c308-3301-b4e9-4bee4aceb108
+        type: serial
+      - id: 0bc08529-b893-31c5-9b97-95645907ebd5
+        type: serial
+      - id: 0cbcfa5e-5733-3476-8b1c-49654fa6d48c
+        type: serial
+      - id: 0d0e9fb9-39f1-390a-af84-469da9b689f4
+        type: serial
+      - id: 0dedede7-7583-357d-a736-62caf4c45b1b
+        type: serial
+      - id: 0dff7e83-823b-3fa0-ae18-2aa7f481ac5f
+        type: serial
+      - id: 2b4d9a21-0d8c-36d9-8bc9-4599561765e9
+        type: serial
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/37830b29-65e6-36f9-8fdf-4869d32ce617/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/37830b29-65e6-36f9-8fdf-4869d32ce617/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Michaela Danelov\xE1"
+        description: "Radio\u017Eurn\xE1l a mistrovstv\xED sv\u011Bta v ledn\xEDm\
+          \ hokeji 2019"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 7bba4e42-326a-3d74-810a-e043ebc4ed59
+      url: https://portal.rozhlas.cz/sites/default/files/images/c56a0262b69d58e4335fa01baa07768f.jpg
+      width: 2100
+    childFriendly: false
+    description: "V\xEDkendov\xFD sportovn\xED magaz\xEDn. Aktuality, p\u0159\xED\
+      m\xE9 p\u0159enosy, hodnocen\xED, koment\xE1\u0159e."
+    podcast: false
+    priority: 0
+    shortDescription: "V\xEDkendov\xFD sportovn\xED magaz\xEDn. Aktuality, p\u0159\
+      \xEDm\xE9 p\u0159enosy, hodnocen\xED, koment\xE1\u0159e."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Sport\u017Eurn\xE1l"
+    updated: '2023-03-28T12:45:01+02:00'
+  id: 3e974230-f3e3-335e-a6b4-a7162bfd256d
+  relationships:
+    episodes:
+      data:
+      - id: 02ca671c-021f-3423-8404-0356ac37548f
+        type: episode
+      - id: 02cb0def-d54b-3ba5-bad5-5341106c0ecb
+        type: episode
+      - id: 0342b101-8697-3fde-ae01-8847e102abbf
+        type: episode
+      - id: 04a4ea41-e147-3ca0-8f04-9ee0dda094fb
+        type: episode
+      - id: 05b2bb4e-f5dd-324e-b1f5-fb22aa54c066
+        type: episode
+      - id: 069889ab-8902-3707-9730-cbc31cbc4c74
+        type: episode
+      - id: 06a9ff0d-7562-3166-ae51-184b0b4ce976
+        type: episode
+      - id: 06ef55fc-c08c-3277-836c-ebd9e2fa020e
+        type: episode
+      - id: 08b98615-5486-31ea-857a-64138f8c2365
+        type: episode
+      - id: 0bc3510f-83f2-3a42-8b89-097f2118e71e
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3e974230-f3e3-335e-a6b4-a7162bfd256d/episodes
+      meta:
+        count: 190
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3e974230-f3e3-335e-a6b4-a7162bfd256d/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3e974230-f3e3-335e-a6b4-a7162bfd256d/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3e974230-f3e3-335e-a6b4-a7162bfd256d/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "Magaz\xEDn Stretnutie pripravuj\xFA: doln\xFD rad z\u013Eava\
+          \ Elena Kotov\xE1, Kamila Schusterov\xE1, horn\xFD rad z\u013Eava Erik \u0160\
+          imo\u0148\xE1k, Krist\xEDna Chrenkov\xE1, Gabriel Sedl\xE1k a Richard Trs\u0165\
+          an"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 52,48
+      height: 8256
+      id: dc71cc77-edc6-347a-8eab-9de52946538a
+      url: https://portal.rozhlas.cz/sites/default/files/images/d308a894a6fa20aa239a755a88577b9e.jpg
+      width: 5504
+    childFriendly: false
+    description: "Stretnutie je vysielanie \u010Cesk\xE9ho rozhlasu pre slovensk\xFD\
+      ch spoluob\u010Danov, ale aj pre v\u0161etk\xFDch, ktor\xED sa zauj\xEDmaj\xFA\
+      \ o Slovensko a radi po\u010D\xFAvaj\xFA sloven\u010Dinu."
+    podcast: false
+    priority: 0
+    shortDescription: "Stretnutie je vysielanie \u010Cesk\xE9ho rozhlasu pre slovensk\xFD\
+      ch spoluob\u010Danov, ale aj pre v\u0161etk\xFDch, ktor\xED sa zauj\xEDmaj\xFA\
+      \ o Slovensko a radi po\u010D\xFAvaj\xFA sloven\u010Dinu."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Stretnutie
+    updated: '2023-07-14T16:45:04+02:00'
+  id: d49ca459-e552-338e-a1ce-efc6076d026b
+  relationships:
+    episodes:
+      data:
+      - id: 00a3d143-9804-3fa9-a72f-5836dceb4c2b
+        type: episode
+      - id: 033f41f7-d840-3837-9a71-c2c1cc7d87fe
+        type: episode
+      - id: 046362dc-8085-34eb-a2d5-1aba628b09f3
+        type: episode
+      - id: 051726a5-42d7-3184-a434-2da42931ef8f
+        type: episode
+      - id: 05f27ba7-b132-3c78-a5b6-fbcf685d19d6
+        type: episode
+      - id: 06acf07f-2a7e-39d2-b0e5-dbcc5ea83fb8
+        type: episode
+      - id: 06c31a0a-4702-356f-92c4-1c01a438c5c3
+        type: episode
+      - id: 09759cab-2099-393e-a3f4-c8810081232d
+        type: episode
+      - id: 0981c3d4-bffa-3b6b-a1ff-7354695ffe18
+        type: episode
+      - id: 0b6b425f-8e5e-3bc1-9aee-285a9156546a
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d49ca459-e552-338e-a1ce-efc6076d026b/episodes
+      meta:
+        count: 249
+    participants:
+      data:
+      - id: 2c6cb87b-fb30-3199-b065-20abfa9904b0
+        meta:
+          role: moderator
+        type: person
+      - id: 65b95b8b-84bd-3f7c-bd61-35803fcad2a9
+        meta:
+          role: moderator
+        type: person
+      - id: 670a1eb4-8634-3c12-84a4-8622104232ce
+        meta:
+          role: moderator
+        type: person
+      - id: 886cb097-81d0-3485-ae56-386f6936081b
+        meta:
+          role: moderator
+        type: person
+      - id: 9b77a0a5-c2ea-3859-8064-ea983a26f848
+        meta:
+          role: moderator
+        type: person
+      - id: bd1fc8f6-8b49-3526-85c5-a5051bb694fa
+        meta:
+          role: moderator
+        type: person
+      - id: d8a2aee7-bc14-3aa1-acf9-a1b572384317
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d49ca459-e552-338e-a1ce-efc6076d026b/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d49ca459-e552-338e-a1ce-efc6076d026b/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      - id: f8b5ee83-c786-3c67-8e37-4fdee1007147
+        type: station
+      - id: 184a888f-3d06-3a88-a07f-901bd9b09396
+        type: station
+      - id: 1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
+        type: station
+      - id: a831a457-9b80-3271-b153-ddf0ee63a18c
+        type: station
+      - id: 663e7133-bb52-3477-8d7f-635e43371962
+        type: station
+      - id: ad541211-198e-30b7-995c-10bf08c3aea0
+        type: station
+      - id: c49f6468-acd3-3f98-9db9-92d5e5c0f038
+        type: station
+      - id: 318fc506-4dc9-33c6-b0f4-88df17cafa20
+        type: station
+      - id: 67e26b4a-af56-3153-bb09-eaaaa61a7fc7
+        type: station
+      - id: bbe67c0f-4848-355e-a0ab-28f40ade3d38
+        type: station
+      - id: 5e94e06f-5435-3291-87c5-aeca8bc9c884
+        type: station
+      - id: 36dc9675-1fe8-3c69-b362-ee6784b04ef0
+        type: station
+      - id: b0f03203-0809-3363-bb3d-ccda436d6760
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/d49ca459-e552-338e-a1ce-efc6076d026b/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Pavel Hrabica
+        description: "V\xE1clav Klaus"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1417
+      id: b6134490-efdc-30bf-b51b-83d90c4bd130
+      url: https://portal.rozhlas.cz/sites/default/files/images/03584499.jpeg
+      width: 2100
+    childFriendly: false
+    description: "Vzpom\xEDn\xE1te na 90. l\xE9ta? Obdob\xED, v n\u011Bm\u017E se\
+      \ po p\xE1du komunismu v\u0161e rychle m\u011Bnilo a t\xE9m\u011B\u0159 v\u0161\
+      e se zd\xE1lo mo\u017En\xE9? \u010Clov\u011Bk n\xE1hle mohl cestovat, z\xED\
+      skat poh\xE1dkov\xE9 bohatstv\xED, ale tak\xE9 rychle p\u0159ij\xEDt o pr\xE1\
+      ci."
+    podcast: false
+    priority: 0
+    shortDescription: "Vzpom\xEDn\xE1te na 90. l\xE9ta? Obdob\xED, v n\u011Bm\u017E\
+      \ se po p\xE1du komunismu v\u0161e rychle m\u011Bnilo a t\xE9m\u011B\u0159 v\u0161\
+      e se zd\xE1lo mo\u017En\xE9? \u010Clov\u011Bk n\xE1hle mohl cestovat, z\xED\
+      skat poh\xE1dkov\xE9 bohatstv\xED, al..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Svobodn\xE1 a divok\xE1 90. l\xE9ta"
+    updated: '2021-03-20T23:30:08+01:00'
+  id: bf751809-cbf1-3e43-93ee-8f4a6792ad59
+  relationships:
+    episodes:
+      data:
+      - id: 00a039de-91e7-3267-a6dc-5aa56f923673
+        type: episode
+      - id: 01b893f4-67b8-33a1-a762-84f8905a923f
+        type: episode
+      - id: 021e060b-0b9b-39c0-905e-539c4715727e
+        type: episode
+      - id: 02cca390-762a-335c-85f2-e87461d928de
+        type: episode
+      - id: 043edfc4-241b-32cb-a70d-4e8783b96347
+        type: episode
+      - id: 05a7c920-ce1b-37d1-a4fd-a7b7be78a44b
+        type: episode
+      - id: 0667ea6b-f476-330e-9046-82bd11730903
+        type: episode
+      - id: 08616f21-3938-30a5-9a22-1d73983994ef
+        type: episode
+      - id: 088c9a9e-8d2a-3182-a673-0ad829bdad41
+        type: episode
+      - id: 0ac8377d-3941-323b-8fe7-fd5f355390d3
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bf751809-cbf1-3e43-93ee-8f4a6792ad59/episodes
+      meta:
+        count: 173
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bf751809-cbf1-3e43-93ee-8f4a6792ad59/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bf751809-cbf1-3e43-93ee-8f4a6792ad59/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/bf751809-cbf1-3e43-93ee-8f4a6792ad59/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "Radana Schaeferov\xE1"
+        description: "Krkono\u0161e"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 480
+      id: 563201e3-26cb-3be5-8b7d-51da224f2ebb
+      url: https://portal.rozhlas.cz/sites/default/files/images/00888868.jpeg
+      width: 640
+    childFriendly: false
+    description: "Nov\xE1 inspirace na cestov\xE1n\xED po Morav\u011B, \u010Cech\xE1\
+      ch a Slezsku. 392 kopc\u016F vy\u0161\u0161\xEDch ne\u017E 1 000 m nad mo\u0159\
+      em procestujeme b\u011Bhem jedin\xE9ho roku."
+    podcast: false
+    priority: 0
+    shortDescription: "Nov\xE1 inspirace na cestov\xE1n\xED po Morav\u011B, \u010C\
+      ech\xE1ch a Slezsku. 392 kopc\u016F vy\u0161\u0161\xEDch ne\u017E 1 000 m nad\
+      \ mo\u0159em procestujeme b\u011Bhem jedin\xE9ho roku."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Tis\xEDcovky"
+    updated: '2021-03-20T23:30:09+01:00'
+  id: a828aaf9-bd1f-3429-90eb-cff7576199c1
+  relationships:
+    episodes:
+      data:
+      - id: 07b1f2c9-9371-39f3-8676-565c69b41734
+        type: episode
+      - id: 0993df3a-e379-378c-869f-6ffb1f2b4334
+        type: episode
+      - id: 13d2948f-6b81-31db-9b93-679c55158aa5
+        type: episode
+      - id: 1423b7fe-2d13-324b-9feb-2d7f92a1c401
+        type: episode
+      - id: 1c560af5-a3cf-3417-bad4-d47b8eec6e5f
+        type: episode
+      - id: 2c7524fd-cdeb-3932-a32b-91de1d00d31c
+        type: episode
+      - id: 2efc432d-1aad-3574-aeda-574a6efe0bbc
+        type: episode
+      - id: 39941a51-83b4-37a5-95ad-fba1fb57305f
+        type: episode
+      - id: 3c9f5b45-4b54-3a12-be66-95181b81a03f
+        type: episode
+      - id: 3fb9192f-24c0-3a7d-b26f-d3f93fdd7665
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/a828aaf9-bd1f-3429-90eb-cff7576199c1/episodes
+      meta:
+        count: 53
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/a828aaf9-bd1f-3429-90eb-cff7576199c1/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/a828aaf9-bd1f-3429-90eb-cff7576199c1/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/a828aaf9-bd1f-3429-90eb-cff7576199c1/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: Filip Sodomka
+        description: "Ve\u010Dern\xED Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1365
+      id: 7759bcae-9589-34a7-bc2d-8be2f1a968b0
+      url: https://portal.rozhlas.cz/sites/default/files/images/03239482.jpeg
+      width: 2048
+    childFriendly: false
+    description: "Aktu\xE1ln\xED zpravodajstv\xED a rozhovory. Na moder\xE1torsk\xE9\
+      \ \u017Eidli se st\u0159\xEDdaj\xED Zuzana Bure\u0161ov\xE1 a Vladim\xEDr Kroc."
+    podcast: false
+    priority: 0
+    shortDescription: "Aktu\xE1ln\xED zpravodajstv\xED a rozhovory. Na moder\xE1torsk\xE9\
+      \ \u017Eidli se st\u0159\xEDdaj\xED Zuzana Bure\u0161ov\xE1 a Vladim\xEDr Kroc."
+    showContent: false
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Ve\u010Dern\xED Radio\u017Eurn\xE1l"
+    updated: '2021-12-08T09:53:06+01:00'
+  id: 8e483c21-6368-31a0-9392-b60c7c148142
+  relationships:
+    episodes:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8e483c21-6368-31a0-9392-b60c7c148142/episodes
+      meta:
+        count: 0
+    participants:
+      data:
+      - id: dcd22621-d490-3145-ac3c-689b6e8242de
+        meta:
+          role: moderator
+        type: person
+      - id: f96d8cef-22c1-336f-b437-e8384440211f
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8e483c21-6368-31a0-9392-b60c7c148142/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8e483c21-6368-31a0-9392-b60c7c148142/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8e483c21-6368-31a0-9392-b60c7c148142/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: ''
+        description: "Zpravodajsk\xFD podcast \u010Cesk\xE9ho rozhlasu Vinohradsk\xE1\
+          \ 12"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: 122cc209-4866-3d97-9449-61959568a364
+      url: https://portal.rozhlas.cz/sites/default/files/images/e904dbd8f42c25ad036660faed881ffb.jpg
+      width: 2100
+    childFriendly: false
+    description: "Nest\xEDh\xE1te sledovat\_nov\xE9 ud\xE1losti? Noviny a soci\xE1\
+      ln\xED s\xEDt\u011B jsou pln\xE9 jmen a fotek a vy nev\xEDte pro\u010D? Zpravodajsk\xFD\
+      \ podcast \u010Cesk\xE9ho rozhlasu Vinohradsk\xE1 12 vysv\u011Btl\xED aktu\xE1\
+      ln\xED t\xE9mata v souvislostech. Najdete tak\xE9 na na\u0161em zpravodajsk\xE9\
+      m webu iRozhlas.cz, v mobiln\xED aplikaci mujRozhlas a v dal\u0161\xEDch podcastov\xFD\
+      ch aplikac\xEDch."
+    podcast: true
+    priority: 53
+    shortDescription: "Zpravodajsk\xFD podcast \u010Cesk\xE9ho rozhlasu. Ka\u017E\
+      d\xFD v\u0161edn\xED den jedno aktu\xE1ln\xED t\xE9ma\_v souvislostech."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Vinohradsk\xE1 12"
+    updated: '2023-07-13T10:45:01+02:00'
+  id: ee6095c0-33ac-3526-b8bf-df233af38211
+  relationships:
+    episodes:
+      data:
+      - id: 0032ab90-efdb-31fd-b505-ad7b21794614
+        type: episode
+      - id: 003abccb-4acc-3b47-a87b-a557f7b5aff1
+        type: episode
+      - id: 00d74d1a-bedf-304d-9775-915bf2269b81
+        type: episode
+      - id: 01030bb7-af4f-3455-affd-9de87c14e4c8
+        type: episode
+      - id: 01842220-ab88-35ee-a072-7a074d97d627
+        type: episode
+      - id: 01b48410-ff2f-36f5-99b0-f5ee3becc8b1
+        type: episode
+      - id: 01fcdcee-0a58-39dc-b217-5b2f48a1ea30
+        type: episode
+      - id: 02ebb82c-e5f8-3a62-b7ba-1b6be4cbd395
+        type: episode
+      - id: 036e68dd-741f-31e3-a7a2-5a5c341401f2
+        type: episode
+      - id: 039a6868-9ee3-3b93-8dd6-280a5fcb2967
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee6095c0-33ac-3526-b8bf-df233af38211/episodes
+      meta:
+        count: 1134
+    participants:
+      data:
+      - id: 8367e456-2a57-379a-91bb-e699619bea49
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee6095c0-33ac-3526-b8bf-df233af38211/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee6095c0-33ac-3526-b8bf-df233af38211/serials
+    stations:
+      data:
+      - id: c639d927-f37b-3db8-a64f-1d64ee1469b2
+        type: station
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ee6095c0-33ac-3526-b8bf-df233af38211/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Vys\xEDl\xE1n\xED ukon\u010Deno."
+    podcast: false
+    priority: 0
+    shortDescription: "Vys\xEDl\xE1n\xED ukon\u010Deno."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: Volby 2006
+    updated: '2022-05-09T10:23:26+02:00'
+  id: 616c190f-90f0-39fa-ba42-a78b6b71d1c9
+  relationships:
+    episodes:
+      data:
+      - id: 00555b26-3681-392f-829c-641270aa0bc8
+        type: episode
+      - id: 110ccc6b-e931-35b6-a07e-5af49d7d1f06
+        type: episode
+      - id: 19aae643-2287-3176-88f5-80c1f88e53e6
+        type: episode
+      - id: 1bbf641b-f730-3a8b-a88a-befba3cd2657
+        type: episode
+      - id: 2e3c2f07-84dd-3a81-a18b-8059e733948a
+        type: episode
+      - id: 30ce2a1e-9de4-3ffb-9f34-e6e93c016c4b
+        type: episode
+      - id: 363f6ceb-8095-35a2-a266-cfa4f8859d4f
+        type: episode
+      - id: 36df102f-827f-3f88-affa-663c6363e4a3
+        type: episode
+      - id: 37db8541-a837-3069-a911-be6e6274b975
+        type: episode
+      - id: 409678c4-1d7e-3cfb-9563-f8711e2a1512
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/616c190f-90f0-39fa-ba42-a78b6b71d1c9/episodes
+      meta:
+        count: 42
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/616c190f-90f0-39fa-ba42-a78b6b71d1c9/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/616c190f-90f0-39fa-ba42-a78b6b71d1c9/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/616c190f-90f0-39fa-ba42-a78b6b71d1c9/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "V\xFDro\u010D\xED t\xFDdne"
+    updated: '2021-03-20T23:30:07+01:00'
+  id: aca91178-1318-3c9b-a766-bead1b693c5a
+  relationships:
+    episodes:
+      data:
+      - id: 00722555-7797-3d4b-9c7b-f310d6400177
+        type: episode
+      - id: 019d2832-b9c6-3e3b-bf7a-7e5a0bbb267b
+        type: episode
+      - id: 01ec48d9-820c-33a0-9c3b-9763ae0711b1
+        type: episode
+      - id: 02ff01ab-7aa8-3427-b4e6-1886b5db8e67
+        type: episode
+      - id: 05a25f8c-fa0e-3a31-9f52-087952f1f264
+        type: episode
+      - id: 09cafbc3-69bd-3567-8cb9-488285b29220
+        type: episode
+      - id: 0aa12f0d-3aa8-3b4f-9bae-1ca2d92ad4b9
+        type: episode
+      - id: 109b2e2f-585e-3ec7-b9c5-8d1667be0386
+        type: episode
+      - id: 14ca0278-bb13-3a05-b22c-9f1c4006343d
+        type: episode
+      - id: 165c4d49-5959-3790-a430-a341401412ac
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aca91178-1318-3c9b-a766-bead1b693c5a/episodes
+      meta:
+        count: 84
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aca91178-1318-3c9b-a766-bead1b693c5a/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aca91178-1318-3c9b-a766-bead1b693c5a/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/aca91178-1318-3c9b-a766-bead1b693c5a/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: ''
+    podcast: false
+    priority: 0
+    shortDescription: ''
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "V\xFDzvy p\u0159\xEDtomnosti"
+    updated: '2021-03-20T23:30:13+01:00'
+  id: 1b9d2970-f1de-37da-9b71-ba7d62671299
+  relationships:
+    episodes:
+      data:
+      - id: 0312ea17-10a8-35b1-9b5a-0f0acd537222
+        type: episode
+      - id: 09e2bed1-0406-3b6b-a367-010fe365a630
+        type: episode
+      - id: 0aabb9cc-c3aa-3b43-9959-a6eff8c22f43
+        type: episode
+      - id: 0c77ed59-2ad2-35b1-ba8f-1169532ff755
+        type: episode
+      - id: 0ebf5783-48f2-3d6f-a521-104b94ef21e8
+        type: episode
+      - id: 10d95571-b75f-3b18-972a-659c328893de
+        type: episode
+      - id: 1308a09c-23d4-3d91-ba2e-4d64354424f1
+        type: episode
+      - id: 1559f888-9156-3e25-8f76-a90bb6aaadae
+        type: episode
+      - id: 159577ab-26f7-3869-a006-e56c4e09905c
+        type: episode
+      - id: 163a61b3-9301-3bdc-a342-7e804415fc01
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1b9d2970-f1de-37da-9b71-ba7d62671299/episodes
+      meta:
+        count: 59
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1b9d2970-f1de-37da-9b71-ba7d62671299/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1b9d2970-f1de-37da-9b71-ba7d62671299/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/1b9d2970-f1de-37da-9b71-ba7d62671299/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Zaj\xEDm\xE1 v\xE1s sv\u011Bt nevidom\xFDch? Chcete sly\u0161et,\
+      \ jak smyslupln\u011B mnoz\xED nevidom\xED \u017Eij\xED? A chcete se dozv\u011B\
+      d\u011Bt, jak m\u016F\u017Eete t\u011Bmto lidem pomoci i vy a jak vhodn\u011B\
+      \ takovou pomoc nab\xEDdnout?Z jin\xE9ho pohledu jsme vys\xEDlali do prosince\
+      \ 2010. Od ledna 2011 je tematika sou\u010D\xE1st\xED Ve\u010Dern\xEDho Radio\u017E\
+      urn\xE1lu."
+    podcast: false
+    priority: 0
+    shortDescription: "Zaj\xEDm\xE1 v\xE1s sv\u011Bt nevidom\xFDch? Chcete sly\u0161\
+      et, jak smyslupln\u011B mnoz\xED nevidom\xED \u017Eij\xED? A chcete se dozv\u011B\
+      d\u011Bt, jak m\u016F\u017Eete t\u011Bmto lidem pomoci i vy a jak vhodn\u011B\
+      \ takovou pomoc n..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Z jin\xE9ho pohledu"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 8b78c4da-20b6-31bc-aa9f-db5288851fdb
+  relationships:
+    episodes:
+      data:
+      - id: 036a955f-c107-38af-b513-d9c043078a52
+        type: episode
+      - id: 0916b168-1fd0-3906-ae19-7cc18bd826db
+        type: episode
+      - id: 0f41a1d4-43b4-34de-85e4-0b9b7ffd147a
+        type: episode
+      - id: 121b40a2-295e-3a8a-940a-065b57ed91ce
+        type: episode
+      - id: 126d0dd7-7347-3115-bf80-10895dcd8a68
+        type: episode
+      - id: 1476c63f-37c4-3112-bfc0-14e2130434a6
+        type: episode
+      - id: 1581f3c8-89e6-3c61-bc89-1fcfbb57b22f
+        type: episode
+      - id: 16b74a0a-5d92-35f9-a99b-432005e59928
+        type: episode
+      - id: 16fc9746-5633-3402-9813-9b54df909a6d
+        type: episode
+      - id: 17787085-c673-34a9-8369-554e8672f2a7
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8b78c4da-20b6-31bc-aa9f-db5288851fdb/episodes
+      meta:
+        count: 184
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8b78c4da-20b6-31bc-aa9f-db5288851fdb/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8b78c4da-20b6-31bc-aa9f-db5288851fdb/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/8b78c4da-20b6-31bc-aa9f-db5288851fdb/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: ''
+        description: ''
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 900
+      id: a375e5d4-8546-4d7e-94cb-a93955e78273
+      url: https://www.mujrozhlas.cz/sites/default/files/placeholders/prozatimni_obrazek.png
+      width: 1280
+    childFriendly: false
+    description: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Z\xE1kulis\xED d\u016F\
+      le\u017Eit\xFDch ud\xE1lost\xED, pohledy do historie, netradi\u010Dn\xED zaj\xED\
+      mavosti i z\xE1bavn\xE9 projekty. To v\xE1m ka\u017Ed\xFD t\xFDden nab\xEDz\xED\
+      \ Z\xE1pisn\xEDk dom\xE1c\xEDch zpravodaj\u016F. Sna\u017E\xEDme se nahl\xED\
+      \u017Eet na b\u011B\u017En\xE9 zpr\xE1vy z nev\u0161edn\xEDho \xFAhlu. Chceme\
+      \ v\xE1m zp\u0159\xEDjemnit ned\u011Bln\xED odpo\u010Dinek."
+    podcast: false
+    priority: 0
+    shortDescription: "Po\u0159ad byl vys\xEDl\xE1n do prosince 2007. Z\xE1kulis\xED\
+      \ d\u016Fle\u017Eit\xFDch ud\xE1lost\xED, pohledy do historie, netradi\u010D\
+      n\xED zaj\xEDmavosti i z\xE1bavn\xE9 projekty. To v\xE1m ka\u017Ed\xFD t\xFD\
+      den nab\xEDz\xED Z\xE1pisn\xEDk..."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Z\xE1pisn\xEDk dom\xE1c\xEDch zpravodaj\u016F"
+    updated: '2023-06-16T08:32:15+02:00'
+  id: 810cc218-8c3a-3480-9da3-006e07dc0080
+  relationships:
+    episodes:
+      data:
+      - id: 0022117c-935a-35fe-8c72-7fe5200c8900
+        type: episode
+      - id: 00d207b8-a8f8-30db-bd46-2e9b8061a3df
+        type: episode
+      - id: 01bb8eff-ed09-32fe-80bd-7d124f2047e2
+        type: episode
+      - id: 0267f46c-0a95-3cad-be77-417533598e8a
+        type: episode
+      - id: 029eb2de-e89f-3436-9b00-f45e31f7e748
+        type: episode
+      - id: 031a4cd2-d394-3602-8cec-29efc391a7a2
+        type: episode
+      - id: 036b5c5c-1bca-33ad-bdb1-2345d0bf6c37
+        type: episode
+      - id: 0386e174-468b-39dd-82af-b2b7773af8b2
+        type: episode
+      - id: 04b2c2d9-1eab-3aef-8693-f844c671ff95
+        type: episode
+      - id: 055fd9b6-05d1-3a24-969f-7e1c77c0aac7
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/810cc218-8c3a-3480-9da3-006e07dc0080/episodes
+      meta:
+        count: 441
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/810cc218-8c3a-3480-9da3-006e07dc0080/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/810cc218-8c3a-3480-9da3-006e07dc0080/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/810cc218-8c3a-3480-9da3-006e07dc0080/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Pavel Nov\xE1k"
+        description: "Pavel Nov\xE1k s sebou bere rozhlasov\xFD mikrofon doslova v\u0161\
+          ude. I do horsk\xFDch pr\u016Fsmyk\u016F francouzsk\xE9 Korsiky"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: f23d8eab-35a3-36e7-b90f-a69d5baba565
+      url: https://portal.rozhlas.cz/sites/default/files/images/82bfd6317fe602e6310c95c32c8ee0bf.jpg
+      width: 2100
+    childFriendly: false
+    description: "Ka\u017Ed\xFD t\xFDden p\u0159in\xE1\u0161\xEDme hodinku report\xE1\
+      \u017E\xED o m\xEDstech exotick\xFDch i bl\xEDzk\xFDch \u2013 v\u017Edy ale\
+      \ n\u011B\u010D\xEDm zvl\xE1\u0161\u0165 zaj\xEDmav\xFDch, report\xE1\u017E\
+      e o m\xE1lo zn\xE1m\xE9 historii. Nab\xEDz\xEDme nov\xE9 pohledy na zn\xE1m\xE9\
+      \ d\u011Bjiny, pov\xEDd\xE1n\xED o obdivuhodn\xFDch p\u0159\xEDb\u011Bz\xED\
+      ch a osudech, a to doslova ze v\u0161ech kout\u016F planety."
+    podcast: false
+    priority: 80
+    shortDescription: "Autentick\xE9 report\xE1\u017Ee z cel\xE9ho sv\u011Bta od na\u0161\
+      ich zcestoval\xFDch zpravodajc\u016F."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Z\xE1pisn\xEDk zahrani\u010Dn\xEDch zpravodaj\u016F"
+    updated: '2023-07-24T14:45:01+02:00'
+  id: 68a55594-5d72-3a50-a20a-d5e904d684c9
+  relationships:
+    episodes:
+      data:
+      - id: 0007ced1-d485-3b58-9d5f-f19bda770e23
+        type: episode
+      - id: 0008e8ed-7d21-321e-b88b-2ecf4b2ae433
+        type: episode
+      - id: 00159137-95bd-3af3-83a0-3d53d3cde564
+        type: episode
+      - id: 0017bf73-c9fb-3afd-80f6-51596d6f59bf
+        type: episode
+      - id: 0035f001-356f-32c4-aa81-3577d0128d35
+        type: episode
+      - id: 0042d93c-50d4-3a4d-a3eb-7c7605b87776
+        type: episode
+      - id: 00433212-1ba6-3991-9662-0b46bf351925
+        type: episode
+      - id: 00641c72-b4cf-3b29-889e-123b40355227
+        type: episode
+      - id: 007bfaa0-2fb4-359e-9fe1-64126895cd46
+        type: episode
+      - id: 007ccc46-05a1-3398-bf1b-9b79c8faf98c
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/68a55594-5d72-3a50-a20a-d5e904d684c9/episodes
+      meta:
+        count: 7109
+    participants:
+      data:
+      - id: 02800b85-e95e-33ab-9067-03de60d565f2
+        meta:
+          role: moderator
+        type: person
+      - id: 23ae5a40-856f-3ee3-8497-b8a919a30d08
+        meta:
+          role: moderator
+        type: person
+      - id: 2982a8c0-9615-32bb-bf42-051825ef8f3b
+        meta:
+          role: moderator
+        type: person
+      - id: 8a542672-1738-37e0-9b95-764ff21220a7
+        meta:
+          role: moderator
+        type: person
+      - id: 93191891-f7aa-3970-8cee-f33b24f102a5
+        meta:
+          role: moderator
+        type: person
+      - id: ab3604df-ff0e-38e0-8613-bf9e438185eb
+        meta:
+          role: moderator
+        type: person
+      - id: db2d1e2d-bf6d-3939-9593-cc5e60639f23
+        meta:
+          role: moderator
+        type: person
+      - id: db9649d8-1a3e-3e1a-bd81-037483b340c5
+        meta:
+          role: moderator
+        type: person
+      - id: e2644805-94e6-3bff-a5f0-b0a8dcb47094
+        meta:
+          role: moderator
+        type: person
+      - id: efda662a-09de-3bc5-97cc-1cedadde905a
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/68a55594-5d72-3a50-a20a-d5e904d684c9/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/68a55594-5d72-3a50-a20a-d5e904d684c9/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/68a55594-5d72-3a50-a20a-d5e904d684c9/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: ''
+        description: "Dopravn\xED nehoda (ilustra\u010Dn\xED foto)"
+        license: CC0 1.0
+        licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.cs
+        origin_url: ''
+        source: Profimedia
+      focal_point: 50,50
+      height: 833
+      id: dc77b378-28d7-36eb-aeb0-cd1292b941ba
+      url: https://portal.rozhlas.cz/sites/default/files/images/03694997.jpeg
+      width: 1280
+    childFriendly: false
+    description: "Redakto\u0159i Zelen\xE9 vlny p\u0159in\xE1\u0161ej\xED \u0159idi\u010D\
+      \u016Fm aktu\xE1ln\xED a ov\u011B\u0159en\xE9 zpr\xE1vy o d\u011Bn\xED na d\xE1\
+      lnic\xEDch a silnic\xEDch. Informace z\xEDsk\xE1vaj\xED z mnoha zdroj\u016F\
+      , jedn\xEDm z nejd\u016Fle\u017Eit\u011Bj\u0161\xEDch jsou dobrovoln\xED Zpravodajov\xE9\
+      \ Zelen\xE9 vlny. Radio\u017Eurn\xE1l jako jedin\xE9 r\xE1dio v \u010Cesku vys\xED\
+      l\xE1 dopravn\xED zpravodajstv\xED 24 hodin denn\u011B. Jsme s v\xE1mi na cest\xE1\
+      ch ve dne, i v noci."
+    podcast: false
+    priority: 0
+    shortDescription: "Dopravn\xED zpravodajstv\xED na Radio\u017Eurn\xE1lu nonstop\
+      \ 24 hodin denn\u011B."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Zelen\xE1 vlna"
+    updated: '2021-03-20T23:30:07+01:00'
+  id: 48678000-b905-3b68-9b80-f4d20326f03b
+  relationships:
+    episodes:
+      data:
+      - id: 000006c7-4204-33fe-897c-3765247637a5
+        type: episode
+      - id: 00037ae2-7e02-3baa-b643-c0bd24c44507
+        type: episode
+      - id: 0005aa96-cbf3-338c-9db8-e2bee65fd49f
+        type: episode
+      - id: 0005c338-b0ff-3f5f-aa1d-271fa6640822
+        type: episode
+      - id: 000674aa-6727-33f1-9a2c-57b342390bd3
+        type: episode
+      - id: 0006bf56-2ddd-3405-8511-6eeaa8cae93a
+        type: episode
+      - id: 0007f843-7546-3f86-8f2b-4d031150f501
+        type: episode
+      - id: 00084f85-bed8-3f7e-a29a-ecb908e74771
+        type: episode
+      - id: 0008f1c2-9a22-3728-8cac-f57fcbbf895e
+        type: episode
+      - id: 0009357e-f21f-3ac3-bbdc-7e8fbf053248
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b/episodes
+      meta:
+        count: 62557
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: ''
+        description: "vyplat\xED se \u0161et\u0159it, nebo je lep\u0161\xED utr\xE1\
+          cet?"
+        license: ''
+        origin_url: ''
+        source: Shutterstock
+      focal_point: 56,70
+      height: 3840
+      id: 8158cab6-1fa9-3daf-bd92-3d700fa5cda3
+      url: https://portal.rozhlas.cz/sites/default/files/images/1a8eff5f5548482a79f7b18380f61312.jpg
+      width: 5760
+    childFriendly: false
+    description: "Unik\xE1tn\xED projekt Radio\u017Eurn\xE1lu a serveru iROZHLAS.cz\
+      \ mapuje, jak se rekordn\xED inflace\_a dal\u0161\xED nep\u0159\xEDzniv\xE9\
+      \ ekonomick\xE9 ukazatele prom\xEDtnou do rodinn\xFDch rozpo\u010Dt\u016F. Ve\
+      \ kter\xFDch kraj\xEDch nejv\xEDce stoupaj\xED ceny energi\xED? Kter\xE9 spole\u010D\
+      ensk\xE9 skupiny nezvl\xE1daj\xED spl\xE1cet hypot\xE9ku? A kdo rad\u0161i prod\xE1\
+      \ chatu nebo jinou nemovitost? Rozhovor Jana Pokorn\xE9ho se sociologem Danielem\
+      \ Prokopem nejen o ekonomick\xFDch v\xFDzv\xE1ch pro dom\xE1cnosti v roce, kter\xFD\
+      \ ovlivnila pandemie a v\xE1lka na Ukrajin\u011B.\_"
+    podcast: true
+    priority: 0
+    shortDescription: "Rozhovor Jana Pokorn\xE9ho se sociologem Danielem Prokopem\
+      \ nejen o ekonomick\xFDch v\xFDzv\xE1ch pro dom\xE1cnosti v roce, kter\xFD ovlivnila\
+      \ pandemie a v\xE1lka na Ukrajin\u011B.\_"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "\u017Divot k nezaplacen\xED"
+    updated: '2023-07-14T17:00:12+02:00'
+  id: e9c2642e-2062-3cd1-92eb-9c178c714f6c
+  relationships:
+    episodes:
+      data:
+      - id: 0534aa59-1185-3b48-906c-9abcb4f7005f
+        type: episode
+      - id: 07f062dc-fa34-398b-9189-26dcd013b3a2
+        type: episode
+      - id: 0e09ecc2-c0e2-3377-a3fa-b9b1d3dd11e8
+        type: episode
+      - id: 0f6b4f31-b717-3e03-98b3-e7730aad77c3
+        type: episode
+      - id: 0fbcb1c3-4f6a-3d25-855b-83308863acde
+        type: episode
+      - id: 16102f08-8be8-3981-8ff4-897802770cb9
+        type: episode
+      - id: 16edff06-6627-35f8-8f5a-beec5549ecc5
+        type: episode
+      - id: 172af3a5-0401-34b6-9e5d-6380d2566e9e
+        type: episode
+      - id: 17dcd27c-8db3-3f81-8b60-f18b3738ac40
+        type: episode
+      - id: 1bf6381f-8c26-3f17-85aa-487b4a22a412
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e9c2642e-2062-3cd1-92eb-9c178c714f6c/episodes
+      meta:
+        count: 64
+    participants:
+      data:
+      - id: 0b0b0fe2-16db-3996-8b91-eab0933d8480
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e9c2642e-2062-3cd1-92eb-9c178c714f6c/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e9c2642e-2062-3cd1-92eb-9c178c714f6c/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/e9c2642e-2062-3cd1-92eb-9c178c714f6c/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: Nydrle Digital
+        description: "Sout\u011B\u017Ete o zlatou cihlu! Od 26. listopadu na Radio\u017E\
+          urn\xE1lu"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 600
+      id: ef0e7cfe-7e63-3811-8e3a-004252b82111
+      url: https://portal.rozhlas.cz/sites/default/files/images/02771869_62.jpeg
+      width: 900
+    childFriendly: false
+    description: "Zlat\xE9 momenty n\xE1s v\u0161ech. Zlat\xE1 cihla jednomu z v\xE1\
+      s."
+    podcast: false
+    priority: 0
+    shortDescription: "Zlat\xE9 momenty n\xE1s v\u0161ech. Zlat\xE1 cihla jednomu\
+      \ z v\xE1s."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Zlat\xE9 momenty"
+    updated: '2021-03-05T00:00:16+01:00'
+  id: 56010c25-119b-32b6-ab7c-42de790db86d
+  relationships:
+    episodes:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/56010c25-119b-32b6-ab7c-42de790db86d/episodes
+      meta:
+        count: 0
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/56010c25-119b-32b6-ab7c-42de790db86d/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/56010c25-119b-32b6-ab7c-42de790db86d/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/56010c25-119b-32b6-ab7c-42de790db86d/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
+        author: "Ale\u0161 Vav\u0159\xEDk"
+        description: "Mikrofon Radio\u017Eurn\xE1l"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 540
+      id: c6bf9059-3751-301e-977d-8ce0687c48a3
+      url: https://portal.rozhlas.cz/sites/default/files/images/a6be9314a52da0d7e52a883c25df392a.jpeg
+      width: 960
+    childFriendly: false
+    description: "Zpravodajsk\xE1 relace \u010Cesk\xE9ho rozhlasu Radio\u017Eurn\xE1\
+      l. Ka\u017Edou hodinu V\xE1m p\u0159in\xE1\u0161\xEDme automaticky sest\u0159\
+      \xEDhan\xE9 \u010Derstv\xE9 zpr\xE1vy."
+    podcast: false
+    priority: 0
+    shortDescription: "Zpravodajsk\xE1 relace \u010Cesk\xE9ho rozhlasu Radio\u017E\
+      urn\xE1l. Ka\u017Edou hodinu V\xE1m p\u0159in\xE1\u0161\xEDme automaticky sest\u0159\
+      \xEDhan\xE9 \u010Derstv\xE9 zpr\xE1vy."
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "Zpr\xE1vy - Radio\u017Eurn\xE1l"
+    updated: '2023-06-14T16:48:34+02:00'
+  id: ff206383-d36b-3162-a136-e8335dd71cad
+  relationships:
+    episodes:
+      data:
+      - id: 0000fb93-21a3-3ee7-898f-2bfe1c36a0c6
+        type: episode
+      - id: 000275c6-8452-319a-ad05-95ea850557f0
+        type: episode
+      - id: 00039fcc-e30f-3a8c-97cf-ea9a2137ebc6
+        type: episode
+      - id: 00066369-cd00-3202-94da-40ce1a1e0a54
+        type: episode
+      - id: 00067522-71ae-3044-906c-63fcd62c5262
+        type: episode
+      - id: 0006763f-dc4f-35d6-9e65-0b1090af2614
+        type: episode
+      - id: 0006ce54-4f63-36da-8d4d-d2383eeffbce
+        type: episode
+      - id: 0006fb57-545b-3088-a92b-5d1bb2cd33a9
+        type: episode
+      - id: 000770c5-1c32-386d-ba89-6e506be042f1
+        type: episode
+      - id: 0008c51d-4849-38a8-bca7-255917607a3c
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ff206383-d36b-3162-a136-e8335dd71cad/episodes
+      meta:
+        count: 63413
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ff206383-d36b-3162-a136-e8335dd71cad/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ff206383-d36b-3162-a136-e8335dd71cad/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/ff206383-d36b-3162-a136-e8335dd71cad/stations
+  type: show
+- attributes:
+    active: false
+    aired: false
+    asset:
+      credit:
+        author: "\u010Cesk\xE1 rada d\u011Bt\xED a ml\xE1de\u017Ee"
+        description: "V\xEDc ne\u017E 30 tis\xEDc dobrovoln\xEDk\u016F v cel\xE9 \u010C\
+          esk\xE9 republice bude ode dne\u0161ka po dobu 72 hodin zvelebovat sv\xE9\
+          \ okol\xED, pom\xE1hat druh\xFDm nebo p\u0159\xEDrod\u011B"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 853
+      id: a4f9145b-23d6-3522-bb16-1be65d9fff16
+      url: https://portal.rozhlas.cz/sites/default/files/images/03933021.jpeg
+      width: 1280
+    childFriendly: false
+    description: "Na co si d\xE1t pozor ve smlouv\u011B, abyste nesplakali nad v\xFD\
+      d\u011Blkem? Kam se obr\xE1tit, kdy\u017E pot\u0159ebujete pomoc? Jak postupovat,\
+      \ kdy\u017E \xFA\u0159ady ned\u011Blaj\xED, co maj\xED? S t\u011Bmito i mnoha\
+      \ jin\xFDmi probl\xE9my radili odborn\xEDci v rozhovorech.\_Jejich tipy si m\u016F\
+      \u017Eete p\u0159e\u010D\xEDst v archivu \u010Dl\xE1nk\u016F."
+    podcast: false
+    priority: 0
+    shortDescription: "Radio\u017Eurn\xE1l k va\u0161im slu\u017Eb\xE1m.\_Radili jsme\_\
+      s probl\xE9my, kter\xE9 mohou potkat i v\xE1s.\_"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "\u017Durn\xE1l servis"
+    updated: '2021-03-21T00:00:27+01:00'
+  id: 9f36ee8f-73a7-3ed5-aafb-41210b7fb935
+  relationships:
+    episodes:
+      data:
+      - id: 014cf0cc-f797-32b6-9909-d87e02444212
+        type: episode
+      - id: 025cd399-6f7e-3cab-bd0d-e36bdddc2a6f
+        type: episode
+      - id: 04108631-8384-38d0-bd96-96cfa7c9dfee
+        type: episode
+      - id: 06c8f48a-844f-3b83-90d0-d5667353c128
+        type: episode
+      - id: 08f843e1-0d1f-3fe2-a048-4e6c983ce065
+        type: episode
+      - id: 09e74325-a909-3c8f-9b34-747c476e4263
+        type: episode
+      - id: 0aaf7e29-f796-333c-96ba-1dc91bc7d550
+        type: episode
+      - id: 0e0cef3b-aaf0-3e3e-84d8-f8ca246f0e8b
+        type: episode
+      - id: 1001ae7a-178b-3a17-8b37-019edd4ec71e
+        type: episode
+      - id: 1097dae4-9462-39a7-8221-e37c6e9a7354
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/episodes
+      meta:
+        count: 225
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/serials
+    stations:
+      data:
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/stations
+  type: show
+links:
+  first: null
+  last: null
+  next: null
+  prev: null
+  self: https://mujrozhlas.croapi.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02/shows?page%5Blimit%5D=300
+meta:
+  count: 68
