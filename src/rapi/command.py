@@ -6,8 +6,7 @@ import sys
 import time
 from typing import Type
 
-from rapi import api_croapp, config, helpers, swagger
-from rapi.broadcast import Broadcast
+from rapi import api_croapp, config, helpers
 from rapi.logger import log_stdout as loge
 from rapi.logger import log_stdout as logo
 
@@ -64,11 +63,3 @@ def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
 
     if "show" == subc:
         logo.info(f"running command: {subc}")
-
-
-# croapp = api_croapp.API(Cfg)
-# st=croapp.get_station("11")
-# print(st)
-# logo.info(f"requesting stations: {args.broadcast}")
-# bcdata=Cfg.runtime_get(["apis","croapp"])
-# helpers.pprint(bcdata)

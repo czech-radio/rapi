@@ -15,10 +15,6 @@ from rapi.logger import log_stdout as logo
 class StationIDs:
     def __init__(self, cfg: config.CFG) -> None:
         self.Cfg = cfg
-        # self.DBpath = self.Cfg.runtime_get(["broadcast", "station_ids", "csv"])
-        # self.DB_pkey = self.Cfg.runtime_get(
-        # ["broadcast", "station_ids", "pkey"]
-        # )
         bpath = ["apis", "common"]
         self.DBpath = self.Cfg.runtime_get(bpath + ["csv"])
         self.DB_pkey = self.Cfg.runtime_get(bpath + ["pkey"])

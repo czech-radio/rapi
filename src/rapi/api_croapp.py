@@ -4,6 +4,7 @@ import time
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Type, Union
+import requests
 
 from dataclasses_json import dataclass_json
 from requests import Session, get
@@ -19,9 +20,21 @@ class API:
         self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
         self.StationIDs = station_ids.StationIDs(cfg)
 
+    def get_swagger(self)->dict:
+        url=self.Cfg.runtime_get(['apis','croapp','urls','swagger'])
+        ydata=helpers.request_url_yaml(url)
+        return ydata
+
+    def save_swagger(self):
+        ydata=self.get_swagger()
+        directory=self.Cfg.runtime_get(['apis','croapp','workdir','dir'])
+        filepath=os.path.join(directory,"apidef")
+        helpers.save_yaml(filepath,"swagger.yml",ydata)
+
+
+
     def get_station_guid(self, station_id: str) -> Union[str, None]:
         sid = model.Station_ids()
-        # helpers.pp(sid.__dict__)
         fkey = self.StationIDs.get_fkey(station_id, sid.croapp_guid)
         return fkey
 
@@ -30,26 +43,6 @@ class API:
         url = f"{self.api_url}/stations"
         data = get(url).json()["data"]
         return data
-        # for d in data:
-        # ms=model.Station_data()
-        # for i in ms.__dict__:
-        # print(i)
-        # print(ms.__dict__)
-        # print(ms)
-        # helpers.pprint(data)
-        # res=tuple()
-        # for item in data:
-        # row=[]
-        # res
-        # res
-        # helpers.pprint(item)
-        # res=tuple(
-        # [
-        # model.Station_data()
-        # for item in data
-        # ]
-        # )
-        # helpers.pprint(res)
 
 
 class DB_local_csv:

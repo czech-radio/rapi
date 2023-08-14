@@ -3,12 +3,7 @@ version: false  # -V; bool; store_true; print version of program
 debug:          #debug_lv0_line1
   cfg: false    # -dc; bool; store_true; debug runtime config
 workdir:
-  use: false
-  dir: "./runtime2/"
-broadcast:
-  station_ids:
-    csv: "default"
-    pkey: "openmedia_id"
+  dir: "./runtime/"
 cfgi:
   file: "./tests/defaults_alt.yml"
 commands: # subcommands
@@ -23,11 +18,14 @@ apis:
     csv: "default"
     pkey: "openmedia_id"
   croapp:
+    workdir:
+      dir: "./runtime/croapp/"
     urls:
       mock: "https://mockservice.croapp.cz/mock"
       doc: "https://rapidoc.croapp.cz"
       # api: "https://rapidev.croapp.cz"
       api: "https://mujrozhlas.croapi.cz/stations"
+      swagger: "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     update_local_db: true
     # update_local_db: [true, false, daily]
     endpoints: [

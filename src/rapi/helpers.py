@@ -282,6 +282,25 @@ def mkdir_parent_panic(path: str):
         sys.exit(1)
 
 
+def save_yaml(path: str,filename: str, data: dict):
+    try:
+        file_path=os.path.join(path,filename)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "w", encoding="utf8") as file:
+            yaml.dump(data, file)
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            loge.error("error saving the file:", e)
+
+    except IOError as e:
+        loge.error("error saving the file:", e)
+
+    except Exception as e:
+        loge.error("unknown error", e)
+    finally:
+        logo.info(f"data saved to: {file_path}")
+
+
 def save_txt_data(file_path: str, data: str):
     try:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)

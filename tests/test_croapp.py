@@ -1,18 +1,27 @@
 import sys
 from typing import Union
 
-# from rapi.api_croapp import Api_croapp
-from rapi import api_croapp, broadcast, config, helpers, model, params
+from rapi import api_croapp, config, helpers, model, params
 
 ### test setup
 sys.argv = [
     "test3.py",
-    "--broadcast",
     "-vv",
 ]
 Cfg = config.CFG()
 Cfg.cfg_runtime_set_defaults()
 
+
+def test_get_swagger()->None:
+    print()
+    acr = api_croapp.API(Cfg)
+    acr.get_swagger()
+
+def test_save_swagger()->None:
+    print()
+    acr = api_croapp.API(Cfg)
+    acr.save_swagger()
+    
 
 def test_DB_local_csv() -> None:
     print()

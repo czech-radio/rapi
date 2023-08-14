@@ -138,10 +138,11 @@ def parse_commands(cmds: dict, ap: AP.ArgumentParser):
     for cmd in cmds:
         cmdp = subp.add_parser(cmd, help="request " + cmd)
         cmdp.add_argument("-f", "--filter", type=str)
-        cmp=cmds.get(cmd,None)
+        cmp = cmds.get(cmd, None)
         if cmp is not None:
-            print(cmd,cmp.ca)
+            print(cmd, cmp.ca)
             # params_yml_comments(cmp,ap,"")
+
 
 def parse_command(argp: AP.ArgumentParser, cmdname: str):
     subp = argp.add_subparsers(title="subcommands")

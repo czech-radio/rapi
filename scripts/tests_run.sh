@@ -19,7 +19,7 @@ ptest="${pytestcmd[@]}"
 par="tests/test_params.py"
 # $ptest $par
 # $ptest "${par}::test_parse_all"
-$ptest "${par}::test_params_yml_config"
+# $ptest "${par}::test_params_yml_config"
 
 ### config
 # par="tests/test_config.py"
@@ -61,4 +61,6 @@ par="tests/test_croapp.py"
 # $ptest ${par}
 # $ptest ${par}::test_DB_local_csv
 # $ptest ${par}::test_API
+# $ptest ${par}::test_get_swagger
+$ptest ${par}::test_save_swagger
 

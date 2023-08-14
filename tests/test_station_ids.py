@@ -1,6 +1,6 @@
 import sys
 
-from rapi import broadcast, config, helpers, model, params
+from rapi import config, helpers, model, params
 from rapi.station_ids import StationIDs
 
 ### test setup
@@ -8,8 +8,6 @@ Cfg = config.CFG()
 sys.argv = [
     "test3.py",
     "-vv",
-    # "broadcast-st=10",
-    # "--broadcast-station_ids_pkey=openmedia_id",
 ]
 cfgp = config.Cfg_params()
 cfge = config.Cfg_env()
