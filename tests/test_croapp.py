@@ -21,15 +21,26 @@ def test_get_swagger() -> None:
 def test_save_swagger() -> None:
     print()
     acr = api_croapp.API(Cfg)
-    acr.save_swagger()
+    ok=acr.save_swagger()
+    assert ok
 
 
 def test_DB_local_csv_endpoint_get_json() -> None:
     print()
     acr = api_croapp.DB_local_csv(Cfg)
     res = acr.endpoint_get_json("stations",300)
-    # print(res)
+    assert res is not None
 
+def test_DB_local_csv_endpoint_save_json() -> None:
+    print()
+    acr = api_croapp.DB_local_csv(Cfg)
+    ok = acr.endpoint_save_json("stations",300)
+    assert ok
+
+def test_DB_local_csv_endpoints_save_json() -> None:
+    print()
+    acr = api_croapp.DB_local_csv(Cfg)
+    acr.endpoints_save_json(300)
 
 def test_DB_local_csv() -> None:
     print()

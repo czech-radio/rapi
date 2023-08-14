@@ -27,13 +27,14 @@ class API:
             logo.error("data not avaiable")
         return ydata
 
-    def save_swagger(self):
+    def save_swagger(self)->bool:
         ydata = self.get_swagger()
         if ydata is None:
-            return
+            return False
         directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
         filepath = os.path.join(directory, "apidef")
-        helpers.save_yaml(filepath, "swagger.yml", ydata)
+        ok=helpers.save_yaml(filepath, "swagger.yml", ydata)
+        return ok
 
     def get_station_guid(self, station_id: str) -> Union[str, None]:
         sid = model.Station_ids()
@@ -60,9 +61,9 @@ class DB_local_csv:
         self.DB_update = cfg.runtime_get(["apis", "croapp", "update_db"])
 
     def endpoint_get_link(self, endpoint: str, limit: int = 0) -> str:
-        cfgp = ["apis", "croapp", "response"]
+        cfgb = ["apis", "croapp", "response"]
         if limit == 0:
-            limit = self.Cfg.runtime_get([*cfgp, "limit"])
+            limit = self.Cfg.runtime_get([*cfgb, "limit"])
         api_url = self.urls.get("api", "")
 
         if api_url == "":
@@ -70,7 +71,7 @@ class DB_local_csv:
             sys.exit(1)
         endp_url = "/".join((api_url, endpoint))
 
-        limstr = self.Cfg.runtime_get([*cfgp, "limit_str"])
+        limstr = self.Cfg.runtime_get([*cfgb, "limit_str"])
         if limit > 0 and limstr is not None:
             endp_url = endp_url + limstr + str(limit)
         return endp_url
@@ -82,10 +83,23 @@ class DB_local_csv:
         jdata = helpers.request_url_json(link)
         return jdata
 
-    def endpoint_save_json(self, endpoint: str, limit: int = 1):
+    def endpoint_save_json(self, endpoint: str, limit: int = 0)->bool:
         jdata = self.endpoint_get_json(endpoint, limit)
         if jdata is None:
             loge.error(f"no data to save: {endpoint}")
+            return False
+        directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
+        filepath = os.path.join(directory, "json")
+        ok=helpers.save_json(filepath, endpoint+".json", jdata)
+        return ok
+
+    def endpoints_save_json(self,limit: int = 0):
+        cfgb = ["apis", "croapp",]
+        eps= self.Cfg.runtime_get([*cfgb,"endpoints"])
+        for e in eps:
+            ok=self.endpoint_save_json(e,limit)
+            if ok is False:
+                loge.error("endpoint json not saved: {e}")
 
     def endpoint_file_needs_update(self, endpoint_file: str) -> bool:
         update = False

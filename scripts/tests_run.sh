@@ -63,5 +63,7 @@ par="tests/test_croapp.py"
 # $ptest ${par}::test_API
 # $ptest ${par}::test_get_swagger
 # $ptest ${par}::test_save_swagger
-$ptest ${par}::test_DB_local_csv_endpoint_get_json
+# $ptest ${par}::test_DB_local_csv_endpoint_get_json
+# $ptest ${par}::test_DB_local_csv_endpoint_save_json
+$ptest ${par}::test_DB_local_csv_endpoints_save_json
 

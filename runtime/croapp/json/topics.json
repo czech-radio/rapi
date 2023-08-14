@@ -1,0 +1,1101 @@
+data:
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Archiv
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: fcf52c82-7eec-3c3f-a97a-f34b3ac68b0b
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Archiv.jpg
+      width: 2000
+    fulltext_keywords: "archiv, z archivu, historie, rozhlas, arch\xEDv, auditorium"
+    position: 23
+    title: Archiv
+  id: fdb37f89-29c9-4faf-be29-e867def891cb
+  relationships:
+    episode:
+      data:
+      - id: 712f1906-c7f6-4965-ae21-997045707742
+        type: episode
+      - id: 86cb432b-3f2d-4135-bb60-9a49d3f38b6c
+        type: episode
+      - id: 83dd2c8d-d8a7-4989-bba9-df0865a4a5c1
+        type: episode
+      - id: d9ccf4d0-02d2-4495-9270-058f16e055bf
+        type: episode
+      - id: fed73987-6022-4b6c-bf6d-973614cfc124
+        type: episode
+      - id: 4bcf9f78-383d-361f-9567-b1a356dfc538
+        type: episode
+      - id: 40288503-b911-333f-84d9-96c8372e41ae
+        type: episode
+      - id: b7837ac4-f4c6-35fc-82fe-375422fd2bee
+        type: episode
+      - id: b538a50f-9e29-3d1a-b161-2085abb846a8
+        type: episode
+      - id: 2051232e-fbc4-3ee6-880e-e2f7108779b7
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/fdb37f89-29c9-4faf-be29-e867def891cb/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Cestov\xE1n\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 963
+      id: c302832f-c5b2-3d7c-a48d-0692fa9a577e
+      url: https://www.mujrozhlas.cz/sites/default/files/2021-06/cestovani.png
+      width: 955
+    fulltext_keywords: "Cestov\xE1n\xED, V\xFDlety, Dovolen\xE1, V\xFDlet"
+    position: 11
+    title: "Cestov\xE1n\xED"
+  id: 07d5a42f-8275-4bae-925e-213cdf0ebd18
+  relationships:
+    episode:
+      data:
+      - id: 7d10010c-4476-365a-9ae3-c33317289fb9
+        type: episode
+      - id: d74f4662-e1ae-33b2-a0af-628dcc7f7791
+        type: episode
+      - id: 9bb49c75-ea56-3ae2-979d-cb3d2fe5cc6f
+        type: episode
+      - id: ff4f69b7-fd70-361b-b71d-69e4051b38ef
+        type: episode
+      - id: b11a4003-c9d0-30f9-9613-a472832897de
+        type: episode
+      - id: 371cc339-6019-3b5d-9c68-e5b4d158090e
+        type: episode
+      - id: 8e0e9ba2-2b65-3201-a2d6-3cd29d7453c4
+        type: episode
+      - id: ab2abfd5-43f5-3a6c-808e-42d756846ed1
+        type: episode
+      - id: 563d03ec-522b-350f-9f61-6238a869a50e
+        type: episode
+      - id: f5737266-2b64-3648-bb26-be0f4bee6678
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/07d5a42f-8275-4bae-925e-213cdf0ebd18/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Digit\xE1ln\xED sv\u011Bt"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 955
+      id: 68f161ed-212f-32e0-bab6-ead0e66b6a22
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Digi.png
+      width: 961
+    fulltext_keywords: "digit\xE1l, internet, digit\xE1ln\xED sv\u011Bt, technologie,\
+      \ m\xE9dia, nov\xE9 technologie, nov\xE1 m\xE9dia"
+    position: 22
+    title: "Digit\xE1ln\xED sv\u011Bt"
+  id: c0e5a883-9466-4645-bd36-f1693dbc616e
+  relationships:
+    episode:
+      data:
+      - id: 6ad8944c-d0ff-3380-b0b5-25ce0604578f
+        type: episode
+      - id: adf5ec81-12a1-32a3-bde5-9554cd58d6bc
+        type: episode
+      - id: 275a7363-a1d8-3c84-9059-44d0b01ea8df
+        type: episode
+      - id: 427df55c-e75e-3515-8c53-205b97b34491
+        type: episode
+      - id: 6c9fb693-e9ea-3bec-86b4-da23f840176b
+        type: episode
+      - id: 28140be1-1a67-3267-bbce-ea1065d5dd0b
+        type: episode
+      - id: 8c52f42c-0639-3b7c-9ebf-846c2d8980bb
+        type: episode
+      - id: b47d81c0-6ccf-3ba0-ba14-5cfa9b9c3238
+        type: episode
+      - id: 0c9c6f90-a544-308d-b192-c7137c0db7a3
+        type: episode
+      - id: c6f67366-100b-3cc7-a089-34d2a6855dad
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/c0e5a883-9466-4645-bd36-f1693dbc616e/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Dlia ukraintsiv
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 3507
+      id: 21044493-2a33-3bd8-af89-9699d7a92fc0
+      url: https://www.mujrozhlas.cz/sites/default/files/2022-03/69764c5ce1da1735812aea9557d91f55_0.jpg
+      width: 2347
+    fulltext_keywords: ''
+    position: 9
+    title: Dlia ukraintsiv
+  id: d4ee0d9a-93f0-4008-b0d2-59db4df3c038
+  relationships:
+    episode:
+      data:
+      - id: 3c84f982-f8ad-3feb-8f06-2053b35d466c
+        type: episode
+      - id: 67ab9392-e919-318d-b670-576f4327d7e1
+        type: episode
+      - id: 9e084d2f-67d5-345c-bb86-929110e61cf7
+        type: episode
+      - id: 3028c331-e8a2-3614-9c23-494578472f22
+        type: episode
+      - id: ec06c177-139d-3a64-8980-c8073a87358c
+        type: episode
+      - id: 68d9b366-d60c-3e09-a8b2-2a92c268b364
+        type: episode
+      - id: c956548b-dcef-3c57-8808-714a0255a11f
+        type: episode
+      - id: 1f795d41-518c-32e7-888b-c4594efa6baf
+        type: episode
+      - id: c0d6b098-3861-3cb9-91a5-ef5dbebbb683
+        type: episode
+      - id: 7a58f1ae-7ef0-362b-902a-3986425f09ab
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/d4ee0d9a-93f0-4008-b0d2-59db4df3c038/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Dokumenty
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 951
+      id: 74827265-69c5-351e-a9db-ea0bccf7aacb
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/dokumenty.jpg
+      width: 957
+    fulltext_keywords: dokument, dokudrama, dokuvlna
+    position: 4
+    title: Dokumenty
+  id: 05bc9bd7-7a9d-49a6-b1aa-12a7bfb558f7
+  relationships:
+    episode:
+      data:
+      - id: 6f5fe6b3-a55d-358c-95e8-4c9ddaeb271d
+        type: episode
+      - id: add97de8-77a9-3efd-86c8-618121f41de0
+        type: episode
+      - id: 608e9cc8-9c5a-3fe7-a7ca-25482245e1ec
+        type: episode
+      - id: fd005326-0de2-3fd8-a632-2abc47e63561
+        type: episode
+      - id: ed46f989-60c7-31ee-9faa-8d9c42bd0279
+        type: episode
+      - id: 547d33de-da72-3853-8fde-d11c6f8fd37e
+        type: episode
+      - id: a2028f0b-ed15-371a-b62f-309eb5577af3
+        type: episode
+      - id: af38ff6d-0788-37b2-94af-4d80d48efed7
+        type: episode
+      - id: b32f983d-da8f-3b1f-80f9-56692a82ac23
+        type: episode
+      - id: b841b899-18e3-3dc5-b279-5d866df7d727
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/05bc9bd7-7a9d-49a6-b1aa-12a7bfb558f7/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: English episodes
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1040
+      id: 60925b3f-0831-36df-a930-1cac85cf9204
+      url: https://www.mujrozhlas.cz/sites/default/files/2022-07/1a451b328c8cce030681f50adde439b4.png
+      width: 584
+    fulltext_keywords: ''
+    position: 5
+    title: English
+  id: 345a4b21-00cc-41e0-9383-47d4e8e54f8e
+  relationships:
+    episode:
+      data:
+      - id: 3705f4fa-e636-3502-aa24-7392ca0e782b
+        type: episode
+      - id: 8d18b33b-0cbd-3849-8fe4-ba97dde64c75
+        type: episode
+      - id: a69ee6cf-98a7-35a7-a554-8d74ddd3cf55
+        type: episode
+      - id: 644dee74-78da-3d1f-8830-689a813643d7
+        type: episode
+      - id: 25885cf3-f587-3668-a6c1-b77b73ce3316
+        type: episode
+      - id: 92326600-2e6b-3720-816f-4c928979579f
+        type: episode
+      - id: 5a3dcd2a-d17e-3afe-b20b-7a1d420cdc58
+        type: episode
+      - id: 14eb7053-6b81-3020-9e7c-9906dfb1c800
+        type: episode
+      - id: ba3c7613-d73a-3054-b901-d8665a007759
+        type: episode
+      - id: f92f78ab-aca3-3fb2-9ba0-53f6c738baf3
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/345a4b21-00cc-41e0-9383-47d4e8e54f8e/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Historie
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 955
+      id: 8e54d093-c534-3a1c-a564-55185e22951a
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/historie.jpg
+      width: 959
+    fulltext_keywords: "Historie, D\u011Bjiny"
+    position: 20
+    title: Historie
+  id: 71ecc005-ed83-4533-a50d-4494fcd70fbf
+  relationships:
+    episode:
+      data:
+      - id: 4bcf9f78-383d-361f-9567-b1a356dfc538
+        type: episode
+      - id: 40288503-b911-333f-84d9-96c8372e41ae
+        type: episode
+      - id: c4e40744-531e-3b1f-aca7-5d22296dc2e5
+        type: episode
+      - id: 57a50f42-77b5-32dc-a839-cf1e954f18ed
+        type: episode
+      - id: 4e428f33-eefa-397e-a9ea-c9794cdd3be1
+        type: episode
+      - id: a2983a65-ed26-3c6c-abb3-5b141e8f7069
+        type: episode
+      - id: 61a6348e-2c3d-3f22-ab18-82f8b3566586
+        type: episode
+      - id: b7837ac4-f4c6-35fc-82fe-375422fd2bee
+        type: episode
+      - id: b538a50f-9e29-3d1a-b161-2085abb846a8
+        type: episode
+      - id: 6045a86e-b20b-3540-a394-059c397bb3e3
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/71ecc005-ed83-4533-a50d-4494fcd70fbf/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Hry a \u010Detba"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 468e4370-e197-3748-a8c8-0bf81a768701
+      url: https://www.mujrozhlas.cz/sites/default/files/2021-06/hrycetba.jpeg
+      width: 2000
+    fulltext_keywords: "Audio kniha, \u010Cetba, \u010Cetba na pokra\u010Dov\xE1n\xED\
+      , Audioknihy, Mluven\xE9 slovo, Hry, Hra, Rozhlasov\xE1 hra, pov\xEDdky, Pov\xED\
+      dka, slovo, Dramatizace, literatura, detektivka, detektivky, radiokniha, historie\
+      \ \u010Desk\xE9ho zlo\u010Dinu, rozhlasov\xE9 hry, krimin\xE1lka"
+    position: 16
+    title: "Hry, \u010Detby, pov\xEDdky"
+  id: 671d0806-2afe-4282-ae90-319b6ef369a2
+  relationships:
+    episode:
+      data:
+      - id: 6425250f-baa2-3ed6-bd8f-e840f476f80f
+        type: episode
+      - id: 9eccdbb9-271f-3c58-a808-a0f1a7999666
+        type: episode
+      - id: 7261898e-bcd2-3682-9c1d-8261d71a5d2d
+        type: episode
+      - id: c30f05f8-a036-3229-ad9e-979dbefe5d8f
+        type: episode
+      - id: 423bcad5-7030-3258-be1c-2039596adf6c
+        type: episode
+      - id: 338e95ba-cc82-3218-ae78-af9ea5ed853e
+        type: episode
+      - id: dde25aeb-b8e8-3f20-8520-37b260bb73b2
+        type: episode
+      - id: 69a271ef-5c67-368d-9e63-786bd1523a18
+        type: episode
+      - id: a1f54859-d650-3d01-85e6-b879881cf3da
+        type: episode
+      - id: f46fe106-003e-3fdf-9b6a-08533e8aab61
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/671d0806-2afe-4282-ae90-319b6ef369a2/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Hudba
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 961
+      id: 4f3b0b91-18c3-3c22-a61e-953743413f24
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/hudba.png
+      width: 967
+    fulltext_keywords: "Hudba, Muzika, V\xE1\u017En\xE1 hudba, noty, skladatel\xE9\
+      , muzikant, hudebn\xEDk"
+    position: 24
+    title: Hudba
+  id: bf9e35ee-6465-44a2-930b-cac77a5faea5
+  relationships:
+    episode:
+      data:
+      - id: eccb2f57-211d-325c-9553-8957fb9d9eee
+        type: episode
+      - id: bc99bd17-fda1-3236-8744-8e3c83683037
+        type: episode
+      - id: 02b1811d-ce80-38bd-b707-8fee6f8dfb13
+        type: episode
+      - id: 15478d8e-cab6-311e-8b93-05578a5694ad
+        type: episode
+      - id: 43ab0e84-026c-3a3d-807a-4198db9109b3
+        type: episode
+      - id: 5eb5256d-ef13-3f03-996a-4db401c6db8b
+        type: episode
+      - id: 829b36ee-f5e7-390b-a004-286eb3083765
+        type: episode
+      - id: 7cc2437b-a019-3d5a-9803-4c62a10d918e
+        type: episode
+      - id: b37bbcd2-bfef-3ecd-8964-2c1ec743807b
+        type: episode
+      - id: b03f41ad-a33a-3833-afb8-a9db7c61b8bf
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/bf9e35ee-6465-44a2-930b-cac77a5faea5/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "J\xEDdlo a gastronomie"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: eedc25ec-d6ae-3787-898b-f0902e1b6ca7
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Jidlo.jpg
+      width: 2000
+    fulltext_keywords: "Gastronomie, Gastro, Food, recept, Recepty, Va\u0159en\xED\
+      , j\xEDdlo, j\xEDdla"
+    position: 10
+    title: "J\xEDdlo a gastronomie"
+  id: ceb50514-8068-4ada-97c1-87351b4bde29
+  relationships:
+    episode:
+      data:
+      - id: d1c2a9dd-0067-35b8-a426-0030ceeba017
+        type: episode
+      - id: d60370c5-f415-379b-81cc-e8f1ea0659da
+        type: episode
+      - id: 409e0e03-7ad8-3579-8d0f-c8a96b08316d
+        type: episode
+      - id: fe351db4-5d72-3a4b-91f3-dec8601a1885
+        type: episode
+      - id: b82774d7-44a0-3c09-90d7-276775f8d102
+        type: episode
+      - id: cfc0ae2f-e411-344a-b0d4-ee5d3a345282
+        type: episode
+      - id: ae20f14c-0b85-39fa-8f42-53f93b04b2cf
+        type: episode
+      - id: ee84ce65-d88f-31f1-a80f-4c80f7c23834
+        type: episode
+      - id: 3b238cf6-3eb4-3c78-9b4d-a7b6c1e52ba2
+        type: episode
+      - id: 3a6c6acf-5108-3910-bbe9-3257fde0981c
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/ceb50514-8068-4ada-97c1-87351b4bde29/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Koment\xE1\u0159e a glosy"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 957
+      id: 6f861ef9-4cbd-3bc7-8b77-86bdc0f69542
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/koment%C3%A1%C5%99e.png
+      width: 961
+    fulltext_keywords: "Koment\xE1\u0159e, Koment\xE1\u0159e a glosy, Glosa, Glosy,\
+      \ Esej, Eseje, vize"
+    position: 1
+    title: "Koment\xE1\u0159e a glosy"
+  id: f5d0af23-2bda-4d59-8b70-d3b60b4e0eec
+  relationships:
+    episode:
+      data:
+      - id: 55a68282-f12c-3275-ba22-a971964e98da
+        type: episode
+      - id: 1ff15a0e-87ff-3bdd-98e2-5315e5b8fe69
+        type: episode
+      - id: 0117dd67-f5e0-303e-bfc7-818c7aeb8ae6
+        type: episode
+      - id: defdf93f-cab7-3050-bf2e-fc1fe6f91d46
+        type: episode
+      - id: 03c32c3f-c059-3fe2-a339-8dee2a5f953a
+        type: episode
+      - id: 81638fc1-2250-3417-85a8-04cc841ceadc
+        type: episode
+      - id: b379aad8-8eab-3023-910b-d9e331375e7a
+        type: episode
+      - id: 34f06345-45ab-372e-bfba-b16460a4aa02
+        type: episode
+      - id: e8e3111e-cb0e-3f97-bc80-bce1ce0eeb9e
+        type: episode
+      - id: e912b301-58e3-39a6-9aec-d46b9a6652da
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/f5d0af23-2bda-4d59-8b70-d3b60b4e0eec/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "N\xE1bo\u017Eenstv\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 53c09f9f-760a-35ee-b028-a4c553263372
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Nabozenstvi.jpg
+      width: 2000
+    fulltext_keywords: "K\u0159es\u0165anstv\xED, V\xEDra, Duchovno, M\u0161e, N\xE1\
+      bo\u017Eenstv\xED, B\u016Fh, modlitba, Spiritualita"
+    position: 21
+    title: "N\xE1bo\u017Eenstv\xED"
+  id: ee787510-effb-4a57-9c8d-66aecbadcf76
+  relationships:
+    episode:
+      data:
+      - id: 639253fc-5021-3b83-a114-f84289350a0f
+        type: episode
+      - id: 752fa53a-13fb-345c-8481-7e2fb5b61fb5
+        type: episode
+      - id: ba1dc1ff-b15b-3014-949f-ac782a303d85
+        type: episode
+      - id: 12d2232e-9ba6-3de3-a27a-50902735bbf6
+        type: episode
+      - id: 286f39d2-7129-386e-b1c7-71eb23dca769
+        type: episode
+      - id: 835bbe56-b10b-3fbe-9c7d-cca8be3d65f5
+        type: episode
+      - id: a907e59a-5889-390a-81f1-cb9b53002330
+        type: episode
+      - id: d690e457-8834-3cac-b839-b881eca3ea1a
+        type: episode
+      - id: 5d2ca855-6a70-35ff-b040-9886186f8ca2
+        type: episode
+      - id: ebde2d2c-7a0a-30c2-94a3-d52e134b7d05
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/ee787510-effb-4a57-9c8d-66aecbadcf76/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Osobnosti
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 4a9ab6c8-8139-34fb-aeb7-0fb54833e1ce
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Osobnost.jpg
+      width: 2000
+    fulltext_keywords: "Osobnost, celebrita, slavn\xED, portr\xE9ty"
+    position: 7
+    title: Osobnosti
+  id: 36d25b33-6bf4-4cda-ae95-3ab484dbd6eb
+  relationships:
+    episode:
+      data:
+      - id: 9eccdbb9-271f-3c58-a808-a0f1a7999666
+        type: episode
+      - id: f5bce0ea-25fc-3deb-91ca-3231d4ccd82c
+        type: episode
+      - id: 69a271ef-5c67-368d-9e63-786bd1523a18
+        type: episode
+      - id: 37cdc672-0ffd-3679-9701-407c7bf421ad
+        type: episode
+      - id: 1e30fcd4-8602-3287-b08a-72f3f2a43784
+        type: episode
+      - id: 0fbb02a7-53e9-348e-87ba-16a899e46389
+        type: episode
+      - id: cf160891-0e0c-357d-b456-2b63af71ec85
+        type: episode
+      - id: c4e40744-531e-3b1f-aca7-5d22296dc2e5
+        type: episode
+      - id: 4e428f33-eefa-397e-a9ea-c9794cdd3be1
+        type: episode
+      - id: 0b11eb7e-b642-3923-a2f5-267ce3e989c7
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/36d25b33-6bf4-4cda-ae95-3ab484dbd6eb/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Politika a zpravodajstv\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 959
+      id: ac966313-9ab3-3223-9159-7c5e28f70a7f
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Zpravodajstvi.jpg
+      width: 959
+    fulltext_keywords: "politika, zpravodajstv\xED, zpr\xE1vy, publicistika, volby"
+    position: 2
+    title: "Politika a zpravodajstv\xED"
+  id: e95e8fce-5237-4c41-8118-6853af4703db
+  relationships:
+    episode:
+      data:
+      - id: 55a68282-f12c-3275-ba22-a971964e98da
+        type: episode
+      - id: 4090db87-9c63-3730-8faf-f7f006939c62
+        type: episode
+      - id: d1111ddd-d1e0-30c0-8b66-f39b13c4c620
+        type: episode
+      - id: 1ff15a0e-87ff-3bdd-98e2-5315e5b8fe69
+        type: episode
+      - id: ffcaad81-dc4b-35ef-8e64-16115a972890
+        type: episode
+      - id: 0117dd67-f5e0-303e-bfc7-818c7aeb8ae6
+        type: episode
+      - id: 5e05ebe8-bbb3-3127-a30f-d7f366d9c5b5
+        type: episode
+      - id: 568cfb78-c9b0-3b58-b675-7d3c5a64a291
+        type: episode
+      - id: b31fbaec-b5f1-3570-82ce-a9472dfbb822
+        type: episode
+      - id: 25a2fc2d-3169-3d6d-aed1-b5d5833e25f3
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/e95e8fce-5237-4c41-8118-6853af4703db/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Pov\xEDdky"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: b8c8c97c-29fd-32e6-848b-4b16991d6eec
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Povidky.jpg
+      width: 2000
+    fulltext_keywords: "Pov\xEDdka, Pov\xEDdky, pov\xEDd\xE1n\xED"
+    position: 17
+    title: "Pov\xEDdky"
+  id: 3f0f60c2-247c-44b6-a6b5-13a291bb0349
+  relationships:
+    episode:
+      data:
+      - id: dde25aeb-b8e8-3f20-8520-37b260bb73b2
+        type: episode
+      - id: 6be46b40-98de-329e-b205-12abc0f6ba52
+        type: episode
+      - id: c9630a00-52c4-321f-8778-6f0688e46725
+        type: episode
+      - id: 5b186e40-296c-35cd-a83a-cf7e46e13780
+        type: episode
+      - id: bf4bbb02-cba5-37bb-acec-ee6242df7eb0
+        type: episode
+      - id: be4991be-0081-333a-b7cb-e654153885cd
+        type: episode
+      - id: 7983959c-7cef-3296-a0cd-a173bfa5135b
+        type: episode
+      - id: 13224816-9776-351c-9b7d-e734b222fbfc
+        type: episode
+      - id: 915db438-ab90-305f-a178-0f297e9d1654
+        type: episode
+      - id: bb0f77dd-548c-345d-9bb3-e30ba23c91af
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/3f0f60c2-247c-44b6-a6b5-13a291bb0349/episodes
+      meta:
+        count: 99
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "P\u0159\xEDroda"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 9d24b165-df31-302f-88aa-8b8588601312
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Priroda.jpg
+      width: 2000
+    fulltext_keywords: "P\u0159\xEDroda, natura, ekologie, karbon, v\xFDlety"
+    position: 15
+    title: "P\u0159\xEDroda"
+  id: 472f8b57-122d-44fa-a86c-7c77b51c7be1
+  relationships:
+    episode:
+      data:
+      - id: 0fd81b89-628a-3cd5-835c-3809e9083588
+        type: episode
+      - id: 14913cae-bacb-3649-872c-17c85bd39ec2
+        type: episode
+      - id: 29b76ccf-dc5c-3031-a0cb-1997f743af0c
+        type: episode
+      - id: c8233b23-cd1b-3fbb-950c-b10f7e8e7771
+        type: episode
+      - id: b85cab49-9ca8-3482-bf66-1a61efd741da
+        type: episode
+      - id: d4b32e7c-b2dd-395a-ab37-c8f1ba1122ac
+        type: episode
+      - id: 5339dcc4-74a5-3861-a059-3a38aa45f6b2
+        type: episode
+      - id: 20a1f2bf-7c45-3fe1-a46b-62fcc67d01c6
+        type: episode
+      - id: c2b4d381-7ba9-3265-a7bc-2af86e257285
+        type: episode
+      - id: af088657-989d-310f-8e99-7244dc805696
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/472f8b57-122d-44fa-a86c-7c77b51c7be1/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Pro d\u011Bti"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 18bbbee7-344d-3100-a67e-a8c644ec047b
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Deti.jpg
+      width: 2000
+    fulltext_keywords: "d\u011Bti, pro d\u011Bti, poh\xE1dka, poh\xE1dky, hajaja,\
+      \ d\u011Bti\u010Dky, d\u011Bda vorl\xEDk"
+    position: 18
+    title: "Pro d\u011Bti"
+  id: 8ed08518-9d92-437c-a96f-e5df046aff4e
+  relationships:
+    episode:
+      data:
+      - id: 048e730b-ed1b-30a4-89fb-1eb7aede4677
+        type: episode
+      - id: 2b98901c-5417-30dd-a1c0-fda3ce295813
+        type: episode
+      - id: d1ddf4d2-70f8-38d8-97dc-9637f6a708e2
+        type: episode
+      - id: 94486cd7-baf6-3a5e-8511-2f5fc4f7c805
+        type: episode
+      - id: 6425250f-baa2-3ed6-bd8f-e840f476f80f
+        type: episode
+      - id: 423bcad5-7030-3258-be1c-2039596adf6c
+        type: episode
+      - id: c61939fd-a74d-3987-adec-74f1399e772f
+        type: episode
+      - id: 0fd81b89-628a-3cd5-835c-3809e9083588
+        type: episode
+      - id: 6635024d-e489-3892-b307-3c2be6dd2622
+        type: episode
+      - id: f8da0e90-4c01-3e56-8ced-463163b5aeb0
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/8ed08518-9d92-437c-a96f-e5df046aff4e/episodes
+      meta:
+        count: 99
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Rozhovory
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: f3bd333b-a6a7-3f4c-adfe-d3264582b29a
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Rozhovory.jpg
+      width: 2000
+    fulltext_keywords: Rozhovor, Rozhovory, osobnosti , diskuse
+    position: 6
+    title: Rozhovory
+  id: 23a1fafa-2fc8-4796-ad1f-20f130e90779
+  relationships:
+    episode:
+      data:
+      - id: f5bce0ea-25fc-3deb-91ca-3231d4ccd82c
+        type: episode
+      - id: af4eb923-c38e-32d1-b903-1890ff291320
+        type: episode
+      - id: b3b77048-0e24-3cb2-a869-09a7e33bb095
+        type: episode
+      - id: 776d0635-e892-36ed-8809-1702b5a4eb6f
+        type: episode
+      - id: 0f2619f2-fc0d-3859-bd84-84893eb4ca16
+        type: episode
+      - id: 14a78739-dd1d-3a15-9ed1-dd83e8e9cec6
+        type: episode
+      - id: a433cd01-6fdc-3c52-ae5f-9bc64ea2c55e
+        type: episode
+      - id: cab67a9b-a1cd-3d0f-b2c2-dd5feba7dad7
+        type: episode
+      - id: 37cdc672-0ffd-3679-9701-407c7bf421ad
+        type: episode
+      - id: a409e92d-8ed6-33cd-884f-d61063472d86
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/23a1fafa-2fc8-4796-ad1f-20f130e90779/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Sport
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 806
+      id: 9fcf71c6-7079-3dad-8eb7-226aaeab4233
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/SPort.png
+      width: 959
+    fulltext_keywords: "sport, sportov\xE1n\xED, cvi\u010Den\xED, fotbal, hokej, sportovn\xED\
+      , sportovci, g\xF3l, olympi\xE1da, paralympi\xE1da, radio\u017Eurn\xE1l sport,\
+      \ pohyb"
+    position: 14
+    title: Sport
+  id: ca0362e9-e78c-4222-8df9-05937d9af7e9
+  relationships:
+    episode:
+      data:
+      - id: e5e40fdb-74bd-3fbc-8175-a308049dc9c5
+        type: episode
+      - id: 97670af7-a1de-3c74-aff7-4ab135f80477
+        type: episode
+      - id: f7f9eb80-b32f-3645-909e-ed95ee74a0f9
+        type: episode
+      - id: b7d631b3-1993-3003-bdce-573acf74ab3a
+        type: episode
+      - id: 32f071c8-77e5-3db7-8993-e5a5b3c5a6d8
+        type: episode
+      - id: daecd413-f5d9-3024-b046-976997ab6e88
+        type: episode
+      - id: cf4eb067-c7c3-3725-b722-13be8187e475
+        type: episode
+      - id: 05b2bb4e-f5dd-324e-b1f5-fb22aa54c066
+        type: episode
+      - id: a2df5baf-9616-3bca-961a-051cf8128697
+        type: episode
+      - id: 2df75cf1-c014-38ab-815f-635d49df022b
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/ca0362e9-e78c-4222-8df9-05937d9af7e9/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Um\u011Bn\xED a kultura"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: fd0369a3-cc60-3669-a5da-2874056b3650
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Umeni_0.jpg
+      width: 2000
+    fulltext_keywords: "um\u011Bn\xED, kultura, recenze, v\xFDstava, vltava, v\xFD\
+      stavy"
+    position: 3
+    title: "Um\u011Bn\xED a kultura"
+  id: 257c9ebf-3f3c-4ccc-b127-a98b848d1e38
+  relationships:
+    episode:
+      data:
+      - id: 66e2cab9-08ee-3c71-9151-46bdbbe093b6
+        type: episode
+      - id: 0cf866e5-911f-3f5c-8e9a-c5f7d3b06d85
+        type: episode
+      - id: df3e152f-bde6-38be-be4a-3577bbb4d91c
+        type: episode
+      - id: 49e80a99-e9d6-3638-8cfe-d3ed6d67ac7a
+        type: episode
+      - id: ca379eeb-1896-37e5-9309-5f3f0a94b657
+        type: episode
+      - id: 68af53c3-38d0-36c9-993a-56432515a7d6
+        type: episode
+      - id: 6f5fe6b3-a55d-358c-95e8-4c9ddaeb271d
+        type: episode
+      - id: eeb63a53-575a-3052-b39d-573e65a0f5c3
+        type: episode
+      - id: d8ddc498-3d07-36d9-8f6d-5453b50cb1cb
+        type: episode
+      - id: 83de0a4a-dc63-3651-9e63-10b8dd163577
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/257c9ebf-3f3c-4ccc-b127-a98b848d1e38/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "V\u011Bda"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 8879ce77-654e-31e4-b5d4-7ca5aa0ff8dd
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Veda.jpg
+      width: 2000
+    fulltext_keywords: "V\u011Bda, Science"
+    position: 19
+    title: "V\u011Bda"
+  id: 8c432621-a9a9-4c0a-8376-ea4ae5707fbb
+  relationships:
+    episode:
+      data:
+      - id: 14913cae-bacb-3649-872c-17c85bd39ec2
+        type: episode
+      - id: e862892a-9f8f-396b-9d0f-a6f4abde7fb5
+        type: episode
+      - id: 945a977c-f514-3de2-9031-4bde56be9f31
+        type: episode
+      - id: 92021b29-f0de-3f89-a157-c97e4ef6c23c
+        type: episode
+      - id: 9675d2f0-19e1-3ee9-8c45-b1ba20ecd5b8
+        type: episode
+      - id: 82f6d666-3072-3e5b-aad5-bfada179a252
+        type: episode
+      - id: ec2adc93-dc4d-3f31-83fb-fd0acbbb2f75
+        type: episode
+      - id: c2b4d381-7ba9-3265-a7bc-2af86e257285
+        type: episode
+      - id: 61e7bcb3-a8f3-37df-9226-52b36b916052
+        type: episode
+      - id: e9911c2f-b5c7-3846-95af-a968c572e6ef
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/8c432621-a9a9-4c0a-8376-ea4ae5707fbb/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Z\xE1bava"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 957
+      id: 39317e63-4d06-3bb1-960d-a7b2f93f0f67
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Z%C3%A1bava.jpg
+      width: 955
+    fulltext_keywords: "Z\xE1bavn\xE9, Z\xE1bavn\xFD, Humor, legrace"
+    position: 8
+    title: "Z\xE1bava"
+  id: 38929c62-1f5e-4160-a944-eef37f086ac6
+  relationships:
+    episode:
+      data:
+      - id: 24ecdca0-d5ec-3c26-bb1b-02ae20439df2
+        type: episode
+      - id: 1e337cc7-e903-3f87-94cb-909694ff6142
+        type: episode
+      - id: 76be0c6d-4571-3be3-a293-c74c019ad22e
+        type: episode
+      - id: a4a0ee4c-32ad-3d6c-ba9b-0afadd16bff1
+        type: episode
+      - id: 17aa7a7a-34a3-3c27-89ea-726659dcca97
+        type: episode
+      - id: 30ff3962-f27a-3b41-aa4b-c03559268bb6
+        type: episode
+      - id: 8fc29a97-c8a7-32a0-8796-3f1877bf2f10
+        type: episode
+      - id: b1c7d902-9d34-3f7e-b02b-a6bb7a2fd302
+        type: episode
+      - id: 3cccd136-92ab-31bb-8cc5-ca5e204f92d7
+        type: episode
+      - id: 522747ad-a8b6-32aa-81b0-a1e23bb996fb
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/38929c62-1f5e-4160-a944-eef37f086ac6/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "Zdrav\xED"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 2000
+      id: 59f16b57-9551-358d-afc1-e315bd7bbfc5
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/Zdravi.jpg
+      width: 2000
+    fulltext_keywords: "Zdrav\xED, zdravotn\xED, dieta"
+    position: 13
+    title: "Zdrav\xED"
+  id: fa2ccd7c-c6e6-4e3e-8ce6-be37d514744e
+  relationships:
+    episode:
+      data:
+      - id: 1723d237-784f-3836-8089-c61f8afc1f28
+        type: episode
+      - id: 2a4e131d-d0e0-3f86-b4f0-bf5adbf333b3
+        type: episode
+      - id: d760e83c-7888-33ca-bce4-dd1117063619
+        type: episode
+      - id: c2cdf04c-f315-3c7e-aeb1-da50ed524c66
+        type: episode
+      - id: 65e9e3ba-9cc0-3a35-abb1-2feb54b648bb
+        type: episode
+      - id: 1fa3bef5-ad14-3782-9a6f-03a8e982a17c
+        type: episode
+      - id: 44998d38-ad1f-3eac-87c0-000f593b7781
+        type: episode
+      - id: 9cbf3a41-e1bc-32b7-a34a-1c5ccb6a3354
+        type: episode
+      - id: e185d736-338b-38ea-bcbf-49cd2e18a2b5
+        type: episode
+      - id: cd72f9ec-8811-3aa5-9e15-2b94575302ed
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/fa2ccd7c-c6e6-4e3e-8ce6-be37d514744e/episodes
+      meta:
+        count: 100
+  type: topic
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: "\u017Divotn\xED styl"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 846
+      id: 626fc5e9-1b38-35ef-b5c1-14af8b95fe81
+      url: https://www.mujrozhlas.cz/sites/default/files/2020-03/%C5%BEivotn%C3%AD%20styl.jpg
+      width: 967
+    fulltext_keywords: ''
+    position: 12
+    title: "\u017Divotn\xED styl"
+  id: 059560f8-1b2b-4dff-aaf1-7188c60ce5d4
+  relationships:
+    episode:
+      data:
+      - id: af4eb923-c38e-32d1-b903-1890ff291320
+        type: episode
+      - id: 9bb49c75-ea56-3ae2-979d-cb3d2fe5cc6f
+        type: episode
+      - id: 3aeecf32-3405-3eb9-9710-774aff0235d7
+        type: episode
+      - id: 2965a4a6-9be0-3fda-b52d-629b8a6c56b6
+        type: episode
+      - id: 529f33a6-3616-3899-bf84-93179362bc4b
+        type: episode
+      - id: 7f9ba55d-dff8-3faa-ae07-cf1a7a7784d9
+        type: episode
+      - id: e30565f4-9961-3786-b60b-72a98c081cf9
+        type: episode
+      - id: 2bc0df0e-fea5-3f18-a509-68894a39f76c
+        type: episode
+      - id: 2aba51b8-6314-3c7d-87cc-f448f87b02bf
+        type: episode
+      - id: 2b823085-a7d0-3366-aa30-8a3aa7b6de92
+        type: episode
+      links:
+        related: https://mujrozhlas.croapi.cz/topics/059560f8-1b2b-4dff-aaf1-7188c60ce5d4/episodes
+      meta:
+        count: 100
+  type: topic
+links:
+  first: null
+  last: null
+  next: null
+  prev: null
+  self: https://mujrozhlas.croapi.cz/persons?page%5Blimit%5D=300
+meta:
+  count: 24

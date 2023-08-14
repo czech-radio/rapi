@@ -297,7 +297,7 @@ def mkdir_parent_panic(path: str):
         sys.exit(1)
 
 
-def save_yaml(path: str, filename: str, data: dict):
+def save_yaml(path: str, filename: str, data: dict)->bool:
     try:
         file_path = os.path.join(path, filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
@@ -305,15 +305,41 @@ def save_yaml(path: str, filename: str, data: dict):
             yaml.dump(data, file)
     except OSError as e:
         if e.errno != errno.EEXIST:
-            loge.error("error saving the file:", e)
-
+            loge.error("error saving the file: {file_path}", e)
+            return False
+        print("file exits")
     except IOError as e:
-        loge.error("error saving the file:", e)
+        loge.error("error saving the file: {file_path}, ", e)
+        return False
 
     except Exception as e:
-        loge.error("unknown error", e)
+        loge.error("error saving the file: {file_path}, ", e)
+        return False
     finally:
         logo.info(f"data saved to: {file_path}")
+        return True
+
+def save_json(path: str, filename: str, data: dict)->bool:
+    try:
+        file_path = os.path.join(path, filename)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "w", encoding="utf8") as file:
+            yaml.dump(data, file)
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            loge.error("error saving the file: {file_path}", e)
+            return False
+        print("file exits")
+    except IOError as e:
+        loge.error("error saving the file: {file_path}, ", e)
+        return False
+
+    except Exception as e:
+        loge.error("error saving the file: {file_path}, ", e)
+        return False
+    finally:
+        logo.info(f"data saved to: {file_path}")
+        return True
 
 
 def save_txt_data(file_path: str, data: str):
