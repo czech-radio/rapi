@@ -47,9 +47,15 @@ class Show:
     shortDescription: str=""
 
 
+@dataclass
 class Episode:
-    pass
-
+    id: str = ""
+    title: str = ""
+    shortTitle: str = ""
+    description: str = ""
+    since: str = ""
+    till: str = ""
+    mirroredShow_title: str= ""
 
 class Schedule:
     pass

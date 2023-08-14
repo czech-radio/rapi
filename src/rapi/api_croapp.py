@@ -57,17 +57,15 @@ class API:
             return None
         paths = helpers.dict_paths_vectors(data[0], list())
         ### select fields from json by position
-        fields = [item for item in range(1, 9)]
+        fields = [1,2,3,4,5,6,7,8,9]
         out: list = list()
+
         ### creat output list
-        for e in data:
-            j = 0
+        out: list=list()
+        for d in data:
             st = Station()
-            for i in st.__dict__:
-                path = paths[fields[j]]
-                st.__dict__[i] = DGP(e, path)
-                j = j + 1
-            out.append(st)
+            res=helpers.class_assign_attrs_fieldnum(st,d,fields,paths)
+            out.append(res)
         return tuple(out)
 
     def get_station(self, station_id: str)-> Station | None:
@@ -102,6 +100,9 @@ class API:
             res=helpers.class_assign_attrs_fieldnum(show,d,fields,paths)
             out.append(res)
         return tuple(out)
+
+    def get_show_episodes(self,episode_id: str,limit: int=0):
+        pass
 
 
 class DB_local:

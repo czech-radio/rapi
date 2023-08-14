@@ -72,5 +72,5 @@ par="tests/test_croapp.py"
 #### api_croapp_api
 par="tests/test_croapp_api.py"
 # $ptest ${par}
-# $ptest ${par}::test_get_station
-$ptest ${par}::test_get_station_shows
+$ptest ${par}::test_get_station
+# $ptest ${par}::test_get_station_shows
