@@ -9,8 +9,10 @@ ptest="${pytestcmd[@]}"
 # $ptest tests/
 # $ptest tests/test_command.py 
 # $ptest tests/test_config.py 
-# $ptest tests/test_helper.py
+# $ptest tests/test_helpers.py
 # $ptest tests/test_main.py
+# $ptest tests/test_params.py
+# $ptest tests/test_station_ids.py
 # $ptest tests/test_broadcast.py
 
 ### params

@@ -18,6 +18,7 @@ dependencies = [
 	"mergedeep",
 	"numpy",
 	"ruamel.yaml",
+  "jupyter",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",

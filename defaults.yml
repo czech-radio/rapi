@@ -12,10 +12,11 @@ broadcast:
 cfgi:
   file: "./tests/defaults_alt.yml"
 commands: # subcommands
+  # station_ids:
   station: # filter stations
-    filter:
+    id:     # -id; int; store; filter by id
+    test: 
   show:
-    filter:
 apis:
   common:
     station_ids:
@@ -25,7 +26,8 @@ apis:
     urls:
       mock: "https://mockservice.croapp.cz/mock"
       doc: "https://rapidoc.croapp.cz"
-      api: "https://rapidev.croapp.cz"
+      # api: "https://rapidev.croapp.cz"
+      api: "https://mujrozhlas.croapi.cz/stations"
     update_local_db: true
     # update_local_db: [true, false, daily]
     endpoints: [
