@@ -24,6 +24,13 @@ def test_save_swagger() -> None:
     acr.save_swagger()
 
 
+def test_DB_local_csv_endpoint_get_json() -> None:
+    print()
+    acr = api_croapp.DB_local_csv(Cfg)
+    res = acr.endpoint_get_json("stations",300)
+    # print(res)
+
+
 def test_DB_local_csv() -> None:
     print()
     acr = api_croapp.DB_local_csv(Cfg)

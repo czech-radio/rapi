@@ -191,7 +191,7 @@ def deep_merge_dicts(source, destination):
 
 
 ### http request
-def request_url(url: str) -> requests.models.Response:
+def request_url(url: str) -> Union[requests.models.Response, None]:
     # headers = {}
     # params = {}
     # response = requests.get(url, headers=headers, params=params)
@@ -201,16 +201,16 @@ def request_url(url: str) -> requests.models.Response:
         response = requests.get(url)
     except requests.exceptions.HTTPError as errh:
         loge.error(errh)
-        return
+        return None
     except requests.exceptions.ConnectionError as errc:
         loge.error(f"Connection Error: {errc}")
-        return
+        return None
     except requests.exceptions.Timeout as errt:
         loge.error(f"Timeout Error:{errt}")
-        return
+        return None
     except requests.exceptions.RequestException as err:
         loge.error(f"unknow exception:{err}")
-        return
+        return None
     response.raise_for_status()
     return response
 
@@ -222,7 +222,7 @@ def request_url_json(url: str) -> Union[dict, None]:
         return None
     if response.content is None:
         return None
-    jdata=response.json()
+    jdata = response.json()
     if jdata is None:
         loge.warning(f"no json data to parse: {url}")
         return None
@@ -237,13 +237,14 @@ def request_url_yaml(url: str) -> Union[dict, None]:
         return None
     if response.content is None:
         return None
-    ydata=yaml.safe_load(response.content)
+    ydata = yaml.safe_load(response.content)
     if ydata is None:
         loge.warning(f"no yml data to parse: {url}")
         return None
     if len(ydata) == 0:
         logo.info("no data to parse: {url}")
     return ydata
+
 
 def dict_to_dataclass(dictr: dict, model: Type):
     pass

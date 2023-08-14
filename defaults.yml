@@ -23,10 +23,13 @@ apis:
     urls:
       mock: "https://mockservice.croapp.cz/mock"
       doc: "https://rapidoc.croapp.cz"
-      api: "https://mujrozhlas.croapi.cz/stations"
+      api: "https://mujrozhlas.croapi.cz"
       swagger: "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     update_local_db: true
     # update_local_db: [true, false, daily]
+    response:
+      limit: 500
+      limit_str: "?page%5Blimit%5D="
     endpoints: [
       "stations-all",
       "stations",

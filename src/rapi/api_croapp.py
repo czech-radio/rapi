@@ -52,19 +52,40 @@ class DB_local_csv:
         self.Cfg = cfg
         self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
         self.endpoints = cfg.runtime_get(["apis", "croapp", "endpoints"])
-        base_dir = cfg.runtime_get(["workdir", "dir"])
-        path = os.path.join(base_dir, self.__class__.__name__, "db")
+        base_dir = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
+        # path = os.path.join(base_dir, self.__class__.__name__, "db")
+        path = os.path.join(base_dir, "csv")
         helpers.mkdir_parent_panic(path)
         self.DB_work_dir = path
         self.DB_update = cfg.runtime_get(["apis", "croapp", "update_db"])
 
-    def endpoint_get_url(self, endpoint: str) -> str:
+    def endpoint_get_link(self, endpoint: str, limit: int = 0) -> str:
+        cfgp = ["apis", "croapp", "response"]
+        if limit == 0:
+            limit = self.Cfg.runtime_get([*cfgp, "limit"])
         api_url = self.urls.get("api", "")
+
         if api_url == "":
             loge.error(f"api url not defined")
             sys.exit(1)
         endp_url = "/".join((api_url, endpoint))
+
+        limstr = self.Cfg.runtime_get([*cfgp, "limit_str"])
+        if limit > 0 and limstr is not None:
+            endp_url = endp_url + limstr + str(limit)
         return endp_url
+
+    def endpoint_get_json(
+        self, endpoint: str, limit: int = 0
+    ) -> Union[dict, None]:
+        link = self.endpoint_get_link(endpoint,limit)
+        jdata = helpers.request_url_json(link)
+        return jdata
+
+    def endpoint_save_json(self, endpoint: str, limit: int = 1):
+        jdata = self.endpoint_get_json(endpoint, limit)
+        if jdata is None:
+            loge.error(f"no data to save: {endpoint}")
 
     def endpoint_file_needs_update(self, endpoint_file: str) -> bool:
         update = False
@@ -126,7 +147,7 @@ class DB_local_csv:
         ### endpoint files delete (cleanup)
         logo.info(f"before delete: {next_link}")
         if next_link == "":
-            link = self.endpoint_get_url(endp)
+            link = self.endpoint_get_link(endp)
             self.endpoint_file_clear([fpath, fpath_fields])
         else:
             link = next_link

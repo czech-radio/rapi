@@ -50,6 +50,7 @@ def test_request_url() -> None:
     url = "https://rapidev.croapp.cz/stations?"
     # url = "https://rapidev.croapp.cz/stat?"
     req = helpers.request_url(url)
+    assert req is not None
     helpers.pt(req.headers)
     helpers.pp(dict(req.headers))
     print(req.status_code)
@@ -75,6 +76,7 @@ def test_request_url_yaml() -> None:
 def test_dict_list_to_rows():
     url = "https://rapidev.croapp.cz/stations?"
     jdata = helpers.request_url_json(url)
+    assert jdata is not None
     sdata = jdata["data"]
     rows, header = helpers.dict_list_to_rows(sdata)
     helpers.save_rows_to_csv("./runtime2/stations.csv", rows, header)
@@ -85,8 +87,7 @@ def test_dict_list_to_rows():
 def test_json_to_csv() -> None:
     url = "https://rapidev.croapp.cz/stations?"
     jdata = helpers.request_url_json(url)
-    if jdata is None:
-        return
+    assert jdata is not None
     paths = helpers.dict_paths_vectors(jdata, list())
     print(paths)
     # print(jdata['data'])
