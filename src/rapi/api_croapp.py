@@ -4,8 +4,8 @@ import time
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Type, Union
-import requests
 
+import requests
 from dataclasses_json import dataclass_json
 from requests import Session, get
 
@@ -20,18 +20,20 @@ class API:
         self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
         self.StationIDs = station_ids.StationIDs(cfg)
 
-    def get_swagger(self)->dict:
-        url=self.Cfg.runtime_get(['apis','croapp','urls','swagger'])
-        ydata=helpers.request_url_yaml(url)
+    def get_swagger(self) -> Union[dict, None]:
+        url = self.Cfg.runtime_get(["apis", "croapp", "urls", "swagger"])
+        ydata = helpers.request_url_yaml(url)
+        if ydata is None:
+            logo.error("data not avaiable")
         return ydata
 
     def save_swagger(self):
-        ydata=self.get_swagger()
-        directory=self.Cfg.runtime_get(['apis','croapp','workdir','dir'])
-        filepath=os.path.join(directory,"apidef")
-        helpers.save_yaml(filepath,"swagger.yml",ydata)
-
-
+        ydata = self.get_swagger()
+        if ydata is None:
+            return
+        directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
+        filepath = os.path.join(directory, "apidef")
+        helpers.save_yaml(filepath, "swagger.yml", ydata)
 
     def get_station_guid(self, station_id: str) -> Union[str, None]:
         sid = model.Station_ids()

@@ -12,16 +12,17 @@ Cfg = config.CFG()
 Cfg.cfg_runtime_set_defaults()
 
 
-def test_get_swagger()->None:
+def test_get_swagger() -> None:
     print()
     acr = api_croapp.API(Cfg)
     acr.get_swagger()
 
-def test_save_swagger()->None:
+
+def test_save_swagger() -> None:
     print()
     acr = api_croapp.API(Cfg)
     acr.save_swagger()
-    
+
 
 def test_DB_local_csv() -> None:
     print()

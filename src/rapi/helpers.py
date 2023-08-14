@@ -201,13 +201,16 @@ def request_url(url: str) -> requests.models.Response:
         response = requests.get(url)
     except requests.exceptions.HTTPError as errh:
         loge.error(errh)
-        sys.exit(0)
+        return
     except requests.exceptions.ConnectionError as errc:
         loge.error(f"Connection Error: {errc}")
+        return
     except requests.exceptions.Timeout as errt:
         loge.error(f"Timeout Error:{errt}")
+        return
     except requests.exceptions.RequestException as err:
         loge.error(f"unknow exception:{err}")
+        return
     response.raise_for_status()
     return response
 
@@ -215,21 +218,32 @@ def request_url(url: str) -> requests.models.Response:
 def request_url_json(url: str) -> Union[dict, None]:
     response = request_url(url)
     # json_data = json.loads(response.text)
-    jdata = response.json()
+    if response is None:
+        return None
+    if response.content is None:
+        return None
+    jdata=response.json()
     if jdata is None:
         loge.warning(f"no json data to parse: {url}")
         return None
     if len(jdata) == 0:
         logo.info("no data to parse: {endp}")
-        return None
     return jdata
 
 
 def request_url_yaml(url: str) -> Union[dict, None]:
     response = request_url(url)
-    ydata = yaml.safe_load(response.content)
+    if response is None:
+        return None
+    if response.content is None:
+        return None
+    ydata=yaml.safe_load(response.content)
+    if ydata is None:
+        loge.warning(f"no yml data to parse: {url}")
+        return None
+    if len(ydata) == 0:
+        logo.info("no data to parse: {url}")
     return ydata
-
 
 def dict_to_dataclass(dictr: dict, model: Type):
     pass
@@ -282,9 +296,9 @@ def mkdir_parent_panic(path: str):
         sys.exit(1)
 
 
-def save_yaml(path: str,filename: str, data: dict):
+def save_yaml(path: str, filename: str, data: dict):
     try:
-        file_path=os.path.join(path,filename)
+        file_path = os.path.join(path, filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf8") as file:
             yaml.dump(data, file)

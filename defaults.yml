@@ -23,7 +23,6 @@ apis:
     urls:
       mock: "https://mockservice.croapp.cz/mock"
       doc: "https://rapidoc.croapp.cz"
-      # api: "https://rapidev.croapp.cz"
       api: "https://mujrozhlas.croapi.cz/stations"
       swagger: "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     update_local_db: true
