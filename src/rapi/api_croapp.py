@@ -21,7 +21,7 @@ class API:
 
     def get_station_guid(self, station_id: str) -> Union[str, None]:
         sid = model.Station_ids()
-        helpers.pp(sid.__dict__)
+        # helpers.pp(sid.__dict__)
         fkey = self.StationIDs.get_fkey(station_id, sid.croapp_guid)
         return fkey
 

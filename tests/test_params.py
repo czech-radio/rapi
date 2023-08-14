@@ -16,8 +16,9 @@ def test_params_yml_config() -> None:
     # sys.argv = ["test3.py", "-vv","--dbool", "--dint=hello"]
     # sys.argv = ["test3.py", "--dint"]
     # sys.argv = ["test3.py", "-vv","--test-par"]
-    sys.argv = ["test3.py", "-vv", "--dbool"]
-    # sys.argv = ["test3.py", "-vv"]
+    # sys.argv = ["test3.py", "-vv", "--dbool"]
+    sys.argv = ["test3.py", "-vv"]
+    # sys.argv = ["test3.py", "-vv","station","--id"]
     argp = params.params_yml_config()
     pars = argp.parse_args()
     # print(pars)

@@ -41,8 +41,6 @@ def debug_cfg(run: bool, cfg: config.CFG):
     helpers.pp(data)
     sys.exit(0)
 
-# def check_subcommand(cmdname: str)->bool:
-    # if 
 
 def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
     getv = Cfg.runtime_get
@@ -57,12 +55,16 @@ def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
     debug_cfg(run, Cfg)
 
     ### subcommands
-    subc=vars(ap).get("subcommand")
-    if  "station" == subc:
+    subc = vars(ap).get("subcommand")
+    if "station" == subc:
+        logo.info(f"running command: {subc}")
+        croapp = api_croapp.API(Cfg)
+        guid = croapp.get_station_guid("12")
+        print(guid)
+
+    if "show" == subc:
         logo.info(f"running command: {subc}")
 
-    if  "show" == subc:
-        logo.info(f"running command: {subc}")
 
 # croapp = api_croapp.API(Cfg)
 # st=croapp.get_station("11")
@@ -70,5 +72,3 @@ def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
 # logo.info(f"requesting stations: {args.broadcast}")
 # bcdata=Cfg.runtime_get(["apis","croapp"])
 # helpers.pprint(bcdata)
-
-
