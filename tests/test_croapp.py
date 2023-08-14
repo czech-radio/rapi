@@ -21,31 +21,34 @@ def test_get_swagger() -> None:
 def test_save_swagger() -> None:
     print()
     acr = api_croapp.API(Cfg)
-    ok=acr.save_swagger()
+    ok = acr.save_swagger()
     assert ok
 
 
-def test_DB_local_csv_endpoint_get_json() -> None:
+def test_DB_local_endpoint_get_json() -> None:
     print()
-    acr = api_croapp.DB_local_csv(Cfg)
-    res = acr.endpoint_get_json("stations",300)
+    acr = api_croapp.DB_local(Cfg)
+    res = acr.endpoint_get_json("stations", 300)
     assert res is not None
 
-def test_DB_local_csv_endpoint_save_json() -> None:
+
+def test_DB_local_endpoint_save_json() -> None:
     print()
-    acr = api_croapp.DB_local_csv(Cfg)
-    ok = acr.endpoint_save_json("stations",300)
+    acr = api_croapp.DB_local(Cfg)
+    ok = acr.endpoint_save_json("stations", 300)
     assert ok
 
-def test_DB_local_csv_endpoints_save_json() -> None:
+
+def test_DB_local_endpoints_save_json() -> None:
     print()
-    acr = api_croapp.DB_local_csv(Cfg)
+    acr = api_croapp.DB_local(Cfg)
     acr.endpoints_save_json(300)
 
-def test_DB_local_csv() -> None:
+
+def test_DB_local() -> None:
     print()
-    acr = api_croapp.DB_local_csv(Cfg)
-    acr.update_db()
+    acr = api_croapp.DB_local(Cfg)
+    acr.endpoints_csv_update(10)
 
 
 def test_API() -> None:

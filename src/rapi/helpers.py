@@ -297,7 +297,7 @@ def mkdir_parent_panic(path: str):
         sys.exit(1)
 
 
-def save_yaml(path: str, filename: str, data: dict)->bool:
+def save_yaml(path: str, filename: str, data: dict) -> bool:
     try:
         file_path = os.path.join(path, filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
@@ -319,7 +319,8 @@ def save_yaml(path: str, filename: str, data: dict)->bool:
         logo.info(f"data saved to: {file_path}")
         return True
 
-def save_json(path: str, filename: str, data: dict)->bool:
+
+def save_json(path: str, filename: str, data: dict) -> bool:
     try:
         file_path = os.path.join(path, filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)

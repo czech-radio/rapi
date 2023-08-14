@@ -1,0 +1,25 @@
+type,id,attributes.title,attributes.short_description,attributes.description,attributes.profile_id,relationships.participation.links.related,relationships.participation.data
+person,8bed7519-4284-32e5-a693-15144f7edc6d,"31. pluk radiační, chemické a biologické ochrany Liberec",,,6008915,https://mujrozhlas.croapi.cz/persons/8bed7519-4284-32e5-a693-15144f7edc6d/participation,[]
+person,ca53795a-04b2-3d1d-b746-cbf7bef0b5b8,43. výsadkový prapor Chrudim,,,5358477,https://mujrozhlas.croapi.cz/persons/ca53795a-04b2-3d1d-b746-cbf7bef0b5b8/participation,[]
+person,dad5f500-b8db-3aae-8598-6b3d7387d25e,a další,,,8059107,https://mujrozhlas.croapi.cz/persons/dad5f500-b8db-3aae-8598-6b3d7387d25e/participation,[]
+person,ce899b04-9948-3e92-96a3-2eb43d86fa72,A.Rokosová,,"<p>redaktorka zpravodajství</p>
+
+<p>V Českém rozhlasu Region pracuji jako <strong>redaktorka zpravodajství</strong> pro Příbramsko a Prahu-východ. Narodila jsem se v Praze, ale protože jsem většinu svého dosavadního života prožila na jejím okraji, „Pražák“ jsem pro všechny kromě „Pražáků“. Takže ani ryba, ani rak. Navíc lehce komplikovaný blíženec.</p>
+
+<p>S <strong>novinařinou</strong> jsem začala ve fakultním časopise, z něhož nepřímo vedla cesta do středočeské redakce MF DNES, kde jsem začínala jako student-elév a skončila u politiky. Strávila jsem tu celkem pět let. Rozhlasové vysílání mě vždycky lákalo, a tak když přišla možnost nastoupit do Českého rozhlasu, moc jsem se nerozmýšlela.</p>
+
+<p><strong>Film, co mne pořád baví:</strong> Samotáři a filmy, ve kterých od roku 2006 hrál DiCaprio nebo ty, které režíroval Christopher Nolan, Ridley Scott, Clint Eastwood, Woody Allen nebo Robert Sedláček. I když jsem asi něco jako filmový fanoušek, ráda objevuji nové věci, takže se moc často na filmy víckrát nedívám. A hlavně, mnohem větší vášní je pro mě divadlo.</p>
+
+<p><strong>Hudba, kterou mám ráda:</strong> Ačkoli zpívám vážně moc ráda, dost pravděpodobně mám něco jako absolutní hudební „hluch“, a tak si na muzice cením hlavně textů. Nejradši poslouchám české interprety jako jsou Kryštof, Tomáš Klus, Jaromír Nohavica, Szidi Tobias nebo Radůza. Ale chytly mě i ZAZ, Adele nebo Norah Jones.</p>
+
+<p><strong>Kniha, u níž nikdy neusnu:</strong> U Malého prince a knih od Milana Kundery (Směšné lásky můžu číst pořád dokola). V poslední době mě nadchnul Stín větru od Carlose Ruiz Zafóna nebo Vyhnání Gerty Schnirch od Kateřiny Tučkové.</p>
+
+<p><strong>Motto:</strong> Životní moudra a motta mě baví, ale upřímně, neumím se jimi řídit. Možná i proto mám nejradši tento výrok (ačkoli bych dost nerada dopadla jako jeho autor): Je lepší být nenáviděn pro to, jaký jsi, než být milován pro to, co nejsi.</p>
+
+",5003103,https://mujrozhlas.croapi.cz/persons/ce899b04-9948-3e92-96a3-2eb43d86fa72/participation,[]
+person,2cacc5d9-622d-3b2a-a469-d6443804e026,Abdul 52,,,5313084,https://mujrozhlas.croapi.cz/persons/2cacc5d9-622d-3b2a-a469-d6443804e026/participation,[]
+person,4a27dbc0-fa1d-3a15-a7aa-27b437e9a266,Abel Posse,,,8384264,https://mujrozhlas.croapi.cz/persons/4a27dbc0-fa1d-3a15-a7aa-27b437e9a266/participation,[]
+person,bf2b8163-56dc-3425-be6e-3ed4baafd316,Abu Bakr ibn Tufajl,,,7573649,https://mujrozhlas.croapi.cz/persons/bf2b8163-56dc-3425-be6e-3ed4baafd316/participation,[]
+person,aa0d5b80-0378-3bbd-9fd2-db289f815ac6,Achim von Arnim,,,7581860,https://mujrozhlas.croapi.cz/persons/aa0d5b80-0378-3bbd-9fd2-db289f815ac6/participation,[]
+person,1f94668f-fb69-3dce-aea7-894be640f3bf,Ad Hoc,,,8167962,https://mujrozhlas.croapi.cz/persons/1f94668f-fb69-3dce-aea7-894be640f3bf/participation,[]
+person,e123a380-5e4f-300d-a613-4bd1597388b4,Adalbert Stifter,,,5021271,https://mujrozhlas.croapi.cz/persons/e123a380-5e4f-300d-a613-4bd1597388b4/participation,[]

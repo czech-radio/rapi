@@ -27,13 +27,13 @@ class API:
             logo.error("data not avaiable")
         return ydata
 
-    def save_swagger(self)->bool:
+    def save_swagger(self) -> bool:
         ydata = self.get_swagger()
         if ydata is None:
             return False
         directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
         filepath = os.path.join(directory, "apidef")
-        ok=helpers.save_yaml(filepath, "swagger.yml", ydata)
+        ok = helpers.save_yaml(filepath, "swagger.yml", ydata)
         return ok
 
     def get_station_guid(self, station_id: str) -> Union[str, None]:
@@ -48,28 +48,29 @@ class API:
         return data
 
 
-class DB_local_csv:
+class DB_local:
     def __init__(self, cfg: config.CFG):
         self.Cfg = cfg
         self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
         self.endpoints = cfg.runtime_get(["apis", "croapp", "endpoints"])
-        base_dir = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
+        # path= self.Cfg.runtime_get(["apis", "croapp", "DB_local", "csv_workdir"])
         # path = os.path.join(base_dir, self.__class__.__name__, "db")
-        path = os.path.join(base_dir, "csv")
+        cfgb = ["apis", "croapp", "DB_local"]
+        path = cfg.runtime_get([*cfgb, "csvs_workdir"])
         helpers.mkdir_parent_panic(path)
-        self.DB_work_dir = path
-        self.DB_update = cfg.runtime_get(["apis", "croapp", "update_db"])
+        self.cscs_workdir = path
+        self.csvs_update = cfg.runtime_get([*cfgb, "csvs_update"])
 
-    def endpoint_get_link(self, endpoint: str, limit: int = 0) -> str:
+    def endpoint_get_link(self, endp: str, limit: int = 0) -> str:
         cfgb = ["apis", "croapp", "response"]
         if limit == 0:
             limit = self.Cfg.runtime_get([*cfgb, "limit"])
-        api_url = self.urls.get("api", "")
 
+        api_url = self.urls.get("api", "")
         if api_url == "":
             loge.error(f"api url not defined")
             sys.exit(1)
-        endp_url = "/".join((api_url, endpoint))
+        endp_url = "/".join((api_url, endp))
 
         limstr = self.Cfg.runtime_get([*cfgb, "limit_str"])
         if limit > 0 and limstr is not None:
@@ -79,92 +80,64 @@ class DB_local_csv:
     def endpoint_get_json(
         self, endpoint: str, limit: int = 0
     ) -> Union[dict, None]:
-        link = self.endpoint_get_link(endpoint,limit)
+        link = self.endpoint_get_link(endpoint, limit)
         jdata = helpers.request_url_json(link)
         return jdata
 
-    def endpoint_save_json(self, endpoint: str, limit: int = 0)->bool:
+    def endpoint_save_json(self, endpoint: str, limit: int = 0) -> bool:
         jdata = self.endpoint_get_json(endpoint, limit)
         if jdata is None:
             loge.error(f"no data to save: {endpoint}")
             return False
         directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
         filepath = os.path.join(directory, "json")
-        ok=helpers.save_json(filepath, endpoint+".json", jdata)
+        ok = helpers.save_json(filepath, endpoint + ".json", jdata)
         return ok
 
-    def endpoints_save_json(self,limit: int = 0):
-        cfgb = ["apis", "croapp",]
-        eps= self.Cfg.runtime_get([*cfgb,"endpoints"])
+    def endpoints_save_json(self, limit: int = 0):
+        cfgb = [
+            "apis",
+            "croapp",
+        ]
+        eps = self.Cfg.runtime_get([*cfgb, "endpoints"])
         for e in eps:
-            ok=self.endpoint_save_json(e,limit)
+            ok = self.endpoint_save_json(e, limit)
             if ok is False:
                 loge.error("endpoint json not saved: {e}")
 
-    def endpoint_file_needs_update(self, endpoint_file: str) -> bool:
-        update = False
-        fpath = endpoint_file
-        try:
-            mtime = os.path.getmtime(fpath)
-            if self.DB_update == True:
-                update = True
-            if self.DB_update == "daily":
-                mdate_time = datetime.fromtimestamp(mtime)
-                td = timedelta(days=1)
-                ### check if file is older than one day
-                if datetime.now() > mdate_time + td:
-                    update = True
-        except FileNotFoundError:
-            update = True
-        return update
+    def endpoints_csv_update(self, limit: int = 0, follow: bool = False):
+        for e in self.endpoints:
+            self.endpoint_csv_update(e, "", limit, follow)
 
-    def endpoint_file_clear(self, files: list[str]):
-        for file in files:
-            if os.path.exists(file):
-                logo.info(f"deleting endpoint file: {file}")
-                os.remove(file)
-
-    def endpoint_get_next_link(self, respone_json: dict) -> str:
-        links = respone_json.get("links", None)
-        if links is None:
-            return ""
-        next_link = links.get("next", None)
-        if next_link is None:
-            return ""
-        if next_link == "":
-            return ""
-        logo.info(f"trying next link: {next_link}")
-        return next_link
-
-    def endpoint_file_update(
-        self, endp: str, nlink: str = "", nlimit: int = 100
+    def endpoint_csv_update(
+        self, endp: str, nlink: str = "", limit: int = 0, follow: bool = False
     ):
         logo.info(f"updating from: {endp}")
-        nlink = self.endpoint_link_get_data(endp)
-        logo.info(f"nextlink: {nlink}")
+        nlink = self.endpoint_csv_get_data(endp, limit)
+        if follow is False:
+            return
         while True:
-            # time.sleep(3)
-            nlink = self.endpoint_link_get_data(endp, 100, nlink)
-            logo.info(f"second: {nlink}")
+            logo.info(f"nextlink: {nlink}")
+            nlink = self.endpoint_csv_get_data(endp, 0, nlink)
             if nlink == "":
                 break
 
-    def endpoint_link_get_data(
-        self, endp: str, nlimit: int = 100, next_link: str = ""
+    def endpoint_csv_get_data(
+        self, endp: str, limit: int = 0, nlink: str = ""
     ) -> str:
-        fpath = os.path.join(self.DB_work_dir, endp + ".csv")
-        fpath_fields = os.path.join(self.DB_work_dir, endp + "_fields.csv")
+        fpath = os.path.join(self.cscs_workdir, endp + ".csv")
+        fpath_fields = os.path.join(self.cscs_workdir, endp + "_fields.csv")
         if not self.endpoint_file_needs_update(fpath):
             return ""
         # logo.info(f"updating endpoint file: {fpath}")
 
         ### endpoint files delete (cleanup)
-        logo.info(f"before delete: {next_link}")
-        if next_link == "":
-            link = self.endpoint_get_link(endp)
+        logo.info(f"before delete: {nlink}")
+        if nlink == "":
+            link = self.endpoint_get_link(endp, limit)
             self.endpoint_file_clear([fpath, fpath_fields])
         else:
-            link = next_link
+            link = nlink
         ### download data
         jdict = helpers.request_url_json(link)
         if jdict is None:
@@ -186,6 +159,37 @@ class DB_local_csv:
         ### return next link if any
         return self.endpoint_get_next_link(jdict)
 
-    def update_db(self):
-        for e in self.endpoints:
-            self.endpoint_file_update(e)
+    def endpoint_file_needs_update(self, endpoint_file: str) -> bool:
+        update = False
+        fpath = endpoint_file
+        try:
+            mtime = os.path.getmtime(fpath)
+            if self.csvs_update == True:
+                update = True
+            if self.csvs_update == "daily":
+                mdate_time = datetime.fromtimestamp(mtime)
+                td = timedelta(days=1)
+                ### check if file is older than one day
+                if datetime.now() > mdate_time + td:
+                    update = True
+        except FileNotFoundError:
+            update = True
+        return update
+
+    def endpoint_file_clear(self, files: list[str]):
+        for file in files:
+            if os.path.exists(file):
+                logo.info(f"deleting endpoint file: {file}")
+                os.remove(file)
+
+    def endpoint_get_next_link(self, respone_json: dict) -> str:
+        links = respone_json.get("links", None)
+        if links is None:
+            return ""
+        nlink = links.get("next", None)
+        if nlink is None:
+            return ""
+        if nlink == "":
+            return ""
+        logo.info(f"trying next link: {nlink}")
+        return nlink

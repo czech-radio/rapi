@@ -25,8 +25,10 @@ apis:
       doc: "https://rapidoc.croapp.cz"
       api: "https://mujrozhlas.croapi.cz"
       swagger: "https://rapidoc.croapp.cz/apifile/openapi.yaml"
-    update_local_db: true
-    # update_local_db: [true, false, daily]
+    DB_local: 
+      csvs_update: true
+      #csvs_update: [true, false, daily]
+      csvs_workdir: "./runtime/croapp/csv/"
     response:
       limit: 500
       limit_str: "?page%5Blimit%5D="
