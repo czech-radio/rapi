@@ -69,9 +69,13 @@ class Cfg_default:
 
 ### config from user provided file
 def config_yml_file(file: str) -> dict:
-    with open(file, "r") as f:
-        data = yaml.safe_load(f)
-        return data
+    try:
+        with open(file, "r") as f:
+            data = yaml.safe_load(f)
+            return data
+    except Exception as e:
+        loge.debug("user config file not read")
+        return {}
 
 
 class Cfg_file:

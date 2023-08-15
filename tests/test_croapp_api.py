@@ -25,8 +25,9 @@ def test_get_station() -> None:
     id = api.get_station(str(11))
     print(id)
 
+
 def test_get_station_shows() -> None:
     api = api_croapp.API(Cfg)
     # data = api.get_station_shows(str(11),500)
-    data = api.get_station_shows(str(11),500)
+    data = api.get_station_shows(str(11), 500)
     print(data)

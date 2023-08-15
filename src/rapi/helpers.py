@@ -144,16 +144,23 @@ def dict_get_path(
             dicw = resdict
     return resdict
 
-def class_assign_attrs_fieldnum(cls: Any,data: dict,fields:list[int],paths:list[str]):
-    j=0
+
+def class_assign_attrs_fieldnum(
+    cls: Any, data: dict, fields: list[int], paths: list[list[str]]
+):
+    j = 0
     for i in cls.__dict__:
         path = paths[fields[j]]
         cls.__dict__[i] = dict_get_path(data, path)
         j = j + 1
     return cls
 
-def class_assign_attrs_fieldname(cls: Any,data: dict,fields:list[int],paths:list[str]):
+
+def class_assign_attrs_fieldname(
+    cls: Any, data: dict, fields: list[int], paths: list[str]
+):
     pass
+
 
 def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
     n = 0
@@ -299,6 +306,14 @@ def rows_transpose(rows: list, header: list = []) -> list:
 
 
 def mkdir_parent_panic(path: str):
+    if os.path.exists(path):
+        if os.path.isdir(path):
+            return
+        else:
+            loge.error(
+                f"path already exists and it is not a directory: '{path}'"
+            )
+            sys.exit(1)
     try:
         os.makedirs(path, exist_ok=True)
         logo.info(f"Created '{path}'")

@@ -15,12 +15,14 @@ def main() -> None:
         print(config.__version__)
         return
     ### set user specified config file
-    path = ["cfg", "file"]
+    path = ["usercfg", "file"]
     cfg_fname = helpers.get_first_not_none(path, [cfgp, cfge, cfgd])
-    cfgf = None
     if cfg_fname is not None:
         cfgf = config.Cfg_file(cfg_fname)
-    Cfg.add_sources([cfge, cfgp, cfgf])
+    else:
+        cfgf = None
+    # Cfg.add_sources([cfge, cfgp, cfgf])
+    Cfg.add_sources([cfgp, cfge, cfgf])
     Cfg.cfg_runtime_set()
     command.command(Cfg, cfgp.pars)
 
