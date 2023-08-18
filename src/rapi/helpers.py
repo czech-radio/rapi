@@ -236,15 +236,17 @@ def request_url_json(url: str) -> Union[dict, None]:
     response = request_url(url)
     # json_data = json.loads(response.text)
     if response is None:
+        loge.warning(f"no response: {url}")
         return None
     if response.content is None:
+        loge.warning(f"no response.content: {url}")
         return None
     jdata = response.json()
     if jdata is None:
         loge.warning(f"no json data to parse: {url}")
         return None
     if len(jdata) == 0:
-        logo.info("no data to parse: {endp}")
+        logo.info("no data to parse: {url}")
     return jdata
 
 

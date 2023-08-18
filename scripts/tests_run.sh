@@ -22,7 +22,7 @@ par="tests/test_params.py"
 # $ptest "${par}::test_params_yml_config"
 
 ### config
-# par="tests/test_config.py"
+par="tests/test_config.py"
 ####
 #### config.Cfg_?
 # $ptest $par
@@ -31,9 +31,7 @@ par="tests/test_params.py"
 # $ptest $par::test_Cfg_file
 # $ptest $par::test_Cfg_env
 # $ptest $par::test_Cfg_params
-
-#### config.CFG
-# $ptest tests/test_config.py::test_CFG
+$ptest tests/test_config.py::test_CFG
 
 ### broadcast
 par="tests/test_broadcast.py"
@@ -72,5 +70,6 @@ par="tests/test_croapp.py"
 #### api_croapp_api
 par="tests/test_croapp_api.py"
 # $ptest ${par}
-$ptest ${par}::test_get_station
+# $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
+# $ptest ${par}::test_get_stations

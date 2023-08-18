@@ -7,7 +7,7 @@ import sys
 default_format = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s"
 
 
-### ShortenedLevelFormatterA
+### ShortenedLevelFormatter
 #### modify format fields
 class ShortenedLevelFormatter(logging.Formatter):
     def format(self, record):

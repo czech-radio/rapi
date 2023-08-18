@@ -12,8 +12,8 @@ jako s objekty nikoliv jako s JSON.
 
 - Stations: Stanic (celostátní, regionální)
 - Shows: Pořady
-- Serials: Seriály epizod
-- Schedule: Program vysílání
+- Serials: Seriály epizod: Potreba definovat? skupina epizod
+- Schedule: Program vysílání - priorita
 - Episodes: Epizody pořadu
 - Genres: Žánry
 - Persons: Informace o osobách

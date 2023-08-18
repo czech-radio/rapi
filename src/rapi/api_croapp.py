@@ -46,11 +46,11 @@ class API:
         return fkey
 
     # def get_stations(self)->tuple[Station, ...]:
-    def get_stations(self, limit: int = 0):
+    def get_stations(self, limit: int = 0)-> tuple[Station, ...]:
         jdata = self.DB_local.endpoint_get_json("stations", limit)
         if jdata is None:
             loge.error("no json downloaded")
-            return
+            return None
         data = jdata.get("data", None)
         if data is None or len(data) == 0:
             loge.error("no data to extract")

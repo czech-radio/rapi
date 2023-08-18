@@ -16,6 +16,7 @@ def test_get_stations() -> None:
     print()
     api = api_croapp.API(Cfg)
     st = api.get_stations(10)
+    print(st)
     assert st is not None
 
 

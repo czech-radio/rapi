@@ -28,10 +28,8 @@ TCASES = [
     "env",
     ["test", "env"],
     "env",
-    ["nomek"],
-    "fenv",
-    ["only_in_env"],
-    "fenv",
+    ["test", "par"],
+    "env",
 ]
 
 TIN = []
@@ -78,13 +76,13 @@ def test_Cfg_env() -> None:
 
 def test_Cfg_params() -> None:
     print()
-    sys.argv = ["test3.py", "-vv", "--test-par", "-di=10"]
+    sys.argv = ["test3.py", "-vv", "--test-par=par", "-di=10"]
     # sys.argv = ["test3.py", "-vv"]
     cfg = config.Cfg_params()
     val = cfg.get(["verbose"])
     assert val == 2
     val = cfg.get(["test", "par"])
-    assert val is True
+    assert val == "par"
 
 
 def test_CFG() -> None:
@@ -100,7 +98,7 @@ def test_CFG() -> None:
 
     ### add sources
     #### param source
-    sys.argv = ["test3.py", "--test-par", "-vv"]
+    sys.argv = ["test3.py", "--test-par=par", "-vv"]
     cfgp = config.Cfg_params()
     # print(cfgp.cfg)
 
@@ -113,9 +111,9 @@ def test_CFG() -> None:
 
     ### add sources in order of preference
     # Cfg.add_sources([cfge])
-    # Cfg.add_sources([cfgf])
+    Cfg.add_sources([cfgf])
     # Cfg.add_sources([cfge, cfgf])
-    Cfg.add_sources([cfgp, cfge, cfgf])
+    # Cfg.add_sources([cfgp, cfge, cfgf])
 
     Cfg.cfg_runtime_set()
-    hp.pp(Cfg.cfg_runtime)
+    # hp.pp(Cfg.cfg_runtime)

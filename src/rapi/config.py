@@ -5,6 +5,7 @@ import os
 import pkgutil
 import types
 from typing import Any, Optional, Union
+import copy
 
 import yaml
 from ruamel.yaml import YAML
@@ -104,6 +105,7 @@ class Cfg_env:
     def __init__(self):
         self.cfg = env_vars_dict_intersec(config_yml_default())
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
+        # helpers.pp(self.cfg)
 
 
 def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
@@ -124,6 +126,7 @@ class Cfg_params:
         pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
+        # helpers.pp(self.cfg)
 
 
 class CFG:
@@ -153,15 +156,17 @@ class CFG:
     def cfg_runtime_set(self) -> None:
         srcs = self.cfg_sources
         res: dict = {}
-        ### merge all sources
+        ### merge in all sources in order of increasing priority
         if srcs is None or len(srcs) == 0:
             self.cfg_runtime = self.cfg_default.cfg
         else:
-            if self.cfg_default.cfg is not None:
-                srcs.append(self.cfg_default)
             for s in reversed(srcs):
-                res = helpers.deep_merge_dicts(s.cfg, res)
+                tmps=copy.deepcopy(s.cfg)
+                res = helpers.deep_merge_dicts(tmps, res)
+        ### finaly merge with defaults.yml which should contain full set of variables
+        res=helpers.deep_merge_dicts(res,self.cfg_default.cfg)
         self.cfg_runtime = res
+        helpers.pp(res)
 
     def runtime_get(self, path: list):
         val = helpers.dict_get_path(self.cfg_runtime, path)

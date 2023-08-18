@@ -5,7 +5,7 @@ debug:          #
 workdir:
   dir: "./runtime/"
 usercfg:
-  file: "./tests/data/efaults_alt.yml"
+  file: "./tests/data/defaults_alt.yml"
 commands: # subcommands
   station:  # filter stations
     id:     # -id; int; store; filter by id
@@ -52,13 +52,13 @@ apis:
 # FOR TESTING
 ## DEBUGING CONFIG FILE
 test:
-  par: "def"      # -tp; none; store_true; test par
-  env: "def"      # -te; none; store_true; test env
-  def: "def"      # -td; none; store_true; test def
-  alt: "def"      # -ta; none; store_true; test alt
+  par: "def"      # -tp; none; store; test par
+  env: "def"      # -te; none; store; test env
+  def: "def"      # -td; none; store; test def
+  alt: "def"      # -ta; none; store; test alt
   cfg_prio: "def.yml"
   logs: false
     
 ## TESTING PARAMS DEFINITION
 dbool: false      # -db; none; store_true; dummy boolean;
-dint: 10          # -di; int; store; dummy int;
+dint: 1          # -di; int; store; dummy int;

@@ -82,7 +82,8 @@ def params_add_argument(
         ### long version
         key,
         required=False,
-        default=keyval,
+        ### NOTE: default value is given in defaults.yml. If default is set in here, there is problem when merging with env or with values from alt file. If params given on commanline has higest prioriy in config sources, the default values will overwrite even though they are not explicitly given on commandline.
+        # default=keyval,
         action=cvec[2],
         help=cvec[3]
         ### type converts param value to type or with callable function
