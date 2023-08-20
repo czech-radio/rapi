@@ -119,7 +119,6 @@ def params_yml_comments(cm: CommentedMap, ap: AP.ArgumentParser, pkey: str):
         # debug_unparsed_comment(cm.ca.items[key])
         comment = cm.ca.items[key][2]
         if key == "commands":
-            # ### TODO: parse subcommand flags from comment?
             parse_commands(cm[key], ap)
             continue
         if comment is not None:
@@ -140,14 +139,15 @@ def parse_commands(cmds: dict, ap: AP.ArgumentParser):
         cmdp = subp.add_parser(cmd, help="request " + cmd)
         cmdp.add_argument("-f", "--filter", type=str)
         cmp = cmds.get(cmd, None)
+        # cmp: <class 'ruamel.yaml.comments.CommentedMap'>
         if cmp is not None:
-            ##TODO: DT:2023/08/14_18:40:13, LV:1
-            ###SD: Parse subcommands flags
+            # print(type(cmp))
             # print(cmd, cmp.ca)
-            # params_yml_comments(cmp,ap,"")
-            pass
+            # params_yml_comments(cmp, cmdp, "--"+cmd)
+            params_yml_comments(cmp, cmdp, "--commands-"+cmd)
 
+def parse_subcommand_flag(cm: CommentedMap):
+    for key in cm.ca.items:
+        print(key)
+        print(cm.ca.items[key][2])
 
-def parse_command(argp: AP.ArgumentParser, cmdname: str):
-    subp = argp.add_subparsers(title="subcommands")
-    subp.add_parser(cmdname, help="request " + cmdname)

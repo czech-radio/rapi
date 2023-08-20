@@ -56,14 +56,15 @@ def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
     ### subcommands
     subc = vars(ap).get("subcommand", None)
 
-    if subc is not None:
-        logo.info(f"running command: {subc}")
+    # if subc is not None:
+        # logo.info(f"running command: {subc}")
 
     if "station" == subc:
         logo.info(f"running command: {subc}")
         croapp = api_croapp.API(Cfg)
-        guid = croapp.get_station_guid("12")
-        print(guid)
+        print(vars(ap))
+        # guid = croapp.get_station_guid("11")
+        # print(guid)
 
     if "show" == subc:
         logo.info(f"running command: {subc}")

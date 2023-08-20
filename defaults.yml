@@ -7,8 +7,11 @@ workdir:
 usercfg:
   file: "./tests/data/defaults_alt.yml"
 commands: # subcommands
+  tsub:
+    tflag1:  # -t1; bool; store_true; test subcommand flag
+    tflag2:  # -t2; bool; store_true; test subcommand flag
   station:  # filter stations
-    id:     # -id; int; store; filter by id
+    id: 1  # -id; int; store; filter by id
     test: 
   show:
 apis:

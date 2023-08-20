@@ -1,11 +1,11 @@
 import argparse
 import configparser
+import copy
 import logging
 import os
 import pkgutil
 import types
 from typing import Any, Optional, Union
-import copy
 
 import yaml
 from ruamel.yaml import YAML
@@ -161,12 +161,11 @@ class CFG:
             self.cfg_runtime = self.cfg_default.cfg
         else:
             for s in reversed(srcs):
-                tmps=copy.deepcopy(s.cfg)
+                tmps = copy.deepcopy(s.cfg)
                 res = helpers.deep_merge_dicts(tmps, res)
         ### finaly merge with defaults.yml which should contain full set of variables
-        res=helpers.deep_merge_dicts(res,self.cfg_default.cfg)
+        res = helpers.deep_merge_dicts(res, self.cfg_default.cfg)
         self.cfg_runtime = res
-        helpers.pp(res)
 
     def runtime_get(self, path: list):
         val = helpers.dict_get_path(self.cfg_runtime, path)
