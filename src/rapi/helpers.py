@@ -11,7 +11,7 @@ import numpy as np
 import requests
 import yaml
 
-from rapi.logger import log_stdout as loge
+from rapi.logger import log_stderr as loge
 from rapi.logger import log_stdout as logo
 
 

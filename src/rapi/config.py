@@ -11,7 +11,7 @@ import yaml
 from ruamel.yaml import YAML
 
 from rapi import helpers, params
-from rapi.logger import log_stdout as loge
+from rapi.logger import log_stderr as loge
 from rapi.logger import log_stdout as logo
 
 # from mergedeep import merge

@@ -31,7 +31,7 @@ par="tests/test_config.py"
 # $ptest $par::test_Cfg_file
 # $ptest $par::test_Cfg_env
 # $ptest $par::test_Cfg_params
-$ptest tests/test_config.py::test_CFG
+# $ptest tests/test_config.py::test_CFG
 
 ### broadcast
 par="tests/test_broadcast.py"
@@ -66,6 +66,7 @@ par="tests/test_croapp.py"
 # $ptest ${par}::test_DB_local_endpoint_save_json
 # $ptest ${par}::test_DB_local_endpoints_save_json
 # $ptest ${par}::test_DB_local_csv_update
+# $ptest ${par}::test_DB_local_endp_get_full_json
 
 #### api_croapp_api
 par="tests/test_croapp_api.py"
@@ -73,3 +74,10 @@ par="tests/test_croapp_api.py"
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
 # $ptest ${par}::test_get_stations
+
+### errors
+par="tests/test_errors.py"
+# $ptest $par
+$ptest $par::test_HelloErr
+# $ptest $par::test_Err_None
+# $ptest $par::test_Err

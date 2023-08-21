@@ -12,7 +12,7 @@ from requests import Session, get
 
 from rapi import config, helpers, station_ids
 from rapi.helpers import dict_get_path as DGP
-from rapi.logger import log_stdout as loge
+from rapi.logger import log_stderr as loge
 from rapi.logger import log_stdout as logo
 from rapi.model import Show, Station, StationIDs
 
@@ -47,7 +47,7 @@ class API:
 
     # def get_stations(self)->tuple[Station, ...]:
     def get_stations(self, limit: int = 0) -> tuple[Station, ...]:
-        jdata = self.DB_local.endpoint_get_json("stations", limit)
+        jdata = self.DB_local.endp_get_json("stations", limit)
         if jdata is None:
             loge.error("no json downloaded")
             return None
@@ -82,7 +82,7 @@ class API:
             loge.error("unknown station id")
             return None
         endp = "stations/" + guid + "/shows"
-        jdata = self.DB_local.endpoint_get_json(endp, limit)
+        jdata = self.DB_local.endp_get_json(endp, limit)
         if jdata is None:
             loge.error("no json downloaded")
             return
@@ -116,16 +116,16 @@ class DB_local:
     def __init__(self, cfg: config.CFG):
         self.Cfg = cfg
         self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
-        self.endpoints = cfg.runtime_get(["apis", "croapp", "endpoints"])
+        self.endps = cfg.runtime_get(["apis", "croapp", "endpoints"])
         # path= self.Cfg.runtime_get(["apis", "croapp", "DB_local", "csv_workdir"])
         # path = os.path.join(base_dir, self.__class__.__name__, "db")
-        cfgb = ["apis", "croapp", "DB_local"]
+        cfgb = ["apis", "croapp", "db_local"]
         path = cfg.runtime_get([*cfgb, "csvs_workdir"])
         helpers.mkdir_parent_panic(path)
         self.cscs_workdir = path
         self.csvs_update = cfg.runtime_get([*cfgb, "csvs_update"])
 
-    def endpoint_get_link(self, endp: str, limit: int = 0) -> str:
+    def endp_get_link(self, endp: str, limit: int = 0) -> str:
         cfgb = ["apis", "croapp", "response"]
         if limit == 0:
             limit = self.Cfg.runtime_get([*cfgb, "limit"])
@@ -141,52 +141,63 @@ class DB_local:
             endp_url = endp_url + limstr + str(limit)
         return endp_url
 
-    def endpoint_get_json(
-        self, endpoint: str, limit: int = 0
-    ) -> Union[dict, None]:
-        link = self.endpoint_get_link(endpoint, limit)
+    def endp_get_full_json(self, endp: str, limit: int = 0):
+        link = self.endp_get_link(endp, limit)
+        jdict = helpers.request_url_json(link)
+        if jdict is None:
+            loge.error(f"no data to save: {endp}")
+            return False
+        data = jdict.get("data", None)
+        if data is None or len(data) == 0:
+            loge.warning(f"no data section to parse: {endp}")
+            return ""
+        # nlink=self.endp_get_next_link(jdata)
+        # jdata=self.endp_get_json(endp,limit)
+
+    def endp_get_json(self, endp: str, limit: int = 0) -> Union[dict, None]:
+        link = self.endp_get_link(endp, limit)
         jdata = helpers.request_url_json(link)
         return jdata
 
-    def endpoint_save_json(self, endpoint: str, limit: int = 0) -> bool:
-        jdata = self.endpoint_get_json(endpoint, limit)
+    def endp_save_json(self, endp: str, limit: int = 0) -> bool:
+        jdata = self.endp_get_json(endp, limit)
         if jdata is None:
-            loge.error(f"no data to save: {endpoint}")
+            loge.error(f"no data to save: {endp}")
             return False
         directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
         filepath = os.path.join(directory, "json")
-        ok = helpers.save_json(filepath, endpoint + ".json", jdata)
+        ok = helpers.save_json(filepath, endp + ".json", jdata)
         return ok
 
-    def endpoints_save_json(self, limit: int = 0):
+    def endps_save_json(self, limit: int = 0):
         cfgb = [
             "apis",
             "croapp",
         ]
         eps = self.Cfg.runtime_get([*cfgb, "endpoints"])
         for e in eps:
-            ok = self.endpoint_save_json(e, limit)
+            ok = self.endp_save_json(e, limit)
             if ok is False:
                 loge.error("endpoint json not saved: {e}")
 
-    def endpoints_csv_update(self, limit: int = 0, follow: bool = False):
-        for e in self.endpoints:
-            self.endpoint_csv_update(e, "", limit, follow)
+    def endps_csv_update(self, limit: int = 0, follow: bool = False):
+        for e in self.endps:
+            self.endp_csv_update(e, "", limit, follow)
 
-    def endpoint_csv_update(
+    def endp_csv_update(
         self, endp: str, nlink: str = "", limit: int = 0, follow: bool = False
     ):
         logo.info(f"updating from: {endp}")
-        nlink = self.endpoint_csv_get_data(endp, limit)
+        nlink = self.endp_csv_get_data(endp, limit)
         if follow is False:
             return
         while True:
             logo.info(f"nextlink: {nlink}")
-            nlink = self.endpoint_csv_get_data(endp, 0, nlink)
+            nlink = self.endp_csv_get_data(endp, 0, nlink)
             if nlink == "":
                 break
 
-    def endpoint_csv_get_data(
+    def endp_csv_get_data(
         self, endp: str, limit: int = 0, nlink: str = ""
     ) -> str:
         # helpers.mkdir_parent_panic(path)
@@ -195,15 +206,15 @@ class DB_local:
         dpath = os.path.dirname(fpath)
         helpers.mkdir_parent_panic(dpath)
         fpath_fields = os.path.join(self.cscs_workdir, endp + "_fields.csv")
-        if not self.endpoint_file_needs_update(fpath):
+        if not self.endp_file_needs_update(fpath):
             return ""
-        # logo.info(f"updating endpoint file: {fpath}")
+        # logo.info(f"updating endp file: {fpath}")
 
-        ### endpoint files delete (cleanup)
+        ### endp files delete (cleanup)
         logo.info(f"before delete: {nlink}")
         if nlink == "":
-            link = self.endpoint_get_link(endp, limit)
-            self.endpoint_file_clear([fpath, fpath_fields])
+            link = self.endp_get_link(endp, limit)
+            self.endp_file_clear([fpath, fpath_fields])
         else:
             link = nlink
         ### download data
@@ -225,11 +236,11 @@ class DB_local:
             tdata = helpers.rows_transpose([header])
             helpers.save_rows_to_csv(fpath_fields, tdata)
         ### return next link if any
-        return self.endpoint_get_next_link(jdict)
+        return self.endp_get_next_link(jdict)
 
-    def endpoint_file_needs_update(self, endpoint_file: str) -> bool:
+    def endp_file_needs_update(self, endp_file: str) -> bool:
         update = False
-        fpath = endpoint_file
+        fpath = endp_file
         try:
             mtime = os.path.getmtime(fpath)
             if self.csvs_update == True:
@@ -244,13 +255,13 @@ class DB_local:
             update = True
         return update
 
-    def endpoint_file_clear(self, files: list[str]):
+    def endp_file_clear(self, files: list[str]):
         for file in files:
             if os.path.exists(file):
                 logo.info(f"deleting endpoint file: {file}")
                 os.remove(file)
 
-    def endpoint_get_next_link(self, respone_json: dict) -> str:
+    def endp_get_next_link(self, respone_json: dict) -> str:
         links = respone_json.get("links", None)
         if links is None:
             return ""

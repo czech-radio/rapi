@@ -27,7 +27,7 @@ apis:
       doc: "https://rapidoc.croapp.cz"
       api: "https://mujrozhlas.croapi.cz"
       swagger: "https://rapidoc.croapp.cz/apifile/openapi.yaml"
-    DB_local: 
+    db_local: 
       csvs_update: true
       #csvs_update: [true, false, daily]
       csvs_workdir: "./runtime/croapp/csv/"
@@ -60,7 +60,7 @@ test:
   def: "def"      # -td; none; store; test def
   alt: "def"      # -ta; none; store; test alt
   cfg_prio: "def.yml"
-  logs: false
+  logs: false     # -tl; bool; store_true; test printing logs
     
 ## TESTING PARAMS DEFINITION
 dbool: false      # -db; none; store_true; dummy boolean;
