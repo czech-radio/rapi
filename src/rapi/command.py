@@ -6,7 +6,7 @@ import sys
 import time
 from typing import Type
 
-from rapi import api_croapp, config, helpers
+from rapi import client, config, helpers
 from rapi.logger import log_stderr as loge
 from rapi.logger import log_stdout as logo
 
@@ -60,7 +60,7 @@ def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
         logo.info(f"running command: {subc}")
 
     if "station" == subc:
-        croapp = api_croapp.API(Cfg)
+        croapp = client.API(Cfg)
         print(vars(ap))
         # guid = croapp.get_station_guid("11")
         # print(guid)

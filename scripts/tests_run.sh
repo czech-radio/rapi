@@ -55,8 +55,8 @@ par="tests/test_helpers.py"
 # $ptest ${par}::test_dict_list_to_rows
 
 
-#### api_croapp
-par="tests/test_croapp.py"
+#### client
+par="tests/test_client.py"
 # $ptest ${par}
 # $ptest ${par}::test_DB_local
 # $ptest ${par}::test_API
@@ -68,8 +68,8 @@ par="tests/test_croapp.py"
 # $ptest ${par}::test_DB_local_csv_update
 # $ptest ${par}::test_DB_local_endp_get_full_json
 
-#### api_croapp_api
-par="tests/test_croapp_api.py"
+#### api_client_api
+par="tests/test_client_api.py"
 # $ptest ${par}
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
@@ -78,6 +78,7 @@ par="tests/test_croapp_api.py"
 ### errors
 par="tests/test_errors.py"
 # $ptest $par
-$ptest $par::test_HelloErr
+# $ptest $par::test_HelloErr
+$ptest $par::test_return_tuple
 # $ptest $par::test_Err_None
 # $ptest $par::test_Err
