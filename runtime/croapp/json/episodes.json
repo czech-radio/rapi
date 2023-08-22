@@ -11733,6 +11733,60 @@ data:
 - attributes:
     asset:
       credit:
+        author: ''
+        description: "Dopravn\xED nehoda (ilustra\u010Dn\xED foto)"
+        license: CC0 1.0
+        licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.cs
+        origin_url: ''
+        source: Profimedia
+      focal_point: 50,50
+      height: 833
+      id: dc77b378-28d7-36eb-aeb0-cd1292b941ba
+      inherited: true
+      url: https://portal.rozhlas.cz/sites/default/files/images/03694997.jpeg
+      width: 1280
+    audioLinks:
+    - bitrate: 256
+      duration: 59
+      linkType: download
+      url: https://croaod.cz/download/d22dda77-bf6c-4fad-9610-c0abae50be13.mp3
+      variant: mp3
+    description: ''
+    mirroredShow:
+      title: "Zelen\xE1 vlna"
+    part: null
+    shortTitle: "Informace o dopravn\xED situaci volejte na bezplatnou linku 800 553\
+      \ 553."
+    since: '2023-08-19T03:04:30+02:00'
+    till: '2023-08-19T03:05:29+02:00'
+    title: "Informace o dopravn\xED situaci volejte na bezplatnou linku 800 553 553."
+    updated: '2023-08-19T03:13:33+02:00'
+  id: 001638c9-dbca-3770-908f-077637e4ee99
+  meta:
+    ga:
+      baseId: null
+      contentCreator: radiozurnal
+      contentId: d22dda77-bf6c-4fad-9610-c0abae50be13
+  relationships:
+    genres:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/episodes/001638c9-dbca-3770-908f-077637e4ee99/genres
+    keywords:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/episodes/001638c9-dbca-3770-908f-077637e4ee99/keywords
+    serial: {}
+    show:
+      data:
+        id: 48678000-b905-3b68-9b80-f4d20326f03b
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b
+  type: episode
+- attributes:
+    asset:
+      credit:
         author: Fotobanka Pixabay
         description: "Duhov\xE9 kuli\u010Dky (ilustra\u010Dn\xED foto)"
         license: ''
@@ -13958,6 +14012,67 @@ data:
         type: show
       links:
         related: https://mujrozhlas.croapi.cz/shows/27b8bc43-35e2-3c7e-a6ad-da003a0a2822
+  type: episode
+- attributes:
+    asset:
+      credit:
+        author: "V\xEDt \u0160im\xE1nek"
+        description: "\xDAvodn\xED choreo pra\u017Esk\xE9 Slavie v utk\xE1n\xED proti\
+          \ Ban\xEDku Ostrava"
+        license: ''
+        origin_url: ''
+        source: "\u010CTK"
+      focal_point: 50,50
+      height: 2338
+      id: aef38964-0fd5-3eb4-8960-b565a2d50caf
+      url: https://portal.rozhlas.cz/sites/default/files/uploader/profimedia-079879129_230821-080327_rej.jpg
+      width: 3507
+    audioLinks:
+    - bitrate: 128
+      duration: 167
+      linkType: download
+      url: https://portal.rozhlas.cz/sites/default/files/audios/d0604249257075498d8a0e6e0d61db53.mp3
+      variant: mp3
+    description: "<p>Fotbalist\xE9 Slavie v nov\xE9 sezon\u011B&nbsp;jako jedin\xED\
+      \ neztratili body, v utk\xE1n\xED 5. kola na \u010Derstv\u011B polo\u017Een\xE9\
+      m tr\xE1vn\xEDku porazili ostravsk\xFD Ban\xEDk 1:0. Z\xE1pasy Slavie a Ban\xED\
+      ku pat\u0159\xED dlouhodob\u011B k nejv\u011Bt\u0161\xEDm utk\xE1n\xEDm v \u010C\
+      esku d\xEDky velmi aktivn\xEDm fanou\u0161kovsk\xFDm t\xE1bor\u016Fm. Ned\u011B\
+      ln\xED duel ve vr\u0161ovick\xE9m Edenu nav\u0161t\xEDvilo p\u0159es 19 tis\xED\
+      c lid\xED, kte\u0159\xED vytvo\u0159ili bou\u0159livou atmosf\xE9ru.<br>\nJaroslav\
+      \ Pla\u0161il</p>"
+    mirroredShow:
+      title: "Speci\xE1l Radio\u017Eurn\xE1lu Sport"
+    part: null
+    shortTitle: "Z\xE1pas m\u011Bl fantastickou kulisu mezin\xE1rodn\xED \xFArovn\u011B\
+      , chv\xE1l\xED si Trpi\u0161ovsk\xFD po duelu Slavie proti Ban\xEDku"
+    since: '2023-08-21T08:30:00+02:00'
+    till: '2023-08-21T08:32:47+02:00'
+    title: "Utk\xE1n\xED m\u011Blo fantastickou kulisu mezin\xE1rodn\xED \xFArovn\u011B\
+      , pochvaluje si Trpi\u0161ovsk\xFD po z\xE1pase Slavie proti Ban\xEDku"
+    updated: '2023-08-21T08:50:15+02:00'
+  id: 001a4749-46e2-360b-870e-e2c6194fc795
+  meta:
+    ga:
+      baseId: null
+      contentCreator: radiozurnal-sport
+      contentId: '10888034'
+  relationships:
+    genres:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/episodes/001a4749-46e2-360b-870e-e2c6194fc795/genres
+    keywords:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/episodes/001a4749-46e2-360b-870e-e2c6194fc795/keywords
+    serial: {}
+    show:
+      data:
+        id: 092b4b5b-81e9-315f-8d19-eef4bb05d39e
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/092b4b5b-81e9-315f-8d19-eef4bb05d39e
   type: episode
 - attributes:
     asset:
@@ -17634,128 +17749,11 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/c9a930a6-dad5-3316-bad9-d1c86ca8684c
   type: episode
-- attributes:
-    asset:
-      credit:
-        author: "Ale\u0161 Vav\u0159\xEDk"
-        description: "Hlavn\xED zpr\xE1vy"
-        license: ''
-        origin_url: ''
-        source: ''
-      focal_point: 50,50
-      height: 1400
-      id: 80cf105b-c7c9-3333-8a38-4af913488cfa
-      inherited: true
-      url: https://portal.rozhlas.cz/sites/default/files/images/03238750.jpeg
-      width: 2100
-    audioLinks:
-    - bitrate: 256
-      duration: 414
-      linkType: download
-      url: https://croaod.cz/download/7d71c312-a107-478b-abeb-dc44143bf5dc.mp3
-      variant: mp3
-    - bitrate: 128
-      duration: 414
-      linkType: ondemand
-      url: https://croaod.cz/stream/7d71c312-a107-478b-abeb-dc44143bf5dc.m4a/manifest.mpd
-      variant: dash
-    - bitrate: 128
-      duration: 414
-      linkType: ondemand
-      url: https://croaod.cz/stream/7d71c312-a107-478b-abeb-dc44143bf5dc.m4a/playlist.m3u8
-      variant: hls
-    description: "O dopravn\xED situaci informujte na bezplatn\xE9 lince 800 553 553"
-    mirroredShow:
-      title: "Hlavn\xED zpr\xE1vy"
-    part: null
-    shortTitle: "Zpravodajstv\xED z \u010Ceska i ze sv\u011Bta. Sport, Zelen\xE1 vlna\
-      \ a p\u0159edpov\u011B\u010F po\u010Das\xED."
-    since: '2021-06-17T06:00:00+02:00'
-    till: '2021-06-17T06:06:54+02:00'
-    title: "Zpravodajstv\xED z \u010Ceska i ze sv\u011Bta. Sport, Zelen\xE1 vlna a\
-      \ p\u0159edpov\u011B\u010F po\u010Das\xED."
-    updated: '2021-06-17T06:09:26+02:00'
-  id: 00222a3f-17be-3404-9c41-d113f5fc572e
-  meta:
-    ga:
-      baseId: null
-      contentCreator: unknown
-      contentId: 7d71c312-a107-478b-abeb-dc44143bf5dc
-  relationships:
-    genres:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/episodes/00222a3f-17be-3404-9c41-d113f5fc572e/genres
-    keywords:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/episodes/00222a3f-17be-3404-9c41-d113f5fc572e/keywords
-    serial: {}
-    show:
-      data:
-        id: bcb42b61-7227-32a5-8371-fb582584116f
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/bcb42b61-7227-32a5-8371-fb582584116f
-  type: episode
-- attributes:
-    asset:
-      credit:
-        author: Khalil Baalbaki
-        description: "Dechovky pro Vyso\u010Dinu, vizu\xE1l"
-        license: ''
-        origin_url: ''
-        source: ''
-      focal_point: 50,50
-      height: 633
-      id: a469eba3-2717-32d1-a3bf-f48fbe393133
-      inherited: true
-      url: https://portal.rozhlas.cz/sites/default/files/ca958f69ec368c08f21d4e11a3190b5d.jpeg
-      width: 950
-    audioLinks:
-    - bitrate: 128
-      duration: 3334
-      linkType: download
-      url: https://portal.rozhlas.cz/sites/default/files/audios/75c790dda254901dd82f89a96d46632a.mp3
-      variant: mp3
-    description: "<p>Dechovky pro Vyso\u010Dinu - 15.3.<br>\nTom\xE1\u0161 Vodr\xE1\
-      \u017Eka</p>"
-    mirroredShow:
-      title: "Dechovky pro Vyso\u010Dinu"
-    part: null
-    shortTitle: "Dechovky pro Vyso\u010Dinu - 15.3."
-    since: '2021-03-15T17:00:00+01:00'
-    till: '2021-03-15T17:55:34+01:00'
-    title: "Dechovky pro Vyso\u010Dinu - 15.3."
-    updated: '2023-08-09T14:27:27+02:00'
-  id: 002251ef-4b12-3363-aa26-90ee9ad7bd26
-  meta:
-    ga:
-      baseId: null
-      contentCreator: vysocina
-      contentId: '9677535'
-  relationships:
-    genres:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/episodes/002251ef-4b12-3363-aa26-90ee9ad7bd26/genres
-    keywords:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/episodes/002251ef-4b12-3363-aa26-90ee9ad7bd26/keywords
-    serial: {}
-    show:
-      data:
-        id: ee8d41ec-8ad7-3ecd-ab3a-b99170f0841e
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/ee8d41ec-8ad7-3ecd-ab3a-b99170f0841e
-  type: episode
 links:
   first: null
-  last: https://mujrozhlas.croapi.cz/episodes?page%5Blimit%5D=300&page%5Boffset%5D=540900
+  last: https://mujrozhlas.croapi.cz/episodes?page%5Blimit%5D=300&page%5Boffset%5D=542700
   next: https://mujrozhlas.croapi.cz/episodes?page%5Blimit%5D=300&page%5Boffset%5D=300
   prev: null
   self: https://mujrozhlas.croapi.cz/episodes?page%5Blimit%5D=300
 meta:
-  count: 541044
+  count: 542863

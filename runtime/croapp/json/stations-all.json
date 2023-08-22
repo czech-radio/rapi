@@ -2351,6 +2351,6 @@ links:
   last: null
   next: null
   prev: null
-  self: https://mujrozhlas.croapi.cz/stations?page%5Blimit%5D=300
+  self: https://mujrozhlas.croapi.cz/stations-all?page%5Blimit%5D=300
 meta:
   count: 31

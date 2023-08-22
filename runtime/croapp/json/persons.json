@@ -664,6 +664,58 @@ data:
 - attributes:
     asset: {}
     assetHost: {}
+    description: "<p></p>\n\n<p class=\"-wm-MsoNormal\"><strong><span>Znamen\xED:\
+      \ V</span></strong><span>odn\xE1\u0159 (1991)</span><span></span></p>\n\n<p\
+      \ class=\"-wm-MsoNormal\"><strong><span>\u017Divotn\xED motto:\_</span></strong><span>U\u017E\
+      \ od mali\u010Dka mi babi\u010Dka \u010Dasto \u0159\xEDkala \u201EL\xEDn\xE1\
+      \ huba, hol\xE9 ne\u0161t\u011Bst\xED\", tak mo\u017En\xE1 i proto se te\u010F\
+      \ sna\u017E\xEDm svou hubou \u017Eivit (sm\xEDch).</span><span></span></p>\n\
+      \n<p class=\"-wm-MsoNormal\"><span><strong>Co d\u011Bl\xE1m v rozhlase:\_</strong>Sportovn\xED\
+      ho redaktora a report\xE9ra v regionu Olomoucko, Morava.\_</span><span></span></p>\n\
+      \n<p class=\"-wm-MsoNormal\"><span><strong>P\u0159ed rozhlasem:\_</strong>Studoval\
+      \ jsem ciz\xED jazyky pro cestovn\xED ruch a tlumo\u010Den\xED a p\u0159ekl\xE1\
+      d\xE1n\xED. Slovem jsem n\u011Bkolik let komentoval hokej \u010Di parahokej,\
+      \ p\xEDsmem v\u0161e od fotbalu, ly\u017E\xED a tenisu p\u0159es atletiku a\u017E\
+      \ t\u0159eba po skoky na trampol\xEDn\u011B, freestyle ly\u017Eov\xE1n\xED a\
+      \ snowboarding nebo lukost\u0159elbu. Psal jsem pro \u010Cesky svaz ly\u017E\
+      a\u0159\u016F, pracoval v redakci jednoho hokejov\xE9ho extraligov\xE9ho klubu.\
+      \ Dva roky jsem provozoval na t\xFDdenn\xED b\xE1zi sv\u016Fj hokejov\xFD podcast,\
+      \ namlouval jsem report\xE1\u017Ee pro \u010Ceskou asociaci stoln\xEDho tenisu\
+      \ nebo vys\xEDlal \u017Eiv\xE9 streamy s hosty na soci\xE1ln\xEDch s\xEDt\xED\
+      ch hokejov\xE9 extraligy nebo n\xE1rodn\xEDho t\xFDmu. A taky jsem ob\u010D\
+      as n\u011Bco p\u0159ekl\xE1dal.</span><span></span></p>\n\n<p class=\"-wm-MsoNormal\"\
+      ><strong><span>Co m\u011B bav\xED:\_</span></strong><span>Samoz\u0159ejm\u011B\
+      \ ve\u0161ker\xFD sport, p\u0159edev\u0161\xEDm pasivn\u011B, od fotbalu a hokeje\
+      \ a\u017E po \u0161ipky, formule, severskou kombinaci nebo snooker. R\xE1d cestuju\
+      \ a hled\xE1m geoke\u0161ky, poslouch\xE1m\_tvrdou hudbu a nav\u0161t\u011B\
+      vuju koncerty, hraju deskov\xE9 hry.</span><span></span></p>\n\n<p class=\"\
+      -wm-MsoNormal\"><b><span><strong>Co m\u011B nejv\xEDc dostane:\_</strong></span></b><span>V\
+      \ pozitivn\xEDm slova smyslu m\u011B nejv\xEDce dostalo narozen\xED m\xE9 zat\xED\
+      m jedin\xE9 dcery. V negativn\xEDm m\u011B nejv\xEDc dostane, kdy\u017E n\u011B\
+      kdo nedodr\u017Euje jak\xE1koliv pravidla. A taky spousta mali\u010Dkost\xED\
+      , t\u0159eba kdy\u017E n\u011Bkdo p\xED\u0161e nad velk\xFDm tiskac\xEDm I te\u010D\
+      ku.</span></p>\n\n<p></p>\n\n"
+    profile_id: '9054281'
+    short_description: "<p>Redaktor Radio\u017Eurn\xE1lu Sport.</p>"
+    title: Adam Kodet
+  id: 4c7a5906-73ce-37c4-bb23-fa76f2daeb4b
+  relationships:
+    participation:
+      data:
+      - id: 93eabdcd-ccc5-311d-825b-6f5d6509db53
+        meta:
+          role: "Redakto\u0159i"
+        type: station
+      - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        meta:
+          role: "Sportovn\xED redakce"
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/persons/4c7a5906-73ce-37c4-bb23-fa76f2daeb4b/participation
+  type: person
+- attributes:
+    asset: {}
+    assetHost: {}
     description: ''
     profile_id: '8456274'
     short_description: ''
@@ -2339,6 +2391,20 @@ data:
     asset: {}
     assetHost: {}
     description: ''
+    profile_id: '9054440'
+    short_description: ''
+    title: "Albert Dvo\u0159\xE1k"
+  id: 7e5e0c72-1373-31a1-9a89-cf5029988631
+  relationships:
+    participation:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/persons/7e5e0c72-1373-31a1-9a89-cf5029988631/participation
+  type: person
+- attributes:
+    asset: {}
+    assetHost: {}
+    description: ''
     profile_id: '8933091'
     short_description: ''
     title: "Albert Pra\u017E\xE1k"
@@ -2591,7 +2657,7 @@ data:
       \ V\xE1s \u0159\xEDk\xE1?)<br />\nNev\xEDm o ni\u010Dem, co\u017E je mo\u017E\
       n\xE1 lep\u0161\xED :-)\_</p>\n\n"
     profile_id: '5003397'
-    short_description: "<p>Redaktorka\_Radio\u017Eurn\xE1lu Sport.</p>"
+    short_description: "<p>Vedouc\xED redakce\_Radio\u017Eurn\xE1lu Sport.</p>"
     title: "Alena Bene\u0161ov\xE1"
   id: d30f912b-36c8-3985-970b-031296022918
   relationships:
@@ -2599,7 +2665,7 @@ data:
       data:
       - id: 93eabdcd-ccc5-311d-825b-6f5d6509db53
         meta:
-          role: "Redakto\u0159i"
+          role: "Vedouc\xED programu"
         type: station
       - id: 4082f63f-30e8-375d-a326-b32cf7d86e02
         meta:
@@ -6797,34 +6863,6 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/persons/510a01fb-978d-3e65-8892-b5a62d8c7208/participation
   type: person
-- attributes:
-    asset: {}
-    assetHost: {}
-    description: ''
-    profile_id: '8048743'
-    short_description: ''
-    title: Alphonse Allais
-  id: a92982a4-6278-3de8-b0b0-4cb291eb65ee
-  relationships:
-    participation:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/persons/a92982a4-6278-3de8-b0b0-4cb291eb65ee/participation
-  type: person
-- attributes:
-    asset: {}
-    assetHost: {}
-    description: ''
-    profile_id: '7559395'
-    short_description: ''
-    title: Alphonse Daudet
-  id: b027c119-28be-349e-8cc3-240c20f844c1
-  relationships:
-    participation:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/persons/b027c119-28be-349e-8cc3-240c20f844c1/participation
-  type: person
 links:
   first: null
   last: https://mujrozhlas.croapi.cz/persons?page%5Blimit%5D=300&page%5Boffset%5D=10200
@@ -6832,4 +6870,4 @@ links:
   prev: null
   self: https://mujrozhlas.croapi.cz/persons?page%5Blimit%5D=300
 meta:
-  count: 10472
+  count: 10487

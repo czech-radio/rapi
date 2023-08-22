@@ -1701,6 +1701,49 @@ data:
 - attributes:
     asset:
       credit:
+        author: ''
+        description: "Dopravn\xED nehoda (ilustra\u010Dn\xED foto)"
+        license: CC0 1.0
+        licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/deed.cs
+        origin_url: ''
+        source: Profimedia
+      focal_point: 50,50
+      height: 833
+      id: dc77b378-28d7-36eb-aeb0-cd1292b941ba
+      url: https://portal.rozhlas.cz/sites/default/files/images/03694997.jpeg
+      width: 1280
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "Zelen\xE1 vlna"
+    showPriority: 0
+    showTimes: null
+    since: '2023-09-02T00:09:00+02:00'
+    station_code: 1
+    till: '2023-09-02T00:09:30+02:00'
+    title: "Informace o dopravn\xED situaci volejte na bezplatnou linku 800 553 553."
+  id: 000766bf-c7a1-3ff3-8ccc-6bfcef15a223
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/000766bf-c7a1-3ff3-8ccc-6bfcef15a223/participants
+    show:
+      data:
+        id: 48678000-b905-3b68-9b80-f4d20326f03b
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/48678000-b905-3b68-9b80-f4d20326f03b
+    station:
+      data:
+        id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02
+  type: scheduleEpisode
+- attributes:
+    asset:
+      credit:
         author: "Ale\u0161 Vav\u0159\xEDk"
         description: "Zpravodajsk\xFD kan\xE1l \u010Cesk\xE9ho rozhlasu Olomouc"
         license: ''
@@ -2076,6 +2119,53 @@ data:
         type: station
       links:
         related: https://mujrozhlas.croapi.cz/stations/e26a14b0-35d5-3b55-a6c8-679d2c6e0526
+  type: scheduleEpisode
+- attributes:
+    asset:
+      credit:
+        author: Khalil Baalbaki
+        description: "V\xE1clav \u017Dmol\xEDk"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas Dvojka"
+      focal_point: 57,37
+      height: 1400
+      id: 0494da16-8b4c-3fe7-800d-6ef7e02890fe
+      url: https://portal.rozhlas.cz/sites/default/files/images/e481442dffc8dce2ecf15f3fe93eb8ad.jpg
+      width: 2100
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "Po \u010Cesku"
+    showPriority: 0
+    showTimes: null
+    since: '2023-09-02T15:04:00+02:00'
+    station_code: 2
+    till: '2023-09-02T15:59:00+02:00'
+    title: "V\xE1clav \u017Dmol\xEDk pro v\xE1s objevuje m\xEDsta a lidi, kter\xE9\
+      \ stoj\xED za to nav\u0161t\xEDvit"
+  id: 000923dd-bddd-333c-b46a-0b1dae5e4a72
+  relationships:
+    participants:
+      data:
+      - id: 3554160c-33f5-337b-9cd3-b3527b2c7535
+        meta:
+          role: host
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/000923dd-bddd-333c-b46a-0b1dae5e4a72/participants
+    show:
+      data:
+        id: 45b43edf-eb3a-39be-a32f-19f1812ed594
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/45b43edf-eb3a-39be-a32f-19f1812ed594
+    station:
+      data:
+        id: 17821883-be2d-3880-b971-eceb794388fa
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/17821883-be2d-3880-b971-eceb794388fa
   type: scheduleEpisode
 - attributes:
     asset: {}
@@ -5331,6 +5421,32 @@ data:
         related: https://mujrozhlas.croapi.cz/stations/93eabdcd-ccc5-311d-825b-6f5d6509db53
   type: scheduleEpisode
 - attributes:
+    asset: {}
+    audioLinks: []
+    description: "Sport, Zelen\xE1 vlna a po\u010Das\xED. O dopravn\xED situaci informujte\
+      \ na bezplatn\xE9 lince 800 553 553."
+    mirroredShow:
+      title: "Zpr\xE1vy"
+    showPriority: 0
+    showTimes: null
+    since: '2023-08-31T14:00:00+02:00'
+    station_code: 1
+    till: '2023-08-31T14:04:30+02:00'
+    title: "Z domova i ze sv\u011Bta"
+  id: 00197e03-9b32-3a7f-96a0-194c70ec98b3
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/00197e03-9b32-3a7f-96a0-194c70ec98b3/participants
+    station:
+      data:
+        id: 4082f63f-30e8-375d-a326-b32cf7d86e02
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02
+  type: scheduleEpisode
+- attributes:
     asset:
       credit:
         author: ''
@@ -5435,6 +5551,49 @@ data:
       data: []
       links:
         related: https://mujrozhlas.croapi.cz/schedule-episode/00199f70-5cfd-39d6-9f54-d1237d1e3571/participants
+    station:
+      data:
+        id: 1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
+  type: scheduleEpisode
+- attributes:
+    asset:
+      credit:
+        author: "Ale\u0161 Vav\u0159\xEDk"
+        description: "Zpr\xE1vy \u010Cesk\xFD rozhlas \u010Cesk\xE9 Bud\u011Bjovice"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1400
+      id: eb2af870-8249-3653-9a87-159a954ceeff
+      url: https://portal.rozhlas.cz/sites/default/files/images/03227065.jpeg
+      width: 2100
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "Zpr\xE1vy z ji\u017En\xEDch \u010Cech"
+    showPriority: 53
+    showTimes: null
+    since: '2023-09-04T17:00:00+02:00'
+    station_code: 6
+    till: '2023-09-04T17:03:00+02:00'
+    title: "Aktu\xE1ln\xED informace z ji\u017En\xEDch \u010Cech, p\u0159edpov\u011B\
+      \u010F po\u010Das\xED"
+  id: 001a1d87-1114-3f97-b90e-4abf8759bfa5
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/001a1d87-1114-3f97-b90e-4abf8759bfa5/participants
+    show:
+      data:
+        id: 3af5f1c1-6c47-35cd-b3fd-0a1de596f23c
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/3af5f1c1-6c47-35cd-b3fd-0a1de596f23c
     station:
       data:
         id: 1e6c0c0b-aba4-3357-95fc-c64edc9e75e6
@@ -6623,6 +6782,48 @@ data:
         related: https://mujrozhlas.croapi.cz/stations/663e7133-bb52-3477-8d7f-635e43371962
   type: scheduleEpisode
 - attributes:
+    asset:
+      credit:
+        author: ''
+        description: "P\xEDsni\u010Dky prov\xE1s"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1400
+      id: 19df9489-68da-3e16-b791-978f3a71c518
+      url: https://portal.rozhlas.cz/sites/default/files/images/03241252.jpeg
+      width: 2100
+    audioLinks: []
+    description: "Moderuje V\xEDt Tron\xED\u010Dek"
+    mirroredShow:
+      title: "Folkov\xE1 pohlazen\xED"
+    showPriority: 0
+    showTimes: null
+    since: '2023-08-30T03:00:00+02:00'
+    station_code: 9
+    till: '2023-08-30T04:00:00+02:00'
+    title: "Autorsk\xFD hudebn\xED po\u0159ad l\xEDdra skupiny Marien"
+  id: 001ddd4f-1f28-3ff2-91af-b9431049d7c8
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/001ddd4f-1f28-3ff2-91af-b9431049d7c8/participants
+    show:
+      data:
+        id: 5d43f0c6-3afd-3354-8817-8fef3f15c42a
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/5d43f0c6-3afd-3354-8817-8fef3f15c42a
+    station:
+      data:
+        id: 184a888f-3d06-3a88-a07f-901bd9b09396
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/184a888f-3d06-3a88-a07f-901bd9b09396
+  type: scheduleEpisode
+- attributes:
     asset: {}
     audioLinks: []
     description: "Sport, Zelen\xE1 vlna a po\u010Das\xED. O dopravn\xED situaci informujte\
@@ -7065,7 +7266,7 @@ data:
       \ Kdy? Kde?\"."
     mirroredShow:
       title: "Srdcovky Zde\u0148ka Jun\xE1ka"
-    showPriority: 1
+    showPriority: 3
     showTimes: null
     since: '2023-08-01T09:04:00+02:00'
     station_code: 27
@@ -8544,6 +8745,31 @@ data:
         related: https://mujrozhlas.croapi.cz/stations/17821883-be2d-3880-b971-eceb794388fa
   type: scheduleEpisode
 - attributes:
+    asset: {}
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "Co na to d\u011Bti"
+    showPriority: 0
+    showTimes: null
+    since: '2023-08-21T14:50:00+02:00'
+    station_code: 28
+    till: '2023-08-21T14:52:00+02:00'
+    title: "Co na to d\u011Bti - 21. 8. 2023"
+  id: 0026a808-a71a-35a4-81e5-144f1ef9eb28
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/0026a808-a71a-35a4-81e5-144f1ef9eb28/participants
+    station:
+      data:
+        id: ad541211-198e-30b7-995c-10bf08c3aea0
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/ad541211-198e-30b7-995c-10bf08c3aea0
+  type: scheduleEpisode
+- attributes:
     asset:
       credit:
         author: "Ale\u0161 Vav\u0159\xEDk"
@@ -8689,6 +8915,31 @@ data:
         type: station
       links:
         related: https://mujrozhlas.croapi.cz/stations/c639d927-f37b-3db8-a64f-1d64ee1469b2
+  type: scheduleEpisode
+- attributes:
+    asset: {}
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "Vys\xEDl\xE1n\xED v angli\u010Dtin\u011B"
+    showPriority: 0
+    showTimes: null
+    since: '2023-09-03T13:00:00+02:00'
+    station_code: 12
+    till: '2023-09-03T13:30:00+02:00'
+    title: "Vys\xEDl\xE1n\xED v angli\u010Dtin\u011B - 3. 9. 2023"
+  id: 00276c8a-fca3-39ac-8203-3426e78e707c
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/00276c8a-fca3-39ac-8203-3426e78e707c/participants
+    station:
+      data:
+        id: 6731e7ee-98e7-36c3-993b-3122ad1317d1
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/6731e7ee-98e7-36c3-993b-3122ad1317d1
   type: scheduleEpisode
 - attributes:
     asset:
@@ -8855,6 +9106,31 @@ data:
         type: station
       links:
         related: https://mujrozhlas.croapi.cz/stations/4082f63f-30e8-375d-a326-b32cf7d86e02
+  type: scheduleEpisode
+- attributes:
+    asset: {}
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "O po\u010Das\xED"
+    showPriority: 0
+    showTimes: null
+    since: '2023-08-29T07:45:00+02:00'
+    station_code: 25
+    till: '2023-08-29T07:47:00+02:00'
+    title: "O po\u010Das\xED - 29. 8. 2023"
+  id: 00285b7e-5062-37f9-a57d-6afb6c1fe6ad
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/00285b7e-5062-37f9-a57d-6afb6c1fe6ad/participants
+    station:
+      data:
+        id: 5e94e06f-5435-3291-87c5-aeca8bc9c884
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/5e94e06f-5435-3291-87c5-aeca8bc9c884
   type: scheduleEpisode
 - attributes:
     asset: {}
@@ -10350,6 +10626,56 @@ data:
 - attributes:
     asset:
       credit:
+        author: "Vladim\xEDr Stan\u011Bk"
+        description: "Poslechn\u011Bte si rozhovory se zaj\xEDmav\xFDmi hosty v Klubu\
+          \ R\xE1dia Junior"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,33
+      height: 1400
+      id: d221187b-5dfd-3dac-8bdc-b0271697db2c
+      url: https://portal.rozhlas.cz/sites/default/files/images/f0618e9b0990709695b5b95b3c0a5846.jpg
+      width: 2100
+    audioLinks: []
+    description: "19:00 - 19:50 Marek Kadlec, tlumo\u010Dn\xEDk a Steve Watts, youtuber.\
+      \ Moderuje Jana Rychterov\xE1."
+    mirroredShow:
+      title: "Klub R\xE1dia Junior"
+    showPriority: 75
+    showTimes: null
+    since: '2023-08-31T17:00:00+02:00'
+    station_code: 96
+    till: '2023-08-31T20:00:00+02:00'
+    title: "T\xE9mata, kter\xE1 h\xFDbou sv\u011Btem, rozhovory, \u010Dten\xED na\
+      \ pokra\u010Dov\xE1n\xED, recenze, vzkazovny, sout\u011B\u017Ee a po\u0159\xE1\
+      dn\xE1 porce t\xE9 nejlep\u0161\xED muziky"
+  id: 002e5060-0065-34b6-8a03-e181d7dc489c
+  relationships:
+    participants:
+      data:
+      - id: 319c3001-3738-3b01-826d-7296caef5182
+        meta:
+          role: host
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/002e5060-0065-34b6-8a03-e181d7dc489c/participants
+    show:
+      data:
+        id: 490894de-7bca-3959-9db2-69394e0baee6
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/490894de-7bca-3959-9db2-69394e0baee6
+    station:
+      data:
+        id: 598a62af-86b5-3485-b89d-65379562694a
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/598a62af-86b5-3485-b89d-65379562694a
+  type: scheduleEpisode
+- attributes:
+    asset:
+      credit:
         author: ''
         description: "\xDAsm\u011Bv, pros\xEDm"
         license: ''
@@ -10721,330 +11047,11 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/stations/a831a457-9b80-3271-b153-ddf0ee63a18c
   type: scheduleEpisode
-- attributes:
-    asset: {}
-    audioLinks: []
-    description: ''
-    mirroredShow:
-      title: "Vys\xEDl\xE1n\xED ve francouz\u0161tin\u011B"
-    showPriority: 0
-    showTimes: null
-    since: '2023-03-31T23:30:00+02:00'
-    station_code: 12
-    till: '2023-04-01T00:00:00+02:00'
-    title: "Vys\xEDl\xE1n\xED ve francouz\u0161tin\u011B - 31. 3. 2023"
-  id: 00302a27-cc3b-312f-b42b-53927efa4a59
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/00302a27-cc3b-312f-b42b-53927efa4a59/participants
-    station:
-      data:
-        id: 6731e7ee-98e7-36c3-993b-3122ad1317d1
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/6731e7ee-98e7-36c3-993b-3122ad1317d1
-  type: scheduleEpisode
-- attributes:
-    asset:
-      credit:
-        author: ''
-        description: "Zahradni\u010Den\xED, s\xE1zen\xED"
-        license: ''
-        origin_url: ''
-        source: Profimedia
-      focal_point: 63,63
-      height: 2340
-      id: b21fc81c-7ef7-33ba-9fc7-96fcda63dfef
-      url: https://portal.rozhlas.cz/sites/default/files/images/cb33d341daf74fc5dbd0d030fd265802.jpg
-      width: 3507
-    audioLinks: []
-    description: "P\u0159ipravil Artur Kubica. Repr\xEDza. (\u010CRo Region, St\u0159\
-      edo\u010Desk\xFD kraj)"
-    mirroredShow:
-      title: "Hobby magaz\xEDn"
-    showPriority: 35
-    showTimes: null
-    since: '2018-05-05T04:00:19+02:00'
-    station_code: 2
-    till: '2018-05-05T04:52:22+02:00'
-    title: "Magaz\xEDn pro kutily a zahr\xE1dk\xE1\u0159e a pro v\u0161echny, kte\u0159\
-      \xED se neradi nud\xED"
-  id: 00305f3c-d8b7-3983-bbe5-749b4c494273
-  relationships:
-    participants:
-      data:
-      - id: 4066efa9-c6f8-347d-a38d-6cc753be6cb0
-        meta:
-          role: host
-        type: person
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/00305f3c-d8b7-3983-bbe5-749b4c494273/participants
-    show:
-      data:
-        id: e59814ac-f4b0-3f19-b120-f57474ba24d7
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/e59814ac-f4b0-3f19-b120-f57474ba24d7
-    station:
-      data:
-        id: 17821883-be2d-3880-b971-eceb794388fa
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/17821883-be2d-3880-b971-eceb794388fa
-  type: scheduleEpisode
-- attributes:
-    asset: {}
-    audioLinks: []
-    description: "Zp\xEDv\xE1 Emma Kirkby (sopr\xE1n), hraje The Brandenburg Consort,\
-      \ \u0159\xEDd\xED Roy Goodman."
-    mirroredShow:
-      title: "Antonio Vivaldi: \xC1rie Caia z 1. d\u011Bjstv\xED opery Ottone in villa,\
-        \ RV 729 (sop)"
-    showPriority: 0
-    showTimes: null
-    since: '2023-03-06T05:35:46+01:00'
-    station_code: 26
-    till: '2023-03-06T05:38:53+01:00'
-    title: "Antonio Vivaldi: \xC1rie Caia z 1. d\u011Bjstv\xED opery Ottone in villa,\
-      \ RV 729 (sop)"
-  id: 00306245-e7e9-34bc-a1ae-e97387dd9618
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/00306245-e7e9-34bc-a1ae-e97387dd9618/participants
-    station:
-      data:
-        id: e26a14b0-35d5-3b55-a6c8-679d2c6e0526
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/e26a14b0-35d5-3b55-a6c8-679d2c6e0526
-  type: scheduleEpisode
-- attributes:
-    asset: {}
-    audioLinks: []
-    description: 'Allegro moderato
-
-      Scherzo. Vivacissimo
-
-      Largo
-
-      Allegro con spirito
-
-      Hraje Trio Aenea.'
-    mirroredShow:
-      title: "Michail Ivanovi\u010D Glinka: Patetick\xE9 trio pro klarinet, fagot\
-        \ a klav\xEDr d moll. \xDAprava pro kornet, ofiklejdu a klav\xEDr"
-    showPriority: 0
-    showTimes: null
-    since: '2023-01-22T13:57:29+01:00'
-    station_code: 26
-    till: '2023-01-22T14:12:13+01:00'
-    title: "Michail Ivanovi\u010D Glinka: Patetick\xE9 trio pro klarinet, fagot a\
-      \ klav\xEDr d moll. \xDAprava pro kornet, ofiklejdu a klav\xEDr"
-  id: 00307e58-dcb9-3cf0-8097-cff57388a7a2
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/00307e58-dcb9-3cf0-8097-cff57388a7a2/participants
-    station:
-      data:
-        id: e26a14b0-35d5-3b55-a6c8-679d2c6e0526
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/e26a14b0-35d5-3b55-a6c8-679d2c6e0526
-  type: scheduleEpisode
-- attributes:
-    asset:
-      credit:
-        author: Khalil Baalbaki
-        description: "Zden\u011Bk Jun\xE1k"
-        license: ''
-        origin_url: ''
-        source: "\u010Cesk\xFD rozhlas"
-      focal_point: 50,50
-      height: 865
-      id: e5241947-4257-3349-87b7-f75261764eec
-      url: https://portal.rozhlas.cz/sites/default/files/images/03161584.jpeg
-      width: 1300
-    audioLinks: []
-    description: ''
-    mirroredShow:
-      title: "V\xEDkendov\xE9 Srdcovky Zde\u0148ka Jun\xE1ka"
-    showPriority: 0
-    showTimes: null
-    since: '2023-01-28T11:04:00+01:00'
-    station_code: 9
-    till: '2023-01-28T12:00:00+01:00'
-    title: "Prov\u011Btrejte sv\xE9 mozkov\xE9 z\xE1vity s pravideln\xFDm hostem,\
-      \ exprezidentem Sv\u011Btov\xE9 h\xE1dank\xE1\u0159sk\xE9 federace V\xEDt\u011B\
-      zslavem Koudelkou, kter\xFD m\xE1 pro v\xE1s n\u011Bkolik z\xE1ludn\xFDch r\xE9\
-      bus\u016F a h\xE1danek"
-  id: 0030b3c9-46d0-307e-8df5-28cf58269e11
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/0030b3c9-46d0-307e-8df5-28cf58269e11/participants
-    show:
-      data:
-        id: 8bbd0790-0f49-34a9-8fca-ec5b53e8dd2d
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/8bbd0790-0f49-34a9-8fca-ec5b53e8dd2d
-    station:
-      data:
-        id: 184a888f-3d06-3a88-a07f-901bd9b09396
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/184a888f-3d06-3a88-a07f-901bd9b09396
-  type: scheduleEpisode
-- attributes:
-    asset:
-      credit:
-        author: "Tom\xE1\u0161 Vod\u0148ansk\xFD"
-        description: "Sta\u0159\xED mist\u0159i"
-        license: ''
-        origin_url: ''
-        source: "\u010Cesk\xFD rozhlas"
-      focal_point: 50,50
-      height: 926
-      id: b2e2cb7d-0340-3fa6-bcee-7792b549e785
-      url: https://portal.rozhlas.cz/sites/default/files/images/8e266538d305ef332b67626aaade2b1d.jpg
-      width: 1383
-    audioLinks: []
-    description: "P\u0159ipravila Alena Mar\u0161\xEDkov\xE1 Mich\xE1lkov\xE1."
-    mirroredShow:
-      title: "Sta\u0159\xED mist\u0159i"
-    showPriority: 0
-    showTimes: null
-    since: '2023-07-29T14:00:00+02:00'
-    station_code: 3
-    till: '2023-07-29T14:59:00+02:00'
-    title: "Vzh\u016Fru ke hv\u011Bzd\xE1m aneb Nebesa, slunce a vesm\xEDr v d\xED\
-      lech star\xFDch mistr\u016F"
-  id: 0030d471-9251-3e0e-8348-14bbd2785256
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/0030d471-9251-3e0e-8348-14bbd2785256/participants
-    show:
-      data:
-        id: c884558a-4c80-3c80-9bdf-df5e5c7bdf5d
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/c884558a-4c80-3c80-9bdf-df5e5c7bdf5d
-    station:
-      data:
-        id: 0134ce01-8684-3556-b568-f208392ac0bd
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/0134ce01-8684-3556-b568-f208392ac0bd
-  type: scheduleEpisode
-- attributes:
-    asset: {}
-    audioLinks: []
-    description: ''
-    mirroredShow:
-      title: "Tipy pro voln\xFD \u010Das"
-    showPriority: 0
-    showTimes: null
-    since: '2023-05-07T06:40:00+02:00'
-    station_code: 23
-    till: '2023-05-07T06:45:00+02:00'
-    title: "Pozv\xE1nky a tipy na kulturn\xED i spole\u010Densk\xE9 akce v Karlovarsk\xE9\
-      m kraji"
-  id: 0030f7ba-ca1e-3dc1-ab01-e99c2467d81a
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/0030f7ba-ca1e-3dc1-ab01-e99c2467d81a/participants
-    station:
-      data:
-        id: 663e7133-bb52-3477-8d7f-635e43371962
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/663e7133-bb52-3477-8d7f-635e43371962
-  type: scheduleEpisode
-- attributes:
-    asset:
-      credit:
-        author: ''
-        description: "No\u010Dn\xED proud"
-        license: ''
-        origin_url: ''
-        source: Profimedia
-      focal_point: 18,80
-      height: 1400
-      id: eb86dd0d-9586-33df-8a07-5b1febd493a3
-      url: https://portal.rozhlas.cz/sites/default/files/images/a289f32c02209f2bf5a16aaf017b7253.jpg
-      width: 2100
-    audioLinks: []
-    description: "Moderuje Jindra Eli\xE1\u0161."
-    mirroredShow:
-      title: "No\u010Dn\xED proud"
-    showPriority: 0
-    showTimes: null
-    since: '2022-11-04T23:30:13+01:00'
-    station_code: 2
-    till: '2022-11-04T23:58:49+01:00'
-    title: "Legend\xE1rn\xED rozhlasov\xE1 diskot\xE9ka ke sn\u011Bn\xED i bd\u011B\
-      n\xED"
-  id: 00314039-9172-3201-aa65-88275d4df6e6
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/00314039-9172-3201-aa65-88275d4df6e6/participants
-    show:
-      data:
-        id: a89e6bb0-9962-3299-b30b-3672b56aeee8
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/a89e6bb0-9962-3299-b30b-3672b56aeee8
-    station:
-      data:
-        id: 17821883-be2d-3880-b971-eceb794388fa
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/17821883-be2d-3880-b971-eceb794388fa
-  type: scheduleEpisode
-- attributes:
-    asset: {}
-    audioLinks: []
-    description: ''
-    mirroredShow:
-      title: "Zpr\xE1vy"
-    showPriority: 0
-    showTimes: null
-    since: '2023-03-05T11:30:00+01:00'
-    station_code: 120
-    till: '2023-03-05T11:33:30+01:00'
-    title: "nej\u010Derstv\u011Bj\u0161\xED zpr\xE1vy Radio\u017Eurn\xE1lu, Zelen\xE1\
-      \ vlna, p\u0159edpov\u011B\u010F po\u010Das\xED"
-  id: 0031806c-ee1b-376a-a4ac-eb4d950f4040
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/0031806c-ee1b-376a-a4ac-eb4d950f4040/participants
-    station:
-      data:
-        id: 93eabdcd-ccc5-311d-825b-6f5d6509db53
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/93eabdcd-ccc5-311d-825b-6f5d6509db53
-  type: scheduleEpisode
 links:
   first: null
-  last: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300&page%5Boffset%5D=418800
+  last: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300&page%5Boffset%5D=429900
   next: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300&page%5Boffset%5D=300
   prev: null
   self: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300
 meta:
-  count: 418977
+  count: 429961

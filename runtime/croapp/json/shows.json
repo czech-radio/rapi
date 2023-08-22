@@ -451,6 +451,8 @@ data:
   relationships:
     episodes:
       data:
+      - id: 06bc1129-bd13-3d5b-a603-f1dffdf96178
+        type: episode
       - id: 1770207b-becd-30ba-ae3f-b3bab8ed52c2
         type: episode
       - id: 280595af-97a3-3b96-8443-b8e9a6534c7a
@@ -469,12 +471,10 @@ data:
         type: episode
       - id: 96a21879-dd8a-30c0-8d95-b4957b095b24
         type: episode
-      - id: 9c59698c-eb70-3a59-8b60-1393cf8bfa1c
-        type: episode
       links:
         related: https://mujrozhlas.croapi.cz/shows/c753885c-5aaa-3cb7-b437-9a2d94a2a552/episodes
       meta:
-        count: 18
+        count: 19
     participants:
       data:
       - id: 9d06a78d-a91b-3713-bc44-8dc05f1c5e58
@@ -868,7 +868,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/908b0462-aacb-3fe4-93e4-106bd51f3299/episodes
       meta:
-        count: 791
+        count: 797
     participants:
       data: []
       links:
@@ -1556,16 +1556,16 @@ data:
     aired: true
     asset:
       credit:
-        author: "Jitka Nejedl\xE1"
-        description: "Poslechn\u011Bte si podcast Alchymisti"
+        author: "Jitka Nejedl\xE1,Vladim\xEDr Stan\u011Bk"
+        description: "Objevte sv\u016Fj k\xE1men mudrc\u016F s podcastem Alychymisti"
         license: ''
         origin_url: ''
         source: ''
       focal_point: 50,50
-      height: 2024
-      id: 4148581c-b145-39d7-8743-3318a472d2ca
-      url: https://portal.rozhlas.cz/sites/default/files/images/f9ae333c09063089f83834fca4ffb7f3.jpg
-      width: 3036
+      height: 1400
+      id: 53a71af5-865d-3c37-8176-21a1cc9e749b
+      url: https://portal.rozhlas.cz/sites/default/files/images/7b2f770d18cec335cb8f6d3d64c8beb5.jpg
+      width: 2100
     childFriendly: true
     description: "Objevte\_sv\u016Fj k\xE1men mudrc\u016F. Zapojte se od 1. 9. 2023\
       \ do sout\u011B\u017Ee a vyhrajte."
@@ -1577,7 +1577,7 @@ data:
     showType: show
     sortedBySeriesEpisodeNumber: false
     title: Alchymisti
-    updated: '2023-08-08T17:45:01+02:00'
+    updated: '2023-08-21T15:00:50+02:00'
   id: 70b74b37-79b2-3c65-812d-b4e32249c33f
   relationships:
     episodes:
@@ -1655,7 +1655,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/6941b521-fb49-3f31-b659-cf4399211d07/episodes
       meta:
-        count: 338
+        count: 340
     participants:
       data:
       - id: 7415c8da-f85d-339b-ae78-f9484071a88b
@@ -1940,7 +1940,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/283fa760-b7a7-3291-9c15-ec11917a083a/episodes
       meta:
-        count: 215
+        count: 216
     participants:
       data:
       - id: 0277b5c2-cc2b-328f-82ff-10480c77ad32
@@ -2023,7 +2023,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/05612f14-6269-3379-963b-e1a7a0276a1c/episodes
       meta:
-        count: 7845
+        count: 7857
     participants:
       data:
       - id: 0b1cb43b-9cd6-3052-a8f5-81deb2344e8a
@@ -2187,7 +2187,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/69ba5aa0-c837-3db0-ba91-f1b2051d0bb3/episodes
       meta:
-        count: 316
+        count: 317
     participants:
       data:
       - id: 1cb35d9d-fb24-37ee-8993-9f74e57ab2c7
@@ -2346,7 +2346,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/20ead869-6f23-3412-bbb4-341b48c230ad/episodes
       meta:
-        count: 1344
+        count: 1346
     participants:
       data:
       - id: 019e6c54-c937-328a-bd01-da0d1ab1711e
@@ -2599,7 +2599,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/f9c19efd-0242-3bce-8894-23e519548510/episodes
       meta:
-        count: 860
+        count: 864
     participants:
       data: []
       links:
@@ -2977,6 +2977,8 @@ data:
         type: episode
       - id: 03d2adab-fe38-37c2-864f-001806e5ff4b
         type: episode
+      - id: 0640399f-dc86-3f94-880c-3b46eb660aca
+        type: episode
       - id: 08c87384-b7ac-39d4-bb79-877fbf4e74ba
         type: episode
       - id: 08da59d0-91c0-3c14-9107-452a9fef6948
@@ -2989,12 +2991,10 @@ data:
         type: episode
       - id: 0eefa35f-f8f5-37f2-bed5-3181f477ee38
         type: episode
-      - id: 0ef50d58-20c7-399d-9307-37b8ec16604c
-        type: episode
       links:
         related: https://mujrozhlas.croapi.cz/shows/3caf0f88-3b94-3216-8dad-28416e4d9d1f/episodes
       meta:
-        count: 103
+        count: 109
     participants:
       data:
       - id: 71a4e5a9-d959-3929-abda-b0435c8ccebe
@@ -3095,7 +3095,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/877020d3-adf7-346f-8303-a281aebbc3a8/episodes
       meta:
-        count: 257
+        count: 258
     participants:
       data:
       - id: c9bd4fef-3dd7-3fd7-8f12-fd3383059e38
@@ -3301,7 +3301,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/a2be9519-2057-3616-93d7-db27f44a2d4f/episodes
       meta:
-        count: 636
+        count: 646
     participants:
       data:
       - id: 5de457e8-58f5-35d0-a229-944d02a289b7
@@ -3322,6 +3322,10 @@ data:
       data:
       - id: 05bdf7c6-4ed1-3152-b317-2c9dc73cf32e
         type: serial
+      - id: 0c7ff4c6-ffd5-395a-8248-ac13da234bc5
+        type: serial
+      - id: 0ee7cf6c-38ea-319e-972e-b7fc3f9cb9e4
+        type: serial
       - id: 0f4e8a3d-1f38-3719-8fc0-836b9240d337
         type: serial
       - id: 139ec2dc-27f4-3f55-8d9a-0f2b29aad1e5
@@ -3334,11 +3338,7 @@ data:
         type: serial
       - id: 29269cc5-3fa5-3d79-a750-2ef7c1751efb
         type: serial
-      - id: 2b63f66b-4b01-39eb-830f-498cc553bb54
-        type: serial
-      - id: 2db17f94-e7b8-3c42-bb64-7704e55cbc71
-        type: serial
-      - id: 343b1cac-b1f4-31c1-b1de-c80eebb80633
+      - id: 29c9165b-ef07-358b-ac9a-832068bc9e59
         type: serial
       links:
         related: https://mujrozhlas.croapi.cz/shows/a2be9519-2057-3616-93d7-db27f44a2d4f/serials
@@ -3938,7 +3938,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/94810db5-cd5a-3198-bdfc-95a12fcfa3b9/episodes
       meta:
-        count: 1234
+        count: 1239
     participants:
       data:
       - id: 0e372933-bff6-374b-b845-bfeb000f10a5
@@ -4252,7 +4252,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/388c2578-c76a-34cb-8f2e-590c2a353cc7/episodes
       meta:
-        count: 258
+        count: 259
     participants:
       data:
       - id: 77ffa464-4338-33e3-a8ea-32098066f2c3
@@ -4399,7 +4399,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/d38fa311-2c45-39ab-9dac-f51d31edaf04/episodes
       meta:
-        count: 168
+        count: 169
     participants:
       data:
       - id: adaa47a3-bcf6-322f-b6b7-a88ab2a7089a
@@ -4477,7 +4477,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/bee8fcf8-f812-3d27-8348-c675641849ff/episodes
       meta:
-        count: 150
+        count: 151
     participants:
       data:
       - id: 0eeddbac-6bec-3f02-b1fb-76a796108cf9
@@ -4716,7 +4716,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/63d91d32-e7cc-3e12-beb1-5378c4945ccb/episodes
       meta:
-        count: 59
+        count: 60
     participants:
       data:
       - id: 418169e3-5756-3cab-a7a6-bac539f2b286
@@ -4802,7 +4802,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/e3542ad9-f33b-39ee-b601-504593e8f6cc/episodes
       meta:
-        count: 289
+        count: 290
     participants:
       data:
       - id: 0eeddbac-6bec-3f02-b1fb-76a796108cf9
@@ -4965,7 +4965,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/8bc2ddd1-ac0c-3a2b-b4fc-821f19bbbb95/episodes
       meta:
-        count: 299
+        count: 304
     participants:
       data:
       - id: 009ebfb8-b783-3890-9273-76b1f98b2b57
@@ -5196,7 +5196,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/26d334c4-0df0-3eaa-8360-1e0bb633d20c/episodes
       meta:
-        count: 538
+        count: 539
     participants:
       data:
       - id: 10aaaf33-4a47-32a5-912f-7f83654da55d
@@ -5434,7 +5434,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/321b1939-a9ce-36b3-bfd0-2bb92cd258f6/episodes
       meta:
-        count: 256
+        count: 257
     participants:
       data:
       - id: 5bfcbe84-cffb-3c5c-a749-ed54448d5190
@@ -6360,7 +6360,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/bd617ec0-2b0c-3197-be5b-2b1742584552/episodes
       meta:
-        count: 2144
+        count: 2153
     participants:
       data:
       - id: 5c4e0117-200c-3251-bcb5-36a42fd6872f
@@ -6371,7 +6371,7 @@ data:
         related: https://mujrozhlas.croapi.cz/shows/bd617ec0-2b0c-3197-be5b-2b1742584552/participants
     serials:
       data:
-      - id: 364f95fb-6544-32d0-b65f-9d2b19eef159
+      - id: 10527b60-eddf-3194-bc1a-f1bc521d91b0
         type: serial
       - id: 4bade1d9-dd54-36e8-9e6f-d9ce7d2c6fa3
         type: serial
@@ -6444,14 +6444,18 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/be39d135-9e67-36c0-9d56-7e900c39cc8f/episodes
       meta:
-        count: 1770
+        count: 1787
     participants:
       data: []
       links:
         related: https://mujrozhlas.croapi.cz/shows/be39d135-9e67-36c0-9d56-7e900c39cc8f/participants
     serials:
       data:
+      - id: 7cec2ac4-9dee-344c-a4bd-bc6b32100f8d
+        type: serial
       - id: 83ea65b3-bdbe-3648-959c-6ed757ded7f1
+        type: serial
+      - id: 9b977de0-554d-3e5a-84f1-8fabbe94f880
         type: serial
       - id: ac2d1af2-4da0-3857-96fd-32679daeeb8c
         type: serial
@@ -6522,7 +6526,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/1e941700-d85a-358c-9862-1931899b1348/episodes
       meta:
-        count: 955
+        count: 962
     participants:
       data: []
       links:
@@ -6534,10 +6538,6 @@ data:
       - id: 556a7e80-8b80-3b87-a821-ca77c33f2a98
         type: serial
       - id: 5d490aa9-8cc0-3a5f-b0bb-202a534e44f4
-        type: serial
-      - id: ae35042c-56b7-33f4-bd5f-340bb6a0420e
-        type: serial
-      - id: f25c35b7-9de9-347a-84fc-6d26c491774a
         type: serial
       links:
         related: https://mujrozhlas.croapi.cz/shows/1e941700-d85a-358c-9862-1931899b1348/serials
@@ -6604,7 +6604,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/6fa029d1-f704-301f-888c-7b7bf5a42be3/episodes
       meta:
-        count: 657
+        count: 662
     participants:
       data: []
       links:
@@ -6674,7 +6674,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/f6ee9cd6-5128-35c2-8357-f290b6a9fea6/episodes
       meta:
-        count: 271
+        count: 272
     participants:
       data:
       - id: 4066efa9-c6f8-347d-a38d-6cc753be6cb0
@@ -6914,7 +6914,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/3c96cfb9-3c19-3e34-8224-89d760963321/episodes
       meta:
-        count: 111
+        count: 113
     participants:
       data:
       - id: bbd7c015-f4c5-3db9-a81d-4c51f63fbc19
@@ -7058,7 +7058,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/98367cb9-4c6c-38f4-9042-c0e93573a254/episodes
       meta:
-        count: 536
+        count: 540
     participants:
       data:
       - id: 94680129-b984-3349-82c2-303fae6aa776
@@ -7380,7 +7380,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/11d9a145-a428-3fe9-8281-239d5ae63868/episodes
       meta:
-        count: 151
+        count: 152
     participants:
       data:
       - id: 5de457e8-58f5-35d0-a229-944d02a289b7
@@ -7465,6 +7465,8 @@ data:
       - id: 0c5ddf3b-048e-3d12-b99b-d16fbe3a2dfe
         type: serial
       - id: 20dea9f8-b347-372e-87cd-a5f4d3e92ea6
+        type: serial
+      - id: 2d3a4b68-e45b-3d14-b2c3-4c4063cf4ce5
         type: serial
       - id: 4437dc01-2596-3f31-9fe1-ea39f4d497d5
         type: serial
@@ -7954,7 +7956,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/1e05660b-06ff-3a78-a7a5-177493377ffb/episodes
       meta:
-        count: 776
+        count: 781
     participants:
       data: []
       links:
@@ -8028,7 +8030,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/16f5b8e8-8b6e-3ab8-85d1-0617f54ad177/episodes
       meta:
-        count: 46
+        count: 47
     participants:
       data:
       - id: 8e93d647-4119-3961-9eec-223a66cb03ca
@@ -8235,7 +8237,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/3b1aebef-eca7-3694-a290-4bae22559bd5/episodes
       meta:
-        count: 911
+        count: 912
     participants:
       data:
       - id: cf2ceb83-27f2-35ab-aa38-448b74c42b7d
@@ -8545,7 +8547,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/8bb8cbe0-a526-376c-a391-43dbdcd75107/episodes
       meta:
-        count: 222
+        count: 223
     participants:
       data:
       - id: d2b5e800-1839-3ca0-8f5a-76804b3c8175
@@ -8621,7 +8623,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/ee8d41ec-8ad7-3ecd-ab3a-b99170f0841e/episodes
       meta:
-        count: 1301
+        count: 1309
     participants:
       data:
       - id: 57a83c43-8d52-3a5e-b950-ea66cefbdcc9
@@ -10229,7 +10231,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/8f249298-019c-3428-a282-d130c98e1e4d/episodes
       meta:
-        count: 4250
+        count: 4251
     participants:
       data: []
       links:
@@ -10615,7 +10617,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/23ed78a6-70d5-34b7-ab3f-d39cfeb12c7a/episodes
       meta:
-        count: 285
+        count: 286
     participants:
       data: []
       links:
@@ -10685,7 +10687,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/2d92aee0-ea37-3236-bc5b-b716b7b97d0c/episodes
       meta:
-        count: 3554
+        count: 3559
     participants:
       data: []
       links:
@@ -10920,18 +10922,18 @@ data:
         type: episode
       - id: 1023da5d-e160-3913-8f0e-d9bf10071d30
         type: episode
+      - id: 1048eb5a-52a6-3d33-b671-a8ec39cb8398
+        type: episode
       - id: 11f5a0f7-1440-3181-86de-dbc658ffb437
         type: episode
       - id: 127b3e7d-bb91-3f87-bbe5-1162cb7b0a8d
         type: episode
       - id: 1466ecc8-8338-3153-a335-065a5da70e66
         type: episode
-      - id: 15102e1e-2780-335b-b181-4770f5998c5e
-        type: episode
       links:
         related: https://mujrozhlas.croapi.cz/shows/e7d62290-6be6-3229-a40f-5730c0567239/episodes
       meta:
-        count: 183
+        count: 196
     participants:
       data:
       - id: 2bcf0919-e18c-3235-8f68-570d6b3d830a
@@ -10954,8 +10956,6 @@ data:
         related: https://mujrozhlas.croapi.cz/shows/e7d62290-6be6-3229-a40f-5730c0567239/participants
     serials:
       data:
-      - id: 37996d0d-d203-3e2c-ae01-1415295bd5b9
-        type: serial
       - id: 407dc81c-333d-3e16-8910-10e8679d68cc
         type: serial
       - id: 74934a12-2921-32b3-b238-aaaf63cdcec9
@@ -10963,6 +10963,8 @@ data:
       - id: 97755693-1bc4-3c8e-8a6d-9ae04641afae
         type: serial
       - id: bc0a0fd9-88c0-3e4b-a425-e29c777559cc
+        type: serial
+      - id: d21ef714-c174-3dcc-99ff-a743567933a7
         type: serial
       - id: e4fc19bc-9fd0-3002-a9f4-89c37e4070f8
         type: serial
@@ -11579,8 +11581,6 @@ data:
       data:
       - id: 01ec9ab2-6f9a-3e52-8e30-62ba6e5c829e
         type: episode
-      - id: 02a10b77-fce3-3da6-ac40-ec8336b12f4a
-        type: episode
       - id: 09cf050f-aebb-39a8-b896-9dc09dc47dc8
         type: episode
       - id: 0cedca32-009d-3334-9f40-20fc5a3af5de
@@ -11597,10 +11597,12 @@ data:
         type: episode
       - id: 133cebe4-3108-3c80-8bea-8605cafbbabb
         type: episode
+      - id: 13f501bf-3a74-3853-bc2e-8bad57bcb12f
+        type: episode
       links:
         related: https://mujrozhlas.croapi.cz/shows/1821adf9-fa67-3fb7-b032-cede2af350a4/episodes
       meta:
-        count: 120
+        count: 118
     participants:
       data:
       - id: 2bcf0919-e18c-3235-8f68-570d6b3d830a
@@ -12141,7 +12143,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/bd023258-53d5-3f15-b080-ddeb4235ce9a/episodes
       meta:
-        count: 729
+        count: 730
     participants:
       data: []
       links:
@@ -12350,7 +12352,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/702490e4-3dc4-3209-8ca1-ac538f397946/episodes
       meta:
-        count: 623
+        count: 626
     participants:
       data: []
       links:
@@ -12509,7 +12511,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/f5afd5cd-906f-3027-894a-ad999654114a/episodes
       meta:
-        count: 394
+        count: 395
     participants:
       data: []
       links:
@@ -12581,7 +12583,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/3406a0cc-13f3-3b9c-9286-00cd600af6c1/episodes
       meta:
-        count: 235
+        count: 236
     participants:
       data:
       - id: a7a6c04f-e250-34f6-97e8-eff596baf129
@@ -12822,12 +12824,12 @@ data:
         type: episode
       - id: 06260bb2-4aa5-30e8-9ea4-715c32537050
         type: episode
-      - id: 06f90c57-e168-31dc-830f-e7f83233b9ca
+      - id: 06e4c8b5-1a4d-3d4c-93b8-cb87e86744d2
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/shows/ec0cc279-ba06-3403-b9c5-c8d7172f0887/episodes
       meta:
-        count: 368
+        count: 374
     participants:
       data:
       - id: 1f2a481d-956d-3a2a-bd68-801355cb87c8
@@ -13553,7 +13555,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/912668aa-ff34-382d-80d1-77bb9f8c870f/episodes
       meta:
-        count: 1129
+        count: 1131
     participants:
       data:
       - id: e250937d-6afa-3696-a398-63080639ca3b
@@ -13767,7 +13769,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/c5155ffc-8a86-3baf-a295-60c68e26a95a/episodes
       meta:
-        count: 448
+        count: 453
     participants:
       data:
       - id: 15a180ce-04bd-3246-97b1-cc6cd806d181
@@ -14005,6 +14007,67 @@ data:
     aired: true
     asset:
       credit:
+        author: "Alena Mar\u0161\xEDkov\xE1 Mich\xE1lkov\xE1"
+        description: "D\u0159evo a c\xEDn. Varhany v Santiniho chr\xE1mech"
+        license: ''
+        origin_url: ''
+        source: "\u010Cesk\xFD rozhlas"
+      focal_point: 50,50
+      height: 1400
+      id: b20f6368-c813-3d4b-9fbd-fe604ce0a9af
+      url: https://portal.rozhlas.cz/sites/default/files/images/bf55ee17136f238ea66da9cb19d5bbc6.jpg
+      width: 2100
+    childFriendly: false
+    description: "Poznejte \u0161est varhan v p\u011Bti chr\xE1mech geni\xE1ln\xED\
+      ho architekta postaven\xFDch na Vyso\u010Din\u011B a seznamte se s jejich zvukem\
+      \ od nejjemn\u011Bj\u0161\xEDho pianissima po nejzvu\u010Dn\u011Bj\u0161\xED\
+      \ pl\xE9no ve varhann\xEDch improvizac\xEDch inspirovan\xFDch charakterem jednotliv\xFD\
+      ch n\xE1stroj\u016F i unik\xE1tn\xEDm geniem loci. \u0160est n\xE1stroj\u016F\
+      \ od star\xFDch i sou\u010Dasn\xFDch mistr\u016F varhan\xE1\u0159\u016F v \u017D\
+      elivi, Humpolci, \u017D\u010F\xE1ru nad S\xE1zavou, Oby\u010Dtov\u011B a Horn\xED\
+      \ Bobrov\xE9 p\u0159edstavuj\xED Alena Mar\u0161\xEDkov\xE1 Mich\xE1lkov\xE1\
+      \ a Pavel \u010Cern\xFD."
+    podcast: true
+    priority: 0
+    shortDescription: "Poznejte \u0161est varhan v p\u011Bti chr\xE1mech geni\xE1\
+      ln\xEDho architekta postaven\xFDch na Vyso\u010Din\u011B.\_"
+    showContent: true
+    showType: show
+    sortedBySeriesEpisodeNumber: false
+    title: "D\u0159evo a c\xEDn. Varhany v Santiniho chr\xE1mech"
+    updated: '2023-08-21T14:45:01+02:00'
+  id: 73cf42a2-d994-3e56-873b-96c100012708
+  relationships:
+    episodes:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73cf42a2-d994-3e56-873b-96c100012708/episodes
+      meta:
+        count: 0
+    participants:
+      data:
+      - id: b01ecc79-bf0c-3ea0-b1c2-6886682d5049
+        meta:
+          role: moderator
+        type: person
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73cf42a2-d994-3e56-873b-96c100012708/participants
+    serials:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73cf42a2-d994-3e56-873b-96c100012708/serials
+    stations:
+      data:
+      - id: 0134ce01-8684-3556-b568-f208392ac0bd
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/73cf42a2-d994-3e56-873b-96c100012708/stations
+  type: show
+- attributes:
+    active: true
+    aired: true
+    asset:
+      credit:
         author: ''
         description: "Duchovn\xED hudba"
         license: ''
@@ -14053,7 +14116,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/c58f3d54-7cdd-39e6-b8ef-c75080a6f8dc/episodes
       meta:
-        count: 209
+        count: 210
     participants:
       data:
       - id: 67ed640c-5fe2-35a3-9ef6-74cbd283f9fc
@@ -14212,7 +14275,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/f99ad4ab-acc4-3540-bcb9-9f477e64d58b/episodes
       meta:
-        count: 394
+        count: 395
     participants:
       data:
       - id: 25664c04-31d5-3adb-a268-136a2fe7f065
@@ -14441,7 +14504,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/5734245c-946d-3b10-9bfb-d295580f3752/episodes
       meta:
-        count: 2706
+        count: 2712
     participants:
       data:
       - id: dcd22621-d490-3145-ac3c-689b6e8242de
@@ -15268,10 +15331,12 @@ data:
         type: episode
       - id: ebfd76f4-a14f-3063-a206-31f47d16ccd1
         type: episode
+      - id: fb54f3e6-1b5f-3600-8bcf-357c888bf9db
+        type: episode
       links:
         related: https://mujrozhlas.croapi.cz/shows/d757b12f-395c-327d-9c1d-fb8cdcef160a/episodes
       meta:
-        count: 6
+        count: 7
     participants:
       data:
       - id: 12f3c442-d08e-3459-ab2c-9fee8b86a080
@@ -15501,7 +15566,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/f2f850ad-2c8b-3b1b-a375-2ff66e23df5e/episodes
       meta:
-        count: 263
+        count: 264
     participants:
       data:
       - id: 009ebfb8-b783-3890-9273-76b1f98b2b57
@@ -15946,7 +16011,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/b2808f16-ac4d-32bb-99c1-55b0638c7e2f/episodes
       meta:
-        count: 181
+        count: 182
     participants:
       data:
       - id: 84d96772-ca41-3d9b-95cd-da9bc6be0a38
@@ -16469,7 +16534,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/aaeb0f7c-371f-3114-aef7-9e07bd92ab08/episodes
       meta:
-        count: 37
+        count: 38
     participants:
       data:
       - id: aba66b1d-8cef-36c1-9002-244eed4f83ef
@@ -16833,7 +16898,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/b1e0a7a5-55a8-3d83-9f31-4d4a47aca437/episodes
       meta:
-        count: 134
+        count: 135
     participants:
       data:
       - id: 249362e7-a233-3160-9834-dea4e3ed2f96
@@ -16911,7 +16976,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/c398d70c-3f03-3f06-9aab-26a852f4a0ac/episodes
       meta:
-        count: 40
+        count: 41
     participants:
       data:
       - id: 06d24ae5-9646-3a43-a0ae-5da371c2549f
@@ -17059,7 +17124,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/9be3551a-551a-346b-b0a5-92aae892b0eb/episodes
       meta:
-        count: 225
+        count: 226
     participants:
       data: []
       links:
@@ -17255,7 +17320,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/88b4b8a3-ae05-3090-9989-36ed84787a03/episodes
       meta:
-        count: 762
+        count: 763
     participants:
       data:
       - id: ecb4c82d-10a2-3432-ba87-9b8af38a4b85
@@ -17579,7 +17644,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/35c18f7b-ef7c-39ae-86a5-4bb4b1a1953d/episodes
       meta:
-        count: 595
+        count: 596
     participants:
       data:
       - id: 335e4a99-7494-39f8-80e1-ed6ef9976b65
@@ -18254,7 +18319,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/9f676637-9f2d-3199-bc88-fd7722ea5a79/episodes
       meta:
-        count: 1243
+        count: 1249
     participants:
       data: []
       links:
@@ -18381,7 +18446,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/c43c1e9c-f899-3c60-b754-80d9cd4cf949/episodes
       meta:
-        count: 524
+        count: 525
     participants:
       data:
       - id: 6cb1e4b1-21bc-3958-865a-9f2943e3ab98
@@ -18475,6 +18540,10 @@ data:
       - id: 1117c362-157f-3c54-9d52-ac2b68d4980b
         type: serial
       - id: 58f7c86e-e5dd-3afb-afda-ec879d67b861
+        type: serial
+      - id: 7dae61b4-526d-345d-9e3e-71e55974ff1e
+        type: serial
+      - id: 7ee09b8b-4c14-3534-936f-b667a189d418
         type: serial
       - id: 83bc022d-6fe3-3fac-bfd8-0a3041a11340
         type: serial
@@ -18759,7 +18828,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/670d8ae2-7529-3263-be9b-a604ccc5eed5/episodes
       meta:
-        count: 241
+        count: 242
     participants:
       data:
       - id: 3a536630-5a66-3ea9-b665-367eac7aa047
@@ -18831,7 +18900,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/96f517e9-9486-3f22-aa7a-2c7fc0294dc5/episodes
       meta:
-        count: 542
+        count: 543
     participants:
       data:
       - id: 011cddcf-4d8f-3706-b868-407d363f7492
@@ -19085,7 +19154,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/6f1d6fd8-db19-3fc8-8cfc-4b8aed97ee53/episodes
       meta:
-        count: 257
+        count: 258
     participants:
       data:
       - id: 1cb35d9d-fb24-37ee-8993-9f74e57ab2c7
@@ -19245,7 +19314,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/be1e049c-f67c-3f96-894a-de3b123487ba/episodes
       meta:
-        count: 257
+        count: 259
     participants:
       data:
       - id: bf090730-dc35-3bfa-9bca-89b66b4a892d
@@ -19475,7 +19544,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/bcb42b61-7227-32a5-8371-fb582584116f/episodes
       meta:
-        count: 4184
+        count: 4200
     participants:
       data: []
       links:
@@ -19545,7 +19614,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/1a8454bd-0751-39ff-b5e6-4bd8cd89c672/episodes
       meta:
-        count: 3073
+        count: 3085
     participants:
       data: []
       links:
@@ -19745,7 +19814,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/e59814ac-f4b0-3f19-b120-f57474ba24d7/episodes
       meta:
-        count: 1371
+        count: 1375
     participants:
       data:
       - id: 4066efa9-c6f8-347d-a38d-6cc753be6cb0
@@ -19843,7 +19912,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/e00cfc5d-9e0f-3b17-90f5-6a29607c69cb/episodes
       meta:
-        count: 461
+        count: 462
     participants:
       data:
       - id: 93d0a5f2-c435-3a3c-b651-2626f02025c4
@@ -20321,7 +20390,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/ed4a7917-c69b-3bd4-842e-829026c01a3d/episodes
       meta:
-        count: 608
+        count: 609
     participants:
       data:
       - id: 75e9c5fd-13b0-3774-b331-0640f936c639
@@ -20587,7 +20656,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/b645db4d-fe9e-3b1f-92da-5e25a7bcd8b0/episodes
       meta:
-        count: 542
+        count: 546
     participants:
       data: []
       links:
@@ -20663,7 +20732,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/96068576-1cdc-3495-8943-4bb345ed9598/episodes
       meta:
-        count: 1411
+        count: 1417
     participants:
       data: []
       links:
@@ -20881,7 +20950,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/c0e403a9-9dea-365b-96ff-545320a69b4e/episodes
       meta:
-        count: 5506
+        count: 5511
     participants:
       data:
       - id: 5e63f805-942d-374e-8668-66eaae919b2f
@@ -20967,7 +21036,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/d152812c-5997-3cbb-8729-205c164bd789/episodes
       meta:
-        count: 1434
+        count: 1436
     participants:
       data:
       - id: 0b0b0fe2-16db-3996-8b91-eab0933d8480
@@ -21140,7 +21209,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/336c5c7a-8756-310b-8810-52fc5f1ee8fa/episodes
       meta:
-        count: 3241
+        count: 3247
     participants:
       data:
       - id: 155db11e-19ac-37bc-8136-4fed13db99eb
@@ -21301,7 +21370,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/49ed63aa-a811-3386-8b95-f9e5da4e42f5/episodes
       meta:
-        count: 3452
+        count: 3455
     participants:
       data:
       - id: 4d21bf83-13d7-3be5-b0f1-e6de20bc2ebc
@@ -21481,7 +21550,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/0e65e92d-3eb9-329a-8b35-86d9b7e1ce76/episodes
       meta:
-        count: 190
+        count: 191
     participants:
       data: []
       links:
@@ -21553,7 +21622,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/fb9e66b6-83fa-3c73-88b7-449b22078af6/episodes
       meta:
-        count: 225
+        count: 227
     participants:
       data: []
       links:
@@ -21627,7 +21696,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/18ce61f4-31fd-3240-ae4c-b14732658722/episodes
       meta:
-        count: 174
+        count: 175
     participants:
       data:
       - id: 5a4e4548-c571-308d-bad0-bbe8df24a534
@@ -22226,7 +22295,7 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/01843ff1-3cd0-3eab-bec0-62c19b604b2d/episodes
       meta:
-        count: 226
+        count: 227
     participants:
       data:
       - id: 148aed34-fc04-330e-b0d0-4598dc15f7a2
@@ -22461,80 +22530,6 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/500878b4-e5bd-30cf-8032-63d02fd9d496/stations
   type: show
-- attributes:
-    active: true
-    aired: true
-    asset:
-      credit:
-        author: "Ad\xE9la N\u011Bme\u010Dkov\xE1"
-        description: "Petr L\xFCftner"
-        license: ''
-        origin_url: ''
-        source: ''
-      focal_point: 50,50
-      height: 1064
-      id: 8e11fe56-8b10-38da-aff1-183bb8f8b3a9
-      url: https://portal.rozhlas.cz/sites/default/files/images/bd350d4a6279142525446c119fc554ec.JPG
-      width: 1600
-    childFriendly: false
-    description: "Muzikant a moder\xE1tor \u010Cesk\xE9ho rozhlasu Petr L\xFCftner\
-      \ v\xE1m ve sv\xE9m po\u0159adu nab\xEDz\xED sezn\xE1men\xED s p\xEDsn\u011B\
-      mi a interprety, kter\xE9 nen\xED zcela b\u011B\u017En\xE9 v \u010Desk\xE9m\
-      \ \xE9teru zaslechnout."
-    podcast: false
-    priority: 0
-    shortDescription: "Muzikant a moder\xE1tor \u010Cesk\xE9ho rozhlasu Petr L\xFC\
-      ftner v\xE1m ve sv\xE9m po\u0159adu nab\xEDz\xED sezn\xE1men\xED s p\xEDsn\u011B\
-      mi a interprety, kter\xE9 nen\xED zcela b\u011B\u017En\xE9 v \u010Desk\xE9m\
-      \ \xE9teru zaslechnout."
-    showContent: true
-    showType: show
-    sortedBySeriesEpisodeNumber: false
-    title: "Hudebn\xED hled\xE1n\xED Petra L\xFCftnera"
-    updated: '2021-02-01T13:30:03+01:00'
-  id: 470b1476-7282-389f-a6e8-951dfdc7c98d
-  relationships:
-    episodes:
-      data:
-      - id: 0026e28d-a9e5-351e-93d5-868b6d9fcad3
-        type: episode
-      - id: 00a23142-5c63-35cd-9a4f-018b70e4aa7c
-        type: episode
-      - id: 02185bd6-7877-35c0-9f52-342683c4ed2b
-        type: episode
-      - id: 03bc3b78-2571-3902-b43f-94922632f3fa
-        type: episode
-      - id: 04dee32c-e792-3313-b25f-adf1a5ae2564
-        type: episode
-      - id: 05f6e526-2aad-38d4-a847-496e027cda0f
-        type: episode
-      - id: 06a6029f-ccae-30ee-950a-e410ac1928ee
-        type: episode
-      - id: 077d72d8-e45f-3ac6-873f-1b1a441ccbc2
-        type: episode
-      - id: 08c9de36-6581-35f4-8de0-78438ff3123c
-        type: episode
-      - id: 097c9b0c-6cc0-3dad-9b49-4d9041c7baf4
-        type: episode
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/470b1476-7282-389f-a6e8-951dfdc7c98d/episodes
-      meta:
-        count: 253
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/470b1476-7282-389f-a6e8-951dfdc7c98d/participants
-    serials:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/470b1476-7282-389f-a6e8-951dfdc7c98d/serials
-    stations:
-      data:
-      - id: 5e94e06f-5435-3291-87c5-aeca8bc9c884
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/470b1476-7282-389f-a6e8-951dfdc7c98d/stations
-  type: show
 links:
   first: null
   last: https://mujrozhlas.croapi.cz/shows?page%5Blimit%5D=300&page%5Boffset%5D=900
@@ -22542,4 +22537,4 @@ links:
   prev: null
   self: https://mujrozhlas.croapi.cz/shows?page%5Blimit%5D=300
 meta:
-  count: 1091
+  count: 1092

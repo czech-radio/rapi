@@ -9709,7 +9709,7 @@ data:
       ipravilo vydavatelstv\xED Tympanum.</p><p>Po\u0159ad nen\xED vhodn\xFD pro d\u011B\
       ti a mladistv\xE9.</p></p>"
     lastEpisodeSince: '2023-07-22T00:01:00+02:00'
-    playable: true
+    playable: false
     shortTitle: "Anthony Burgess: Mechanick\xFD pomeran\u010D. Parta frend\xEDk\u016F\
       \ p\xE1ch\xE1 brut\xE1ln\xED n\xE1sil\xED v uhran\u010Div\xE9 dystopii"
     title: "Anthony Burgess: Mechanick\xFD pomeran\u010D. Parta frend\xEDk\u016F p\xE1\
@@ -10621,6 +10621,49 @@ data:
         type: show
       links:
         related: https://mujrozhlas.croapi.cz/shows/b8c2564a-1dac-3230-8949-1aad7fd7688a
+  type: serial
+- attributes:
+    asset:
+      credit:
+        author: ''
+        description: Okupace 1968
+        license: ''
+        origin_url: ''
+        source: Fotobanka Profimedia
+      focal_point: 50,50
+      height: 2201
+      id: 30526594-8716-39ff-a176-b477eabf64bf
+      url: https://portal.rozhlas.cz/sites/default/files/images/d7fbf659924ad77da4b0eb2f0f668b0f.jpg
+      width: 3364
+    description: "<p>V noci z 20. na 21. srpna 1968 vtrhla do \u010Ceskoslovenska\
+      \ vojska Var\u0161avsk\xE9 smlouvy v \u010Dele se Sov\u011Btsk\xFDm svazem.&nbsp;Cel\xFD\
+      \ t\xFDden si budeme na Radio\u017Eurn\xE1lu p\u0159ipom\xEDnat tyto ud\xE1\
+      losti. Poslechn\u011Bte si unik\xE1tn\xED report\xE1\u017Ee z 21. srpna 1968\
+      \ i dal\u0161\xED archivn\xED materi\xE1ly. Poslouchejte ka\u017Ed\xFD den v\
+      \ 8:50.</p>"
+    lastEpisodeSince: '2023-08-22T07:47:00+02:00'
+    playable: true
+    shortTitle: "Archivn\xED nahr\xE1vky z invaze 21. srpna 1968. Poslechn\u011Bte\
+      \ si report\xE1\u017Ee z obdob\xED Pra\u017Esk\xE9ho jara"
+    title: "Archivn\xED nahr\xE1vky z invaze 21. srpna 1968. Poslechn\u011Bte si report\xE1\
+      \u017Ee z obdob\xED Pra\u017Esk\xE9ho jara"
+    totalParts: 7
+    updated: '2023-08-21T12:20:02+02:00'
+  id: 5d299240-7e84-3974-a944-08085e4782b4
+  relationships:
+    episodes:
+      links:
+        related: https://mujrozhlas.croapi.cz/serials/5d299240-7e84-3974-a944-08085e4782b4/episodes
+    genres:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/serials/5d299240-7e84-3974-a944-08085e4782b4/genres
+    show:
+      data:
+        id: 816732b1-04cc-3f40-972a-ba16bf5a6eb1
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/816732b1-04cc-3f40-972a-ba16bf5a6eb1
   type: serial
 - attributes:
     asset:
@@ -13610,7 +13653,7 @@ data:
     description: "<p>Inspirativn\xED texty do B\xE1Sn\u011Bn\xED vyb\xEDr\xE1 mlad\xE1\
       \ jiho\u010Desk\xE1 b\xE1sn\xED\u0159ka Anna Ga\u017Eiov\xE1.</p>"
     lastEpisodeSince: '2022-01-03T15:00:00+01:00'
-    playable: false
+    playable: true
     shortTitle: "B\xE1Sn\u011Bn\xED Anny Ga\u017Eiov\xE9"
     title: "B\xE1Sn\u011Bn\xED Anny Ga\u017Eiov\xE9"
     totalParts: 5
@@ -13670,66 +13713,6 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/shows/a2be9519-2057-3616-93d7-db27f44a2d4f
   type: serial
-- attributes:
-    asset:
-      credit:
-        author: "Dominik Ma\u010Das"
-        description: "Bohuslav Van\u011Bk \xDAvalsk\xFD"
-        license: ''
-        origin_url: ''
-        source: "\u010Cesk\xFD rozhlas"
-      focal_point: 50,50
-      height: 1181
-      id: be716540-8ddc-378c-b207-d795425938dd
-      url: https://portal.rozhlas.cz/sites/default/files/images/72cd4221fdc4feed2fee8e31f1a049a4.jpg
-      width: 2100
-    description: "<p>Z b\xE1sn\xED Franti\u0161ka Gellnera, J.H. Krchovsk\xE9ho, Ostrochina\
-      \ Vr\xE1bela, Charlese Bukowsk\xE9ho a tak\xE9 z drobn\xFDch nonsensov\xFDch\
-      \ \u201Epak\xE1ren\u201C vyb\xEDr\xE1 spisovatel a zakladatel Kr\xE1sn\xE9ho\
-      \ nakladatelstv\xED.<br>\nS autorem p\u0159ipravil: Dominik Ma\u010Das<br />Nato\u010D\
-      eno v roce 2021.<br /><br />\xDADAJE O VYD\xC1N\xCD:<br /><br />Franti\u0161\
-      ek Gellner: bez n\xE1zvu Drobky pod st\u016Fl h\xE1z\xED n\xE1m osud (ze sb\xED\
-      rky Radosti \u017Eivota, Modern\xED \u017Eivot 1903)<br />J. H. Krchovsk\xFD\
-      : Zamilovan\xFD dement (ze souboru B\xE1sn\u011B sebran\xE9, Host 2010)<br />Ostrochin\
-      \ Vr\xE1bel: bez n\xE1zvu Tu jsem zase v&nbsp;podve\u010Deru (\xFAryvek z balady\
-      \ Rhytmus rmut, Kr\xE1sn\xE9 nakladatelstv\xED 1996)<br />Charles Bukowski:\
-      \ Nejsem misogyn (z v\xFDboru B\xE1sn\u011B II \u2013 N\u011Bkdy jste tak sami,\
-      \ a\u017E to prost\u011B d\xE1v\xE1 smysl, Pragma 2003, p\u0159eklad Milan \u017D\
-      \xE1\u010Dek)<br /><br />\u201EPak\xE1rny\u201C (drobn\xE9 diamanty \u010Desk\xE9\
-      \ poezie):<br />Jan Vod\u0148ansk\xFD a Petr Skoumal: bez n\xE1zvu Po ulici\
-      \ jede Opel, bez n\xE1zvu Kdepak je pan profesor (B\xE1sn\u011B Vod\u0148ansk\xE9\
-      ho a Skoumala, www.kytara.cz)<br />T. R. Field: Z\xE1drhel zem\u011Bpisn\xFD\
-      , bez n\xE1zvu Hasi\u010Di, jen has ty necky... (z v\xFDboru Lomikel a jin\xE9\
-      \ z\xE1drhele, \u010Ceskoslovensk\xFD spisovatel 1990)<br />Ferdinand Havl\xED\
-      k: bez n\xE1zvu Symfonick\xE1 d\xE1se\u0148 (Ji\u0159\xED Such\xFD: Kn\xED\u017E\
-      ka aneb Co mne jen tak napadlo, Panton 1986)<br />Karel Pl\xEDhal: Ud\xE1lost\
-      \ ve skupin\u011B El\xE1n (B\xE1sn\u011B Karla Pl\xEDhala, www.kytara.cz), Schwarzeneggerova\
-      \ ukol\xE9bavka (CD Karel Pl\xEDhal v Olomouci 1, Monitor EMI Czech republic\
-      \ 2004)<br />Bohuslav Van\u011Bk \xDAvalsk\xFD: Milostn\xFD herb\xE1\u0159 45\
-      \ (ze sb\xEDrky N\xE1\u0159ez brouk\u016F na palouku, Kr\xE1sn\xE9 nakladatelstv\xED\
-      \ 1994)</p>"
-    lastEpisodeSince: '2022-12-09T15:00:00+01:00'
-    playable: true
-    shortTitle: "B\xE1Sn\u011Bn\xED Bohuslava Va\u0148ka \xDAvalsk\xE9ho"
-    title: "B\xE1Sn\u011Bn\xED Bohuslava Va\u0148ka \xDAvalsk\xE9ho"
-    totalParts: 5
-    updated: '2022-12-06T11:00:10+01:00'
-  id: 4da39456-3c83-382a-8100-9ae8141df737
-  relationships:
-    episodes:
-      links:
-        related: https://mujrozhlas.croapi.cz/serials/4da39456-3c83-382a-8100-9ae8141df737/episodes
-    genres:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/serials/4da39456-3c83-382a-8100-9ae8141df737/genres
-    show:
-      data:
-        id: a2be9519-2057-3616-93d7-db27f44a2d4f
-        type: show
-      links:
-        related: https://mujrozhlas.croapi.cz/shows/a2be9519-2057-3616-93d7-db27f44a2d4f
-  type: serial
 links:
   first: null
   last: https://mujrozhlas.croapi.cz/serials?page%5Blimit%5D=300&page%5Boffset%5D=4200
@@ -13737,4 +13720,4 @@ links:
   prev: null
   self: https://mujrozhlas.croapi.cz/serials?page%5Blimit%5D=300
 meta:
-  count: 4483
+  count: 4497
