@@ -93,6 +93,19 @@ can be any subset of default.yml. User cannot create, set any other variables or
 
 ### usage with selected variables sources with specified priority 
 
+    ```
+    Cfg = config.CFG()
+    cfgp = config.Cfg_params()               # load commandline parameters given by user
+    cfge = config.Cfg_env()                  # load env variables
+    cfgf = config.Cfg_file("./user_cfg.yml") # load variables from user defined/modified file containing subset of defaults.yml
+    cfgd: dict={}                            # specify subset dictionary of defaults.yml
+    Cfg.add_sources([cfgp,cfge,cfgd])        # specify the source priority (in order of decreasing priority:
+                                             # if first source does not have variable defined
+                                             # the value from next source will be taken)
+    Cfg.cfg_runtime_set()
+    varname=Cfg.runtime_get(["debug","cfg"])
+    ```
+
 ## DEVELOPEMENT NOTES
 
 - given in ./rapi/src/rapi/params.py
