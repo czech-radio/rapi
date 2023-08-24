@@ -23,7 +23,11 @@ data:
         type: episode
       - id: 90b37690-e6d0-4d34-bb43-374239be60ab
         type: episode
+      - id: 85774b49-a220-312f-90c5-79d59494cd04
+        type: episode
       - id: 50ed11c0-285f-4445-88c4-e89fe49d7d30
+        type: episode
+      - id: 397c7ca9-d50f-3867-b673-1bb882036637
         type: episode
       - id: 7cc0fdf5-1de2-4d91-94bb-bddf2c94a021
         type: episode
@@ -34,10 +38,6 @@ data:
       - id: dc8fa5b8-0bba-3c28-a67a-c11c7703f8ea
         type: episode
       - id: 0633866c-844e-331c-900b-f962e626c262
-        type: episode
-      - id: 0878e742-ab7f-3c20-8f6d-647eef6ed0b0
-        type: episode
-      - id: 28b7a21f-8fdf-39d2-9c10-4116b9969e7d
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/fdb37f89-29c9-4faf-be29-e867def891cb/episodes
@@ -64,6 +64,10 @@ data:
   relationships:
     episode:
       data:
+      - id: 003b63d4-81a0-331a-88b9-a3e1e315a616
+        type: episode
+      - id: 2d2347de-3c0d-3abb-9dca-2245eb32e132
+        type: episode
       - id: 03b231c1-f12e-3190-bb5c-1606ca926310
         type: episode
       - id: 6eedd947-11b7-33dd-900e-5ab397ecaa36
@@ -79,10 +83,6 @@ data:
       - id: 7d10010c-4476-365a-9ae3-c33317289fb9
         type: episode
       - id: d74f4662-e1ae-33b2-a0af-628dcc7f7791
-        type: episode
-      - id: 9bb49c75-ea56-3ae2-979d-cb3d2fe5cc6f
-        type: episode
-      - id: ff4f69b7-fd70-361b-b71d-69e4051b38ef
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/07d5a42f-8275-4bae-925e-213cdf0ebd18/episodes
@@ -155,6 +155,8 @@ data:
   relationships:
     episode:
       data:
+      - id: 59ae0da6-d01a-3a80-aee5-9110127ddf45
+        type: episode
       - id: eef5235f-357b-34c7-93f1-daa8b1799622
         type: episode
       - id: 3c84f982-f8ad-3feb-8f06-2053b35d466c
@@ -172,8 +174,6 @@ data:
       - id: c956548b-dcef-3c57-8808-714a0255a11f
         type: episode
       - id: 1f795d41-518c-32e7-888b-c4594efa6baf
-        type: episode
-      - id: c0d6b098-3861-3cb9-91a5-ef5dbebbb683
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/d4ee0d9a-93f0-4008-b0d2-59db4df3c038/episodes
@@ -245,6 +245,10 @@ data:
   relationships:
     episode:
       data:
+      - id: 6abf0bff-89b1-3246-8a89-c4c1526266de
+        type: episode
+      - id: 526f7c0d-75a8-39e5-9d60-a8d2e92c5d06
+        type: episode
       - id: f927a70b-e1b0-3014-93bd-1c0609bc33a7
         type: episode
       - id: 97890435-6815-3a0d-a7ff-89c93d0d86aa
@@ -260,10 +264,6 @@ data:
       - id: 3705f4fa-e636-3502-aa24-7392ca0e782b
         type: episode
       - id: 8d18b33b-0cbd-3849-8fe4-ba97dde64c75
-        type: episode
-      - id: a69ee6cf-98a7-35a7-a554-8d74ddd3cf55
-        type: episode
-      - id: 644dee74-78da-3d1f-8830-689a813643d7
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/345a4b21-00cc-41e0-9383-47d4e8e54f8e/episodes
@@ -290,6 +290,10 @@ data:
   relationships:
     episode:
       data:
+      - id: 85774b49-a220-312f-90c5-79d59494cd04
+        type: episode
+      - id: 397c7ca9-d50f-3867-b673-1bb882036637
+        type: episode
       - id: 1b2a957f-4150-327b-8dd3-5f21c917ca3d
         type: episode
       - id: ae833034-4f0b-34ee-91ca-1897be4cd1c4
@@ -305,10 +309,6 @@ data:
       - id: 1c6b59bc-4594-32de-aed0-8fd0b3ab1d2f
         type: episode
       - id: f7fd9a99-b06d-3776-b29c-cba90a4cf5aa
-        type: episode
-      - id: d1e92c6d-3ef6-3fef-bc86-b36c762333f0
-        type: episode
-      - id: 8f5829ed-e005-3c62-81fd-d8abe5fe544d
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/71ecc005-ed83-4533-a50d-4494fcd70fbf/episodes
@@ -338,25 +338,25 @@ data:
   relationships:
     episode:
       data:
-      - id: 48da8214-c38c-3460-8ea0-c8b3f8f00b94
+      - id: b7fe6661-208d-3755-b98b-959a98b7775d
         type: episode
-      - id: 863d2464-79be-345d-b972-004081e43683
+      - id: eab33c96-9ec9-3a03-adfc-6c67beab8946
         type: episode
-      - id: c339ca62-bec2-3bb0-a73c-efb6cfeac8cc
+      - id: 1f4f288a-99d7-3ff2-988a-dfab6dbaca00
         type: episode
-      - id: c31413d4-716d-3084-888f-d62b4b9e5355
+      - id: 8de3391f-2bd5-305e-9e27-54ba50924e47
         type: episode
-      - id: b0221798-2b4c-356b-82f3-a95a8805d4d7
+      - id: 1119767f-d032-37ea-a4d2-f649c201802a
         type: episode
-      - id: 108e713e-51bc-3e96-bc26-112a9f852646
+      - id: f3e47e88-9f10-3a2e-8e36-e060ec96124c
         type: episode
-      - id: 407d2237-6483-3db2-8f91-0c83710bae49
+      - id: 11a004a1-0f0c-31c0-8f9b-c33d1c17f198
         type: episode
-      - id: 0a7eb1ca-6143-377d-89bf-2ce09cb8ae7f
+      - id: 7186534e-5c2e-3a26-94ff-68330010aa47
         type: episode
-      - id: 60581263-1e02-3e2a-84d4-c558d69531eb
+      - id: 39ee2590-2aa8-354a-8678-644374d4fd99
         type: episode
-      - id: 0f8ba322-b135-369c-964e-20b1cfeb2115
+      - id: 9409463e-4998-34cf-9da8-78cd74ba5e75
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/671d0806-2afe-4282-ae90-319b6ef369a2/episodes
@@ -384,25 +384,25 @@ data:
   relationships:
     episode:
       data:
-      - id: 1a6f68bb-73fc-39d0-973f-f77a3216b16f
+      - id: c64e3071-f11d-3590-891a-299cb8b11526
         type: episode
-      - id: be09b4d3-1dd2-3b9f-a844-a102c269fac2
+      - id: 5355babc-bfb9-3904-b7f0-0bbcc703b7c5
         type: episode
-      - id: 7f6c2f01-50f3-32d4-b530-e52f4014c2c7
+      - id: f9ea4618-9b75-3578-8519-74f6784fd91f
         type: episode
-      - id: 1ac90452-d383-3d03-890e-b8e601589f30
+      - id: d4b34ac1-e869-36b0-a706-fa5a7b3884cd
         type: episode
-      - id: 96553d3e-bd29-3337-9d20-7f52a568c40f
+      - id: 664a779c-2373-3644-80e8-a53d9e12de9a
         type: episode
-      - id: 9067c517-dedb-3857-ae70-401f3288245c
+      - id: cab6e9f9-e8c2-3152-b1e2-925e30b61783
         type: episode
-      - id: c34544cd-6ac6-38ce-a8a4-df507155d4b9
+      - id: 28abe120-8847-3259-8799-2c15604937d6
         type: episode
-      - id: a7d41fcb-6df2-3220-8940-8a9cbe34fab8
+      - id: 526223b9-0580-36cc-9d25-aaf44c9ba839
         type: episode
-      - id: eb7c9e55-0912-3002-a263-ebf326df14d1
+      - id: f5d1d982-16d0-3e5e-ba6d-a1d46f025bd2
         type: episode
-      - id: d499598c-6ec3-33c2-8848-9c57e3fcd713
+      - id: ad232ffa-16c6-3213-a55e-462e526d7ca5
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/bf9e35ee-6465-44a2-930b-cac77a5faea5/episodes
@@ -432,21 +432,21 @@ data:
       data:
       - id: 81b589bd-7178-3b6d-a526-59af73cd1c09
         type: episode
-      - id: 035d632a-6226-3a35-b119-2107c400ada7
-        type: episode
       - id: 37349c33-dad0-3eb2-bccb-b26eabed92c7
+        type: episode
+      - id: 035d632a-6226-3a35-b119-2107c400ada7
         type: episode
       - id: d1c2a9dd-0067-35b8-a426-0030ceeba017
         type: episode
-      - id: 409e0e03-7ad8-3579-8d0f-c8a96b08316d
-        type: episode
       - id: d60370c5-f415-379b-81cc-e8f1ea0659da
+        type: episode
+      - id: 409e0e03-7ad8-3579-8d0f-c8a96b08316d
         type: episode
       - id: fe351db4-5d72-3a4b-91f3-dec8601a1885
         type: episode
-      - id: cfc0ae2f-e411-344a-b0d4-ee5d3a345282
-        type: episode
       - id: b82774d7-44a0-3c09-90d7-276775f8d102
+        type: episode
+      - id: cfc0ae2f-e411-344a-b0d4-ee5d3a345282
         type: episode
       - id: ae20f14c-0b85-39fa-8f42-53f93b04b2cf
         type: episode
@@ -476,25 +476,25 @@ data:
   relationships:
     episode:
       data:
-      - id: 8a78f17f-ff82-3bab-b71a-ef5d578a07d9
+      - id: 4e3548c2-cd33-3248-84a2-e6abbb4d3c68
         type: episode
-      - id: 9a414c62-6859-3a6a-a085-c6e1a0861e47
+      - id: 041dec70-15ff-3a39-80a1-b3d092227b4b
         type: episode
-      - id: 75ce609e-c69e-31d0-ae2e-1462417101c9
+      - id: 10290bad-f48c-3384-a71d-b982b5829b9a
         type: episode
-      - id: d6b1ee0b-0ec0-3a66-9130-a223b154f770
+      - id: aa72ab8d-c3a0-3987-8f38-5f07ecf28265
         type: episode
-      - id: 8bbb4b6c-17bf-3c72-b556-59593c1b2ac3
+      - id: fdb518a5-2095-36e7-90a0-8acfdaa8eb88
         type: episode
-      - id: 125572ff-ad54-3af6-960d-31c726672b16
+      - id: e65cab6b-14a5-3703-84d0-59ca9ba97c14
         type: episode
-      - id: d32795bb-ccf0-392d-be3b-2ce7cdcea3ee
+      - id: 6ca801ad-6d0f-3e40-a075-1d7a690c345d
         type: episode
-      - id: 64afee4c-6db4-39a0-a463-1d94ad25ea31
+      - id: 9d075be5-f022-3cbb-b424-ec96827e5e1c
         type: episode
-      - id: b4c18ccd-5d24-3356-890d-9c784d7317ee
+      - id: d8a1f923-9f15-3599-8d4e-15026fa33038
         type: episode
-      - id: f609c1a0-5c68-3199-addc-7f8dc38deaab
+      - id: 9165832b-5943-38c7-95f0-985fca7c810f
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/f5d0af23-2bda-4d59-8b70-d3b60b4e0eec/episodes
@@ -530,9 +530,9 @@ data:
         type: episode
       - id: da858902-4fd8-318e-8b28-88986de6772a
         type: episode
-      - id: a0c369c3-4770-37f8-a559-506f424b2197
-        type: episode
       - id: f265c149-da2c-3ddc-a3f2-cddc0a74b032
+        type: episode
+      - id: a0c369c3-4770-37f8-a559-506f424b2197
         type: episode
       - id: 8cea5e24-1540-3583-8b42-3c3030c13e13
         type: episode
@@ -567,25 +567,25 @@ data:
   relationships:
     episode:
       data:
-      - id: 9d504273-a7fc-383c-a020-079d0f4a5c1d
+      - id: cdbda03e-edce-35a4-9547-7a3744cebb8b
         type: episode
-      - id: a133382f-5721-3688-af0c-4dae2c5619e6
+      - id: a736fce3-d239-3186-9cc3-efcc44b80b77
         type: episode
-      - id: 4d0cc1d3-84d1-34a1-a0bc-89c3feff1bb7
+      - id: 8dec5618-e7a7-342c-964b-65e289f81b05
         type: episode
-      - id: 4e5e093b-c092-3e20-831d-fdc9fc24ef72
+      - id: 6e93450f-b42d-3222-a28e-f0c41894e145
         type: episode
-      - id: 42874716-6ad5-3376-a01c-9a16aec2af09
+      - id: 74174342-b93f-37ff-9332-ae8446a97f69
         type: episode
-      - id: 8f34b1e3-7a59-3856-a559-7cd49590a1c5
+      - id: df9cc29c-2e3c-3937-b2f7-eec349bc157d
         type: episode
-      - id: 9984ab37-7d13-3387-8b1e-6b4f28e3c930
+      - id: 5c5c69bb-2545-3ea5-9dab-03b6701934c9
         type: episode
-      - id: 719ffafc-2f3f-32f4-9bb8-b24c2540097a
+      - id: 0c0e5fd7-65b6-3190-a400-f04ee22425da
         type: episode
-      - id: b12af77b-9e2c-3c90-883c-8620547cc13f
+      - id: 54fc677e-3b77-3274-94cd-9174d330c781
         type: episode
-      - id: 20031aba-f4c8-3b1d-9848-07fdbd8d3381
+      - id: 62f83541-10b1-39db-ab9b-1139efa0aae0
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/36d25b33-6bf4-4cda-ae95-3ab484dbd6eb/episodes
@@ -612,25 +612,25 @@ data:
   relationships:
     episode:
       data:
-      - id: 25f382e5-4d83-36fe-a9a0-f4a9c4d29300
+      - id: 0df98956-4788-365f-a5bb-2d2eb577c8cd
         type: episode
-      - id: 4f203c6e-f4b2-3f48-8b27-e199fcc085bb
+      - id: 60e8a5e1-c6c0-3050-ac0e-f034e0b76a52
         type: episode
-      - id: 51d58279-c322-37d2-aabf-5167cd19d32a
+      - id: 759dfbd7-b83a-31c8-9fef-3703411527ec
         type: episode
-      - id: 1c2726a6-1a72-3586-880e-ff8c1318cf96
+      - id: a5ed862a-25d2-3087-86ef-68759b939c01
         type: episode
-      - id: 5bcb5f03-c21f-320a-aba4-0d8dbe5206cf
+      - id: 40827593-3941-3a93-8226-eeaa1a407e39
         type: episode
-      - id: d2fd2003-83b9-3308-97ff-17e3ed04e88c
+      - id: 469fe192-9747-3bfc-a366-614bb9290b0f
         type: episode
-      - id: d6b69a81-7dce-3e19-ad35-9bebcd11d835
+      - id: 9b583535-bee3-3677-8259-64d29d1b895d
         type: episode
-      - id: dae291a7-9c64-397a-aa89-2af7286b94dc
+      - id: b113c359-f89f-39c9-9cdb-1a87958a22c7
         type: episode
-      - id: 172b6c9b-a284-33b9-800e-2b9425c20dfe
+      - id: 43f4293e-7715-3d3b-9e50-9a3eb4b50a46
         type: episode
-      - id: cb421666-4a2a-351b-ae61-d0e823086ee0
+      - id: 3d72192f-46b4-31af-83ae-bf37c4208252
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/e95e8fce-5237-4c41-8118-6853af4703db/episodes
@@ -657,6 +657,10 @@ data:
   relationships:
     episode:
       data:
+      - id: cc1cad8b-1dae-3758-9976-f0e237f05328
+        type: episode
+      - id: db36547b-bfdd-32f0-b341-de9e2cf32654
+        type: episode
       - id: 60581263-1e02-3e2a-84d4-c558d69531eb
         type: episode
       - id: 2d8939d0-23d7-34fe-8bc7-7433584bee52
@@ -672,10 +676,6 @@ data:
       - id: ce856f14-203f-30a1-b05b-6ffd887ff1df
         type: episode
       - id: db38c38b-0657-376c-815b-7a7a1c386fd9
-        type: episode
-      - id: dde25aeb-b8e8-3f20-8520-37b260bb73b2
-        type: episode
-      - id: 6be46b40-98de-329e-b205-12abc0f6ba52
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/3f0f60c2-247c-44b6-a6b5-13a291bb0349/episodes
@@ -702,6 +702,10 @@ data:
   relationships:
     episode:
       data:
+      - id: ce5ed2a7-2eee-3022-b08f-3241e2a11ca9
+        type: episode
+      - id: 5544ce12-1d15-3cbe-ad7d-498c269be7b0
+        type: episode
       - id: 51179d92-224c-3cda-89d7-4ca990001577
         type: episode
       - id: a4a2ba2a-22ed-3365-9736-7cc2a80bf3e8
@@ -717,10 +721,6 @@ data:
       - id: 0fd81b89-628a-3cd5-835c-3809e9083588
         type: episode
       - id: 14913cae-bacb-3649-872c-17c85bd39ec2
-        type: episode
-      - id: 29b76ccf-dc5c-3031-a0cb-1997f743af0c
-        type: episode
-      - id: c8233b23-cd1b-3fbb-950c-b10f7e8e7771
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/472f8b57-122d-44fa-a86c-7c77b51c7be1/episodes
@@ -750,28 +750,28 @@ data:
       data:
       - id: 048e730b-ed1b-30a4-89fb-1eb7aede4677
         type: episode
-      - id: 2b98901c-5417-30dd-a1c0-fda3ce295813
+      - id: 1f4f288a-99d7-3ff2-988a-dfab6dbaca00
         type: episode
-      - id: 863d2464-79be-345d-b972-004081e43683
+      - id: fb63a66c-f329-3fce-9eb2-bccfab7259d5
         type: episode
-      - id: 09b63eaf-c9a5-372e-9a3f-a7247b8de54b
+      - id: 99c6695b-486c-3316-94d0-dc133d5d66b8
         type: episode
-      - id: 404fac0c-a4a0-3f8c-b313-426110f91852
+      - id: ce5ed2a7-2eee-3022-b08f-3241e2a11ca9
         type: episode
-      - id: d1ddf4d2-70f8-38d8-97dc-9637f6a708e2
+      - id: 7ab6f959-b871-36d3-8b55-afbb3c819eb7
         type: episode
-      - id: 51179d92-224c-3cda-89d7-4ca990001577
+      - id: f3e47e88-9f10-3a2e-8e36-e060ec96124c
         type: episode
-      - id: 108e713e-51bc-3e96-bc26-112a9f852646
+      - id: 9409463e-4998-34cf-9da8-78cd74ba5e75
         type: episode
-      - id: 8bbcfe35-e946-370c-8b81-2d78c489febf
+      - id: 96e6a384-90d2-308e-abc3-695e2250304f
         type: episode
-      - id: 407d2237-6483-3db2-8f91-0c83710bae49
+      - id: a6a5ce41-27a9-3af8-b321-974edb8e98b9
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/8ed08518-9d92-437c-a96f-e5df046aff4e/episodes
       meta:
-        count: 99
+        count: 100
   type: topic
 - attributes:
     asset:
@@ -793,30 +793,30 @@ data:
   relationships:
     episode:
       data:
-      - id: e3478004-d242-36a8-8ba6-c87cf5c8319a
+      - id: bb892e3f-3f99-3b07-b755-c5c5312a4be9
         type: episode
-      - id: 8b227ab4-b29c-361f-a14e-95513244be03
+      - id: cdbda03e-edce-35a4-9547-7a3744cebb8b
         type: episode
-      - id: 9d504273-a7fc-383c-a020-079d0f4a5c1d
+      - id: 6c899b21-5409-3d49-bbf3-3b03d299d44b
         type: episode
-      - id: c715f57a-ce60-3296-a0f7-ffd5de7f961a
+      - id: a5ed862a-25d2-3087-86ef-68759b939c01
         type: episode
-      - id: 9ae05689-4b8c-3511-81e2-d77b4dd862eb
+      - id: 028a23d0-cb9f-34b8-9a5e-3db43c476c45
         type: episode
-      - id: 1c2726a6-1a72-3586-880e-ff8c1318cf96
+      - id: a736fce3-d239-3186-9cc3-efcc44b80b77
         type: episode
-      - id: 1cf8fd0c-5530-3a51-a478-9586ad617258
+      - id: 214069df-890e-38d2-a849-440368d8852d
         type: episode
-      - id: 997dac74-8b2b-30b0-a1db-b691b1a3a721
+      - id: 416b89df-048d-39e4-a6a6-f423313a1415
         type: episode
-      - id: 404fac0c-a4a0-3f8c-b313-426110f91852
+      - id: 8dec5618-e7a7-342c-964b-65e289f81b05
         type: episode
-      - id: 1cfa784a-6c57-307b-b6d7-8019e5893ba5
+      - id: fab7065f-506e-3e5f-9e28-36eecacbb642
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/23a1fafa-2fc8-4796-ad1f-20f130e90779/episodes
       meta:
-        count: 100
+        count: 98
   type: topic
 - attributes:
     asset:
@@ -840,6 +840,10 @@ data:
   relationships:
     episode:
       data:
+      - id: 35a212d2-d891-3dff-bf07-6c87e3ceec80
+        type: episode
+      - id: e3478004-d242-36a8-8ba6-c87cf5c8319a
+        type: episode
       - id: 758f95ef-bf1f-3880-b711-ca8bc882c1de
         type: episode
       - id: aee1cf6a-bc64-3788-97d9-87a90a953d4b
@@ -856,14 +860,10 @@ data:
         type: episode
       - id: 9ff03b05-a950-3d7b-8cd6-35dcf967799b
         type: episode
-      - id: 906c8d30-075a-3063-a323-46d2bafaf0cc
-        type: episode
-      - id: e5e40fdb-74bd-3fbc-8175-a308049dc9c5
-        type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/ca0362e9-e78c-4222-8df9-05937d9af7e9/episodes
       meta:
-        count: 100
+        count: 98
   type: topic
 - attributes:
     asset:
@@ -886,6 +886,10 @@ data:
   relationships:
     episode:
       data:
+      - id: a33567f6-d8fa-3ede-af36-faaee7d0949b
+        type: episode
+      - id: e798d818-7025-3ba9-b1d9-48b00b37d2eb
+        type: episode
       - id: 27b75be3-b466-3114-bef1-c68f00740614
         type: episode
       - id: f7bf2647-09cb-32d7-90e9-c50a227aca1b
@@ -901,10 +905,6 @@ data:
       - id: 0cf866e5-911f-3f5c-8e9a-c5f7d3b06d85
         type: episode
       - id: df3e152f-bde6-38be-be4a-3577bbb4d91c
-        type: episode
-      - id: 49e80a99-e9d6-3638-8cfe-d3ed6d67ac7a
-        type: episode
-      - id: ca379eeb-1896-37e5-9309-5f3f0a94b657
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/257c9ebf-3f3c-4ccc-b127-a98b848d1e38/episodes
@@ -931,6 +931,8 @@ data:
   relationships:
     episode:
       data:
+      - id: 028a23d0-cb9f-34b8-9a5e-3db43c476c45
+        type: episode
       - id: 1cfa784a-6c57-307b-b6d7-8019e5893ba5
         type: episode
       - id: c14eef82-5526-3882-9f23-4a81553f82e0
@@ -948,8 +950,6 @@ data:
       - id: 83fb9a3f-a731-31d8-a309-20f32ce30766
         type: episode
       - id: 14913cae-bacb-3649-872c-17c85bd39ec2
-        type: episode
-      - id: e862892a-9f8f-396b-9d0f-a6f4abde7fb5
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/8c432621-a9a9-4c0a-8376-ea4ae5707fbb/episodes
@@ -976,6 +976,8 @@ data:
   relationships:
     episode:
       data:
+      - id: b672a9ac-0c66-35ed-9133-7717792511e6
+        type: episode
       - id: 48ff6de2-d37a-3df7-a455-e319365ecf12
         type: episode
       - id: 574689dc-3371-3600-8e7c-30082b93a1e9
@@ -993,8 +995,6 @@ data:
       - id: 17aa7a7a-34a3-3c27-89ea-726659dcca97
         type: episode
       - id: 30ff3962-f27a-3b41-aa4b-c03559268bb6
-        type: episode
-      - id: 8fc29a97-c8a7-32a0-8796-3f1877bf2f10
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/38929c62-1f5e-4160-a944-eef37f086ac6/episodes
@@ -1021,6 +1021,8 @@ data:
   relationships:
     episode:
       data:
+      - id: f9f71d1c-4fba-368f-bf82-2a68ad29ced4
+        type: episode
       - id: df24ff94-0eb3-34a3-acee-2917240e3e25
         type: episode
       - id: 1723d237-784f-3836-8089-c61f8afc1f28
@@ -1038,8 +1040,6 @@ data:
       - id: 44998d38-ad1f-3eac-87c0-000f593b7781
         type: episode
       - id: 9cbf3a41-e1bc-32b7-a34a-1c5ccb6a3354
-        type: episode
-      - id: e185d736-338b-38ea-bcbf-49cd2e18a2b5
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/fa2ccd7c-c6e6-4e3e-8ce6-be37d514744e/episodes
@@ -1066,6 +1066,18 @@ data:
   relationships:
     episode:
       data:
+      - id: 16346c3e-091f-368f-bf82-895b79d8cfd2
+        type: episode
+      - id: c88187c7-5047-3aa9-b5f1-9331c6ed34ff
+        type: episode
+      - id: 664a779c-2373-3644-80e8-a53d9e12de9a
+        type: episode
+      - id: e1c3cc6b-1ead-36bf-a45d-eaa408fa2e9f
+        type: episode
+      - id: 1ae9ffa2-55e0-33b4-8cf4-c944436831cd
+        type: episode
+      - id: f9f71d1c-4fba-368f-bf82-2a68ad29ced4
+        type: episode
       - id: 0be0e086-6df5-3ceb-9abf-a7214dba33db
         type: episode
       - id: 9b8e4911-de15-3f0e-9e55-c27b72f2ab0b
@@ -1073,18 +1085,6 @@ data:
       - id: b017e2c4-da8b-3489-88d8-b1364311b32e
         type: episode
       - id: 9518ed04-ac5e-3543-9def-c1dc1704f369
-        type: episode
-      - id: 45f75c50-fc53-3626-90f1-45cf54eeb3a7
-        type: episode
-      - id: b0e198e9-2708-3987-8400-633712d53081
-        type: episode
-      - id: 178f7312-4803-3286-9c60-01dc0cc39b88
-        type: episode
-      - id: 1dec2ed0-a990-37ea-93a7-fae325f258e2
-        type: episode
-      - id: 377207f9-d072-3257-bbd3-91350f5759df
-        type: episode
-      - id: 1d323d5a-793b-3920-ae03-ff06fe748556
         type: episode
       links:
         related: https://mujrozhlas.croapi.cz/topics/059560f8-1b2b-4dff-aaf1-7188c60ce5d4/episodes

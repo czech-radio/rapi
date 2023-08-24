@@ -59,7 +59,7 @@ test:
   env: "def"      # -te; none; store; test env
   def: "def"      # -td; none; store; test def
   alt: "def"      # -ta; none; store; test alt
-  cfg_prio: "def.yml"
+  cfg_prio: "def.yml" # -tc; none; store; which source wins?
   logs: false     # -tl; bool; store_true; test printing logs
     
 ## TESTING PARAMS DEFINITION

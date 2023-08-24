@@ -3530,6 +3530,48 @@ data:
         related: https://mujrozhlas.croapi.cz/stations/318fc506-4dc9-33c6-b0f4-88df17cafa20
   type: scheduleEpisode
 - attributes:
+    asset:
+      credit:
+        author: "Ale\u0161 Vav\u0159\xEDk"
+        description: "Zpr\xE1vy z Vyso\u010Diny"
+        license: ''
+        origin_url: ''
+        source: ''
+      focal_point: 50,50
+      height: 1400
+      id: 8314c691-c43a-3df5-abb4-f5559308d9b9
+      url: https://portal.rozhlas.cz/sites/default/files/images/03224695.jpeg
+      width: 2100
+    audioLinks: []
+    description: ''
+    mirroredShow:
+      title: "Zpr\xE1vy z Vyso\u010Diny"
+    showPriority: 0
+    showTimes: null
+    since: '2023-09-05T07:30:00+02:00'
+    station_code: 84
+    till: '2023-09-05T07:33:30+02:00'
+    title: "Zpr\xE1vy z Vyso\u010Diny - 5. 9. 2023"
+  id: 000f6f4f-4a7c-3339-8e5c-5e35f72bae55
+  relationships:
+    participants:
+      data: []
+      links:
+        related: https://mujrozhlas.croapi.cz/schedule-episode/000f6f4f-4a7c-3339-8e5c-5e35f72bae55/participants
+    show:
+      data:
+        id: 027eaf9d-c14d-3afb-90e5-8d16b1b4e2c7
+        type: show
+      links:
+        related: https://mujrozhlas.croapi.cz/shows/027eaf9d-c14d-3afb-90e5-8d16b1b4e2c7
+    station:
+      data:
+        id: 36dc9675-1fe8-3c69-b362-ee6784b04ef0
+        type: station
+      links:
+        related: https://mujrozhlas.croapi.cz/stations/36dc9675-1fe8-3c69-b362-ee6784b04ef0
+  type: scheduleEpisode
+- attributes:
     asset: {}
     audioLinks: []
     description: "Moderuje Michaela Vondr\xE1\u010Dkov\xE1"
@@ -5801,7 +5843,7 @@ data:
     showTimes: null
     since: '2023-08-21T12:00:00+02:00'
     station_code: 84
-    till: '2023-08-21T12:03:30+02:00'
+    till: '2023-08-21T12:04:15+02:00'
     title: "Zpr\xE1vy z Vyso\u010Diny - 21. 8. 2023"
   id: 001a86be-c473-3152-8beb-0831c5eb8d97
   relationships:
@@ -11021,37 +11063,11 @@ data:
       links:
         related: https://mujrozhlas.croapi.cz/stations/318fc506-4dc9-33c6-b0f4-88df17cafa20
   type: scheduleEpisode
-- attributes:
-    asset: {}
-    audioLinks: []
-    description: ''
-    mirroredShow:
-      title: "Zpr\xE1vy \u010Cesk\xE9ho rozhlasu Region"
-    showPriority: 0
-    showTimes: null
-    since: '2023-08-12T20:00:00+02:00'
-    station_code: 8
-    till: '2023-08-12T20:03:30+02:00'
-    title: "Aktu\xE1ln\xED informace z regionu, p\u0159edpov\u011B\u010F po\u010D\
-      as\xED"
-  id: 002fe34d-5efe-3862-8fa7-879560abc62a
-  relationships:
-    participants:
-      data: []
-      links:
-        related: https://mujrozhlas.croapi.cz/schedule-episode/002fe34d-5efe-3862-8fa7-879560abc62a/participants
-    station:
-      data:
-        id: a831a457-9b80-3271-b153-ddf0ee63a18c
-        type: station
-      links:
-        related: https://mujrozhlas.croapi.cz/stations/a831a457-9b80-3271-b153-ddf0ee63a18c
-  type: scheduleEpisode
 links:
   first: null
-  last: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300&page%5Boffset%5D=429900
+  last: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300&page%5Boffset%5D=433500
   next: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300&page%5Boffset%5D=300
   prev: null
   self: https://mujrozhlas.croapi.cz/schedule?page%5Blimit%5D=300
 meta:
-  count: 429961
+  count: 433732

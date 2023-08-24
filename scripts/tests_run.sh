@@ -32,6 +32,7 @@ par="tests/test_config.py"
 # $ptest $par::test_Cfg_env
 # $ptest $par::test_Cfg_params
 # $ptest tests/test_config.py::test_CFG
+$ptest tests/test_config.py::test_CFG_defaults
 
 ### broadcast
 par="tests/test_broadcast.py"
@@ -79,6 +80,6 @@ par="tests/test_client_api.py"
 par="tests/test_errors.py"
 # $ptest $par
 # $ptest $par::test_HelloErr
-$ptest $par::test_return_tuple
+# $ptest $par::test_return_tuple
 # $ptest $par::test_Err_None
 # $ptest $par::test_Err

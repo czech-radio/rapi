@@ -6,6 +6,7 @@ import os
 import pkgutil
 import types
 from typing import Any, Optional, Union
+import sys
 
 import yaml
 from ruamel.yaml import YAML
@@ -118,6 +119,7 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
     return dictr
 
 
+# ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
 class Cfg_params:
     def __init__(self):
         argpars = params.params_yml_config()

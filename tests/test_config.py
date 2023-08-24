@@ -84,6 +84,13 @@ def test_Cfg_params() -> None:
     val = cfg.get(["test", "par"])
     assert val == "par"
 
+def test_CFG_defaults()->None:
+    print()
+    # sys.argv = ["test3.py", "-vv", "--test-par=par", "-di=10"]
+    sys.argv = ["test3.py"]
+    Cfg = config.CFG()
+    Cfg.cfg_runtime_set_defaults()
+
 
 def test_CFG() -> None:
     print()

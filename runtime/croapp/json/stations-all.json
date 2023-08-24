@@ -2353,4 +2353,12 @@ links:
   prev: null
   self: https://mujrozhlas.croapi.cz/stations-all?page%5Blimit%5D=300
 meta:
+  banner:
+    accessibleDescription: "\u010Cesk\xE1 nejvy\u0161\u0161\xED fotbalov\xE1 liga\
+      \ \u017Eiv\u011B na Radio\u017Eurn\xE1lu Sport"
+    entity:
+      id: 5734245c-946d-3b10-9bfb-d295580f3752
+      type: show
+    imageUrl: https://portal.rozhlas.cz/sites/default/files/styles/cro_3x1_mobile/public/images/7d28b6d17acf5b662f3979c19d431194.jpg?itok=7GuxZHsu
+    url: https://api.mujrozhlas.cz/shows/5734245c-946d-3b10-9bfb-d295580f3752
   count: 31

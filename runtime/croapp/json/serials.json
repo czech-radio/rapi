@@ -10641,7 +10641,7 @@ data:
       losti. Poslechn\u011Bte si unik\xE1tn\xED report\xE1\u017Ee z 21. srpna 1968\
       \ i dal\u0161\xED archivn\xED materi\xE1ly. Poslouchejte ka\u017Ed\xFD den v\
       \ 8:50.</p>"
-    lastEpisodeSince: '2023-08-22T07:47:00+02:00'
+    lastEpisodeSince: '2023-08-24T07:26:00+02:00'
     playable: true
     shortTitle: "Archivn\xED nahr\xE1vky z invaze 21. srpna 1968. Poslechn\u011Bte\
       \ si report\xE1\u017Ee z obdob\xED Pra\u017Esk\xE9ho jara"
@@ -13720,4 +13720,4 @@ links:
   prev: null
   self: https://mujrozhlas.croapi.cz/serials?page%5Blimit%5D=300
 meta:
-  count: 4497
+  count: 4500
