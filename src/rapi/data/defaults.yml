@@ -6,6 +6,7 @@ workdir:
   dir: "./runtime/"
 usercfg:
   file: "./tests/data/defaults_alt.yml"
+subcommand:
 commands: # subcommands
   tsub:
     tflag1:  # -t1; bool; store_true; test subcommand flag

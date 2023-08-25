@@ -26,7 +26,8 @@ dependencies = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "rapi.config.__version__"}
+# version = {attr = "rapi.config.__version__"}
+version = {attr = "rapi.__version__"}
 readme = {file = ["README.rst", "USAGE.rst"]}
 
 [tool.setuptools.packages.find]

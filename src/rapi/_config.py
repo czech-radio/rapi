@@ -4,21 +4,24 @@ import copy
 import logging
 import os
 import pkgutil
+import sys
 import types
 from typing import Any, Optional, Union
-import sys
 
-import yaml
+import yaml as yaml
 from ruamel.yaml import YAML
 
-from rapi import helpers, params
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
+from rapi import _helpers as helpers
+from rapi import _params
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 # from mergedeep import merge
 
 
-__version__ = "0.0.1"
+# __version__ = "0.0.1"
+
+__all__ = "CFG"
 
 
 ### dict_get_path: get subset of dictionary giving list of path or keyname
@@ -122,7 +125,7 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
 # ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
 class Cfg_params:
     def __init__(self):
-        argpars = params.params_yml_config()
+        argpars = _params.params_yml_config()
         pars = argpars.parse_args()
         self.pars = pars
         pars = vars(pars)

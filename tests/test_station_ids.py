@@ -1,17 +1,17 @@
 import sys
 
-from rapi import config, helpers, model, params
-from rapi.station_ids import StationIDs
+from rapi import _config, _helpers, _model, _params
+from rapi._station_ids import StationIDs
 
 ### test setup
-Cfg = config.CFG()
+Cfg = _config.CFG()
 sys.argv = [
     "test3.py",
     "-vv",
 ]
-cfgp = config.Cfg_params()
-cfge = config.Cfg_env()
-cfgf = config.Cfg_file("./tests/data/defaults_alt.yml")
+cfgp = _config.Cfg_params()
+cfge = _config.Cfg_env()
+cfgf = _config.Cfg_file("./tests/data/defaults_alt.yml")
 Cfg.add_sources([cfge, cfgp, cfgf])
 Cfg.cfg_runtime_set()
 Sids = StationIDs(Cfg)
@@ -21,14 +21,14 @@ def test_get_pkey_list() -> None:
     print()
     pkeys = Sids.get_pkey_list()
     assert pkeys
-    helpers.pp(pkeys)
+    _helpers.pp(pkeys)
 
 
 def test_get_table() -> None:
     print()
     table = Sids.get_table()
     assert table
-    helpers.pp(table)
+    _helpers.pp(table)
 
 
 def test_get_row_by_pkey() -> None:
@@ -40,7 +40,7 @@ def test_get_row_by_pkey() -> None:
 
 def test_get_fkey() -> None:
     print()
-    si = model.StationIDs()
+    si = _model.StationIDs()
     sid = si.__dict__
     for k in sid:
         val = Sids.get_fkey("11", sid[k])

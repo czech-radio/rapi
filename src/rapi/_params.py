@@ -10,10 +10,10 @@ from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
 from ruamel.yaml.tokens import CommentToken
 
-from rapi import helpers
-from rapi import helpers as hp
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
+from rapi import _helpers
+from rapi import _helpers as hp
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 
 class HelpAction(AP.Action):

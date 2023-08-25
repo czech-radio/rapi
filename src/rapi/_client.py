@@ -10,19 +10,23 @@ from dacite import from_dict
 from dataclasses_json import dataclass_json
 from requests import Session, get
 
-from rapi import config, helpers, station_ids
-from rapi.helpers import dict_get_path as DGP
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
-from rapi.model import Show, Station, StationIDs
+from rapi import _config
+from rapi import _helpers
+from rapi import _helpers as helpers
+from rapi import _station_ids
+from rapi._config import CFG
+from rapi._helpers import dict_get_path as DGP
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
+from rapi._model import Show, Station, StationIDs
 
 
-class API:
-    def __init__(self, cfg: config.CFG):
+class Client:
+    def __init__(self, cfg: CFG):
         self.Cfg = cfg
         self.DB_local = DB_local(cfg)
         self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
-        self.StationIDs = station_ids.StationIDs(cfg)
+        self.StationIDs = _station_ids.StationIDs(cfg)
 
     def get_swagger(self) -> Union[dict, None]:
         url = self.Cfg.runtime_get(["apis", "croapp", "urls", "swagger"])
@@ -113,7 +117,7 @@ class API:
 
 
 class DB_local:
-    def __init__(self, cfg: config.CFG):
+    def __init__(self, cfg: CFG):
         self.Cfg = cfg
         self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
         self.endps = cfg.runtime_get(["apis", "croapp", "endpoints"])

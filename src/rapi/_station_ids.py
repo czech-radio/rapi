@@ -7,13 +7,15 @@ from typing import Any, Union
 
 import requests
 
-from rapi import config, helpers, model
-from rapi.logger import log_stdout as loge
-from rapi.logger import log_stdout as logo
+from rapi import _helpers as helpers
+from rapi import _model
+from rapi._config import CFG
+from rapi._logger import log_stdout as loge
+from rapi._logger import log_stdout as logo
 
 
 class StationIDs:
-    def __init__(self, cfg: config.CFG) -> None:
+    def __init__(self, cfg: CFG) -> None:
         self.Cfg = cfg
         bpath = ["apis", "common"]
         self.DBpath = self.Cfg.runtime_get(bpath + ["csv"])
