@@ -1,14 +1,20 @@
 # rapi
 
-- home: <https://github.com/czech-radio/rapi>
+<https://github.com/czech-radio/rapi>
 
-The Python client for <https://rapidoc.croapp.cz/>.
+The Python client for <https://rapidoc.croapp.cz/> REST API.
 
-## Zadání
+Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
+as Python objects.
 
-Vytvořme Python klienta pro REST API <https://rapidoc.croapp.cz/>.
-Pod pojmem Python klient si představuji třídy, metody a funkce, které umožní pracovat s daty získanými s REST API
-jako s objekty nikoliv jako s JSON. 
+## Features (cs)
+
+- [ ] Získej všechny pořady aktuálně vysílané na zadané stanici.
+- [ ] Získej všechny epizody vysíláné pro zadaný pořad, období, časový úsek a stanici.
+- [ ] Získej všechny moderátory pro zadaný pořad.
+- [ ] Získej premiéry a reprízy pro zadaný pořad.
+
+## Model
 
 - Stations: Stanic (celostátní, regionální)
 - Shows: Pořady
@@ -23,18 +29,12 @@ Doménový model tj. třídy (entity) reprezentující jednotlivé objekty vrace
 Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (Schedule), Epizoda (Episode).
 
 ### Fakta
+
 - Na stanici se vysílají epizody jednotlivých pořadů.
 - Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zárověň (např. Plus/Radiožurnál a regionální stanice).
 - Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéry a reprízy.
 
-## Use cases
-
-- Získej všechny pořady aktuálně vysíláné na zadané stanici.
-- Získej všechny epizody (premiéry)  vysíláné pro zadaný pořad, období, časový úsek a stanici.
-- Získej všecny moderátory pro zadaný pořad.
-- Získej premiéry a reprízy pro zadaný pořad.
-
-## Zatím identifikuji tyto filtry:
+### Filtry
 
 - *stanice* např Plus, Radiožurnál
 - *období* (dny) např. od 1. 1. 2023 do 1. 2. 2023 
@@ -93,33 +93,23 @@ Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (S
 	todo
 	```
 
-## Usage
+## Command Line Interface
 
-### Config
+### Configure
  
-runtime variables are assigned in following order:
+The runtime variables are assigned in following order.
  
 1. flags
 2. environment
 3. config file
-4. hardcoded defaults
+4. hard-coded defaults
 
-### How to run
+### Run
 
-## Test
-### test orig api
-- when using curl on api provided at: https://rapidev.croapp.cz use -g, --globoff flag e.g.:
+## Tests
 
-	```shell
-	curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"
-	```
+Test the REST API <https://rapidev.croapp.cz/> with CURL (use `-g, --globoff flag`) e.g.
 
-## Code conventions
-[https://realpython.com/python-pep8/]
-
-[https://docs.python-guide.org/writing/structure/]
-
-## Make file
-[https://earthly.dev/blog/python-makefile/]
-
-[https://stackoverflow.com/questions/24736146/how-to-use-virtualenv-in-makefile]
+```shell
+curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"
+```
