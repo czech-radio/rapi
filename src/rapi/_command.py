@@ -12,7 +12,6 @@ from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 
 
-# def command(Cfg: config.CFG, ap: AP.ArgumentParser) -> None:
 def commands(cfg: CFG) -> None:
     getvar = cfg.runtime_get
 
