@@ -130,18 +130,14 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
 
 ### dict helpers
 #### dict_get_path: get subset of dictionary giving list of path or keyname
-def dict_get_path(
-    dictr: dict,
-    sections: list[str]
-    # ) -> Union[dict, list, str, bool, int, None]:
-) -> Any:
+def dict_get_path(dictr: dict, sections: list[str]) -> Any:
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
-        if resdict is None:
-            return resdict
-        else:
+        if resdict is not None:
             dicw = resdict
+        else:
+            return None
     return resdict
 
 

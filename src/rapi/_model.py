@@ -35,27 +35,27 @@ class Station:
 @dataclass
 class Show:
     id: str = ""
-    showType: str = ""
-    showContent: bool = False
+    show_type: str = ""
+    show_content: bool = False
     title: bool = False
     active: bool = False
     aired: bool = False
     podcast: bool = False
     priority: int = 0
-    childFriendly: bool = False
+    child_friendly: bool = False
     description: str = ""
-    shortDescription: str = ""
+    short_description: str = ""
 
 
 @dataclass
 class Episode:
     id: str = ""
     title: str = ""
-    shortTitle: str = ""
+    short_title: str = ""
     description: str = ""
     since: str = ""
     till: str = ""
-    mirroredShow_title: str = ""
+    mirrored_show_title: str = ""
 
 
 class Schedule:

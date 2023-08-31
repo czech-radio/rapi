@@ -12,19 +12,18 @@ Cfg = _config.CFG()
 Cfg.cfg_runtime_set_defaults()
 
 
-def test_get_stations() -> None:
-    print()
-    api = _client.Client(Cfg)
-    st = api.get_stations(10)
-    print(st)
-    assert st is not None
-
-
 def test_get_station() -> None:
     print()
     api = _client.Client(Cfg)
-    id = api.get_station(str(11))
-    print(id)
+    station = api.get_station(str(11))
+    assert station
+
+
+def test_get_stations() -> None:
+    print()
+    api = _client.Client(Cfg)
+    stations = api.get_stations(10)
+    assert len(stations) == 27
 
 
 def test_get_station_shows() -> None:

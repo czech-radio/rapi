@@ -3,6 +3,7 @@ import sys
 import time
 from dataclasses import asdict, dataclass, make_dataclass
 from datetime import datetime, timedelta
+from itertools import count
 from typing import Type, Union
 
 import requests
@@ -27,6 +28,14 @@ class Client:
         self.DB_local = DB_local(cfg)
         self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
         self.StationIDs = _station_ids.StationIDs(cfg)
+        session = requests.Session()
+        headers = {"User-Agent": __name__}
+        session.headers.update(headers)
+        self._session = session
+
+    def __del__(self):
+        if self._session:
+            self._session.close()
 
     def get_swagger(self) -> Union[dict, None]:
         url = self.Cfg.runtime_get(["apis", "croapp", "urls", "swagger"])
@@ -44,41 +53,73 @@ class Client:
         ok = helpers.save_yaml(filepath, "swagger.yml", ydata)
         return ok
 
-    def get_station_guid(self, station_id: str) -> Union[str, None]:
+    def get_station_guid(self, station_id: str) -> str:
         sid = StationIDs()
         fkey = self.StationIDs.get_fkey(station_id, sid.croapp_guid)
+        if fkey is None:
+            raise ValueError(
+                f"guid not found for station_id: {station_id}"
+            )
         return fkey
+
+    def get_endp_link(self, endp: str, limit: int = 0) -> str:
+        cfgb = ["apis", "croapp", "response"]
+        if limit == 0:
+            limit = self.Cfg.runtime_get([*cfgb, "limit"])
+        cfgu = ["apis", "croapp", "urls", "api"]
+        api_url = self.Cfg.runtime_get(cfgu)
+        if api_url is None:
+            raise ValueError(f"{cfgu} not defined")
+        endp_url = "/".join((api_url, endp))
+        limstr = self.Cfg.runtime_get([*cfgb, "limit_str"])
+        if limit > 0 and limstr is not None:
+            endp_url = endp_url + limstr + str(limit)
+        return endp_url
+
+    def get_full_json(self, endp: str, limit: int = 0):
+        ### first link
+        link = self.get_endp_link(endp, limit)
+        logo.debug(f"request url: {link}")
+        response = self._session.get(link)
+        response.raise_for_status()  # non-2xx status exception
+        jdata = response.json()
+        data = jdata["data"]
+
+        ### next links
+        for i in count(start=1):
+            links = jdata.get("links", None)
+            if links is None:
+                break
+            next_link = links.get("next", None)
+            if next_link is None:
+                break
+            logo.info(f"request url: {next_link}")
+            response = self._session.get(next_link)
+            response.raise_for_status()  # non-2xx status exception
+            jdata = response.json()
+            data = data + jdata["data"]
+
+        return data
+
+    def get_station(self, station_id: str, limit: int = 0):
+        guid = self.get_station_guid(station_id)
+        endp = "stations/" + guid
+        jdata = self.get_full_json(endp, limit)
+        return jdata
 
     # def get_stations(self)->tuple[Station, ...]:
     def get_stations(self, limit: int = 0) -> tuple[Station, ...]:
-        jdata = self.DB_local.endp_get_json("stations", limit)
-        if jdata is None:
-            loge.error("no json downloaded")
-            return None
-        data = jdata.get("data", None)
-        if data is None or len(data) == 0:
-            loge.error("no data to extract")
-            return None
-        paths = helpers.dict_paths_vectors(data[0], list())
-
+        data = self.get_full_json("stations", limit)
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         ### creat output list
+        paths = helpers.dict_paths_vectors(data[0], list())
         out: list = list()
         for d in data:
             st = Station()
             res = helpers.class_assign_attrs_fieldnum(st, d, fields, paths)
             out.append(res)
         return tuple(out)
-
-    def get_station(self, station_id: str) -> Station | None:
-        guid = self.get_station_guid(station_id)
-        try:
-            return tuple(filter(lambda x: x.id == guid, self.get_stations()))[
-                0
-            ]
-        except IndexError:
-            raise ValueError(f"The station with id `{id}` does not exist.")
 
     def get_station_shows(self, station_id: str, limit: int = 0):
         guid = self.get_station_guid(station_id)
@@ -121,7 +162,6 @@ class DB_local:
         self.Cfg = cfg
         self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
         self.endps = cfg.runtime_get(["apis", "croapp", "endpoints"])
-        # path= self.Cfg.runtime_get(["apis", "croapp", "DB_local", "csv_workdir"])
         # path = os.path.join(base_dir, self.__class__.__name__, "db")
         cfgb = ["apis", "croapp", "db_local"]
         path = cfg.runtime_get([*cfgb, "csvs_workdir"])
@@ -156,11 +196,14 @@ class DB_local:
             loge.warning(f"no data section to parse: {endp}")
             return None
 
-        nlink=self.endp_get_next_link(jdict)
+        nlink = self.endp_get_next_link(jdict)
         while nlink != "":
             jdict = helpers.request_url_json(nlink)
-            data = data + jdict.get("data", None)
-            nlink=self.endp_get_next_link(jdict)
+            if jdict is not None:
+                jdata = jdict.get("data", None)
+                if jdata is not None:
+                    data = data + jdata
+                nlink = self.endp_get_next_link(jdict)
         return data
 
     def endp_get_json(self, endp: str, limit: int = 0) -> Union[dict, None]:

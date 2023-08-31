@@ -56,7 +56,7 @@ par="tests/test_helpers.py"
 # $ptest ${par}::test_dict_list_to_rows
 
 
-#### client
+### client
 par="tests/test_client.py"
 # $ptest ${par}
 # $ptest ${par}::test_DB_local
@@ -67,14 +67,14 @@ par="tests/test_client.py"
 # $ptest ${par}::test_DB_local_endpoint_save_json
 # $ptest ${par}::test_DB_local_endpoints_save_json
 # $ptest ${par}::test_DB_local_csv_update
-$ptest ${par}::test_DB_local_endp_get_full_json
+# $ptest ${par}::test_DB_local_endp_get_full_json
 
 #### api_client_api
 par="tests/test_client_api.py"
 # $ptest ${par}
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
-# $ptest ${par}::test_get_stations
+$ptest ${par}::test_get_stations
 
 ### errors
 par="tests/test_errors.py"

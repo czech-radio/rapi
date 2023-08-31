@@ -18,9 +18,6 @@ from rapi._logger import log_stdout as logo
 
 # from mergedeep import merge
 
-
-# __version__ = "0.0.1"
-
 __all__ = "CFG"
 
 
