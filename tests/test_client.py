@@ -52,5 +52,8 @@ def test_DB_local_csv_update() -> None:
 
 
 def test_DB_local_endp_get_full_json() -> None:
+    print("kuk")
     acr = _client.DB_local(Cfg)
-    acr.endp_get_full_json("stations", 10)
+    jdict=acr.endp_get_full_json("stations", 9)
+    assert len(jdict)==27
+    # _helpers.pp(jdict)

@@ -150,13 +150,18 @@ class DB_local:
         jdict = helpers.request_url_json(link)
         if jdict is None:
             loge.error(f"no data to save: {endp}")
-            return False
+            return None
         data = jdict.get("data", None)
         if data is None or len(data) == 0:
             loge.warning(f"no data section to parse: {endp}")
-            return ""
-        # nlink=self.endp_get_next_link(jdata)
-        # jdata=self.endp_get_json(endp,limit)
+            return None
+
+        nlink=self.endp_get_next_link(jdict)
+        while nlink != "":
+            jdict = helpers.request_url_json(nlink)
+            data = data + jdict.get("data", None)
+            nlink=self.endp_get_next_link(jdict)
+        return data
 
     def endp_get_json(self, endp: str, limit: int = 0) -> Union[dict, None]:
         link = self.endp_get_link(endp, limit)

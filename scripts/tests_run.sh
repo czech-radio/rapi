@@ -32,7 +32,7 @@ par="tests/test_config.py"
 # $ptest $par::test_Cfg_env
 # $ptest $par::test_Cfg_params
 # $ptest tests/test_config.py::test_CFG
-$ptest tests/test_config.py::test_CFG_defaults
+# $ptest tests/test_config.py::test_CFG_defaults
 
 ### broadcast
 par="tests/test_broadcast.py"
@@ -67,7 +67,7 @@ par="tests/test_client.py"
 # $ptest ${par}::test_DB_local_endpoint_save_json
 # $ptest ${par}::test_DB_local_endpoints_save_json
 # $ptest ${par}::test_DB_local_csv_update
-# $ptest ${par}::test_DB_local_endp_get_full_json
+$ptest ${par}::test_DB_local_endp_get_full_json
 
 #### api_client_api
 par="tests/test_client_api.py"
