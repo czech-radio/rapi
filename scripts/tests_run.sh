@@ -72,9 +72,9 @@ par="tests/test_client.py"
 #### api_client_api
 par="tests/test_client_api.py"
 # $ptest ${par}
-# $ptest ${par}::test_get_station
+$ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
-$ptest ${par}::test_get_stations
+# $ptest ${par}::test_get_stations
 
 ### errors
 par="tests/test_errors.py"

@@ -57,9 +57,7 @@ class Client:
         sid = StationIDs()
         fkey = self.StationIDs.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
-            raise ValueError(
-                f"guid not found for station_id: {station_id}"
-            )
+            raise ValueError(f"guid not found for station_id: {station_id}")
         return fkey
 
     def get_endp_link(self, endp: str, limit: int = 0) -> str:
@@ -76,7 +74,7 @@ class Client:
             endp_url = endp_url + limstr + str(limit)
         return endp_url
 
-    def get_full_json(self, endp: str, limit: int = 0):
+    def get_endp_full_json(self, endp: str, limit: int = 0):
         ### first link
         link = self.get_endp_link(endp, limit)
         logo.debug(f"request url: {link}")
@@ -93,7 +91,7 @@ class Client:
             next_link = links.get("next", None)
             if next_link is None:
                 break
-            logo.info(f"request url: {next_link}")
+            logo.debug(f"request url: {next_link}")
             response = self._session.get(next_link)
             response.raise_for_status()  # non-2xx status exception
             jdata = response.json()
@@ -104,12 +102,20 @@ class Client:
     def get_station(self, station_id: str, limit: int = 0):
         guid = self.get_station_guid(station_id)
         endp = "stations/" + guid
-        jdata = self.get_full_json(endp, limit)
-        return jdata
+        data = self.get_endp_full_json(endp, limit)
+        ### select fields from json by position
+        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        ### creat output list
+        paths = helpers.dict_paths_vectors(data, list())
+        out: list = list()
+        st = Station()
+        res = helpers.class_assign_attrs_fieldnum(st, data, fields, paths)
+        out.append(res)
+        return tuple(out)
 
     # def get_stations(self)->tuple[Station, ...]:
     def get_stations(self, limit: int = 0) -> tuple[Station, ...]:
-        data = self.get_full_json("stations", limit)
+        data = self.get_endp_full_json("stations", limit)
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         ### creat output list
@@ -131,7 +137,6 @@ class Client:
         if jdata is None:
             loge.error("no json downloaded")
             return
-        # print(jdata["links"])
         links = jdata.get("links", None)
         if links is not None:
             nlink = links.get("next", None)

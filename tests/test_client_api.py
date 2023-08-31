@@ -17,6 +17,7 @@ def test_get_station() -> None:
     api = _client.Client(Cfg)
     station = api.get_station(str(11))
     assert station
+    print(station)
 
 
 def test_get_stations() -> None:
