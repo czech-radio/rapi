@@ -106,52 +106,31 @@ class Client:
     def get_station(
         self, station_id: str, limit: int = 0
     ) -> tuple[Station, ...]:
-        guid = self.get_station_guid(station_id)
-        endp = "stations/" + guid
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        guid = self.get_station_guid(station_id)
+        endp = "stations/" + guid
         data = self.get_endp_full_json(endp, limit)
-        station = Station()
-        out = self.assign_fields(data, fields, station)
+        dataclass = Station()
+        out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 
     def get_stations(self, limit: int = 0) -> tuple[Station, ...]:
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        data = self.get_endp_full_json("stations", limit)
-        station = Station()
-        out = self.assign_fields(data, fields, station)
+        endp="stations"
+        data = self.get_endp_full_json(endp, limit)
+        dataclass = Station()
+        out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 
-    def get_station_shows(self, station_id: str, limit: int = 0):
+    def get_station_shows(self,station_id: str,limit: int=0):
         guid = self.get_station_guid(station_id)
-        if guid is None:
-            loge.error("unknown station id")
-            return None
         endp = "stations/" + guid + "/shows"
-        jdata = self.DB_local.endp_get_json(endp, limit)
-        if jdata is None:
-            loge.error("no json downloaded")
-            return
-        links = jdata.get("links", None)
-        if links is not None:
-            nlink = links.get("next", None)
-            if nlink is not None:
-                loge.warning("not all data downloaded")
-        data = jdata.get("data", None)
-        if data is None or len(data) == 0:
-            loge.error("no data to extract")
-            return None
-
-        ### select fields
-        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
-        ### create otput list
-        paths = helpers.dict_paths_vectors(data[0], list())
-        out: list = list()
-        for d in data:
-            show = Show()
-            res = helpers.class_assign_attrs_fieldnum(show, d, fields, paths)
-            out.append(res)
+        data = self.get_endp_full_json(endp, limit)
+        dataclass=Show()
+        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 
     def get_show_episodes(self, episode_id: str, limit: int = 0):

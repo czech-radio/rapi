@@ -74,7 +74,8 @@ par="tests/test_client_api.py"
 # $ptest ${par}
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
-$ptest ${par}::test_get_stations
+# $ptest ${par}::test_get_stations
+$ptest ${par}::test_get_station_shows
 
 ### errors
 par="tests/test_errors.py"
