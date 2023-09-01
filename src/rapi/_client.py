@@ -3,8 +3,7 @@ import sys
 import time
 from dataclasses import asdict, dataclass, make_dataclass
 from datetime import datetime, timedelta
-from itertools import count
-from typing import Type, Union
+from typing import Generator, Type, Union
 
 import requests
 from dacite import from_dict
@@ -19,7 +18,7 @@ from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
-from rapi._model import Show, Station, StationIDs
+from rapi._model import Dataclass, Show, Station, StationIDs
 
 
 class Client:
@@ -75,56 +74,53 @@ class Client:
         return endp_url
 
     def get_endp_full_json(self, endp: str, limit: int = 0):
-        ### first link
         link = self.get_endp_link(endp, limit)
-        logo.debug(f"request url: {link}")
-        response = self._session.get(link)
-        response.raise_for_status()  # non-2xx status exception
-        jdata = response.json()
-        data = jdata["data"]
-
-        ### next links
-        for i in count(start=1):
-            links = jdata.get("links", None)
-            if links is None:
-                break
-            next_link = links.get("next", None)
-            if next_link is None:
-                break
-            logo.debug(f"request url: {next_link}")
-            response = self._session.get(next_link)
+        out: list = list()
+        while link:
+            logo.debug(f"request url: {link}")
+            response = self._session.get(link)
             response.raise_for_status()  # non-2xx status exception
             jdata = response.json()
-            data = data + jdata["data"]
+            data = jdata["data"]
+            if not isinstance(data, list):
+                data = [data]
+            out = out + data
+            link = jdata.get("links", {}).get("next")
+        return out
 
-        return data
+    def assign_fields(
+        self, data: list[dict], fields: list[int], dc: Dataclass
+    ) -> list[Dataclass]:
+        """
+        Assign fields from list of json dicts to list of arbitrary dataclass.
+        """
+        out: list = list()
+        paths: list = list()
+        for d in data:
+            if len(paths) == 0:
+                paths = helpers.dict_paths_vectors(d, list())
+            res = helpers.class_assign_attrs_fieldnum(dc, d, fields, paths)
+            out.append(res)
+        return out
 
-    def get_station(self, station_id: str, limit: int = 0):
+    def get_station(
+        self, station_id: str, limit: int = 0
+    ) -> tuple[Station, ...]:
         guid = self.get_station_guid(station_id)
         endp = "stations/" + guid
-        data = self.get_endp_full_json(endp, limit)
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        ### creat output list
-        paths = helpers.dict_paths_vectors(data, list())
-        out: list = list()
-        st = Station()
-        res = helpers.class_assign_attrs_fieldnum(st, data, fields, paths)
-        out.append(res)
+        data = self.get_endp_full_json(endp, limit)
+        station = Station()
+        out = self.assign_fields(data, fields, station)
         return tuple(out)
 
-    # def get_stations(self)->tuple[Station, ...]:
     def get_stations(self, limit: int = 0) -> tuple[Station, ...]:
-        data = self.get_endp_full_json("stations", limit)
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        ### creat output list
-        paths = helpers.dict_paths_vectors(data[0], list())
-        out: list = list()
-        for d in data:
-            st = Station()
-            res = helpers.class_assign_attrs_fieldnum(st, d, fields, paths)
-            out.append(res)
+        data = self.get_endp_full_json("stations", limit)
+        station = Station()
+        out = self.assign_fields(data, fields, station)
         return tuple(out)
 
     def get_station_shows(self, station_id: str, limit: int = 0):

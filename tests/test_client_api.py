@@ -25,6 +25,7 @@ def test_get_stations() -> None:
     api = _client.Client(Cfg)
     stations = api.get_stations(10)
     assert len(stations) == 27
+    print(stations)
 
 
 def test_get_station_shows() -> None:

@@ -1,4 +1,8 @@
 from dataclasses import asdict, dataclass
+from typing import Type, TypeVar
+
+# Create a type variable
+Dataclass = TypeVar("Dataclass")
 
 
 @dataclass
