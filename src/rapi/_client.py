@@ -158,7 +158,7 @@ class Client:
         self,
         episode_id: str,
         date_from: datetime | str | None = None,
-        date_to: datetime | None = None,
+        date_to: datetime | str | None = None,
         station_id: str | None = None,
         limit: int = 0,
     ):

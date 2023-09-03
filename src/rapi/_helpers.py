@@ -90,9 +90,9 @@ def parse_date_regex(date_string: str):
 
 def parse_date_optional_fields(date_string: str):
     try:
-        tzinfo=current_pytz_timezone()
+        tzinfo = current_pytz_timezone()
         pdate = parser.parse(date_string)
-        pdate=pdate.replace(tzinfo=tzinfo)
+        pdate = pdate.replace(tzinfo=tzinfo)
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")

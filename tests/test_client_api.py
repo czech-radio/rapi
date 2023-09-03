@@ -73,5 +73,4 @@ def test_show_episodes_filter() -> None:
         "2014",
         "2015-12",
     )
-    assert len(data1)<len(data2)
-   
+    assert len(data1) < len(data2)
