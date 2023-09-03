@@ -72,10 +72,10 @@ par="tests/test_client.py"
 #### api_client_api
 par="tests/test_client_api.py"
 # $ptest ${par}
-$ptest ${par}::test_client
+# $ptest ${par}::test_client
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
-# $ptest ${par}::test_get_stations
+$ptest ${par}::test_get_stations
 # $ptest ${par}::test_get_station_shows
 
 ### errors
@@ -85,3 +85,7 @@ par="tests/test_errors.py"
 # $ptest $par::test_return_tuple
 # $ptest $par::test_Err_None
 # $ptest $par::test_Err
+
+### model
+par="tests/test_model.py"
+# $ptest $par::test_str_patcher

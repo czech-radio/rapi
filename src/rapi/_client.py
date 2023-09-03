@@ -125,14 +125,17 @@ class Client:
         data = self.get_endp_full_json(endp, limit)
         dataclass = Station()
         out = self.assign_fields(data, fields, dataclass)
+        print(out[0])
+        helpers.pp(data)
         return tuple(out)
+
 
     def get_station_shows(self, station_id: str, limit: int = 0):
         guid = self.get_station_guid(station_id)
         endp = "stations/" + guid + "/shows"
         data = self.get_endp_full_json(endp, limit)
         dataclass = Show()
-        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        fields = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, ]
         out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 

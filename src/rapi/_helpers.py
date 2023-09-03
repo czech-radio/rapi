@@ -21,7 +21,7 @@ def pl(data: Any):
 
 
 def pp(data: Any):
-    data_formated = json.dumps(data, indent=2)
+    data_formated = json.dumps(data, indent=2,ensure_ascii=False)
     print(data_formated)
 
 
