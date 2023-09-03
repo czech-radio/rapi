@@ -157,13 +157,14 @@ class Client:
         out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 
-    def show_episodes_filter(self,episode_id: str):
+    def show_episodes_filter(self, episode_id: str):
         cmdpars = ["commands", "show_episodes_filter"]
-        getval=self.Cfg.runtime_get
-        df = getval([*cmdpars, "date_from"],"jekl")
-        eps=self.get_show_episodes(episode_id)
-        # print(eps[0])
+        getval = self.Cfg.runtime_get
+        df = getval([*cmdpars, "date_from"], "jekl")
+        eps = self.get_show_episodes(episode_id)
+        print(eps)
         # return eps
+
 
 class DB_local:
     def __init__(self, cfg: CFG):

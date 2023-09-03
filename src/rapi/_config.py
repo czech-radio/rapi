@@ -173,7 +173,7 @@ class CFG:
         val = helpers.dict_get_path(self.cfg_runtime, path)
         if val is None:
             try:
-                isexcp=isinstance(dvalue(), Exception)
+                isexcp = isinstance(dvalue(), Exception)
                 # print(isexcp)
             except Exception as e:
                 return dvalue

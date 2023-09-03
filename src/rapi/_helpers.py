@@ -1,19 +1,20 @@
 import csv
 import errno
-import re
 import json
 import os
 import pkgutil
+import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime
 # import dataclasses
 from io import StringIO
-from typing import Any, Optional, Sequence, Tuple, Type, Union
+from typing import Any, Optional, Sequence, Tuple, Type, Union, no_type_check
 
 import numpy as np
 import requests
 import yaml
+from dateutil import parser
 
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
@@ -63,14 +64,23 @@ def type_by_name(type_name):
         raise NameError(f"{type_name} not implemented")
 
 
-### date time
-def parse_date(date_string: str):
+@no_type_check
+def parse_date_regex(date_string: str):
     try:
-        restr=r'\d+'
-        pdate=datetime(*map(int, re.findall(restr, date_string)))
+        restr = r"\d+"
+        dts = map(int, re.findall(restr, date_string))
+        pdate = datetime(*dts)
         return pdate
-    except Exception:
-        raise ValueError("date not parsed. invalid date format")
+    except Exception as e:
+        raise ValueError(f"date not parsed. invalid date format: {e}")
+
+
+def parse_date_optional_fields(date_string: str):
+    try:
+        parsed_date = parser.parse(date_string)
+        return parsed_date
+    except Exception as e:
+        raise ValueError(f"date not parsed. invalid date format: {e}")
 
 
 ### csv files

@@ -54,7 +54,8 @@ par="tests/test_helpers.py"
 # $ptest ${par}::test_request_url_yaml
 # $ptest ${par}::test_json_to_csv
 # $ptest ${par}::test_dict_list_to_rows
-$ptest ${par}::test_parse_date
+# $ptest ${par}::test_parse_date_regex
+$ptest ${par}::test_parse_date_optional_fields
 
 
 ### client
