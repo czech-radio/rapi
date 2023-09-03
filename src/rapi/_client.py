@@ -1,9 +1,10 @@
 import os
 import sys
 import time
-from dataclasses import asdict, dataclass, make_dataclass
+from dataclasses import (asdict, dataclass, is_dataclass, make_dataclass,
+                         replace)
 from datetime import datetime, timedelta
-from typing import Generator, Type, Union
+from typing import Any, Generator, Type, Union
 
 import requests
 from dacite import from_dict
@@ -18,7 +19,7 @@ from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
-from rapi._model import Dataclass, Show, Station, StationIDs
+from rapi._model import Episode, Show, Station, StationIDs
 
 
 class Client:
@@ -91,18 +92,22 @@ class Client:
             link = jdata.get("links", {}).get("next")
         return out
 
+    # def assign_fields(
+    # self, data: list[dict], fields: list[int], dc: Dataclass
+    # ) -> list[Dataclass]:
     def assign_fields(
-        self, data: list[dict], fields: list[int], dc: Dataclass
-    ) -> list[Dataclass]:
+        self, data: list[dict], fields: list[int], dc=Type[dataclass]
+    ) -> list[Any]:
         """
         Assign fields from list of json dicts to list of arbitrary dataclass.
         """
         out: list = list()
         paths: list = list()
         for d in data:
+            dcc = replace(dc)
             if len(paths) == 0:
                 paths = helpers.dict_paths_vectors(d, list())
-            res = helpers.class_assign_attrs_fieldnum(dc, d, fields, paths)
+            res = helpers.class_assign_attrs_fieldnum(dcc, d, fields, paths)
             out.append(res)
         return out
 
@@ -125,22 +130,32 @@ class Client:
         data = self.get_endp_full_json(endp, limit)
         dataclass = Station()
         out = self.assign_fields(data, fields, dataclass)
-        print(out[0])
-        helpers.pp(data)
         return tuple(out)
-
 
     def get_station_shows(self, station_id: str, limit: int = 0):
         guid = self.get_station_guid(station_id)
         endp = "stations/" + guid + "/shows"
         data = self.get_endp_full_json(endp, limit)
         dataclass = Show()
-        fields = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, ]
+        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
+        out = self.assign_fields(data, fields, dataclass)
+        return tuple(out)
+
+    def get_show(self, show_id: str, limit: int = 0):
+        endp = "shows/" + show_id
+        dataclass = Show()
+        data = self.get_endp_full_json(endp, limit)
+        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
         out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 
     def get_show_episodes(self, episode_id: str, limit: int = 0):
-        pass
+        endp = "shows/" + episode_id + "/episodes"
+        data = self.get_endp_full_json(endp, limit)
+        dataclass = Episode()
+        fields = [1, 2, 3, 4, 5, 6, 7, 8]
+        out = self.assign_fields(data, fields, dataclass)
+        return tuple(out)
 
 
 class DB_local:

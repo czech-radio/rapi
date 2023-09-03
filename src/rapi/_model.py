@@ -1,16 +1,19 @@
+import json
 from dataclasses import asdict, dataclass
 from typing import Type, TypeVar
-import json
 
 # Create a type variable
-Dataclass = TypeVar("Dataclass")
+# Dataclass = TypeVar("Dataclass")
+
 
 def str_pretty_json(cls):
     def __str__(self):
-        df = json.dumps(asdict(self), indent=2,ensure_ascii=False)
+        df = json.dumps(asdict(self), indent=2, ensure_ascii=False)
         return df
-    cls.__str__=__str__
+
+    cls.__str__ = __str__
     return cls
+
 
 @dataclass
 @str_pretty_json
@@ -44,7 +47,7 @@ class Station:
     priority: int = 0
     station_type: str = ""
 
-# @str_patcher
+
 @dataclass
 @str_pretty_json
 class Show:
@@ -60,11 +63,6 @@ class Show:
     description: str = ""
     short_description: str = ""
 
-    def __str__(self):
-        df= json.dumps(asdict(self), indent=2,ensure_ascii=False)
-        return df
-        # pp = pprint.PrettyPrinter(indent=2)
-        # return pp.pformat(asdict(self))
 
 @dataclass
 @str_pretty_json
@@ -75,6 +73,7 @@ class Episode:
     description: str = ""
     since: str = ""
     till: str = ""
+    updated: str = ""
     mirrored_show_title: str = ""
 
 

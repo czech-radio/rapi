@@ -17,18 +17,33 @@ def test_client() -> None:
     station = cl.get_station(str(11))
     assert station
 
+
 def test_get_station() -> None:
     api = _client.Client(Cfg)
     station = api.get_station(str(11))
     assert station
 
+
 def test_get_stations() -> None:
-    print()
     api = _client.Client(Cfg)
     stations = api.get_stations(10)
     assert len(stations) == 27
 
+
 def test_get_station_shows() -> None:
     api = _client.Client(Cfg)
     data = api.get_station_shows(str(11), 500)
+    assert data
+
+
+def test_get_show() -> None:
+    api = _client.Client(Cfg)
+    data = api.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935", 500)
+    assert data
+
+
+def test_get_show_episodes() -> None:
+    api = _client.Client()
+    data = api.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+    # https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/episodes
     assert data

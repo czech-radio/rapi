@@ -4,6 +4,8 @@ import json
 import os
 import pkgutil
 import sys
+from dataclasses import dataclass
+# import dataclasses
 from io import StringIO
 from typing import Any, Optional, Sequence, Tuple, Type, Union
 
@@ -21,7 +23,7 @@ def pl(data: Any):
 
 
 def pp(data: Any):
-    data_formated = json.dumps(data, indent=2,ensure_ascii=False)
+    data_formated = json.dumps(data, indent=2, ensure_ascii=False)
     print(data_formated)
 
 
@@ -142,12 +144,20 @@ def dict_get_path(dictr: dict, sections: list[str]) -> Any:
 
 
 def class_assign_attrs_fieldnum(
-    cls: Any, data: dict, fields: list[int], paths: list[list[str]]
-):
+    cls: Type[object],
+    data: dict,
+    fields: list[int],
+    paths: list[list[str]],
+) -> Type[object]:
     j = 0
-    for i in cls.__dict__:
+    clsdict = cls.__dict__
+    if not isinstance(clsdict, dict):
+        raise TypeError
+    for i in clsdict:
+        if fields[j] >= len(paths):
+            raise IndexError
         path = paths[fields[j]]
-        cls.__dict__[i] = dict_get_path(data, path)
+        clsdict[i] = dict_get_path(data, path)
         j = j + 1
     return cls
 
@@ -348,7 +358,7 @@ def save_json(path: str, filename: str, data: dict) -> bool:
         file_path = os.path.join(path, filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf8") as file:
-            yaml.dump(data, file)
+            json.dump(data, file, indent=2, ensure_ascii=False)
     except OSError as e:
         if e.errno != errno.EEXIST:
             loge.error("error saving the file: {file_path}", e)
