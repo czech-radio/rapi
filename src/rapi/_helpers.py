@@ -66,17 +66,6 @@ def type_by_name(type_name):
         raise NameError(f"{type_name} not implemented")
 
 
-@no_type_check
-def parse_date_regex(date_string: str):
-    try:
-        restr = r"\d+"
-        dts = map(int, re.findall(restr, date_string))
-        pdate = datetime(*dts)
-        return pdate
-    except Exception as e:
-        raise ValueError(f"date not parsed. invalid date format: {e}")
-
-
 def current_pytz_timezone():
     ltz = time.tzname
     cptz = pytz.timezone(ltz[0])
@@ -88,10 +77,23 @@ def date_now_timezone():
     return datetime.now(cptz)
 
 
+@no_type_check
+def parse_date_regex(date_string: str):
+    try:
+        restr = r"\d+"
+        dts = map(int, re.findall(restr, date_string))
+        pdate = datetime(*dts)
+        return pdate
+    except Exception as e:
+        raise ValueError(f"date not parsed. invalid date format: {e}")
+
+
 def parse_date_optional_fields(date_string: str):
     try:
-        parsed_date = parser.parse(date_string)
-        return parsed_date
+        tzinfo=current_pytz_timezone()
+        pdate = parser.parse(date_string)
+        pdate=pdate.replace(tzinfo=tzinfo)
+        return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
 

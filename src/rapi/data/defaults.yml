@@ -17,7 +17,7 @@ commands: # subcommands
   show:
   show_ep_filter:
     show_id:    # -sef_id; str; store; get show episodes by show id
-    date_from:  # -sef_df; str; store; filter episodes from date: YY-mm-dd_HH:MM
+    date_from:  # -sef_df; date_tz; store; filter episodes from date: YY-mm-dd_HH:MM
     date_to:    # -sef_dt; str; store; filter episodes from date: YY-mm-dd_HH:MM
     time_from:  # -sef_tt; str; store; filter episodes aired from daytime
     time_to:    # -sef_tf; str; store; filter episodes aired from daytime

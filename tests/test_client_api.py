@@ -57,4 +57,21 @@ def test_get_show_episodes() -> None:
 def test_show_episodes_filter() -> None:
     api = _client.Client()
     data = api.show_episodes_filter(sample_shows[0])
-    print(data)
+    assert data
+    data = api.show_episodes_filter(
+        sample_shows[0],
+        "2010",
+    )
+    assert data
+    data1 = api.show_episodes_filter(
+        sample_shows[0],
+        "2014",
+        "2014-12",
+    )
+    data2 = api.show_episodes_filter(
+        sample_shows[0],
+        "2014",
+        "2015-12",
+    )
+    assert len(data1)<len(data2)
+   

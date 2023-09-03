@@ -157,7 +157,7 @@ class Client:
     def show_episodes_filter(
         self,
         episode_id: str,
-        date_from: datetime | None = None,
+        date_from: datetime | str | None = None,
         date_to: datetime | None = None,
         station_id: str | None = None,
         limit: int = 0,
@@ -172,11 +172,16 @@ class Client:
                 [*cmdpars, "date_from"],
                 datetime(1970, 1, 1, 0, 0, 0, tzinfo=tzinfo),
             )
+        if isinstance(date_from, str):
+            date_from = _helpers.parse_date_optional_fields(date_from)
+
         if date_to is None:
             date_to = getval(
                 [*cmdpars, "date_to"],
                 datetime.now(tzinfo),
             )
+        if isinstance(date_to, str):
+            date_to = _helpers.parse_date_optional_fields(date_to)
         lb = filter(
             lambda ep: (ep.since >= date_from) and (ep.till <= date_to),
             eps,
