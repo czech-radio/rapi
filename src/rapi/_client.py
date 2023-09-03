@@ -92,9 +92,6 @@ class Client:
             link = jdata.get("links", {}).get("next")
         return out
 
-    # def assign_fields(
-    # self, data: list[dict], fields: list[int], dclass: Dataclass
-    # ) -> list[Dataclass]:
     def assign_fields(
         self, data: list[dict], fields: list[int], dclass=Type[dataclass]
     ) -> list[Any]:
@@ -157,13 +154,35 @@ class Client:
         out = self.assign_fields(data, fields, dataclass)
         return tuple(out)
 
-    def show_episodes_filter(self, episode_id: str):
-        cmdpars = ["commands", "show_episodes_filter"]
+    def show_episodes_filter(
+        self,
+        episode_id: str,
+        date_from: datetime | None = None,
+        date_to: datetime | None = None,
+        station_id: str | None = None,
+        limit: int = 0,
+    ):
+        cmdpars = ["commands", "show_ep_filter"]
         getval = self.Cfg.runtime_get
-        df = getval([*cmdpars, "date_from"], "jekl")
-        eps = self.get_show_episodes(episode_id)
-        print(eps)
-        # return eps
+        tzinfo = _helpers.current_pytz_timezone()
+        eps = self.get_show_episodes(episode_id, limit)
+
+        if date_from is None:
+            date_from = getval(
+                [*cmdpars, "date_from"],
+                datetime(1970, 1, 1, 0, 0, 0, tzinfo=tzinfo),
+            )
+        if date_to is None:
+            date_to = getval(
+                [*cmdpars, "date_to"],
+                datetime.now(tzinfo),
+            )
+        lb = filter(
+            lambda ep: (ep.since >= date_from) and (ep.till <= date_to),
+            eps,
+        )
+
+        return tuple(lb)
 
 
 class DB_local:

@@ -121,3 +121,13 @@ def test_json_to_csv() -> None:
     print(paths)
     # _helpers.dict_to_csv(jdata)
     # _helpers.dict_to_csv(jdata['meta'])
+
+
+def test_current_pytz_timezone() -> None:
+    tz = _helpers.current_pytz_timezone()
+    assert tz
+
+
+def test_date_now_timezone() -> None:
+    dt = _helpers.date_now_timezone()
+    print(dt)

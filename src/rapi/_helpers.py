@@ -5,6 +5,7 @@ import os
 import pkgutil
 import re
 import sys
+import time
 from dataclasses import dataclass
 from datetime import datetime
 # import dataclasses
@@ -12,6 +13,7 @@ from io import StringIO
 from typing import Any, Optional, Sequence, Tuple, Type, Union, no_type_check
 
 import numpy as np
+import pytz
 import requests
 import yaml
 from dateutil import parser
@@ -73,6 +75,17 @@ def parse_date_regex(date_string: str):
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
+
+
+def current_pytz_timezone():
+    ltz = time.tzname
+    cptz = pytz.timezone(ltz[0])
+    return cptz
+
+
+def date_now_timezone():
+    cptz = current_pytz_timezone()
+    return datetime.now(cptz)
 
 
 def parse_date_optional_fields(date_string: str):

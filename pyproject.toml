@@ -20,6 +20,7 @@ dependencies = [
 	"numpy",
 	"ruamel.yaml",
 	"dacite",
+	"pytz",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",
