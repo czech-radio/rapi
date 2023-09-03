@@ -93,10 +93,10 @@ class Client:
         return out
 
     # def assign_fields(
-    # self, data: list[dict], fields: list[int], dc: Dataclass
+    # self, data: list[dict], fields: list[int], dclass: Dataclass
     # ) -> list[Dataclass]:
     def assign_fields(
-        self, data: list[dict], fields: list[int], dc=Type[dataclass]
+        self, data: list[dict], fields: list[int], dclass=Type[dataclass]
     ) -> list[Any]:
         """
         Assign fields from list of json dicts to list of arbitrary dataclass.
@@ -104,7 +104,7 @@ class Client:
         out: list = list()
         paths: list = list()
         for d in data:
-            dcc = replace(dc)
+            dcc = replace(dclass)
             if len(paths) == 0:
                 paths = helpers.dict_paths_vectors(d, list())
             res = helpers.class_assign_attrs_fieldnum(dcc, d, fields, paths)

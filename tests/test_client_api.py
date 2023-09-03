@@ -52,6 +52,9 @@ def test_get_show_episodes() -> None:
     data = api.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
     # https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/episodes
     assert data
+    # print(data[0])
+    # print(data[0].since)
+    print(type(data[0].since))
 
 
 def test_show_episodes_filter() -> None:

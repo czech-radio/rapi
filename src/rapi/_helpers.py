@@ -179,7 +179,11 @@ def class_assign_attrs_fieldnum(
         if fields[j] >= len(paths):
             raise IndexError
         path = paths[fields[j]]
-        clsdict[i] = dict_get_path(data, path)
+        val = dict_get_path(data, path)
+        if isinstance(clsdict[i], datetime):
+            clsdict[i] = parse_date_optional_fields(val)
+        else:
+            clsdict[i] = val
         j = j + 1
     return cls
 
@@ -373,6 +377,13 @@ def save_yaml(path: str, filename: str, data: dict) -> bool:
     finally:
         logo.info(f"data saved to: {file_path}")
         return True
+
+
+class DatetimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return super().default(obj)
 
 
 def save_json(path: str, filename: str, data: dict) -> bool:

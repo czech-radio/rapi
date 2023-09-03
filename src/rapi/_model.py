@@ -1,14 +1,16 @@
+import datetime as dt
 import json
 from dataclasses import asdict, dataclass
 from typing import Type, TypeVar
 
-# Create a type variable
-# Dataclass = TypeVar("Dataclass")
+from rapi._helpers import DatetimeEncoder
 
 
 def str_pretty_json(cls):
     def __str__(self):
-        df = json.dumps(asdict(self), indent=2, ensure_ascii=False)
+        df = json.dumps(
+            asdict(self), indent=2, ensure_ascii=False, cls=DatetimeEncoder
+        )
         return df
 
     cls.__str__ = __str__
@@ -71,9 +73,9 @@ class Episode:
     title: str = ""
     short_title: str = ""
     description: str = ""
-    since: str = ""
-    till: str = ""
-    updated: str = ""
+    since: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
+    till: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
+    updated: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
     mirrored_show_title: str = ""
 
 
