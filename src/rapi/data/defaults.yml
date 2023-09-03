@@ -9,12 +9,19 @@ usercfg:
 subcommand:
 commands: # subcommands
   tsub:
-    tflag1:  # -t1; bool; store_true; test subcommand flag
-    tflag2:  # -t2; bool; store_true; test subcommand flag
+    tflag1: # -t1; bool; store_true; test subcommand flag
+    tflag2: # -t2; bool; store_true; test subcommand flag
   station:  # filter stations
-    id: 1  # -id; int; store; filter by id
+    id: 1   # -id; int; store; filter by id
     test: 
   show:
+  show_ep_filter:
+    show_id:    # -sef_id; str; store; get show episodes by show id
+    date_from:  # -sef_df; str; store; filter episodes from date: YY-mm-dd_HH:MM
+    date_to:    # -sef_dt; str; store; filter episodes from date: YY-mm-dd_HH:MM
+    time_from:  # -sef_tt; str; store; filter episodes aired from daytime
+    time_to:    # -sef_tf; str; store; filter episodes aired from daytime
+
 apis:
   common:
     station_ids:

@@ -92,6 +92,14 @@ def test_dict_list_to_rows():
     _helpers.save_rows_to_csv("./runtime2/stations_fields.csv", tdata)
 
 
+def test_parse_date()->None:
+    dt=_helpers.parse_date("2023-01-09_10:11")
+    print(dt)
+    dt=_helpers.parse_date("2023-01-09_10")
+    print(dt)
+    dt=_helpers.parse_date("2023-01-09")
+    print(dt)
+
 def test_json_to_csv() -> None:
     url = "https://rapidev.croapp.cz/stations?"
     jdata = _helpers.request_url_json(url)

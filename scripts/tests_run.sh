@@ -54,6 +54,7 @@ par="tests/test_helpers.py"
 # $ptest ${par}::test_request_url_yaml
 # $ptest ${par}::test_json_to_csv
 # $ptest ${par}::test_dict_list_to_rows
+$ptest ${par}::test_parse_date
 
 
 ### client
@@ -71,7 +72,7 @@ par="tests/test_client.py"
 
 #### api_client_api
 par="tests/test_client_api.py"
-$ptest ${par}
+# $ptest ${par}
 # $ptest ${par}::test_client
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
@@ -79,6 +80,7 @@ $ptest ${par}
 # $ptest ${par}::test_get_station_shows
 # $ptest ${par}::test_get_show
 # $ptest ${par}::test_get_show_episodes
+# $ptest ${par}::test_show_episodes_filter
 
 ### errors
 par="tests/test_errors.py"

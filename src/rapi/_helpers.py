@@ -1,10 +1,12 @@
 import csv
 import errno
+import re
 import json
 import os
 import pkgutil
 import sys
 from dataclasses import dataclass
+from datetime import datetime
 # import dataclasses
 from io import StringIO
 from typing import Any, Optional, Sequence, Tuple, Type, Union
@@ -59,6 +61,16 @@ def type_by_name(type_name):
         return type_map[type_name]
     else:
         raise NameError(f"{type_name} not implemented")
+
+
+### date time
+def parse_date(date_string: str):
+    try:
+        restr=r'\d+'
+        pdate=datetime(*map(int, re.findall(restr, date_string)))
+        return pdate
+    except Exception:
+        raise ValueError("date not parsed. invalid date format")
 
 
 ### csv files

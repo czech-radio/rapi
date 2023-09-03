@@ -169,6 +169,16 @@ class CFG:
         res = helpers.deep_merge_dicts(res, self.cfg_default.cfg)
         self.cfg_runtime = res
 
-    def runtime_get(self, path: list):
+    def runtime_get(self, path: list, dvalue: Any = ValueError) -> Any:
         val = helpers.dict_get_path(self.cfg_runtime, path)
+        if val is None:
+            try:
+                isexcp=isinstance(dvalue(), Exception)
+                # print(isexcp)
+            except Exception as e:
+                return dvalue
+            if isexcp:
+                raise dvalue(f"cannot get path: {path}")
+            else:
+                return dvalue
         return val

@@ -36,6 +36,11 @@ def test_get_station_shows() -> None:
     assert data
 
 
+sample_shows = [
+    "9f36ee8f-73a7-3ed5-aafb-41210b7fb935",
+]
+
+
 def test_get_show() -> None:
     api = _client.Client(Cfg)
     data = api.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935", 500)
@@ -47,3 +52,8 @@ def test_get_show_episodes() -> None:
     data = api.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
     # https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/episodes
     assert data
+
+
+def test_show_episodes_filter() -> None:
+    api = _client.Client()
+    data = api.show_episodes_filter(sample_shows[0])
