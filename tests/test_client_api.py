@@ -12,6 +12,13 @@ Cfg = _config.CFG()
 Cfg.cfg_runtime_set_defaults()
 
 
+def test_client() -> None:
+    cl = _client.Client()
+    station = cl.get_station(str(11))
+    assert station
+    print(station)
+
+
 def test_get_station() -> None:
     print()
     api = _client.Client(Cfg)

@@ -35,7 +35,7 @@ namespaces = false
 [project.optional-dependencies]
 test = ["pytest", "pytest-html"]
 lint = ["black[jupyter]","isort","ruff","flake8","mypy","pydocstyle"]
-docs = ["sphinx","myst-parser","sphinx_rtd_theme","jupyter"]
+docs = ["sphinx","myst-parser","sphinx_rtd_theme","jupyter","visidata"]
 type = ["types-requests","pandas-stubs"]
 dev = ["rapi[test]","rapi[lint]","rapi[docs]","rapi[types]"]
 
