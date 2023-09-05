@@ -21,6 +21,7 @@ dependencies = [
 	"ruamel.yaml",
 	"dacite",
 	"pytz",
+	"pandas",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",

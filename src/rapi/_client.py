@@ -27,6 +27,7 @@ class Client:
         if cfg is None:
             cfg = CFG()
             cfg.cfg_runtime_set_defaults()
+
         self.Cfg = cfg
         self.DB_local = DB_local(cfg)
         self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
@@ -166,7 +167,8 @@ class Client:
         getval = self.Cfg.runtime_get
         tzinfo = _helpers.current_pytz_timezone()
         eps = self.get_show_episodes(episode_id, limit)
-
+ 
+        ### filter by date
         if date_from is None:
             date_from = getval(
                 [*cmdpars, "date_from"],
@@ -186,7 +188,8 @@ class Client:
             lambda ep: (ep.since >= date_from) and (ep.till <= date_to),
             eps,
         )
-
+        ### filter by station
+        #### epizoda asi nepujde filtrovat podle stanice
         return tuple(lb)
 
 
@@ -198,7 +201,7 @@ class DB_local:
         # path = os.path.join(base_dir, self.__class__.__name__, "db")
         cfgb = ["apis", "croapp", "db_local"]
         path = cfg.runtime_get([*cfgb, "csvs_workdir"])
-        helpers.mkdir_parent_panic(path)
+        # helpers.mkdir_parent_panic(path)
         self.cscs_workdir = path
         self.csvs_update = cfg.runtime_get([*cfgb, "csvs_update"])
 

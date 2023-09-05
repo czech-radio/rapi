@@ -158,6 +158,7 @@ class CFG:
         res: dict = {}
         ### merge in all sources in order of increasing priority
         if srcs is None or len(srcs) == 0:
+            sys.argv = ["rapi","-v"]
             self.cfg_runtime = self.cfg_default.cfg
         else:
             for s in reversed(srcs):
