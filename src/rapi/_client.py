@@ -167,7 +167,7 @@ class Client:
         getval = self.Cfg.runtime_get
         tzinfo = _helpers.current_pytz_timezone()
         eps = self.get_show_episodes(episode_id, limit)
- 
+
         ### filter by date
         if date_from is None:
             date_from = getval(

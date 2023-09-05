@@ -8,8 +8,13 @@ Welcome to RAPI's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :glob:
    :caption: Contents:
-
+   
+   notebooks/*
+   issues
+   todo
+   config_module
 
 
 Indices and tables
