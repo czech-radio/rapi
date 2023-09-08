@@ -122,7 +122,18 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
 class Cfg_params:
     def __init__(self):
         argpars = _params.params_yml_config()
-        pars = argpars.parse_args()
+        launcher = helpers.filepath_to_vector(sys.argv[0])[-1]
+        sysargbak = sys.argv
+        if launcher == "ipykernel_launcher.py":
+            # NOTE: calling from playbook sys.argv is set to some bullshit ['/home/user/rapi/.venv/lib/python3.11/site-packages/ipykernel_launcher.py', '-f', '/home/user/.local/share/jupyter/runtime/kernel-d916e01b-a4eb-42eb-998a-ec7eeb156cff.json'] so commandline args cannot be properly defined/parsed
+            sys.argv = ["rapi"]
+        try:
+            pars = argpars.parse_args()
+        except BaseException as e:
+            raise ValueError(
+                f"__name__={__name__}, __package__={__package__}, sys.argv={sys.argv}, launcher={launcher}"
+            )
+        sys.argv = sysargbak
         self.pars = pars
         pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)
@@ -158,7 +169,7 @@ class CFG:
         res: dict = {}
         ### merge in all sources in order of increasing priority
         if srcs is None or len(srcs) == 0:
-            sys.argv = ["rapi","-v"]
+            sys.argv = ["rapi", "-v"]
             self.cfg_runtime = self.cfg_default.cfg
         else:
             for s in reversed(srcs):

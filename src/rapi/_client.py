@@ -23,11 +23,8 @@ from rapi._model import Episode, Show, Station, StationIDs
 
 
 class Client:
-    def __init__(self, cfg: CFG | None = None):
-        if cfg is None:
-            cfg = CFG()
-            cfg.cfg_runtime_set_defaults()
-
+    def __init__(self, cfg: CFG = CFG()):
+        cfg.cfg_runtime_set_defaults()
         self.Cfg = cfg
         self.DB_local = DB_local(cfg)
         self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
@@ -78,6 +75,7 @@ class Client:
             endp_url = endp_url + limstr + str(limit)
         return endp_url
 
+    ### add return value
     def get_endp_full_json(self, endp: str, limit: int = 0):
         link = self.get_endp_link(endp, limit)
         out: list = list()
@@ -112,10 +110,12 @@ class Client:
     def get_station(
         self, station_id: str, limit: int = 0
     ) -> tuple[Station, ...]:
+        ### | None
         ### select fields from json by position
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         guid = self.get_station_guid(station_id)
         endp = "stations/" + guid
+        # endp  -> enpoint
         data = self.get_endp_full_json(endp, limit)
         dataclass = Station()
         out = self.assign_fields(data, fields, dataclass)
@@ -126,8 +126,8 @@ class Client:
         fields = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         endp = "stations"
         data = self.get_endp_full_json(endp, limit)
-        dataclass = Station()
-        out = self.assign_fields(data, fields, dataclass)
+        dclass = Station()
+        out = self.assign_fields(data, fields, dclass)
         return tuple(out)
 
     def get_station_shows(self, station_id: str, limit: int = 0):

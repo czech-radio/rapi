@@ -31,7 +31,7 @@ def commands(cfg: CFG) -> None:
     debug_cfg(run, cfg)
 
     ### subcommands
-    subc = getvar(["subcommand"],None)
+    subc = getvar(["subcommand"], None)
 
     if subc is not None:
         logo.info(f"running command: {subc}")

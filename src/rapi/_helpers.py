@@ -148,6 +148,19 @@ def is_file_readable(file_path: str) -> bool:
     return os.path.isfile(file_path) and os.access(file_path, os.R_OK)
 
 
+def filepath_to_vector(path: str) -> list[str]:
+    path_vector: list = []
+    while True:
+        path, component = os.path.split(path)
+        if component:
+            path_vector.insert(0, component)
+        else:
+            if path:
+                path_vector.insert(0, path)
+            break
+    return path_vector
+
+
 def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)

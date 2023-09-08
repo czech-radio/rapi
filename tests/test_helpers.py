@@ -1,3 +1,4 @@
+import os
 import re
 from typing import Union
 
@@ -131,3 +132,10 @@ def test_current_pytz_timezone() -> None:
 def test_date_now_timezone() -> None:
     dt = _helpers.date_now_timezone()
     print(dt)
+
+
+def test_filepath_to_vector() -> None:
+    cwd = os.getcwd()
+    fp = os.path.join(cwd, "kek.txt")
+    vec = _helpers.filepath_to_vector(fp)
+    print(vec)

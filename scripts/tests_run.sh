@@ -58,6 +58,7 @@ par="tests/test_helpers.py"
 # $ptest ${par}::test_parse_date_optional_fields
 # $ptest ${par}::test_current_pytz_timezone
 # $ptest ${par}::test_date_now_timezone
+# $ptest ${par}::test_filepath_to_vector
 
 
 ### client
@@ -79,11 +80,11 @@ par="tests/test_client_api.py"
 # $ptest ${par}::test_client
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
-# $ptest ${par}::test_get_stations
+$ptest ${par}::test_get_stations
 # $ptest ${par}::test_get_station_shows
 # $ptest ${par}::test_get_show
 # $ptest ${par}::test_get_show_episodes
-$ptest ${par}::test_show_episodes_filter
+# $ptest ${par}::test_show_episodes_filter
 
 ### errors
 par="tests/test_errors.py"
