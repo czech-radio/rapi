@@ -43,7 +43,7 @@ type = ["types-requests","pandas-stubs"]
 dev = ["rapi[test]","rapi[lint]","rapi[docs]","rapi[types]"]
 
 [project.scripts]
-rapi = "rapi.__main__:main"
+rapi = "rapi._cli:main"
 
 [tool.black]
 line-length = 79
