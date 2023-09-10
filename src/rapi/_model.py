@@ -142,5 +142,30 @@ episode_anotation: dict = {
 }
 
 
+@dataclass
+@str_pretty_json
+class Person:
+    uuid: str = ""
+    title: str = ""
+    description_short: str = ""
+    description: str = ""
+    profile_id: str = ""
+    participation_link: str = ""
+    participation_data: str = ""
+
+
+person_anotation: dict = {
+    "uuid": {"json": "id"},
+    "title": {"json": "attributes.title"},
+    "description_short": {"json": "attributes.short_description"},
+    "description": {"json": "attributes.description"},
+    "profile_id": {"json": "attributes.profile_id"},
+    "participation_link": {
+        "json": "relationships.participation.links.related"
+    },
+    "participation_data": {"json": "relationships.participation.data"},
+}
+
+
 class Schedule:
     pass

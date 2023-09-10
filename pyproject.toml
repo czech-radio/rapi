@@ -51,8 +51,9 @@ line-length = 79
 
 [tool.pytest.ini_options]
 ### This settings affects both tested module logs and test module itself!? I would like to separate it.
-log_cli = true
-# log_cli_level = "INFO"
+# log_cli = true
+log_cli = false
+log_cli_level = "INFO"
 log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
 # log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 markers = [

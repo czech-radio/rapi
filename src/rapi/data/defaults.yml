@@ -52,7 +52,8 @@ apis:
       "program",
       # "schedule-day",
       # "schedule-day-flat",
-      # "schedule-current",
+      # "schedule-current", 
+      # "schedule-current","current day schedule"
       "episodes",
       "genres",
       "persons",

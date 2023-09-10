@@ -19,6 +19,9 @@ attributes.asset.credit.license
 attributes.asset.credit.description
 attributes.asset.credit.origin_url
 attributes.logo
+attributes.logo24
+attributes.logo24-r
+attributes.logo32
 attributes.logoIcon
 attributes.contact.web
 meta.ga.siteBroadcastStation

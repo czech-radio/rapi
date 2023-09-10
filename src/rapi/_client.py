@@ -20,8 +20,9 @@ from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
-from rapi._model import (Episode, Show, Station, StationIDs, episode_anotation,
-                         show_anotation, station_anotation)
+from rapi._model import (Episode, Person, Show, Station, StationIDs,
+                         episode_anotation, person_anotation, show_anotation,
+                         station_anotation)
 
 
 class Client:
@@ -86,6 +87,7 @@ class Client:
             response = self._session.get(link)
             response.raise_for_status()  # non-2xx status exception
             jdata = response.json()
+            # print(jdata)
             data = jdata["data"]
             if not isinstance(data, list):
                 data = [data]
@@ -207,6 +209,46 @@ class Client:
         )
 
         return tuple(out)  # type: ignore
+
+    def get_show_moderators(
+        self, show_id: str, limit: int = 0
+    ) -> tuple[Person, ...]:
+        endpoint = "shows/" + show_id + "/participants"
+        data = self._get_endpoit_full_json(endpoint, limit)
+        out = _helpers.class_attrs_by_anotation_list(
+            data,
+            Person(),
+            person_anotation,
+        )
+        # NOTE: All persons, moderators not. Seems there are only moderators listed though. To get participation role: it can be extracted from: shows/show_id:
+        # relationships.participants.data:
+        # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
+        return tuple(out)
+
+    def get_person(self, person_id: str, limit: int = 0) -> Person | None:
+        endpoint = "persons/" + person_id
+        data = self._get_endpoit_full_json(endpoint, limit)
+        out = _helpers.class_attrs_by_anotation_dict(
+            data[0],
+            Person(),
+            person_anotation,
+        )
+        if out is not None:
+            assert isinstance(out, Person)
+        return out
+
+    def get_show_premieres(self,id: str,limit: int=0):
+        # endpoint = "shows/" + show_id + "/participants"
+        endpoint="shows/"+id+"/schedule-episodes"  # Returns empty
+        # endpoint="serials/"
+        # endpoint="schedule/"+id
+        # endpoint="program/" # very slow
+        data = self._get_endpoit_full_json(endpoint, limit)
+        return data
+
+    def get_repetitions(self):
+        pass
+
 
 
 class DB_local:
