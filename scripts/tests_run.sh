@@ -62,7 +62,7 @@ par="tests/test_helpers.py"
 
 
 ### client
-par="tests/test_client.py"
+par="tests/test_client_db.py"
 # $ptest ${par}
 # $ptest ${par}::test_DB_local
 # $ptest ${par}::test_API
@@ -74,13 +74,13 @@ par="tests/test_client.py"
 # $ptest ${par}::test_DB_local_csv_update
 # $ptest ${par}::test_DB_local_endp_get_full_json
 
-#### api_client_api
-par="tests/test_client_api.py"
-# $ptest ${par}
+#### api_client
+par="tests/test_client.py"
+$ptest ${par}
 # $ptest ${par}::test_client
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
-$ptest ${par}::test_get_stations
+# $ptest ${par}::test_get_stations
 # $ptest ${par}::test_get_station_shows
 # $ptest ${par}::test_get_show
 # $ptest ${par}::test_get_show_episodes

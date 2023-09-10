@@ -40,14 +40,39 @@ class StationIDs:
 @dataclass
 @str_pretty_json
 class Station:
-    id: str = ""
+    uuid: str = ""
     title: str = ""
-    short_title: str = ""
+    title_short: str = ""
     subtitle: str = ""
     color: str = ""
     code: str = ""
     priority: int = 0
-    station_type: str = ""
+    span: str = ""
+    broadcast_name: str = ""
+
+
+# station_anotation: dict = {
+# "uuid": {"json": ["attributes","id"]},
+# "title": {"json": ["attributes","title"]},
+# "title_short": {"json": ["attributes","shortTitle"]},
+# "subtitle": {"json": ["attributes","subtitle"]},
+# "color": {"json": ["attributes","color"]},
+# "code": {"json": ["attributes","code"]},
+# "priority": {"json": ["attributes","priority"]},
+# "span": {"json": ["attributes","stationType"]},
+# "broadcast_name": {"json": ["meta","ga","siteBroadcastStation"]},
+# }
+station_anotation: dict = {
+    "uuid": {"json": "id"},
+    "title": {"json": "attributes.title"},
+    "title_short": {"json": "attributes.shortTitle"},
+    "subtitle": {"json": "attributes.subtitle"},
+    "color": {"json": "attributes.color"},
+    "code": {"json": "attributes.code"},
+    "priority": {"json": "attributes.priority"},
+    "span": {"json": "attributes.stationType"},
+    "broadcast_name": {"json": "meta.ga.siteBroadcastStation"},
+}
 
 
 @dataclass
@@ -64,6 +89,12 @@ class Show:
     child_friendly: bool = False
     description: str = ""
     short_description: str = ""
+
+
+show_anotation: dict = {
+    "uuid": {"json": "id"},
+    "span": {"json": "showType"},
+}
 
 
 @dataclass

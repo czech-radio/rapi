@@ -124,9 +124,13 @@ class Cfg_params:
         argpars = _params.params_yml_config()
         launcher = helpers.filepath_to_vector(sys.argv[0])[-1]
         sysargbak = sys.argv
-        if launcher == "ipykernel_launcher.py":
+        match launcher:
+            case "rapi":
+                pass
+            case _:
+                # e.g. "ipykernel_launcher.py"
+                sys.argv = ["rapi"]
             # NOTE: calling from playbook sys.argv is set to some bullshit ['/home/user/rapi/.venv/lib/python3.11/site-packages/ipykernel_launcher.py', '-f', '/home/user/.local/share/jupyter/runtime/kernel-d916e01b-a4eb-42eb-998a-ec7eeb156cff.json'] so commandline args cannot be properly defined/parsed
-            sys.argv = ["rapi"]
         try:
             pars = argpars.parse_args()
         except BaseException as e:
@@ -138,6 +142,7 @@ class Cfg_params:
         pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
+        # print("fuck")
 
 
 class CFG:

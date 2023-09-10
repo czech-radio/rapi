@@ -21,6 +21,7 @@ dependencies = [
 	"ruamel.yaml",
 	"dacite",
 	"pytz",
+	"types-pytz",
 	"pandas",
 	# "swagger_parser",
 	# "openapi_parser",
@@ -54,4 +55,9 @@ log_cli = true
 # log_cli_level = "INFO"
 log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
 # log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+markers = [
+	"domain: make domain",
+	"model:",
+	"current: adhoc select test",
+]
 

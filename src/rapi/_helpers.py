@@ -1,3 +1,4 @@
+import copy
 import csv
 import errno
 import json
@@ -200,26 +201,49 @@ def class_assign_attrs_fieldnum(
     paths: list[list[str]],
 ) -> Type[object]:
     j = 0
-    clsdict = cls.__dict__
-    if not isinstance(clsdict, dict):
+    dataclsdict = cls.__dict__
+    if not isinstance(dataclsdict, dict):
         raise TypeError
-    for i in clsdict:
+    for i in dataclsdict:
         if fields[j] >= len(paths):
             raise IndexError
         path = paths[fields[j]]
         val = dict_get_path(data, path)
-        if isinstance(clsdict[i], datetime):
-            clsdict[i] = parse_date_optional_fields(val)
+        if isinstance(dataclsdict[i], datetime):
+            dataclsdict[i] = parse_date_optional_fields(val)
         else:
-            clsdict[i] = val
+            dataclsdict[i] = val
         j = j + 1
     return cls
 
 
-def class_assign_attrs_fieldname(
-    cls: Any, data: dict, fields: list[int], paths: list[str]
-):
-    pass
+def class_attrs_by_anotation_dict(
+    data: dict,
+    datacls: Any,
+    anotation: dict,
+) -> type[object]:
+    dataclsdict = datacls.__dict__
+    if not isinstance(dataclsdict, dict):
+        raise TypeError
+    for attr in dataclsdict:
+        jsonfield = anotation[attr]["json"]
+        json_path = jsonfield.split(".")
+        val = dict_get_path(data, json_path)
+        dataclsdict[attr] = val
+    return datacls
+
+
+def class_attrs_by_anotation_list(
+    data: list[dict],
+    datacls: Any,
+    anotation: dict,
+) -> list[Any]:
+    out: list = list()
+    for d in data:
+        dcls = copy.deepcopy(datacls)
+        res = class_attrs_by_anotation_dict(d, dcls, anotation)
+        out = out + [res]
+    return out
 
 
 def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
