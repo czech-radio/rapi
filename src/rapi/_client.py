@@ -4,7 +4,8 @@ import time
 from dataclasses import (asdict, dataclass, is_dataclass, make_dataclass,
                          replace)
 from datetime import datetime, timedelta
-from typing import Any, Generator, Type, Union
+from typing import (Any, Callable, Generator, Iterable, List, Type, TypeVar,
+                    Union)
 
 import requests
 from dacite import from_dict
@@ -19,7 +20,8 @@ from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
-from rapi._model import Episode, Show, Station, StationIDs, station_anotation
+from rapi._model import (Episode, Show, Station, StationIDs, episode_anotation,
+                         show_anotation, station_anotation)
 
 
 class Client:
@@ -130,29 +132,41 @@ class Client:
         )
         return tuple(out)
 
-    def get_station_shows(self, station_id: str, limit: int = 0):
+    def get_station_shows(
+        self, station_id: str, limit: int = 0
+    ) -> tuple[Show, ...]:
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
         data = self._get_endpoit_full_json(endpoint, limit)
-        dataclass = Show()
-        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
-        out = self.assign_fields(data, fields, dataclass)
+        out = _helpers.class_attrs_by_anotation_list(
+            data,
+            Show(),
+            show_anotation,
+        )
         return tuple(out)
 
-    def get_show(self, show_id: str, limit: int = 0):
+    def get_show(self, show_id: str, limit: int = 0) -> Show | None:
         endpoint = "shows/" + show_id
-        dataclass = Show()
         data = self._get_endpoit_full_json(endpoint, limit)
-        fields = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
-        out = self.assign_fields(data, fields, dataclass)
-        return tuple(out)
+        out = _helpers.class_attrs_by_anotation_dict(
+            data[0],
+            Show(),
+            show_anotation,
+        )
+        if out is not None:
+            assert isinstance(out, Show)
+        return out
 
-    def get_show_episodes(self, episode_id: str, limit: int = 0):
+    def get_show_episodes(
+        self, episode_id: str, limit: int = 0
+    ) -> tuple[Episode, ...]:
         endpoint = "shows/" + episode_id + "/episodes"
         data = self._get_endpoit_full_json(endpoint, limit)
-        dataclass = Episode()
-        fields = [1, 2, 3, 4, 5, 6, 7, 8]
-        out = self.assign_fields(data, fields, dataclass)
+        out = _helpers.class_attrs_by_anotation_list(
+            data,
+            Episode(),
+            episode_anotation,
+        )
         return tuple(out)
 
     def show_episodes_filter(
@@ -162,13 +176,13 @@ class Client:
         date_to: datetime | str | None = None,
         station_id: str | None = None,
         limit: int = 0,
-    ):
+    ) -> tuple[Episode, ...]:
         cmdpars = ["commands", "show_ep_filter"]
         getval = self.Cfg.runtime_get
         tzinfo = _helpers.current_pytz_timezone()
         eps = self.get_show_episodes(episode_id, limit)
 
-        ### filter by date
+        # filter by date
         if date_from is None:
             date_from = getval(
                 [*cmdpars, "date_from"],
@@ -184,13 +198,15 @@ class Client:
             )
         if isinstance(date_to, str):
             date_to = _helpers.parse_date_optional_fields(date_to)
-        lb = filter(
-            lambda ep: (ep.since >= date_from) and (ep.till <= date_to),
+        assert isinstance(date_to, datetime)
+        assert isinstance(date_from, datetime)
+        # NOTE: in following lines mypy is disable cause I don't know how to make proper typehints
+        out = filter(
+            lambda ep: (ep.since >= date_from) and (ep.till <= date_to),  # type: ignore
             eps,
         )
-        ### filter by station
-        #### epizoda asi nepujde filtrovat podle stanice
-        return tuple(lb)
+
+        return tuple(out)  # type: ignore
 
 
 class DB_local:

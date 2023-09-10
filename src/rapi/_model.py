@@ -62,6 +62,7 @@ class Station:
 # "span": {"json": ["attributes","stationType"]},
 # "broadcast_name": {"json": ["meta","ga","siteBroadcastStation"]},
 # }
+
 station_anotation: dict = {
     "uuid": {"json": "id"},
     "title": {"json": "attributes.title"},
@@ -78,9 +79,9 @@ station_anotation: dict = {
 @dataclass
 @str_pretty_json
 class Show:
-    id: str = ""
-    show_type: str = ""
-    show_content: bool = False
+    uuid: str = ""
+    type: str = ""
+    content: bool = False
     title: bool = False
     active: bool = False
     aired: bool = False
@@ -88,26 +89,57 @@ class Show:
     priority: int = 0
     child_friendly: bool = False
     description: str = ""
-    short_description: str = ""
+    description_short: str = ""
+    updated: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
 
 
 show_anotation: dict = {
     "uuid": {"json": "id"},
-    "span": {"json": "showType"},
+    "type": {"json": "attributes.showType"},
+    "content": {"json": "attributes.showContent"},
+    "title": {"json": "attributes.title"},
+    "active": {"json": "attributes.active"},
+    "aired": {"json": "attributes.aired"},
+    "podcast": {"json": "attributes.podcast"},
+    "priority": {"json": "attributes.priority"},
+    "child_friendly": {"json": "attributes.childFriendly"},
+    "description": {"json": "attributes.description"},
+    "description_short": {"json": "attributes.shortDescription"},
+    "updated": {"json": "attributes.updated"},
 }
 
 
 @dataclass
 @str_pretty_json
 class Episode:
-    id: str = ""
+    uuid: str = ""
     title: str = ""
-    short_title: str = ""
+    title_short: str = ""
     description: str = ""
     since: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
     till: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
     updated: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
-    mirrored_show_title: str = ""
+    part: str = ""
+    title_mirrored: str = ""
+    content_creator: str = ""
+    content_id: str = ""
+    base_id: str = ""
+
+
+episode_anotation: dict = {
+    "uuid": {"json": "id"},
+    "title": {"json": "attributes.title"},
+    "title_short": {"json": "attributes.shortTitle"},
+    "description": {"json": "attributes.description"},
+    "since": {"json": "attributes.since"},
+    "till": {"json": "attributes.till"},
+    "updated": {"json": "attributes.updated"},
+    "part": {"json": "attributes.part"},
+    "title_mirrored": {"json": "attributes.mirroredShow.title"},
+    "content_creator": {"json": "meta.ga.contentCreator"},
+    "content_id": {"json": "meta.ga.contentId"},
+    "base_id": {"json": "meta.ga.baseId"},
+}
 
 
 class Schedule:

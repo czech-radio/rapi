@@ -7,9 +7,8 @@ import pkgutil
 import re
 import sys
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime
-# import dataclasses
 from io import StringIO
 from typing import Any, Optional, Sequence, Tuple, Type, Union, no_type_check
 
@@ -229,7 +228,12 @@ def class_attrs_by_anotation_dict(
         jsonfield = anotation[attr]["json"]
         json_path = jsonfield.split(".")
         val = dict_get_path(data, json_path)
-        dataclsdict[attr] = val
+
+        ### field parsers
+        if isinstance(dataclsdict[attr], datetime):
+            dataclsdict[attr] = parse_date_optional_fields(val)
+        else:
+            dataclsdict[attr] = val
     return datacls
 
 
@@ -240,7 +244,8 @@ def class_attrs_by_anotation_list(
 ) -> list[Any]:
     out: list = list()
     for d in data:
-        dcls = copy.deepcopy(datacls)
+        # dcls = copy.deepcopy(datacls)
+        dcls = replace(datacls)
         res = class_attrs_by_anotation_dict(d, dcls, anotation)
         out = out + [res]
     return out
