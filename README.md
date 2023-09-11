@@ -1,9 +1,9 @@
 # rapi
 
+**The REST Python client for <https://rapidoc.croapp.cz/>.**
+
 - maintainer: Jan Kačaba
 - repository: <https://github.com/czech-radio/rapi>
-
-**The REST Python client for <https://rapidoc.croapp.cz/>.**
 
 Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
 as Python objects.
