@@ -20,17 +20,24 @@ from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
-from rapi._model import (Episode, Person, Show, Station, StationIDs,
-                         episode_anotation, person_anotation, show_anotation,
-                         station_anotation)
+from rapi._model import (Episode, Episode_schedule, Person, Show, Station,
+                         StationIDs, episode_anotation,
+                         episode_schedule_anotation, person_anotation,
+                         show_anotation, station_anotation)
 
 
 class Client:
     def __init__(self, cfg: CFG = CFG()):
         cfg.cfg_runtime_set_defaults()
         self.Cfg = cfg
-        self.DB_local = DB_local(cfg)
-        self.api_url = cfg.runtime_get(["apis", "croapp", "urls", "api"])
+        self.api_url = cfg.runtime_get(
+            [
+                "apis",
+                "croapp",
+                "urls",
+                "api",
+            ]
+        )
         self.StationIDs = _station_ids.StationIDs(cfg)
         session = requests.Session()
         headers = {"User-Agent": __name__}
@@ -64,6 +71,13 @@ class Client:
             raise ValueError(f"guid not found for station_id: {station_id}")
         return fkey
 
+    def get_station_code(self, station_id: str) -> str:
+        sid = StationIDs()
+        fkey = self.StationIDs.get_fkey(station_id, sid.croapp_code)
+        if fkey is None:
+            raise ValueError(f"code not found for station_id: {station_id}")
+        return fkey
+
     def _get_endpoint_link(self, endpoint: str, limit: int = 0) -> str:
         cfgb = ["apis", "croapp", "response"]
         if limit == 0:
@@ -75,7 +89,11 @@ class Client:
         endpoint_url = "/".join((api_url, endpoint))
         limstr = self.Cfg.runtime_get([*cfgb, "limit_str"])
         if limit > 0 and limstr is not None:
-            endpoint_url = endpoint_url + limstr + str(limit)
+            if "?" in endpoint_url:
+                opt_delim = "&"
+            else:
+                opt_delim = "?"
+            endpoint_url = endpoint_url + opt_delim + limstr + str(limit)
         return endpoint_url
 
     ### add return value
@@ -111,8 +129,12 @@ class Client:
             out.append(res)
         return out
 
+    def get_endpoint(self, endpoint: str = "", limit: int = 0):
+        data = self._get_endpoit_full_json(endpoint, limit)
+        _helpers.pp(data)
+
     def get_station(self, station_id: str, limit: int = 0) -> Station | None:
-        guid = self.get_station_guid(station_id)
+        guid = self.get_station_guid(str(station_id))
         endpoint = "stations/" + guid
         data = self._get_endpoit_full_json(endpoint, limit)
         out = _helpers.class_attrs_by_anotation_dict(
@@ -210,6 +232,90 @@ class Client:
 
         return tuple(out)  # type: ignore
 
+    def get_show_episodes_schedule(self, show_id: str, limit: int = 0):
+        endpoint = "shows/" + show_id + "/schedule-episodes"
+        data = self._get_endpoit_full_json(endpoint, limit)
+        out = _helpers.class_attrs_by_anotation_list(
+            data,
+            Episode_schedule(),
+            episode_schedule_anotation,
+        )
+        return out
+
+    def get_station_schedule_day_flat(
+        self, station_id: str = "", limit: int = 0
+    ):
+        # https://rapidev.croapp.cz/schedule-day-flat?station=radiozurnal
+        ## not valid request when filtering by station
+        # code=self.get_station_code(station_id)
+        # code=self.get_station_guid(station_id)
+        # endpoint = "schedule-day-flat"
+        endpoint = "schedule-day-flat"
+        data = self._get_endpoit_full_json(endpoint, limit)
+        out = _helpers.class_attrs_by_anotation_list(
+            data,
+            Episode_schedule(),
+            episode_schedule_anotation,
+        )
+        if station_id != "":
+            code = self.get_station_guid(station_id)
+            out = filter(
+                lambda ep: (ep.station == code),  # type: ignore
+                out,
+            )
+        return out
+
+    def get_schedule_day(
+        self,
+        date_from: str,
+        date_to: str,
+        station_id: str = "",
+        limit: int = 0,
+    ):
+        # https://rapidev.croapp.cz/schedule?filter[title][eq]=Zpr%C3%A1vy
+        # endpoint = "schedule?filter"
+        date_from = _helpers.parse_date_optional_fields(date_from)
+        date_from = str(date_from).replace(" ", "T")
+        date_to = _helpers.parse_date_optional_fields(date_to)
+        date_to = str(date_to).replace(" ", "T")
+        # endpoint = "schedule?filter[since][ge]="+date_from
+        uuid = self.get_station_guid(station_id)
+        endpoint = "schedule-day?filter[station.id]=" + uuid
+        # endpoint= endpoint+"filter[since][ge]="+date_from
+        # endpoint= endpoint+"filter[since]="+date_from
+        # endpoint = "schedule"
+        # print(endpoint)
+        # ln=self._get_endpoint_link(endpoint)
+        # print(ln)
+        data = self._get_endpoit_full_json(endpoint, -1)
+        # print(data)
+        print(len(data))
+        # 2023-08-11T08:30:00+10:00
+        # print(date_from)
+        # print(date_to)
+        # data = self._get_endpoit_full_json(endpoint, limit)
+        # pass
+
+    def get_schedule(self, station_id: str = "", limit: int = 0):
+        uuid = self.get_station_guid(station_id)
+        # endpoint = "schedule?filter[station.id][eq]="+uuid
+        # endpoint = "schedule?filter[since][ge]="+uuid
+        # endpoint = "schedule?filter[since][ge]=2023-09-19T08:10:00+01:00" -> 6617
+        # endpoint = "schedule?filter[since][ge]=2023-09-18T08:10:00+01:00" -> 7672
+        # endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00"
+        # endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00" -> 15909
+        endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00"
+        # endpoint = "schedule?filter[description][eq]="+uuid
+        # endpoint = "schedule?filter[station.id]=radiozurnal"
+        # print("fuck")
+        # endpoint = "schedule?station="+uuid
+        # endpoint = "schedule"
+        # endpoint = "schedule?filter[station.id]"
+        data = self._get_endpoit_full_json(endpoint, limit)
+        # data = self._get_endpoit_full_json(endpoint, -1)
+        print(len(data))
+        # print(data)
+
     def get_show_moderators(
         self, show_id: str, limit: int = 0
     ) -> tuple[Person, ...]:
@@ -220,7 +326,7 @@ class Client:
             Person(),
             person_anotation,
         )
-        # NOTE: All persons, moderators not. Seems there are only moderators listed though. To get participation role: it can be extracted from: shows/show_id:
+        # NOTE: All persons, moderators not filtered yet. Seems there are only moderators listed though. To get participation role: it can be extracted from: shows/show_id:
         # relationships.participants.data:
         # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
         return tuple(out)
@@ -237,9 +343,9 @@ class Client:
             assert isinstance(out, Person)
         return out
 
-    def get_show_premieres(self,id: str,limit: int=0):
+    def get_show_premieres(self, id: str, limit: int = 0):
         # endpoint = "shows/" + show_id + "/participants"
-        endpoint="shows/"+id+"/schedule-episodes"  # Returns empty
+        endpoint = "shows/" + id + "/schedule-episodes"  # Returns empty
         # endpoint="serials/"
         # endpoint="schedule/"+id
         # endpoint="program/" # very slow
@@ -248,181 +354,3 @@ class Client:
 
     def get_repetitions(self):
         pass
-
-
-
-class DB_local:
-    def __init__(self, cfg: CFG):
-        self.Cfg = cfg
-        self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
-        self.endpoints = cfg.runtime_get(["apis", "croapp", "endpoints"])
-        # path = os.path.join(base_dir, self.__class__.__name__, "db")
-        cfgb = ["apis", "croapp", "db_local"]
-        path = cfg.runtime_get([*cfgb, "csvs_workdir"])
-        # helpers.mkdir_parent_panic(path)
-        self.cscs_workdir = path
-        self.csvs_update = cfg.runtime_get([*cfgb, "csvs_update"])
-
-    def endpoint_get_link(self, endpoint: str, limit: int = 0) -> str:
-        cfgb = ["apis", "croapp", "response"]
-        if limit == 0:
-            limit = self.Cfg.runtime_get([*cfgb, "limit"])
-
-        api_url = self.urls.get("api", "")
-        if api_url == "":
-            loge.error(f"api url not defined")
-            sys.exit(1)
-        endpoint_url = "/".join((api_url, endpoint))
-
-        limstr = self.Cfg.runtime_get([*cfgb, "limit_str"])
-        if limit > 0 and limstr is not None:
-            endpoint_url = endpoint_url + limstr + str(limit)
-        return endpoint_url
-
-    def endpoint_get_full_json(self, endpoint: str, limit: int = 0):
-        link = self.endpoint_get_link(endpoint, limit)
-        jdict = helpers.request_url_json(link)
-        if jdict is None:
-            loge.error(f"no data to save: {endpoint}")
-            return None
-        data = jdict.get("data", None)
-        if data is None or len(data) == 0:
-            loge.warning(f"no data section to parse: {endpoint}")
-            return None
-
-        nlink = self.endpoint_get_next_link(jdict)
-        while nlink != "":
-            jdict = helpers.request_url_json(nlink)
-            if jdict is not None:
-                jdata = jdict.get("data", None)
-                if jdata is not None:
-                    data = data + jdata
-                nlink = self.endpoint_get_next_link(jdict)
-        return data
-
-    def endpoint_get_json(
-        self, endpoint: str, limit: int = 0
-    ) -> Union[dict, None]:
-        link = self.endpoint_get_link(endpoint, limit)
-        jdata = helpers.request_url_json(link)
-        return jdata
-
-    def endpoint_save_json(self, endpoint: str, limit: int = 0) -> bool:
-        jdata = self.endpoint_get_json(endpoint, limit)
-        if jdata is None:
-            loge.error(f"no data to save: {endpoint}")
-            return False
-        directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
-        filepath = os.path.join(directory, "json")
-        ok = helpers.save_json(filepath, endpoint + ".json", jdata)
-        return ok
-
-    def endpoints_save_json(self, limit: int = 0):
-        cfgb = [
-            "apis",
-            "croapp",
-        ]
-        eps = self.Cfg.runtime_get([*cfgb, "endpoints"])
-        for e in eps:
-            ok = self.endpoint_save_json(e, limit)
-            if ok is False:
-                loge.error("endpoint json not saved: {e}")
-
-    def endpoints_csv_update(self, limit: int = 0, follow: bool = False):
-        for e in self.endpoints:
-            self.endpoint_csv_update(e, "", limit, follow)
-
-    def endpoint_csv_update(
-        self,
-        endpoint: str,
-        nlink: str = "",
-        limit: int = 0,
-        follow: bool = False,
-    ):
-        logo.info(f"updating from: {endpoint}")
-        nlink = self.endpoint_csv_get_data(endpoint, limit)
-        if follow is False:
-            return
-        while True:
-            logo.info(f"nextlink: {nlink}")
-            nlink = self.endpoint_csv_get_data(endpoint, 0, nlink)
-            if nlink == "":
-                break
-
-    def endpoint_csv_get_data(
-        self, endpoint: str, limit: int = 0, nlink: str = ""
-    ) -> str:
-        # helpers.mkdir_parent_panic(path)
-        # dpaht=os.path.join(self.cscs_workdir, endpoint)
-        fpath = os.path.join(self.cscs_workdir, endpoint + ".csv")
-        dpath = os.path.dirname(fpath)
-        helpers.mkdir_parent_panic(dpath)
-        fpath_fields = os.path.join(
-            self.cscs_workdir, endpoint + "_fields.csv"
-        )
-        if not self.endpoint_file_needs_update(fpath):
-            return ""
-        # logo.info(f"updating endpoint file: {fpath}")
-
-        ### endpoint files delete (cleanup)
-        logo.info(f"before delete: {nlink}")
-        if nlink == "":
-            link = self.endpoint_get_link(endpoint, limit)
-            self.endpoint_file_clear([fpath, fpath_fields])
-        else:
-            link = nlink
-        ### download data
-        jdict = helpers.request_url_json(link)
-        if jdict is None:
-            loge.warning(f"no json to parse: {endpoint}")
-            return ""
-        data = jdict.get("data", None)
-        if data is None or len(data) == 0:
-            loge.warning(f"no data section to parse: {endpoint}")
-            return ""
-        ### save data to csv
-        rows, header = helpers.dict_list_to_rows(data)
-        if not os.path.exists(fpath):
-            helpers.save_rows_to_csv(fpath, rows, header)
-        else:
-            helpers.save_rows_to_csv(fpath, rows)
-        if not os.path.exists(fpath_fields):
-            tdata = helpers.rows_transpose([header])
-            helpers.save_rows_to_csv(fpath_fields, tdata)
-        ### return next link if any
-        return self.endpoint_get_next_link(jdict)
-
-    def endpoint_file_needs_update(self, endpoint_file: str) -> bool:
-        update = False
-        fpath = endpoint_file
-        try:
-            mtime = os.path.getmtime(fpath)
-            if self.csvs_update == True:
-                update = True
-            if self.csvs_update == "daily":
-                mdate_time = datetime.fromtimestamp(mtime)
-                td = timedelta(days=1)
-                ### check if file is older than one day
-                if datetime.now() > mdate_time + td:
-                    update = True
-        except FileNotFoundError:
-            update = True
-        return update
-
-    def endpoint_file_clear(self, files: list[str]):
-        for file in files:
-            if os.path.exists(file):
-                logo.info(f"deleting endpointoint file: {file}")
-                os.remove(file)
-
-    def endpoint_get_next_link(self, respone_json: dict) -> str:
-        links = respone_json.get("links", None)
-        if links is None:
-            return ""
-        nlink = links.get("next", None)
-        if nlink is None:
-            return ""
-        if nlink == "":
-            return ""
-        logo.info(f"trying next link: {nlink}")
-        return nlink

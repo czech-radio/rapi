@@ -47,7 +47,6 @@ def config_ini_default() -> configparser.ConfigParser:
 def parse_yaml_comments():
     dats = pkgutil.get_data(__name__, "data/defaults.yml")
     return dats
-    # y = YAML(typ='safe')  # Use 'safe' type to preserve comments
     # y = YAML(typ='rt')  # Use 'safe' type to preserve comments
     # assert dats is not None
     # cfg = y.load(dats)

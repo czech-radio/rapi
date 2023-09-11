@@ -41,7 +41,8 @@ apis:
       csvs_workdir: "./runtime/croapp/csv/"
     response:
       limit: 500
-      limit_str: "?page%5Blimit%5D="
+      # limit_str: "?page%5Blimit%5D="
+      limit_str: "page[limit]="
     endpoints: [
       "stations-all",
       "stations",

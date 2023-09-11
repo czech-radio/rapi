@@ -32,8 +32,9 @@ def commands(cfg: CFG) -> None:
 
     ### subcommands
     subc = getvar(["subcommand"], None)
-
-    if subc is not None:
+    if subc is None:
+        return
+    else:
         logo.info(f"running command: {subc}")
 
     if "station" == subc:

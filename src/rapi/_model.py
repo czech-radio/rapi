@@ -144,12 +144,40 @@ episode_anotation: dict = {
 
 @dataclass
 @str_pretty_json
+class Episode_schedule:
+    uuid: str = ""
+    title: str = ""
+    description: str = ""
+    station: str = ""
+    station_code: int = 0
+    show_priority: int = 0
+    show_times: str = ""
+    since: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
+    till: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
+
+
+episode_schedule_anotation: dict = {
+    "uuid": {"json": "id"},
+    "title": {"json": "attributes.title"},
+    "description": {"json": "attributes.description"},
+    "station": {"json": "relationships.station.data.id"},
+    "station_code": {"json": "attributes.station_code"},
+    "show_priority": {"json": "attributes.showPriority"},
+    "show_times": {"json": "attributes.showTimes"},
+    "since": {"json": "attributes.since"},
+    "till": {"json": "attributes.till"},
+}
+
+
+@dataclass
+@str_pretty_json
 class Person:
     uuid: str = ""
     title: str = ""
     description_short: str = ""
     description: str = ""
     profile_id: str = ""
+    # role: str=""
     participation_link: str = ""
     participation_data: str = ""
 
@@ -160,6 +188,7 @@ person_anotation: dict = {
     "description_short": {"json": "attributes.short_description"},
     "description": {"json": "attributes.description"},
     "profile_id": {"json": "attributes.profile_id"},
+    # "role": {"json": "meta.role"},
     "participation_link": {
         "json": "relationships.participation.links.related"
     },

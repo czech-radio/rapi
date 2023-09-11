@@ -23,6 +23,7 @@ dependencies = [
 	"pytz",
 	"types-pytz",
 	"pandas",
+	"pandas-stubs",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",
