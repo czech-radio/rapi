@@ -1,8 +1,9 @@
 # rapi
 
-<https://github.com/czech-radio/rapi>
+- maintainer: Jan Kačaba
+- repository: <https://github.com/czech-radio/rapi>
 
-The Python client for <https://rapidoc.croapp.cz/> REST API.
+**The REST Python client for <https://rapidoc.croapp.cz/>.**
 
 Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
 as Python objects.
@@ -14,27 +15,29 @@ as Python objects.
 - [ ] Získej všechny moderátory pro zadaný pořad.
 - [ ] Získej premiéry a reprízy pro zadaný pořad.
 
-## Model
+## Model (Terms, Facts, Rules)
 
-- Stations: Stanic (celostátní, regionální)
-- Shows: Pořady
-- Serials: Seriály epizod: Potreba definovat? skupina epizod
-- Schedule: Program vysílání - priorita
-- Episodes: Epizody pořadu
-- Genres: Žánry
-- Persons: Informace o osobách
-- Topics: Témata
+Doménový model jsoy třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
+Zatím jasně vídíme tyto entity:
 
-Doménový model tj. třídy (entity) reprezentující jednotlivé objekty vracející se z API se musí namodelovat s citem.
-Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (Schedule), Epizoda (Episode).
+### Terms
 
-### Fakta
+- `Station`: Stanice (např. celostátní Plus, dále regionální)
+- `Show`: Pořad vysílaný na jedné či více stanicích.
+- `Serial`: Série epizod (asi potřeba lépe definovat)
+- `Schedule`: Program vysílání (naše priorita)
+- `Episode`: Epizoda pořadu
+- `Genre`: Žánr epizody/pořadu
+- `Person`: Osoba vystupující v epizodě (pouze moderátor nikoliv host)
+- `Topic`: Téma epizody/pořadu
+
+### Facts and Rules
 
 - Na stanici se vysílají epizody jednotlivých pořadů.
 - Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zárověň (např. Plus/Radiožurnál a regionální stanice).
 - Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéry a reprízy.
 
-### Filtry
+### Filters
 
 - *stanice* např Plus, Radiožurnál
 - *období* (dny) např. od 1. 1. 2023 do 1. 2. 2023 
@@ -93,7 +96,7 @@ Zatím jasně vídíme tyto entity: Stanice (Station), Pořad (Show), Program (S
 	todo
 	```
 
-## Command Line Interface
+## Usage
 
 ### Configure
  
@@ -104,7 +107,10 @@ The runtime variables are assigned in following order.
 3. config file
 4. hard-coded defaults
 
-### Run
+
+### Use as library
+
+### Use as program
 
 ## Tests
 
