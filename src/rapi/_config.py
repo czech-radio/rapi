@@ -4,20 +4,21 @@ import copy
 import logging
 import os
 import pkgutil
+import sys
 import types
 from typing import Any, Optional, Union
 
-import yaml
+import yaml as yaml
 from ruamel.yaml import YAML
 
-from rapi import helpers, params
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
+from rapi import _helpers as helpers
+from rapi import _params
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 # from mergedeep import merge
 
-
-__version__ = "0.0.1"
+__all__ = "CFG"
 
 
 ### dict_get_path: get subset of dictionary giving list of path or keyname
@@ -97,7 +98,7 @@ def env_vars_dict_intersec(dcfg: dict) -> dict:
 
 
 class Cfg_env:
-    # TODO: maybe use alt method when using runtime_cfg_set:
+    # NOTE: maybe use alt method when using runtime_cfg_set:
     # traverse the default config constructing path vectors along the way, then try using the vector and concatenated vector to get value i.e. Cfg_?.get_path_value(vec,cvec) if not None skip trying the remaining Cfg_? sources. Then construct the particular cfg dict from path or incorporate the value to default cfg.
     # (This would eliminate traversing default cfg each time.)
     # or maybe use dict.update(odict)
@@ -105,7 +106,6 @@ class Cfg_env:
     def __init__(self):
         self.cfg = env_vars_dict_intersec(config_yml_default())
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
-        # helpers.pp(self.cfg)
 
 
 def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
@@ -118,15 +118,31 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
     return dictr
 
 
+# ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
 class Cfg_params:
     def __init__(self):
-        argpars = params.params_yml_config()
-        pars = argpars.parse_args()
+        argpars = _params.params_yml_config()
+        launcher = helpers.filepath_to_vector(sys.argv[0])[-1]
+        sysargbak = sys.argv
+        match launcher:
+            case "rapi":
+                pass
+            case _:
+                # e.g. "ipykernel_launcher.py"
+                sys.argv = ["rapi"]
+            # NOTE: calling from playbook sys.argv is set to some bullshit ['/home/user/rapi/.venv/lib/python3.11/site-packages/ipykernel_launcher.py', '-f', '/home/user/.local/share/jupyter/runtime/kernel-d916e01b-a4eb-42eb-998a-ec7eeb156cff.json'] so commandline args cannot be properly defined/parsed
+        try:
+            pars = argpars.parse_args()
+        except BaseException as e:
+            raise ValueError(
+                f"__name__={__name__}, __package__={__package__}, sys.argv={sys.argv}, launcher={launcher}"
+            )
+        sys.argv = sysargbak
         self.pars = pars
         pars = vars(pars)
         self.cfg = params_vars_cfg_intersec(config_yml_default(), pars)
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
-        # helpers.pp(self.cfg)
+        # print("fuck")
 
 
 class CFG:
@@ -158,6 +174,7 @@ class CFG:
         res: dict = {}
         ### merge in all sources in order of increasing priority
         if srcs is None or len(srcs) == 0:
+            sys.argv = ["rapi", "-v"]
             self.cfg_runtime = self.cfg_default.cfg
         else:
             for s in reversed(srcs):
@@ -167,6 +184,16 @@ class CFG:
         res = helpers.deep_merge_dicts(res, self.cfg_default.cfg)
         self.cfg_runtime = res
 
-    def runtime_get(self, path: list):
+    def runtime_get(self, path: list, dvalue: Any = ValueError) -> Any:
         val = helpers.dict_get_path(self.cfg_runtime, path)
+        if val is None:
+            try:
+                isexcp = isinstance(dvalue(), Exception)
+                # print(isexcp)
+            except Exception as e:
+                return dvalue
+            if isexcp:
+                raise dvalue(f"cannot get path: {path}")
+            else:
+                return dvalue
         return val

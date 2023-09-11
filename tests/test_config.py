@@ -6,13 +6,12 @@ import sys
 import pytest
 from ruamel.yaml import YAML
 
-from rapi import config
-from rapi import helpers as hp
-from rapi import params
+from rapi import _config
+from rapi import _helpers as hp
 
 
 def test_config_yml_default():
-    cfg = config.config_yml_default()
+    cfg = _config.config_yml_default()
     hp.pp(cfg)
     test = cfg["test"]
     assert test
@@ -52,14 +51,14 @@ for t in range(0, len(TCASES), 2):
 
 ### TESTS
 def test_Cfg_default() -> None:
-    cfg = config.Cfg_default()
+    cfg = _config.Cfg_default()
     val = cfg.get(TIN[0])
     assert val
 
 
 def test_Cfg_file() -> None:
-    # cfg = config.Cfg_file("./defaults_alt.yml")
-    cfg = config.Cfg_file("./tests/data/defaults_alt.yml")
+    # cfg = _config.Cfg_file("./defaults_alt.yml")
+    cfg = _config.Cfg_file("./tests/data/defaults_alt.yml")
     val = cfg.get(TIN[0])
     assert val
 
@@ -70,7 +69,7 @@ def test_Cfg_env() -> None:
     for i in range(len(TIN)):
         os.environ[EVARS[i]] = str(TOUT[i])
     ### test
-    cfg = config.Cfg_env()
+    cfg = _config.Cfg_env()
     print(cfg.cfg)
 
 
@@ -78,11 +77,19 @@ def test_Cfg_params() -> None:
     print()
     sys.argv = ["test3.py", "-vv", "--test-par=par", "-di=10"]
     # sys.argv = ["test3.py", "-vv"]
-    cfg = config.Cfg_params()
+    cfg = _config.Cfg_params()
     val = cfg.get(["verbose"])
     assert val == 2
     val = cfg.get(["test", "par"])
     assert val == "par"
+
+
+def test_CFG_defaults() -> None:
+    print()
+    # sys.argv = ["test3.py", "-vv", "--test-par=par", "-di=10"]
+    sys.argv = ["test3.py"]
+    Cfg = _config.CFG()
+    Cfg.cfg_runtime_set_defaults()
 
 
 def test_CFG() -> None:
@@ -90,7 +97,7 @@ def test_CFG() -> None:
     ### prepare
     for i in range(len(EVARS)):
         os.environ[EVARS[i]] = str(TOUT[i])
-    Cfg = config.CFG()
+    Cfg = _config.CFG()
 
     ### test
     val = Cfg.cfg_default.get(TIN[0])
@@ -99,15 +106,15 @@ def test_CFG() -> None:
     ### add sources
     #### param source
     sys.argv = ["test3.py", "--test-par=par", "-vv"]
-    cfgp = config.Cfg_params()
+    cfgp = _config.Cfg_params()
     # print(cfgp.cfg)
 
     #### env source
-    cfge = config.Cfg_env()
+    cfge = _config.Cfg_env()
     # print(cfge.cfg)
 
     #### file source
-    cfgf = config.Cfg_file("./tests/data/defaults_alt.yml")
+    cfgf = _config.Cfg_file("./tests/data/defaults_alt.yml")
 
     ### add sources in order of preference
     # Cfg.add_sources([cfge])

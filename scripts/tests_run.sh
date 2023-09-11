@@ -32,6 +32,7 @@ par="tests/test_config.py"
 # $ptest $par::test_Cfg_env
 # $ptest $par::test_Cfg_params
 # $ptest tests/test_config.py::test_CFG
+# $ptest tests/test_config.py::test_CFG_defaults
 
 ### broadcast
 par="tests/test_broadcast.py"
@@ -53,10 +54,15 @@ par="tests/test_helpers.py"
 # $ptest ${par}::test_request_url_yaml
 # $ptest ${par}::test_json_to_csv
 # $ptest ${par}::test_dict_list_to_rows
+# $ptest ${par}::test_parse_date_regex
+# $ptest ${par}::test_parse_date_optional_fields
+# $ptest ${par}::test_current_pytz_timezone
+# $ptest ${par}::test_date_now_timezone
+# $ptest ${par}::test_filepath_to_vector
 
 
-#### client
-par="tests/test_client.py"
+### client
+par="tests/test_client_db.py"
 # $ptest ${par}
 # $ptest ${par}::test_DB_local
 # $ptest ${par}::test_API
@@ -68,17 +74,26 @@ par="tests/test_client.py"
 # $ptest ${par}::test_DB_local_csv_update
 # $ptest ${par}::test_DB_local_endp_get_full_json
 
-#### api_client_api
-par="tests/test_client_api.py"
-# $ptest ${par}
+#### api_client
+par="tests/test_client.py"
+$ptest ${par}
+# $ptest ${par}::test_client
 # $ptest ${par}::test_get_station
 # $ptest ${par}::test_get_station_shows
 # $ptest ${par}::test_get_stations
+# $ptest ${par}::test_get_station_shows
+# $ptest ${par}::test_get_show
+# $ptest ${par}::test_get_show_episodes
+# $ptest ${par}::test_show_episodes_filter
 
 ### errors
 par="tests/test_errors.py"
 # $ptest $par
 # $ptest $par::test_HelloErr
-$ptest $par::test_return_tuple
+# $ptest $par::test_return_tuple
 # $ptest $par::test_Err_None
 # $ptest $par::test_Err
+
+### model
+par="tests/test_model.py"
+# $ptest $par::test_str_patcher

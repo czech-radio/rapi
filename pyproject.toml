@@ -13,44 +13,52 @@ dependencies = [
 	"requests","pyyaml",
 	"types-requests",
 	"types-PyYAML",
+	"types-python-dateutil",
 	"dataclasses_json",
 	"configparser",
 	"mergedeep",
 	"numpy",
 	"ruamel.yaml",
-  "jupyter",
 	"dacite",
+	"pytz",
+	"types-pytz",
+	"pandas",
 	# "swagger_parser",
 	# "openapi_parser",
 	# "openapi3-parser",
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "rapi.config.__version__"}
+version = {attr = "rapi.__version__"}
 readme = {file = ["README.rst", "USAGE.rst"]}
 
 [tool.setuptools.packages.find]
 where = ["src"] 
 namespaces = false  
 
-# [tool.setuptools.package-data]
-# data = ["defaults.ini"]
-
 [project.optional-dependencies]
-dev = ["pytest", "black", "isort", "mypy"]
+test = ["pytest", "pytest-html"]
+lint = ["black[jupyter]","isort","ruff","flake8","mypy","pydocstyle"]
+docs = ["sphinx","myst-parser","sphinx_rtd_theme","sphinx-autobuild","sphinx-autodoc-typehints","sphinx-autoapi","MyST-NB","jupyter","visidata"]
+type = ["types-requests","pandas-stubs"]
+dev = ["rapi[test]","rapi[lint]","rapi[docs]","rapi[types]"]
 
 [project.scripts]
-rapi = "rapi.__main__:main"
+rapi = "rapi._cli:main"
 
 [tool.black]
 line-length = 79
 
 [tool.pytest.ini_options]
 ### This settings affects both tested module logs and test module itself!? I would like to separate it.
-log_cli = true
-# log_cli_level = "INFO"
+# log_cli = true
+log_cli = false
+log_cli_level = "INFO"
 log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
-# log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
-# log_cli_format = "%(asctime)s [%(levelname)1s] %(message)s (%(filename)s:%(lineno)s)"
 # log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+markers = [
+	"domain: make domain",
+	"model:",
+	"current: adhoc select test",
+]
 

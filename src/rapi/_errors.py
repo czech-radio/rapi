@@ -1,8 +1,8 @@
 import sys
 from typing import Optional, Tuple, Type, TypeVar, Union
 
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 
 class DefaultException(Exception):

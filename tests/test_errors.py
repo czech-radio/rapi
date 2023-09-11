@@ -3,10 +3,10 @@ import sys
 from string import Template
 from typing import Optional, Tuple, Type, TypeVar, Union
 
-from rapi import errors as err
-from rapi import helpers
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
+from rapi import _errors as err
+from rapi import _helpers
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 loglevel = logging.DEBUG
 logo.setLevel(loglevel)

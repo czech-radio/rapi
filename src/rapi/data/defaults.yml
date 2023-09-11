@@ -6,14 +6,22 @@ workdir:
   dir: "./runtime/"
 usercfg:
   file: "./tests/data/defaults_alt.yml"
+subcommand:
 commands: # subcommands
   tsub:
-    tflag1:  # -t1; bool; store_true; test subcommand flag
-    tflag2:  # -t2; bool; store_true; test subcommand flag
+    tflag1: # -t1; bool; store_true; test subcommand flag
+    tflag2: # -t2; bool; store_true; test subcommand flag
   station:  # filter stations
-    id: 1  # -id; int; store; filter by id
+    id: 1   # -id; int; store; filter by id
     test: 
   show:
+  show_ep_filter:
+    show_id:    # -sef_id; str; store; get show episodes by show id
+    date_from:  # -sef_df; date_tz; store; filter episodes from date: YY-mm-dd_HH:MM
+    date_to:    # -sef_dt; str; store; filter episodes from date: YY-mm-dd_HH:MM
+    time_from:  # -sef_tt; str; store; filter episodes aired from daytime
+    time_to:    # -sef_tf; str; store; filter episodes aired from daytime
+
 apis:
   common:
     station_ids:
@@ -44,7 +52,8 @@ apis:
       "program",
       # "schedule-day",
       # "schedule-day-flat",
-      # "schedule-current",
+      # "schedule-current", 
+      # "schedule-current","current day schedule"
       "episodes",
       "genres",
       "persons",
@@ -59,7 +68,7 @@ test:
   env: "def"      # -te; none; store; test env
   def: "def"      # -td; none; store; test def
   alt: "def"      # -ta; none; store; test alt
-  cfg_prio: "def.yml"
+  cfg_prio: "def.yml" # -tc; none; store; which source wins?
   logs: false     # -tl; bool; store_true; test printing logs
     
 ## TESTING PARAMS DEFINITION

@@ -1,18 +1,25 @@
+import copy
 import csv
 import errno
 import json
 import os
 import pkgutil
+import re
 import sys
+import time
+from dataclasses import dataclass, replace
+from datetime import datetime
 from io import StringIO
-from typing import Any, Optional, Sequence, Tuple, Type, Union
+from typing import Any, Optional, Sequence, Tuple, Type, Union, no_type_check
 
 import numpy as np
+import pytz
 import requests
 import yaml
+from dateutil import parser
 
-from rapi.logger import log_stderr as loge
-from rapi.logger import log_stdout as logo
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 
 ### printers
@@ -21,7 +28,7 @@ def pl(data: Any):
 
 
 def pp(data: Any):
-    data_formated = json.dumps(data, indent=2)
+    data_formated = json.dumps(data, indent=2, ensure_ascii=False)
     print(data_formated)
 
 
@@ -57,6 +64,38 @@ def type_by_name(type_name):
         return type_map[type_name]
     else:
         raise NameError(f"{type_name} not implemented")
+
+
+def current_pytz_timezone():
+    ltz = time.tzname
+    cptz = pytz.timezone(ltz[0])
+    return cptz
+
+
+def date_now_timezone():
+    cptz = current_pytz_timezone()
+    return datetime.now(cptz)
+
+
+@no_type_check
+def parse_date_regex(date_string: str):
+    try:
+        restr = r"\d+"
+        dts = map(int, re.findall(restr, date_string))
+        pdate = datetime(*dts)
+        return pdate
+    except Exception as e:
+        raise ValueError(f"date not parsed. invalid date format: {e}")
+
+
+def parse_date_optional_fields(date_string: str):
+    try:
+        tzinfo = current_pytz_timezone()
+        pdate = parser.parse(date_string)
+        pdate = pdate.replace(tzinfo=tzinfo)
+        return pdate
+    except Exception as e:
+        raise ValueError(f"date not parsed. invalid date format: {e}")
 
 
 ### csv files
@@ -109,6 +148,19 @@ def is_file_readable(file_path: str) -> bool:
     return os.path.isfile(file_path) and os.access(file_path, os.R_OK)
 
 
+def filepath_to_vector(path: str) -> list[str]:
+    path_vector: list = []
+    while True:
+        path, component = os.path.split(path)
+        if component:
+            path_vector.insert(0, component)
+        else:
+            if path:
+                path_vector.insert(0, path)
+            break
+    return path_vector
+
+
 def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)
@@ -130,36 +182,73 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
 
 ### dict helpers
 #### dict_get_path: get subset of dictionary giving list of path or keyname
-def dict_get_path(
-    dictr: dict,
-    sections: list[str]
-    # ) -> Union[dict, list, str, bool, int, None]:
-) -> Any:
+def dict_get_path(dictr: dict, sections: list[str]) -> Any:
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
-        if resdict is None:
-            return resdict
-        else:
+        if resdict is not None:
             dicw = resdict
+        else:
+            return None
     return resdict
 
 
 def class_assign_attrs_fieldnum(
-    cls: Any, data: dict, fields: list[int], paths: list[list[str]]
-):
+    cls: Type[object],
+    data: dict,
+    fields: list[int],
+    paths: list[list[str]],
+) -> Type[object]:
     j = 0
-    for i in cls.__dict__:
+    dataclsdict = cls.__dict__
+    if not isinstance(dataclsdict, dict):
+        raise TypeError
+    for i in dataclsdict:
+        if fields[j] >= len(paths):
+            raise IndexError
         path = paths[fields[j]]
-        cls.__dict__[i] = dict_get_path(data, path)
+        val = dict_get_path(data, path)
+        if isinstance(dataclsdict[i], datetime):
+            dataclsdict[i] = parse_date_optional_fields(val)
+        else:
+            dataclsdict[i] = val
         j = j + 1
     return cls
 
 
-def class_assign_attrs_fieldname(
-    cls: Any, data: dict, fields: list[int], paths: list[str]
-):
-    pass
+def class_attrs_by_anotation_dict(
+    data: dict,
+    datacls: Any,
+    anotation: dict,
+) -> type[object]:
+    dataclsdict = datacls.__dict__
+    if not isinstance(dataclsdict, dict):
+        raise TypeError
+    for attr in dataclsdict:
+        jsonfield = anotation[attr]["json"]
+        json_path = jsonfield.split(".")
+        val = dict_get_path(data, json_path)
+
+        ### field parsers
+        if isinstance(dataclsdict[attr], datetime):
+            dataclsdict[attr] = parse_date_optional_fields(val)
+        else:
+            dataclsdict[attr] = val
+    return datacls
+
+
+def class_attrs_by_anotation_list(
+    data: list[dict],
+    datacls: Any,
+    anotation: dict,
+) -> list[Any]:
+    out: list = list()
+    for d in data:
+        # dcls = copy.deepcopy(datacls)
+        dcls = replace(datacls)
+        res = class_attrs_by_anotation_dict(d, dcls, anotation)
+        out = out + [res]
+    return out
 
 
 def dict_create_path(dictr: dict, key_path: list, val: str = "kek"):
@@ -347,12 +436,19 @@ def save_yaml(path: str, filename: str, data: dict) -> bool:
         return True
 
 
+class DatetimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return super().default(obj)
+
+
 def save_json(path: str, filename: str, data: dict) -> bool:
     try:
         file_path = os.path.join(path, filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf8") as file:
-            yaml.dump(data, file)
+            json.dump(data, file, indent=2, ensure_ascii=False)
     except OSError as e:
         if e.errno != errno.EEXIST:
             loge.error("error saving the file: {file_path}", e)

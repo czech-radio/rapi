@@ -1,73 +1,126 @@
-data:
-- attributes:
-    title: Biografie
-  id: 62e367a9-fbfb-3811-9098-e4c489412d23
-  type: genre
-- attributes:
-    title: "\u010Cesk\xE1 literatura"
-  id: 8a0a54ca-393a-3208-8f55-d71184c2e1c1
-  type: genre
-- attributes:
-    title: "Dobrodru\u017Estv\xED"
-  id: 52d7adf1-20e8-34cf-b1a7-e8c1fcc741b3
-  type: genre
-- attributes:
-    title: Drama
-  id: 82541b27-963b-3c6f-a3a6-757aa349c387
-  type: genre
-- attributes:
-    title: Fantasy
-  id: be98a782-59fe-30e8-94ad-1ede5ce5cf53
-  type: genre
-- attributes:
-    title: Historie
-  id: 414be0af-8346-3c7e-bc17-b9c9359e2680
-  type: genre
-- attributes:
-    title: Horor
-  id: b1595a02-69a2-3f56-b914-3101de58c134
-  type: genre
-- attributes:
-    title: Klasika
-  id: 4fe8f213-cd83-3f65-ac31-3633876895b9
-  type: genre
-- attributes:
-    title: Krimi
-  id: d4a6089b-1b5c-3004-b5d1-88bb116440e0
-  type: genre
-- attributes:
-    title: "Poh\xE1dka"
-  id: 1991839f-4920-38ac-ae4e-2e991598bac3
-  type: genre
-- attributes:
-    title: Psychodrama
-  id: 10e77039-b94c-368f-b590-9fab7ca67a0a
-  type: genre
-- attributes:
-    title: Romantika
-  id: 1ad20ee6-b3d0-3f99-8e45-218101a3ff95
-  type: genre
-- attributes:
-    title: Sci-fi
-  id: fae5d9d6-201e-36ef-a16b-8ae9d740f0b5
-  type: genre
-- attributes:
-    title: "Sv\u011Btov\xE1 literatura"
-  id: 0a695b92-0dca-36c1-a4af-d70f49547e68
-  type: genre
-- attributes:
-    title: Thriller
-  id: 31cac927-dd87-3b1f-9997-c94242ba9553
-  type: genre
-- attributes:
-    title: "Z\xE1bava"
-  id: cba4016a-7575-3037-9c41-d2fcd1eef00a
-  type: genre
-links:
-  first: null
-  last: null
-  next: null
-  prev: null
-  self: https://mujrozhlas.croapi.cz/genres?page%5Blimit%5D=300
-meta:
-  count: 16
+{
+  "meta": {
+    "count": 16
+  },
+  "links": {
+    "self": "https://mujrozhlas.croapi.cz/genres?page%5Blimit%5D=300",
+    "first": null,
+    "prev": null,
+    "next": null,
+    "last": null
+  },
+  "data": [
+    {
+      "type": "genre",
+      "id": "62e367a9-fbfb-3811-9098-e4c489412d23",
+      "attributes": {
+        "title": "Biografie"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "8a0a54ca-393a-3208-8f55-d71184c2e1c1",
+      "attributes": {
+        "title": "Česká literatura"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "52d7adf1-20e8-34cf-b1a7-e8c1fcc741b3",
+      "attributes": {
+        "title": "Dobrodružství"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "82541b27-963b-3c6f-a3a6-757aa349c387",
+      "attributes": {
+        "title": "Drama"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "be98a782-59fe-30e8-94ad-1ede5ce5cf53",
+      "attributes": {
+        "title": "Fantasy"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "414be0af-8346-3c7e-bc17-b9c9359e2680",
+      "attributes": {
+        "title": "Historie"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "b1595a02-69a2-3f56-b914-3101de58c134",
+      "attributes": {
+        "title": "Horor"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "4fe8f213-cd83-3f65-ac31-3633876895b9",
+      "attributes": {
+        "title": "Klasika"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "d4a6089b-1b5c-3004-b5d1-88bb116440e0",
+      "attributes": {
+        "title": "Krimi"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "1991839f-4920-38ac-ae4e-2e991598bac3",
+      "attributes": {
+        "title": "Pohádka"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "10e77039-b94c-368f-b590-9fab7ca67a0a",
+      "attributes": {
+        "title": "Psychodrama"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "1ad20ee6-b3d0-3f99-8e45-218101a3ff95",
+      "attributes": {
+        "title": "Romantika"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "fae5d9d6-201e-36ef-a16b-8ae9d740f0b5",
+      "attributes": {
+        "title": "Sci-fi"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "0a695b92-0dca-36c1-a4af-d70f49547e68",
+      "attributes": {
+        "title": "Světová literatura"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "31cac927-dd87-3b1f-9997-c94242ba9553",
+      "attributes": {
+        "title": "Thriller"
+      }
+    },
+    {
+      "type": "genre",
+      "id": "cba4016a-7575-3037-9c41-d2fcd1eef00a",
+      "attributes": {
+        "title": "Zábava"
+      }
+    }
+  ]
+}
