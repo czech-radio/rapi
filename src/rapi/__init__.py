@@ -1,8 +1,7 @@
-from rapi._client import Client
-from rapi._config import CFG
-from rapi._model import Show, Station
+from rapi._client import Client as Client
+from rapi._config import CFG as Config
+from rapi._model import Show as Show, Station as Station
 
-__all__ = ("CFG", "Client", "Station", "Show")
+__all__ = ("Config", "Client", "Station", "Show")
 
-
-__version__ = "0.0.1"
+__version__ = "0.1.0"

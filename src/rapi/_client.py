@@ -1,37 +1,15 @@
 import os
-import sys
-import time
-from dataclasses import (
-    asdict,
-    dataclass,
-    is_dataclass,
-    make_dataclass,
-    replace,
-)
-from datetime import datetime, timedelta
-from typing import (
-    Any,
-    Callable,
-    Generator,
-    Iterable,
-    List,
-    Type,
-    TypeVar,
-    Union,
-)
+from dataclasses import dataclass, replace
+from datetime import datetime
+from typing import Any, Type
 
 import requests
-from dacite import from_dict
-from dataclasses_json import dataclass_json
-from requests import Session, get
 
-from rapi import _config
 from rapi import _helpers
 from rapi import _helpers as helpers
 from rapi import _station_ids
 from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
-from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 from rapi._model import (
     Episode,
@@ -70,7 +48,7 @@ class Client:
         if self._session:
             self._session.close()
 
-    def get_swagger(self) -> Union[dict, None]:
+    def get_swagger(self) -> dict | None:
         url = self.Cfg.runtime_get(["apis", "croapp", "urls", "swagger"])
         ydata = helpers.request_url_yaml(url)
         if ydata is None:
@@ -133,22 +111,6 @@ class Client:
                 data = [data]
             out = out + data
             link = jdata.get("links", {}).get("next")
-        return out
-
-    def assign_fields(
-        self, data: list[dict], fields: list[int], dclass=Type[dataclass]
-    ) -> list[Any]:
-        """
-        Assign fields from list of json dicts to list of arbitrary dataclass.
-        """
-        out: list = list()
-        paths: list = list()
-        for d in data:
-            dcc = replace(dclass)
-            if len(paths) == 0:
-                paths = helpers.dict_paths_vectors(d, list())
-            res = helpers.class_assign_attrs_fieldnum(dcc, d, fields, paths)
-            out.append(res)
         return out
 
     def get_endpoint(self, endpoint: str = "", limit: int = 0):
@@ -246,7 +208,8 @@ class Client:
             date_to = _helpers.parse_date_optional_fields(date_to)
         assert isinstance(date_to, datetime)
         assert isinstance(date_from, datetime)
-        # NOTE: in following lines mypy is disable cause I don't know how to make proper typehints
+        # NOTE: In the following lines mypy is disabled cause 
+        # I don't know how to make proper type hints.
         out = filter(
             lambda ep: (ep.since >= date_from) and (ep.till <= date_to),  # type: ignore
             eps,
