@@ -307,7 +307,6 @@ class Client:
         endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00"
         # endpoint = "schedule?filter[description][eq]="+uuid
         # endpoint = "schedule?filter[station.id]=radiozurnal"
-        # print("fuck")
         # endpoint = "schedule?station="+uuid
         # endpoint = "schedule"
         # endpoint = "schedule?filter[station.id]"
