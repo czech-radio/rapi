@@ -1,11 +1,24 @@
 import os
 import sys
 import time
-from dataclasses import (asdict, dataclass, is_dataclass, make_dataclass,
-                         replace)
+from dataclasses import (
+    asdict,
+    dataclass,
+    is_dataclass,
+    make_dataclass,
+    replace,
+)
 from datetime import datetime, timedelta
-from typing import (Any, Callable, Generator, Iterable, List, Type, TypeVar,
-                    Union)
+from typing import (
+    Any,
+    Callable,
+    Generator,
+    Iterable,
+    List,
+    Type,
+    TypeVar,
+    Union,
+)
 
 import requests
 from dacite import from_dict
@@ -20,10 +33,19 @@ from rapi._config import CFG
 from rapi._helpers import dict_get_path as DGP
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
-from rapi._model import (Episode, Episode_schedule, Person, Show, Station,
-                         StationIDs, episode_anotation,
-                         episode_schedule_anotation, person_anotation,
-                         show_anotation, station_anotation)
+from rapi._model import (
+    Episode,
+    Episode_schedule,
+    Person,
+    Show,
+    Station,
+    StationIDs,
+    episode_anotation,
+    episode_schedule_anotation,
+    person_anotation,
+    show_anotation,
+    station_anotation,
+)
 
 
 class Client:
