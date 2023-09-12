@@ -1,0 +1,8 @@
+type
+id
+attributes.title
+attributes.short_description
+attributes.description
+attributes.profile_id
+relationships.participation.links.related
+relationships.participation.data
