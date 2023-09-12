@@ -141,7 +141,7 @@ def test_get_endpoint() -> None:
 def test_get_stations() -> None:
     api = _client.Client(Cfg)
     stations = api.get_stations(10)
-    assert len(stations) == 27
+    assert len(stations) == 28
 
 
 # @pytest.mark.current
