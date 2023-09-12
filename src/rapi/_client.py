@@ -208,7 +208,7 @@ class Client:
             date_to = _helpers.parse_date_optional_fields(date_to)
         assert isinstance(date_to, datetime)
         assert isinstance(date_from, datetime)
-        # NOTE: In the following lines mypy is disabled cause 
+        # NOTE: In the following lines mypy is disabled cause
         # I don't know how to make proper type hints.
         out = filter(
             lambda ep: (ep.since >= date_from) and (ep.till <= date_to),  # type: ignore
