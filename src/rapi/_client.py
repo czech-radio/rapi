@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from typing import Iterator
 
 import requests
 
@@ -24,7 +25,9 @@ from rapi._model import (
 class Client:
     def __init__(self, cfg: Config = Config()):
         cfg.cfg_runtime_set_defaults()
+
         self.Cfg = cfg
+
         self.api_url = cfg.runtime_get(
             [
                 "apis",
@@ -63,14 +66,14 @@ class Client:
         sid = StationIDs()
         fkey = self.StationIDs.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
-            raise ValueError(f"guid not found for station_id: {station_id}")
+            raise ValueError(f"Unknown station with id {station_id}")
         return fkey
 
     def get_station_code(self, station_id: str) -> str:
         sid = StationIDs()
         fkey = self.StationIDs.get_fkey(station_id, sid.croapp_code)
         if fkey is None:
-            raise ValueError(f"code not found for station_id: {station_id}")
+            raise ValueError(f"Unknown station with id {station_id}")
         return fkey
 
     def _get_endpoint_link(self, endpoint: str, limit: int = 0) -> str:
@@ -91,7 +94,6 @@ class Client:
             endpoint_url = endpoint_url + opt_delim + limstr + str(limit)
         return endpoint_url
 
-    ### add return value
     def _get_endpoit_full_json(self, endpoint: str, limit: int = 0):
         link = self._get_endpoint_link(endpoint, limit)
         out: list = list()
@@ -108,10 +110,6 @@ class Client:
             link = jdata.get("links", {}).get("next")
         return out
 
-    def get_endpoint(self, endpoint: str = "", limit: int = 0):
-        data = self._get_endpoit_full_json(endpoint, limit)
-        _helpers.pp(data)
-
     def get_station(self, station_id: str, limit: int = 0) -> Station | None:
         guid = self.get_station_guid(str(station_id))
         endpoint = "stations/" + guid
@@ -125,28 +123,29 @@ class Client:
             assert isinstance(out, Station)
         return out
 
-    def get_stations(self, limit: int = 0) -> tuple[Station, ...]:
-        endpoint = "stations"
-        data = self._get_endpoit_full_json(endpoint, limit)
-        out = _helpers.class_attrs_by_anotation_list(
+    def get_stations(self, limit: int = 0) -> Iterator[Station]:
+        data = self._get_endpoit_full_json("stations", limit)
+        stations = _helpers.class_attrs_by_anotation_list(
             data,
             Station(),
             station_anotation,
         )
-        return tuple(out)
+        for station in stations:
+            yield station
 
     def get_station_shows(
         self, station_id: str, limit: int = 0
-    ) -> tuple[Show, ...]:
+    ) -> Iterator[Show]:
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
         data = self._get_endpoit_full_json(endpoint, limit)
-        out = _helpers.class_attrs_by_anotation_list(
+        shows = _helpers.class_attrs_by_anotation_list(
             data,
             Show(),
             show_anotation,
         )
-        return tuple(out)
+        for show in shows:
+            yield show
 
     def get_show(self, show_id: str, limit: int = 0) -> Show | None:
         endpoint = "shows/" + show_id
@@ -252,48 +251,18 @@ class Client:
         station_id: str = "",
         limit: int = 0,
     ):
-        # https://rapidev.croapp.cz/schedule?filter[title][eq]=Zpr%C3%A1vy
-        # endpoint = "schedule?filter"
         date_from = _helpers.parse_date_optional_fields(date_from)
         date_from = str(date_from).replace(" ", "T")
         date_to = _helpers.parse_date_optional_fields(date_to)
         date_to = str(date_to).replace(" ", "T")
-        # endpoint = "schedule?filter[since][ge]="+date_from
         uuid = self.get_station_guid(station_id)
         endpoint = "schedule-day?filter[station.id]=" + uuid
-        # endpoint= endpoint+"filter[since][ge]="+date_from
-        # endpoint= endpoint+"filter[since]="+date_from
-        # endpoint = "schedule"
-        # print(endpoint)
-        # ln=self._get_endpoint_link(endpoint)
-        # print(ln)
         data = self._get_endpoit_full_json(endpoint, -1)
-        # print(data)
-        print(len(data))
-        # 2023-08-11T08:30:00+10:00
-        # print(date_from)
-        # print(date_to)
-        # data = self._get_endpoit_full_json(endpoint, limit)
-        # pass
 
     def get_schedule(self, station_id: str = "", limit: int = 0):
         uuid = self.get_station_guid(station_id)
-        # endpoint = "schedule?filter[station.id][eq]="+uuid
-        # endpoint = "schedule?filter[since][ge]="+uuid
-        # endpoint = "schedule?filter[since][ge]=2023-09-19T08:10:00+01:00" -> 6617
-        # endpoint = "schedule?filter[since][ge]=2023-09-18T08:10:00+01:00" -> 7672
-        # endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00"
-        # endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00" -> 15909
         endpoint = "schedule?filter[since][ge]=2023-09-12T08:10:00+01:00"
-        # endpoint = "schedule?filter[description][eq]="+uuid
-        # endpoint = "schedule?filter[station.id]=radiozurnal"
-        # endpoint = "schedule?station="+uuid
-        # endpoint = "schedule"
-        # endpoint = "schedule?filter[station.id]"
         data = self._get_endpoit_full_json(endpoint, limit)
-        # data = self._get_endpoit_full_json(endpoint, -1)
-        print(len(data))
-        # print(data)
 
     def get_show_moderators(
         self, show_id: str, limit: int = 0
@@ -305,9 +274,10 @@ class Client:
             Person(),
             person_anotation,
         )
-        # NOTE: All persons, moderators not filtered yet. Seems there are only moderators listed though. To get participation role: it can be extracted from: shows/show_id:
-        # relationships.participants.data:
-        # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
+        # NOTE: All persons, moderators not filtered yet. Seems there are
+        # only moderators listed though. To get participation role: it can
+        # be extracted from: shows/show_id: relationships.participants.data:
+        # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}]
         return tuple(out)
 
     def get_person(self, person_id: str, limit: int = 0) -> Person | None:
@@ -323,13 +293,11 @@ class Client:
         return out
 
     def get_show_premieres(self, id: str, limit: int = 0):
-        # endpoint = "shows/" + show_id + "/participants"
-        endpoint = "shows/" + id + "/schedule-episodes"  # Returns empty
-        # endpoint="serials/"
-        # endpoint="schedule/"+id
-        # endpoint="program/" # very slow
+        endpoint = (
+            "shows/" + id + "/schedule-episodes"
+        )  # Note: returns empty data
         data = self._get_endpoit_full_json(endpoint, limit)
         return data
 
-    def get_repetitions(self):
-        pass
+    def get_repetitions(self) -> Iterator[Episode]:
+        return NotImplemented
