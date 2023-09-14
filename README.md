@@ -1,5 +1,7 @@
 # rapi
 
+[![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)
+
 **The REST Python client for <https://rapidoc.croapp.cz/>.**
 
 - maintainer: Jan Kačaba
