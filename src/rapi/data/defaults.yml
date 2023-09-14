@@ -33,7 +33,7 @@ apis:
     urls:
       mock: "https://mockservice.croapp.cz/mock"
       doc: "https://rapidoc.croapp.cz"
-      api: "https://mujrozhlas.croapi.cz"
+      api: "https://api.mujrozhlas.cz"
       swagger: "https://rapidoc.croapp.cz/apifile/openapi.yaml"
     db_local: 
       csvs_update: true

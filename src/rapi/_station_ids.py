@@ -1,17 +1,8 @@
-import argparse
-import json
-import logging
-import os
-import pkgutil
-from typing import Any, Union
-
-import requests
+from typing import Union
 
 from rapi import _helpers as helpers
-from rapi import _model
 from rapi._config import Config
 from rapi._logger import log_stdout as loge
-from rapi._logger import log_stdout as logo
 
 
 class StationIDs:

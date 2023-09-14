@@ -18,7 +18,6 @@ from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 
 
-# PRINTERS
 def pl(data: Any):
     logo.info(data)
 
@@ -73,31 +72,7 @@ def datenow_with_timezone():
 @no_type_check
 def parse_date_regex(date_string: str):
     try:
-        # restr = r"\d+"
-        # vals=date_string.split("+")
         pdate = parser.parse(date_string)
-        # print(len(vals))
-        # grps=re.findall(restr,date_string)
-        # if len(vals)==1:
-        # dt=datetime.strptime(date_string,"%Y-%m-%dT%H:%M:%S%z")
-        # print("ke",dt)
-        # print(vals)
-        # convert strings to integer
-        # grps=re.findall(restr,date_string)
-        # match len(grps):
-        # case 1:
-        # dts = map(int, grps)
-        # pdate = datetime(*dts,1,1)
-        # case 2:
-        # dts = map(int, grps)
-        # pdate = datetime(*dts,1)
-        # case 3|4|5|6|7:
-        # dts = map(int, grps)
-        # pdate = datetime(*dts)
-        # case 6:
-        # dts = map(int, re.findall(restr, date_string))
-        # pdate = datetime(*dts)
-        # return pdate.astimezone()
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
@@ -194,9 +169,8 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
     return res
 
 
-# DICT HELPERS
-# dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(dictr: dict, sections: list[str]) -> Any:
+    """Get subset of dictionary giving list of path or keyname."""
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
@@ -310,7 +284,6 @@ def deep_merge_dicts(source, destination):
     return destination
 
 
-# HTTP REQUEST
 def request_url(url: str) -> Union[requests.models.Response, None]:
     # headers = {}
     # params = {}
@@ -368,10 +341,6 @@ def request_url_yaml(url: str) -> Union[dict, None]:
     return ydata
 
 
-def dict_to_dataclass(dictr: dict, model: Type):
-    pass
-
-
 def dict_to_row(dictr: dict, sections: list) -> list:
     row: list = []
     for s in sections:
@@ -382,7 +351,6 @@ def dict_to_row(dictr: dict, sections: list) -> list:
 def dict_list_to_rows(
     lstarr: list[dict], check_type: Union[Any, None] = None
 ) -> Tuple[list, list]:
-    logo.info("converting")
     paths = dict_paths_vectors(lstarr[0], list())
     header = dict_paths_to_strings(paths)
     rows: list = []
@@ -492,9 +460,6 @@ def save_txt_data(file_path: str, data: str):
 
     except Exception as e:
         loge.error("unknown error", e)
-
-
-# ystr=yaml.dump(data,allow_unicode=True)
 
 
 def save_rows_to_csv(fname: str, rows: list, header: list = []):
