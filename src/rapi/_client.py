@@ -6,10 +6,19 @@ import requests
 from rapi import _helpers, _station_ids
 from rapi._config import Config
 from rapi._logger import log_stdout as logo
-from rapi._model import (Episode, Episode_schedule, Person, Show, Station,
-                         StationIDs, episode_anotation,
-                         episode_schedule_anotation, person_anotation,
-                         show_anotation, station_anotation)
+from rapi._model import (
+    Episode,
+    Episode_schedule,
+    Person,
+    Show,
+    Station,
+    StationIDs,
+    episode_anotation,
+    episode_schedule_anotation,
+    person_anotation,
+    show_anotation,
+    station_anotation,
+)
 
 
 class Client:
