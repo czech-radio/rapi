@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 from typing import Union
 
 from rapi import _helpers
-from rapi._config import Config
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
+from rapi.config._config import Config
 
 
 class DB_local:

@@ -8,7 +8,7 @@ import unittest
 
 import pytest
 
-from rapi import _command, _params
+from rapi.config import _command, _params
 
 logt = logging.getLogger("log_test")
 logt.setLevel(logging.INFO)

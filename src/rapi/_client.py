@@ -5,7 +5,6 @@ from typing import Iterator
 import requests
 
 from rapi import _helpers, _station_ids
-from rapi._config import Config
 from rapi._logger import log_stdout as logo
 from rapi._model import (
     Episode,
@@ -20,6 +19,7 @@ from rapi._model import (
     show_anotation,
     station_anotation,
 )
+from rapi.config._config import Config
 
 
 class Client:

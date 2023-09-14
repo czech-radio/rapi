@@ -1,8 +1,9 @@
 import sys
 from typing import Union
 
-from rapi import _client, _config, _helpers, _model, _params
+from rapi import _client, _helpers, _model
 from rapi._cache import DB_local
+from rapi.config import _config, _params
 
 ### test setup
 sys.argv = [

@@ -1,8 +1,8 @@
 from typing import Union
 
 from rapi import _helpers as helpers
-from rapi._config import Config
 from rapi._logger import log_stdout as loge
+from rapi.config._config import Config
 
 
 class StationIDs:

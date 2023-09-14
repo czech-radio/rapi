@@ -1,13 +1,10 @@
-import configparser
-import json
 import os
 import sys
 
-import pytest
 from ruamel.yaml import YAML
 
-from rapi import _config
 from rapi import _helpers as hp
+from rapi.config import _config
 
 
 def test_config_yml_default():
@@ -49,7 +46,6 @@ for t in range(0, len(TCASES), 2):
     EVARS.append(var_path_srt)
 
 
-### TESTS
 def test_Cfg_default() -> None:
     cfg = _config.Cfg_default()
     val = cfg.get(TIN[0])

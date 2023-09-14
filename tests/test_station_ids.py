@@ -1,7 +1,8 @@
 import sys
 
-from rapi import _config, _helpers, _model, _params
+from rapi import _helpers, _model
 from rapi._station_ids import StationIDs
+from rapi.config import _config, _params
 
 ### test setup
 Cfg = _config.Config()

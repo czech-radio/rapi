@@ -4,7 +4,8 @@ from typing import Union
 import pandas as pd
 import pytest
 
-from rapi import Client, _config, _helpers, _model, _params
+from rapi import Client, _helpers, _model
+from rapi.config import _config, _params
 
 
 @pytest.fixture

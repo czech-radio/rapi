@@ -1,5 +1,5 @@
 from rapi import Client, Config
-from rapi._command import commands
+from rapi.config._command import commands
 
 
 def main() -> None:
