@@ -1,18 +1,13 @@
-import argparse as AP
-import json
 import logging
-import os
 import sys
-import time
-from typing import Type
 
 from rapi import __version__, _client, _helpers
-from rapi._config import CFG
+from rapi._config import Config
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 
 
-def commands(cfg: CFG) -> None:
+def commands(cfg: Config) -> None:
     getvar = cfg.runtime_get
 
     ### set log level
@@ -47,7 +42,7 @@ def commands(cfg: CFG) -> None:
         pass
 
 
-def print_version(cfg: CFG) -> None:
+def print_version(cfg: Config) -> None:
     if cfg.runtime_get(["version"]):
         print(__version__)
         sys.exit(0)
@@ -75,7 +70,7 @@ def test_logs(run: bool):
     sys.exit(0)
 
 
-def debug_cfg(run: bool, cfg: CFG):
+def debug_cfg(run: bool, cfg: Config):
     if run is False:
         return
     data = cfg.cfg_runtime

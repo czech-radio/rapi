@@ -4,13 +4,13 @@ from datetime import datetime, timedelta
 from typing import Union
 
 from rapi import _helpers
-from rapi._config import CFG
+from rapi._config import Config
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 
 
 class DB_local:
-    def __init__(self, cfg: CFG = CFG()):
+    def __init__(self, cfg: Config = Config()):
         self.Cfg = cfg
         self.urls = cfg.runtime_get(["apis", "croapp", "urls"])
         self.endpoints = cfg.runtime_get(["apis", "croapp", "endpoints"])

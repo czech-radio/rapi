@@ -1,33 +1,19 @@
 import os
-from dataclasses import dataclass, replace
 from datetime import datetime
-from typing import Any, Type
 
 import requests
 
-from rapi import _helpers
-from rapi import _helpers as helpers
-from rapi import _station_ids
-from rapi._config import CFG
-from rapi._helpers import dict_get_path as DGP
+from rapi import _helpers, _station_ids
+from rapi._config import Config
 from rapi._logger import log_stdout as logo
-from rapi._model import (
-    Episode,
-    Episode_schedule,
-    Person,
-    Show,
-    Station,
-    StationIDs,
-    episode_anotation,
-    episode_schedule_anotation,
-    person_anotation,
-    show_anotation,
-    station_anotation,
-)
+from rapi._model import (Episode, Episode_schedule, Person, Show, Station,
+                         StationIDs, episode_anotation,
+                         episode_schedule_anotation, person_anotation,
+                         show_anotation, station_anotation)
 
 
 class Client:
-    def __init__(self, cfg: CFG = CFG()):
+    def __init__(self, cfg: Config = Config()):
         cfg.cfg_runtime_set_defaults()
         self.Cfg = cfg
         self.api_url = cfg.runtime_get(
@@ -50,7 +36,7 @@ class Client:
 
     def get_swagger(self) -> dict | None:
         url = self.Cfg.runtime_get(["apis", "croapp", "urls", "swagger"])
-        ydata = helpers.request_url_yaml(url)
+        ydata = _helpers.request_url_yaml(url)
         if ydata is None:
             logo.error("data not avaiable")
         return ydata
@@ -61,7 +47,7 @@ class Client:
             return False
         directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
         filepath = os.path.join(directory, "apidef")
-        ok = helpers.save_yaml(filepath, "swagger.yml", ydata)
+        ok = _helpers.save_yaml(filepath, "swagger.yml", ydata)
         return ok
 
     def get_station_guid(self, station_id: str) -> str:
@@ -187,7 +173,7 @@ class Client:
     ) -> tuple[Episode, ...]:
         cmdpars = ["commands", "show_ep_filter"]
         getval = self.Cfg.runtime_get
-        tzinfo = _helpers.current_pytz_timezone()
+        tzinfo = _helpers.current_timezone()
         eps = self.get_show_episodes(episode_id, limit)
 
         # filter by date

@@ -1,27 +1,21 @@
-import argparse
 import configparser
 import copy
-import logging
-import os
 import pkgutil
 import sys
-import types
-from typing import Any, Optional, Union
+from typing import Any, Union
 
 import yaml as yaml
-from ruamel.yaml import YAML
 
 from rapi import _helpers as helpers
 from rapi import _params
 from rapi._logger import log_stderr as loge
-from rapi._logger import log_stdout as logo
 
 # from mergedeep import merge
 
-__all__ = "CFG"
+__all__ = "Config"
 
 
-### dict_get_path: get subset of dictionary giving list of path or keyname
+# dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(
     dictr: dict, path: list[str]
 ) -> Union[dict, list, str, None]:
@@ -53,7 +47,7 @@ def parse_yaml_comments():
     # return cfg
 
 
-### default config
+# default config
 def config_yml_default() -> dict:
     dats = pkgutil.get_data(__name__, "data/defaults.yml")
     assert dats is not None
@@ -68,7 +62,7 @@ class Cfg_default:
         self.get = lambda path, dictr=self.cfg: dict_get_path(dictr, path)
 
 
-### config from user provided file
+# config from user provided file
 def config_yml_file(file: str) -> dict:
     try:
         with open(file, "r") as f:
@@ -134,7 +128,7 @@ class Cfg_params:
             pars = argpars.parse_args()
         except BaseException as e:
             raise ValueError(
-                f"__name__={__name__}, __package__={__package__}, sys.argv={sys.argv}, launcher={launcher}"
+                f"__name__={__name__}, __package__={__package__}, sys.argv={sys.argv}, launcher={launcher}, err: {e}"
             )
         sys.argv = sysargbak
         self.pars = pars
@@ -144,7 +138,7 @@ class Cfg_params:
         # print("fuck")
 
 
-class CFG:
+class Config:
     def __init__(self) -> None:
         self.cfg_default = Cfg_default()
         self.cfg_sources: list = []
@@ -171,7 +165,7 @@ class CFG:
     def cfg_runtime_set(self) -> None:
         srcs = self.cfg_sources
         res: dict = {}
-        ### merge in all sources in order of increasing priority
+        # merge in all sources in order of increasing priority
         if srcs is None or len(srcs) == 0:
             sys.argv = ["rapi", "-v"]
             self.cfg_runtime = self.cfg_default.cfg
@@ -179,7 +173,7 @@ class CFG:
             for s in reversed(srcs):
                 tmps = copy.deepcopy(s.cfg)
                 res = helpers.deep_merge_dicts(tmps, res)
-        ### finaly merge with defaults.yml which should contain full set of variables
+        # finaly merge with defaults.yml which should contain full set of variables
         res = helpers.deep_merge_dicts(res, self.cfg_default.cfg)
         self.cfg_runtime = res
 
@@ -188,8 +182,7 @@ class CFG:
         if val is None:
             try:
                 isexcp = isinstance(dvalue(), Exception)
-                # print(isexcp)
-            except Exception as e:
+            except Exception:
                 return dvalue
             if isexcp:
                 raise dvalue(f"cannot get path: {path}")

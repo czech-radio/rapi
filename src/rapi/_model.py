@@ -1,7 +1,6 @@
 import datetime as dt
 import json
 from dataclasses import asdict, dataclass
-from typing import Type, TypeVar
 
 from rapi._helpers import DatetimeEncoder
 
@@ -20,21 +19,21 @@ def str_pretty_json(cls):
 @dataclass
 @str_pretty_json
 class StationIDs:
-    ### OPENMEDIA:
-    #### src: [https://github.com/czech-radio/organization/blob/main/analytics/reporting/specification.md#stanice]
+    # OPENMEDIA:
+    # src: [https://github.com/czech-radio/organization/blob/main/analytics/reporting/specification.md#stanice]
     openmedia_id: str = "openmedia_id"
-    ##### exmp: 11
+    # exmp: 11
     openmedia_stanice: str = "openmedia_stanice"
-    ##### exmp: RZ-Radiožurnál
+    # exmp: RZ-Radiožurnál
 
-    ### CROAPP
-    #### src: [https://rapidev.croapp.cz/stations]
+    # CROAPP
+    # src: [https://rapidev.croapp.cz/stations]
     croapp_code: str = "croapp_code"
-    ##### exmp.: "radiozurnal"
+    # exmp.: "radiozurnal"
     croapp_stitle: str = "croapp_shortTitle"
-    ##### exmp.: "Radiožurnál"
+    # exmp.: "Radiožurnál"
     croapp_guid: str = "croapp_id"
-    ##### exmp.: "4082f63f-30e8-375d-a326-b32cf7d86e02"
+    # exmp.: "4082f63f-30e8-375d-a326-b32cf7d86e02"
 
 
 @dataclass

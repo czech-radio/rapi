@@ -2,6 +2,8 @@ import os
 import re
 from typing import Union
 
+import pytest
+
 from rapi import _helpers
 
 # data = [
@@ -93,22 +95,54 @@ def test_dict_list_to_rows():
     _helpers.save_rows_to_csv("./runtime2/stations_fields.csv", tdata)
 
 
+# @pytest.mark.current
+def test_current_timezone() -> None:
+    tz = _helpers.current_timezone()
+    assert tz
+
+
+def test_datenow_with_timezone() -> None:
+    dt = _helpers.datenow_with_timezone()
+    assert dt
+
+
+sample_dates = [
+    "2023",
+    "2023-09",
+    "2023-09-11",
+    "2023-09-12T00:00+03:00",
+    "2023-01-09T10",
+    "2023-01-09T10",
+    "2023-01-09T10:11",
+    "2023-01-09T10:11",
+    "2023-01-09T10:11:39",
+    "2023-01-09T10:13:10+01:00",
+    "2023-01-09T10:13:10+08:00",
+    "2023-01-09T10:13:10+10:00",
+    "2023-01-09T10:13:10+11:00",
+]
+
+
+# @pytest.mark.current
 def test_parse_date_regex() -> None:
-    dt = _helpers.parse_date_regex("2023-01-09_10:11")
-    print(dt)
-    dt = _helpers.parse_date_regex("2023-01-09_10")
-    print(dt)
-    dt = _helpers.parse_date_regex("2023-01-09")
-    print(dt)
-    # print(type(dt))
-    # dt = _helpers.parse_date_regex("102023-01-09")
+    print()
+    for d in sample_dates:
+        dt = _helpers.parse_date_regex(d)
+        print(dt)
 
 
+# @pytest.mark.current
 def test_parse_date_optional_fields() -> None:
-    dt = _helpers.parse_date_optional_fields("2023-01-09T10:13")
-    print(dt)
-    dt = _helpers.parse_date_optional_fields("2023-01-09T10:13+02:00")
-    print(dt)
+    print()
+    sd = sample_dates
+    _func = _helpers.parse_date_optional_fields
+    for d in sd:
+        dt = _func(d)
+        print(dt)
+    dt1 = _func(sd[-1])
+    dt2 = _func(sd[-2])
+    print(dt2 - dt1)
+    assert dt1 == dt2
 
 
 def test_json_to_csv() -> None:
@@ -122,16 +156,6 @@ def test_json_to_csv() -> None:
     print(paths)
     # _helpers.dict_to_csv(jdata)
     # _helpers.dict_to_csv(jdata['meta'])
-
-
-def test_current_pytz_timezone() -> None:
-    tz = _helpers.current_pytz_timezone()
-    assert tz
-
-
-def test_date_now_timezone() -> None:
-    dt = _helpers.date_now_timezone()
-    print(dt)
 
 
 def test_filepath_to_vector() -> None:

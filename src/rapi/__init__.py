@@ -1,6 +1,7 @@
 from rapi._client import Client as Client
-from rapi._config import CFG as Config
-from rapi._model import Show as Show, Station as Station
+from rapi._config import Config as Config
+from rapi._model import Show as Show
+from rapi._model import Station as Station
 
 __all__ = ("Config", "Client", "Station", "Show")
 

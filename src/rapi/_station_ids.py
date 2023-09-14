@@ -9,13 +9,13 @@ import requests
 
 from rapi import _helpers as helpers
 from rapi import _model
-from rapi._config import CFG
+from rapi._config import Config
 from rapi._logger import log_stdout as loge
 from rapi._logger import log_stdout as logo
 
 
 class StationIDs:
-    def __init__(self, cfg: CFG) -> None:
+    def __init__(self, cfg: Config) -> None:
         self.Cfg = cfg
         bpath = ["apis", "common"]
         self.DBpath = self.Cfg.runtime_get(bpath + ["csv"])

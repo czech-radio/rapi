@@ -2,14 +2,14 @@ import sys
 from typing import Union
 
 from rapi import _client, _config, _helpers, _model, _params
-from rapi._dbase_local import DB_local
+from rapi._cache import DB_local
 
 ### test setup
 sys.argv = [
     "test3.py",
     "-vv",
 ]
-Cfg = _config.CFG()
+Cfg = _config.Config()
 Cfg.cfg_runtime_set_defaults()
 
 

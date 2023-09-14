@@ -1,5 +1,5 @@
 import sys
-from typing import Optional, Tuple, Type, TypeVar, Union
+from typing import Type, Union
 
 from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo

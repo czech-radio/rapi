@@ -84,20 +84,20 @@ def test_Cfg_params() -> None:
     assert val == "par"
 
 
-def test_CFG_defaults() -> None:
+def test_Config_defaults() -> None:
     print()
     # sys.argv = ["test3.py", "-vv", "--test-par=par", "-di=10"]
     sys.argv = ["test3.py"]
-    Cfg = _config.CFG()
+    Cfg = _config.Config()
     Cfg.cfg_runtime_set_defaults()
 
 
-def test_CFG() -> None:
+def test_Config() -> None:
     print()
     ### prepare
     for i in range(len(EVARS)):
         os.environ[EVARS[i]] = str(TOUT[i])
-    Cfg = _config.CFG()
+    Cfg = _config.Config()
 
     ### test
     val = Cfg.cfg_default.get(TIN[0])

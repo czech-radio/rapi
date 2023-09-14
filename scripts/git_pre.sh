@@ -13,6 +13,7 @@ fi
 black "$repodir"
 ### isort: sort imports
 isort "$repodir"
+
 ### flake8: style enforcement
 
 ### mypy: static type checks

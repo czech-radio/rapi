@@ -4,15 +4,26 @@ from typing import Union
 import pandas as pd
 import pytest
 
-from rapi import _client, _config, _helpers, _model, _params
+from rapi import Client, _config, _helpers, _model, _params
 
-### test setup
-sys.argv = [
-    "test3.py",
-    "-vv",
+
+@pytest.fixture
+def client():
+    _client = Client()
+    assert _client
+    return _client
+
+
+sample_shows = [
+    "9f36ee8f-73a7-3ed5-aafb-41210b7fb935",
+    "92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4",
+    "48678000-b905-3b68-9b80-f4d20326f03b",
 ]
-Cfg = _config.CFG()
-Cfg.cfg_runtime_set_defaults()
+
+shows_with_schedule_episodes = [
+    "c7374f41-ae14-3b5c-8c04-385e3241deb4",
+    "004a2d7e-0429-39a3-bc4d-34a3775c3fec",
+]
 
 sample_radio_11_shows = [
     "c239aa59-bc78-3180-9b58-5c911846630d",
@@ -111,155 +122,6 @@ sample_shows_with_schedule = [
     66,
 ]
 
-
-@pytest.mark.domain
-def test_client() -> None:
-    cl = _client.Client()
-    station = cl.get_station(str(11))
-    assert station
-
-
-@pytest.mark.domain
-def test_get_station() -> None:
-    api = _client.Client(Cfg)
-    station = api.get_station(str(11))
-    assert station
-
-
-# @pytest.mark.current
-def test_get_endpoint() -> None:
-    cl = _client.Client()
-    cl.get_endpoint("schedule")
-    # cl.get_endpoint("schedule-day")
-    # cl.get_endpoint("schedule-day-flat")
-    # cl.get_endpoint("schedule-current")
-    # cl.get_endpoint("program")
-    # cl.get_endpoint("schedule/{id}")
-
-
-@pytest.mark.domain
-def test_get_stations() -> None:
-    api = _client.Client(Cfg)
-    stations = api.get_stations(10)
-    assert len(stations) == 28
-
-
-# @pytest.mark.current
-@pytest.mark.domain
-def test_get_station_shedule_day_flat() -> None:
-    api = _client.Client(Cfg)
-    # data = api.get_station_schedule_day_flat("13")
-    data = api.get_station_schedule_day_flat()
-    assert data
-    pdf = pd.DataFrame(data, columns=["station"])
-    print(len(pdf))
-    # pdf.sort_values(by="since")
-
-
-# @pytest.mark.current
-@pytest.mark.domain
-def test_get_station_shows() -> None:
-    api = _client.Client(Cfg)
-    data = api.get_station_shows(str(11), 500)
-    assert data
-    # print(data)
-
-
-sample_shows = [
-    "9f36ee8f-73a7-3ed5-aafb-41210b7fb935",
-    "92fade97-7f7f-3a5a-be2a-9cd0ec4e97c4",
-    "48678000-b905-3b68-9b80-f4d20326f03b",
-]
-
-
-@pytest.mark.domain
-def test_get_show() -> None:
-    api = _client.Client(Cfg)
-    data = api.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935", 500)
-    assert data
-
-
-# @pytest.mark.current
-@pytest.mark.domain
-def test_get_show_episodes() -> None:
-    api = _client.Client()
-    data = api.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
-    # https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/episodes
-    assert data
-
-
-# @pytest.mark.current
-@pytest.mark.domain
-def test_show_episodes_filter() -> None:
-    api = _client.Client()
-    data = api.show_episodes_filter(sample_shows[0])
-    assert data
-    data = api.show_episodes_filter(
-        sample_shows[0],
-        "2010",
-    )
-    assert data
-    data1 = api.show_episodes_filter(
-        sample_shows[0],
-        "2014",
-        "2014-12",
-    )
-    data2 = api.show_episodes_filter(
-        sample_shows[0],
-        "2014",
-        "2015-12",
-    )
-    assert len(data1) < len(data2)
-
-
-shows_with_schedule_episodes = [
-    "c7374f41-ae14-3b5c-8c04-385e3241deb4",
-    "004a2d7e-0429-39a3-bc4d-34a3775c3fec",
-]
-
-
-# @pytest.mark.current
-@pytest.mark.domain
-def test_get_show_episodes_schedule() -> None:
-    api = _client.Client()
-    id = shows_with_schedule_episodes[0]
-    data = api.get_show_episodes_schedule(id)
-    assert data
-
-
-# @pytest.mark.current
-def test_get_schedule_day() -> None:
-    # string="hello$mello"
-    # string(split
-    api = _client.Client()
-    # print(api.Cfg.runtime_get(["apis","croapp","response","limit"]))
-    # data = api.get_schedule_day("2023-08","2024")
-    data = api.get_schedule_day("2023-09-11-23", "2024", "11")
-
-
-@pytest.mark.current
-def test_get_schedule() -> None:
-    # string="hello$mello"
-    # string(split
-    # print("fuck")
-    api = _client.Client()
-    # print(api.Cfg.runtime_get(["apis","croapp","response","limit"]))
-    # data = api.get_schedule_day("2023-08","2024")
-    data = api.get_schedule("11")
-    # print(len(data))
-
-
-# @pytest.mark.current
-@pytest.mark.domain
-def test_get_show_moderators() -> None:
-    api = _client.Client()
-    # data = api.get_show_moderators(sample_shows[1])
-    sp = sample_shows_with_schedule[0]
-    show_id = sample_radio_11_shows[sp]
-    data = api.get_show_moderators(show_id)
-    assert data
-
-
 sample_persons = [
     "1cb35d9d-fb24-37ee-8993-9f74e57ab2c7",
     "7b9d1544-8aab-3730-8f0a-4d0b463322be",
@@ -272,31 +134,152 @@ sample_episodes = [
 ]
 
 
-# @pytest.mark.current
-@pytest.mark.domain
-def test_get_person() -> None:
-    api = _client.Client()
-    data = api.get_person(sample_persons[0])
-    # print(data)
+@pytest.mark.client
+def test_client(client) -> None:
+    station = client.get_station(str(11))
+    assert station
+
+
+@pytest.mark.client
+def test_get_station(client) -> None:
+    station = client.get_station(str(11))
+    assert station
+
+
+@pytest.mark.client_debug
+def test_get_endpoint(client) -> None:
+    res = client.get_endpoint("schedule")
+    # assert res
+    # cl.get_endpoint("schedule-day")
+    # cl.get_endpoint("schedule-day-flat")
+    # cl.get_endpoint("schedule-current")
+    # cl.get_endpoint("program")
+    # cl.get_endpoint("schedule/{id}")
+
+
+@pytest.mark.client
+def test_get_stations(client) -> None:
+    # stations = client.get_stations(10)
+    stations = client.get_stations()
+    assert stations
+    # assert len(stations) == 27
 
 
 # @pytest.mark.current
-@pytest.mark.domain
-def test_get_show_premieres() -> None:
-    api = _client.Client()
+@pytest.mark.client
+def test_get_station_shedule_day_flat(client) -> None:
+    # data = client.get_station_schedule_day_flat("13")
+    data = client.get_station_schedule_day_flat()
+    assert data
+    pdf = pd.DataFrame(data, columns=["station"])
+    print(len(pdf))
+    # pdf.sort_values(by="since")
 
-    # shows=api.get_station_shows("11")
+
+# @pytest.mark.current
+@pytest.mark.client
+def test_get_station_shows(client) -> None:
+    data = client.get_station_shows(str(11), 500)
+    assert data
+
+
+@pytest.mark.client
+def test_get_show(client) -> None:
+    data = client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935", 500)
+    assert data
+
+
+# @pytest.mark.current
+@pytest.mark.client
+def test_get_show_episodes(client) -> None:
+    data = client.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+    # https://mujrozhlas.croapi.cz/shows/9f36ee8f-73a7-3ed5-aafb-41210b7fb935/episodes
+    assert data
+
+
+# @pytest.mark.current
+@pytest.mark.client
+def test_show_episodes_filter(client) -> None:
+    data = client.show_episodes_filter(sample_shows[0])
+    assert data
+    data = client.show_episodes_filter(
+        sample_shows[0],
+        "2010",
+    )
+    assert data
+    data1 = client.show_episodes_filter(
+        sample_shows[0],
+        "2014",
+        "2014-12",
+    )
+    data2 = client.show_episodes_filter(
+        sample_shows[0],
+        "2014",
+        "2015-12",
+    )
+    assert len(data1) < len(data2)
+
+
+@pytest.mark.client
+def test_get_show_episodes_schedule(client) -> None:
+    id = shows_with_schedule_episodes[0]
+    data = client.get_show_episodes_schedule(id)
+    assert data
+
+
+# @pytest.mark.client
+def test_get_schedule_day(client) -> None:
+    # string="hello$mello"
+    # string(split
+    # print(client.Cfg.runtime_get(["apis","croapp","response","limit"]))
+    # data = client.get_schedule_day("2023-08","2024")
+    data = client.get_schedule_day("2023-09-11-23", "2024", "11")
+    assert data
+
+
+# @pytest.mark.client
+def test_get_schedule(client) -> None:
+    # string="hello$mello"
+    # string(split
+    # print("fuck")
+    # print(client.Cfg.runtime_get(["apis","croapp","response","limit"]))
+    # data = client.get_schedule_day("2023-08","2024")
+    data = client.get_schedule("11")
+    assert data
+    # print(len(data))
+
+
+@pytest.mark.client
+def test_get_show_moderators(client) -> None:
+    # data = client.get_show_moderators(sample_shows[1])
+    sp = sample_shows_with_schedule[0]
+    show_id = sample_radio_11_shows[sp]
+    data = client.get_show_moderators(show_id)
+    assert data
+
+
+@pytest.mark.current
+@pytest.mark.client
+def test_get_person(client) -> None:
+    data = client.get_person(sample_persons[0])
+    assert data
+
+
+# @pytest.mark.current
+# @pytest.mark.client
+def test_get_show_premieres(client) -> None:
+    # shows=client.get_station_shows("11")
     # pshows=pd.DataFrame(shows,columns=['uuid'])
     # for i in pshows.uuid:
     # print(i)
-    # data = api.get_show_premieres(i)
+    # data = client.get_show_premieres(i)
     # print(data)
-    # data = api.get_show_episodes(sample_shows[0])
+    # data = client.get_show_episodes(sample_shows[0])
     # print(data)
     # print(pd.DataFrame(data,columns=['uuid','since','till']))
     for i in sample_shows_with_schedule:
         id = sample_radio_11_shows[i]
-        data = api.get_show_premieres(id)
+        data = client.get_show_premieres(id)
         print(data)
-        data = api.get_show_episodes(id)
+        data = client.get_show_episodes(id)
         break

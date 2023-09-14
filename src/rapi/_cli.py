@@ -1,9 +1,9 @@
-from rapi import CFG, Client
+from rapi import Client, Config
 from rapi._command import commands
 
 
 def main() -> None:
-    Cfg = CFG()
+    Cfg = Config()
     Cfg.cfg_runtime_set_defaults()
     commands(Cfg)
 

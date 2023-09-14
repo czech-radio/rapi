@@ -4,7 +4,7 @@ from rapi import _config, _helpers, _model, _params
 from rapi._station_ids import StationIDs
 
 ### test setup
-Cfg = _config.CFG()
+Cfg = _config.Config()
 sys.argv = [
     "test3.py",
     "-vv",

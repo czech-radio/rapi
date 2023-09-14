@@ -1,4 +1,3 @@
-import copy
 import csv
 import errno
 import json
@@ -6,14 +5,11 @@ import os
 import pkgutil
 import re
 import sys
-import time
-from dataclasses import dataclass, replace
+from dataclasses import replace
 from datetime import datetime
 from io import StringIO
-from typing import Any, Optional, Sequence, Tuple, Type, Union, no_type_check
+from typing import Any, Sequence, Tuple, Type, Union, no_type_check
 
-import numpy as np
-import pytz
 import requests
 import yaml
 from dateutil import parser
@@ -22,7 +18,7 @@ from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 
 
-### printers
+# PRINTERS
 def pl(data: Any):
     logo.info(data)
 
@@ -66,23 +62,42 @@ def type_by_name(type_name):
         raise NameError(f"{type_name} not implemented")
 
 
-def current_pytz_timezone():
-    ltz = time.tzname
-    cptz = pytz.timezone(ltz[0])
-    return cptz
+def current_timezone():
+    return datetime.now().astimezone().tzinfo
 
 
-def date_now_timezone():
-    cptz = current_pytz_timezone()
-    return datetime.now(cptz)
+def datenow_with_timezone():
+    return datetime.now().astimezone()
 
 
 @no_type_check
 def parse_date_regex(date_string: str):
     try:
-        restr = r"\d+"
-        dts = map(int, re.findall(restr, date_string))
-        pdate = datetime(*dts)
+        # restr = r"\d+"
+        # vals=date_string.split("+")
+        pdate = parser.parse(date_string)
+        # print(len(vals))
+        # grps=re.findall(restr,date_string)
+        # if len(vals)==1:
+        # dt=datetime.strptime(date_string,"%Y-%m-%dT%H:%M:%S%z")
+        # print("ke",dt)
+        # print(vals)
+        # convert strings to integer
+        # grps=re.findall(restr,date_string)
+        # match len(grps):
+        # case 1:
+        # dts = map(int, grps)
+        # pdate = datetime(*dts,1,1)
+        # case 2:
+        # dts = map(int, grps)
+        # pdate = datetime(*dts,1)
+        # case 3|4|5|6|7:
+        # dts = map(int, grps)
+        # pdate = datetime(*dts)
+        # case 6:
+        # dts = map(int, re.findall(restr, date_string))
+        # pdate = datetime(*dts)
+        # return pdate.astimezone()
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
@@ -90,15 +105,15 @@ def parse_date_regex(date_string: str):
 
 def parse_date_optional_fields(date_string: str):
     try:
-        tzinfo = current_pytz_timezone()
         pdate = parser.parse(date_string)
-        pdate = pdate.replace(tzinfo=tzinfo)
+        if pdate.tzinfo is None:
+            return pdate.astimezone()
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
 
 
-### csv files
+# CSV FILES
 def read_csv_imported_to_ram(fname: str) -> Union[csv.DictReader, None]:
     dbytes = pkgutil.get_data(__name__, fname)
     if dbytes is not None:
@@ -166,7 +181,6 @@ def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
     return delim.join(non_empty_strings)
 
 
-### config from env
 def env_var_get(key: str) -> Union[str, None]:
     return os.environ.get(key, None)
 
@@ -180,8 +194,8 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
     return res
 
 
-### dict helpers
-#### dict_get_path: get subset of dictionary giving list of path or keyname
+# DICT HELPERS
+# dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(dictr: dict, sections: list[str]) -> Any:
     dicw = dictr
     for i in sections:
@@ -229,7 +243,7 @@ def class_attrs_by_anotation_dict(
         json_path = jsonfield.split(".")
         val = dict_get_path(data, json_path)
 
-        ### field parsers
+        # field parsers
         if isinstance(dataclsdict[attr], datetime):
             dataclsdict[attr] = parse_date_optional_fields(val)
         else:
@@ -296,13 +310,13 @@ def deep_merge_dicts(source, destination):
     return destination
 
 
-### http request
+# HTTP REQUEST
 def request_url(url: str) -> Union[requests.models.Response, None]:
     # headers = {}
     # params = {}
     # response = requests.get(url, headers=headers, params=params)
     try:
-        ### download url data
+        # download url data
         logo.info(f"requesting url: {url}")
         response = requests.get(url)
     except requests.exceptions.HTTPError as errh:
@@ -365,10 +379,6 @@ def dict_to_row(dictr: dict, sections: list) -> list:
     return row
 
 
-# Convert list of dictionaries to a NumPy array
-# array_data = np.array([(d['name'], d['age'], d['city']) for d in data], dtype=[('name', 'U10'), ('age', int), ('city', 'U20')])
-
-
 def dict_list_to_rows(
     lstarr: list[dict], check_type: Union[Any, None] = None
 ) -> Tuple[list, list]:
@@ -376,8 +386,8 @@ def dict_list_to_rows(
     paths = dict_paths_vectors(lstarr[0], list())
     header = dict_paths_to_strings(paths)
     rows: list = []
-    for l in lstarr:
-        row = dict_to_row(l, paths)
+    for lis in lstarr:
+        row = dict_to_row(lis, paths)
         rows.append(row)
     return rows, header
 
