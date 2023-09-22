@@ -212,12 +212,14 @@ def test_show_episodes_filter(client) -> None:
         "2014",
         "2014-12",
     )
+    assert data1
     data2 = client.show_episodes_filter(
         sample_shows[0],
         "2014",
         "2015-12",
     )
-    assert len(data1) < len(data2)
+    assert data2
+    assert len(list(data1)) < len(list(data2))
 
 
 # @pytest.mark.current
@@ -233,7 +235,7 @@ def test_get_station_schedule_day_flat(client) -> None:
     data = client.get_station_schedule_day_flat("2023-09-11", "11")
     assert data
     # df = pd.DataFrame(data, columns=["station"])
-    assert len(data) == 173
+    assert len(list(data)) == 173
 
 
 @pytest.mark.client
@@ -241,7 +243,7 @@ def test_get_station_schedule_day(client) -> None:
     data = client.get_station_schedule_day("2023-09-11", "11")
     assert data
     # df = pd.DataFrame(data, columns=["station"])
-    assert len(data) == 141
+    assert len(list(data)) == 141
 
 
 @pytest.mark.client
@@ -253,7 +255,7 @@ def test_get_schedule(client) -> None:
     assert data2
 
     data3 = client.get_schedule("2023-09-17T8:00", "2023-09-17T9:00", "11")
-    assert len(data1) > len(data2) > len(data3)
+    assert len(list(data1)) > len(list(data2)) > len(list(data3))
 
 
 @pytest.mark.client
@@ -287,7 +289,7 @@ def test_get_person(client) -> None:
     assert data
 
 
-# @pytest.mark.current
+@pytest.mark.current
 # @pytest.mark.client
 def test_get_show_premieres(client) -> None:
     # shows=client.get_station_shows("11")
@@ -302,7 +304,7 @@ def test_get_show_premieres(client) -> None:
     for i in sample_shows_with_schedule:
         id = sample_radio_11_shows[i]
         data = client.get_show_premieres(id)
-        print(data)
+        print(list(data))
         data = client.get_show_episodes(id)
         break
 
@@ -316,6 +318,6 @@ def test_class_attrs_by_anotation_dict_dates(client) -> None:
     es = _model.Episode_schedule
     ea = _model.episode_schedule_anotation
     res = helpers.class_attrs_by_anotation_dict2(data[0], es, ea)
-    print(res)
+    # print(res)
     # print(type(res.since))
     # es=client.get_show_episodes_schedule(    "c7374f41-ae14-3b5c-8c04-385e3241deb4")

@@ -12,22 +12,22 @@ from rapi.helpers._logger import log_stdout as logo
 def commands(cfg: Config) -> None:
     getvar = cfg.runtime_get
 
-    ### set log level
+    # set log level
     vlevel = getvar(["verbose"])
     set_loglevel(vlevel)
 
-    ### test logs
+    # test logs
     run = getvar(["test", "logs"])
     test_logs(run)
 
-    ### print version
+    # print version
     print_version(cfg)
 
-    ### debug cfg
+    # debug cfg
     run = getvar(["debug", "cfg"])
     debug_cfg(run, cfg)
 
-    ### subcommands
+    # subcommands
     subc = getvar(["subcommand"], None)
     if subc is None:
         return

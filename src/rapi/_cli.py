@@ -3,7 +3,6 @@ from rapi.config._config import Config
 
 
 def main() -> None:
-    print("ich rune")
     Cfg = Config(__package__)
     Cfg.cfg_runtime_set_defaults()
     commands(Cfg)

@@ -104,7 +104,6 @@ def params_vars_cfg_intersec(dcfg: dict, pars: dict) -> dict:
 # ArgumentParser(prog='pytest', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
 class Cfg_params:
     def __init__(self, pkg_name: str = __package__):
-        print("fucker", pkg_name)
         argpars = _params.params_yml_config(pkg_name)
         launcher = helpers.filepath_to_vector(sys.argv[0])[-1]
         sysargbak = sys.argv
@@ -123,7 +122,6 @@ class Cfg_params:
             )
         sys.argv = sysargbak
         self.params = vars(params_namespace)
-        print("fuck", self.params)
         self.cfg = params_vars_cfg_intersec(
             config_yaml_defaults(pkg_name),
             self.params,
@@ -139,7 +137,6 @@ class Config:
         self.cfg_runtime: dict = {}
 
     def cfg_runtime_set_defaults(self):
-        # print("dokuree",self.pkg_name)
         cfgp = Cfg_params(self.pkg_name)
         cfge = Cfg_env(self.pkg_name)
         path = ["cfg", "file"]

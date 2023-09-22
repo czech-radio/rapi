@@ -16,7 +16,6 @@ from rapi.helpers._logger import log_stdout as logo
 
 class Client:
     def __init__(self, cfg: Config = Config(__package__)):
-        # print("heckl",__package__)
         cfg.cfg_runtime_set_defaults()
 
         self.Cfg = cfg
@@ -162,15 +161,16 @@ class Client:
 
     def get_show_episodes(
         self, episode_id: str, limit: int = 0
-    ) -> tuple[Episode, ...]:
+    ) -> Iterator[Episode]:
         endpoint = "shows/" + episode_id + "/episodes"
         data = self._get_endpoit_full_json(endpoint, limit)
-        out = helpers.class_attrs_by_anotation_list(
+        episodes = helpers.class_attrs_by_anotation_list(
             data,
             Episode,
             episode_anotation,
         )
-        return tuple(out)
+        for episode in episodes:
+            yield episode
 
     def show_episodes_filter(
         self,
@@ -179,7 +179,7 @@ class Client:
         date_to: datetime | str | None = None,
         station_id: str | None = None,
         limit: int = 0,
-    ) -> tuple[Episode, ...]:
+    ) -> Iterator[Episode]:
         cmdpars = ["commands", "show_ep_filter"]
         getval = self.Cfg.runtime_get
         tzinfo = helpers.current_timezone()
@@ -203,72 +203,78 @@ class Client:
             date_to = helpers.parse_date_optional_fields(date_to)
         # NOTE: In the following lines mypy is disabled cause
         # I don't know how to make proper type hints.
-        out = filter(
+        episodes = filter(
             lambda ep: (ep.since >= date_from) and (ep.till <= date_to),  # type: ignore
             eps,
         )
+        for episode in episodes:
+            yield episode  # type: ignore
 
-        return tuple(out)  # type: ignore
-
-    def get_show_episodes_schedule(self, show_id: str, limit: int = 0):
+    def get_show_episodes_schedule(
+        self, show_id: str, limit: int = 0
+    ) -> Iterator[Episode_schedule]:
         endpoint = "shows/" + show_id + "/schedule-episodes"
         data = self._get_endpoit_full_json(endpoint, limit)
-        out = helpers.class_attrs_by_anotation_list(
+        episodes_schedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
             episode_schedule_anotation,
         )
-        return out
+        for episode_schedule in episodes_schedules:
+            yield episode_schedule
 
     def get_station_schedule_day_flat(
         self,
         day: str,
         station_id: str = "",
         limit: int = 0,
-    ) -> tuple[Episode_schedule, ...]:
+    ) -> Iterator[Episode_schedule]:
         # NOTE:
         ## https://rapidev.croapp.cz/schedule-day-flat?station=radiozurnal
         ## not valid request when filtering by station
         ## endpoint = "schedule-day?filter[station.id]=" + uuid # NOT WORKING
         endpoint = f"schedule-day-flat?filter[day]={day}"
         data = self._get_endpoit_full_json(endpoint, limit)
-        out = helpers.class_attrs_by_anotation_list(
+        epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
             episode_schedule_anotation,
         )
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
-            out = list(
+            epschedules = list(
                 filter(
                     lambda ep: (ep.station == station_uuid),  # type: ignore
-                    out,
+                    epschedules,
                 )
             )
-        return tuple(out)
+
+        for episode_schedule in epschedules:
+            yield episode_schedule
 
     def get_station_schedule_day(
         self,
         day: str,
         station_id: str = "",
         limit: int = 0,
-    ) -> tuple[Episode_schedule, ...]:
+    ) -> Iterator[Episode_schedule]:
         endpoint = f"schedule-day?filter[day]={day}"
         data = self._get_endpoit_full_json(endpoint, limit)
-        out = helpers.class_attrs_by_anotation_list(
+        epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
             episode_schedule_anotation,
         )
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
-            out = list(
+            epschedules = list(
                 filter(
                     lambda ep: (ep.station == station_uuid),  # type: ignore
-                    out,
+                    epschedules,
                 )
             )
-        return tuple(out)
+        for episode_schedule in epschedules:
+            yield episode_schedule
 
     def get_schedule(
         self,
@@ -276,7 +282,7 @@ class Client:
         date_to: datetime | str,
         station_id: str = "",
         limit: int = 0,
-    ) -> tuple[Episode_schedule, ...]:
+    ) -> Iterator[Episode_schedule]:
         # e.g.: https://rapidev.croapp.cz/schedule?filter[title][eq]=Zpr%C3%A1vy
         if not isinstance(date_from, str):
             date_from = str(date_from)
@@ -287,7 +293,7 @@ class Client:
         to_filter = f"filter[till][le]={date_to}"
         endpoint = f"schedule?{from_filter}&{to_filter}"
         data = self._get_endpoit_full_json(endpoint, limit)
-        out = helpers.class_attrs_by_anotation_list(
+        epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
             episode_schedule_anotation,
@@ -295,13 +301,14 @@ class Client:
         # endpoint=f"{endpoint}&filter[station]={station_uuid}" # NOT WORKING STATION FILTER
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
-            out = list(
+            epschedules = list(
                 filter(
                     lambda ep: (ep.station == station_uuid),  # type: ignore
-                    out,
+                    epschedules,
                 )
             )
-        return tuple(out)
+        for episode_schedule in epschedules:
+            yield episode_schedule
 
     def get_person(self, person_id: str, limit: int = 0) -> Person | None:
         endpoint = "persons/" + person_id
@@ -319,7 +326,7 @@ class Client:
         self,
         show_id: str,
         limit: int = 0,
-    ) -> tuple[Person, ...]:
+    ) -> Iterator[Person]:
         # NOTE: relationships.participants.data:
         # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
 
@@ -327,51 +334,59 @@ class Client:
         data = self._get_endpoit_full_json(endpoint, limit)
         base_path = ["relationships", "participants", "data"]
         persons_meta = helpers.dict_get_path(data[0], [*base_path])
-        out: list = list()
         for p in persons_meta:
             puuid = p["id"]
             prole = p["meta"]["role"]
             person = self.get_person(puuid)
             if person is not None:
                 person.role = prole
-                out.append(person)
-        return tuple(out)
+                yield person
 
     def get_show_moderators(
         self,
         show_id: str,
         limit: int = 0,
-    ) -> tuple[Person, ...]:
+    ) -> Iterator[Person]:
         persons = self.get_show_participants_with_roles(show_id, limit)
-        out = list(
+        moderators = list(
             filter(
                 lambda person: (person.role == "moderator"),  # type: ignore
                 persons,
             )
         )
-        return tuple(out)
+        for moderator in moderators:
+            yield moderator
 
     def get_show_participants(
         self, show_id: str, limit: int = 0
-    ) -> tuple[Person, ...]:
+    ) -> Iterator[Person]:
         endpoint = "shows/" + show_id + "/participants"
         data = self._get_endpoit_full_json(endpoint, limit)
-        helpers.pp(data)
-        out = helpers.class_attrs_by_anotation_list(
+        persons = helpers.class_attrs_by_anotation_list(
             data,
             Person,
             person_anotation,
         )
-        return tuple(out)
+        for person in persons:
+            yield person
 
-    def get_show_premieres(self, id: str, limit: int = 0):
+    def get_show_premieres(
+        self, id: str, limit: int = 0
+    ) -> Iterator[Episode_schedule]:
         # endpoint = "shows/" + show_id + "/participants"
         endpoint = "shows/" + id + "/schedule-episodes"  # Returns empty
         # endpoint="serials/"
         # endpoint="schedule/"+id
         # endpoint="program/" # very slow
         data = self._get_endpoit_full_json(endpoint, limit)
-        return data
+        epschedules = helpers.class_attrs_by_anotation_list(
+            data,
+            Episode_schedule,
+            episode_schedule_anotation,
+        )
+
+        for episode_schedule in epschedules:
+            yield episode_schedule
 
     def get_repetitions(self) -> Iterator[Episode]:
         return NotImplemented

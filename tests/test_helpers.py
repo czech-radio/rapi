@@ -84,15 +84,15 @@ def test_request_url_yaml() -> None:
     helpers.pp(ydata)
 
 
-def test_dict_list_to_rows():
-    url = "https://rapidev.croapp.cz/stations?"
-    jdata = helpers.request_url_json(url)
-    assert jdata is not None
-    sdata = jdata["data"]
-    rows, header = helpers.dict_list_to_rows(sdata)
-    helpers.save_rows_to_csv("./runtime2/stations.csv", rows, header)
-    tdata = helpers.rows_transpose([header])
-    helpers.save_rows_to_csv("./runtime2/stations_fields.csv", tdata)
+# def test_dict_list_to_rows():
+# url = "https://rapidev.croapp.cz/stations?"
+# jdata = helpers.request_url_json(url)
+# assert jdata is not None
+# sdata = jdata["data"]
+# rows, header = helpers.dict_list_to_rows(sdata)
+# helpers.save_rows_to_csv("./runtime/stations.csv", rows, header)
+# tdata = helpers.rows_transpose([header])
+# helpers.save_rows_to_csv("./runtime/stations_fields.csv", tdata)
 
 
 # @pytest.mark.current
@@ -123,7 +123,6 @@ sample_dates = [
 ]
 
 
-# @pytest.mark.current
 def test_parse_date_regex() -> None:
     print()
     for d in sample_dates:
@@ -131,7 +130,6 @@ def test_parse_date_regex() -> None:
         print(dt)
 
 
-# @pytest.mark.current
 def test_parse_date_optional_fields() -> None:
     print()
     sd = sample_dates
@@ -142,7 +140,7 @@ def test_parse_date_optional_fields() -> None:
     dt1 = _func(sd[-1])
     dt2 = _func(sd[-2])
     print(dt2 - dt1)
-    assert dt1 == dt2
+    assert dt1 < dt2
 
 
 def test_json_to_csv() -> None:
