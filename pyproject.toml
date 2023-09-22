@@ -10,23 +10,25 @@ requires-python = ">=3.11"
 keywords = ["REST", "API"]
 license = {text = "BSD-3-Clause"}
 dependencies = [
-	"requests","pyyaml",
-	"types-requests",
-	"types-PyYAML",
-	"types-python-dateutil",
-	"dataclasses_json",
 	"configparser",
+	"dacite",
+	"dataclasses_json",
 	"mergedeep",
 	"numpy",
-	"ruamel.yaml",
-	"dacite",
-	"pytz",
-	"types-pytz",
 	"pandas",
 	"pandas-stubs",
-	# "swagger_parser",
-	# "openapi_parser",
+	"pyyaml",
+	"requests",
+	"ruamel.yaml",
+	"types-PyYAML",
+	"types-python-dateutil",
+	"types-requests",
+	"types_openpyxl",
 	# "openapi3-parser",
+	# "openapi_parser",
+	# "pytz",
+	# "swagger_parser",
+	# "types-pytz",
 ]
 
 [tool.setuptools.dynamic]

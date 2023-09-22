@@ -4,7 +4,7 @@ from typing import Union
 
 import pytest
 
-from rapi import _helpers
+from rapi.helpers import helpers
 
 # data = [
 # {'name': 'John', 'age': 30, 'city': 'New York'},
@@ -30,22 +30,22 @@ nested_dict = {
 
 
 def test_dict_get_path() -> None:
-    val = _helpers.dict_get_path(nested_dict, ["person1", "name"])
+    val = helpers.dict_get_path(nested_dict, ["person1", "name"])
     assert val == "John Doe"
-    val = _helpers.dict_get_path(nested_dict, ["person1", "contact", "email"])
+    val = helpers.dict_get_path(nested_dict, ["person1", "contact", "email"])
     assert val == "john@example.com"
 
 
 def test_deep_merge_dicts():
     dict1 = {"a": 1, "b": {"x": 10, "y": 20}}
     dict2 = {"b": {"y": "ahoj", "z": 40}, "c": 3}
-    merged_dict = _helpers.deep_merge_dicts(dict1, dict2)
+    merged_dict = helpers.deep_merge_dicts(dict1, dict2)
     print(merged_dict)
 
 
 def test_dict_paths_vectors() -> None:
     print()
-    res = _helpers.dict_paths_vectors(nested_dict, list())
+    res = helpers.dict_paths_vectors(nested_dict, list())
     print(res)
 
 
@@ -53,10 +53,10 @@ def test_request_url() -> None:
     print()
     url = "https://rapidev.croapp.cz/stations?"
     # url = "https://rapidev.croapp.cz/stat?"
-    req = _helpers.request_url(url)
+    req = helpers.request_url(url)
     assert req is not None
-    _helpers.pt(req.headers)
-    _helpers.pp(dict(req.headers))
+    helpers.pt(req.headers)
+    helpers.pp(dict(req.headers))
     print(req.status_code)
     print(req.reason)
 
@@ -72,7 +72,7 @@ def test_request_url_json() -> None:
     print()
     url = "https://rapidev.croapp.cz/stations?"
     # url="https://rapidev.croapp.cz/stations?page[1]=0&page[limit]=1"
-    jdata = _helpers.request_url_json(url)
+    jdata = helpers.request_url_json(url)
     assert jdata
 
 
@@ -80,29 +80,29 @@ def test_request_url_yaml() -> None:
     ### urls:
     # https://rapidoc.croapp.cz/index.html ->
     url = "https://rapidoc.croapp.cz/apifile/openapi.yaml"
-    ydata = _helpers.request_url_yaml(url)
-    _helpers.pp(ydata)
+    ydata = helpers.request_url_yaml(url)
+    helpers.pp(ydata)
 
 
 def test_dict_list_to_rows():
     url = "https://rapidev.croapp.cz/stations?"
-    jdata = _helpers.request_url_json(url)
+    jdata = helpers.request_url_json(url)
     assert jdata is not None
     sdata = jdata["data"]
-    rows, header = _helpers.dict_list_to_rows(sdata)
-    _helpers.save_rows_to_csv("./runtime2/stations.csv", rows, header)
-    tdata = _helpers.rows_transpose([header])
-    _helpers.save_rows_to_csv("./runtime2/stations_fields.csv", tdata)
+    rows, header = helpers.dict_list_to_rows(sdata)
+    helpers.save_rows_to_csv("./runtime2/stations.csv", rows, header)
+    tdata = helpers.rows_transpose([header])
+    helpers.save_rows_to_csv("./runtime2/stations_fields.csv", tdata)
 
 
 # @pytest.mark.current
 def test_current_timezone() -> None:
-    tz = _helpers.current_timezone()
+    tz = helpers.current_timezone()
     assert tz
 
 
 def test_datenow_with_timezone() -> None:
-    dt = _helpers.datenow_with_timezone()
+    dt = helpers.datenow_with_timezone()
     assert dt
 
 
@@ -127,7 +127,7 @@ sample_dates = [
 def test_parse_date_regex() -> None:
     print()
     for d in sample_dates:
-        dt = _helpers.parse_date_regex(d)
+        dt = helpers.parse_date_regex(d)
         print(dt)
 
 
@@ -135,7 +135,7 @@ def test_parse_date_regex() -> None:
 def test_parse_date_optional_fields() -> None:
     print()
     sd = sample_dates
-    _func = _helpers.parse_date_optional_fields
+    _func = helpers.parse_date_optional_fields
     for d in sd:
         dt = _func(d)
         print(dt)
@@ -147,19 +147,19 @@ def test_parse_date_optional_fields() -> None:
 
 def test_json_to_csv() -> None:
     url = "https://rapidev.croapp.cz/stations?"
-    jdata = _helpers.request_url_json(url)
+    jdata = helpers.request_url_json(url)
     assert jdata is not None
-    paths = _helpers.dict_paths_vectors(jdata, list())
+    paths = helpers.dict_paths_vectors(jdata, list())
     print(paths)
     # print(jdata['data'])
-    paths = _helpers.dict_paths_vectors(jdata["data"][0], list())
+    paths = helpers.dict_paths_vectors(jdata["data"][0], list())
     print(paths)
-    # _helpers.dict_to_csv(jdata)
-    # _helpers.dict_to_csv(jdata['meta'])
+    # helpers.dict_to_csv(jdata)
+    # helpers.dict_to_csv(jdata['meta'])
 
 
 def test_filepath_to_vector() -> None:
     cwd = os.getcwd()
     fp = os.path.join(cwd, "kek.txt")
-    vec = _helpers.filepath_to_vector(fp)
+    vec = helpers.filepath_to_vector(fp)
     print(vec)

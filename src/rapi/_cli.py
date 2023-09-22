@@ -1,9 +1,10 @@
-from rapi import Client, Config
-from rapi.config._command import commands
+from rapi._command import commands
+from rapi.config._config import Config
 
 
 def main() -> None:
-    Cfg = Config()
+    print("ich rune")
+    Cfg = Config(__package__)
     Cfg.cfg_runtime_set_defaults()
     commands(Cfg)
 

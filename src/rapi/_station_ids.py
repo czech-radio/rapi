@@ -1,8 +1,8 @@
 from typing import Union
 
-from rapi import _helpers as helpers
-from rapi._logger import log_stdout as loge
 from rapi.config._config import Config
+from rapi.helpers import helpers
+from rapi.helpers._logger import log_stdout as loge
 
 
 class StationIDs:
@@ -16,12 +16,11 @@ class StationIDs:
     def db_csv_init(self, fspath: str = "default") -> list:
         ### parse default or user specified table
         if fspath == "default":
-            pkgpath = "data/stations_ids.csv"
-            fspath = ""
-        csvr = helpers.read_csv_fspath_or_package_to_ram(
-            fspath,
-            pkgpath,
-        )
+            csvr = helpers.read_embeded_csv_to_ram(
+                "data/stations_ids.csv", __package__
+            )
+        else:
+            csvr = helpers.read_csv_path_to_ram(self.DBpath)
         if csvr is None:
             loge.error("cannot parse station_ids_csv")
             raise ValueError

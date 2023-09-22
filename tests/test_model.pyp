@@ -1,6 +1,7 @@
 import pytest
 
-from rapi import _helpers, _model
+from rapi import _model
+from rapi.helpers import helpers
 
 
 @pytest.mark.model

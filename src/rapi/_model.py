@@ -2,7 +2,7 @@ import datetime as dt
 import json
 from dataclasses import asdict, dataclass
 
-from rapi._helpers import DatetimeEncoder
+from rapi.helpers.helpers import DatetimeEncoder
 
 
 def str_pretty_json(cls):
@@ -176,7 +176,7 @@ class Person:
     description_short: str = ""
     description: str = ""
     profile_id: str = ""
-    # role: str=""
+    role: str = ""
     participation_link: str = ""
     participation_data: str = ""
 
@@ -187,7 +187,7 @@ person_anotation: dict = {
     "description_short": {"json": "attributes.short_description"},
     "description": {"json": "attributes.description"},
     "profile_id": {"json": "attributes.profile_id"},
-    # "role": {"json": "meta.role"},
+    "role": {"json": "meta.role"},
     "participation_link": {
         "json": "relationships.participation.links.related"
     },

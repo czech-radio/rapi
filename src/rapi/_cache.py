@@ -3,10 +3,10 @@ import sys
 from datetime import datetime, timedelta
 from typing import Union
 
-from rapi import _helpers
-from rapi._logger import log_stderr as loge
-from rapi._logger import log_stdout as logo
 from rapi.config._config import Config
+from rapi.helpers import helpers
+from rapi.helpers._logger import log_stderr as loge
+from rapi.helpers._logger import log_stdout as logo
 
 
 class DB_local:
@@ -17,7 +17,7 @@ class DB_local:
         # path = os.path.join(base_dir, self.__class__.__name__, "db")
         cfgb = ["apis", "croapp", "db_local"]
         path = cfg.runtime_get([*cfgb, "csvs_workdir"])
-        # _helpers.mkdir_parent_panic(path)
+        # helpers.mkdir_parent_panic(path)
         self.cscs_workdir = path
         self.csvs_update = cfg.runtime_get([*cfgb, "csvs_update"])
 
@@ -28,7 +28,7 @@ class DB_local:
 
         api_url = self.urls.get("api", "")
         if api_url == "":
-            loge.error(f"api url not defined")
+            loge.error("api url not defined")
             sys.exit(1)
         endpoint_url = "/".join((api_url, endpoint))
 
@@ -39,7 +39,7 @@ class DB_local:
 
     def endpoint_get_full_json(self, endpoint: str, limit: int = 0):
         link = self.endpoint_get_link(endpoint, limit)
-        jdict = _helpers.request_url_json(link)
+        jdict = helpers.request_url_json(link)
         if jdict is None:
             loge.error(f"no data to save: {endpoint}")
             return None
@@ -50,7 +50,7 @@ class DB_local:
 
         nlink = self.endpoint_get_next_link(jdict)
         while nlink != "":
-            jdict = _helpers.request_url_json(nlink)
+            jdict = helpers.request_url_json(nlink)
             if jdict is not None:
                 jdata = jdict.get("data", None)
                 if jdata is not None:
@@ -62,7 +62,7 @@ class DB_local:
         self, endpoint: str, limit: int = 0
     ) -> Union[dict, None]:
         link = self.endpoint_get_link(endpoint, limit)
-        jdata = _helpers.request_url_json(link)
+        jdata = helpers.request_url_json(link)
         return jdata
 
     def endpoint_save_json(self, endpoint: str, limit: int = 0) -> bool:
@@ -72,7 +72,7 @@ class DB_local:
             return False
         directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
         filepath = os.path.join(directory, "json")
-        ok = _helpers.save_json(filepath, endpoint + ".json", jdata)
+        ok = helpers.save_json(filepath, endpoint + ".json", jdata)
         return ok
 
     def endpoints_save_json(self, limit: int = 0):
@@ -110,11 +110,11 @@ class DB_local:
     def endpoint_csv_get_data(
         self, endpoint: str, limit: int = 0, nlink: str = ""
     ) -> str:
-        # _helpers.mkdir_parent_panic(path)
+        # helpers.mkdir_parent_panic(path)
         # dpaht=os.path.join(self.cscs_workdir, endpoint)
         fpath = os.path.join(self.cscs_workdir, endpoint + ".csv")
         dpath = os.path.dirname(fpath)
-        _helpers.mkdir_parent_panic(dpath)
+        helpers.mkdir_parent_panic(dpath)
         fpath_fields = os.path.join(
             self.cscs_workdir, endpoint + "_fields.csv"
         )
@@ -130,7 +130,7 @@ class DB_local:
         else:
             link = nlink
         ### download data
-        jdict = _helpers.request_url_json(link)
+        jdict = helpers.request_url_json(link)
         if jdict is None:
             loge.warning(f"no json to parse: {endpoint}")
             return ""
@@ -139,14 +139,14 @@ class DB_local:
             loge.warning(f"no data section to parse: {endpoint}")
             return ""
         ### save data to csv
-        rows, header = _helpers.dict_list_to_rows(data)
+        rows, header = helpers.dict_list_to_rows(data)
         if not os.path.exists(fpath):
-            _helpers.save_rows_to_csv(fpath, rows, header)
+            helpers.save_rows_to_csv(fpath, rows, header)
         else:
-            _helpers.save_rows_to_csv(fpath, rows)
+            helpers.save_rows_to_csv(fpath, rows)
         if not os.path.exists(fpath_fields):
-            tdata = _helpers.rows_transpose([header])
-            _helpers.save_rows_to_csv(fpath_fields, tdata)
+            tdata = helpers.rows_transpose([header])
+            helpers.save_rows_to_csv(fpath_fields, tdata)
         ### return next link if any
         return self.endpoint_get_next_link(jdict)
 

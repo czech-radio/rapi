@@ -4,8 +4,10 @@ from typing import Union
 import pandas as pd
 import pytest
 
-from rapi import Client, _helpers, _model
+from rapi import _model
+from rapi._client import Client
 from rapi.config import _config, _params
+from rapi.helpers import helpers
 
 
 @pytest.fixture
@@ -166,14 +168,12 @@ def test_get_stations(client) -> None:
     # assert len(stations) == 27
 
 
-# @pytest.mark.current
 @pytest.mark.client
 def test_get_station_shedule_day_flat(client) -> None:
-    # data = client.get_station_schedule_day_flat("13")
-    data = client.get_station_schedule_day_flat()
+    data = client.get_station_schedule_day_flat("2023-08-19")
     assert data
-    pdf = pd.DataFrame(data, columns=["station"])
-    print(len(pdf))
+    # pdf = pd.DataFrame(data, columns=["station"])
+    # print(len(pdf))
     # pdf.sort_values(by="since")
 
 
@@ -190,7 +190,6 @@ def test_get_show(client) -> None:
     assert data
 
 
-# @pytest.mark.current
 @pytest.mark.client
 def test_get_show_episodes(client) -> None:
     data = client.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
@@ -221,6 +220,7 @@ def test_show_episodes_filter(client) -> None:
     assert len(data1) < len(data2)
 
 
+# @pytest.mark.current
 @pytest.mark.client
 def test_get_show_episodes_schedule(client) -> None:
     id = shows_with_schedule_episodes[0]
@@ -228,38 +228,59 @@ def test_get_show_episodes_schedule(client) -> None:
     assert data
 
 
-# @pytest.mark.client
-def test_get_schedule_day(client) -> None:
-    # string="hello$mello"
-    # string(split
-    # print(client.Cfg.runtime_get(["apis","croapp","response","limit"]))
-    # data = client.get_schedule_day("2023-08","2024")
-    data = client.get_schedule_day("2023-09-11-23", "2024", "11")
+@pytest.mark.client
+def test_get_station_schedule_day_flat(client) -> None:
+    data = client.get_station_schedule_day_flat("2023-09-11", "11")
     assert data
+    # df = pd.DataFrame(data, columns=["station"])
+    assert len(data) == 173
 
 
-# @pytest.mark.client
+@pytest.mark.client
+def test_get_station_schedule_day(client) -> None:
+    data = client.get_station_schedule_day("2023-09-11", "11")
+    assert data
+    # df = pd.DataFrame(data, columns=["station"])
+    assert len(data) == 141
+
+
+@pytest.mark.client
 def test_get_schedule(client) -> None:
-    # string="hello$mello"
-    # string(split
-    # print("fuck")
-    # print(client.Cfg.runtime_get(["apis","croapp","response","limit"]))
-    # data = client.get_schedule_day("2023-08","2024")
-    data = client.get_schedule("11")
+    data1 = client.get_schedule("2023-09-17", "2023-09-18")
+    assert data1
+
+    data2 = client.get_schedule("2023-09-17T8:00", "2023-09-17T9:00")
+    assert data2
+
+    data3 = client.get_schedule("2023-09-17T8:00", "2023-09-17T9:00", "11")
+    assert len(data1) > len(data2) > len(data3)
+
+
+@pytest.mark.client
+def test_get_show_participants(client) -> None:
+    sp = sample_shows_with_schedule[0]
+    show_id = sample_radio_11_shows[sp]
+    data = client.get_show_participants(show_id)
     assert data
-    # print(len(data))
+
+
+@pytest.mark.client
+def test_get_show_participants_with_roles(client) -> None:
+    sp = sample_shows_with_schedule[0]
+    show_id = sample_radio_11_shows[sp]
+    data = client.get_show_participants_with_roles(show_id)
+    assert data
 
 
 @pytest.mark.client
 def test_get_show_moderators(client) -> None:
-    # data = client.get_show_moderators(sample_shows[1])
     sp = sample_shows_with_schedule[0]
     show_id = sample_radio_11_shows[sp]
     data = client.get_show_moderators(show_id)
     assert data
 
 
-@pytest.mark.current
+# @pytest.mark.current
 @pytest.mark.client
 def test_get_person(client) -> None:
     data = client.get_person(sample_persons[0])
@@ -284,3 +305,17 @@ def test_get_show_premieres(client) -> None:
         print(data)
         data = client.get_show_episodes(id)
         break
+
+
+# @pytest.mark.current
+def test_class_attrs_by_anotation_dict_dates(client) -> None:
+    id = shows_with_schedule_episodes[0]
+    endp = "shows/" + id + "/schedule-episodes"
+    data = client._get_endpoit_full_json(endp)
+
+    es = _model.Episode_schedule
+    ea = _model.episode_schedule_anotation
+    res = helpers.class_attrs_by_anotation_dict2(data[0], es, ea)
+    print(res)
+    # print(type(res.since))
+    # es=client.get_show_episodes_schedule(    "c7374f41-ae14-3b5c-8c04-385e3241deb4")

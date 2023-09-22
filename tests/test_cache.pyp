@@ -1,9 +1,10 @@
 import sys
 from typing import Union
 
-from rapi import _client, _helpers, _model
+from rapi import _client, _model
 from rapi._cache import DB_local
 from rapi.config import _config, _params
+from rapi.helpers import helpers
 
 ### test setup
 sys.argv = [
@@ -57,4 +58,4 @@ def test_DB_local_endpoint_get_full_json() -> None:
     db = DB_local(Cfg)
     jdict = db.endpoint_get_full_json("stations", 9)
     assert len(jdict) == 27
-    # _helpers.pp(jdict)
+    # helpers.pp(jdict)

@@ -1,12 +1,13 @@
 import csv
+import dataclasses as dc
+import datetime as dt
 import errno
 import json
 import os
 import pkgutil
 import re
 import sys
-from dataclasses import replace
-from datetime import datetime
+# from datetime import datetime
 from io import StringIO
 from typing import Any, Sequence, Tuple, Type, Union, no_type_check
 
@@ -14,10 +15,11 @@ import requests
 import yaml
 from dateutil import parser
 
-from rapi._logger import log_stderr as loge
-from rapi._logger import log_stdout as logo
+from rapi.helpers._logger import log_stderr as loge
+from rapi.helpers._logger import log_stdout as logo
 
 
+# PRINTERS
 def pl(data: Any):
     logo.info(data)
 
@@ -62,17 +64,41 @@ def type_by_name(type_name):
 
 
 def current_timezone():
-    return datetime.now().astimezone().tzinfo
+    return dt.datetime.now().astimezone().tzinfo
 
 
 def datenow_with_timezone():
-    return datetime.now().astimezone()
+    return dt.datetime.now().astimezone()
 
 
 @no_type_check
 def parse_date_regex(date_string: str):
     try:
+        # restr = r"\d+"
+        # vals=date_string.split("+")
         pdate = parser.parse(date_string)
+        # print(len(vals))
+        # grps=re.findall(restr,date_string)
+        # if len(vals)==1:
+        # dtt=dt.datetime.strptime(date_string,"%Y-%m-%dT%H:%M:%S%z")
+        # print("ke",dt)
+        # print(vals)
+        # convert strings to integer
+        # grps=re.findall(restr,date_string)
+        # match len(grps):
+        # case 1:
+        # dts = map(int, grps)
+        # pdate = dt.datetime(*dts,1,1)
+        # case 2:
+        # dts = map(int, grps)
+        # pdate = dt.datetime(*dts,1)
+        # case 3|4|5|6|7:
+        # dts = map(int, grps)
+        # pdate = dt.datetime(*dts)
+        # case 6:
+        # dts = map(int, re.findall(restr, date_string))
+        # pdate = dt.datetime(*dts)
+        # return pdate.astimezone()
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
@@ -89,12 +115,13 @@ def parse_date_optional_fields(date_string: str):
 
 
 # CSV FILES
-def read_csv_imported_to_ram(fname: str) -> Union[csv.DictReader, None]:
-    dbytes = pkgutil.get_data(__name__, fname)
+def read_embeded_csv_to_ram(
+    fname: str, pkg_name: str = __package__
+) -> Union[csv.DictReader, None]:
+    dbytes = pkgutil.get_data(pkg_name, fname)
     if dbytes is not None:
         dtxt = dbytes.decode("utf-8")
         csvdata = StringIO(dtxt)
-        # reader = csv.reader(f)
         csv_reader = csv.DictReader(csvdata, delimiter=";")
         return csv_reader
     return None
@@ -122,16 +149,6 @@ def csv_valid_rows(csv: csv.DictReader) -> list:
         if csv_is_row_valid(row):
             out.append(row)
     return out
-
-
-def read_csv_fspath_or_package_to_ram(
-    fspath: str, pkgpath: str
-) -> Union[csv.DictReader, None]:
-    if fspath is None or fspath == "":
-        csvreader = read_csv_imported_to_ram(pkgpath)
-    else:
-        csvreader = read_csv_path_to_ram(fspath)
-    return csvreader
 
 
 def is_file_readable(file_path: str) -> bool:
@@ -169,8 +186,9 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
     return res
 
 
+# DICT HELPERS
+# dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(dictr: dict, sections: list[str]) -> Any:
-    """Get subset of dictionary giving list of path or keyname."""
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
@@ -196,7 +214,7 @@ def class_assign_attrs_fieldnum(
             raise IndexError
         path = paths[fields[j]]
         val = dict_get_path(data, path)
-        if isinstance(dataclsdict[i], datetime):
+        if isinstance(dataclsdict[i], dt.datetime):
             dataclsdict[i] = parse_date_optional_fields(val)
         else:
             dataclsdict[i] = val
@@ -204,7 +222,51 @@ def class_assign_attrs_fieldnum(
     return cls
 
 
+def json_value_parse(
+    field_type: type[object],
+    json_value: Any,
+) -> Any:
+    match field_type:
+        case dt.datetime:
+            value = parse_date_optional_fields(json_value)
+        case _:
+            value = json_value
+    return value
+
+
 def class_attrs_by_anotation_dict(
+    data: dict,
+    datacls: type[object],
+    anotation: dict,
+) -> object:
+    # get dataclass fields
+    fields = {field.name: field.type for field in dc.fields(datacls)}  # type: ignore
+    values: list = list()
+    for field in fields:
+        # path = anotation[f]["json"].split(".")
+        path = dict_get_path(anotation, [field, "json"])
+        if path is not None:
+            json_value = dict_get_path(data, path.split("."))
+            value = json_value_parse(fields[field], json_value)
+        else:
+            value = None
+        values.append(value)
+    return datacls(*values)
+
+
+def class_attrs_by_anotation_list(
+    data: list[dict],
+    datacls: type[object],
+    anotation: dict,
+) -> list[Any]:
+    out: list = list()
+    for d in data:
+        res = class_attrs_by_anotation_dict(d, datacls, anotation)
+        out = out + [res]
+    return out
+
+
+def class_attrs_by_anotation_dict2(
     data: dict,
     datacls: Any,
     anotation: dict,
@@ -218,14 +280,14 @@ def class_attrs_by_anotation_dict(
         val = dict_get_path(data, json_path)
 
         # field parsers
-        if isinstance(dataclsdict[attr], datetime):
+        if isinstance(dataclsdict[attr], dt.datetime):
             dataclsdict[attr] = parse_date_optional_fields(val)
         else:
             dataclsdict[attr] = val
     return datacls
 
 
-def class_attrs_by_anotation_list(
+def class_attrs_by_anotation_list2(
     data: list[dict],
     datacls: Any,
     anotation: dict,
@@ -233,7 +295,7 @@ def class_attrs_by_anotation_list(
     out: list = list()
     for d in data:
         # dcls = copy.deepcopy(datacls)
-        dcls = replace(datacls)
+        dcls = dc.replace(datacls)
         res = class_attrs_by_anotation_dict(d, dcls, anotation)
         out = out + [res]
     return out
@@ -284,6 +346,7 @@ def deep_merge_dicts(source, destination):
     return destination
 
 
+# HTTP REQUEST
 def request_url(url: str) -> Union[requests.models.Response, None]:
     # headers = {}
     # params = {}
@@ -341,6 +404,10 @@ def request_url_yaml(url: str) -> Union[dict, None]:
     return ydata
 
 
+def dict_to_dataclass(dictr: dict, model: Type):
+    pass
+
+
 def dict_to_row(dictr: dict, sections: list) -> list:
     row: list = []
     for s in sections:
@@ -351,6 +418,7 @@ def dict_to_row(dictr: dict, sections: list) -> list:
 def dict_list_to_rows(
     lstarr: list[dict], check_type: Union[Any, None] = None
 ) -> Tuple[list, list]:
+    logo.info("converting")
     paths = dict_paths_vectors(lstarr[0], list())
     header = dict_paths_to_strings(paths)
     rows: list = []
@@ -416,7 +484,7 @@ def save_yaml(path: str, filename: str, data: dict) -> bool:
 
 class DatetimeEncoder(json.JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, datetime):
+        if isinstance(obj, dt.datetime):
             return obj.isoformat()
         return super().default(obj)
 
@@ -460,6 +528,9 @@ def save_txt_data(file_path: str, data: str):
 
     except Exception as e:
         loge.error("unknown error", e)
+
+
+# ystr=yaml.dump(data,allow_unicode=True)
 
 
 def save_rows_to_csv(fname: str, rows: list, header: list = []):

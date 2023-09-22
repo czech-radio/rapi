@@ -1,0 +1,20 @@
+verbose: 0      # -v; int; count; log level;
+version: false  # -V; bool; store_true; print version of program
+debug:          #
+  cfg: false    # -dc; bool; store_true; debug runtime config
+usercfg:
+  file: "./tests/data/defaults_alt.yml"
+
+# FOR TESTING
+## DEBUGING CONFIG FILE
+test:
+  par: "def"      # -tp; none; store; test par
+  env: "def"      # -te; none; store; test env
+  def: "def"      # -td; none; store; test def
+  alt: "def"      # -ta; none; store; test alt
+  cfg_prio: "def.yml" # -tc; none; store; which source wins?
+  logs: false     # -tl; bool; store_true; test printing logs
+    
+## TESTING PARAMS DEFINITION
+dbool: false      # -db; none; store_true; dummy boolean;
+dint: 1          # -di; int; store; dummy int;
