@@ -12,9 +12,18 @@ from rapi.helpers import helpers
 
 @pytest.fixture
 def client():
+    # sys.argv=["rapi","-vv"]
     _client = Client()
     assert _client
     return _client
+    # print(_client.Cfg.cfg)
+
+
+@pytest.mark.debug
+def test_client(client) -> None:
+    station = client.get_station(str(11))
+    assert station
+    # helpers.pp(client.Cfg.cfg_runtime)
 
 
 sample_shows = [
@@ -138,12 +147,6 @@ sample_episodes = [
 
 
 @pytest.mark.client
-def test_client(client) -> None:
-    station = client.get_station(str(11))
-    assert station
-
-
-@pytest.mark.client
 def test_get_station(client) -> None:
     station = client.get_station(str(11))
     assert station
@@ -151,21 +154,27 @@ def test_get_station(client) -> None:
 
 @pytest.mark.client_debug
 def test_get_endpoint(client) -> None:
-    res = client.get_endpoint("schedule")
-    # assert res
-    # cl.get_endpoint("schedule-day")
-    # cl.get_endpoint("schedule-day-flat")
-    # cl.get_endpoint("schedule-current")
-    # cl.get_endpoint("program")
-    # cl.get_endpoint("schedule/{id}")
+    endpoints=[
+            "schedule-day",
+            "schedule-day-flat",
+            "schedule-day-current",
+            "program",
+            "schedule/{id}",
+            ]
+    res = client._get_endpoint("schedule-day-flat")
+    assert res
+    print(res)
 
 
+# @pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
-    # stations = client.get_stations(10)
-    stations = client.get_stations()
-    assert stations
-    # assert len(stations) == 27
+    stations1 = client.get_stations()
+    assert stations1
+    assert len(list(stations1)) == 27
+    stations2 = client.get_stations(10)
+    assert stations2
+    assert len(list(stations2)) == 27
 
 
 @pytest.mark.client
@@ -177,7 +186,6 @@ def test_get_station_shedule_day_flat(client) -> None:
     # pdf.sort_values(by="since")
 
 
-# @pytest.mark.current
 @pytest.mark.client
 def test_get_station_shows(client) -> None:
     data = client.get_station_shows(str(11), 500)
@@ -222,7 +230,6 @@ def test_show_episodes_filter(client) -> None:
     assert len(list(data1)) < len(list(data2))
 
 
-# @pytest.mark.current
 @pytest.mark.client
 def test_get_show_episodes_schedule(client) -> None:
     id = shows_with_schedule_episodes[0]
@@ -289,7 +296,7 @@ def test_get_person(client) -> None:
     assert data
 
 
-@pytest.mark.current
+# @pytest.mark.current
 # @pytest.mark.client
 def test_get_show_premieres(client) -> None:
     # shows=client.get_station_shows("11")

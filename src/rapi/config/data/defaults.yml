@@ -5,9 +5,16 @@ debug:          #
 usercfg:
   file: "./tests/data/defaults_alt.yml"
 
+# SAMPLE SUB-COMMANDS
+subcommand:
+commands:
+  tsub:
+    tflag1: # -t1; bool; store_true; test subcommand flag
+    tflag2: # -t2; bool; store_true; test subcommand flag
+
 # FOR TESTING
 ## DEBUGING CONFIG FILE
-test:
+test:             # For testing purposes
   par: "def"      # -tp; none; store; test par
   env: "def"      # -te; none; store; test env
   def: "def"      # -td; none; store; test def
@@ -17,4 +24,4 @@ test:
     
 ## TESTING PARAMS DEFINITION
 dbool: false      # -db; none; store_true; dummy boolean;
-dint: 1          # -di; int; store; dummy int;
+dint: 1           # -di; int; store; dummy int;

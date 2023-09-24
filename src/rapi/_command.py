@@ -10,6 +10,18 @@ from rapi.helpers._logger import log_stdout as logo
 
 
 def commands(cfg: Config) -> None:
+    try:
+        commands_list(cfg)
+    except SystemExit as err:
+        if err.code == 0:
+            return
+        else:
+            raise err
+    except BaseException as err:
+        raise err
+
+
+def commands_list(cfg: Config) -> None:
     getvar = cfg.runtime_get
 
     # set log level
@@ -30,18 +42,19 @@ def commands(cfg: Config) -> None:
     # subcommands
     subc = getvar(["subcommand"], None)
     if subc is None:
-        return
+        return None
     else:
         logo.info(f"running command: {subc}")
 
     if "station" == subc:
         croapp = Client(cfg)
         # print(vars(ap))
-        # guid = croapp.get_station_guid("11")
-        # print(guid)
+        guid = croapp.get_station_guid("11")
+        print(guid)
 
     if "show" == subc:
         pass
+    return None
 
 
 def print_version(cfg: Config) -> None:

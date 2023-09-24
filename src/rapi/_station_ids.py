@@ -6,7 +6,15 @@ from rapi.helpers._logger import log_stdout as loge
 
 
 class StationIDs:
-    def __init__(self, cfg: Config) -> None:
+    def __init__(
+        self,
+        cfg: Config = Config(__package__),
+    ) -> None:
+        if cfg.cfg_sources is None:
+            cfg.cfg_runtime_set_defaults()
+        if cfg.cfg_runtime is None:
+            cfg.cfg_runtime_set()
+
         self.Cfg = cfg
         bpath = ["apis", "common"]
         self.DBpath = self.Cfg.runtime_get(bpath + ["csv"])
@@ -14,7 +22,7 @@ class StationIDs:
         self.DB = self.db_csv_init(self.DBpath)
 
     def db_csv_init(self, fspath: str = "default") -> list:
-        ### parse default or user specified table
+        # parse default or user specified table
         if fspath == "default":
             csvr = helpers.read_embeded_csv_to_ram(
                 "data/stations_ids.csv", __package__
@@ -50,8 +58,8 @@ class StationIDs:
         return None
 
     def get_fkey(self, pkey: str, fkey_name: str) -> Union[str, None]:
-        ### pkey: field value of global primary key used by user
-        ### fkey: fieldname of primary key used in particular database
+        # pkey: field value of global primary key used by user
+        # fkey: fieldname of primary key used in particular database
         row = self.get_row_by_pkey(pkey)
         if row is not None:
             return row.get(fkey_name, None)

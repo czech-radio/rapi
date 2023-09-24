@@ -15,11 +15,12 @@ from rapi.helpers._logger import log_stdout as logo
 
 
 class Client:
-    def __init__(self, cfg: Config = Config(__package__)):
+    def __init__(
+        self,
+        cfg: Config = Config(__package__),
+    ):
         cfg.cfg_runtime_set_defaults()
-
         self.Cfg = cfg
-
         self.api_url = cfg.runtime_get(
             [
                 "apis",
@@ -108,9 +109,9 @@ class Client:
             link = jdata.get("links", {}).get("next")
         return out
 
-    def _get_endpoint(self, endpoint: str = "", limit: int = 0) -> None:
+    def _get_endpoint(self, endpoint: str = "", limit: int = 0) -> list[dict]:
         data = self._get_endpoit_full_json(endpoint, limit)
-        helpers.pp(data)
+        return data
 
     def get_station(self, station_id: str, limit: int = 0) -> Station | None:
         guid = self.get_station_guid(str(station_id))

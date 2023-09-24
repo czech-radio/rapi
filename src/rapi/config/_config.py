@@ -133,8 +133,8 @@ class Config:
     def __init__(self, pkg_name: str = __package__) -> None:
         self.pkg_name = pkg_name
         self.cfg_default = Cfg_default(pkg_name)
-        self.cfg_sources: list = []
-        self.cfg_runtime: dict = {}
+        self.cfg_sources: list | None = None
+        self.cfg_runtime: dict | None = None
 
     def cfg_runtime_set_defaults(self):
         cfgp = Cfg_params(self.pkg_name)
@@ -150,6 +150,9 @@ class Config:
 
     def add_sources(self, cfg_sources: list[Any]) -> None:
         # NOTE: maybe add check if type implements interface method get or has dict
+        # sources:list=[]
+        if self.cfg_sources is None:
+            self.cfg_sources = list()
         for s in cfg_sources:
             if s is not None:
                 self.cfg_sources.append(s)
@@ -159,7 +162,6 @@ class Config:
         res: dict = {}
         # merge in all sources in order of increasing priority
         if srcs is None or len(srcs) == 0:
-            sys.argv = ["rapi", "-v"]
             self.cfg_runtime = self.cfg_default.cfg
         else:
             for s in reversed(srcs):
@@ -170,6 +172,8 @@ class Config:
         self.cfg_runtime = res
 
     def runtime_get(self, path: list, dvalue: Any = ValueError) -> Any:
+        if self.cfg_runtime is None:
+            raise LookupError("runtime config is not set")
         val = helpers.dict_get_path(self.cfg_runtime, path)
         if val is None:
             try:

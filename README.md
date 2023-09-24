@@ -115,9 +115,32 @@ The runtime variables are assigned in following order.
 ### Use as program
 
 ## Tests
-
+### Api test
 Test the REST API <https://rapidev.croapp.cz/> with CURL (use `-g, --globoff flag`) e.g.
 
 ```shell
 curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"
 ```
+
+### rapi package testing
+
+- test client
+
+```shell
+pytest -m client 
+```
+
+- show also test debug logs
+
+```shell
+pytest -o log_cli=true -m client 
+```
+
+- show also tests outputs
+
+```shell
+pytest --capture=tee-sys -m client 
+```
+
+
+
