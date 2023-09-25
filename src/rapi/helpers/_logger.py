@@ -11,12 +11,12 @@ default_format = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(linen
 class ShortenedLevelFormatter(logging.Formatter):
     def format(self, record):
         if record.levelname:
-            ### shorten lelvel name to one letter
+            # shorten lelvel name to one letter
             record.levelname = record.levelname[0]
         return super().format(record)
 
 
-# FILE LOGGER
+# FILE LOGGER (Not implemented yet)
 # NOTE: dir path must exist. Maybe use /tmp as default ?
 # log_file = logging.getLogger("log_file")
 # log_file.setLevel(logging.DEBUG)
@@ -42,8 +42,25 @@ error_formatter = logging.Formatter(default_format)
 error_handler.setFormatter(error_formatter)
 log_stderr.addHandler(error_handler)
 
-# Log some messages
-# log_file.debug('Debug message')
-# log_stdout.info('Info message')
-# log_stdout.warning('warning message')
-# log_stderr.error('Error message')
+
+def set_level(verbose_level: int = 0) -> None:
+    # NOTE: Log level of loggers can be set also with:
+    # log=logging.getLogger("log_stdout")
+    # log.setLevel(logging.DEBUG)
+    levels = [
+        logging.WARNING,
+        logging.INFO,
+        logging.DEBUG,
+    ]
+    level = levels[min(verbose_level, len(levels) - 1)]
+    # logging.basicConfig(level=level)
+    log_stderr.setLevel(level)
+    log_stdout.setLevel(level)
+
+
+def test_logs() -> None:
+    # log_file.debug('Debug message')
+    log_stdout.debug("this is debug_level message")
+    log_stdout.info("Info message")
+    log_stdout.warning("warning message")
+    log_stderr.error("Error message")

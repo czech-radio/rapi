@@ -8,6 +8,7 @@ from typing import Any, Union
 import yaml as yaml
 
 from rapi.config import _params
+from rapi.helpers import _logger
 from rapi.helpers import helpers as helpers
 from rapi.helpers._logger import log_stderr as loge
 from rapi.helpers._logger import log_stdout as logo
@@ -147,6 +148,8 @@ class Config:
             cfgf = Cfg_file(cfg_fname)
         self.add_sources([cfgp, cfge, cfgf])
         self.cfg_runtime_set()
+        # set log level
+        _logger.set_level(self.runtime_get(["verbose"]))
 
     def add_sources(self, cfg_sources: list[Any]) -> None:
         # NOTE: maybe add check if type implements interface method get or has dict
@@ -170,6 +173,8 @@ class Config:
         # finaly merge with defaults.yml which should contain full set of variables
         res = helpers.deep_merge_dicts(res, self.cfg_default.cfg)
         self.cfg_runtime = res
+        # set log level
+        _logger.set_level(self.runtime_get(["verbose"]))
 
     def runtime_get(self, path: list, dvalue: Any = ValueError) -> Any:
         if self.cfg_runtime is None:

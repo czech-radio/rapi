@@ -1,3 +1,5 @@
+# from rapi.helpers._logger import log_stdout as logo
+import logging
 import sys
 from typing import Union
 
@@ -7,23 +9,34 @@ import pytest
 from rapi import _model
 from rapi._client import Client
 from rapi.config import _config, _params
+from rapi.config._config import Config
+# from rapi.config import Config
+# from rapi.config._config import Config
 from rapi.helpers import helpers
+
+lg = logging.getLogger("log_stdout")
+lg.setLevel(logging.DEBUG)
 
 
 @pytest.fixture
 def client():
-    # sys.argv=["rapi","-vv"]
-    _client = Client()
+    # sys.argv = ["rapi", "-vv"]
+    cfg = Config("rapi")
+    cfg.cfg_runtime_set_defaults()
+    _client = Client(cfg)
     assert _client
     return _client
     # print(_client.Cfg.cfg)
 
 
-@pytest.mark.debug
-def test_client(client) -> None:
-    station = client.get_station(str(11))
-    assert station
-    # helpers.pp(client.Cfg.cfg_runtime)
+# @pytest.mark.debug
+# def test_client() -> None:
+# pass
+# print(dir(logo.handlers))
+# def test_client() -> None:
+# station = client.get_station(str(11))
+# assert station
+# helpers.pp(client.Cfg.cfg_runtime)
 
 
 sample_shows = [
@@ -152,20 +165,6 @@ def test_get_station(client) -> None:
     assert station
 
 
-@pytest.mark.client_debug
-def test_get_endpoint(client) -> None:
-    endpoints=[
-            "schedule-day",
-            "schedule-day-flat",
-            "schedule-day-current",
-            "program",
-            "schedule/{id}",
-            ]
-    res = client._get_endpoint("schedule-day-flat")
-    assert res
-    print(res)
-
-
 # @pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
@@ -289,7 +288,7 @@ def test_get_show_moderators(client) -> None:
     assert data
 
 
-# @pytest.mark.current
+@pytest.mark.current
 @pytest.mark.client
 def test_get_person(client) -> None:
     data = client.get_person(sample_persons[0])
