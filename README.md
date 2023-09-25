@@ -104,6 +104,11 @@ Zatím jasně vidíme tyto entity:
 	```shell
 	todo
 	```
+## Documentation
+
+- api documentation 
+
+<https://rapidoc.croapp.cz/>
 
 ## Usage
 
