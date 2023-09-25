@@ -60,13 +60,15 @@ log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:
 # log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 markers = [
 	"client:",
-  "client_debug:",
+	"config:",
+	"command:",
+	"current: adhoc select test",
 	"debug:",
 	"domain: make domain",
-	"model:",
-	"current: adhoc select test",
-	"station_ids:",
 	"helpers:",
-	"command:",
+	"model:",
+	"params:",
+	"station_ids:",
+  "client_debug:",
 ]
 

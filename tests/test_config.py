@@ -6,7 +6,9 @@ from ruamel.yaml import YAML
 from rapi.config import _config
 from rapi.helpers import helpers as hp
 
+import pytest
 
+@pytest.mark.config
 def test_config_yaml_defaults():
     cfg = _config.config_yaml_defaults()
     hp.pp(cfg)
@@ -46,12 +48,14 @@ for t in range(0, len(TCASES), 2):
     EVARS.append(var_path_srt)
 
 
+@pytest.mark.config
 def test_Cfg_default() -> None:
     cfg = _config.Cfg_default()
     val = cfg.get(TIN[0])
     assert val
 
 
+@pytest.mark.config
 def test_Cfg_file() -> None:
     # cfg = _config.Cfg_file("./defaults_alt.yml")
     cfg = _config.Cfg_file("./tests/data/defaults_alt.yml")
@@ -59,12 +63,13 @@ def test_Cfg_file() -> None:
     assert val
 
 
+@pytest.mark.config
 def test_Cfg_env() -> None:
     print()
-    ### prepare
+    # prepare
     for i in range(len(TIN)):
         os.environ[EVARS[i]] = str(TOUT[i])
-    ### test
+    # test
     cfg = _config.Cfg_env()
     print(cfg.cfg)
 

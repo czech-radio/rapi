@@ -14,29 +14,18 @@ from rapi.config._config import Config
 # from rapi.config._config import Config
 from rapi.helpers import helpers
 
-lg = logging.getLogger("log_stdout")
-lg.setLevel(logging.DEBUG)
+# lg = logging.getLogger("log_stdout")
+# lg.setLevel(logging.DEBUG)
 
 
 @pytest.fixture
 def client():
-    # sys.argv = ["rapi", "-vv"]
+    sys.argv = ["rapi", "-vv"]
     cfg = Config("rapi")
     cfg.cfg_runtime_set_defaults()
     _client = Client(cfg)
     assert _client
     return _client
-    # print(_client.Cfg.cfg)
-
-
-# @pytest.mark.debug
-# def test_client() -> None:
-# pass
-# print(dir(logo.handlers))
-# def test_client() -> None:
-# station = client.get_station(str(11))
-# assert station
-# helpers.pp(client.Cfg.cfg_runtime)
 
 
 sample_shows = [
@@ -160,18 +149,31 @@ sample_episodes = [
 
 
 @pytest.mark.client
+def test_class_attrs_by_anotation_dict_dates(client) -> None:
+    id = shows_with_schedule_episodes[0]
+    endp = "shows/" + id + "/schedule-episodes"
+    data = client._get_endpoit_full_json(endp)
+    es = _model.Episode_schedule
+    ea = _model.episode_schedule_anotation
+    res = helpers.class_attrs_by_anotation_dict(data[0], es, ea)
+    assert res
+    print(res)
+
+
+@pytest.mark.client
 def test_get_station(client) -> None:
     station = client.get_station(str(11))
     assert station
 
 
-# @pytest.mark.current
+@pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
     stations1 = client.get_stations()
     assert stations1
     assert len(list(stations1)) == 27
     stations2 = client.get_stations(10)
+    # NOTE: occasionally it returns 28 stations instead of 27?
     assert stations2
     assert len(list(stations2)) == 27
 
@@ -288,7 +290,6 @@ def test_get_show_moderators(client) -> None:
     assert data
 
 
-@pytest.mark.current
 @pytest.mark.client
 def test_get_person(client) -> None:
     data = client.get_person(sample_persons[0])
@@ -296,7 +297,7 @@ def test_get_person(client) -> None:
 
 
 # @pytest.mark.current
-# @pytest.mark.client
+# NOT IMPLEMENTED YET
 def test_get_show_premieres(client) -> None:
     # shows=client.get_station_shows("11")
     # pshows=pd.DataFrame(shows,columns=['uuid'])
@@ -313,17 +314,3 @@ def test_get_show_premieres(client) -> None:
         print(list(data))
         data = client.get_show_episodes(id)
         break
-
-
-# @pytest.mark.current
-def test_class_attrs_by_anotation_dict_dates(client) -> None:
-    id = shows_with_schedule_episodes[0]
-    endp = "shows/" + id + "/schedule-episodes"
-    data = client._get_endpoit_full_json(endp)
-
-    es = _model.Episode_schedule
-    ea = _model.episode_schedule_anotation
-    res = helpers.class_attrs_by_anotation_dict2(data[0], es, ea)
-    # print(res)
-    # print(type(res.since))
-    # es=client.get_show_episodes_schedule(    "c7374f41-ae14-3b5c-8c04-385e3241deb4")
