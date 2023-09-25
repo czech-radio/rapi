@@ -166,7 +166,6 @@ def test_get_station(client) -> None:
     assert station
 
 
-@pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
     stations1 = client.get_stations()
@@ -238,20 +237,25 @@ def test_get_show_episodes_schedule(client) -> None:
     assert data
 
 
+@pytest.mark.current
 @pytest.mark.client
 def test_get_station_schedule_day_flat(client) -> None:
     data = client.get_station_schedule_day_flat("2023-09-11", "11")
-    assert data
+    # NOTE: WTF I get error occasionally when I run len(list(data)), data is iterator
+    datalist = list(data)
+    assert datalist
+    assert len(datalist) == 173
     # df = pd.DataFrame(data, columns=["station"])
-    assert len(list(data)) == 173
+    print(datalist)
 
 
 @pytest.mark.client
 def test_get_station_schedule_day(client) -> None:
     data = client.get_station_schedule_day("2023-09-11", "11")
     assert data
-    # df = pd.DataFrame(data, columns=["station"])
     assert len(list(data)) == 141
+    # df = pd.DataFrame(data, columns=["station"])
+    print(list(data))
 
 
 @pytest.mark.client

@@ -6,6 +6,8 @@ from rapi._cache import DB_local
 from rapi.config import _config, _params
 from rapi.helpers import helpers
 
+# TODO: Solve tmp dir in ram/hdd on windows. 
+
 ### test setup
 sys.argv = [
     "test3.py",

@@ -12,15 +12,22 @@ as Python objects.
 
 ## Features (cs)
 
-- [ ] Získej všechny pořady aktuálně vysílané na zadané stanici.
-- [ ] Získej všechny epizody vysíláné pro zadaný pořad, období, časový úsek a stanici.
-- [ ] Získej všechny moderátory pro zadaný pořad.
-- [ ] Získej premiéry a reprízy pro zadaný pořad.
+- [x] 1. Získej všechny pořady aktuálně vysílané na zadané stanici. [usage](./docs/build/notebooks/client_usage.html#get-all-shows-for-given-station)
+- [x] 2. Získej všechny epizody vysílané pro zadaný pořad, období, časový úsek a stanici.
+- [x] 3. Získej všechny moderátory pro zadaný pořad.
+- [ ] 4. Získej premiéry a reprízy pro zadaný pořad.
+
+### Features discussion
+4. 
+Croapi nenabízí žádný takový endpoint
+Šlo implementovat pravděpodobně jen s replikou databáze případně stažením všech dat s endpointu /schedule to trvá velmi dlouho už pro jediný den. Zkoušel jsem stáhnout vše a trvalo to celou noc a ještě nebyl konec.
+To by nemusel být problém. Data by se stáhli jednou a pak by se jen dělal denní update.
+Byl vznesen dotaz na pana Kubelíka, jestli není nějaká jiná možnost
 
 ## Model (Terms, Facts, Rules)
 
-Doménový model jsoy třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
-Zatím jasně vídíme tyto entity:
+Doménový model json třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
+Zatím jasně vidíme tyto entity:
 
 ### Terms
 
@@ -36,7 +43,7 @@ Zatím jasně vídíme tyto entity:
 ### Facts and Rules
 
 - Na stanici se vysílají epizody jednotlivých pořadů.
-- Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zárověň (např. Plus/Radiožurnál a regionální stanice).
+- Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zároveň (např. Plus/Radiožurnál a regionální stanice).
 - Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéry a reprízy.
 
 ### Filters

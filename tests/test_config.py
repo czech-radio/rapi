@@ -1,12 +1,12 @@
 import os
 import sys
 
+import pytest
 from ruamel.yaml import YAML
 
 from rapi.config import _config
 from rapi.helpers import helpers as hp
 
-import pytest
 
 @pytest.mark.config
 def test_config_yaml_defaults():
