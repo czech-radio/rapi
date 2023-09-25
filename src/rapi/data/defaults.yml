@@ -10,9 +10,10 @@ workdir:
 usercfg:
   file: "./tests/data/defaults_alt.yml"
 subcommand:
-commands:   # subcommands
-  station:  # filter stations
-    id: 1   # -id; int; store; filter by id
+commands:       # subcommands definition
+  station_guid:   # -sg; str; store; get station guid
+  station:      # filter stations
+    id: 1       # -id; int; store; filter by id
     test: 
   show:
   show_ep_filter:
