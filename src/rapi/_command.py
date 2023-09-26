@@ -4,6 +4,7 @@ from rapi import __version__
 from rapi._client import Client
 from rapi.config._config import Config
 from rapi.helpers import _logger, helpers
+
 # from rapi.helpers._logger import log_stderr as loge
 from rapi.helpers._logger import log_stdout as logo
 

@@ -5,10 +5,19 @@ from typing import Iterator
 import requests
 
 from rapi import _station_ids
-from rapi._model import (Episode, Episode_schedule, Person, Show, Station,
-                         StationIDs, episode_anotation,
-                         episode_schedule_anotation, person_anotation,
-                         show_anotation, station_anotation)
+from rapi._model import (
+    Episode,
+    Episode_schedule,
+    Person,
+    Show,
+    Station,
+    StationIDs,
+    episode_anotation,
+    episode_schedule_anotation,
+    person_anotation,
+    show_anotation,
+    station_anotation,
+)
 from rapi.config._config import Config
 from rapi.helpers import helpers
 from rapi.helpers._logger import log_stdout as logo
