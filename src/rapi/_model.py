@@ -1,6 +1,7 @@
 import datetime as dt
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict
+from dataclasses import dataclass
 
 from rapi.helpers.helpers import DatetimeEncoder
 

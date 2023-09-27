@@ -1,10 +1,7 @@
 import argparse as AP
-import builtins
-import os
 import pkgutil
 import re
-import sys
-from typing import Any, Dict, Union
+from typing import Any
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap

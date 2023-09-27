@@ -6,9 +6,13 @@ import json
 import os
 import pkgutil
 import sys
-
 from io import StringIO
-from typing import Any, Sequence, Tuple, Type, Union, no_type_check
+from typing import Any
+from typing import Sequence
+from typing import Tuple
+from typing import Type
+from typing import Union
+from typing import no_type_check
 
 import requests
 import yaml
@@ -74,7 +78,7 @@ def datenow_with_timezone():
 def parse_date_regex(date_string: str):
     try:
         pdate = parser.parse(date_string)
-     
+
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")

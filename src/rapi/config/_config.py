@@ -1,9 +1,8 @@
-import configparser
 import copy
-import os
 import pkgutil
 import sys
-from typing import Any, Union
+from typing import Any
+from typing import Union
 
 import yaml as yaml
 
@@ -11,7 +10,6 @@ from rapi.config import _params
 from rapi.helpers import _logger
 from rapi.helpers import helpers as helpers
 from rapi.helpers._logger import log_stderr as loge
-from rapi.helpers._logger import log_stdout as logo
 
 # from mergedeep import merge
 
@@ -55,7 +53,7 @@ def config_yaml_file(file: str) -> dict:
         with open(file, "r") as f:
             data = yaml.safe_load(f)
             return data
-    except Exception as e:
+    except Exception:
         loge.debug("user config file not read")
         return {}
 

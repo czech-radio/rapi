@@ -1,5 +1,6 @@
 import sys
-from typing import Type, Union
+from typing import Type
+from typing import Union
 
 from rapi.helpers._logger import log_stderr as loge
 from rapi.helpers._logger import log_stdout as logo

@@ -8,7 +8,8 @@ import pytest
 
 from rapi import _model
 from rapi._client import Client
-from rapi.config import _config, _params
+from rapi.config import _config
+from rapi.config import _params
 from rapi.config._config import Config
 
 # from rapi.config import Config
