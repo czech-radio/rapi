@@ -5,10 +5,8 @@ import errno
 import json
 import os
 import pkgutil
-import re
 import sys
 
-# from datetime import datetime
 from io import StringIO
 from typing import Any, Sequence, Tuple, Type, Union, no_type_check
 
@@ -75,31 +73,8 @@ def datenow_with_timezone():
 @no_type_check
 def parse_date_regex(date_string: str):
     try:
-        # restr = r"\d+"
-        # vals=date_string.split("+")
         pdate = parser.parse(date_string)
-        # print(len(vals))
-        # grps=re.findall(restr,date_string)
-        # if len(vals)==1:
-        # dtt=dt.datetime.strptime(date_string,"%Y-%m-%dT%H:%M:%S%z")
-        # print("ke",dt)
-        # print(vals)
-        # convert strings to integer
-        # grps=re.findall(restr,date_string)
-        # match len(grps):
-        # case 1:
-        # dts = map(int, grps)
-        # pdate = dt.datetime(*dts,1,1)
-        # case 2:
-        # dts = map(int, grps)
-        # pdate = dt.datetime(*dts,1)
-        # case 3|4|5|6|7:
-        # dts = map(int, grps)
-        # pdate = dt.datetime(*dts)
-        # case 6:
-        # dts = map(int, re.findall(restr, date_string))
-        # pdate = dt.datetime(*dts)
-        # return pdate.astimezone()
+     
         return pdate
     except Exception as e:
         raise ValueError(f"date not parsed. invalid date format: {e}")
@@ -115,7 +90,6 @@ def parse_date_optional_fields(date_string: str):
         raise ValueError(f"date not parsed. invalid date format: {e}")
 
 
-# CSV FILES
 def read_embeded_csv_to_ram(
     fname: str, pkg_name: str = __package__
 ) -> Union[csv.DictReader, None]:
@@ -187,9 +161,10 @@ def get_first_not_none(path: list, cfg_srcs: list) -> Any:
     return res
 
 
-# DICT HELPERS
-# dict_get_path: get subset of dictionary giving list of path or keyname
 def dict_get_path(dictr: dict, sections: list[str]) -> Any:
+    """
+    Get subset of dictionary giving list of path or keyname
+    """
     dicw = dictr
     for i in sections:
         resdict = dicw.get(i, None)
@@ -347,7 +322,6 @@ def deep_merge_dicts(source, destination):
     return destination
 
 
-# HTTP REQUEST
 def request_url(url: str) -> Union[requests.models.Response, None]:
     # headers = {}
     # params = {}
@@ -529,9 +503,6 @@ def save_txt_data(file_path: str, data: str):
 
     except Exception as e:
         loge.error("unknown error", e)
-
-
-# ystr=yaml.dump(data,allow_unicode=True)
 
 
 def save_rows_to_csv(fname: str, rows: list, header: list = []):
