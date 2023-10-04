@@ -72,3 +72,6 @@ markers = [
   "client_debug:",
 ]
 
+[tool.isort]
+profile = "black"
+

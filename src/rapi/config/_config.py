@@ -1,8 +1,7 @@
 import copy
 import pkgutil
 import sys
-from typing import Any
-from typing import Union
+from typing import Any, Union
 
 import yaml as yaml
 

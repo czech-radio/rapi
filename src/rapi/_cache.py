@@ -1,7 +1,6 @@
 import os
 import sys
-from datetime import datetime
-from datetime import timedelta
+from datetime import datetime, timedelta
 from typing import Union
 
 from rapi.config._config import Config
@@ -156,7 +155,7 @@ class DB_local:
         fpath = endpoint_file
         try:
             mtime = os.path.getmtime(fpath)
-            if self.csvs_update is True:
+            if self.csvs_update == True:
                 update = True
             if self.csvs_update == "daily":
                 mdate_time = datetime.fromtimestamp(mtime)
