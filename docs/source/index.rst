@@ -14,7 +14,7 @@ Welcome to RAPI's documentation!
    notebooks/*
    issues
    todo
-   config_module
+   configuration
 
 
 Indices and tables
