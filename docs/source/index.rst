@@ -13,7 +13,7 @@ Welcome to RAPI's documentation!
    
    notebooks/*
    issues
-   todo
+   features_discusion.md
    configuration
 
 

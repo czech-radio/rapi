@@ -17,13 +17,6 @@ as Python objects.
 - [x] 3. Získej všechny moderátory pro zadaný pořad.
 - [ ] 4. Získej premiéry a reprízy pro zadaný pořad.
 
-### Features discussion
-4. 
-Croapi nenabízí žádný takový endpoint
-Šlo implementovat pravděpodobně jen s replikou databáze případně stažením všech dat s endpointu /schedule to trvá velmi dlouho už pro jediný den. Zkoušel jsem stáhnout vše a trvalo to celou noc a ještě nebyl konec.
-To by nemusel být problém. Data by se stáhli jednou a pak by se jen dělal denní update.
-Byl vznesen dotaz na pana Kubelíka, jestli není nějaká jiná možnost
-
 ## Model (Terms, Facts, Rules)
 
 Doménový model json třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
