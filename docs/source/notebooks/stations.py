@@ -18,6 +18,7 @@
 # ### Create client
 # %%
 from rapi import Client
+
 cl = Client()
 
 # %% [markdown]

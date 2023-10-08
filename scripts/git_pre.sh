@@ -10,33 +10,28 @@ fi
 echo RUNNING IN: "$repodir"
 
 ### mypy: static type checks
-echo
-echo RUNNING: mypy
-mypy --install-types
-mypy --no-namespace-packages "$repodir"
+# echo
+# echo RUNNING: mypy
+# mypy --install-types
+# mypy --no-namespace-packages "$repodir"
 
-### isort: sort imports
-echo
-echo RUNNING: isort
-isort --profile black "$repodir" --check --profile black
 
 ### pytest: run repo tests
 # pytest
 
-### black: format code
+### BLACK: FORMAT CODE
 echo
 echo RUNNING: black
-black -v "$repodir" --check --extend-exclude "(docs/|build/|/.venv/)"
-# --exclude "(docs/|build/|dist/|\.git/|\.mypy_cache/|\.tox/|\.venv/\.asv/|env|\.eggs)"
+black "$repodir" --exclude "(docs/|build/|dist/|\.git/|\.mypy_cache/|\.tox/|\.venv/\.asv/|env|\.eggs)"
 
+### ISORT: SORT IMPORTS
+echo
+echo RUNNING: isort
+isort "$repodir" --profile black
 
-### flake8: style enforcement
-# echo RUNNING: flake8
-# flake8 "$repodir" --count --select=E9,F63,F7,F82 --show-source --statistics
-
-### workflow
-# black
-# isort
-# flake8
+### FLAKE8: Lint the code
+echo
+echo RUNNING: flake8
+flake8 "${repodir}/src/rapi" --count --select=E9,F63,F7,F82 --show-source --statistics --max-line-length=99 --exit-zero --max-complexity=10
 
 

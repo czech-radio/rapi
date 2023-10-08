@@ -2,12 +2,12 @@ import sys
 
 from rapi import __version__
 from rapi._client import Client
+from rapi._station_ids import StationIDs
 from rapi.config._config import Config
 from rapi.helpers import _logger, helpers
 
 # from rapi.helpers._logger import log_stderr as loge
 from rapi.helpers._logger import log_stdout as logo
-from rapi._station_ids import StationIDs
 
 
 def commands(cfg: Config) -> None:
@@ -45,21 +45,23 @@ def subcommand_list(cfg: Config) -> None:
             subcmd_show_episodes(cfg)
     return None
 
+
 def subcmd_station_ids(cfg: Config):
-    sid=StationIDs()
+    sid = StationIDs()
     print(sid.get_pkey_list())
     pass
 
+
 def subcmd_show_episodes(cfg: Config):
     croapp = Client(cfg)
-    id=cfg.runtime_get(['commands','show_episodes','id'])
+    id = cfg.runtime_get(["commands", "show_episodes", "id"])
     eps = croapp.get_show_episodes(str(id))
     helpers.ppl(list(eps))
 
 
 def subcmd_station_guid(cfg: Config):
     croapp = Client(cfg)
-    id=cfg.runtime_get(['commands','station_guid','id'])
+    id = cfg.runtime_get(["commands", "station_guid", "id"])
     guid = croapp.get_station_guid(str(id))
     print(guid)
 

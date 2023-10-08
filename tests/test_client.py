@@ -166,6 +166,7 @@ def test_get_station(client) -> None:
     station = client.get_station(str(11))
     assert station
 
+
 @pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
