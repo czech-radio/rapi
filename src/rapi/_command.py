@@ -7,6 +7,7 @@ from rapi.helpers import _logger, helpers
 
 # from rapi.helpers._logger import log_stderr as loge
 from rapi.helpers._logger import log_stdout as logo
+from rapi._station_ids import StationIDs
 
 
 def commands(cfg: Config) -> None:
@@ -36,14 +37,30 @@ def subcommand_list(cfg: Config) -> None:
     logo.info(f"running command: {subcommand}")
     # NOTE: this can be simplified to dict or even to a list
     match subcommand:
+        case "station_ids":
+            subcmd_station_ids(cfg)
         case "station_guid":
             subcmd_station_guid(cfg)
+        case "show_episodes":
+            subcmd_show_episodes(cfg)
     return None
+
+def subcmd_station_ids(cfg: Config):
+    sid=StationIDs()
+    print(sid.get_pkey_list())
+    pass
+
+def subcmd_show_episodes(cfg: Config):
+    croapp = Client(cfg)
+    id=cfg.runtime_get(['commands','show_episodes','id'])
+    eps = croapp.get_show_episodes(str(id))
+    helpers.ppl(list(eps))
 
 
 def subcmd_station_guid(cfg: Config):
     croapp = Client(cfg)
-    guid = croapp.get_station_guid("11")
+    id=cfg.runtime_get(['commands','station_guid','id'])
+    guid = croapp.get_station_guid(str(id))
     print(guid)
 
 

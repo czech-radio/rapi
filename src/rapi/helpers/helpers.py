@@ -27,6 +27,11 @@ def pp(data: Any):
     print(data_formated)
 
 
+def ppl(data: list):
+    for i in data:
+        print(i)
+
+
 def pt(obj: Any):
     print(f"type{type(obj)}")
 

@@ -42,7 +42,7 @@ namespaces = false
 [project.optional-dependencies]
 test = ["pytest", "pytest-html"]
 lint = ["black[jupyter]","isort","ruff","flake8","mypy","pydocstyle"]
-docs = ["sphinx","myst-parser","sphinx_rtd_theme","sphinx-autobuild","sphinx-autodoc-typehints","sphinx-autoapi","MyST-NB","jupyter","visidata"]
+docs = ["sphinx","myst-parser","sphinx_rtd_theme","sphinx-autobuild","sphinx-autodoc-typehints","sphinx-autoapi","MyST-NB","jupyter","visidata","jupytext"]
 type = ["types-requests","pandas-stubs"]
 dev = ["rapi[test]","rapi[lint]","rapi[docs]","rapi[types]"]
 
@@ -75,3 +75,5 @@ markers = [
 [tool.isort]
 profile = "black"
 
+[tool.jupytext]
+formats = "ipynb,py:precent"

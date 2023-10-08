@@ -1,6 +1,6 @@
 # Config: one config to rull them all
 
-## PURPOSE
+## Purpose
 - There are many ways how to modify program variables:
 commandline parameters, environmental variables, user config files, or python dictionaries created at runtime. 
 
@@ -18,7 +18,7 @@ Programmer has to then somehow establish the source priority of variable value.
 
 I think that it is convenient to have definition of: default variables, relevant environment variables, commadline parameters, user modifiable variables, recipe for creating the program and documentation in one file. Further layers can be added using yaml comments. For example docker-compose.yml (not implemented).
 
-## CONFIG SOURCES
+## Config sources
 
 - commandline parameters:
 
@@ -77,7 +77,7 @@ can be any subset of default.yml. User cannot create, set any other variables or
     not_a_par: "world_hello"
     ```
 
-## USAGE
+## Usage
 ### default usage
 - cfg_runtime_set_defaults() will load following sources of variables and merge them in with dictionary constructed from defaults.yml in order of decreasing priority:
 
@@ -111,7 +111,7 @@ can be any subset of default.yml. User cannot create, set any other variables or
     varname=Cfg.runtime_get(["debug","cfg"])
     ```
 
-## DEVELOPEMENT NOTES
+## Developement notes
 
 - given in ./rapi/src/rapi/params.py
 

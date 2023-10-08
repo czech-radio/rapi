@@ -10,12 +10,16 @@ workdir:
 usercfg:
   file: "./tests/data/defaults_alt.yml"
 subcommand:
-commands:       # subcommands definition
-  station_guid:   # -sg; str; store; get station guid
-  station:      # filter stations
-    id: 1       # -id; int; store; filter by id
-    test: 
+commands:         # subcommands definition
+  station_ids:
+  station_guid:  
+    id: 11        # -id; int; store; filter by id
+  station:        # filter stations
+    # id: 1       # -id; int; store; filter by id
+    # test: 
   show:
+  show_episodes:
+    id: "c7374f41-ae14-3b5c-8c04-385e3241deb4"       # -id; int; store; filter by id
   show_ep_filter:
     show_id:    # -sef_id; str; store; get show episodes by show id
     date_from:  # -sef_df; date_tz; store; filter episodes from date: YY-mm-dd_HH:MM

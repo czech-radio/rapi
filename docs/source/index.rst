@@ -9,12 +9,25 @@ Welcome to RAPI's documentation!
 .. toctree::
    :maxdepth: 2
    :glob:
-   :caption: Contents:
-   
-   notebooks/*
-   issues
-   features_discusion.md
+   :caption: Usage:
+
+   notebooks/stations.ipynb
+   notebooks/station_shows.ipynb
+   notebooks/show_episodes.ipynb
+   notebooks/moderators.ipynb
+   notebooks/client_usage.ipynb
+  
+.. toctree::
+   :caption: Configuration:
+
    configuration
+   notebooks/configuration_usage.ipynb
+
+.. toctree::
+   :caption: Develop:
+
+   issues.md
+   features_discusion.md
 
 
 Indices and tables

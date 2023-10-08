@@ -380,9 +380,10 @@ class Client:
         for person in persons:
             yield person
 
-    def get_show_premieres(
+    def get_show_episodes_last_repetition(
         self, id: str, limit: int = 0
     ) -> Iterator[Episode_schedule]:
+        # NOTE: Acording to Jan Hejzl (see features discussion: file:./docs/build/features_discusion.html) the date of premiere is automaticaly rewritten with the date of episode repetition
         # endpoint = "shows/" + show_id + "/participants"
         endpoint = "shows/" + id + "/schedule-episodes"  # Returns empty
         # endpoint="serials/"
@@ -398,5 +399,8 @@ class Client:
         for episode_schedule in epschedules:
             yield episode_schedule
 
-    def get_repetitions(self) -> Iterator[Episode]:
+    def get_show_episodes_premieres(self) -> Iterator[Episode]:
+        return NotImplemented
+
+    def get_show_episodes_repetitions(self) -> Iterator[Episode]:
         return NotImplemented

@@ -166,16 +166,15 @@ def test_get_station(client) -> None:
     station = client.get_station(str(11))
     assert station
 
-
+@pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
-    stations1 = client.get_stations()
+    # NOTE: Number of stations seems to be rather dynamic in time: 27, 28, 33
+    stations1 = list(client.get_stations())
     assert stations1
-    assert len(list(stations1)) == 27
-    stations2 = client.get_stations(10)
-    # NOTE: occasionally it returns 28 stations instead of 27?
+    stations2 = list(client.get_stations(10))
     assert stations2
-    assert len(list(stations2)) == 27
+    assert len(stations2) == len(stations1)
 
 
 @pytest.mark.client
@@ -238,7 +237,6 @@ def test_get_show_episodes_schedule(client) -> None:
     assert data
 
 
-@pytest.mark.current
 @pytest.mark.client
 def test_get_station_schedule_day_flat(client) -> None:
     data = client.get_station_schedule_day_flat("2023-09-11", "11")
@@ -299,23 +297,3 @@ def test_get_show_moderators(client) -> None:
 def test_get_person(client) -> None:
     data = client.get_person(sample_persons[0])
     assert data
-
-
-# @pytest.mark.current
-# NOT IMPLEMENTED YET
-def test_get_show_premieres(client) -> None:
-    # shows=client.get_station_shows("11")
-    # pshows=pd.DataFrame(shows,columns=['uuid'])
-    # for i in pshows.uuid:
-    # print(i)
-    # data = client.get_show_premieres(i)
-    # print(data)
-    # data = client.get_show_episodes(sample_shows[0])
-    # print(data)
-    # print(pd.DataFrame(data,columns=['uuid','since','till']))
-    for i in sample_shows_with_schedule:
-        id = sample_radio_11_shows[i]
-        data = client.get_show_premieres(id)
-        print(list(data))
-        data = client.get_show_episodes(id)
-        break
