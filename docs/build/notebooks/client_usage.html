@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Library Showcase &#8212; RAPI  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Config: one config to rull them all" href="../configuration.html" />
+    <link rel="prev" title="Get all participants for given show" href="moderators.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="library-showcase">
+<h1>Library Showcase<a class="headerlink" href="#library-showcase" title="Permalink to this heading">¶</a></h1>
+<p>FIXME: Add some description</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="get-all-available-stations">
+<h2>Get all available stations<a class="headerlink" href="#get-all-available-stations" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stations</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_stations</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">stations</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-all-shows-for-given-station">
+<h2>Get all shows for given station<a class="headerlink" href="#get-all-shows-for-given-station" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shows</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_shows</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">shows</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Show(uuid=&#39;c239aa59-bc78-3180-9b58-5c911846630d&#39;, type=&#39;show&#39;, content=True, title=&#39;100 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, description_short=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))),
+ Show(uuid=&#39;af62bd59-1e49-3dae-a68b-90b11f5d2ae6&#39;, type=&#39;show&#39;, content=True, title=&#39;90 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, description_short=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))),
+ Show(uuid=&#39;d88f0d67-6ba1-3ba5-8fea-01e41a614037&#39;, type=&#39;show&#39;, content=True, title=&#39;Antivirus&#39;, active=True, aired=True, podcast=True, priority=0, child_friendly=False, description=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. Budou mluvit o aktuálních kyberútocích a podvodech na internetu a přidají i tipy, jak chránit sebe i své děti nebo rodiče. Antivirus doplní články na zpravodajském webu iRozhlas.cz.&#39;, description_short=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa.\xa0&#39;, updated=datetime.datetime(2023, 9, 4, 10, 0, 10, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-particular-show-by-uuid">
+<h2>Get particular show by UUID<a class="headerlink" href="#get-particular-show-by-uuid" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span><span class="o">.</span><span class="n">get_show</span><span class="p">(</span><span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Show(uuid=&#39;739a46c7-35e3-336e-a7d5-08a20b7e7677&#39;, type=&#39;show&#39;, content=True, title=&#39;Rozhovory Radiožurnálu&#39;, active=True, aired=True, podcast=False, priority=0, child_friendly=False, description=&#39;Ptáme se na všechno, co vás zajímá. Každý den se snažíme kontaktovat politiky, specialisty a odborníky z nejrůznějších profesí, abychom vám nabídli jejich názory a pohledy na nejaktuálnější témata.&#39;, description_short=&#39;Každý den se snažíme kontaktovat politiky, specialisty a odborníky z nejrůznějších profesí, abychom vám nabídli jejich názory a pohledy na nejaktuálnější témata.&#39;, updated=datetime.datetime(2023, 7, 14, 17, 0, 12, tzinfo=tzoffset(None, 7200)))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-show-episodes">
+<h2>Get show episodes<a class="headerlink" href="#get-show-episodes" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_episodes</span><span class="p">(</span><span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">episodes</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;036a7f04-ed74-35a1-9923-0e8210d42435&#39;, title=&#39;Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC&#39;, title_short=&#39;Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC&#39;, description=&#39;&lt;p&gt;Sdružení CZ.NIC, které spravuje českou internetovou doménu, před týdnem rozhodlo o zablokování osmi tuzemských webů. Svůj postup odůvodnilo tím, že zmíněné stránky šířily v souvislosti s ruskou invazí na Ukrajinu dezinformace a ohrožovaly tak národní bezpečnost. „Naše pravidla říkají, že blokace může být maximálně na jeden měsíc, pak je potřeba ji znovu zvážit,“ objasňuje výkonný ředitel sdružení CZ.NIC Ondřej Filip.&lt;br&gt;\nJan Pokorný&lt;/p&gt;&#39;, since=datetime.datetime(2022, 3, 6, 8, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 3, 6, 8, 43, 13, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 3, 6, 10, 40, 36, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10139151&#39;, base_id=None),
+ Episode(uuid=&#39;07c812e2-6bc3-3f22-bb18-b7ec85c6cddc&#39;, title=&#39;Analytik: Kdo vydrží déle? Rusové se budou snažit Ukrajince vyhladovět. Jenže pod tlakem je i Rusko&#39;, title_short=&#39;Svárovský: Rusové se budou snažit Ukrajince vyhladovět. Západ musí zajistit dodávky jídla a zbraní&#39;, description=&#39;&lt;p&gt;Ruská armáda má zastavit palbu a otevřít humanitární koridory v několika ukrajinských městech, aby umožnila odchod civilistů. Podle britské vojenské rozvědky se ale ruské jednotky při odstřelování zaměřují na obydlené oblasti. „Věřit se ruské armádě moc nedá, zaměření se na města vyplývá z&amp;nbsp;průběhu operace,“ říká vedoucí Programu bezpečnostních strategií Bezpečnostního centra Evropské hodnoty Martin Svárovský.&lt;br&gt;\nJan Pokorný&lt;/p&gt;&#39;, since=datetime.datetime(2022, 3, 7, 10, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 3, 7, 10, 24, 49, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 3, 7, 10, 30, 31, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10139979&#39;, base_id=None),
+ Episode(uuid=&#39;143dc660-137c-3e51-8243-8436c068977f&#39;, title=&#39;Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal&#39;, title_short=&#39;Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal&#39;, description=&#39;&lt;p&gt;Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.&lt;br&gt;\nZuzana Machálková&lt;/p&gt;&#39;, since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10516074&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filter-show-episodes-by-date">
+<h2>Filter show episodes by date<a class="headerlink" href="#filter-show-episodes-by-date" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">show_episodes_filter</span><span class="p">(</span>
+    <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">,</span> <span class="s2">&quot;2022&quot;</span><span class="p">,</span> <span class="s2">&quot;2023&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">episodes</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;143dc660-137c-3e51-8243-8436c068977f&#39;, title=&#39;Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal&#39;, title_short=&#39;Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal&#39;, description=&#39;&lt;p&gt;Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.&lt;br&gt;\nZuzana Machálková&lt;/p&gt;&#39;, since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10516074&#39;, base_id=None),
+ Episode(uuid=&#39;19c600d1-c560-3ac0-93f3-a8b4e03d78b3&#39;, title=&#39;Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy&#39;, title_short=&#39;Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy&#39;, description=&#39;&lt;p&gt;Podobně jako o minulých víkendech i dnes tisíce Čechů vyráží do Polska za předvánočními nákupy. Lákají je nízké ceny. Polská vláda totiž v únoru kvůli vysoké inflaci snížila daň z přidané hodnoty. „Parkoviště u obchodních řetězců jsou slušně zaplněná. Žena, která tu vybírá parkovné, mi v&amp;nbsp;nadsázce řekla, že se sem vejde celé Česko,“ popisuje reportér Jakub Vik z&amp;nbsp;města Kudowa Zdrój nedaleko Náchoda.&lt;br&gt;\nVojtěch Bidrman&lt;/p&gt;&#39;, since=datetime.datetime(2022, 12, 3, 11, 27, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 3, 11, 29, 27, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 12, 3, 11, 40, 11, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10502178&#39;, base_id=None),
+ Episode(uuid=&#39;1ebd3d43-fc96-3e19-a494-73916e389a3e&#39;, title=&#39;Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař&#39;, title_short=&#39;Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař&#39;, description=&#39;&lt;p&gt;Jen čtyři tisíce kroků stačí k tomu, aby se snížilo riziko předčasného úmrtí, a pouhých 2300 prospěje srdci a cévám&amp;nbsp;– to tvrdí tým z Lékařské univerzity v Lodži a americké Univerzity Johnse Hopkinse. Ještě před několika lety bylo ale ideálním číslem 10 000 kroků, čili zhruba sedm kilometrů denně. Jak to tedy je? Poslechněte si rozhovor s primářem II. interní kliniky kardiologie a angiologie Všeobecné fakultní nemocnice v Praze Alešem Linhartem.&lt;br&gt;\nŠtěpán Pokorný&lt;/p&gt;&#39;, since=datetime.datetime(2023, 8, 11, 9, 35, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 8, 11, 9, 40, 14, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2023, 8, 11, 10, 25, 15, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10875017&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">show_episodes_filter</span><span class="p">(</span>
+    <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2022-08-11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2023-09-11&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">episodes</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;143dc660-137c-3e51-8243-8436c068977f&#39;, title=&#39;Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal&#39;, title_short=&#39;Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal&#39;, description=&#39;&lt;p&gt;Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.&lt;br&gt;\nZuzana Machálková&lt;/p&gt;&#39;, since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10516074&#39;, base_id=None),
+ Episode(uuid=&#39;19c600d1-c560-3ac0-93f3-a8b4e03d78b3&#39;, title=&#39;Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy&#39;, title_short=&#39;Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy&#39;, description=&#39;&lt;p&gt;Podobně jako o minulých víkendech i dnes tisíce Čechů vyráží do Polska za předvánočními nákupy. Lákají je nízké ceny. Polská vláda totiž v únoru kvůli vysoké inflaci snížila daň z přidané hodnoty. „Parkoviště u obchodních řetězců jsou slušně zaplněná. Žena, která tu vybírá parkovné, mi v&amp;nbsp;nadsázce řekla, že se sem vejde celé Česko,“ popisuje reportér Jakub Vik z&amp;nbsp;města Kudowa Zdrój nedaleko Náchoda.&lt;br&gt;\nVojtěch Bidrman&lt;/p&gt;&#39;, since=datetime.datetime(2022, 12, 3, 11, 27, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 3, 11, 29, 27, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 12, 3, 11, 40, 11, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10502178&#39;, base_id=None),
+ Episode(uuid=&#39;1ebd3d43-fc96-3e19-a494-73916e389a3e&#39;, title=&#39;Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař&#39;, title_short=&#39;Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař&#39;, description=&#39;&lt;p&gt;Jen čtyři tisíce kroků stačí k tomu, aby se snížilo riziko předčasného úmrtí, a pouhých 2300 prospěje srdci a cévám&amp;nbsp;– to tvrdí tým z Lékařské univerzity v Lodži a americké Univerzity Johnse Hopkinse. Ještě před několika lety bylo ale ideálním číslem 10 000 kroků, čili zhruba sedm kilometrů denně. Jak to tedy je? Poslechněte si rozhovor s primářem II. interní kliniky kardiologie a angiologie Všeobecné fakultní nemocnice v Praze Alešem Linhartem.&lt;br&gt;\nŠtěpán Pokorný&lt;/p&gt;&#39;, since=datetime.datetime(2023, 8, 11, 9, 35, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 8, 11, 9, 40, 14, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2023, 8, 11, 10, 25, 15, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10875017&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eps_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="s2">&quot;2023-09-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-09-18&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">eps_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;000b180f-3215-3cc4-abed-81c3c9d5cf27&#39;, title=&#39;Aktuální události doma i ve světě&#39;, description=&#39;&#39;, station=&#39;c639d927-f37b-3db8-a64f-1d64ee1469b2&#39;, station_code=97, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 2, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 2, 5, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;001db6b6-f7e1-3683-aba8-b408a7f45a50&#39;, title=&#39;Richard Mayer: Island&#39;, description=&#39;Fantazie pro klavír. Hraje Vlastimil Bialas. - Karl Ottó Runólfsson: Sonáta pro trubku a klavír. Hrají Vlastimil Bialas a Milan Bialas. - Jórunn Vidarová: Písně. Výběr. Zpívá Helga Rós Indridadóttir, hraje Gudrun Dalía Salómonsdóttir (klavír). - - Porkell Sigurbjörnsson: Šest islandských lidových písní pro violu a klavír. Hrají Svava Bernhardsdóttir a Anna Gudný Gudmundsdóttir. - Jón Leifs: Tři obrazy pro orchestr. Hraje Islandský symfonický orchestr, řídí Paul Zukofsky. (Brno)&#39;, station=&#39;0134ce01-8684-3556-b568-f208392ac0bd&#39;, station_code=3, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 0, 29, 24, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 1, 29, 15, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;0050e40c-cb40-355a-88ae-fb37e594bbdd&#39;, title=&#39;Zprávy z Vysočiny - 17. 9. 2023&#39;, description=&#39;&#39;, station=&#39;36dc9675-1fe8-3c69-b362-ee6784b04ef0&#39;, station_code=84, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 9, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 9, 3, 30, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eps_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="s2">&quot;2023-09-17T8:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-09-17T9:00&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">eps_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;078b9557-2841-3885-be54-47ff0585420d&#39;, title=&#39;Pozvánky a tipy na kulturní i společenské akce v Plzeňském kraji&#39;, description=&#39;Moderuje Ondřej Kapic&#39;, station=&#39;bbe67c0f-4848-355e-a0ab-28f40ade3d38&#39;, station_code=5, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 50, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 55, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;0e4ef764-5bc2-3db0-b3f3-07fd068e6ed0&#39;, title=&#39;Vysílání v němčině - 17. 9. 2023&#39;, description=&#39;&#39;, station=&#39;6731e7ee-98e7-36c3-993b-3122ad1317d1&#39;, station_code=12, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 30, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;0e64fddd-51b1-3b92-8bc9-bc7441c7f28e&#39;, title=&#39;Zpravodajství z Česka i ze světa&#39;, description=&#39;Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 45, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 45, 30, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="get-schedule-filter-by-date-and-station-slow-list-eps-schedule-3">
+<h3>Get schedule filter by date and station (slow)list(eps_schedule)[:3]<a class="headerlink" href="#get-schedule-filter-by-date-and-station-slow-list-eps-schedule-3" title="Permalink to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eps_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="s2">&quot;2023-09-17T8:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-09-17T9:00&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">eps_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;0e64fddd-51b1-3b92-8bc9-bc7441c7f28e&#39;, title=&#39;Zpravodajství z Česka i ze světa&#39;, description=&#39;Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 45, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 45, 30, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;528f6d40-3a45-3e23-af9c-27a033fdf1d5&#39;, title=&#39;V Ostravě pokračují Dny NATO&#39;, description=&#39;Na první den přehlídky armádní techniky a bezpečnostních složek dorazilo podle organizátorů asi 100 tisíc lidí. I dnes návštěvníci uvidí třeba americké stíhačky F35 nebo švédské gripeny. Obhájci extraligového titulu z Třince se poprvé v nové sezoně nejvyšší hokejové soutěže představí svým fanouškům na domácím ledě. Extraliga nabídne ale i dalších 6 zápasů. Všechny souboje v přímém přenosu naladíte na webových stránkách irozhlas.cz, radiozurnalsport.cz a také v aplikaci Můj rozhlas. Který z nich si vybrat, to vám napovíme. Pokud chcete změnit zdravotní pojišťovnu, máte na to už jen dva týdny. Další příležitost pak bude zase až po Novém roce. Na výši pojistného sice nic neuspoříte, jednotlivé pojišťovny se ale liší v nabízených benefitech třeba příspěvcích na výživu pro děti, nebo dentální hygienu. Na co si dát při změně pozor? Ještě mu není osmnáct, ale už má na tři stovky medailí z celého světa. Karel Korenc z Loun se od pěti let věnuje bojovému umění kung-fu a je několikanásobný mistr Evropy, šampion Ameriky a taky mistr světa. V dětství ho nadchly filmy o bojovnících, teď mezi ně díky svému talentu patří. Víc se dozvíte v dalším díle seriálu Mladí a nadaní. Aktuální reportáže a nejrychlejší zpravodajství, informace z denního tisku. Moderuje Štěpán Pokorný.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 5, 30, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 9, 0, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;5a457c8f-588e-32e3-b8aa-b8fa0d1ba0aa&#39;, title=&#39;Z domova i ze světa&#39;, description=&#39;Sport, Zelená vlna a počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 4, 30, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="get-show-participants-with-role">
+<h2>Get show participants with role<a class="headerlink" href="#get-show-participants-with-role" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">participants</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_participants_with_roles</span><span class="p">(</span>
+    <span class="s2">&quot;c7374f41-ae14-3b5c-8c04-385e3241deb4&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">participants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Person(uuid=&#39;4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f&#39;, title=&#39;Jiří Chum&#39;, description_short=&#39;&lt;p&gt;Moderuje každý všední den Dopolední Radiožurnál.&lt;/p&gt;&#39;, description=&#39;&lt;p&gt;&lt;strong&gt;Co dělám v rozhlase:&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;span&gt;Na Radiožurnálu moderuji od roku 2002, od března 2008 do prosince 2010 Odpolední Radiožurnál a od ledna 2011\xa0&lt;/span&gt;Večerní Radiožurnál&lt;span&gt;\xa0a ob týden\xa0&lt;/span&gt;Víkendový Ranní Radiožurnál&lt;span&gt;. Deset let jsem moderoval každý všední den Ranní Radiožurnál a od 1. července 2022 usedám za mikrofon Dopoledního Radiožurnálu. Ještě déle spolupracuji s regionální stanicí ČRo Region střední Čechy. V současnosti ale už jen v oblasti selfpromotion.&lt;/span&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;Před rozhlasem:&lt;/strong&gt;&lt;br /&gt;\nVystudoval jsem SSPoŠ Kolín se zaměřením na ekonomiku a management, poté si dal na pár let pauzu a v současnosti studuji Fakultu multimediálních komunikaci UTB ve Zlíně obor Marketingové komunikace. Z rádiové praxe: rádio City 937 a dlouhá léta Český rozhlas, kterému jsem nakonec zůstal věrný.&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;\n\n&#39;, profile_id=&#39;5002938&#39;, role=&#39;moderator&#39;, participation_link=&#39;https://api.mujrozhlas.cz/persons/4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f/participation&#39;, participation_data=[{&#39;type&#39;: &#39;station&#39;, &#39;id&#39;: &#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, &#39;meta&#39;: {&#39;role&#39;: &#39;Moderátoři&#39;}}])]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-show-moderators">
+<h2>Get show moderators<a class="headerlink" href="#get-show-moderators" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moderators</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_moderators</span><span class="p">(</span><span class="s2">&quot;c7374f41-ae14-3b5c-8c04-385e3241deb4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">moderators</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mls</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;uuid&quot;: &quot;4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f&quot;,
+  &quot;title&quot;: &quot;Jiří Chum&quot;,
+  &quot;description_short&quot;: &quot;&lt;p&gt;Moderuje každý všední den Dopolední Radiožurnál.&lt;/p&gt;&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;&lt;strong&gt;Co dělám v rozhlase:&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;span&gt;Na Radiožurnálu moderuji od roku 2002, od března 2008 do prosince 2010 Odpolední Radiožurnál a od ledna 2011 &lt;/span&gt;Večerní Radiožurnál&lt;span&gt; a ob týden &lt;/span&gt;Víkendový Ranní Radiožurnál&lt;span&gt;. Deset let jsem moderoval každý všední den Ranní Radiožurnál a od 1. července 2022 usedám za mikrofon Dopoledního Radiožurnálu. Ještě déle spolupracuji s regionální stanicí ČRo Region střední Čechy. V současnosti ale už jen v oblasti selfpromotion.&lt;/span&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;Před rozhlasem:&lt;/strong&gt;&lt;br /&gt;\nVystudoval jsem SSPoŠ Kolín se zaměřením na ekonomiku a management, poté si dal na pár let pauzu a v současnosti studuji Fakultu multimediálních komunikaci UTB ve Zlíně obor Marketingové komunikace. Z rádiové praxe: rádio City 937 a dlouhá léta Český rozhlas, kterému jsem nakonec zůstal věrný.&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;\n\n&quot;,
+  &quot;profile_id&quot;: &quot;5002938&quot;,
+  &quot;role&quot;: &quot;moderator&quot;,
+  &quot;participation_link&quot;: &quot;https://api.mujrozhlas.cz/persons/4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f/participation&quot;,
+  &quot;participation_data&quot;: [
+    {
+      &quot;type&quot;: &quot;station&quot;,
+      &quot;id&quot;: &quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;,
+      &quot;meta&quot;: {
+        &quot;role&quot;: &quot;Moderátoři&quot;
+      }
+    }
+  ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-station-schedule-day">
+<h2>Get station schedule day<a class="headerlink" href="#get-station-schedule-day" title="Permalink to this heading">¶</a></h2>
+<section id="get-station-schedule-day-flat">
+<h3>Get station schedule day flat<a class="headerlink" href="#get-station-schedule-day-flat" title="Permalink to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_schedule_day_flat</span><span class="p">(</span><span class="s2">&quot;2023-09-11&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">day_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;b76f6685-02dd-33ee-9bd8-5fcb5c19ba80&#39;, title=&#39;Zpravodajství z Česka i ze světa&#39;, description=&#39;Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;b9973c2e-f6af-36ec-a281-0c0768c136c7&#39;, title=&#39;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&#39;, description=&#39;&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;003317bc-331d-3905-a318-62a1008bddc4&#39;, title=&#39;Aktuální reportáže a nejrychlejší zpravodajství&#39;, description=&#39;Moderuje Adam Carda a Jiří Štefl.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 30, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Get station schedule day<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_schedule_day</span><span class="p">(</span><span class="s2">&quot;2023-09-11&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ldata</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ldata</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;b76f6685-02dd-33ee-9bd8-5fcb5c19ba80&#39;, title=&#39;Zpravodajství z Česka i ze světa&#39;, description=&#39;Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;b9973c2e-f6af-36ec-a281-0c0768c136c7&#39;, title=&#39;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&#39;, description=&#39;&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;003317bc-331d-3905-a318-62a1008bddc4&#39;, title=&#39;Aktuální reportáže a nejrychlejší zpravodajství&#39;, description=&#39;Moderuje Adam Carda a Jiří Štefl.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 1, 0, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ldata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Episode_schedule(uuid=&#39;b9973c2e-f6af-36ec-a281-0c0768c136c7&#39;, title=&#39;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&#39;, description=&#39;&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200)))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ldata</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;uuid&quot;: &quot;b9973c2e-f6af-36ec-a281-0c0768c136c7&quot;,
+  &quot;title&quot;: &quot;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;station&quot;: &quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;,
+  &quot;station_code&quot;: 1,
+  &quot;show_priority&quot;: 0,
+  &quot;show_times&quot;: null,
+  &quot;since&quot;: &quot;2023-09-11T00:09:00+02:00&quot;,
+  &quot;till&quot;: &quot;2023-09-11T00:10:00+02:00&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Library Showcase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-all-available-stations">Get all available stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-all-shows-for-given-station">Get all shows for given station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-particular-show-by-uuid">Get particular show by UUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-show-episodes">Get show episodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filter-show-episodes-by-date">Filter show episodes by date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-show-participants-with-role">Get show participants with role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-show-moderators">Get show moderators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-station-schedule-day">Get station schedule day</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Config: one config to rull them all</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_usage.html">Config default usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="moderators.html" title="previous chapter">Get all participants for given show</a></li>
+      <li>Next: <a href="../configuration.html" title="next chapter">Config: one config to rull them all</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Czech Radio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/notebooks/client_usage.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

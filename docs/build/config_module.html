@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Config: one config to rull them all &#8212; RAPI  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="prejmonavat class client" href="todo.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="config-one-config-to-rull-them-all">
+<h1>Config: one config to rull them all<a class="headerlink" href="#config-one-config-to-rull-them-all" title="Permalink to this heading">¶</a></h1>
+<section id="purpose">
+<h2>PURPOSE<a class="headerlink" href="#purpose" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>There are many ways how to modify program variables:
+commandline parameters, environmental variables, user config files, or python dictionaries created at runtime.</p></li>
+<li><p>The relevant environmental variables must be parsed in source code with os.getenv or with os.environ.items(). List of relevant env vars must be somewhere. One file for user config, second in source code.</p></li>
+<li><p>The parameters must defined in source code, with argparse:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+    <span class="s2">&quot;-s&quot;</span><span class="p">,</span> <span class="s2">&quot;--stations&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The station for the schedule.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Programmer has to then somehow establish the source priority of variable value.</p>
+<p>I think that it is convenient to have definition of: default variables, relevant environment variables, commadline parameters, user modifiable variables, recipe for creating the program and documentation in one file. Further layers can be added using yaml comments. For example docker-compose.yml (not implemented).</p>
+</section>
+<section id="config-sources">
+<h2>CONFIG SOURCES<a class="headerlink" href="#config-sources" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>commandline parameters:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rapi<span class="w"> </span>--debug-cfg<span class="w"> </span>
+</pre></div>
+</div>
+</li>
+<li><p>environmental variables:</p>
+<ul class="simple">
+<li><p>shell</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>printenv
+<span class="nb">export</span><span class="w"> </span>&lt;varname&gt;<span class="o">=</span>&lt;value&gt;
+printenv<span class="w"> </span>&lt;varname&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">debug_cfg</span><span class="o">=</span>True
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>powershell</p></li>
+</ul>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$Env</span>
+<span class="nv">$Env</span><span class="p">:&lt;</span><span class="n">varname</span><span class="p">&gt;</span> <span class="p">=</span> <span class="s2">&quot;&lt;value&gt;&quot;</span>
+<span class="nv">$Env</span><span class="p">:&lt;</span><span class="n">varname</span><span class="p">&gt;</span>
+<span class="nv">$Env:debug_cfg</span><span class="p">=</span><span class="n">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>default configuration file default.yml:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debug</span><span class="p">:</span>
+  <span class="n">cfg</span><span class="p">:</span> <span class="n">true</span>  <span class="c1"># -dc; bool; store_true; debug runtime</span>
+<span class="n">not_a_par</span><span class="p">:</span> <span class="s2">&quot;hello_world&quot;</span>
+<span class="n">commands</span><span class="p">:</span>
+  <span class="n">stations</span><span class="p">:</span>
+    <span class="n">station_id</span><span class="p">:</span> <span class="c1"># -si; int; store; filter station by id</span>
+</pre></div>
+</div>
+<p>The comment following inline ‘#’ is recipe how to parse variable as parameter. The comment has to have 4 fields delimited by ‘;’:</p>
+<ol class="arabic simple">
+<li><p>field must be unique shorthend</p></li>
+<li><p>field is variable type</p></li>
+<li><p>field is parameter type: ‘store’ means that the parameter must have value. e.g. rapi –test-par=”hello”. ‘store_true’ means that the parameter does not tak any value. (same meaning as in argparse)</p></li>
+<li><p>field is help string</p></li>
+</ol>
+<p>All such defined parameters can be also displayed with ‘-h’ switch. Without valid comment the corresponding parameter will not be created. The value of variable can be then modified only by environment or by user config file if desired.</p>
+<p>commands: is a special section. It serves as recipe how to create program subcommands.</p>
+</li>
+<li><p>user config.yml:
+can be any subset of default.yml. User cannot create, set any other variables or subcommands not explicitly given by default.yml.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">debug</span><span class="p">:</span>
+  <span class="n">cfg</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">not_a_par</span><span class="p">:</span> <span class="s2">&quot;world_hello&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="usage">
+<h2>USAGE<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<section id="default-usage">
+<h3>default usage<a class="headerlink" href="#default-usage" title="Permalink to this heading">¶</a></h3>
+<ul>
+<li><p>cfg_runtime_set_defaults() will load following sources of variables and merge them in with dictionary constructed from defaults.yml in order of decreasing priority:</p>
+<ol class="arabic simple">
+<li><p>commandline parameters</p></li>
+<li><p>environmental variables</p></li>
+<li><p>user specified config file</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Cfg</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">CFG</span><span class="p">()</span>
+<span class="n">Cfg</span><span class="o">.</span><span class="n">cfg_runtime_set_defaults</span><span class="p">()</span>
+<span class="n">varname</span><span class="o">=</span><span class="n">Cfg</span><span class="o">.</span><span class="n">runtime_get</span><span class="p">([</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="s2">&quot;cfg&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>playbook: <span class="xref myst">notebooks/config_default_usage.ipynb</span></p>
+</li>
+</ul>
+</section>
+<section id="usage-with-selected-variables-sources-with-specified-priority">
+<h3>usage with selected variables sources with specified priority<a class="headerlink" href="#usage-with-selected-variables-sources-with-specified-priority" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```
+Cfg = config.CFG()
+cfgp = config.Cfg_params()               # load commandline parameters given by user
+cfge = config.Cfg_env()                  # load env variables
+cfgf = config.Cfg_file(&quot;./user_cfg.yml&quot;) # load variables from user defined/modified file containing subset of defaults.yml
+cfgd: dict={}                            # specify subset dictionary of defaults.yml
+Cfg.add_sources([cfgp,cfge,cfge,cfgd])        # specify the source priority (in order of decreasing priority:
+                                         # if first source does not have variable defined
+                                         # the value from next source will be taken)
+Cfg.cfg_runtime_set()
+varname=Cfg.runtime_get([&quot;debug&quot;,&quot;cfg&quot;])
+```
+</pre></div>
+</div>
+</section>
+</section>
+<section id="developement-notes">
+<h2>DEVELOPEMENT NOTES<a class="headerlink" href="#developement-notes" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>given in ./rapi/src/rapi/params.py</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RAPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/client_usage.html">Library Showcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/config_default_usage.html">CONFIG DEFAULT USAGE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">prejmonavat class client</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Config: one config to rull them all</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose">PURPOSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-sources">CONFIG SOURCES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">USAGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developement-notes">DEVELOPEMENT NOTES</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="todo.html" title="previous chapter">prejmonavat class client</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Czech Radio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/config_module.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

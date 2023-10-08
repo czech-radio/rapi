@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Config default usage &#8212; RAPI  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Issues" href="../issues.html" />
+    <link rel="prev" title="Config: one config to rull them all" href="../configuration.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="config-default-usage">
+<h1>Config default usage<a class="headerlink" href="#config-default-usage" title="Permalink to this heading">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">_helpers</span>
+<span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">_config</span>
+
+<span class="kn">from</span> <span class="nn">rapi._logger</span> <span class="kn">import</span> <span class="n">log_stderr</span> <span class="k">as</span> <span class="n">loge</span>
+<span class="kn">from</span> <span class="nn">rapi._logger</span> <span class="kn">import</span> <span class="n">log_stdout</span> <span class="k">as</span> <span class="n">logo</span>
+
+<span class="c1"># ALWAYS RESTART KERNEL TO CLEANUMP ENVIRON</span>
+
+<span class="n">logo</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;run with no flags: all parameters should be default&quot;</span><span class="p">)</span>
+<span class="c1"># In test at least one commandlie parametr must be given ohterwise argparse will crash</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rapi&quot;</span><span class="p">]</span>
+<span class="n">Cfg</span> <span class="o">=</span> <span class="n">_config</span><span class="o">.</span><span class="n">CFG</span><span class="p">()</span>
+<span class="n">Cfg</span><span class="o">.</span><span class="n">cfg_runtime_set_defaults</span><span class="p">()</span>
+<span class="n">_helpers</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">Cfg</span><span class="o">.</span><span class="n">runtime_get</span><span class="p">([</span><span class="s2">&quot;test&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-09-05 20:05:10,830 [INFO] 3315805141.py:&lt;module&gt;:11 - run with no flags: all parameters should be default - log_stdout
+{
+  &quot;par&quot;: &quot;def&quot;,
+  &quot;env&quot;: &quot;def&quot;,
+  &quot;def&quot;: &quot;def&quot;,
+  &quot;alt&quot;: &quot;def&quot;,
+  &quot;cfg_prio&quot;: &quot;def.yml&quot;,
+  &quot;logs&quot;: false
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logo</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;run with some commandline flag (parameter) set&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rapi&quot;</span><span class="p">,</span> <span class="s2">&quot;--test-par=I am set from commanline flag&quot;</span><span class="p">]</span>
+<span class="n">Cfg</span> <span class="o">=</span> <span class="n">_config</span><span class="o">.</span><span class="n">CFG</span><span class="p">()</span>
+<span class="n">Cfg</span><span class="o">.</span><span class="n">cfg_runtime_set_defaults</span><span class="p">()</span>
+<span class="n">_helpers</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">Cfg</span><span class="o">.</span><span class="n">runtime_get</span><span class="p">([</span><span class="s2">&quot;test&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-09-05 20:05:10,882 [INFO] 422199664.py:&lt;module&gt;:1 - run with some commandline flag (parameter) set - log_stdout
+{
+  &quot;par&quot;: &quot;I am set from commanline flag&quot;,
+  &quot;env&quot;: &quot;def&quot;,
+  &quot;def&quot;: &quot;def&quot;,
+  &quot;alt&quot;: &quot;def&quot;,
+  &quot;cfg_prio&quot;: &quot;def.yml&quot;,
+  &quot;logs&quot;: false
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logo</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+    <span class="s2">&quot;Who will win? Variable value is set in environ and also provided on commandlie&quot;</span>
+<span class="p">)</span>
+<span class="n">logo</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;flag should win: it is default behaviour&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;test_env&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;I am set from environ&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;test_cfg_prio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Who wins? ENVIRON&quot;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;rapi&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--test-par=I am set from commandline flag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--test-cfg_prio=Who wins? FLAG&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">Cfg</span> <span class="o">=</span> <span class="n">_config</span><span class="o">.</span><span class="n">CFG</span><span class="p">()</span>
+<span class="n">Cfg</span><span class="o">.</span><span class="n">cfg_runtime_set_defaults</span><span class="p">()</span>
+<span class="n">_helpers</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">Cfg</span><span class="o">.</span><span class="n">runtime_get</span><span class="p">([</span><span class="s2">&quot;test&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-09-05 20:05:10,947 [INFO] 1261975270.py:&lt;module&gt;:1 - Who will win? Variable value is set in environ and also provided on commandlie - log_stdout
+2023-09-05 20:05:10,950 [INFO] 1261975270.py:&lt;module&gt;:4 - flag should win: it is default behaviour - log_stdout
+{
+  &quot;par&quot;: &quot;I am set from commandline flag&quot;,
+  &quot;env&quot;: &quot;I am set from environ&quot;,
+  &quot;def&quot;: &quot;def&quot;,
+  &quot;alt&quot;: &quot;def&quot;,
+  &quot;cfg_prio&quot;: &quot;Who wins? FLAG&quot;,
+  &quot;logs&quot;: false
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logo</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;get a particular variable value&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test_par:&quot;</span><span class="p">,</span> <span class="n">Cfg</span><span class="o">.</span><span class="n">runtime_get</span><span class="p">([</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;par&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-09-05 20:05:11,023 [INFO] 1977655875.py:&lt;module&gt;:1 - get a particular variable value - log_stdout
+test_par: I am set from commandline flag
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logo</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;finaly print whole runtime config&quot;</span><span class="p">)</span>
+<span class="n">_helpers</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">Cfg</span><span class="o">.</span><span class="n">cfg_runtime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-09-05 20:05:11,034 [INFO] 840747456.py:&lt;module&gt;:1 - finaly print whole runtime config - log_stdout
+{
+  &quot;verbose&quot;: 0,
+  &quot;version&quot;: false,
+  &quot;debug&quot;: {
+    &quot;cfg&quot;: false
+  },
+  &quot;workdir&quot;: {
+    &quot;dir&quot;: &quot;./runtime/&quot;
+  },
+  &quot;usercfg&quot;: {
+    &quot;file&quot;: &quot;./tests/data/defaults_alt.yml&quot;
+  },
+  &quot;subcommand&quot;: null,
+  &quot;commands&quot;: {
+    &quot;tsub&quot;: {
+      &quot;tflag1&quot;: null,
+      &quot;tflag2&quot;: null
+    },
+    &quot;station&quot;: {
+      &quot;id&quot;: 1,
+      &quot;test&quot;: null
+    },
+    &quot;show&quot;: null,
+    &quot;show_ep_filter&quot;: {
+      &quot;show_id&quot;: null,
+      &quot;date_from&quot;: null,
+      &quot;date_to&quot;: null,
+      &quot;time_from&quot;: null,
+      &quot;time_to&quot;: null
+    }
+  },
+  &quot;apis&quot;: {
+    &quot;common&quot;: {
+      &quot;station_ids&quot;: null,
+      &quot;csv&quot;: &quot;default&quot;,
+      &quot;pkey&quot;: &quot;openmedia_id&quot;
+    },
+    &quot;croapp&quot;: {
+      &quot;workdir&quot;: {
+        &quot;dir&quot;: &quot;./runtime/croapp/&quot;
+      },
+      &quot;urls&quot;: {
+        &quot;mock&quot;: &quot;https://mockservice.croapp.cz/mock&quot;,
+        &quot;doc&quot;: &quot;https://rapidoc.croapp.cz&quot;,
+        &quot;api&quot;: &quot;https://mujrozhlas.croapi.cz&quot;,
+        &quot;swagger&quot;: &quot;https://rapidoc.croapp.cz/apifile/openapi.yaml&quot;
+      },
+      &quot;db_local&quot;: {
+        &quot;csvs_update&quot;: true,
+        &quot;csvs_workdir&quot;: &quot;./runtime/croapp/csv/&quot;
+      },
+      &quot;response&quot;: {
+        &quot;limit&quot;: 500,
+        &quot;limit_str&quot;: &quot;?page%5Blimit%5D=&quot;
+      },
+      &quot;endpoints&quot;: [
+        &quot;stations-all&quot;,
+        &quot;stations&quot;,
+        &quot;stations/4082f63f-30e8-375d-a326-b32cf7d86e02/shows&quot;,
+        &quot;shows&quot;,
+        &quot;serials&quot;,
+        &quot;schedule&quot;,
+        &quot;program&quot;,
+        &quot;episodes&quot;,
+        &quot;genres&quot;,
+        &quot;persons&quot;,
+        &quot;topics&quot;,
+        &quot;keywords&quot;
+      ]
+    }
+  },
+  &quot;test&quot;: {
+    &quot;par&quot;: &quot;I am set from commandline flag&quot;,
+    &quot;env&quot;: &quot;I am set from environ&quot;,
+    &quot;def&quot;: &quot;def&quot;,
+    &quot;alt&quot;: &quot;def&quot;,
+    &quot;cfg_prio&quot;: &quot;Who wins? FLAG&quot;,
+    &quot;logs&quot;: false
+  },
+  &quot;dbool&quot;: false,
+  &quot;dint&quot;: 1
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Config: one config to rull them all</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Config default usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../configuration.html" title="previous chapter">Config: one config to rull them all</a></li>
+      <li>Next: <a href="../issues.html" title="next chapter">Issues</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Czech Radio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/notebooks/configuration_usage.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
