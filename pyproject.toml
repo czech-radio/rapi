@@ -3,12 +3,12 @@ name = "rapi"
 dynamic = ["version", "readme"]
 authors = [
     {name = "Jan Kačaba", email = "jan.kacaba@rozhlas.cz"},
-		{name = "David Landa", email = "david.landa@rozhlas.cz"},
+    {name = "David Landa", email = "david.landa@rozhlas.cz"},
 ]
 description = "The Python client for <https://rapidoc.croapp.cz/>."
 requires-python = ">=3.11"
 keywords = ["REST", "API"]
-license = {text = "BSD-3-Clause"}
+license = {text = "MIT"}
 dependencies = [
 	"configparser",
 	"dacite",
@@ -24,16 +24,11 @@ dependencies = [
 	"types-python-dateutil",
 	"types-requests",
 	"types_openpyxl",
-	# "openapi3-parser",
-	# "openapi_parser",
-	# "pytz",
-	# "swagger_parser",
-	# "types-pytz",
 ]
 
 [tool.setuptools.dynamic]
 version = {attr = "rapi.__version__"}
-readme = {file = ["README.rst", "USAGE.rst"]}
+readme = {file = ["README.md"]}
 
 [tool.setuptools.packages.find]
 where = ["src"] 
@@ -53,11 +48,7 @@ rapi = "rapi._cli:main"
 line-length = 79
 
 [tool.pytest.ini_options]
-# log_cli = true
-# log_cli = false
-# log_cli_level = "DEBUG"
 log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
-# log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 markers = [
 	"client:",
 	"config:",
