@@ -2,7 +2,7 @@
 
 [![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)
 
-**The REST Python client for <https://rapidoc.croapp.cz/>.**
+**The Python REST API client for [mujrozhlas.cz](https://rapidoc.croapp.cz/).**
 
 - maintainer: Jan Kačaba
 - repository: <https://github.com/czech-radio/rapi>
