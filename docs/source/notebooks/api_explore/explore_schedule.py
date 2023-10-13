@@ -1,9 +1,13 @@
+import urllib.parse
+
+import pandas as pd
+
 from rapi import Client
 from rapi.helpers import helpers as hp
-import pandas as pd
-import urllib.parse
+
 pd.set_option('display.max_colwidth', None)
 import logging
+
 log_stdout = logging.getLogger("log_stdout")
 log_stdout.setLevel(logging.DEBUG)
 cl = Client()

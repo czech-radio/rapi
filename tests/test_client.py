@@ -153,7 +153,7 @@ sample_episodes = [
 def test_class_attrs_by_anotation_dict_dates(client) -> None:
     id = shows_with_schedule_episodes[0]
     endp = "shows/" + id + "/schedule-episodes"
-    data = client.get_endpoint_full_json(endp)
+    data = client._get_endpoint_full_json(endp)
     es = _model.Episode_schedule
     ea = _model.episode_schedule_anotation
     res = helpers.class_attrs_by_anotation_dict(data[0], es, ea)

@@ -101,21 +101,30 @@ class Client:
     ) -> list[dict]:
         link = self._get_endpoint_link(endpoint, limit)
         out: list = list()
-        response_timeout=self.Cfg.runtime_get(['apis','croapp','response','response_timeout'])
-        connect_timeout=self.Cfg.runtime_get(['apis','croapp','response','connect_timeout'])
+        response_timeout = self.Cfg.runtime_get(
+            ["apis", "croapp", "response", "response_timeout"]
+        )
+        connect_timeout = self.Cfg.runtime_get(
+            ["apis", "croapp", "response", "connect_timeout"]
+        )
         while link:
-            request_msg=f"request url: {link}"
+            request_msg = f"request url: {link}"
             logo.debug(request_msg)
             try:
-                response = self._session.get(link,timeout=(connect_timeout,response_timeout),)
+                response = self._session.get(
+                    link,
+                    timeout=(connect_timeout, response_timeout),
+                )
                 response.raise_for_status()
             except requests.exceptions.Timeout as ex:
-                raise type(ex)(str(ex),request_msg) from None
+                raise type(ex)(str(ex), request_msg) from None
             except Exception as exf:
                 if response is not None:
-                    raise type(exf)(str(exf),request_msg,response.text) from None
+                    raise type(exf)(
+                        str(exf), request_msg, response.text
+                    ) from None
                 else:
-                    raise type(exf)(str(exf),request_msg) from None
+                    raise type(exf)(str(exf), request_msg) from None
             jdata = response.json()
             data = jdata["data"]
             if not isinstance(data, list):
