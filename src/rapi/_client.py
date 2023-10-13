@@ -96,20 +96,26 @@ class Client:
             endpoint_url = endpoint_url + opt_delim + limstr + str(limit)
         return endpoint_url
 
-    def _get_endpoit_full_json(
+    def _get_endpoint_full_json(
         self, endpoint: str, limit: int = 0
     ) -> list[dict]:
         link = self._get_endpoint_link(endpoint, limit)
         out: list = list()
+        response_timeout=self.Cfg.runtime_get(['apis','croapp','response','response_timeout'])
+        connect_timeout=self.Cfg.runtime_get(['apis','croapp','response','connect_timeout'])
         while link:
-            logo.debug(f"request url: {link}")
+            request_msg=f"request url: {link}"
+            logo.debug(request_msg)
             try:
-                response = self._session.get(link)
+                response = self._session.get(link,timeout=(connect_timeout,response_timeout),)
                 response.raise_for_status()
-            except requests.exceptions.RequestException as e:
-                raise requests.exceptions.RequestException(e, response.text)
-            except Exception as e:
-                raise Exception("frequest url: {link}", e)
+            except requests.exceptions.Timeout as ex:
+                raise type(ex)(str(ex),request_msg) from None
+            except Exception as exf:
+                if response is not None:
+                    raise type(exf)(str(exf),request_msg,response.text) from None
+                else:
+                    raise type(exf)(str(exf),request_msg) from None
             jdata = response.json()
             data = jdata["data"]
             if not isinstance(data, list):
@@ -119,13 +125,13 @@ class Client:
         return out
 
     def _get_endpoint(self, endpoint: str = "", limit: int = 0) -> list[dict]:
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         return data
 
     def get_station(self, station_id: str, limit: int = 0) -> Station | None:
         guid = self.get_station_guid(str(station_id))
         endpoint = "stations/" + guid
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Station,
@@ -136,7 +142,7 @@ class Client:
         return out
 
     def get_stations(self, limit: int = 0) -> Iterator[Station]:
-        data = self._get_endpoit_full_json("stations", limit)
+        data = self._get_endpoint_full_json("stations", limit)
         stations = helpers.class_attrs_by_anotation_list(
             data,
             Station,
@@ -150,7 +156,7 @@ class Client:
     ) -> Iterator[Show]:
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         shows = helpers.class_attrs_by_anotation_list(
             data,
             Show,
@@ -161,7 +167,7 @@ class Client:
 
     def get_show(self, show_id: str, limit: int = 0) -> Show | None:
         endpoint = "shows/" + show_id
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Show,
@@ -173,7 +179,7 @@ class Client:
         self, episode_id: str, limit: int = 0
     ) -> Iterator[Episode]:
         endpoint = "shows/" + episode_id + "/episodes"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         episodes = helpers.class_attrs_by_anotation_list(
             data,
             Episode,
@@ -224,7 +230,7 @@ class Client:
         self, show_id: str, limit: int = 0
     ) -> Iterator[Episode_schedule]:
         endpoint = "shows/" + show_id + "/schedule-episodes"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         episodes_schedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -244,7 +250,7 @@ class Client:
         ## not valid request when filtering by station
         ## endpoint = "schedule-day?filter[station.id]=" + uuid # NOT WORKING
         endpoint = f"schedule-day-flat?filter[day]={day}"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -269,7 +275,7 @@ class Client:
         limit: int = 0,
     ) -> Iterator[Episode_schedule]:
         endpoint = f"schedule-day?filter[day]={day}"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -302,7 +308,7 @@ class Client:
         from_filter = f"filter[since][ge]={date_from}"
         to_filter = f"filter[till][le]={date_to}"
         endpoint = f"schedule?{from_filter}&{to_filter}"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -322,7 +328,7 @@ class Client:
 
     def get_person(self, person_id: str, limit: int = 0) -> Person | None:
         endpoint = "persons/" + person_id
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Person,
@@ -341,7 +347,7 @@ class Client:
         # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
 
         endpoint = "shows/" + show_id
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         base_path = ["relationships", "participants", "data"]
         persons_meta = helpers.dict_get_path(data[0], [*base_path])
         for p in persons_meta:
@@ -371,7 +377,7 @@ class Client:
         self, show_id: str, limit: int = 0
     ) -> Iterator[Person]:
         endpoint = "shows/" + show_id + "/participants"
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         persons = helpers.class_attrs_by_anotation_list(
             data,
             Person,
@@ -389,7 +395,7 @@ class Client:
         # endpoint="serials/"
         # endpoint="schedule/"+id
         # endpoint="program/" # very slow
-        data = self._get_endpoit_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,

@@ -24,6 +24,7 @@ dependencies = [
 	"types-python-dateutil",
 	"types-requests",
 	"types_openpyxl",
+	"urllib3",
 ]
 
 [tool.setuptools.dynamic]

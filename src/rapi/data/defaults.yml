@@ -47,6 +47,8 @@ apis:
     response:
       limit: 500
       limit_str: "page[limit]="
+      connect_timeout: 5
+      response_timeout: 40
     endpoints: [
       "stations-all",
       "stations",
