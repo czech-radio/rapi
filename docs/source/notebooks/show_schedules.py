@@ -14,7 +14,7 @@
 # ---
 
 # %% [markdown]
-# # Get all available stations
+# # Get schedules for given show
 # ## Create client
 # %%
 from rapi import Client
@@ -22,24 +22,26 @@ from rapi import Client
 cl = Client()
 
 # %% [markdown]
-# ## Create stations iterator
-# %%
-stations_iterator = cl.get_stations()
-stations = list(stations_iterator)
+# ## Get schedule
 
-# %% [markdown]
-# ## Number of stations
 # %%
-print(len(stations))
+show="2226c3be-7f0d-3c82-af47-0ec6abe992a8"
+station="4082f63f-30e8-375d-a326-b32cf7d86e02"
+since="2023-09-01"
+till="2023-10-01"
 
-# %% [markdown]
-# ## List stations as python object
 # %%
-print(stations[:3])
+data = list(cl.get_schedule(show))
+print(len(data))
 
-# %% [markdown]
-# ## List stations as string object
 # %%
-for st in stations[:3]:
-    print(st)
+data = list(cl.get_schedule(show,station))
+print(len(data))
 
+# %%
+data = list(cl.get_schedule(show,station,since))
+print(len(data))
+
+# %%
+data = list(cl.get_schedule(show,station,"",till))
+print(len(data))

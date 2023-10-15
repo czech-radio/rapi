@@ -189,7 +189,7 @@ class Client:
     ) -> Iterator[Episode]:
         # endpoint = "shows/" + episode_id + "/episodes"
         endpoint = "shows/" + episode_id + "/episodes"
-        endpoint = endpoint+"?sort=since"
+        endpoint = endpoint + "?sort=since"
         data = self._get_endpoint_full_json(endpoint, limit)
         episodes = helpers.class_attrs_by_anotation_list(
             data,
@@ -304,28 +304,29 @@ class Client:
         for episode_schedule in epschedules:
             yield episode_schedule
 
-    def get_schedule(self,
-                     show_id: str="",
-                     station_id: str="",
-                     since: str="",
-                     till: str="",
-                     limit:int=0,
-                     ):
-        endpoint="schedule"
-        urlfilters: list=list()
+    def get_schedule(
+        self,
+        show_id: str = "",
+        station_id: str = "",
+        since: str = "",
+        till: str = "",
+        limit: int = 0,
+    ):
+        endpoint = "schedule"
+        urlfilters: list = list()
         if show_id != "":
-            urlfilter=f"filter[show.id]={show_id}"
+            urlfilter = f"filter[show.id]={show_id}"
             urlfilters.append(urlfilter)
-        if station_id !="":
-            urlfilter=f"filter[stations.id]={station_id}"
+        if station_id != "":
+            urlfilter = f"filter[stations.id]={station_id}"
             urlfilters.append(urlfilter)
-        if since !="":
-            urlfilter=f"filter[since][ge]={since}"
+        if since != "":
+            urlfilter = f"filter[since][ge]={since}"
             urlfilters.append(urlfilter)
-        if till !="":
-            urlfilter=f"filter[till][le]={till}"
+        if till != "":
+            urlfilter = f"filter[till][le]={till}"
             urlfilters.append(urlfilter)
-        link=endpoint+"?"+"&".join(urlfilters)+"&sort=since"
+        link = endpoint + "?" + "&".join(urlfilters) + "&sort=since"
         data = self._get_endpoint_full_json(link, limit)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
@@ -447,8 +448,6 @@ class Client:
 
         for episode_schedule in epschedules:
             yield episode_schedule
-
-
 
     def get_show_episodes_premieres(self) -> Iterator[Episode]:
         return NotImplemented

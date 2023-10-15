@@ -18,7 +18,7 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Get all participants for given show" href="moderators.html" />
+    <link rel="next" title="Get schedules for given show" href="show_schedules.html" />
     <link rel="prev" title="Get all shows for given station" href="station_shows.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -43,6 +43,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+
 <span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -85,7 +86,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;036a7f04-ed74-35a1-9923-0e8210d42435&#39;, title=&#39;Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC&#39;, title_short=&#39;Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC&#39;, description=&#39;&lt;p&gt;Sdružení CZ.NIC, které spravuje českou internetovou doménu, před týdnem rozhodlo o zablokování osmi tuzemských webů. Svůj postup odůvodnilo tím, že zmíněné stránky šířily v souvislosti s ruskou invazí na Ukrajinu dezinformace a ohrožovaly tak národní bezpečnost. „Naše pravidla říkají, že blokace může být maximálně na jeden měsíc, pak je potřeba ji znovu zvážit,“ objasňuje výkonný ředitel sdružení CZ.NIC Ondřej Filip.&lt;br&gt;\nJan Pokorný&lt;/p&gt;&#39;, since=datetime.datetime(2022, 3, 6, 8, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 3, 6, 8, 43, 13, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 3, 6, 10, 40, 36, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10139151&#39;, base_id=None), Episode(uuid=&#39;07c812e2-6bc3-3f22-bb18-b7ec85c6cddc&#39;, title=&#39;Analytik: Kdo vydrží déle? Rusové se budou snažit Ukrajince vyhladovět. Jenže pod tlakem je i Rusko&#39;, title_short=&#39;Svárovský: Rusové se budou snažit Ukrajince vyhladovět. Západ musí zajistit dodávky jídla a zbraní&#39;, description=&#39;&lt;p&gt;Ruská armáda má zastavit palbu a otevřít humanitární koridory v několika ukrajinských městech, aby umožnila odchod civilistů. Podle britské vojenské rozvědky se ale ruské jednotky při odstřelování zaměřují na obydlené oblasti. „Věřit se ruské armádě moc nedá, zaměření se na města vyplývá z&amp;nbsp;průběhu operace,“ říká vedoucí Programu bezpečnostních strategií Bezpečnostního centra Evropské hodnoty Martin Svárovský.&lt;br&gt;\nJan Pokorný&lt;/p&gt;&#39;, since=datetime.datetime(2022, 3, 7, 10, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 3, 7, 10, 24, 49, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 3, 7, 10, 30, 31, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10139979&#39;, base_id=None), Episode(uuid=&#39;143dc660-137c-3e51-8243-8436c068977f&#39;, title=&#39;Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal&#39;, title_short=&#39;Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal&#39;, description=&#39;&lt;p&gt;Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.&lt;br&gt;\nZuzana Machálková&lt;/p&gt;&#39;, since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10516074&#39;, base_id=None)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&#39;, title=&#39;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, title_short=&#39;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, description=&#39;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 26, 14, 14, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 26, 14, 17, 16, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 26, 17, 0, 16, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10011355&#39;, base_id=None), Episode(uuid=&#39;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&#39;, title=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, title_short=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, description=&#39;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 27, 8, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 27, 8, 22, 38, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 27, 10, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10012081&#39;, base_id=None), Episode(uuid=&#39;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&#39;, title=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, title_short=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, description=&#39;&lt;p&gt;&lt;span lang=&quot;cs-CZ&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 29, 10, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 29, 10, 42, 30, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 30, 19, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10013547&#39;, base_id=None)]
 </pre></div>
 </div>
 </div>
@@ -102,45 +103,45 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-  &quot;uuid&quot;: &quot;036a7f04-ed74-35a1-9923-0e8210d42435&quot;,
-  &quot;title&quot;: &quot;Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC&quot;,
-  &quot;title_short&quot;: &quot;Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC&quot;,
-  &quot;description&quot;: &quot;&lt;p&gt;Sdružení CZ.NIC, které spravuje českou internetovou doménu, před týdnem rozhodlo o zablokování osmi tuzemských webů. Svůj postup odůvodnilo tím, že zmíněné stránky šířily v souvislosti s ruskou invazí na Ukrajinu dezinformace a ohrožovaly tak národní bezpečnost. „Naše pravidla říkají, že blokace může být maximálně na jeden měsíc, pak je potřeba ji znovu zvážit,“ objasňuje výkonný ředitel sdružení CZ.NIC Ondřej Filip.&lt;br&gt;\nJan Pokorný&lt;/p&gt;&quot;,
-  &quot;since&quot;: &quot;2022-03-06T08:40:00+01:00&quot;,
-  &quot;till&quot;: &quot;2022-03-06T08:43:13+01:00&quot;,
-  &quot;updated&quot;: &quot;2022-03-06T10:40:36+01:00&quot;,
+  &quot;uuid&quot;: &quot;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&quot;,
+  &quot;title&quot;: &quot;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&quot;,
+  &quot;title_short&quot;: &quot;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&quot;,
+  &quot;since&quot;: &quot;2021-11-26T14:14:00+01:00&quot;,
+  &quot;till&quot;: &quot;2021-11-26T14:17:16+01:00&quot;,
+  &quot;updated&quot;: &quot;2021-11-26T17:00:16+01:00&quot;,
   &quot;part&quot;: null,
   &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
   &quot;content_creator&quot;: &quot;radiozurnal&quot;,
-  &quot;content_id&quot;: &quot;10139151&quot;,
+  &quot;content_id&quot;: &quot;10011355&quot;,
   &quot;base_id&quot;: null
 }
 {
-  &quot;uuid&quot;: &quot;07c812e2-6bc3-3f22-bb18-b7ec85c6cddc&quot;,
-  &quot;title&quot;: &quot;Analytik: Kdo vydrží déle? Rusové se budou snažit Ukrajince vyhladovět. Jenže pod tlakem je i Rusko&quot;,
-  &quot;title_short&quot;: &quot;Svárovský: Rusové se budou snažit Ukrajince vyhladovět. Západ musí zajistit dodávky jídla a zbraní&quot;,
-  &quot;description&quot;: &quot;&lt;p&gt;Ruská armáda má zastavit palbu a otevřít humanitární koridory v několika ukrajinských městech, aby umožnila odchod civilistů. Podle britské vojenské rozvědky se ale ruské jednotky při odstřelování zaměřují na obydlené oblasti. „Věřit se ruské armádě moc nedá, zaměření se na města vyplývá z&amp;nbsp;průběhu operace,“ říká vedoucí Programu bezpečnostních strategií Bezpečnostního centra Evropské hodnoty Martin Svárovský.&lt;br&gt;\nJan Pokorný&lt;/p&gt;&quot;,
-  &quot;since&quot;: &quot;2022-03-07T10:20:00+01:00&quot;,
-  &quot;till&quot;: &quot;2022-03-07T10:24:49+01:00&quot;,
-  &quot;updated&quot;: &quot;2022-03-07T10:30:31+01:00&quot;,
+  &quot;uuid&quot;: &quot;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&quot;,
+  &quot;title&quot;: &quot;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&quot;,
+  &quot;title_short&quot;: &quot;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&quot;,
+  &quot;since&quot;: &quot;2021-11-27T08:20:00+01:00&quot;,
+  &quot;till&quot;: &quot;2021-11-27T08:22:38+01:00&quot;,
+  &quot;updated&quot;: &quot;2021-11-27T10:20:19+01:00&quot;,
   &quot;part&quot;: null,
   &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
   &quot;content_creator&quot;: &quot;radiozurnal&quot;,
-  &quot;content_id&quot;: &quot;10139979&quot;,
+  &quot;content_id&quot;: &quot;10012081&quot;,
   &quot;base_id&quot;: null
 }
 {
-  &quot;uuid&quot;: &quot;143dc660-137c-3e51-8243-8436c068977f&quot;,
-  &quot;title&quot;: &quot;Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal&quot;,
-  &quot;title_short&quot;: &quot;Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal&quot;,
-  &quot;description&quot;: &quot;&lt;p&gt;Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.&lt;br&gt;\nZuzana Machálková&lt;/p&gt;&quot;,
-  &quot;since&quot;: &quot;2022-12-13T11:47:00+01:00&quot;,
-  &quot;till&quot;: &quot;2022-12-13T11:57:56+01:00&quot;,
-  &quot;updated&quot;: &quot;2023-01-02T14:00:25+01:00&quot;,
+  &quot;uuid&quot;: &quot;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&quot;,
+  &quot;title&quot;: &quot;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&quot;,
+  &quot;title_short&quot;: &quot;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;&lt;span lang=\&quot;cs-CZ\&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&quot;,
+  &quot;since&quot;: &quot;2021-11-29T10:40:00+01:00&quot;,
+  &quot;till&quot;: &quot;2021-11-29T10:42:30+01:00&quot;,
+  &quot;updated&quot;: &quot;2021-11-30T19:20:19+01:00&quot;,
   &quot;part&quot;: null,
   &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
   &quot;content_creator&quot;: &quot;radiozurnal&quot;,
-  &quot;content_id&quot;: &quot;10516074&quot;,
+  &quot;content_id&quot;: &quot;10013547&quot;,
   &quot;base_id&quot;: null
 }
 </pre></div>
@@ -200,7 +201,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#filter-show-episodes-by-date">Filter show episodes by date</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedules.html">Get schedules for given show</a></li>
 <li class="toctree-l1"><a class="reference internal" href="moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore_in_pandas.html">Explore data in pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
@@ -219,7 +222,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="station_shows.html" title="previous chapter">Get all shows for given station</a></li>
-      <li>Next: <a href="moderators.html" title="next chapter">Get all participants for given show</a></li>
+      <li>Next: <a href="show_schedules.html" title="next chapter">Get schedules for given show</a></li>
   </ul></li>
 </ul>
 </div>

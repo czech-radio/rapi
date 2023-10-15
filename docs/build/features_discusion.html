@@ -18,7 +18,6 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Config: one config to rull them all" href="configuration.html" />
     <link rel="prev" title="Issues" href="issues.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -96,10 +95,11 @@ https://api.mujrozhlas.cz/schedule-day-flat-sparse?filter[day]=2023-06-21&amp;fi
 </section>
 <section id="zaver">
 <h3>závěr<a class="headerlink" href="#zaver" title="Permalink to this heading">¶</a></h3>
-<p>Croapi nenabízí žádný takový endpoint
-Šlo implementovat pravděpodobně jen s replikou databáze případně stažením všech dat s endpointu /schedule to trvá velmi dlouho už pro jediný den. Zkoušel jsem stáhnout vše a trvalo to celou noc a ještě nebyl konec.
-To by nemusel být problém. Data by se stáhli jednou a pak by se jen dělal denní update.
-Byl vznesen dotaz na pana Kubelíka, jestli není nějaká jiná možnost</p>
+<ol class="arabic simple">
+<li><p>Croapi nenabízí žádný endpoint k získání repríz nebo premiér.</p></li>
+<li><p>Veřejně přístupná dokumentace k croapi neexistuje mimo https://rapidoc.croapp.cz.
+Není tedy zcela jasné, co jednotlivé endpointy vrací a kde data vznikají. Některé filtry nefungují.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -121,16 +121,33 @@ Byl vznesen dotaz na pana Kubelíka, jestli není nějaká jiná možnost</p>
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/show_episodes.html">Get episodes for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/show_schedules.html">Get schedules for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/explore_in_pandas.html">Explore data in pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/client_usage.html">Library Showcase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/configuration_usage.html">CONFIG DEFAULT USAGE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Config: one config to rull them all</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/configuration_usage.html">Config default usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Features discussion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dotaz-pro-pana-kubelika-na-rapi">Dotaz pro pana Kubelíka na rAPI:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dotaz-pro-pana-kubelika-na-rapi">Dotaz pro pana Kubelíka na rAPI:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#otazky-jan-kacaba">otázky: Jan Kačaba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#odpovedi-jan-hejzl">odpovědi: Jan Hejzl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zaver">závěr</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Config: one config to rull them all</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
@@ -138,7 +155,6 @@ Byl vznesen dotaz na pana Kubelíka, jestli není nějaká jiná možnost</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="issues.html" title="previous chapter">Issues</a></li>
-      <li>Next: <a href="configuration.html" title="next chapter">Config: one config to rull them all</a></li>
   </ul></li>
 </ul>
 </div>

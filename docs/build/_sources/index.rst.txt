@@ -14,7 +14,9 @@ Welcome to RAPI's documentation!
    notebooks/stations.ipynb
    notebooks/station_shows.ipynb
    notebooks/show_episodes.ipynb
+   notebooks/show_schedules.ipynb
    notebooks/moderators.ipynb
+   notebooks/explore_in_pandas.ipynb
    notebooks/client_usage.ipynb
   
 .. toctree::

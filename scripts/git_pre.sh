@@ -48,12 +48,21 @@ echo RUNNING: flake8
 flake8 "${repodir}/src/rapi" --count --select=E9,F63,F7,F82 --show-source --statistics --max-line-length=99 --exit-zero --max-complexity=10
 }
 
+BuildSphinxDocs(){
+  ### build jupyter notebooks from jupytext
+  jupytext --to ipynb --execute ${repodir}/docs/source/notebooks/*.py
+
+  ### build sphinx docs
+  sphinx-build "${repodir}/docs/source" "${repodir}/docs/build"
+}
+
 All(){
   Mypy
   PytestAll
   Black
   Isort
   Flake
+  BuildSphinxDocs
 }
 
 "$@"

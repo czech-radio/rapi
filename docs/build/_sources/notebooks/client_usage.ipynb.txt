@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "36513baf",
+   "id": "3cadabfc",
    "metadata": {},
    "source": [
     "# Library Showcase"
@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3fee5dd5",
+   "id": "7710d435",
    "metadata": {},
    "source": [
     "FIXME: Add some description"
@@ -19,13 +19,13 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "5359671e",
+   "id": "f78f54bc",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.330351Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.328930Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.363998Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.363174Z"
+     "iopub.execute_input": "2023-10-15T16:31:49.568773Z",
+     "iopub.status.busy": "2023-10-15T16:31:49.567874Z",
+     "iopub.status.idle": "2023-10-15T16:31:49.591593Z",
+     "shell.execute_reply": "2023-10-15T16:31:49.590628Z"
     }
    },
    "outputs": [],
@@ -37,13 +37,13 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "06e4a1ef",
+   "id": "bed3ea95",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.368026Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.367601Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.452995Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.452341Z"
+     "iopub.execute_input": "2023-10-15T16:31:49.596390Z",
+     "iopub.status.busy": "2023-10-15T16:31:49.595766Z",
+     "iopub.status.idle": "2023-10-15T16:31:49.690741Z",
+     "shell.execute_reply": "2023-10-15T16:31:49.690096Z"
     }
    },
    "outputs": [],
@@ -54,13 +54,13 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "38570096",
+   "id": "e9dceb4e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.456255Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.455999Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.490341Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.489713Z"
+     "iopub.execute_input": "2023-10-15T16:31:49.693858Z",
+     "iopub.status.busy": "2023-10-15T16:31:49.693607Z",
+     "iopub.status.idle": "2023-10-15T16:31:49.726114Z",
+     "shell.execute_reply": "2023-10-15T16:31:49.725467Z"
     }
    },
    "outputs": [],
@@ -70,7 +70,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "49901a17",
+   "id": "2bbae0ff",
    "metadata": {},
    "source": [
     "## Get all available stations"
@@ -79,20 +79,20 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "b45885a9",
+   "id": "81ff37c0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.493840Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.493411Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.675301Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.674259Z"
+     "iopub.execute_input": "2023-10-15T16:31:49.728824Z",
+     "iopub.status.busy": "2023-10-15T16:31:49.728423Z",
+     "iopub.status.idle": "2023-10-15T16:31:49.864829Z",
+     "shell.execute_reply": "2023-10-15T16:31:49.863700Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "30"
+       "31"
       ]
      },
      "execution_count": 4,
@@ -107,7 +107,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e6fe8189",
+   "id": "c8b37ab9",
    "metadata": {},
    "source": [
     "## Get all shows for given station"
@@ -116,13 +116,13 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "03957613",
+   "id": "c7b37076",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.680678Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.679982Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.696443Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.695490Z"
+     "iopub.execute_input": "2023-10-15T16:31:49.872395Z",
+     "iopub.status.busy": "2023-10-15T16:31:49.871444Z",
+     "iopub.status.idle": "2023-10-15T16:31:49.897434Z",
+     "shell.execute_reply": "2023-10-15T16:31:49.896609Z"
     }
    },
    "outputs": [],
@@ -133,13 +133,13 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "f9f0ab25",
+   "id": "45bc73af",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.701764Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.700707Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.782348Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.781429Z"
+     "iopub.execute_input": "2023-10-15T16:31:49.901937Z",
+     "iopub.status.busy": "2023-10-15T16:31:49.901471Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.003560Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.002883Z"
     }
    },
    "outputs": [
@@ -162,7 +162,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b1c25b6c",
+   "id": "088c9d06",
    "metadata": {},
    "source": [
     "## Get particular show by UUID"
@@ -171,13 +171,13 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "09082458",
+   "id": "e5a39966",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.785796Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.785470Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.814818Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.814189Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.006199Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.005954Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.183742Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.181658Z"
     }
    },
    "outputs": [
@@ -198,7 +198,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7b3695d0",
+   "id": "ea2c8ebf",
    "metadata": {},
    "source": [
     "## Get show episodes"
@@ -207,13 +207,13 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "21e1d38c",
+   "id": "6a930f32",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.817346Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.817098Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.829424Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.827494Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.191802Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.190325Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.213868Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.212570Z"
     }
    },
    "outputs": [],
@@ -224,22 +224,22 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "44b36860",
+   "id": "f7a62afd",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.837285Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.836293Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.971596Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.970912Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.217988Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.217676Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.340342Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.339730Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[Episode(uuid='036a7f04-ed74-35a1-9923-0e8210d42435', title='Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC', title_short='Šlápli jsme na záchrannou brzdu, blokované weby můžeme uvolnit po jednom měsíci, říká Filip z CZ.NIC', description='<p>Sdružení CZ.NIC, které spravuje českou internetovou doménu, před týdnem rozhodlo o zablokování osmi tuzemských webů. Svůj postup odůvodnilo tím, že zmíněné stránky šířily v souvislosti s ruskou invazí na Ukrajinu dezinformace a ohrožovaly tak národní bezpečnost. „Naše pravidla říkají, že blokace může být maximálně na jeden měsíc, pak je potřeba ji znovu zvážit,“ objasňuje výkonný ředitel sdružení CZ.NIC Ondřej Filip.<br>\\nJan Pokorný</p>', since=datetime.datetime(2022, 3, 6, 8, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 3, 6, 8, 43, 13, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 3, 6, 10, 40, 36, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10139151', base_id=None),\n",
-       " Episode(uuid='07c812e2-6bc3-3f22-bb18-b7ec85c6cddc', title='Analytik: Kdo vydrží déle? Rusové se budou snažit Ukrajince vyhladovět. Jenže pod tlakem je i Rusko', title_short='Svárovský: Rusové se budou snažit Ukrajince vyhladovět. Západ musí zajistit dodávky jídla a zbraní', description='<p>Ruská armáda má zastavit palbu a otevřít humanitární koridory v několika ukrajinských městech, aby umožnila odchod civilistů. Podle britské vojenské rozvědky se ale ruské jednotky při odstřelování zaměřují na obydlené oblasti. „Věřit se ruské armádě moc nedá, zaměření se na města vyplývá z&nbsp;průběhu operace,“ říká vedoucí Programu bezpečnostních strategií Bezpečnostního centra Evropské hodnoty Martin Svárovský.<br>\\nJan Pokorný</p>', since=datetime.datetime(2022, 3, 7, 10, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 3, 7, 10, 24, 49, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 3, 7, 10, 30, 31, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10139979', base_id=None),\n",
-       " Episode(uuid='143dc660-137c-3e51-8243-8436c068977f', title='Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal', title_short='Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal', description='<p>Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.<br>\\nZuzana Machálková</p>', since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10516074', base_id=None)]"
+       "[Episode(uuid='16df9e3d-b6e3-33af-994d-1aa1ccb4d25a', title='Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta', title_short='Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta', description='<p>Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?<br>\\nHanka Shánělová</p>', since=datetime.datetime(2021, 11, 26, 14, 14, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 26, 14, 17, 16, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 26, 17, 0, 16, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10011355', base_id=None),\n",
+       " Episode(uuid='a8c02e81-d2c1-355a-8ad5-97cf7a87cc47', title='EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj', title_short='EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj', description='<p>Evropská komise jedná s&nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.<br>\\nJiří Chum, Viktor Daněk</p>', since=datetime.datetime(2021, 11, 27, 8, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 27, 8, 22, 38, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 27, 10, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10012081', base_id=None),\n",
+       " Episode(uuid='fb7b67d5-8b7d-385a-91bd-e044000e5e1d', title='Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme', title_short='Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme', description='<p><span lang=\"cs-CZ\">Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?</span><br>\\nMatěj Skalický</p>', since=datetime.datetime(2021, 11, 29, 10, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 29, 10, 42, 30, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 30, 19, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10013547', base_id=None)]"
       ]
      },
      "execution_count": 9,
@@ -253,7 +253,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9f15359b",
+   "id": "493896ad",
    "metadata": {},
    "source": [
     "## Filter show episodes by date"
@@ -262,13 +262,13 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "fe6b7791",
+   "id": "218086c3",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.974612Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.974343Z",
-     "iopub.status.idle": "2023-10-08T18:05:04.986603Z",
-     "shell.execute_reply": "2023-10-08T18:05:04.986101Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.343591Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.343108Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.353735Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.353101Z"
     }
    },
    "outputs": [],
@@ -281,22 +281,22 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "c3bdc65d",
+   "id": "e0ab60fe",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:04.989021Z",
-     "iopub.status.busy": "2023-10-08T18:05:04.988820Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.064519Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.063859Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.356775Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.356435Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.448264Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.447645Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[Episode(uuid='143dc660-137c-3e51-8243-8436c068977f', title='Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal', title_short='Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal', description='<p>Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.<br>\\nZuzana Machálková</p>', since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10516074', base_id=None),\n",
-       " Episode(uuid='19c600d1-c560-3ac0-93f3-a8b4e03d78b3', title='Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy', title_short='Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy', description='<p>Podobně jako o minulých víkendech i dnes tisíce Čechů vyráží do Polska za předvánočními nákupy. Lákají je nízké ceny. Polská vláda totiž v únoru kvůli vysoké inflaci snížila daň z přidané hodnoty. „Parkoviště u obchodních řetězců jsou slušně zaplněná. Žena, která tu vybírá parkovné, mi v&nbsp;nadsázce řekla, že se sem vejde celé Česko,“ popisuje reportér Jakub Vik z&nbsp;města Kudowa Zdrój nedaleko Náchoda.<br>\\nVojtěch Bidrman</p>', since=datetime.datetime(2022, 12, 3, 11, 27, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 3, 11, 29, 27, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 12, 3, 11, 40, 11, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10502178', base_id=None),\n",
-       " Episode(uuid='1ebd3d43-fc96-3e19-a494-73916e389a3e', title='Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař', title_short='Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař', description='<p>Jen čtyři tisíce kroků stačí k tomu, aby se snížilo riziko předčasného úmrtí, a pouhých 2300 prospěje srdci a cévám&nbsp;– to tvrdí tým z Lékařské univerzity v Lodži a americké Univerzity Johnse Hopkinse. Ještě před několika lety bylo ale ideálním číslem 10 000 kroků, čili zhruba sedm kilometrů denně. Jak to tedy je? Poslechněte si rozhovor s primářem II. interní kliniky kardiologie a angiologie Všeobecné fakultní nemocnice v Praze Alešem Linhartem.<br>\\nŠtěpán Pokorný</p>', since=datetime.datetime(2023, 8, 11, 9, 35, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 8, 11, 9, 40, 14, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2023, 8, 11, 10, 25, 15, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10875017', base_id=None)]"
+       "[Episode(uuid='433d059c-f032-39d7-aee8-7dd42afa6773', title='Dirigent Jakub Hrůša povede Královskou operu v Londýně. „Hrát českou hudbu je samozřejmost,“ těší se', title_short='Dirigent Jakub Hrůša povede Královskou operu v Londýně. „Hrát českou hudbu je samozřejmost,“ těší se', description='<p>Novým ředitelem Královské opery v londýnské Covent Garden bude od roku 2025 světově uznávaný český dirigent Jakub Hrůša. Před ním tuto proslulou instituci jako jediný Čech řídil krátce Rafael Kubelík, a to v 50. letech&nbsp;20. století. Na postu Hruša vystřídá odcházejícího Antonia Pappana a měl by na něm setrvat 22 let. „Je to velká výzva toho nejsprávnějšího typu.&nbsp;Královská opera má absolutní top kvalitu, vyzařuje velkou prestiž a způsobuje velký respekt,“ říká 41letý Hrůša.<br>\\nPetr Král, Tomáš Pavlíček</p>', since=datetime.datetime(2022, 10, 18, 18, 40, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 10, 18, 18, 44, 19, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 10, 18, 19, 0, 23, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10439973', base_id=None),\n",
+       " Episode(uuid='e4265fba-7e31-3534-a01e-d0bacc1f034d', title='Británie opět bez premiéra. V létě trval výběr lídra skoro dva měsíce, teď to má být týden, komentuje zpravodaj', title_short='Británie bez premiéra. V létě trval výběr lídra dva měsíce, teď to má být týden, komentuje zpravodaj', description='<p>Velkou Británii čeká další změna na premiérském postu. Dosavadní předsedkyně vlády Liz Trussová ve čtvrtek oznámila rezignaci. „Do pondělního odpoledne jsou otevřené nominace, každý kandidát musí mít podporu alespoň stovky konzervativních poslanců,“&nbsp;vysvětluje&nbsp;zpravodaj v Londýně Jaromír Marek. Objevují se jména jako Rishi Sunak, Penny Mordauntová či Boris Johnson, jehož přijatelnost pro veřejnost je však otázkou. Poslechněte si rozhovor.<br>\\nJaromír Marek</p>', since=datetime.datetime(2022, 10, 21, 13, 16, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 10, 21, 13, 18, 25, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 10, 21, 15, 0, 21, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10445358', base_id=None),\n",
+       " Episode(uuid='faef4635-d9e7-35b8-9da6-c57286dd83d8', title='Ze zrádce opět hrdinou. Soud po více než půl století očistil jméno generála Jana Syrového', title_short='Ze zrádce opět hrdinou. Soud po více než půl století očistil jméno generála Jana Syrového', description='<p>Legionář Jan Syrový byl v prvorepublikovém Československu vnímán jako národní hrdina. Po válce byl ovšem odsouzen jako zrádce a kolaborant. Až teď soudy uznaly, že nespravedlivě. K úplnému očištění jeho jména dochází 52 let po jeho smrti. Armádní hodnost i všechna československá vojenská vyznamenání mu ve čtvrtek posmrtně znovu přidělila ministryně obrany Jana Černochová.<br>\\nVěra Štechrová</p>', since=datetime.datetime(2022, 10, 21, 16, 35, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 10, 21, 16, 41, 28, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 10, 21, 20, 0, 31, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10446207', base_id=None)]"
       ]
      },
      "execution_count": 11,
@@ -311,13 +311,13 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "92c4a674",
+   "id": "5631b523",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.067043Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.066821Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.077760Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.077136Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.450882Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.450544Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.460104Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.459433Z"
     }
    },
    "outputs": [],
@@ -332,22 +332,22 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "16c2c116",
+   "id": "638492b1",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.080197Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.079997Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.149802Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.149148Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.463175Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.462957Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.573112Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.572515Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[Episode(uuid='143dc660-137c-3e51-8243-8436c068977f', title='Měsíc do prezidentských voleb. Karel Diviš se vrací do hry, Denise Rohanové naopak soud kandidaturu neuznal', title_short='Karel Diviš se vrací do hry, Denise Rohanové naopak soud prezidentskou kandidaturu neuznal', description='<p>Mezi kandidáty na prezidenta se zařadí podnikatel Karel Diviš. Podnikatel Karel Janeček naopak o Hrad bojovat nebude. Stejně jako Denisa Rohanová. Rozhodl o tom v úterý Nejvyšší správní soud, který tak uzavřel seznam lidí, kteří budou kandidovat na prezidenta. Bude jich celkem devět. Janeček a Rohanová se kvůli neuznané kandidatuře obrátí na Ústavní soud, řekli ve vysílání CNN Prima News.<br>\\nZuzana Machálková</p>', since=datetime.datetime(2022, 12, 13, 11, 47, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 13, 11, 57, 56, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2023, 1, 2, 14, 0, 25, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10516074', base_id=None),\n",
-       " Episode(uuid='19c600d1-c560-3ac0-93f3-a8b4e03d78b3', title='Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy', title_short='Dvacetimetrová fronta na cigarety. Češi vyráží do Polska za předvánočními nákupy', description='<p>Podobně jako o minulých víkendech i dnes tisíce Čechů vyráží do Polska za předvánočními nákupy. Lákají je nízké ceny. Polská vláda totiž v únoru kvůli vysoké inflaci snížila daň z přidané hodnoty. „Parkoviště u obchodních řetězců jsou slušně zaplněná. Žena, která tu vybírá parkovné, mi v&nbsp;nadsázce řekla, že se sem vejde celé Česko,“ popisuje reportér Jakub Vik z&nbsp;města Kudowa Zdrój nedaleko Náchoda.<br>\\nVojtěch Bidrman</p>', since=datetime.datetime(2022, 12, 3, 11, 27, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 12, 3, 11, 29, 27, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 12, 3, 11, 40, 11, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10502178', base_id=None),\n",
-       " Episode(uuid='1ebd3d43-fc96-3e19-a494-73916e389a3e', title='Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař', title_short='Chůze je sexy. Přidejte si k denní chůzi dvacet procent, i to pomůže, radí lékař', description='<p>Jen čtyři tisíce kroků stačí k tomu, aby se snížilo riziko předčasného úmrtí, a pouhých 2300 prospěje srdci a cévám&nbsp;– to tvrdí tým z Lékařské univerzity v Lodži a americké Univerzity Johnse Hopkinse. Ještě před několika lety bylo ale ideálním číslem 10 000 kroků, čili zhruba sedm kilometrů denně. Jak to tedy je? Poslechněte si rozhovor s primářem II. interní kliniky kardiologie a angiologie Všeobecné fakultní nemocnice v Praze Alešem Linhartem.<br>\\nŠtěpán Pokorný</p>', since=datetime.datetime(2023, 8, 11, 9, 35, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 8, 11, 9, 40, 14, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2023, 8, 11, 10, 25, 15, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10875017', base_id=None)]"
+       "[Episode(uuid='ca15ae46-896e-37ba-87f3-65fa42af1bff', title='Královna dokázala dát každému pocit, že je zajímavý. Karel III. bude změna, ale kontinuita, myslí si britský velvyslanec', title_short='Karel III. bude změna, ale kontinuita, myslí si britský velvyslanec', description='<p>Londýn se chystá na pondělní pohřeb britské královny Alžběty II. Podle velvyslance Spojeného království v Praze Nicka Archera byla Alžběta II. pro Brity konstantou a pevným bodem ve světě, který se rychle a výrazně měnil. Nick Archer má ke královské rodině a zvláště k novému králi Karlu III. blízko, několik let by totiž asistentem princova osobního tajemníka. O změnách, které nyní monarchii čekají, si s ním povídal vedoucí zahraniční redakce Českého rozhlasu Filip Nerad.<br>\\nFilip Nerad</p>', since=datetime.datetime(2022, 9, 15, 16, 11, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 9, 15, 16, 24, 58, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 9, 21, 14, 30, 32, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10393035', base_id=None),\n",
+       " Episode(uuid='6c7778f7-c529-38f8-8054-71763f9fb542', title='Putin vyhlásil částečnou mobilizaci. „Je si vědom, jak se jí národ obává,“ myslí si komentátor', title_short='Putin vyhlásil částečnou mobilizaci. „Je si vědom, jak se jí národ obává,“ myslí si komentátor', description='<p>Ruský prezident ve svém středečním projevu vyhlásil v zemi částečnou mobilizaci. V televizním vystoupení uvedl, že je to na obranu před Západem, který se snaží oslabit, rozdělit a zničit Rusko. Okupační vedení ukrajinské Doněcké, Luhanské, Záporožské a Chersonské oblasti pak narychlo ohlásila konání referend o připojení k Rusku. Hlasování má začít už v pátek a bude trvat do úterý. Podle ukrajinského vedení jsou tato rozhodnutí důkazem, že Kremlu nevychází jeho válečné plány.<br>\\nLibor Dvořák, Petr Král</p>', since=datetime.datetime(2022, 9, 21, 10, 2, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 9, 21, 10, 5, 29, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 9, 21, 10, 40, 21, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10400352', base_id=None),\n",
+       " Episode(uuid='8b10e8d2-4c7d-3706-a078-f6bbffa4f51c', title='Ruští občané musejí vládě říct: Jsme proti válce, zastavte to! vyzývá starosta Kyjeva Vitalij Kličko', title_short='Ruští občané musejí vládě říct: Jsme proti válce, zastavte to! vyzývá starosta Kyjeva Vitalij Kličko', description='<p>Na pražský Summit Paktu svobodných měst dorazil i starosta Kyjeva Vitalij Kličko. „Chceme být na stejné straně evropské rodiny, jako jste vy,“ říká. Přijel podle svých slov také poděkovat za českou pomoc Ukrajině a inspirovat se&nbsp;proměnou České republiky&nbsp;po roce 1989. Jaká je současná situace ve městech na Ukrajině? A co si Kličko myslí o přijímání ruských uprchlíků před mobilizací? Poslechněte si celý rozhovor.<br>\\nAnna Košlerová</p>', since=datetime.datetime(2022, 9, 27, 11, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 9, 27, 11, 23, 45, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 9, 28, 21, 20, 12, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored='Rozhovory Radiožurnálu', content_creator='radiozurnal', content_id='10411494', base_id=None)]"
       ]
      },
      "execution_count": 13,
@@ -362,13 +362,13 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "e966c045",
+   "id": "2ee707a9",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.152919Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.152527Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.164245Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.163575Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.576025Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.575826Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.586750Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.586132Z"
     }
    },
    "outputs": [],
@@ -379,22 +379,20 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "2356a09c",
+   "id": "20a4e97c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.167344Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.167098Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.623571Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.622848Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.589981Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.589464Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.643077Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.640613Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[Episode_schedule(uuid='000b180f-3215-3cc4-abed-81c3c9d5cf27', title='Aktuální události doma i ve světě', description='', station='c639d927-f37b-3db8-a64f-1d64ee1469b2', station_code=97, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 2, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 2, 5, tzinfo=tzoffset(None, 7200))),\n",
-       " Episode_schedule(uuid='001db6b6-f7e1-3683-aba8-b408a7f45a50', title='Richard Mayer: Island', description='Fantazie pro klavír. Hraje Vlastimil Bialas. - Karl Ottó Runólfsson: Sonáta pro trubku a klavír. Hrají Vlastimil Bialas a Milan Bialas. - Jórunn Vidarová: Písně. Výběr. Zpívá Helga Rós Indridadóttir, hraje Gudrun Dalía Salómonsdóttir (klavír). - - Porkell Sigurbjörnsson: Šest islandských lidových písní pro violu a klavír. Hrají Svava Bernhardsdóttir a Anna Gudný Gudmundsdóttir. - Jón Leifs: Tři obrazy pro orchestr. Hraje Islandský symfonický orchestr, řídí Paul Zukofsky. (Brno)', station='0134ce01-8684-3556-b568-f208392ac0bd', station_code=3, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 0, 29, 24, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 1, 29, 15, tzinfo=tzoffset(None, 7200))),\n",
-       " Episode_schedule(uuid='0050e40c-cb40-355a-88ae-fb37e594bbdd', title='Zprávy z Vysočiny - 17. 9. 2023', description='', station='36dc9675-1fe8-3c69-b362-ee6784b04ef0', station_code=84, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 9, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 9, 3, 30, tzinfo=tzoffset(None, 7200)))]"
+       "[]"
       ]
      },
      "execution_count": 15,
@@ -409,13 +407,13 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "701f9fff",
+   "id": "62593c0b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.627841Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.627566Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.638850Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.638302Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.650946Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.650414Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.673211Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.672247Z"
     }
    },
    "outputs": [],
@@ -426,22 +424,20 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "d267d35a",
+   "id": "18310382",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.641829Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.641560Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.708738Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.708030Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.676650Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.676388Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.858795Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.856676Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[Episode_schedule(uuid='078b9557-2841-3885-be54-47ff0585420d', title='Pozvánky a tipy na kulturní i společenské akce v Plzeňském kraji', description='Moderuje Ondřej Kapic', station='bbe67c0f-4848-355e-a0ab-28f40ade3d38', station_code=5, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 50, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 55, tzinfo=tzoffset(None, 7200))),\n",
-       " Episode_schedule(uuid='0e4ef764-5bc2-3db0-b3f3-07fd068e6ed0', title='Vysílání v němčině - 17. 9. 2023', description='', station='6731e7ee-98e7-36c3-993b-3122ad1317d1', station_code=12, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 30, tzinfo=tzoffset(None, 7200))),\n",
-       " Episode_schedule(uuid='0e64fddd-51b1-3b92-8bc9-bc7441c7f28e', title='Zpravodajství z Česka i ze světa', description='Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.', station='4082f63f-30e8-375d-a326-b32cf7d86e02', station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 45, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 45, 30, tzinfo=tzoffset(None, 7200)))]"
+       "[]"
       ]
      },
      "execution_count": 17,
@@ -455,7 +451,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "11c0d877",
+   "id": "a3d7373f",
    "metadata": {},
    "source": [
     "### Get schedule filter by date and station (slow)list(eps_schedule)[:3]"
@@ -464,13 +460,13 @@
   {
    "cell_type": "code",
    "execution_count": 18,
-   "id": "20886336",
+   "id": "653e7356",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.714520Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.714186Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.727103Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.726428Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.867402Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.866139Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.895220Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.894252Z"
     }
    },
    "outputs": [],
@@ -481,22 +477,20 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "be16cdb4",
+   "id": "6c0cf67d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.729926Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.729684Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.793223Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.792524Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.899530Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.899229Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.946475Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.944482Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[Episode_schedule(uuid='0e64fddd-51b1-3b92-8bc9-bc7441c7f28e', title='Zpravodajství z Česka i ze světa', description='Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.', station='4082f63f-30e8-375d-a326-b32cf7d86e02', station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 45, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 45, 30, tzinfo=tzoffset(None, 7200))),\n",
-       " Episode_schedule(uuid='528f6d40-3a45-3e23-af9c-27a033fdf1d5', title='V Ostravě pokračují Dny NATO', description='Na první den přehlídky armádní techniky a bezpečnostních složek dorazilo podle organizátorů asi 100 tisíc lidí. I dnes návštěvníci uvidí třeba americké stíhačky F35 nebo švédské gripeny. Obhájci extraligového titulu z Třince se poprvé v nové sezoně nejvyšší hokejové soutěže představí svým fanouškům na domácím ledě. Extraliga nabídne ale i dalších 6 zápasů. Všechny souboje v přímém přenosu naladíte na webových stránkách irozhlas.cz, radiozurnalsport.cz a také v aplikaci Můj rozhlas. Který z nich si vybrat, to vám napovíme. Pokud chcete změnit zdravotní pojišťovnu, máte na to už jen dva týdny. Další příležitost pak bude zase až po Novém roce. Na výši pojistného sice nic neuspoříte, jednotlivé pojišťovny se ale liší v nabízených benefitech třeba příspěvcích na výživu pro děti, nebo dentální hygienu. Na co si dát při změně pozor? Ještě mu není osmnáct, ale už má na tři stovky medailí z celého světa. Karel Korenc z Loun se od pěti let věnuje bojovému umění kung-fu a je několikanásobný mistr Evropy, šampion Ameriky a taky mistr světa. V dětství ho nadchly filmy o bojovnících, teď mezi ně díky svému talentu patří. Víc se dozvíte v dalším díle seriálu Mladí a nadaní. Aktuální reportáže a nejrychlejší zpravodajství, informace z denního tisku. Moderuje Štěpán Pokorný.', station='4082f63f-30e8-375d-a326-b32cf7d86e02', station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 5, 30, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 9, 0, tzinfo=tzoffset(None, 7200))),\n",
-       " Episode_schedule(uuid='5a457c8f-588e-32e3-b8aa-b8fa0d1ba0aa', title='Z domova i ze světa', description='Sport, Zelená vlna a počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.', station='4082f63f-30e8-375d-a326-b32cf7d86e02', station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 17, 8, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 17, 8, 4, 30, tzinfo=tzoffset(None, 7200)))]"
+       "[]"
       ]
      },
      "execution_count": 19,
@@ -510,7 +504,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "af57f2eb",
+   "id": "705cddc8",
    "metadata": {},
    "source": [
     "## Get show participants with role"
@@ -519,13 +513,13 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "aa3e28f0",
+   "id": "0ad7e4ef",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.796307Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.796022Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.805630Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.804960Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.953868Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.953304Z",
+     "iopub.status.idle": "2023-10-15T16:31:50.977185Z",
+     "shell.execute_reply": "2023-10-15T16:31:50.976077Z"
     }
    },
    "outputs": [],
@@ -538,13 +532,13 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "3a4aeaef",
+   "id": "1d0dc1a8",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.808709Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.808323Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.883382Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.880879Z"
+     "iopub.execute_input": "2023-10-15T16:31:50.981036Z",
+     "iopub.status.busy": "2023-10-15T16:31:50.980740Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.035784Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.034098Z"
     }
    },
    "outputs": [
@@ -565,7 +559,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "1b6ac577",
+   "id": "0e5008c4",
    "metadata": {},
    "source": [
     "## Get show moderators"
@@ -574,13 +568,13 @@
   {
    "cell_type": "code",
    "execution_count": 22,
-   "id": "6b9b5e73",
+   "id": "6f7af60c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.892891Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.892194Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.914307Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.913301Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.045091Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.043674Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.065626Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.064667Z"
     }
    },
    "outputs": [],
@@ -591,13 +585,13 @@
   {
    "cell_type": "code",
    "execution_count": 23,
-   "id": "a44d0aaf",
+   "id": "f83954e4",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.918424Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.918154Z",
-     "iopub.status.idle": "2023-10-08T18:05:05.989856Z",
-     "shell.execute_reply": "2023-10-08T18:05:05.988857Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.069982Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.069689Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.132653Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.131885Z"
     }
    },
    "outputs": [],
@@ -608,13 +602,13 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "id": "55d0c82a",
+   "id": "42d4c80e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:05.993732Z",
-     "iopub.status.busy": "2023-10-08T18:05:05.993425Z",
-     "iopub.status.idle": "2023-10-08T18:05:06.010238Z",
-     "shell.execute_reply": "2023-10-08T18:05:06.009145Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.136939Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.136431Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.153765Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.152844Z"
     }
    },
    "outputs": [
@@ -649,7 +643,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8f59955c",
+   "id": "cd6473a2",
    "metadata": {},
    "source": [
     "## Get station schedule day"
@@ -657,7 +651,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e62459b6",
+   "id": "ff0e0787",
    "metadata": {},
    "source": [
     "### Get station schedule day flat"
@@ -666,13 +660,13 @@
   {
    "cell_type": "code",
    "execution_count": 25,
-   "id": "36df821a",
+   "id": "da97c83f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:06.014913Z",
-     "iopub.status.busy": "2023-10-08T18:05:06.014622Z",
-     "iopub.status.idle": "2023-10-08T18:05:06.026823Z",
-     "shell.execute_reply": "2023-10-08T18:05:06.026118Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.158049Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.157319Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.169071Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.168377Z"
     }
    },
    "outputs": [],
@@ -683,13 +677,13 @@
   {
    "cell_type": "code",
    "execution_count": 26,
-   "id": "ccc39ad9",
+   "id": "d8e76e18",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:06.029805Z",
-     "iopub.status.busy": "2023-10-08T18:05:06.029614Z",
-     "iopub.status.idle": "2023-10-08T18:05:09.056701Z",
-     "shell.execute_reply": "2023-10-08T18:05:09.056049Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.172435Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.172206Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.657108Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.656425Z"
     }
    },
    "outputs": [
@@ -712,7 +706,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b88fc425",
+   "id": "ce12d83e",
    "metadata": {},
    "source": [
     "### Get station schedule day"
@@ -721,13 +715,13 @@
   {
    "cell_type": "code",
    "execution_count": 27,
-   "id": "9fa5e5a9",
+   "id": "7b89685d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:09.060138Z",
-     "iopub.status.busy": "2023-10-08T18:05:09.059598Z",
-     "iopub.status.idle": "2023-10-08T18:05:09.068919Z",
-     "shell.execute_reply": "2023-10-08T18:05:09.068194Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.660266Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.660028Z",
+     "iopub.status.idle": "2023-10-15T16:31:51.670937Z",
+     "shell.execute_reply": "2023-10-15T16:31:51.670319Z"
     }
    },
    "outputs": [],
@@ -738,13 +732,13 @@
   {
    "cell_type": "code",
    "execution_count": 28,
-   "id": "5534e102",
+   "id": "8e295336",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:09.072251Z",
-     "iopub.status.busy": "2023-10-08T18:05:09.071913Z",
-     "iopub.status.idle": "2023-10-08T18:05:09.388278Z",
-     "shell.execute_reply": "2023-10-08T18:05:09.387634Z"
+     "iopub.execute_input": "2023-10-15T16:31:51.673415Z",
+     "iopub.status.busy": "2023-10-15T16:31:51.673071Z",
+     "iopub.status.idle": "2023-10-15T16:31:52.042307Z",
+     "shell.execute_reply": "2023-10-15T16:31:52.041629Z"
     }
    },
    "outputs": [],
@@ -755,13 +749,13 @@
   {
    "cell_type": "code",
    "execution_count": 29,
-   "id": "f833bdb1",
+   "id": "120ebf82",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:09.391470Z",
-     "iopub.status.busy": "2023-10-08T18:05:09.391226Z",
-     "iopub.status.idle": "2023-10-08T18:05:09.402084Z",
-     "shell.execute_reply": "2023-10-08T18:05:09.401475Z"
+     "iopub.execute_input": "2023-10-15T16:31:52.044899Z",
+     "iopub.status.busy": "2023-10-15T16:31:52.044657Z",
+     "iopub.status.idle": "2023-10-15T16:31:52.057357Z",
+     "shell.execute_reply": "2023-10-15T16:31:52.056702Z"
     }
    },
    "outputs": [
@@ -785,13 +779,13 @@
   {
    "cell_type": "code",
    "execution_count": 30,
-   "id": "d5f604ad",
+   "id": "faf730d0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:09.405032Z",
-     "iopub.status.busy": "2023-10-08T18:05:09.404753Z",
-     "iopub.status.idle": "2023-10-08T18:05:09.415181Z",
-     "shell.execute_reply": "2023-10-08T18:05:09.414494Z"
+     "iopub.execute_input": "2023-10-15T16:31:52.060217Z",
+     "iopub.status.busy": "2023-10-15T16:31:52.059995Z",
+     "iopub.status.idle": "2023-10-15T16:31:52.072920Z",
+     "shell.execute_reply": "2023-10-15T16:31:52.072190Z"
     }
    },
    "outputs": [
@@ -813,13 +807,13 @@
   {
    "cell_type": "code",
    "execution_count": 31,
-   "id": "8ce6f73b",
+   "id": "fbf0f11d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-10-08T18:05:09.418084Z",
-     "iopub.status.busy": "2023-10-08T18:05:09.417838Z",
-     "iopub.status.idle": "2023-10-08T18:05:09.427526Z",
-     "shell.execute_reply": "2023-10-08T18:05:09.426884Z"
+     "iopub.execute_input": "2023-10-15T16:31:52.075236Z",
+     "iopub.status.busy": "2023-10-15T16:31:52.074975Z",
+     "iopub.status.idle": "2023-10-15T16:31:52.090618Z",
+     "shell.execute_reply": "2023-10-15T16:31:52.089677Z"
     }
    },
    "outputs": [
@@ -848,7 +842,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "d572a478",
+   "id": "0e850c04",
    "metadata": {},
    "outputs": [],
    "source": []

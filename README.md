@@ -12,10 +12,10 @@ as Python objects.
 
 ## Features (cs)
 
-- [x] 1. Získej všechny pořady aktuálně vysílané na zadané stanici. [usage](./docs/build/notebooks/client_usage.html#get-all-shows-for-given-station)
+- [x] 1. Získej všechny pořady aktuálně vysílané na zadané stanici. [usage](./docs/build/notebooks/station_shows.html)
 - [x] 2. Získej všechny epizody vysílané pro zadaný pořad, období, časový úsek a stanici. [usage](./docs/build/notebooks/show_episodes.html)
 - [x] 3. Získej všechny moderátory pro zadaný pořad. [usage](./docs/build/notebooks/moderators.html)
-- [ ] 4. Získej premiéry a reprízy pro zadaný pořad.
+- [partial] 4. Získej premiéry a reprízy pro zadaný pořad. [usage](./docs/build/notebooks/show_schedules.html)
 
 ## Model (Terms, Facts, Rules)
 
@@ -102,6 +102,9 @@ Zatím jasně vidíme tyto entity:
 - api documentation 
 
 <https://rapidoc.croapp.cz/>
+
+- rapi client documentation
+<./docs/build/index.html>
 
 ## Usage
 
