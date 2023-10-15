@@ -185,10 +185,9 @@ class Client:
         return out  # type: ignore
 
     def get_show_episodes(
-        self, episode_id: str, limit: int = 0
+        self, show_id: str, limit: int = 0
     ) -> Iterator[Episode]:
-        # endpoint = "shows/" + episode_id + "/episodes"
-        endpoint = "shows/" + episode_id + "/episodes"
+        endpoint = "shows/" + show_id + "/episodes"
         endpoint = endpoint + "?sort=since"
         data = self._get_endpoint_full_json(endpoint, limit)
         episodes = helpers.class_attrs_by_anotation_list(
@@ -201,7 +200,7 @@ class Client:
 
     def show_episodes_filter(
         self,
-        episode_id: str,
+        show_id: str,
         date_from: datetime | str | None = None,
         date_to: datetime | str | None = None,
         station_id: str | None = None,
@@ -210,7 +209,7 @@ class Client:
         cmdpars = ["commands", "show_ep_filter"]
         getval = self.Cfg.runtime_get
         tzinfo = helpers.current_timezone()
-        eps = self.get_show_episodes(episode_id, limit)
+        eps = self.get_show_episodes(show_id, limit)
 
         # filter by date
         if date_from is None:
