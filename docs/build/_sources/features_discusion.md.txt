@@ -65,7 +65,7 @@ https://api.mujrozhlas.cz/schedule-day-flat-sparse?filter[day]=2023-06-21&filter
 Pokud potřebujete filtrovat nějak konkrétně, napište mi, co potřebujete, mrknu se, co všechno EP podporuje a jak to dát dohromady.
 
 ### závěr
-1. Croapi nenabízí žádný endpoint k získání repríz nebo premiér.
+1. Croapi nenabízí žádný endpoint k získání repríz nebo premiér. Datum vysílání premiéry je přepsáno po opakování epizody.
 
 2. Veřejně přístupná dokumentace k croapi neexistuje mimo https://rapidoc.croapp.cz.
 Není tedy zcela jasné, co jednotlivé endpointy vrací a kde data vznikají. Některé filtry nefungují.
