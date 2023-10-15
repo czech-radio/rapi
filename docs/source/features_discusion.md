@@ -65,7 +65,11 @@ https://api.mujrozhlas.cz/schedule-day-flat-sparse?filter[day]=2023-06-21&filter
 Pokud potřebujete filtrovat nějak konkrétně, napište mi, co potřebujete, mrknu se, co všechno EP podporuje a jak to dát dohromady.
 
 ### závěr
-Croapi nenabízí žádný takový endpoint
-Šlo implementovat pravděpodobně jen s replikou databáze případně stažením všech dat s endpointu /schedule to trvá velmi dlouho už pro jediný den. Zkoušel jsem stáhnout vše a trvalo to celou noc a ještě nebyl konec.
+1.) Croapi nenabízí žádný endpoint k získání repríz nebo premiér.
+Šlo by implementovat pravděpodobně jen s replikou databáze případně stažením všech dat s endpointu /schedule to trvá velmi dlouho už pro jediný den. Zkoušel jsem stáhnout vše a trvalo to celou noc a ještě nebyl konec.
 To by nemusel být problém. Data by se stáhli jednou a pak by se jen dělal denní update.
 Byl vznesen dotaz na pana Kubelíka, jestli není nějaká jiná možnost
+
+2. Veřejně přístupná dokumentace k croapi neexistuje mimo https://rapidoc.croapp.cz.
+Není tedy zcela jasné, co jednotlivé endpointy vrací a kde data vznikají. Některé filtry nefungují.
+

@@ -167,7 +167,6 @@ def test_get_station(client) -> None:
     assert station
 
 
-@pytest.mark.current
 @pytest.mark.client
 def test_get_stations(client) -> None:
     # NOTE: Number of stations seems to be rather dynamic in time: 27, 28, 33
@@ -257,16 +256,33 @@ def test_get_station_schedule_day(client) -> None:
     # df = pd.DataFrame(data, columns=["station"])
     print(list(data))
 
+@pytest.mark.current
+@pytest.mark.client
+def test_get_schedule(client)->None:
+    show="2226c3be-7f0d-3c82-af47-0ec6abe992a8"
+    station="4082f63f-30e8-375d-a326-b32cf7d86e02"
+    data = list(client.get_schedule(show))
+    assert len(data)>0
+    print(len(data))
+    data = list(client.get_schedule(show,station))
+    assert len(data)>0
+    print(len(data))
+    data = list(client.get_schedule(show,station,"2023-10-01"))
+    assert len(data)>0
+    print(len(data))
+    data = list(client.get_schedule(show,station,"2023-10-20","2023-10-21"))
+    assert len(data)>0
+    print(len(data))
 
 @pytest.mark.client
-def test_get_schedule(client) -> None:
-    data1 = client.get_schedule("2023-09-17", "2023-09-18")
+def test_get_schedule_by_date(client) -> None:
+    data1 = client.get_schedule_by_date("2023-09-17", "2023-09-18")
     assert data1
 
-    data2 = client.get_schedule("2023-09-17T8:00", "2023-09-17T9:00")
+    data2 = client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00")
     assert data2
 
-    data3 = client.get_schedule("2023-09-17T8:00", "2023-09-17T9:00", "11")
+    data3 = client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00", "11")
     assert len(list(data1)) > len(list(data2)) > len(list(data3))
 
 

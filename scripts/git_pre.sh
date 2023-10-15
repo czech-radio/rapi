@@ -18,7 +18,11 @@ mypy --no-namespace-packages "$repodir"
 }
 
 
-Pytest(){
+PytestCurrent(){
+ # -o log_cli=true
+  pytest --capture=tee-sys -m current
+}
+PytestAll(){
 ### pytest: run repo tests
 pytest
 }
@@ -46,7 +50,7 @@ flake8 "${repodir}/src/rapi" --count --select=E9,F63,F7,F82 --show-source --stat
 
 All(){
   Mypy
-  Pytest
+  PytestAll
   Black
   Isort
   Flake
