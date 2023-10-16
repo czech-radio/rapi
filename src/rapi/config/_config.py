@@ -114,6 +114,8 @@ class Cfg_params:
             # NOTE: calling from playbook sys.argv is set to some bullshit ['/home/user/rapi/.venv/lib/python3.11/site-packages/ipykernel_launcher.py', '-f', '/home/user/.local/share/jupyter/runtime/kernel-d916e01b-a4eb-42eb-998a-ec7eeb156cff.json'] so commandline args cannot be properly defined/parsed
         try:
             params_namespace = argpars.parse_args()
+        except SystemExit as e:
+            sys.exit(e.code)
         except BaseException as e:
             raise ValueError(
                 f"__name__={__name__}, __package__={__package__}, sys.argv={sys.argv}, launcher={launcher}, err: {e}"
