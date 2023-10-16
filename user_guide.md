@@ -1,13 +1,16 @@
 # rapi
+
 ## Použití
+
 - rapi je knihovna, která dotazuje rest api dostupné na adrese <https://api.mujrozhlas.cz> například tento endpoint <https://api.mujrozhlas.cz/stations>, který vrátí metadata všech stanic ve formě JSON. JSON formát je nutné pro využití v analýzách sparsovat/reprezentovat jako objekt.
 Tato knihovna tedy převádí JSON textové řetězce na python objekty nebo list objektů, které lze přímo využít při analýze.
 
 ## Příklad použití (workflow)
-1.) nejdříve se vytvoří instance rapi clientu
-2.) následně se pomocí rapi clienta zavolá požadovaná funkce s požadovanými parametry:
+
+1.nejdříve se vytvoří instance rapi clientu
+2. následně se pomocí rapi clienta zavolá požadovaná funkce s požadovanými parametry:
 například: chci získat všechny pořady pro zadanou stanici. Standardně je id stanice číslo tzv. openmedia_id. Tabulka id stanic je zde ./src/data/stations_ids.csv
-3.) rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převézt jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.
+3. rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převézt jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.
 
 ## Jednotlivé příklady použití
 - Pořady na zadané stanici [usage](./docs/build/notebooks/station_shows.html)
