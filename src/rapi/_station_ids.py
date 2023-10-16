@@ -16,7 +16,7 @@ class StationIDs:
             cfg.cfg_runtime_set()
 
         self.Cfg = cfg
-        bpath = ["apis", "common"]
+        bpath = ["apis", "common", "station_ids"]
         self.DBpath = self.Cfg.runtime_get(bpath + ["csv"])
         self.DB_pkey = self.Cfg.runtime_get(bpath + ["pkey"])
         self.DB = self.db_csv_init(self.DBpath)

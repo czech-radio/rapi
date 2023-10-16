@@ -41,6 +41,10 @@ def subcommand_list(cfg: Config) -> None:
             subcmd_station_ids(cfg)
         case "station_guid":
             subcmd_station_guid(cfg)
+        case "station":
+            subcmd_station(cfg)
+        case "station_shows":
+            subcmd_station_shows(cfg)
         case "show_episodes":
             subcmd_show_episodes(cfg)
     return None
@@ -49,7 +53,20 @@ def subcommand_list(cfg: Config) -> None:
 def subcmd_station_ids(cfg: Config):
     sid = StationIDs()
     print(sid.get_pkey_list())
-    pass
+
+
+def subcmd_station(cfg: Config):
+    croapp = Client(cfg)
+    id = cfg.runtime_get(["commands", "station", "id"])
+    station = croapp.get_station(str(id))
+    print(station)
+
+
+def subcmd_station_shows(cfg: Config):
+    croapp = Client(cfg)
+    id = cfg.runtime_get(["commands", "station_shows", "id"])
+    shows = croapp.get_station_shows(str(id))
+    helpers.ppl(list(shows))
 
 
 def subcmd_show_episodes(cfg: Config):

@@ -15,11 +15,11 @@ commands:         # subcommands definition
   station_guid:  
     id: 11        # -id; int; store; filter by id
   station:        # filter stations
-    # id: 1       # -id; int; store; filter by id
-    # test: 
-  show:
+    id: 1         # -id; int; store; filter by id
+  station_shows:
+    id: 1         # -id; int; store; filter by id
   show_episodes:
-    id: "c7374f41-ae14-3b5c-8c04-385e3241deb4"       # -id; int; store; filter by id
+    id: "c7374f41-ae14-3b5c-8c04-385e3241deb4"  # -id; int; store; filter by id
   show_ep_filter:
     show_id:    # -sef_id; str; store; get show episodes by show id
     date_from:  # -sef_df; date_tz; store; filter episodes from date: YY-mm-dd_HH:MM
@@ -30,8 +30,8 @@ commands:         # subcommands definition
 apis:
   common:
     station_ids:
-    csv: "default"
-    pkey: "openmedia_id"
+      csv: "default"
+      pkey: "openmedia_id"
   croapp:
     workdir:
       dir: "./runtime/croapp/"

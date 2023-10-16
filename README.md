@@ -120,7 +120,60 @@ The runtime variables are assigned in following order.
 
 ### Use as library
 
+- instantiate client
+```python
+import pandas as pd
+from rapi import Client
+cl = Client()
+```
+
+- request some data
+```python
+stations=cl.get_station_shows("11")
+```
+
+- create list from data and loop over it
+```python
+stations_list=list(stations)
+for i in range(station_list):
+    print(i)
+```
+
+- create pandas dataframe and loop over it
+```python
+stations_df=pd.DataFrame(stations_list)
+stations_df.info()
+for idx, row in stations_df.iterrows():
+    print(idx,row['id','title'])
+
+```
+
 ### Use as program
+- get help
+```shell
+rapi -h
+```
+
+- get list of station_ids (default openmedia_id)
+```shell
+rapi station_ids
+```
+
+- get station guid (globaly unique id)
+```shell
+rapi station_guid -id 11
+```
+
+- get station shows 
+```shell
+rapi station_shows -id 11
+```
+
+- get show episodes
+```shell
+rapi show_episodes -id "9f36ee8f-73a7-3ed5-aafb-41210b7fb935"
+```
+
 
 ## Tests
 ### Api test
