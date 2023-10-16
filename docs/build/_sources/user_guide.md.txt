@@ -13,12 +13,12 @@ například: chci získat všechny pořady pro zadanou stanici. Standardně je i
 3. rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převézt jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.
 
 ## Jednotlivé příklady použití
-- Pořady na zadané stanici [usage](docs/source/notebooks/station_shows.ipynb)
-- Epizody vysílané pro zadaný pořad, období, časový úsek a stanici. [usage](docs/source/notebooks/show_episodes.ipynb)
-- Moderátoři pro zadaný pořad. [usage](./docs/source/notebooks/moderators.ipynb)
-- Plán vysílaných epizod pro zadaný pořad, období, časový úsek a stanic [usage](docs/source/notebooks/show_schedules.ipynb)
+- Pořady na zadané stanici [usage](./notebooks/station_shows.ipynb)
+- Epizody vysílané pro zadaný pořad, období, časový úsek a stanici. [usage](./notebooks/show_episodes.ipynb)
+- Moderátoři pro zadaný pořad. [usage](./notebooks/moderators.ipynb)
+- Plán vysílaných epizod pro zadaný pořad, období, časový úsek a stanic [usage](./notebooks/show_schedules.ipynb)
 - Příklad prozkoumání objektu v pandas
-[usage](docs/source/notebooks/explore_in_pandas.ipynb)
+[usage](./notebooks/explore_in_pandas.ipynb)
 
 ## Dokumentace
 - api url: 
@@ -28,5 +28,5 @@ například: chci získat všechny pořady pro zadanou stanici. Standardně je i
 <https://rapidoc.croapp.cz/>
 
 - rapi client documentation
-[documentation index](./docs/source/index.rst)
+[documentation index](index.rst)
 
