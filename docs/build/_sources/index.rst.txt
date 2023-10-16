@@ -11,6 +11,7 @@ Welcome to RAPI's documentation!
    :glob:
    :caption: Usage:
 
+   user_guide.md
    notebooks/stations.ipynb
    notebooks/station_shows.ipynb
    notebooks/show_episodes.ipynb
@@ -18,6 +19,7 @@ Welcome to RAPI's documentation!
    notebooks/moderators.ipynb
    notebooks/explore_in_pandas.ipynb
    notebooks/client_usage.ipynb
+   notebooks/show_schedule_vs_episodes.ipynb
   
 .. toctree::
    :caption: Configuration:
