@@ -51,7 +51,7 @@ Zatím jasně vidíme tyto entity:
 
 - Create a virtual environment (recommended).
   
-	Unix (Use desired version of Python e.g 3.11.)
+	Unix (Use desired version of Python e.g. 3.11.)
   
 	```shell
 	python -m venv .venv
@@ -109,14 +109,23 @@ Zatím jasně vidíme tyto entity:
 ## Usage
 
 ### Configure
- 
+#### runtime variables 
 The runtime variables are assigned in following order.
  
 1. flags
+```shell
+rapi --debug-cfg
+```
 2. environment
-3. config file
-4. hard-coded defaults
+```shell
+export apis_common_station_ids_pkey="openmedia_stanice"
+```
+3. [config file](./src/rapi/data/defaults.yml)
 
+4. [hard-coded defaults](./src/rapi/data/defaults.yml)
+
+#### station IDs
+- csv [file](./src/rapi/data/stations_ids.csv) containing table of station IDs and their equivalents
 
 ### Use as library
 
@@ -159,7 +168,7 @@ rapi -h
 rapi station_ids
 ```
 
-- get station guid (globaly unique id)
+- get station guid (globally unique id)
 ```shell
 rapi station_guid -id 11
 ```

@@ -31,7 +31,7 @@ apis:
   common:
     station_ids:
       csv: "default"
-      pkey: "openmedia_id"
+      pkey: "openmedia_id" # [openmedia_stanice;openmedia_id;croapp_code;croapp_shortTitle;croapp_id]
   croapp:
     workdir:
       dir: "./runtime/croapp/"

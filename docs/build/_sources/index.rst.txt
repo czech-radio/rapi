@@ -11,27 +11,27 @@ Welcome to RAPI's documentation!
    :glob:
    :caption: Usage:
 
-   user_guide.md
-   notebooks/stations.ipynb
-   notebooks/station_shows.ipynb
-   notebooks/show_episodes.ipynb
-   notebooks/show_schedules.ipynb
-   notebooks/moderators.ipynb
-   notebooks/explore_in_pandas.ipynb
-   notebooks/client_usage.ipynb
-   notebooks/show_schedule_vs_episodes.ipynb
+   ./user_guide.md
+   ./notebooks/stations.ipynb
+   ./notebooks/station_shows.ipynb
+   ./notebooks/show_episodes.ipynb
+   ./notebooks/show_schedules.ipynb
+   ./notebooks/moderators.ipynb
+   ./notebooks/explore_in_pandas.ipynb
+   ./notebooks/client_usage.ipynb
+   ./notebooks/show_schedule_vs_episodes.ipynb
   
 .. toctree::
    :caption: Configuration:
 
    configuration
-   notebooks/configuration_usage.ipynb
+   ./notebooks/configuration_usage.ipynb
 
 .. toctree::
    :caption: Develop:
 
-   issues.md
-   features_discusion.md
+   ./issues.md
+   ./features_discusion.md
 
 
 Indices and tables
