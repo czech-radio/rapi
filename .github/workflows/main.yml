@@ -2,7 +2,11 @@ name: main
 
 on:
     push:
-        branches: [main]
+        branches: 
+          - main
+          - 'release/**'
+          - 'refactor/**'
+          - 'feature/**'
     pull_request:
         branches: [main]
     workflow_dispatch:
