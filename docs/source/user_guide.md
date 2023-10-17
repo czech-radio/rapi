@@ -13,6 +13,7 @@ například: chci získat všechny pořady pro zadanou stanici. Standardně je i
 3. rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převést jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.
 
 ## Jednotlivé příklady použití
+
 - Pořady na zadané stanici [usage](./notebooks/station_shows.ipynb)
 - Epizody vysílané pro zadaný pořad, období, časový úsek a stanici. [usage](./notebooks/show_episodes.ipynb)
 - Moderátoři pro zadaný pořad. [usage](./notebooks/moderators.ipynb)
@@ -21,7 +22,8 @@ například: chci získat všechny pořady pro zadanou stanici. Standardně je i
 [usage](./notebooks/explore_in_pandas.ipynb)
 
 ## Dokumentace
-- api url: 
+
+- api url:
 <https://api.mujrozhlas.cz>
 
 - api original "documentation"
@@ -29,4 +31,3 @@ například: chci získat všechny pořady pro zadanou stanici. Standardně je i
 
 - rapi client documentation
 [documentation index](index.rst)
-
