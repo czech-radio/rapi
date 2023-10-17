@@ -1,4 +1,3 @@
-# from rapi.helpers._logger import log_stdout as logo
 import logging
 import sys
 from typing import Union
@@ -11,12 +10,7 @@ from rapi._client import Client
 from rapi.config import _config, _params
 from rapi.config._config import Config
 
-# from rapi.config import Config
-# from rapi.config._config import Config
 from rapi.helpers import helpers
-
-# lg = logging.getLogger("log_stdout")
-# lg.setLevel(logging.DEBUG)
 
 
 @pytest.fixture
