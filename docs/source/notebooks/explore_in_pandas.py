@@ -26,16 +26,16 @@ cl = Client()
 # ## Get schedule
 
 # %%
-show="2226c3be-7f0d-3c82-af47-0ec6abe992a8"
-station="4082f63f-30e8-375d-a326-b32cf7d86e02"
-since="2023_09-01"
-till="2023_10-01"
+show = "2226c3be-7f0d-3c82-af47-0ec6abe992a8"
+station = "4082f63f-30e8-375d-a326-b32cf7d86e02"
+since = "2023_09-01"
+till = "2023_10-01"
 
 # %%
-data = list(cl.get_schedule(show,station,since,till))
+data = list(cl.get_schedule(show, station, since, till))
 import pandas as pd
 
-pdata=pd.DataFrame(data)
+pdata = pd.DataFrame(data)
 
 # %% [markdown]
 # ## Show columns in dataframe
@@ -45,17 +45,17 @@ pdata.info()
 # %% [markdown]
 # ## Select columns, (subset dataframe)
 # %%
-sdata=(pdata[['title','since']])
+sdata = pdata[["title", "since"]]
 print(sdata)
 
 # %% [markdown]
 # ## Select columns when creating dataframe
 # %%
-data = list(cl.get_schedule(show,station,since,till))
-pdata=pd.DataFrame(data,columns=['title','since'])
+data = list(cl.get_schedule(show, station, since, till))
+pdata = pd.DataFrame(data, columns=["title", "since"])
 
 # %% [markdown]
 # ## Save dataframe to csv
 # %%
-output_file_path='../../../runtime/out.csv'
+output_file_path = "../../../runtime/out.csv"
 pdata.to_csv(output_file_path)

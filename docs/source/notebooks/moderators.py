@@ -44,4 +44,3 @@ print(participants[:3])
 # %%
 for p in participants[:3]:
     print(p)
-

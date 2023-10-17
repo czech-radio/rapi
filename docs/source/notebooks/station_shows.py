@@ -43,4 +43,3 @@ print(shows[:3])
 # %%
 for sh in shows[:3]:
     print(sh)
-

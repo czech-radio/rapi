@@ -42,4 +42,3 @@ print(stations[:3])
 # %%
 for st in stations[:3]:
     print(st)
-

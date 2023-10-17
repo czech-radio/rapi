@@ -25,23 +25,23 @@ cl = Client()
 # ## Get schedule
 
 # %%
-show="2226c3be-7f0d-3c82-af47-0ec6abe992a8"
-station="4082f63f-30e8-375d-a326-b32cf7d86e02"
-since="2023-09-01"
-till="2023-10-01"
+show = "2226c3be-7f0d-3c82-af47-0ec6abe992a8"
+station = "4082f63f-30e8-375d-a326-b32cf7d86e02"
+since = "2023-09-01"
+till = "2023-10-01"
 
 # %%
 data = list(cl.get_schedule(show))
 print(len(data))
 
 # %%
-data = list(cl.get_schedule(show,station))
+data = list(cl.get_schedule(show, station))
 print(len(data))
 
 # %%
-data = list(cl.get_schedule(show,station,since))
+data = list(cl.get_schedule(show, station, since))
 print(len(data))
 
 # %%
-data = list(cl.get_schedule(show,station,"",till))
+data = list(cl.get_schedule(show, station, "", till))
 print(len(data))
