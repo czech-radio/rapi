@@ -73,3 +73,12 @@ Pokud potřebujete filtrovat nějak konkrétně, napište mi, co potřebujete, m
 
 2. Veřejně přístupná dokumentace k croapi neexistuje mimo <https://rapidoc.croapp.cz>.
 Není tedy zcela jasné, co jednotlivé endpointy vrací a kde data vznikají. Některé filtry nefungují.
+<<<<<<< HEAD
+||||||| parent of 1e8a8f2 (add alternative subcommand list)
+
+=======
+
+
+FIX ME
+
+>>>>>>> 1e8a8f2 (add alternative subcommand list)

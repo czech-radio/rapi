@@ -12,6 +12,7 @@ from rapi.helpers._logger import log_stdout as logo
 
 def commands(cfg: Config) -> None:
     try:
+        breakpoint()
         commands_list(cfg)
         subcommand_list(cfg)
     except SystemExit as err:
@@ -48,6 +49,16 @@ def subcommand_list(cfg: Config) -> None:
         case "show_episodes":
             subcmd_show_episodes(cfg)
     return None
+
+def subcommand_list2(cfg: Config):
+    subcommand = cfg.runtime_get(["subcommand"], None)
+    if subcommand is None:
+        return None
+    logo.info(f"running command: {subcommand}")
+    subcmd_list=[
+            subcmd_station_ids,
+            subcmd_station_guid,
+            ]
 
 
 def subcmd_station_ids(cfg: Config):

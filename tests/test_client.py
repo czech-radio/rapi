@@ -257,7 +257,7 @@ def test_get_station_schedule_day(client) -> None:
     print(list(data))
 
 
-@pytest.mark.current
+# @pytest.mark.current
 @pytest.mark.client
 def test_get_schedule(client) -> None:
     show = "2226c3be-7f0d-3c82-af47-0ec6abe992a8"
