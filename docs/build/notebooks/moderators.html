@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Get all participants for given show &#8212; RAPI  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Explore data in pandas" href="explore_in_pandas.html" />
+    <link rel="prev" title="Get schedules for given show" href="show_schedules.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="get-all-participants-for-given-show">
+<h1>Get all participants for given show<a class="headerlink" href="#get-all-participants-for-given-show" title="Permalink to this heading">¶</a></h1>
+<section id="create-client">
+<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-show-participants-iterator">
+<h2>Create show participants iterator<a class="headerlink" href="#create-show-participants-iterator" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>by default station identificator is openmedia id</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;c7374f41-ae14-3b5c-8c04-385e3241deb4&quot;</span>
+<span class="n">participants_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_moderators</span><span class="p">(</span><span class="n">show_uuid</span><span class="p">)</span>
+<span class="n">participants</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">participants_iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="number-of-participants">
+<h2>Number of participants<a class="headerlink" href="#number-of-participants" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">participants</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-participants-as-python-object">
+<h2>List participants as python object<a class="headerlink" href="#list-participants-as-python-object" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">participants</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Person(uuid=&#39;4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f&#39;, title=&#39;Jiří Chum&#39;, description_short=&#39;&lt;p&gt;Moderuje každý všední den Dopolední Radiožurnál.&lt;/p&gt;&#39;, description=&#39;&lt;p&gt;&lt;strong&gt;Co dělám v rozhlase:&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;span&gt;Na Radiožurnálu moderuji od roku 2002, od března 2008 do prosince 2010 Odpolední Radiožurnál a od ledna 2011\xa0&lt;/span&gt;Večerní Radiožurnál&lt;span&gt;\xa0a ob týden\xa0&lt;/span&gt;Víkendový Ranní Radiožurnál&lt;span&gt;. Deset let jsem moderoval každý všední den Ranní Radiožurnál a od 1. července 2022 usedám za mikrofon Dopoledního Radiožurnálu. Ještě déle spolupracuji s regionální stanicí ČRo Region střední Čechy. V současnosti ale už jen v oblasti selfpromotion.&lt;/span&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;Před rozhlasem:&lt;/strong&gt;&lt;br /&gt;\nVystudoval jsem SSPoŠ Kolín se zaměřením na ekonomiku a management, poté si dal na pár let pauzu a v současnosti studuji Fakultu multimediálních komunikaci UTB ve Zlíně obor Marketingové komunikace. Z rádiové praxe: rádio City 937 a dlouhá léta Český rozhlas, kterému jsem nakonec zůstal věrný.&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;\n\n&#39;, profile_id=&#39;5002938&#39;, role=&#39;moderator&#39;, participation_link=&#39;https://api.mujrozhlas.cz/persons/4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f/participation&#39;, participation_data=[{&#39;type&#39;: &#39;station&#39;, &#39;id&#39;: &#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, &#39;meta&#39;: {&#39;role&#39;: &#39;Moderátoři&#39;}}])]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-participants-as-string-object">
+<h2>List participants as string object<a class="headerlink" href="#list-participants-as-string-object" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">participants</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;uuid&quot;: &quot;4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f&quot;,
+  &quot;title&quot;: &quot;Jiří Chum&quot;,
+  &quot;description_short&quot;: &quot;&lt;p&gt;Moderuje každý všední den Dopolední Radiožurnál.&lt;/p&gt;&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;&lt;strong&gt;Co dělám v rozhlase:&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;span&gt;Na Radiožurnálu moderuji od roku 2002, od března 2008 do prosince 2010 Odpolední Radiožurnál a od ledna 2011 &lt;/span&gt;Večerní Radiožurnál&lt;span&gt; a ob týden &lt;/span&gt;Víkendový Ranní Radiožurnál&lt;span&gt;. Deset let jsem moderoval každý všední den Ranní Radiožurnál a od 1. července 2022 usedám za mikrofon Dopoledního Radiožurnálu. Ještě déle spolupracuji s regionální stanicí ČRo Region střední Čechy. V současnosti ale už jen v oblasti selfpromotion.&lt;/span&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;Před rozhlasem:&lt;/strong&gt;&lt;br /&gt;\nVystudoval jsem SSPoŠ Kolín se zaměřením na ekonomiku a management, poté si dal na pár let pauzu a v současnosti studuji Fakultu multimediálních komunikaci UTB ve Zlíně obor Marketingové komunikace. Z rádiové praxe: rádio City 937 a dlouhá léta Český rozhlas, kterému jsem nakonec zůstal věrný.&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;\n\n&quot;,
+  &quot;profile_id&quot;: &quot;5002938&quot;,
+  &quot;role&quot;: &quot;moderator&quot;,
+  &quot;participation_link&quot;: &quot;https://api.mujrozhlas.cz/persons/4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f/participation&quot;,
+  &quot;participation_data&quot;: [
+    {
+      &quot;type&quot;: &quot;station&quot;,
+      &quot;id&quot;: &quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;,
+      &quot;meta&quot;: {
+        &quot;role&quot;: &quot;Moderátoři&quot;
+      }
+    }
+  ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedules.html">Get schedules for given show</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get all participants for given show</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-show-participants-iterator">Create show participants iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#number-of-participants">Number of participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-participants-as-python-object">List participants as python object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-participants-as-string-object">List participants as string object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="explore_in_pandas.html">Explore data in pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Config: one config to rull them all</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="show_schedules.html" title="previous chapter">Get schedules for given show</a></li>
+      <li>Next: <a href="explore_in_pandas.html" title="next chapter">Explore data in pandas</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Czech Radio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/notebooks/moderators.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

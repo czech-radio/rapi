@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Get episodes for given show &#8212; RAPI  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Get schedules for given show" href="show_schedules.html" />
+    <link rel="prev" title="Get all shows for given station" href="station_shows.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="get-episodes-for-given-show">
+<h1>Get episodes for given show<a class="headerlink" href="#get-episodes-for-given-show" title="Permalink to this heading">¶</a></h1>
+<section id="create-client">
+<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-episodes-iterator">
+<h2>Create episodes iterator<a class="headerlink" href="#create-episodes-iterator" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span>
+<span class="n">episodes_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_episodes</span><span class="p">(</span><span class="n">show_uuid</span><span class="p">)</span>
+<span class="n">episodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">episodes_iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="number-of-episodes">
+<h2>Number of episodes<a class="headerlink" href="#number-of-episodes" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">episodes</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-episodes-as-python-object">
+<h2>List episodes as python object<a class="headerlink" href="#list-episodes-as-python-object" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">episodes</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&#39;, title=&#39;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, title_short=&#39;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, description=&#39;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 26, 14, 14, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 26, 14, 17, 16, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 26, 17, 0, 16, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10011355&#39;, base_id=None), Episode(uuid=&#39;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&#39;, title=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, title_short=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, description=&#39;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 27, 8, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 27, 8, 22, 38, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 27, 10, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10012081&#39;, base_id=None), Episode(uuid=&#39;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&#39;, title=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, title_short=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, description=&#39;&lt;p&gt;&lt;span lang=&quot;cs-CZ&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 29, 10, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 29, 10, 42, 30, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 30, 19, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10013547&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-episodes-as-string-object">
+<h2>List episodes as string object<a class="headerlink" href="#list-episodes-as-string-object" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ep</span> <span class="ow">in</span> <span class="n">episodes</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;uuid&quot;: &quot;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&quot;,
+  &quot;title&quot;: &quot;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&quot;,
+  &quot;title_short&quot;: &quot;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&quot;,
+  &quot;since&quot;: &quot;2021-11-26T14:14:00+01:00&quot;,
+  &quot;till&quot;: &quot;2021-11-26T14:17:16+01:00&quot;,
+  &quot;updated&quot;: &quot;2021-11-26T17:00:16+01:00&quot;,
+  &quot;part&quot;: null,
+  &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
+  &quot;content_creator&quot;: &quot;radiozurnal&quot;,
+  &quot;content_id&quot;: &quot;10011355&quot;,
+  &quot;base_id&quot;: null
+}
+{
+  &quot;uuid&quot;: &quot;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&quot;,
+  &quot;title&quot;: &quot;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&quot;,
+  &quot;title_short&quot;: &quot;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&quot;,
+  &quot;since&quot;: &quot;2021-11-27T08:20:00+01:00&quot;,
+  &quot;till&quot;: &quot;2021-11-27T08:22:38+01:00&quot;,
+  &quot;updated&quot;: &quot;2021-11-27T10:20:19+01:00&quot;,
+  &quot;part&quot;: null,
+  &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
+  &quot;content_creator&quot;: &quot;radiozurnal&quot;,
+  &quot;content_id&quot;: &quot;10012081&quot;,
+  &quot;base_id&quot;: null
+}
+{
+  &quot;uuid&quot;: &quot;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&quot;,
+  &quot;title&quot;: &quot;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&quot;,
+  &quot;title_short&quot;: &quot;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;&lt;span lang=\&quot;cs-CZ\&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&quot;,
+  &quot;since&quot;: &quot;2021-11-29T10:40:00+01:00&quot;,
+  &quot;till&quot;: &quot;2021-11-29T10:42:30+01:00&quot;,
+  &quot;updated&quot;: &quot;2021-11-30T19:20:19+01:00&quot;,
+  &quot;part&quot;: null,
+  &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
+  &quot;content_creator&quot;: &quot;radiozurnal&quot;,
+  &quot;content_id&quot;: &quot;10013547&quot;,
+  &quot;base_id&quot;: null
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filter-show-episodes-by-date">
+<h2>Filter show episodes by date<a class="headerlink" href="#filter-show-episodes-by-date" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span>
+<span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;2022-01-01T8:00&quot;</span>
+<span class="n">to</span> <span class="o">=</span> <span class="s2">&quot;2023-01-02T9:00&quot;</span>
+<span class="n">episodes_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">show_episodes_filter</span><span class="p">(</span><span class="n">show_uuid</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+<span class="n">episodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">episodes_iterator</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">episodes</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get episodes for given show</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-episodes-iterator">Create episodes iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#number-of-episodes">Number of episodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-episodes-as-python-object">List episodes as python object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-episodes-as-string-object">List episodes as string object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filter-show-episodes-by-date">Filter show episodes by date</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedules.html">Get schedules for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore_in_pandas.html">Explore data in pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Config: one config to rull them all</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="station_shows.html" title="previous chapter">Get all shows for given station</a></li>
+      <li>Next: <a href="show_schedules.html" title="next chapter">Get schedules for given show</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Czech Radio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/notebooks/show_episodes.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

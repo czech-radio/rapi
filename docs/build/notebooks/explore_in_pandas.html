@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Explore data in pandas &#8212; RAPI  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Library Showcase" href="client_usage.html" />
+    <link rel="prev" title="Get all participants for given show" href="moderators.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="explore-data-in-pandas">
+<h1>Explore data in pandas<a class="headerlink" href="#explore-data-in-pandas" title="Permalink to this heading">¶</a></h1>
+<section id="create-client">
+<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-schedule">
+<h2>Get schedule<a class="headerlink" href="#get-schedule" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span> <span class="o">=</span> <span class="s2">&quot;2226c3be-7f0d-3c82-af47-0ec6abe992a8&quot;</span>
+<span class="n">station</span> <span class="o">=</span> <span class="s2">&quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;</span>
+<span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;2023_09-01&quot;</span>
+<span class="n">till</span> <span class="o">=</span> <span class="s2">&quot;2023_10-01&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">station</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">till</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="show-columns-in-dataframe">
+<h2>Show columns in dataframe<a class="headerlink" href="#show-columns-in-dataframe" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdata</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 147 entries, 0 to 146
+Data columns (total 9 columns):
+ #   Column         Non-Null Count  Dtype                               
+---  ------         --------------  -----                               
+ 0   uuid           147 non-null    object                              
+ 1   title          147 non-null    object                              
+ 2   description    147 non-null    object                              
+ 3   station        147 non-null    object                              
+ 4   station_code   147 non-null    int64                               
+ 5   show_priority  147 non-null    int64                               
+ 6   show_times     0 non-null      object                              
+ 7   since          147 non-null    datetime64[ns, tzoffset(None, 7200)]
+ 8   till           147 non-null    datetime64[ns, tzoffset(None, 7200)]
+dtypes: datetime64[ns, tzoffset(None, 7200)](2), int64(2), object(5)
+memory usage: 10.5+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="select-columns-subset-dataframe">
+<h2>Select columns, (subset dataframe)<a class="headerlink" href="#select-columns-subset-dataframe" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdata</span> <span class="o">=</span> <span class="n">pdata</span><span class="p">[[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;since&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sdata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                 title  \
+0    Je 1. září a ve školách by už mělo být všechno...   
+1    Některá města od září zdražila hromadnou dopravou   
+2    Do Řecka už dorazila další skupina zhruba pade...   
+3        Prezident Petr Pavel podepsal penzijní novelu   
+4    Devět tříd ze 4. základní školy v Plzni zahájí...   
+..                                                 ...   
+142  Policisté v Moravskoslezském kraji zpřísnili n...   
+143  Stovky Slováků dnes odjely z Prahy mimořádným ...   
+144  Duchové bývalých přítelkyň, náhodná svatební k...   
+145  Lidé s nízkým příjmem mají v Liberci problém s...   
+146  Přesně před osmdesáti pěty lety se svět přiblí...   
+
+                        since  
+0   2023-09-01 13:06:00+02:00  
+1   2023-09-01 14:06:00+02:00  
+2   2023-09-01 15:06:00+02:00  
+3   2023-09-01 16:06:00+02:00  
+4   2023-09-01 17:06:00+02:00  
+..                        ...  
+142 2023-09-29 15:06:00+02:00  
+143 2023-09-29 16:06:00+02:00  
+144 2023-09-29 17:06:00+02:00  
+145 2023-09-29 18:33:30+02:00  
+146 2023-09-29 19:06:00+02:00  
+
+[147 rows x 2 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="select-columns-when-creating-dataframe">
+<h2>Select columns when creating dataframe<a class="headerlink" href="#select-columns-when-creating-dataframe" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">station</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">till</span><span class="p">))</span>
+<span class="n">pdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;since&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="save-dataframe-to-csv">
+<h2>Save dataframe to csv<a class="headerlink" href="#save-dataframe-to-csv" title="Permalink to this heading">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_file_path</span> <span class="o">=</span> <span class="s2">&quot;../../../runtime/out.csv&quot;</span>
+<span class="n">pdata</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedules.html">Get schedules for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Explore data in pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-schedule">Get schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#show-columns-in-dataframe">Show columns in dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-columns-subset-dataframe">Select columns, (subset dataframe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select-columns-when-creating-dataframe">Select columns when creating dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-dataframe-to-csv">Save dataframe to csv</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Configuration:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Config: one config to rull them all</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="moderators.html" title="previous chapter">Get all participants for given show</a></li>
+      <li>Next: <a href="client_usage.html" title="next chapter">Library Showcase</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Czech Radio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/notebooks/explore_in_pandas.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
