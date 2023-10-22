@@ -13,8 +13,8 @@ import requests
 import yaml
 from dateutil import parser
 
-from rapi.helpers._logger import log_stderr as loge
-from rapi.helpers._logger import log_stdout as logo
+from rapi._logger import log_stderr as loge
+from rapi._logger import log_stdout as logo
 
 
 # PRINTERS

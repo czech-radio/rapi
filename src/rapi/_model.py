@@ -2,7 +2,7 @@ import datetime as dt
 import json
 from dataclasses import asdict, dataclass
 
-from rapi.helpers.helpers import DatetimeEncoder
+from rapi._helpers import DatetimeEncoder
 
 
 def str_pretty_json(cls):
@@ -48,19 +48,6 @@ class Station:
     priority: int = 0
     span: str = ""
     broadcast_name: str = ""
-
-
-# station_anotation: dict = {
-# "uuid": {"json": ["attributes","id"]},
-# "title": {"json": ["attributes","title"]},
-# "title_short": {"json": ["attributes","shortTitle"]},
-# "subtitle": {"json": ["attributes","subtitle"]},
-# "color": {"json": ["attributes","color"]},
-# "code": {"json": ["attributes","code"]},
-# "priority": {"json": ["attributes","priority"]},
-# "span": {"json": ["attributes","stationType"]},
-# "broadcast_name": {"json": ["meta","ga","siteBroadcastStation"]},
-# }
 
 station_anotation: dict = {
     "uuid": {"json": "id"},
@@ -193,7 +180,3 @@ person_anotation: dict = {
     },
     "participation_data": {"json": "relationships.participation.data"},
 }
-
-
-class Schedule:
-    pass

@@ -10,7 +10,6 @@ requires-python = ">=3.11"
 keywords = ["REST", "API"]
 license = {text = "MIT"}
 dependencies = [
-	"configparser",
 	"dacite",
 	"dataclasses_json",
 	"mergedeep",
@@ -59,7 +58,6 @@ markers = [
 	"domain: make domain",
 	"helpers:",
 	"model:",
-	"params:",
 	"station_ids:",
   "client_debug:",
 ]

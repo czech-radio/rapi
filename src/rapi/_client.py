@@ -18,27 +18,19 @@ from rapi._model import (
     show_anotation,
     station_anotation,
 )
-from rapi.config._config import Config
-from rapi.helpers import helpers
-from rapi.helpers._logger import log_stdout as logo
+from rapi import _helpers as helpers
+from rapi._logger import log_stdout as logo
 
 
 class Client:
-    def __init__(
-        self,
-        cfg: Config = Config(__package__),
-    ):
-        cfg.cfg_runtime_set_defaults()
-        self.Cfg = cfg
-        self.api_url = cfg.runtime_get(
-            [
-                "apis",
-                "croapp",
-                "urls",
-                "api",
-            ]
-        )
-        self.StationIDs = _station_ids.StationIDs(cfg)
+    api_url="https://api.mujrozhlas.cz"
+    session_connection_timeout=5
+    session_response_timeout=40
+    limit_page_length=500
+    limit_page_str="page[limit]="
+
+    def __init__( self,):
+        self.StationIDs = _station_ids.StationIDs()
         session = requests.Session()
         headers = {"User-Agent": __name__}
         session.headers.update(headers)
@@ -47,22 +39,6 @@ class Client:
     def __del__(self):
         if self._session:
             self._session.close()
-
-    def get_swagger(self) -> dict | None:
-        url = self.Cfg.runtime_get(["apis", "croapp", "urls", "swagger"])
-        ydata = helpers.request_url_yaml(url)
-        if ydata is None:
-            logo.error("data not avaiable")
-        return ydata
-
-    def save_swagger(self) -> bool:
-        ydata = self.get_swagger()
-        if ydata is None:
-            return False
-        directory = self.Cfg.runtime_get(["apis", "croapp", "workdir", "dir"])
-        filepath = os.path.join(directory, "apidef")
-        ok = helpers.save_yaml(filepath, "swagger.yml", ydata)
-        return ok
 
     def get_station_guid(self, station_id: str) -> str:
         sid = StationIDs()
@@ -78,42 +54,48 @@ class Client:
             raise ValueError(f"code not found for station_id: {station_id}")
         return fkey
 
-    def _get_endpoint_link(self, endpoint: str, limit: int = 0) -> str:
-        cfgb = ["apis", "croapp", "response"]
-        if limit == 0:
-            limit = self.Cfg.runtime_get([*cfgb, "limit"])
-        cfgu = ["apis", "croapp", "urls", "api"]
-        api_url = self.Cfg.runtime_get(cfgu)
-        if api_url is None:
-            raise ValueError(f"{cfgu} not defined")
-        endpoint_url = "/".join((api_url, endpoint))
-        limstr = self.Cfg.runtime_get([*cfgb, "limit_str"])
-        if limit > 0 and limstr is not None:
-            if "?" in endpoint_url:
-                opt_delim = "&"
-            else:
-                opt_delim = "?"
-            endpoint_url = endpoint_url + opt_delim + limstr + str(limit)
+    def _get_endpoint_link(
+            self,
+            endpoint: str,
+            limit_page_length: int = 0,
+            ) -> str:
+        endpoint_url = "/".join((self.api_url, endpoint))
+        if limit_page_length == 0:
+            limit_page_length=self.limit_page_length
+        if "?" in endpoint_url:
+            opt_delim = "&"
+        else:
+            opt_delim = "?"
+        endpoint_parts = [
+                endpoint_url,
+                opt_delim,
+                self.limit_page_str,
+                str(limit_page_length),
+                ]
+        endpoint_url="".join(endpoint_parts)
         return endpoint_url
 
     def _get_endpoint_full_json(
-        self, endpoint: str, limit: int = 0
+        self, endpoint: str, limit_page_length: int = 0
     ) -> list[dict]:
-        link = self._get_endpoint_link(endpoint, limit)
+
+        link = self._get_endpoint_link(
+                endpoint,
+                limit_page_length,
+                )
         out: list = list()
-        response_timeout = self.Cfg.runtime_get(
-            ["apis", "croapp", "response", "response_timeout"]
-        )
-        connect_timeout = self.Cfg.runtime_get(
-            ["apis", "croapp", "response", "connect_timeout"]
-        )
+        response_ttl = self.session_connection_timeout
+        connect_ttl = self.session_response_timeout
+
         while link:
             request_msg = f"request url: {link}"
             logo.debug(request_msg)
             try:
                 response = self._session.get(
                     link,
-                    timeout=(connect_timeout, response_timeout),
+                    timeout=(
+                        connect_ttl,
+                        response_ttl,)
                 )
                 response.raise_for_status()
             except requests.exceptions.Timeout as ex:
@@ -206,25 +188,17 @@ class Client:
         station_id: str | None = None,
         limit: int = 0,
     ) -> Iterator[Episode]:
-        cmdpars = ["commands", "show_ep_filter"]
-        getval = self.Cfg.runtime_get
         tzinfo = helpers.current_timezone()
         eps = self.get_show_episodes(show_id, limit)
 
         # filter by date
         if date_from is None:
-            date_from = getval(
-                [*cmdpars, "date_from"],
-                datetime(1970, 1, 1, 0, 0, 0, tzinfo=tzinfo),
-            )
+            date_from = datetime(1970, 1, 1, 0, 0, 0, tzinfo=tzinfo)
         if isinstance(date_from, str):
             date_from = helpers.parse_date_optional_fields(date_from)
 
         if date_to is None:
-            date_to = getval(
-                [*cmdpars, "date_to"],
-                datetime.now(tzinfo),
-            )
+            date_to=datetime.now(tzinfo)
         if isinstance(date_to, str):
             date_to = helpers.parse_date_optional_fields(date_to)
         # NOTE: In the following lines mypy is disabled cause

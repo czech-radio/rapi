@@ -4,8 +4,7 @@ import pytest
 
 from rapi import _model
 from rapi._station_ids import StationIDs
-from rapi.config._config import Config
-from rapi.helpers import helpers
+import rapi._helpers as helpers
 
 
 @pytest.fixture
@@ -38,7 +37,6 @@ def test_get_row_by_pkey(station_ids) -> None:
 
 @pytest.mark.station_ids
 def test_get_fkey(station_ids) -> None:
-    print()
     si = _model.StationIDs()
     sid = si.__dict__
     for k in sid:
