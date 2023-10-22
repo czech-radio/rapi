@@ -1,19 +1,34 @@
+import datetime
 import datetime as dt
 import json
 from dataclasses import asdict, dataclass
 
-from rapi._helpers import DatetimeEncoder
-
 
 def str_pretty_json(cls):
+    '''
+    __srt__ method for datalass which prints dataclass as formated json. dataclass field values must be compatible with json requirements
+    '''
+
     def __str__(self):
         df = json.dumps(
-            asdict(self), indent=2, ensure_ascii=False, cls=DatetimeEncoder
+            asdict(self),
+            indent=2,
+            ensure_ascii=False,
+            cls=DatetimeEncoder,
         )
         return df
 
     cls.__str__ = __str__
     return cls
+
+
+class DatetimeEncoder(json.JSONEncoder):
+    '''format json datetime value when duming the json'''
+
+    def default(self, obj):
+        if isinstance(obj, datetime.datetime):
+            return obj.isoformat()
+        return super().default(obj)
 
 
 @dataclass
@@ -36,18 +51,19 @@ class StationIDs:
     # exmp.: "4082f63f-30e8-375d-a326-b32cf7d86e02"
 
 
-@dataclass
+@dataclass(frozen=True)
 @str_pretty_json
 class Station:
-    uuid: str = ""
-    title: str = ""
-    title_short: str = ""
-    subtitle: str = ""
-    color: str = ""
-    code: str = ""
-    priority: int = 0
-    span: str = ""
-    broadcast_name: str = ""
+    uuid: str
+    title: str
+    title_short: str
+    subtitle: str
+    color: str
+    code: str
+    priority: int
+    span: str
+    broadcast_name: str
+
 
 station_anotation: dict = {
     "uuid": {"json": "id"},
@@ -62,21 +78,21 @@ station_anotation: dict = {
 }
 
 
-@dataclass
+@dataclass(frozen=True)
 @str_pretty_json
 class Show:
-    uuid: str = ""
-    type: str = ""
-    content: bool = False
-    title: bool = False
-    active: bool = False
-    aired: bool = False
-    podcast: bool = False
-    priority: int = 0
-    child_friendly: bool = False
-    description: str = ""
-    description_short: str = ""
-    updated: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
+    uuid: str
+    type: str
+    content: bool
+    title: bool
+    active: bool
+    aired: bool
+    podcast: bool
+    priority: int
+    child_friendly: bool
+    description: str
+    description_short: str
+    updated: dt.datetime
 
 
 show_anotation: dict = {
@@ -95,21 +111,21 @@ show_anotation: dict = {
 }
 
 
-@dataclass
+@dataclass(frozen=True)
 @str_pretty_json
 class Episode:
-    uuid: str = ""
-    title: str = ""
-    title_short: str = ""
-    description: str = ""
-    since: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
-    till: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
-    updated: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
-    part: str = ""
-    title_mirrored: str = ""
-    content_creator: str = ""
-    content_id: str = ""
-    base_id: str = ""
+    uuid: str
+    title: str
+    title_short: str
+    description: str
+    since: dt.datetime
+    till: dt.datetime
+    updated: dt.datetime
+    part: str
+    title_mirrored: str
+    content_creator: str
+    content_id: str
+    base_id: str
 
 
 episode_anotation: dict = {
@@ -128,18 +144,18 @@ episode_anotation: dict = {
 }
 
 
-@dataclass
+@dataclass(frozen=True)
 @str_pretty_json
 class Episode_schedule:
-    uuid: str = ""
-    title: str = ""
-    description: str = ""
-    station: str = ""
-    station_code: int = 0
-    show_priority: int = 0
-    show_times: str = ""
-    since: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
-    till: dt.datetime = dt.datetime(1, 1, 1, 0, 0)
+    uuid: str
+    title: str
+    description: str
+    station: str
+    station_code: int
+    show_priority: int
+    show_times: str
+    since: dt.datetime
+    till: dt.datetime
 
 
 episode_schedule_anotation: dict = {
@@ -158,14 +174,14 @@ episode_schedule_anotation: dict = {
 @dataclass
 @str_pretty_json
 class Person:
-    uuid: str = ""
-    title: str = ""
-    description_short: str = ""
-    description: str = ""
-    profile_id: str = ""
-    role: str = ""
-    participation_link: str = ""
-    participation_data: str = ""
+    uuid: str
+    title: str
+    description_short: str
+    description: str
+    profile_id: str
+    role: str
+    participation_link: str
+    participation_data: str
 
 
 person_anotation: dict = {

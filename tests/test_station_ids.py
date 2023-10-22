@@ -4,7 +4,6 @@ import pytest
 
 from rapi import _model
 from rapi._station_ids import StationIDs
-import rapi._helpers as helpers
 
 
 @pytest.fixture
@@ -16,23 +15,20 @@ def station_ids():
 
 @pytest.mark.station_ids
 def test_get_pkey_list(station_ids) -> None:
-    pkeys = station_ids.get_pkey_list()
-    assert pkeys
-    helpers.pp(pkeys)
+    result = station_ids.get_pkey_list()
+    assert result
 
 
 @pytest.mark.station_ids
 def test_get_table(station_ids) -> None:
-    table = station_ids.get_table()
-    assert table
-    helpers.pp(table)
+    result = station_ids.get_table()
+    assert result
 
 
 @pytest.mark.station_ids
 def test_get_row_by_pkey(station_ids) -> None:
-    fkeys = station_ids.get_row_by_pkey(str(11))
-    assert fkeys
-    print(fkeys)
+    result = station_ids.get_row_by_pkey(str(11))
+    assert result
 
 
 @pytest.mark.station_ids
@@ -42,4 +38,3 @@ def test_get_fkey(station_ids) -> None:
     for k in sid:
         val = station_ids.get_fkey("11", sid[k])
         assert val
-        print(val)

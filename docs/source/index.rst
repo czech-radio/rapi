@@ -22,12 +22,6 @@ Welcome to RAPI's documentation!
    ./notebooks/show_schedule_vs_episodes.ipynb
   
 .. toctree::
-   :caption: Configuration:
-
-   configuration
-   ./notebooks/configuration_usage.ipynb
-
-.. toctree::
    :caption: Develop:
 
    ./issues.md

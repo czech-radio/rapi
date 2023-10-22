@@ -4,7 +4,9 @@ from typing import Iterator
 
 import requests
 
+from rapi import _helpers as helpers
 from rapi import _station_ids
+from rapi._logger import log_stdout as logo
 from rapi._model import (
     Episode,
     Episode_schedule,
@@ -18,18 +20,18 @@ from rapi._model import (
     show_anotation,
     station_anotation,
 )
-from rapi import _helpers as helpers
-from rapi._logger import log_stdout as logo
 
 
 class Client:
-    api_url="https://api.mujrozhlas.cz"
-    session_connection_timeout=5
-    session_response_timeout=40
-    limit_page_length=500
-    limit_page_str="page[limit]="
+    api_url = "https://api.mujrozhlas.cz"
+    session_connection_timeout = 15
+    session_response_timeout = 60
+    limit_page_length = 500  # maximum number of entitites (e.g.: stations, episodes, shows, etc) which should be returned in one http request. if there are more entities then the maximum, further pages are requested sequentialy
+    limit_page_str = "page[limit]="
 
-    def __init__( self,):
+    def __init__(
+        self,
+    ):
         self.StationIDs = _station_ids.StationIDs()
         session = requests.Session()
         headers = {"User-Agent": __name__}
@@ -55,34 +57,33 @@ class Client:
         return fkey
 
     def _get_endpoint_link(
-            self,
-            endpoint: str,
-            limit_page_length: int = 0,
-            ) -> str:
+        self,
+        endpoint: str,
+        limit_page_length: int = 0,
+    ) -> str:
         endpoint_url = "/".join((self.api_url, endpoint))
         if limit_page_length == 0:
-            limit_page_length=self.limit_page_length
+            limit_page_length = self.limit_page_length
         if "?" in endpoint_url:
             opt_delim = "&"
         else:
             opt_delim = "?"
         endpoint_parts = [
-                endpoint_url,
-                opt_delim,
-                self.limit_page_str,
-                str(limit_page_length),
-                ]
-        endpoint_url="".join(endpoint_parts)
+            endpoint_url,
+            opt_delim,
+            self.limit_page_str,
+            str(limit_page_length),
+        ]
+        endpoint_url = "".join(endpoint_parts)
         return endpoint_url
 
     def _get_endpoint_full_json(
         self, endpoint: str, limit_page_length: int = 0
     ) -> list[dict]:
-
         link = self._get_endpoint_link(
-                endpoint,
-                limit_page_length,
-                )
+            endpoint,
+            limit_page_length,
+        )
         out: list = list()
         response_ttl = self.session_connection_timeout
         connect_ttl = self.session_response_timeout
@@ -95,7 +96,8 @@ class Client:
                     link,
                     timeout=(
                         connect_ttl,
-                        response_ttl,)
+                        response_ttl,
+                    ),
                 )
                 response.raise_for_status()
             except requests.exceptions.Timeout as ex:
@@ -115,14 +117,18 @@ class Client:
             link = jdata.get("links", {}).get("next")
         return out
 
-    def _get_endpoint(self, endpoint: str = "", limit: int = 0) -> list[dict]:
-        data = self._get_endpoint_full_json(endpoint, limit)
+    def _get_endpoint(
+        self, endpoint: str = "", limit_page_length: int = 0
+    ) -> list[dict]:
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         return data
 
-    def get_station(self, station_id: str, limit: int = 0) -> Station | None:
+    def get_station(
+        self, station_id: str, limit_page_length: int = 0
+    ) -> Station | None:
         guid = self.get_station_guid(str(station_id))
         endpoint = "stations/" + guid
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Station,
@@ -132,8 +138,8 @@ class Client:
             assert isinstance(out, Station)
         return out
 
-    def get_stations(self, limit: int = 0) -> Iterator[Station]:
-        data = self._get_endpoint_full_json("stations", limit)
+    def get_stations(self, limit_page_length: int = 0) -> Iterator[Station]:
+        data = self._get_endpoint_full_json("stations", limit_page_length)
         stations = helpers.class_attrs_by_anotation_list(
             data,
             Station,
@@ -143,11 +149,11 @@ class Client:
             yield station
 
     def get_station_shows(
-        self, station_id: str, limit: int = 0
+        self, station_id: str, limit_page_length: int = 0
     ) -> Iterator[Show]:
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         shows = helpers.class_attrs_by_anotation_list(
             data,
             Show,
@@ -156,9 +162,11 @@ class Client:
         for show in shows:
             yield show
 
-    def get_show(self, show_id: str, limit: int = 0) -> Show | None:
+    def get_show(
+        self, show_id: str, limit_page_length: int = 0
+    ) -> Show | None:
         endpoint = "shows/" + show_id
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Show,
@@ -167,11 +175,11 @@ class Client:
         return out  # type: ignore
 
     def get_show_episodes(
-        self, show_id: str, limit: int = 0
+        self, show_id: str, limit_page_length: int = 0
     ) -> Iterator[Episode]:
         endpoint = "shows/" + show_id + "/episodes"
         endpoint = endpoint + "?sort=since"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         episodes = helpers.class_attrs_by_anotation_list(
             data,
             Episode,
@@ -186,10 +194,10 @@ class Client:
         date_from: datetime | str | None = None,
         date_to: datetime | str | None = None,
         station_id: str | None = None,
-        limit: int = 0,
+        limit_page_length: int = 0,
     ) -> Iterator[Episode]:
         tzinfo = helpers.current_timezone()
-        eps = self.get_show_episodes(show_id, limit)
+        eps = self.get_show_episodes(show_id, limit_page_length)
 
         # filter by date
         if date_from is None:
@@ -198,7 +206,7 @@ class Client:
             date_from = helpers.parse_date_optional_fields(date_from)
 
         if date_to is None:
-            date_to=datetime.now(tzinfo)
+            date_to = datetime.now(tzinfo)
         if isinstance(date_to, str):
             date_to = helpers.parse_date_optional_fields(date_to)
         # NOTE: In the following lines mypy is disabled cause
@@ -211,11 +219,10 @@ class Client:
             yield episode  # type: ignore
 
     def get_show_episodes_schedule(
-        self, show_id: str, limit: int = 0
+        self, show_id: str, limit_page_length: int = 0
     ) -> Iterator[Episode_schedule]:
-        # endpoint = "shows/" + show_id + "/schedule-episodes"
         endpoint = "shows/" + show_id + "/schedule-episodes?sort=since"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         episodes_schedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -228,14 +235,14 @@ class Client:
         self,
         day: str,
         station_id: str = "",
-        limit: int = 0,
+        limit_page_length: int = 0,
     ) -> Iterator[Episode_schedule]:
         # NOTE:
-        ## https://rapidev.croapp.cz/schedule-day-flat?station=radiozurnal
-        ## not valid request when filtering by station
-        ## endpoint = "schedule-day?filter[station.id]=" + uuid # NOT WORKING
+        # https://rapidev.croapp.cz/schedule-day-flat?station=radiozurnal
+        # not valid request when filtering by station
+        # endpoint = "schedule-day?filter[station.id]=" + uuid # NOT WORKING
         endpoint = f"schedule-day-flat?filter[day]={day}"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -257,10 +264,10 @@ class Client:
         self,
         day: str,
         station_id: str = "",
-        limit: int = 0,
+        limit_page_length: int = 0,
     ) -> Iterator[Episode_schedule]:
         endpoint = f"schedule-day?filter[day]={day}"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -283,7 +290,7 @@ class Client:
         station_id: str = "",
         since: str = "",
         till: str = "",
-        limit: int = 0,
+        limit_page_length: int = 0,
     ):
         endpoint = "schedule"
         urlfilters: list = list()
@@ -300,7 +307,7 @@ class Client:
             urlfilter = f"filter[till][le]={till}"
             urlfilters.append(urlfilter)
         link = endpoint + "?" + "&".join(urlfilters) + "&sort=since"
-        data = self._get_endpoint_full_json(link, limit)
+        data = self._get_endpoint_full_json(link, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -314,7 +321,7 @@ class Client:
         date_from: datetime | str,
         date_to: datetime | str,
         station_id: str = "",
-        limit: int = 0,
+        limit_page_length: int = 0,
     ) -> Iterator[Episode_schedule]:
         # e.g.: https://rapidev.croapp.cz/schedule?filter[title][eq]=Zpr%C3%A1vy
         if not isinstance(date_from, str):
@@ -325,7 +332,7 @@ class Client:
         from_filter = f"filter[since][ge]={date_from}"
         to_filter = f"filter[till][le]={date_to}"
         endpoint = f"schedule?{from_filter}&{to_filter}"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -343,9 +350,11 @@ class Client:
         for episode_schedule in epschedules:
             yield episode_schedule
 
-    def get_person(self, person_id: str, limit: int = 0) -> Person | None:
+    def get_person(
+        self, person_id: str, limit_page_length: int = 0
+    ) -> Person | None:
         endpoint = "persons/" + person_id
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Person,
@@ -358,15 +367,15 @@ class Client:
     def get_show_participants_with_roles(
         self,
         show_id: str,
-        limit: int = 0,
+        limit_page_length: int = 0,
     ) -> Iterator[Person]:
         # NOTE: relationships.participants.data:
         # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
 
         endpoint = "shows/" + show_id
-        data = self._get_endpoint_full_json(endpoint, limit)
-        base_path = ["relationships", "participants", "data"]
-        persons_meta = helpers.dict_get_path(data[0], [*base_path])
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
+        json_base_path = ["relationships", "participants", "data"]
+        persons_meta = helpers.dict_get_path(data[0], [*json_base_path])
         for p in persons_meta:
             puuid = p["id"]
             prole = p["meta"]["role"]
@@ -378,9 +387,11 @@ class Client:
     def get_show_moderators(
         self,
         show_id: str,
-        limit: int = 0,
+        limit_page_length: int = 0,
     ) -> Iterator[Person]:
-        persons = self.get_show_participants_with_roles(show_id, limit)
+        persons = self.get_show_participants_with_roles(
+            show_id, limit_page_length
+        )
         moderators = list(
             filter(
                 lambda person: (person.role == "moderator"),  # type: ignore
@@ -391,10 +402,10 @@ class Client:
             yield moderator
 
     def get_show_participants(
-        self, show_id: str, limit: int = 0
+        self, show_id: str, limit_page_length: int = 0
     ) -> Iterator[Person]:
         endpoint = "shows/" + show_id + "/participants"
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         persons = helpers.class_attrs_by_anotation_list(
             data,
             Person,
@@ -404,7 +415,7 @@ class Client:
             yield person
 
     def get_show_episodes_last_repetition(
-        self, id: str, limit: int = 0
+        self, id: str, limit_page_length: int = 0
     ) -> Iterator[Episode_schedule]:
         # NOTE: Acording to Jan Hejzl (see features discussion: file:./docs/build/features_discusion.html) the date of premiere is automaticaly rewritten with the date of episode repetition
         # endpoint = "shows/" + show_id + "/participants"
@@ -412,7 +423,7 @@ class Client:
         # endpoint="serials/"
         # endpoint="schedule/"+id
         # endpoint="program/" # very slow
-        data = self._get_endpoint_full_json(endpoint, limit)
+        data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,

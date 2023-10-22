@@ -5,10 +5,10 @@ from rapi._logger import log_stdout as loge
 
 
 class StationIDs:
-    station_ids_pkey="openmedia_id"
-    station_ids_embeded_path="/data/stations_ids.csv"
+    station_ids_pkey = "openmedia_id"
+    station_ids_embeded_path = "/data/stations_ids.csv"
 
-    def __init__( self) -> None:
+    def __init__(self) -> None:
         self.DB = self.db_csv_init()
 
     def db_csv_init(self) -> list:
@@ -50,7 +50,7 @@ class StationIDs:
         '''
         pkey: field value of global primary key used by user
         fkey: fieldname of primary key used in particular database
-        ''' 
+        '''
         row = self.get_row_by_pkey(pkey)
         if row is not None:
             return row.get(fkey_name, None)

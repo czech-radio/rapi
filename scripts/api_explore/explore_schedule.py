@@ -3,7 +3,7 @@ import urllib.parse
 import pandas as pd
 
 from rapi import Client
-from rapi.helpers import helpers as hp
+from rapi import _helpers as hp
 
 pd.set_option("display.max_colwidth", None)
 import logging

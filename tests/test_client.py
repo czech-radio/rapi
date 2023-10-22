@@ -1,4 +1,3 @@
-# from rapi.helpers._logger import log_stdout as logo
 import logging
 import sys
 from typing import Union
@@ -6,12 +5,13 @@ from typing import Union
 import pandas as pd
 import pytest
 
+import rapi._helpers as helpers
 from rapi import _model
 from rapi._client import Client
-import rapi._helpers as helpers
 
-# lg = logging.getLogger("log_stdout")
-# lg.setLevel(logging.DEBUG)
+lg = logging.getLogger("log_stdout")
+lg.setLevel(logging.DEBUG)
+
 
 @pytest.fixture
 def client():
@@ -140,16 +140,15 @@ sample_episodes = [
 ]
 
 
-# @pytest.mark.client
-# def test_class_attrs_by_anotation_dict_dates(client) -> None:
-#     id = shows_with_schedule_episodes[0]
-#     endp = "shows/" + id + "/schedule-episodes"
-#     result = client._get_endpoint_full_json(endp)
-#     es = _model.Episode_schedule
-#     ea = _model.episode_schedule_anotation
-#     res = helpers.class_attrs_by_anotation_dict(result[0], es, ea)
-#     assert res
-#     print(res)
+@pytest.mark.client
+def test_class_attrs_by_anotation_dict_dates(client) -> None:
+    id = shows_with_schedule_episodes[0]
+    endp = "shows/" + id + "/schedule-episodes"
+    result = client._get_endpoint_full_json(endp)
+    es = _model.Episode_schedule
+    ea = _model.episode_schedule_anotation
+    result1 = helpers.class_attrs_by_anotation_dict(result[0], es, ea)
+    assert result1
 
 
 @pytest.mark.client
@@ -157,38 +156,45 @@ def test_get_station_guid(client) -> None:
     result = client.get_station_guid(str(11))
     assert result
 
+
 @pytest.mark.client
 def test_get_station_code(client) -> None:
-    result= client.get_station_code(str(11))
+    result = client.get_station_code(str(11))
     assert result
+
 
 @pytest.mark.client
 def test_get_endpoint_link(client) -> None:
-    endpoint="schedule"
-    limit_page_lenght=100
-    result=client._get_endpoint_link(endpoint,limit_page_lenght)
+    endpoint = "schedule"
+    limit_page_lenght = 100
+    result = client._get_endpoint_link(endpoint, limit_page_lenght)
     assert result
+
 
 @pytest.mark.client
 def test_get_endpoint_fult_json(client) -> None:
-    endpoint="stations"
-    limit_page_lenght=100
-    result=client._get_endpoint_full_json(endpoint,limit_page_lenght)
+    endpoint = "stations"
+    limit_page_lenght = 100
+    result = client._get_endpoint_full_json(endpoint, limit_page_lenght)
     assert result
+
 
 @pytest.mark.client
 def test_get_stations(client) -> None:
     # NOTE: Number of stations seems to be rather dynamic in time: 27, 28, 33, 34
+    # get stations limit result to 10 stations in one request
     stations1 = list(client.get_stations())
     assert stations1
+    # get stations limit result limit to maximum allowed? in one request
     stations2 = list(client.get_stations(10))
     assert stations2
+    # NOTE: Sometimes this fails 28 == 31
     assert len(stations2) == len(stations1)
 
 
 @pytest.mark.client
 def test_get_station_shedule_day_flat(client) -> None:
-    result= client.get_station_schedule_day_flat("2023-08-19")
+    result = client.get_station_schedule_day_flat("2023-08-19")
     assert result
     result1 = pd.DataFrame(result, columns=["station"])
     assert len(result1) > 0
@@ -196,13 +202,13 @@ def test_get_station_shedule_day_flat(client) -> None:
 
 @pytest.mark.client
 def test_get_station_shows(client) -> None:
-    result= client.get_station_shows(str(11), 500)
+    result = client.get_station_shows(str(11), 500)
     assert result
 
 
 @pytest.mark.client
 def test_get_show(client) -> None:
-    result= client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935", 500)
+    result = client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935", 500)
     assert result
 
 
@@ -253,17 +259,17 @@ def test_get_station_schedule_day_flat(client) -> None:
     assert result1
     assert len(result1) == 173
     result2 = pd.DataFrame(result1, columns=["station"])
-    assert len(result2)>0
+    assert len(result2) > 0
 
 
 @pytest.mark.client
 def test_get_station_schedule_day(client) -> None:
     result = client.get_station_schedule_day("2023-09-11", "11")
     assert result
-    result1=list(result)
-    assert  len(result1) == 141
-    result1 = pd.DataFrame(result1, columns=["station"])
-    assert len(result1)>0
+    result1 = list(result)
+    assert len(result1) == 141
+    result2 = pd.DataFrame(result1, columns=["station"])
+    assert len(result2) > 0
 
 
 @pytest.mark.client
@@ -277,7 +283,9 @@ def test_get_schedule(client) -> None:
     assert len(result1) > 0
     result2 = list(client.get_schedule(show, station, "2023-10-01"))
     assert len(result2) > 0
-    result3 = list(client.get_schedule(show, station, "2023-10-20", "2023-10-21"))
+    result3 = list(
+        client.get_schedule(show, station, "2023-10-20", "2023-10-21")
+    )
     assert len(result3) > 0
 
 
@@ -286,12 +294,14 @@ def test_get_schedule_by_date(client) -> None:
     result1 = list(client.get_schedule_by_date("2023-09-17", "2023-09-18"))
     assert result1
 
-    result2 = list(client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00"))
+    result2 = list(
+        client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00")
+    )
     assert result2
 
-    result3 = list(client.get_schedule_by_date(
-        "2023-09-17T8:00", "2023-09-17T9:00", "11"
-    ))
+    result3 = list(
+        client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00", "11")
+    )
     assert len(result1) > len(result2) > len(result3)
 
 
@@ -301,7 +311,8 @@ def test_get_show_participants(client) -> None:
     show_id = sample_radio_11_shows[sp]
     result = list(client.get_show_participants(show_id))
     assert result
-    assert len(result)>0
+    assert len(result) > 0
+
 
 @pytest.mark.client
 def test_get_show_participants_with_roles(client) -> None:
@@ -309,7 +320,7 @@ def test_get_show_participants_with_roles(client) -> None:
     show_id = sample_radio_11_shows[sp]
     result = list(client.get_show_participants_with_roles(show_id))
     assert result
-    assert len(result)>0
+    assert len(result) > 0
 
 
 @pytest.mark.client
@@ -317,7 +328,7 @@ def test_get_show_moderators(client) -> None:
     sp = sample_shows_with_schedule[0]
     show_id = sample_radio_11_shows[sp]
     result = list(client.get_show_moderators(show_id))
-    assert len(result)>0
+    assert len(result) > 0
 
 
 @pytest.mark.client

@@ -6,24 +6,15 @@ import sys
 default_format = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s"
 
 
-# ShortenedLevelFormatter
-# modify format fields
 class ShortenedLevelFormatter(logging.Formatter):
+    '''custom log formater'''
+
     def format(self, record):
         if record.levelname:
-            # shorten lelvel name to one letter
+            # shorten level name to one letter
             record.levelname = record.levelname[0]
         return super().format(record)
 
-
-# FILE LOGGER (Not implemented yet)
-# NOTE: dir path must exist. Maybe use /tmp as default ?
-# log_file = logging.getLogger("log_file")
-# log_file.setLevel(logging.DEBUG)
-# debug_handler = logging.FileHandler("./runtime/debug.log")
-# debug_formatter = logging.Formatter(default_format)
-# debug_handler.setFormatter(debug_formatter)
-# log_file.addHandler(debug_handler)
 
 # STDOUT LOGGER
 log_stdout = logging.getLogger("log_stdout")
@@ -59,7 +50,6 @@ def set_level(verbose_level: int = 0) -> None:
 
 
 def test_logs() -> None:
-    # log_file.debug('Debug message')
     log_stdout.debug("this is debug_level message")
     log_stdout.info("Info message")
     log_stdout.warning("warning message")
