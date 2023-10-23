@@ -1,39 +1,33 @@
 import csv
 import dataclasses as dc
 import datetime
-import errno
-import json
 import os
 import pkgutil
-import sys
 from io import StringIO
-from typing import Any, Sequence, Tuple, Type, Union, no_type_check
+from typing import Any, Sequence, Union
 
-import requests
-import yaml
 from dateutil import parser
 
-from rapi._logger import log_stderr as loge
 from rapi._logger import log_stdout as logo
 
 
 def current_timezone():
-    '''get current timezone from users system'''
+    """get current timezone from users system"""
     return datetime.datetime.now().astimezone().tzinfo
 
 
 def datenow_with_timezone():
-    '''
+    """
     get current datetime with current timezone from system
-    '''
+    """
     return datetime.datetime.now().astimezone()
 
 
 def parse_date_optional_fields(date_string: str):
     try:
-        '''
+        """
         parse date string:
-        '''
+        """
         pdate = parser.parse(date_string)
         if pdate.tzinfo is None:
             return pdate.astimezone()
@@ -64,9 +58,9 @@ def read_csv_path_to_ram(fname: str) -> csv.DictReader:
 
 
 def csv_is_row_valid(row: dict) -> bool:
-    '''
+    """
     check if csw row has all cells defined. i.e. no cell in row can be empty/undefined.
-    '''
+    """
     for ckey, cval in row.items():
         if cval == "":
             return False
@@ -74,7 +68,7 @@ def csv_is_row_valid(row: dict) -> bool:
 
 
 def csv_valid_rows(csv: csv.DictReader) -> list:
-    '''get valid csv rows'''
+    """get valid csv rows"""
     out: list = []
     for row in csv:
         if csv_is_row_valid(row):
@@ -83,16 +77,16 @@ def csv_valid_rows(csv: csv.DictReader) -> list:
 
 
 def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
-    '''join list of strings, omit empty strings'''
+    """join list of strings, omit empty strings"""
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)
 
 
 def dict_get_path(general_dictionary: dict, json_path: list[str]) -> Any:
-    '''
+    """
     Get path value in json-like object.
     Get subset of dictionary giving list of path or keyname
-    '''
+    """
     gd = general_dictionary
     for path in json_path:
         result = gd.get(path, None)
@@ -107,10 +101,10 @@ def json_value_parse(
     field_type: type[object],
     json_value: Any,
 ) -> Any:
-    '''
+    """
     json field parsers list:
     parse json value according to ist type
-    '''
+    """
     match field_type:
         case datetime.datetime:
             value = parse_date_optional_fields(json_value)
@@ -124,9 +118,9 @@ def class_attrs_by_anotation_dict(
     datacls: type[object],
     anotation: dict,
 ) -> object:
-    '''
+    """
     parse json data fields specified in anotation to dataclass instance
-    '''
+    """
     # get dataclass fields
     fields = {field.name: field.type for field in dc.fields(datacls)}  # type: ignore
     values: list = list()
@@ -147,9 +141,9 @@ def class_attrs_by_anotation_list(
     datacls: type[object],
     anotation: dict,
 ) -> list[Any]:
-    '''
+    """
     parse json data fields specified in anotation to list of dataclasses instances
-    '''
+    """
     out: list = list()
     for d in data:
         res = class_attrs_by_anotation_dict(d, datacls, anotation)

@@ -7,7 +7,7 @@ default_format = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(linen
 
 
 class ShortenedLevelFormatter(logging.Formatter):
-    '''custom log formater'''
+    """custom log formater"""
 
     def format(self, record):
         if record.levelname:

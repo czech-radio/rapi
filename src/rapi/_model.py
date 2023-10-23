@@ -5,9 +5,9 @@ from dataclasses import asdict, dataclass
 
 
 def str_pretty_json(cls):
-    '''
+    """
     __srt__ method for datalass which prints dataclass as formated json. dataclass field values must be compatible with json requirements
-    '''
+    """
 
     def __str__(self):
         df = json.dumps(
@@ -23,7 +23,7 @@ def str_pretty_json(cls):
 
 
 class DatetimeEncoder(json.JSONEncoder):
-    '''format json datetime value when duming the json'''
+    """format json datetime value when duming the json"""
 
     def default(self, obj):
         if isinstance(obj, datetime.datetime):
