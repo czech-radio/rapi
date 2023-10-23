@@ -1,11 +1,8 @@
 # rapi
 
-[![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)
+[![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)  ![version](https://img.shields.io/badge/version-0.9.0-blue.svg)  ![GitHub stars](https://img.shields.io/github/stars/czech-radio/rapi?style=social)
 
 **The Python REST API client for [mujrozhlas.cz](https://rapidoc.croapp.cz/).**
-
-- maintainer: Jan Kačaba
-- repository: <https://github.com/czech-radio/rapi>
 
 Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
 as Python objects.
