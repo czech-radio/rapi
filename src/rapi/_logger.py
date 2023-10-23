@@ -1,12 +1,12 @@
 import logging
 import sys
 
-
 default_format = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s"
 
 
 class ShortenedLevelFormatter(logging.Formatter):
     """Shorten level name to one letter."""
+
     def format(self, record):
         if record.levelname:
             record.levelname = record.levelname[0]
