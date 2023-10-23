@@ -1,0 +1,678 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Get schedules for given show" href="show_schedule_vs_episodes.html" /><link rel="prev" title="Explore data in pandas" href="explore_in_pandas.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
+        <title>Library Showcase - RAPI documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">RAPI  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">RAPI  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_documentation.html">Api documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedules.html">Get schedules for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moderators.html">Get all participants for given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore_in_pandas.html">Explore data in pandas</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Library Showcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="library-showcase">
+<h1>Library Showcase<a class="headerlink" href="#library-showcase" title="Permalink to this heading">#</a></h1>
+<p>FIXME: Add some description</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="get-all-available-stations">
+<h2>Get all available stations<a class="headerlink" href="#get-all-available-stations" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stations</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_stations</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">stations</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-all-shows-for-given-station">
+<h2>Get all shows for given station<a class="headerlink" href="#get-all-shows-for-given-station" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shows</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_shows</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">shows</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Show(uuid=&#39;c239aa59-bc78-3180-9b58-5c911846630d&#39;, type=&#39;show&#39;, content=True, title=&#39;100 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, description_short=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))),
+ Show(uuid=&#39;af62bd59-1e49-3dae-a68b-90b11f5d2ae6&#39;, type=&#39;show&#39;, content=True, title=&#39;90 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, description_short=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))),
+ Show(uuid=&#39;d88f0d67-6ba1-3ba5-8fea-01e41a614037&#39;, type=&#39;show&#39;, content=True, title=&#39;Antivirus&#39;, active=True, aired=True, podcast=True, priority=0, child_friendly=False, description=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. Budou mluvit o aktuálních kyberútocích a podvodech na internetu a přidají i tipy, jak chránit sebe i své děti nebo rodiče. Antivirus doplní články na zpravodajském webu iRozhlas.cz.&#39;, description_short=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa.\xa0&#39;, updated=datetime.datetime(2023, 9, 4, 10, 0, 10, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-particular-show-by-uuid">
+<h2>Get particular show by UUID<a class="headerlink" href="#get-particular-show-by-uuid" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span><span class="o">.</span><span class="n">get_show</span><span class="p">(</span><span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Show(uuid=&#39;739a46c7-35e3-336e-a7d5-08a20b7e7677&#39;, type=&#39;show&#39;, content=True, title=&#39;Rozhovory Radiožurnálu&#39;, active=True, aired=True, podcast=False, priority=0, child_friendly=False, description=&#39;Ptáme se na všechno, co vás zajímá. Každý den se snažíme kontaktovat politiky, specialisty a odborníky z nejrůznějších profesí, abychom vám nabídli jejich názory a pohledy na nejaktuálnější témata.&#39;, description_short=&#39;Každý den se snažíme kontaktovat politiky, specialisty a odborníky z nejrůznějších profesí, abychom vám nabídli jejich názory a pohledy na nejaktuálnější témata.&#39;, updated=datetime.datetime(2023, 7, 14, 17, 0, 12, tzinfo=tzoffset(None, 7200)))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-show-episodes">
+<h2>Get show episodes<a class="headerlink" href="#get-show-episodes" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_episodes</span><span class="p">(</span><span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">episodes</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&#39;, title=&#39;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, title_short=&#39;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, description=&#39;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 26, 14, 14, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 26, 14, 17, 16, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 26, 17, 0, 16, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10011355&#39;, base_id=None),
+ Episode(uuid=&#39;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&#39;, title=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, title_short=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, description=&#39;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 27, 8, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 27, 8, 22, 38, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 27, 10, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10012081&#39;, base_id=None),
+ Episode(uuid=&#39;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&#39;, title=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, title_short=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, description=&#39;&lt;p&gt;&lt;span lang=&quot;cs-CZ&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 29, 10, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 29, 10, 42, 30, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 30, 19, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10013547&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filter-show-episodes-by-date">
+<h2>Filter show episodes by date<a class="headerlink" href="#filter-show-episodes-by-date" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">show_episodes_filter</span><span class="p">(</span>
+    <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">,</span> <span class="s2">&quot;2022&quot;</span><span class="p">,</span> <span class="s2">&quot;2023&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">episodes</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;f0d6f493-3f38-30c3-9b4c-51aef1bf9d3e&#39;, title=&#39;Jak se slavil 28. říjen? „Za první republiky byly oslavy mohutné a zároveň povinné,“ popisuje historička&#39;, title_short=&#39;Jak se slavil 28. říjen? „Za první republiky byly oslavy mohutné a povinné,“ popisuje historička&#39;, description=&#39;&lt;p&gt;Dnes si připomínáme výročí vzniku samostatného Československa. Oslavy 28. října měly v&amp;nbsp;průběhu historie našeho státu různé podoby v závislosti na střídání politických režimů. Historici z nich vyčtou cenné informace o tehdejší společnosti.&amp;nbsp;Jak se k svátku stavěly národnostní menšiny?&amp;nbsp;„V roce 1928 například Maďaři říkali, že je to jejich den smutku,“ popisuje v rozhovoru Dagmar Hájková.&lt;br&gt;\nPetr Král&lt;/p&gt;&#39;, since=datetime.datetime(2022, 10, 28, 10, 3, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 10, 28, 10, 8, 46, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 10, 28, 11, 0, 29, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10454157&#39;, base_id=None),
+ Episode(uuid=&#39;c952bac2-6662-3e61-90f2-9171c617dd24&#39;, title=&#39;Ještě je čas na záchrannou brzdu, říká člen NERV o návrhu úspor ve státním rozpočtu&#39;, title_short=&#39;Ještě je čas na záchrannou brzdu, říká člen NERV o návrhu úspor ve státním rozpočtu&#39;, description=&#39;&lt;p&gt;Součet&amp;nbsp;schodku státního rozpočtu se za poslední tři roky vyšplhal na bilion korun a příští rok&amp;nbsp;naroste o dalších 295 miliard.&amp;nbsp;Národní ekonomická rada vlády (NERV) proto kabinetu Petra Fialy ve středu předložila návrhy opatření, která by měla vést&amp;nbsp;k dlouhodobému zlepšení hospodaření státu.&amp;nbsp;Co by hrozilo, pokud by se státní dluh dál zvyšoval podobným tempem? A v čem podle členů NERV dělá stát hlavní chyby?&lt;br&gt;\nVěra Štechrová&lt;/p&gt;&#39;, since=datetime.datetime(2022, 11, 3, 10, 52, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 11, 3, 10, 58, 50, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 11, 4, 22, 0, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10462509&#39;, base_id=None),
+ Episode(uuid=&#39;f795186d-1748-354d-af6b-177fe7b068e0&#39;, title=&#39;V Rokytnici jsou stovky lidí bez dodávek tepla, hrozí přerušení výuky. Vyřeší se spor města s dodavatelem?&#39;, title_short=&#39;Část Rokytnice je bez dodávek tepla, hrozí přerušení výuky. Vyřeší se spor města s dodavatelem?&#39;, description=&#39;&lt;p&gt;Část domácností v Rokytnici v Orlických horách je už druhý den bez tepla a teplé vody. Dodavatel jim včera ráno kvůli dlouhodobým neshodám ohledně účtované ceny přerušil dodávky. Jde o stovky lidí v domácnostech na několika sídlištích. Kromě nich je ale od tepla odpojený taky dům s pečovatelskou službou nebo základní škola, kde hrozí přerušení výuky. Společnost Ekoenergy Moravia ten krok odůvodnila tím, že aktuálně na dodávky tepla nemá dostatek peněz.&lt;br&gt;\nAnna Horáčková, Vojtěch Bidrman&lt;/p&gt;&#39;, since=datetime.datetime(2022, 11, 6, 8, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2022, 11, 6, 8, 42, 54, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2022, 11, 6, 9, 0, 24, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10465998&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">episodes</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">show_episodes_filter</span><span class="p">(</span>
+    <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2022-08-11&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2023-09-11&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">episodes</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;ca15ae46-896e-37ba-87f3-65fa42af1bff&#39;, title=&#39;Královna dokázala dát každému pocit, že je zajímavý. Karel III. bude změna, ale kontinuita, myslí si britský velvyslanec&#39;, title_short=&#39;Karel III. bude změna, ale kontinuita, myslí si britský velvyslanec&#39;, description=&#39;&lt;p&gt;Londýn se chystá na pondělní pohřeb britské královny Alžběty II. Podle velvyslance Spojeného království v Praze Nicka Archera byla Alžběta II. pro Brity konstantou a pevným bodem ve světě, který se rychle a výrazně měnil. Nick Archer má ke královské rodině a zvláště k novému králi Karlu III. blízko, několik let by totiž asistentem princova osobního tajemníka. O změnách, které nyní monarchii čekají, si s ním povídal vedoucí zahraniční redakce Českého rozhlasu Filip Nerad.&lt;br&gt;\nFilip Nerad&lt;/p&gt;&#39;, since=datetime.datetime(2022, 9, 15, 16, 11, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 9, 15, 16, 24, 58, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 9, 21, 14, 30, 32, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10393035&#39;, base_id=None),
+ Episode(uuid=&#39;6c7778f7-c529-38f8-8054-71763f9fb542&#39;, title=&#39;Putin vyhlásil částečnou mobilizaci. „Je si vědom, jak se jí národ obává,“ myslí si komentátor&#39;, title_short=&#39;Putin vyhlásil částečnou mobilizaci. „Je si vědom, jak se jí národ obává,“ myslí si komentátor&#39;, description=&#39;&lt;p&gt;Ruský prezident ve svém středečním projevu vyhlásil v zemi částečnou mobilizaci. V televizním vystoupení uvedl, že je to na obranu před Západem, který se snaží oslabit, rozdělit a zničit Rusko. Okupační vedení ukrajinské Doněcké, Luhanské, Záporožské a Chersonské oblasti pak narychlo ohlásila konání referend o připojení k Rusku. Hlasování má začít už v pátek a bude trvat do úterý. Podle ukrajinského vedení jsou tato rozhodnutí důkazem, že Kremlu nevychází jeho válečné plány.&lt;br&gt;\nLibor Dvořák, Petr Král&lt;/p&gt;&#39;, since=datetime.datetime(2022, 9, 21, 10, 2, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 9, 21, 10, 5, 29, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 9, 21, 10, 40, 21, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10400352&#39;, base_id=None),
+ Episode(uuid=&#39;8b10e8d2-4c7d-3706-a078-f6bbffa4f51c&#39;, title=&#39;Ruští občané musejí vládě říct: Jsme proti válce, zastavte to! vyzývá starosta Kyjeva Vitalij Kličko&#39;, title_short=&#39;Ruští občané musejí vládě říct: Jsme proti válce, zastavte to! vyzývá starosta Kyjeva Vitalij Kličko&#39;, description=&#39;&lt;p&gt;Na pražský Summit Paktu svobodných měst dorazil i starosta Kyjeva Vitalij Kličko. „Chceme být na stejné straně evropské rodiny, jako jste vy,“ říká. Přijel podle svých slov také poděkovat za českou pomoc Ukrajině a inspirovat se&amp;nbsp;proměnou České republiky&amp;nbsp;po roce 1989. Jaká je současná situace ve městech na Ukrajině? A co si Kličko myslí o přijímání ruských uprchlíků před mobilizací? Poslechněte si celý rozhovor.&lt;br&gt;\nAnna Košlerová&lt;/p&gt;&#39;, since=datetime.datetime(2022, 9, 27, 11, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2022, 9, 27, 11, 23, 45, tzinfo=tzoffset(None, 7200)), updated=datetime.datetime(2022, 9, 28, 21, 20, 12, tzinfo=tzoffset(None, 7200)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10411494&#39;, base_id=None)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eps_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="s2">&quot;2023-09-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-09-18&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">eps_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eps_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="s2">&quot;2023-09-17T8:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-09-17T9:00&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">eps_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="get-schedule-filter-by-date-and-station-slow-list-eps-schedule-3">
+<h3>Get schedule filter by date and station (slow)list(eps_schedule)[:3]<a class="headerlink" href="#get-schedule-filter-by-date-and-station-slow-list-eps-schedule-3" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eps_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="s2">&quot;2023-09-17T8:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2023-09-17T9:00&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">eps_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="get-show-participants-with-role">
+<h2>Get show participants with role<a class="headerlink" href="#get-show-participants-with-role" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">participants</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_participants_with_roles</span><span class="p">(</span>
+    <span class="s2">&quot;c7374f41-ae14-3b5c-8c04-385e3241deb4&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">participants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Person(uuid=&#39;4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f&#39;, title=&#39;Jiří Chum&#39;, description_short=&#39;&lt;p&gt;Moderuje každý všední den Dopolední Radiožurnál.&lt;/p&gt;&#39;, description=&#39;&lt;p&gt;&lt;strong&gt;Co dělám v rozhlase:&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;span&gt;Na Radiožurnálu moderuji od roku 2002, od března 2008 do prosince 2010 Odpolední Radiožurnál a od ledna 2011\xa0&lt;/span&gt;Večerní Radiožurnál&lt;span&gt;\xa0a ob týden\xa0&lt;/span&gt;Víkendový Ranní Radiožurnál&lt;span&gt;. Deset let jsem moderoval každý všední den Ranní Radiožurnál a od 1. července 2022 usedám za mikrofon Dopoledního Radiožurnálu. Ještě déle spolupracuji s regionální stanicí ČRo Region střední Čechy. V současnosti ale už jen v oblasti selfpromotion.&lt;/span&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;Před rozhlasem:&lt;/strong&gt;&lt;br /&gt;\nVystudoval jsem SSPoŠ Kolín se zaměřením na ekonomiku a management, poté si dal na pár let pauzu a v současnosti studuji Fakultu multimediálních komunikaci UTB ve Zlíně obor Marketingové komunikace. Z rádiové praxe: rádio City 937 a dlouhá léta Český rozhlas, kterému jsem nakonec zůstal věrný.&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;\n\n&#39;, profile_id=&#39;5002938&#39;, role=&#39;moderator&#39;, participation_link=&#39;https://api.mujrozhlas.cz/persons/4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f/participation&#39;, participation_data=[{&#39;type&#39;: &#39;station&#39;, &#39;id&#39;: &#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, &#39;meta&#39;: {&#39;role&#39;: &#39;Moderátoři&#39;}}])]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-show-moderators">
+<h2>Get show moderators<a class="headerlink" href="#get-show-moderators" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moderators</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_moderators</span><span class="p">(</span><span class="s2">&quot;c7374f41-ae14-3b5c-8c04-385e3241deb4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">moderators</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mls</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;uuid&quot;: &quot;4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f&quot;,
+  &quot;title&quot;: &quot;Jiří Chum&quot;,
+  &quot;description_short&quot;: &quot;&lt;p&gt;Moderuje každý všední den Dopolední Radiožurnál.&lt;/p&gt;&quot;,
+  &quot;description&quot;: &quot;&lt;p&gt;&lt;strong&gt;Co dělám v rozhlase:&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;span&gt;Na Radiožurnálu moderuji od roku 2002, od března 2008 do prosince 2010 Odpolední Radiožurnál a od ledna 2011 &lt;/span&gt;Večerní Radiožurnál&lt;span&gt; a ob týden &lt;/span&gt;Víkendový Ranní Radiožurnál&lt;span&gt;. Deset let jsem moderoval každý všední den Ranní Radiožurnál a od 1. července 2022 usedám za mikrofon Dopoledního Radiožurnálu. Ještě déle spolupracuji s regionální stanicí ČRo Region střední Čechy. V současnosti ale už jen v oblasti selfpromotion.&lt;/span&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;Před rozhlasem:&lt;/strong&gt;&lt;br /&gt;\nVystudoval jsem SSPoŠ Kolín se zaměřením na ekonomiku a management, poté si dal na pár let pauzu a v současnosti studuji Fakultu multimediálních komunikaci UTB ve Zlíně obor Marketingové komunikace. Z rádiové praxe: rádio City 937 a dlouhá léta Český rozhlas, kterému jsem nakonec zůstal věrný.&lt;/p&gt;\n\n&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;\n\n&quot;,
+  &quot;profile_id&quot;: &quot;5002938&quot;,
+  &quot;role&quot;: &quot;moderator&quot;,
+  &quot;participation_link&quot;: &quot;https://api.mujrozhlas.cz/persons/4bb6cd4a-a5e8-3e48-a36e-06d7ac7e4f0f/participation&quot;,
+  &quot;participation_data&quot;: [
+    {
+      &quot;type&quot;: &quot;station&quot;,
+      &quot;id&quot;: &quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;,
+      &quot;meta&quot;: {
+        &quot;role&quot;: &quot;Moderátoři&quot;
+      }
+    }
+  ]
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-station-schedule-day">
+<h2>Get station schedule day<a class="headerlink" href="#get-station-schedule-day" title="Permalink to this heading">#</a></h2>
+<section id="get-station-schedule-day-flat">
+<h3>Get station schedule day flat<a class="headerlink" href="#get-station-schedule-day-flat" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day_schedule</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_schedule_day_flat</span><span class="p">(</span><span class="s2">&quot;2023-09-11&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">day_schedule</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;b76f6685-02dd-33ee-9bd8-5fcb5c19ba80&#39;, title=&#39;Zpravodajství z Česka i ze světa&#39;, description=&#39;Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;b9973c2e-f6af-36ec-a281-0c0768c136c7&#39;, title=&#39;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&#39;, description=&#39;&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;003317bc-331d-3905-a318-62a1008bddc4&#39;, title=&#39;Aktuální reportáže a nejrychlejší zpravodajství&#39;, description=&#39;Moderuje Adam Carda a Jiří Štefl.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 30, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Get station schedule day<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_schedule_day</span><span class="p">(</span><span class="s2">&quot;2023-09-11&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ldata</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ldata</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode_schedule(uuid=&#39;b76f6685-02dd-33ee-9bd8-5fcb5c19ba80&#39;, title=&#39;Zpravodajství z Česka i ze světa&#39;, description=&#39;Sport, Zelená vlna a předpověď počasí. O dopravní situaci informujte na bezplatné lince 800 553 553.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 0, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;b9973c2e-f6af-36ec-a281-0c0768c136c7&#39;, title=&#39;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&#39;, description=&#39;&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200))),
+ Episode_schedule(uuid=&#39;003317bc-331d-3905-a318-62a1008bddc4&#39;, title=&#39;Aktuální reportáže a nejrychlejší zpravodajství&#39;, description=&#39;Moderuje Adam Carda a Jiří Štefl.&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 1, 0, tzinfo=tzoffset(None, 7200)))]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ldata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Episode_schedule(uuid=&#39;b9973c2e-f6af-36ec-a281-0c0768c136c7&#39;, title=&#39;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&#39;, description=&#39;&#39;, station=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, station_code=1, show_priority=0, show_times=None, since=datetime.datetime(2023, 9, 11, 0, 9, tzinfo=tzoffset(None, 7200)), till=datetime.datetime(2023, 9, 11, 0, 10, tzinfo=tzoffset(None, 7200)))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ldata</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;uuid&quot;: &quot;b9973c2e-f6af-36ec-a281-0c0768c136c7&quot;,
+  &quot;title&quot;: &quot;Informace o dopravní situaci volejte na bezplatnou linku 800 553 553.&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;station&quot;: &quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;,
+  &quot;station_code&quot;: 1,
+  &quot;show_priority&quot;: 0,
+  &quot;show_times&quot;: null,
+  &quot;since&quot;: &quot;2023-09-11T00:09:00+02:00&quot;,
+  &quot;till&quot;: &quot;2023-09-11T00:10:00+02:00&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="show_schedule_vs_episodes.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Get schedules for given show</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="explore_in_pandas.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Explore data in pandas</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Czech Radio
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Library Showcase</a><ul>
+<li><a class="reference internal" href="#get-all-available-stations">Get all available stations</a></li>
+<li><a class="reference internal" href="#get-all-shows-for-given-station">Get all shows for given station</a></li>
+<li><a class="reference internal" href="#get-particular-show-by-uuid">Get particular show by UUID</a></li>
+<li><a class="reference internal" href="#get-show-episodes">Get show episodes</a></li>
+<li><a class="reference internal" href="#filter-show-episodes-by-date">Filter show episodes by date</a><ul>
+<li><a class="reference internal" href="#get-schedule-filter-by-date-and-station-slow-list-eps-schedule-3">Get schedule filter by date and station (slow)list(eps_schedule)[:3]</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-show-participants-with-role">Get show participants with role</a></li>
+<li><a class="reference internal" href="#get-show-moderators">Get show moderators</a></li>
+<li><a class="reference internal" href="#get-station-schedule-day">Get station schedule day</a><ul>
+<li><a class="reference internal" href="#get-station-schedule-day-flat">Get station schedule day flat</a></li>
+<li><a class="reference internal" href="#id1">Get station schedule day</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

@@ -65,6 +65,18 @@ All(){
   BuildSphinxDocs
 }
 
+GitPush(){
+  All
+  read -p 'Continue push to git? (y): ' cont
+  if [[ $cont == 'y' ]]; then
+    echo "yes"
+  else
+    exit 1
+  fi
+  git push origin
+  echo fuck
+}
+
 "$@"
 
 

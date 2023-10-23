@@ -327,11 +327,14 @@ class Client:
             date_from = str(date_from)
         if not isinstance(date_from, str):
             date_to = str(date_to)
-
+        endpoint = "schedule"
         from_filter = f"filter[since][ge]={date_from}"
         to_filter = f"filter[till][le]={date_to}"
-        endpoint = f"schedule?{from_filter}&{to_filter}"
-        data = self._get_endpoint_full_json(endpoint, limit_page_length)
+        link = f"{endpoint}?{from_filter}&{to_filter}"
+        data = self._get_endpoint_full_json(
+            link,
+            limit_page_length,
+        )
         epschedules = helpers.class_attrs_by_anotation_list(
             data,
             Episode_schedule,
@@ -414,11 +417,11 @@ class Client:
             yield person
 
     def get_show_episodes_last_repetition(
-        self, id: str, limit_page_length: int = 0
+        self, show_id: str, limit_page_length: int = 0
     ) -> Iterator[Episode_schedule]:
         # NOTE: Acording to Jan Hejzl (see features discussion: file:./docs/build/features_discusion.html) the date of premiere is automaticaly rewritten with the date of episode repetition
         # endpoint = "shows/" + show_id + "/participants"
-        endpoint = "shows/" + id + "/schedule-episodes"  # Returns empty
+        endpoint = "shows/" + show_id + "/schedule-episodes"  # Returns empty
         # endpoint="serials/"
         # endpoint="schedule/"+id
         # endpoint="program/" # very slow
