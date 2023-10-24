@@ -3,13 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Features discussion" href="features_discusion.html" /><link rel="prev" title="Get schedules for given show" href="notebooks/show_schedule_vs_episodes.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Discussion" href="discusion.html" /><link rel="prev" title="Get schedules for given show" href="notebooks/show_schedule_vs_episodes.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Issues - RAPI documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -144,8 +143,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
   
   <span class="sidebar-brand-text">RAPI  documentation</span>
   
@@ -155,10 +157,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">rapi userguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">Api documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="original.html">REST API Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/stations.html">Get all available stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/station_shows.html">Get all shows for given station</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_episodes.html">Get episodes for given show</a></li>
@@ -168,10 +173,10 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/client_usage.html">Library Showcase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html">Get schedules for given show</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features_discusion.html">Features discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discusion.html">Discussion</a></li>
 </ul>
 
 </div>
@@ -209,7 +214,7 @@
           <section id="issues">
 <h1>Issues<a class="headerlink" href="#issues" title="Permalink to this heading">#</a></h1>
 <section id="automatic-schema-parsing">
-<h2>automatic schema parsing<a class="headerlink" href="#automatic-schema-parsing" title="Permalink to this heading">#</a></h2>
+<h2>Automatic schema parsing<a class="headerlink" href="#automatic-schema-parsing" title="Permalink to this heading">#</a></h2>
 <p>url=”<a class="reference external" href="https://rapidoc.croapp.cz/apifile/openapi.yaml">https://rapidoc.croapp.cz/apifile/openapi.yaml</a>”</p>
 <ul class="simple">
 <li><p>the api may change in future</p></li>
@@ -229,7 +234,7 @@ Object at “/components/schemas” does not contain key: timeGroupItem_relation
 </ul>
 </section>
 <section id="stations-ids">
-<h2>stations IDs<a class="headerlink" href="#stations-ids" title="Permalink to this heading">#</a></h2>
+<h2>Stations IDs<a class="headerlink" href="#stations-ids" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>added ./data/stations_ids_table.csv</p></li>
 <li><p>compiled table from:
@@ -241,6 +246,7 @@ b) <a class="reference external" href="https://rapidoc.croapp.cz/stations-all">h
 </section>
 <section id="src-rapi-init-py">
 <h2>src/rapi/<strong>init</strong>.py<a class="headerlink" href="#src-rapi-init-py" title="Permalink to this heading">#</a></h2>
+<p><strong>DL (resolved): You must place <code class="docutils literal notranslate"><span class="pre">py.typed</span></code> to the package root diretory.</strong></p>
 <p>-there is problem using mypy.
 -importing <strong>version</strong> from <strong>init</strong>.py to use it in command.py to print version results in error:</p>
 <p>src/rapi/command.py:9: error: Skipping analyzing “rapi.<strong>init</strong>”: module is installed, but missing library stubs or py.typed marker  [import]
@@ -255,12 +261,12 @@ src/rapi/command.py:9: note: See <a class="reference external" href="https://myp
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="features_discusion.html">
+          <a class="next-page" href="discusion.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Features discussion</div>
+                <div class="title">Discussion</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -306,8 +312,8 @@ src/rapi/command.py:9: note: See <a class="reference external" href="https://myp
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Issues</a><ul>
-<li><a class="reference internal" href="#automatic-schema-parsing">automatic schema parsing</a></li>
-<li><a class="reference internal" href="#stations-ids">stations IDs</a></li>
+<li><a class="reference internal" href="#automatic-schema-parsing">Automatic schema parsing</a></li>
+<li><a class="reference internal" href="#stations-ids">Stations IDs</a></li>
 <li><a class="reference internal" href="#src-rapi-init-py">src/rapi/<strong>init</strong>.py</a></li>
 </ul>
 </li>
@@ -327,5 +333,6 @@ src/rapi/command.py:9: note: See <a class="reference external" href="https://myp
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

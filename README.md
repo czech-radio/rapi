@@ -1,11 +1,17 @@
-# rapi
+# RAPI
 
 [![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)  ![version](https://img.shields.io/badge/version-0.9.0-blue.svg)  ![GitHub stars](https://img.shields.io/github/stars/czech-radio/rapi?style=social)
 
-**The Python REST API client for [mujrozhlas.cz](https://rapidoc.croapp.cz/).**
+**Python REST API client for [mujrozhlas.cz](https://rapidoc.croapp.cz/).**
 
-Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
-as Python objects.
+*Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
+as Python objects.*
+
+## TODO
+
+Please, remove when resolved.
+
+- Check the development dependencies in `requirements.txt` whenever they are up-to-date.
 
 ## Features (cs)
 
@@ -14,119 +20,32 @@ as Python objects.
 - [x] 3. Získej všechny moderátory pro zadaný pořad. [usage](./docs/build/notebooks/moderators.html)
 - [partial] 4. Získej premiéry a reprízy pro zadaný pořad. [usage](./docs/build/notebooks/show_schedules.html)
 
-## Model (Terms, Facts, Rules)
-
-Doménový model json třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
-Zatím jasně vidíme tyto entity:
-
-### Terms
-
-- `Station`: Stanice (např. celostátní Plus, dále regionální)
-- `Show`: Pořad vysílaný na jedné či více stanicích.
-- `Serial`: Série epizod (asi potřeba lépe definovat)
-- `Schedule`: Program vysílání (naše priorita)
-- `Episode`: Epizoda pořadu
-- `Genre`: Žánr epizody/pořadu
-- `Person`: Osoba vystupující v epizodě (pouze moderátor nikoliv host)
-- `Topic`: Téma epizody/pořadu
-
-### Facts and Rules
-
-- Na stanici se vysílají epizody jednotlivých pořadů.
-- Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zároveň (např. Plus/Radiožurnál a regionální stanice).
-- Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéry a reprízy.
-
-### Filters
-
-- *stanice* např Plus, Radiožurnál
-- *období* (dny) např. od 1. 1. 2023 do 1. 2. 2023 
-- *rozsah* (čas) např. od 12:00 do 15:00 
-- *název* pořadu např. Zprávy
-- *premiéra/repríza*
-
 ## Installation
 
-- Create a virtual environment (recommended).
-  
-	Unix (Use desired version of Python e.g. 3.11.)
-  
-	```shell
-	python -m venv .venv
-  ```
-  Windows (Use the [`py.exe`](https://docs.python.org/3/using/windows.html) launcher.)
-  
-	```powershell
-	py -3.11 -m venv .venv
-  ```
- 
-- Activate the virtual environment.
-  
-	Unix
-  
-	```shell
-	source .venv/bin/activate
-  ````
-  Windows
-  
-	```powershell
-	.venv\Scripts\activate
-  ```
- 
-- Upgrade pip to latest version (recommended).
+Install package from GitHub repository.
 
-	```shell
-	pip install --upgrade pip
-	```
+```shell
+python -m pip install git+https://github.com/czech-radio/rapi.git
+```
 
-- Install required packages for development (editable mode).
-	
-	```shell
-	pip install -e .[dev]
-	```
-- Run a tests.
-    
-	```shell
-	pytest
-	```
-
-- Build documentation.
-	
-	```shell
-	todo
-	```
 ## Documentation
 
-- api documentation 
+See the published [documentation](https://czech-radio.githup.io/rapi) for more information.
 
-<https://rapidoc.croapp.cz/>
+You can build documentation localy with help of Sphinx. Be sure you have [Pandoc](https://pandoc.org/installing.html) installed and in the path. Go to `docs` folder in the project direcotry and build it with following command. The result is located in `docs/build` folder, open the `index.html` in your browser.
 
-- rapi client documentation
-<./docs/build/index.html>
-
-## Usage
-
-### Configure
-#### runtime variables 
-The runtime variables are assigned in following order.
- 
-1. flags
 ```shell
-rapi --debug-cfg
+sphinx-build source build
 ```
-2. environment
-```shell
-export apis_common_station_ids_pkey="openmedia_stanice"
-```
-3. [config file](./src/rapi/data/defaults.yml)
-
-4. [hard-coded defaults](./src/rapi/data/defaults.yml)
 
 #### station IDs
+
 - csv [file](./src/rapi/data/stations_ids.csv) containing table of station IDs and their equivalents
 
 ### Use as library
 
 - instantiate client
+
 ```python
 import pandas as pd
 from rapi import Client
@@ -134,18 +53,20 @@ cl = Client()
 ```
 
 - request some data
+
 ```python
 stations=cl.get_station_shows("11")
 ```
 
 - create list from data and loop over it
+
 ```python
 stations_list=list(stations)
 for i in range(station_list):
     print(i)
 ```
-
 - create pandas dataframe and loop over it
+
 ```python
 stations_df=pd.DataFrame(stations_list)
 stations_df.info()
@@ -155,34 +76,41 @@ for idx, row in stations_df.iterrows():
 ```
 
 ### Use as program
+
 - get help
+
 ```shell
 rapi -h
 ```
 
 - get list of station_ids (default openmedia_id)
+
 ```shell
 rapi station_ids
 ```
 
 - get station guid (globally unique id)
+
 ```shell
 rapi station_guid -id 11
 ```
 
-- get station shows 
+- get station shows
+
 ```shell
 rapi station_shows -id 11
 ```
 
 - get show episodes
+
 ```shell
 rapi show_episodes -id "9f36ee8f-73a7-3ed5-aafb-41210b7fb935"
 ```
 
-
 ## Tests
+
 ### Api test
+
 Test the REST API <https://rapidev.croapp.cz/> with CURL (use `-g, --globoff flag`) e.g.
 
 ```shell
@@ -208,6 +136,3 @@ pytest -o log_cli=true -m client
 ```shell
 pytest --capture=tee-sys -m client 
 ```
-
-
-

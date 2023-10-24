@@ -1,6 +1,6 @@
 # Issues
 
-## automatic schema parsing
+## Automatic schema parsing
 
 url="<https://rapidoc.croapp.cz/apifile/openapi.yaml>"
 
@@ -18,7 +18,7 @@ Object at "/components/schemas" does not contain key: timeGroupItem_relationship
 - it means there is missing definition for timeGroupItem_relationship. It is only referenced in schema.
 - will try adding dummy variable definition
 
-## stations IDs
+## Stations IDs
 
 - added ./data/stations_ids_table.csv
 - compiled table from:
@@ -29,6 +29,8 @@ b) <https://rapidoc.croapp.cz/stations-all>
 - the compiled table should be checked by someone else
 
 ## src/rapi/__init__.py
+
+**DL (resolved): You must place `py.typed` to the package root diretory.**
 
 -there is problem using mypy.
 -importing __version__ from __init__.py to use it in command.py to print version results in error:

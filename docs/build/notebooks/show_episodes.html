@@ -9,7 +9,7 @@
         <title>Get episodes for given show - RAPI documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -144,8 +144,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
   
   <span class="sidebar-brand-text">RAPI  documentation</span>
   
@@ -155,10 +158,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original.html">REST API Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_documentation.html">Api documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Get episodes for given show</a></li>
@@ -168,10 +174,10 @@
 <li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discusion.html">Discussion</a></li>
 </ul>
 
 </div>
@@ -206,124 +212,140 @@
           </label>
         </div>
         <article role="main">
-          <section id="get-episodes-for-given-show">
-<h1>Get episodes for given show<a class="headerlink" href="#get-episodes-for-given-show" title="Permalink to this heading">#</a></h1>
-<section id="create-client">
-<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+          <section id="Get-episodes-for-given-show">
+<h1>Get episodes for given show<a class="headerlink" href="#Get-episodes-for-given-show" title="Permalink to this heading">#</a></h1>
+<section id="Create-client">
+<h2>Create client<a class="headerlink" href="#Create-client" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</div>
 </section>
-<section id="create-episodes-iterator">
-<h2>Create episodes iterator<a class="headerlink" href="#create-episodes-iterator" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span>
+<section id="Create-episodes-iterator">
+<h2>Create episodes iterator<a class="headerlink" href="#Create-episodes-iterator" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span>
 <span class="n">episodes_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_show_episodes</span><span class="p">(</span><span class="n">show_uuid</span><span class="p">)</span>
 <span class="n">episodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">episodes_iterator</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="Number-of-episodes">
+<h2>Number of episodes<a class="headerlink" href="#Number-of-episodes" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">episodes</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+103
+</pre></div></div>
 </div>
 </section>
-<section id="number-of-episodes">
-<h2>Number of episodes<a class="headerlink" href="#number-of-episodes" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">episodes</span><span class="p">))</span>
+<section id="List-episodes-as-python-object">
+<h2>List episodes as python object<a class="headerlink" href="#List-episodes-as-python-object" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">episodes</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103
-</pre></div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[Episode(uuid=&#39;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&#39;, title=&#39;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, title_short=&#39;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, description=&#39;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 26, 14, 14, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 26, 14, 17, 16, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 26, 17, 0, 16, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10011355&#39;, base_id=None), Episode(uuid=&#39;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&#39;, title=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, title_short=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, description=&#39;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 27, 8, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 27, 8, 22, 38, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 27, 10, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10012081&#39;, base_id=None), Episode(uuid=&#39;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&#39;, title=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, title_short=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, description=&#39;&lt;p&gt;&lt;span lang=&#34;cs-CZ&#34;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 29, 10, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 29, 10, 42, 30, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 30, 19, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10013547&#39;, base_id=None)]
+</pre></div></div>
 </div>
 </section>
-<section id="list-episodes-as-python-object">
-<h2>List episodes as python object<a class="headerlink" href="#list-episodes-as-python-object" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">episodes</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<section id="List-episodes-as-string-object">
+<h2>List episodes as string object<a class="headerlink" href="#List-episodes-as-string-object" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Episode(uuid=&#39;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&#39;, title=&#39;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, title_short=&#39;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#39;, description=&#39;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 26, 14, 14, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 26, 14, 17, 16, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 26, 17, 0, 16, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10011355&#39;, base_id=None), Episode(uuid=&#39;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&#39;, title=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, title_short=&#39;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#39;, description=&#39;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 27, 8, 20, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 27, 8, 22, 38, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 27, 10, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10012081&#39;, base_id=None), Episode(uuid=&#39;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&#39;, title=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, title_short=&#39;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#39;, description=&#39;&lt;p&gt;&lt;span lang=&quot;cs-CZ&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&#39;, since=datetime.datetime(2021, 11, 29, 10, 40, tzinfo=tzoffset(None, 3600)), till=datetime.datetime(2021, 11, 29, 10, 42, 30, tzinfo=tzoffset(None, 3600)), updated=datetime.datetime(2021, 11, 30, 19, 20, 19, tzinfo=tzoffset(None, 3600)), part=None, title_mirrored=&#39;Rozhovory Radiožurnálu&#39;, content_creator=&#39;radiozurnal&#39;, content_id=&#39;10013547&#39;, base_id=None)]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="list-episodes-as-string-object">
-<h2>List episodes as string object<a class="headerlink" href="#list-episodes-as-string-object" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ep</span> <span class="ow">in</span> <span class="n">episodes</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ep</span> <span class="ow">in</span> <span class="n">episodes</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ep</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-  &quot;uuid&quot;: &quot;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&quot;,
-  &quot;title&quot;: &quot;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&quot;,
-  &quot;title_short&quot;: &quot;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&quot;,
-  &quot;description&quot;: &quot;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&quot;,
-  &quot;since&quot;: &quot;2021-11-26T14:14:00+01:00&quot;,
-  &quot;till&quot;: &quot;2021-11-26T14:17:16+01:00&quot;,
-  &quot;updated&quot;: &quot;2021-11-26T17:00:16+01:00&quot;,
-  &quot;part&quot;: null,
-  &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
-  &quot;content_creator&quot;: &quot;radiozurnal&quot;,
-  &quot;content_id&quot;: &quot;10011355&quot;,
-  &quot;base_id&quot;: null
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;uuid&#34;: &#34;16df9e3d-b6e3-33af-994d-1aa1ccb4d25a&#34;,
+  &#34;title&#34;: &#34;Pravidla musí platit pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#34;,
+  &#34;title_short&#34;: &#34;Pravidla platí pro všechny stejně, vylučuje hygienička Svrčinová možnost výjimky pro prezidenta&#34;,
+  &#34;description&#34;: &#34;&lt;p&gt;Pražský hrad oznámil, že Miloš Zeman v neděli přijme Petra Fialu, aby ho jmenoval premiérem. Prezidentovi přitom ve čtvrtek vyšel pozitivní PCR test na koronavirus. Podle platných opatření by nyní u něj měla následovat dvoutýdenní karanténa. Jak by musela kancelář schůzku zorganizovat, aby proběhla z epidemiologického hlediska v pořádku?&lt;br&gt;\nHanka Shánělová&lt;/p&gt;&#34;,
+  &#34;since&#34;: &#34;2021-11-26T14:14:00+01:00&#34;,
+  &#34;till&#34;: &#34;2021-11-26T14:17:16+01:00&#34;,
+  &#34;updated&#34;: &#34;2021-11-26T17:00:16+01:00&#34;,
+  &#34;part&#34;: null,
+  &#34;title_mirrored&#34;: &#34;Rozhovory Radiožurnálu&#34;,
+  &#34;content_creator&#34;: &#34;radiozurnal&#34;,
+  &#34;content_id&#34;: &#34;10011355&#34;,
+  &#34;base_id&#34;: null
 }
 {
-  &quot;uuid&quot;: &quot;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&quot;,
-  &quot;title&quot;: &quot;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&quot;,
-  &quot;title_short&quot;: &quot;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&quot;,
-  &quot;description&quot;: &quot;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&quot;,
-  &quot;since&quot;: &quot;2021-11-27T08:20:00+01:00&quot;,
-  &quot;till&quot;: &quot;2021-11-27T08:22:38+01:00&quot;,
-  &quot;updated&quot;: &quot;2021-11-27T10:20:19+01:00&quot;,
-  &quot;part&quot;: null,
-  &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
-  &quot;content_creator&quot;: &quot;radiozurnal&quot;,
-  &quot;content_id&quot;: &quot;10012081&quot;,
-  &quot;base_id&quot;: null
+  &#34;uuid&#34;: &#34;a8c02e81-d2c1-355a-8ad5-97cf7a87cc47&#34;,
+  &#34;title&#34;: &#34;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#34;,
+  &#34;title_short&#34;: &#34;EU se připravuje na omikron. Zakazuje vstup cizincům z jihoafrických zemí, přibližuje zpravodaj&#34;,
+  &#34;description&#34;: &#34;&lt;p&gt;Evropská komise jedná s&amp;nbsp;výrobci vakcín o dalším postupu kvůli výskytu nové varianty koronaviru omikron. Existuje riziko, že může být nakažlivější a potenciálně také rezistentnější než varianty předchozí. „Státy EU zakazují vstup na své území cizincům cestující ze zemí jihu Afriky a zavádějí zpřísněná opatření, například povinnou karanténu po návratu,“ říká bruselský zpravodaj Viktor Daněk s&amp;nbsp;tím, že mezi takto postupující státy patří i Česko, Německo, Itálie, Belgie.&lt;br&gt;\nJiří Chum, Viktor Daněk&lt;/p&gt;&#34;,
+  &#34;since&#34;: &#34;2021-11-27T08:20:00+01:00&#34;,
+  &#34;till&#34;: &#34;2021-11-27T08:22:38+01:00&#34;,
+  &#34;updated&#34;: &#34;2021-11-27T10:20:19+01:00&#34;,
+  &#34;part&#34;: null,
+  &#34;title_mirrored&#34;: &#34;Rozhovory Radiožurnálu&#34;,
+  &#34;content_creator&#34;: &#34;radiozurnal&#34;,
+  &#34;content_id&#34;: &#34;10012081&#34;,
+  &#34;base_id&#34;: null
 }
 {
-  &quot;uuid&quot;: &quot;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&quot;,
-  &quot;title&quot;: &quot;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&quot;,
-  &quot;title_short&quot;: &quot;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&quot;,
-  &quot;description&quot;: &quot;&lt;p&gt;&lt;span lang=\&quot;cs-CZ\&quot;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&quot;,
-  &quot;since&quot;: &quot;2021-11-29T10:40:00+01:00&quot;,
-  &quot;till&quot;: &quot;2021-11-29T10:42:30+01:00&quot;,
-  &quot;updated&quot;: &quot;2021-11-30T19:20:19+01:00&quot;,
-  &quot;part&quot;: null,
-  &quot;title_mirrored&quot;: &quot;Rozhovory Radiožurnálu&quot;,
-  &quot;content_creator&quot;: &quot;radiozurnal&quot;,
-  &quot;content_id&quot;: &quot;10013547&quot;,
-  &quot;base_id&quot;: null
+  &#34;uuid&#34;: &#34;fb7b67d5-8b7d-385a-91bd-e044000e5e1d&#34;,
+  &#34;title&#34;: &#34;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#34;,
+  &#34;title_short&#34;: &#34;Varianta omikron má zhruba padesát mutací, rychle se šíří a moc toho o ní nevíme&#34;,
+  &#34;description&#34;: &#34;&lt;p&gt;&lt;span lang=\&#34;cs-CZ\&#34;&gt;Nová varianta koronaviru pojmenovaná omikron je potvrzená už i v Česku. Kvůli dosud nejvíc zmutované variantě koronaviru státy po celém světě opět omezují turismus (nejnověji Japonsko) a zavádějí karantény pro cestující ze zemí, kde se omikron objevil. Co vlastně ony mutace znamenají?&lt;/span&gt;&lt;br&gt;\nMatěj Skalický&lt;/p&gt;&#34;,
+  &#34;since&#34;: &#34;2021-11-29T10:40:00+01:00&#34;,
+  &#34;till&#34;: &#34;2021-11-29T10:42:30+01:00&#34;,
+  &#34;updated&#34;: &#34;2021-11-30T19:20:19+01:00&#34;,
+  &#34;part&#34;: null,
+  &#34;title_mirrored&#34;: &#34;Rozhovory Radiožurnálu&#34;,
+  &#34;content_creator&#34;: &#34;radiozurnal&#34;,
+  &#34;content_id&#34;: &#34;10013547&#34;,
+  &#34;base_id&#34;: null
 }
-</pre></div>
-</div>
-</div>
+</pre></div></div>
 </div>
 </section>
-<section id="filter-show-episodes-by-date">
-<h2>Filter show episodes by date<a class="headerlink" href="#filter-show-episodes-by-date" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span>
+<section id="Filter-show-episodes-by-date">
+<h2>Filter show episodes by date<a class="headerlink" href="#Filter-show-episodes-by-date" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_uuid</span> <span class="o">=</span> <span class="s2">&quot;739a46c7-35e3-336e-a7d5-08a20b7e7677&quot;</span>
 <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;2022-01-01T8:00&quot;</span>
 <span class="n">to</span> <span class="o">=</span> <span class="s2">&quot;2023-01-02T9:00&quot;</span>
 <span class="n">episodes_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">show_episodes_filter</span><span class="p">(</span><span class="n">show_uuid</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
@@ -332,11 +354,13 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72
-</pre></div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+72
+</pre></div></div>
 </div>
 </section>
 </section>
@@ -397,12 +421,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Get episodes for given show</a><ul>
-<li><a class="reference internal" href="#create-client">Create client</a></li>
-<li><a class="reference internal" href="#create-episodes-iterator">Create episodes iterator</a></li>
-<li><a class="reference internal" href="#number-of-episodes">Number of episodes</a></li>
-<li><a class="reference internal" href="#list-episodes-as-python-object">List episodes as python object</a></li>
-<li><a class="reference internal" href="#list-episodes-as-string-object">List episodes as string object</a></li>
-<li><a class="reference internal" href="#filter-show-episodes-by-date">Filter show episodes by date</a></li>
+<li><a class="reference internal" href="#Create-client">Create client</a></li>
+<li><a class="reference internal" href="#Create-episodes-iterator">Create episodes iterator</a></li>
+<li><a class="reference internal" href="#Number-of-episodes">Number of episodes</a></li>
+<li><a class="reference internal" href="#List-episodes-as-python-object">List episodes as python object</a></li>
+<li><a class="reference internal" href="#List-episodes-as-string-object">List episodes as string object</a></li>
+<li><a class="reference internal" href="#Filter-show-episodes-by-date">Filter show episodes by date</a></li>
 </ul>
 </li>
 </ul>
@@ -421,5 +445,8 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

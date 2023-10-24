@@ -3,13 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="rapi userguide" href="user_guide.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="rapi userguide" href="tutorial.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>RAPI documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -135,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -144,8 +143,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="#">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
   
   <span class="sidebar-brand-text">RAPI  documentation</span>
   
@@ -155,10 +157,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">rapi userguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">Api documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="original.html">REST API Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/stations.html">Get all available stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/station_shows.html">Get all shows for given station</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_episodes.html">Get episodes for given show</a></li>
@@ -168,10 +173,10 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/client_usage.html">Library Showcase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html">Get schedules for given show</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features_discusion.html">Features discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discusion.html">Discussion</a></li>
 </ul>
 
 </div>
@@ -200,126 +205,189 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-rapi-s-documentation">
-<h1>Welcome to RAPI’s documentation!<a class="headerlink" href="#welcome-to-rapi-s-documentation" title="Permalink to this heading">#</a></h1>
+          <section id="rapi">
+<h1>RAPI<a class="headerlink" href="#rapi" title="Permalink to this heading">#</a></h1>
+<p>Balík <code class="docutils literal notranslate"><span class="pre">rapi</span></code> je knihovna, která dotazuje rest api dostupné na adrese <a class="reference external" href="https://api.mujrozhlas.cz">https://api.mujrozhlas.cz</a> například tento endpoint <a class="reference external" href="https://api.mujrozhlas.cz/stations">https://api.mujrozhlas.cz/stations</a>, který vrátí metadata všech stanic ve formě JSON. JSON formát je nutné pro využití v analýzách sparsovat/reprezentovat jako objekt. Tato knihovna tedy převádí JSON textové řetězce na python objekty nebo list objektů, které lze přímo využít při analýze.</p>
+<section id="pouziti">
+<h2>Použití<a class="headerlink" href="#pouziti" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>nejdříve se vytvoří instance rapi clientu</p></li>
+<li><p>následně se pomocí rapi clienta zavolá požadovaná funkce s požadovanými parametry:
+například: chci získat všechny pořady pro zadanou stanici. Standardně je id stanice číslo tzv. openmedia_id. Tabulka id stanic je <a class="reference download internal" download="" href="_downloads/d795f01fda3eac8a409468572a9365a5/stations_ids.csv"><span class="xref download myst">zde</span></a></p></li>
+<li><p>rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převést jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.</p></li>
+</ol>
+</section>
+<section id="priklady">
+<h2>Příklady<a class="headerlink" href="#priklady" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Získej pořady na zadané stanici <a class="reference internal" href="notebooks/station_shows.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Získej epizody vysílané pro zadaný pořad, období, časový úsek a stanici. <a class="reference internal" href="notebooks/show_episodes.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Získej moderátory pro zadaný pořad. <a class="reference internal" href="notebooks/moderators.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Získej plán vysílaných epizod pro zadaný pořad, stanici, období, časový úsek <a class="reference internal" href="notebooks/show_schedules.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Ukázka s použotím knihovny `pandas
+<a class="reference internal" href="notebooks/explore_in_pandas.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>api url:<a class="reference external" href="https://api.mujrozhlas.cz">https://api.mujrozhlas.cz</a></p></li>
+<li><p>api original “documentation”<a class="reference external" href="https://rapidoc.croapp.cz/">https://rapidoc.croapp.cz/</a></p></li>
+<li><p>rapi client documentation<a class="reference internal" href="#"><span class="doc std std-doc">documentation index</span></a></p></li>
+</ul>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">rapi userguide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#pouziti">Použití</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#priklad-pouziti-workflow">Příklad použití (workflow)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#jednotlive-priklady-pouziti">Jednotlivé příklady použití</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide.html#dokumentace">Dokumentace</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">Api documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_documentation.html#api-urls">api urls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_documentation.html#client-vs-api">client vs api</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_documentation.html#typ-episode-vs-scheduleepisode">typ episode vs scheduleEpisode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_documentation.html#endpoints">Endpoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_documentation.html#pouziti-filtru-pri-primem-volani-api">Použití filtrů při přímém volání api</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_documentation.html#api-test-with-curl">api test with curl</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/stations.html">Get all available stations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#create-stations-iterator">Create stations iterator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#number-of-stations">Number of stations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#list-stations-as-python-object">List stations as python object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#list-stations-as-string-object">List stations as string object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#Create-stations-iterator">Create stations iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#Number-of-stations">Number of stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#List-stations-as-python-object">List stations as python object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/stations.html#List-stations-as-string-object">List stations as string object</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/station_shows.html">Get all shows for given station</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#create-station-shows-iterator">Create station shows iterator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#number-of-shows">Number of shows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#list-shows-as-python-object">List shows as python object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#list-shows-as-string-object">List shows as string object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#Create-station-shows-iterator">Create station shows iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#Number-of-shows">Number of shows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#List-shows-as-python-object">List shows as python object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/station_shows.html#List-shows-as-string-object">List shows as string object</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_episodes.html">Get episodes for given show</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#create-episodes-iterator">Create episodes iterator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#number-of-episodes">Number of episodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#list-episodes-as-python-object">List episodes as python object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#list-episodes-as-string-object">List episodes as string object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#filter-show-episodes-by-date">Filter show episodes by date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#Create-episodes-iterator">Create episodes iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#Number-of-episodes">Number of episodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#List-episodes-as-python-object">List episodes as python object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#List-episodes-as-string-object">List episodes as string object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_episodes.html#Filter-show-episodes-by-date">Filter show episodes by date</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_schedules.html">Get schedules for given show</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedules.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedules.html#get-schedule">Get schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedules.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedules.html#Get-schedule">Get schedule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/moderators.html">Get all participants for given show</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#create-show-participants-iterator">Create show participants iterator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#number-of-participants">Number of participants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#list-participants-as-python-object">List participants as python object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#list-participants-as-string-object">List participants as string object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#Create-show-participants-iterator">Create show participants iterator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#Number-of-participants">Number of participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#List-participants-as-python-object">List participants as python object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/moderators.html#List-participants-as-string-object">List participants as string object</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/explore_in_pandas.html">Explore data in pandas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#get-schedule">Get schedule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#show-columns-in-dataframe">Show columns in dataframe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#select-columns-subset-dataframe">Select columns, (subset dataframe)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#select-columns-when-creating-dataframe">Select columns when creating dataframe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#save-dataframe-to-csv">Save dataframe to csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#Get-schedule">Get schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#Show-columns-in-dataframe">Show columns in dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#Select-columns,-(subset-dataframe)">Select columns, (subset dataframe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#Select-columns-when-creating-dataframe">Select columns when creating dataframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/explore_in_pandas.html#Save-dataframe-to-csv">Save dataframe to csv</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/client_usage.html">Library Showcase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-all-available-stations">Get all available stations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-all-shows-for-given-station">Get all shows for given station</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-particular-show-by-uuid">Get particular show by UUID</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-show-episodes">Get show episodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#filter-show-episodes-by-date">Filter show episodes by date</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-show-participants-with-role">Get show participants with role</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-show-moderators">Get show moderators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#get-station-schedule-day">Get station schedule day</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-all-available-stations">Get all available stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-all-shows-for-given-station">Get all shows for given station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-particular-show-by-UUID">Get particular show by UUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-show-episodes">Get show episodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Filter-show-episodes-by-date">Filter show episodes by date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-show-participants-with-role">Get show participants with role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-show-moderators">Get show moderators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/client_usage.html#Get-station-schedule-day">Get station schedule day</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html">Get schedules for given show</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html#create-client">Create client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html#get-schedule">Get schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html#Create-client">Create client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/show_schedule_vs_episodes.html#Get-schedule">Get schedule</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="issues.html#automatic-schema-parsing">automatic schema parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="issues.html#stations-ids">stations IDs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="issues.html#src-rapi-init-py">src/rapi/<strong>init</strong>.py</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="features_discusion.html">Features discussion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="features_discusion.html#dotaz-pro-pana-kubelika-na-rapi">Dotaz pro pana Kubelíka na rAPI</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="features_discusion.html#otazky-jan-kacaba">otázky: Jan Kačaba</a></li>
-<li class="toctree-l3"><a class="reference internal" href="features_discusion.html#odpovedi-jan-hejzl">odpovědi: Jan Hejzl</a></li>
-<li class="toctree-l3"><a class="reference internal" href="features_discusion.html#zaver">závěr</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 </div>
 </section>
+<section id="id1">
+<h2>Použití<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>rapi je knihovna, která dotazuje rest api dostupné na adrese <a class="reference external" href="https://api.mujrozhlas.cz">https://api.mujrozhlas.cz</a> například tento endpoint <a class="reference external" href="https://api.mujrozhlas.cz/stations">https://api.mujrozhlas.cz/stations</a>, který vrátí metadata všech stanic ve formě JSON. JSON formát je nutné pro využití v analýzách sparsovat/reprezentovat jako objekt.
+Tato knihovna tedy převádí JSON textové řetězce na python objekty nebo list objektů, které lze přímo využít při analýze.</p></li>
+</ul>
+</section>
+<section id="priklad-pouziti-workflow">
+<h2>Příklad použití (workflow)<a class="headerlink" href="#priklad-pouziti-workflow" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>nejdříve se vytvoří instance rapi clientu</p></li>
+<li><p>následně se pomocí rapi clienta zavolá požadovaná funkce s požadovanými parametry:
+například: chci získat všechny pořady pro zadanou stanici. Standardně je id stanice číslo tzv. openmedia_id. Tabulka id stanic je <a class="reference download internal" download="" href="_downloads/d795f01fda3eac8a409468572a9365a5/stations_ids.csv"><span class="xref download myst">zde</span></a></p></li>
+<li><p>rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převést jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.</p></li>
+</ol>
+</section>
+<section id="jednotlive-priklady-pouziti">
+<h2>Jednotlivé příklady použití<a class="headerlink" href="#jednotlive-priklady-pouziti" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pořady na zadané stanici <a class="reference internal" href="notebooks/station_shows.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Epizody vysílané pro zadaný pořad, období, časový úsek a stanici. <a class="reference internal" href="notebooks/show_episodes.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Moderátoři pro zadaný pořad. <a class="reference internal" href="notebooks/moderators.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Plán vysílaných epizod pro zadaný pořad, stanici, období, časový úsek <a class="reference internal" href="notebooks/show_schedules.html"><span class="doc std std-doc">usage</span></a></p></li>
+<li><p>Příklad prozkoumání objektu v pandas
+<a class="reference internal" href="notebooks/explore_in_pandas.html"><span class="doc std std-doc">usage</span></a></p></li>
+</ul>
+</section>
+<section id="dokumentace">
+<h2>Dokumentace<a class="headerlink" href="#dokumentace" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>api url: <a class="reference external" href="https://api.mujrozhlas.cz">https://api.mujrozhlas.cz</a></p></li>
+<li><p>api original “documentation” <a class="reference external" href="https://rapidoc.croapp.cz/">https://rapidoc.croapp.cz/</a></p></li>
+<li><p>rapi client documentation <a class="reference internal" href="#"><span class="doc std std-doc">documentation index</span></a></p></li>
+</ul>
+</section>
+<section id="model-terms-facts-rules">
+<h2>Model (Terms, Facts, Rules)<a class="headerlink" href="#model-terms-facts-rules" title="Permalink to this heading">#</a></h2>
+<p>Doménový model json třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
+Zatím jasně vidíme tyto entity:</p>
+<section id="terms">
+<h3>Terms<a class="headerlink" href="#terms" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Station</span></code>: Stanice (např. celostátní Plus, dále regionální)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Show</span></code>: Pořad vysílaný na jedné či více stanicích.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Serial</span></code>: Série epizod (asi potřeba lépe definovat)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Schedule</span></code>: Program vysílání (naše priorita)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Episode</span></code>: Epizoda pořadu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Genre</span></code>: Žánr epizody/pořadu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Person</span></code>: Osoba vystupující v epizodě (pouze moderátor nikoliv host)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Topic</span></code>: Téma epizody/pořadu</p></li>
+</ul>
+</section>
+<section id="facts-and-rules">
+<h3>Facts and Rules<a class="headerlink" href="#facts-and-rules" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Na stanici se vysílají epizody jednotlivých pořadů.</p></li>
+<li><p>Jeden pořad, respektive jeho epizody se mohou vysílat na dvou stanicích zároveň (např. Plus/Radiožurnál a regionální stanice).</p></li>
+<li><p>Každý pořad má určeno, kdy a s jakou periodou se vysílá jeho premiéry a reprízy.</p></li>
+</ul>
+</section>
+<section id="filters">
+<h3>Filters<a class="headerlink" href="#filters" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>stanice</em> např Plus, Radiožurnál</p></li>
+<li><p><em>období</em> (dny) např. od 1. 1. 2023 do 1. 2. 2023</p></li>
+<li><p><em>rozsah</em> (čas) např. od 12:00 do 15:00</p></li>
+<li><p><em>název</em> pořadu např. Zprávy</p></li>
+<li><p><em>premiéra/repríza</em></p></li>
+</ul>
+</section>
+</section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</section>
 </section>
 
         </article>
@@ -327,7 +395,7 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="user_guide.html">
+          <a class="next-page" href="tutorial.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
@@ -355,27 +423,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Welcome to RAPI’s documentation!</a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
@@ -387,5 +436,6 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

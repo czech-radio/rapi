@@ -9,7 +9,7 @@
         <title>Explore data in pandas - RAPI documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -144,8 +144,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
   
   <span class="sidebar-brand-text">RAPI  documentation</span>
   
@@ -155,10 +158,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original.html">REST API Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_documentation.html">Api documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
@@ -168,10 +174,10 @@
 <li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discusion.html">Discussion</a></li>
 </ul>
 
 </div>
@@ -206,134 +212,155 @@
           </label>
         </div>
         <article role="main">
-          <section id="explore-data-in-pandas">
-<h1>Explore data in pandas<a class="headerlink" href="#explore-data-in-pandas" title="Permalink to this heading">#</a></h1>
-<section id="create-client">
-<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+          <div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<section id="Explore-data-in-pandas">
+<h1>Explore data in pandas<a class="headerlink" href="#Explore-data-in-pandas" title="Permalink to this heading">#</a></h1>
+<section id="Create-client">
+<h2>Create client<a class="headerlink" href="#Create-client" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</div>
 </section>
-<section id="get-schedule">
-<h2>Get schedule<a class="headerlink" href="#get-schedule" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span> <span class="o">=</span> <span class="s2">&quot;2226c3be-7f0d-3c82-af47-0ec6abe992a8&quot;</span>
+<section id="Get-schedule">
+<h2>Get schedule<a class="headerlink" href="#Get-schedule" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span> <span class="o">=</span> <span class="s2">&quot;2226c3be-7f0d-3c82-af47-0ec6abe992a8&quot;</span>
 <span class="n">station</span> <span class="o">=</span> <span class="s2">&quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;</span>
 <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;2023_09-01&quot;</span>
 <span class="n">till</span> <span class="o">=</span> <span class="s2">&quot;2023_10-01&quot;</span>
 </pre></div>
 </div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">station</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">till</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">station</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">till</span><span class="p">))</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">pdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
 </section>
-<section id="show-columns-in-dataframe">
-<h2>Show columns in dataframe<a class="headerlink" href="#show-columns-in-dataframe" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdata</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<section id="Show-columns-in-dataframe">
+<h2>Show columns in dataframe<a class="headerlink" href="#Show-columns-in-dataframe" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pdata</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 147 entries, 0 to 146
 Data columns (total 9 columns):
- #   Column         Non-Null Count  Dtype                               
----  ------         --------------  -----                               
- 0   uuid           147 non-null    object                              
- 1   title          147 non-null    object                              
- 2   description    147 non-null    object                              
- 3   station        147 non-null    object                              
- 4   station_code   147 non-null    int64                               
- 5   show_priority  147 non-null    int64                               
- 6   show_times     0 non-null      object                              
+ #   Column         Non-Null Count  Dtype
+---  ------         --------------  -----
+ 0   uuid           147 non-null    object
+ 1   title          147 non-null    object
+ 2   description    147 non-null    object
+ 3   station        147 non-null    object
+ 4   station_code   147 non-null    int64
+ 5   show_priority  147 non-null    int64
+ 6   show_times     0 non-null      object
  7   since          147 non-null    datetime64[ns, tzoffset(None, 7200)]
  8   till           147 non-null    datetime64[ns, tzoffset(None, 7200)]
 dtypes: datetime64[ns, tzoffset(None, 7200)](2), int64(2), object(5)
 memory usage: 10.5+ KB
-</pre></div>
-</div>
-</div>
+</pre></div></div>
 </div>
 </section>
-<section id="select-columns-subset-dataframe">
-<h2>Select columns, (subset dataframe)<a class="headerlink" href="#select-columns-subset-dataframe" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdata</span> <span class="o">=</span> <span class="n">pdata</span><span class="p">[[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;since&quot;</span><span class="p">]]</span>
+<section id="Select-columns,-(subset-dataframe)">
+<h2>Select columns, (subset dataframe)<a class="headerlink" href="#Select-columns,-(subset-dataframe)" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdata</span> <span class="o">=</span> <span class="n">pdata</span><span class="p">[[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;since&quot;</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sdata</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                 title  \
-0    Je 1. září a ve školách by už mělo být všechno...   
-1    Některá města od září zdražila hromadnou dopravou   
-2    Do Řecka už dorazila další skupina zhruba pade...   
-3        Prezident Petr Pavel podepsal penzijní novelu   
-4    Devět tříd ze 4. základní školy v Plzni zahájí...   
-..                                                 ...   
-142  Policisté v Moravskoslezském kraji zpřísnili n...   
-143  Stovky Slováků dnes odjely z Prahy mimořádným ...   
-144  Duchové bývalých přítelkyň, náhodná svatební k...   
-145  Lidé s nízkým příjmem mají v Liberci problém s...   
-146  Přesně před osmdesáti pěty lety se svět přiblí...   
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+                                                 title  \
+0    Je 1. září a ve školách by už mělo být všechno...
+1    Některá města od září zdražila hromadnou dopravou
+2    Do Řecka už dorazila další skupina zhruba pade...
+3        Prezident Petr Pavel podepsal penzijní novelu
+4    Devět tříd ze 4. základní školy v Plzni zahájí...
+..                                                 ...
+142  Policisté v Moravskoslezském kraji zpřísnili n...
+143  Stovky Slováků dnes odjely z Prahy mimořádným ...
+144  Duchové bývalých přítelkyň, náhodná svatební k...
+145  Lidé s nízkým příjmem mají v Liberci problém s...
+146  Přesně před osmdesáti pěty lety se svět přiblí...
 
-                        since  
-0   2023-09-01 13:06:00+02:00  
-1   2023-09-01 14:06:00+02:00  
-2   2023-09-01 15:06:00+02:00  
-3   2023-09-01 16:06:00+02:00  
-4   2023-09-01 17:06:00+02:00  
-..                        ...  
-142 2023-09-29 15:06:00+02:00  
-143 2023-09-29 16:06:00+02:00  
-144 2023-09-29 17:06:00+02:00  
-145 2023-09-29 18:33:30+02:00  
-146 2023-09-29 19:06:00+02:00  
+                        since
+0   2023-09-01 13:06:00+02:00
+1   2023-09-01 14:06:00+02:00
+2   2023-09-01 15:06:00+02:00
+3   2023-09-01 16:06:00+02:00
+4   2023-09-01 17:06:00+02:00
+..                        ...
+142 2023-09-29 15:06:00+02:00
+143 2023-09-29 16:06:00+02:00
+144 2023-09-29 17:06:00+02:00
+145 2023-09-29 18:33:30+02:00
+146 2023-09-29 19:06:00+02:00
 
 [147 rows x 2 columns]
-</pre></div>
-</div>
-</div>
+</pre></div></div>
 </div>
 </section>
-<section id="select-columns-when-creating-dataframe">
-<h2>Select columns when creating dataframe<a class="headerlink" href="#select-columns-when-creating-dataframe" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">station</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">till</span><span class="p">))</span>
+<section id="Select-columns-when-creating-dataframe">
+<h2>Select columns when creating dataframe<a class="headerlink" href="#Select-columns-when-creating-dataframe" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">get_schedule</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">station</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">till</span><span class="p">))</span>
 <span class="n">pdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;since&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-</div>
 </section>
-<section id="save-dataframe-to-csv">
-<h2>Save dataframe to csv<a class="headerlink" href="#save-dataframe-to-csv" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_file_path</span> <span class="o">=</span> <span class="s2">&quot;../../../runtime/out.csv&quot;</span>
-<span class="n">pdata</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">)</span>
+<section id="Save-dataframe-to-csv">
+<h2>Save dataframe to csv<a class="headerlink" href="#Save-dataframe-to-csv" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_file_path</span> <span class="o">=</span> <span class="s2">&quot;../../../runtime/out.csv&quot;</span>
+<span class="n">pdata</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -395,12 +422,12 @@ memory usage: 10.5+ KB
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Explore data in pandas</a><ul>
-<li><a class="reference internal" href="#create-client">Create client</a></li>
-<li><a class="reference internal" href="#get-schedule">Get schedule</a></li>
-<li><a class="reference internal" href="#show-columns-in-dataframe">Show columns in dataframe</a></li>
-<li><a class="reference internal" href="#select-columns-subset-dataframe">Select columns, (subset dataframe)</a></li>
-<li><a class="reference internal" href="#select-columns-when-creating-dataframe">Select columns when creating dataframe</a></li>
-<li><a class="reference internal" href="#save-dataframe-to-csv">Save dataframe to csv</a></li>
+<li><a class="reference internal" href="#Create-client">Create client</a></li>
+<li><a class="reference internal" href="#Get-schedule">Get schedule</a></li>
+<li><a class="reference internal" href="#Show-columns-in-dataframe">Show columns in dataframe</a></li>
+<li><a class="reference internal" href="#Select-columns,-(subset-dataframe)">Select columns, (subset dataframe)</a></li>
+<li><a class="reference internal" href="#Select-columns-when-creating-dataframe">Select columns when creating dataframe</a></li>
+<li><a class="reference internal" href="#Save-dataframe-to-csv">Save dataframe to csv</a></li>
 </ul>
 </li>
 </ul>
@@ -419,5 +446,8 @@ memory usage: 10.5+ KB
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

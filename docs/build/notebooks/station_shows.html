@@ -9,7 +9,7 @@
         <title>Get all shows for given station - RAPI documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -144,8 +144,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
   
   <span class="sidebar-brand-text">RAPI  documentation</span>
   
@@ -155,10 +158,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original.html">REST API Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_documentation.html">Api documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stations.html">Get all available stations</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Get all shows for given station</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
@@ -168,10 +174,10 @@
 <li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discusion.html">Discussion</a></li>
 </ul>
 
 </div>
@@ -206,119 +212,133 @@
           </label>
         </div>
         <article role="main">
-          <section id="get-all-shows-for-given-station">
-<h1>Get all shows for given station<a class="headerlink" href="#get-all-shows-for-given-station" title="Permalink to this heading">#</a></h1>
-<section id="create-client">
-<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+          <section id="Get-all-shows-for-given-station">
+<h1>Get all shows for given station<a class="headerlink" href="#Get-all-shows-for-given-station" title="Permalink to this heading">#</a></h1>
+<section id="Create-client">
+<h2>Create client<a class="headerlink" href="#Create-client" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</div>
 </section>
-<section id="create-station-shows-iterator">
-<h2>Create station shows iterator<a class="headerlink" href="#create-station-shows-iterator" title="Permalink to this heading">#</a></h2>
+<section id="Create-station-shows-iterator">
+<h2>Create station shows iterator<a class="headerlink" href="#Create-station-shows-iterator" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>by default station identificator is openmedia id</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shows_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_shows</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shows_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_station_shows</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
 <span class="n">shows</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shows_iterator</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="Number-of-shows">
+<h2>Number of shows<a class="headerlink" href="#Number-of-shows" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shows</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+71
+</pre></div></div>
 </div>
 </section>
-<section id="number-of-shows">
-<h2>Number of shows<a class="headerlink" href="#number-of-shows" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shows</span><span class="p">))</span>
+<section id="List-shows-as-python-object">
+<h2>List shows as python object<a class="headerlink" href="#List-shows-as-python-object" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">shows</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>71
-</pre></div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[Show(uuid=&#39;c239aa59-bc78-3180-9b58-5c911846630d&#39;, type=&#39;show&#39;, content=True, title=&#39;100 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, description_short=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))), Show(uuid=&#39;af62bd59-1e49-3dae-a68b-90b11f5d2ae6&#39;, type=&#39;show&#39;, content=True, title=&#39;90 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, description_short=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))), Show(uuid=&#39;d88f0d67-6ba1-3ba5-8fea-01e41a614037&#39;, type=&#39;show&#39;, content=True, title=&#39;Antivirus&#39;, active=True, aired=True, podcast=True, priority=0, child_friendly=False, description=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. Budou mluvit o aktuálních kyberútocích a podvodech na internetu a přidají i tipy, jak chránit sebe i své děti nebo rodiče. Antivirus doplní články na zpravodajském webu iRozhlas.cz.&#39;, description_short=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa.\xa0&#39;, updated=datetime.datetime(2023, 9, 4, 10, 0, 10, tzinfo=tzoffset(None, 7200)))]
+</pre></div></div>
 </div>
 </section>
-<section id="list-shows-as-python-object">
-<h2>List shows as python object<a class="headerlink" href="#list-shows-as-python-object" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">shows</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<section id="List-shows-as-string-object">
+<h2>List shows as string object<a class="headerlink" href="#List-shows-as-string-object" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Show(uuid=&#39;c239aa59-bc78-3180-9b58-5c911846630d&#39;, type=&#39;show&#39;, content=True, title=&#39;100 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, description_short=&#39;100 hostů, 52 hodin a dva zkušení moderátoři.&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))), Show(uuid=&#39;af62bd59-1e49-3dae-a68b-90b11f5d2ae6&#39;, type=&#39;show&#39;, content=True, title=&#39;90 statečných&#39;, active=False, aired=False, podcast=False, priority=0, child_friendly=False, description=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, description_short=&#39;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#39;, updated=datetime.datetime(2021, 3, 20, 23, 30, 9, tzinfo=tzoffset(None, 3600))), Show(uuid=&#39;d88f0d67-6ba1-3ba5-8fea-01e41a614037&#39;, type=&#39;show&#39;, content=True, title=&#39;Antivirus&#39;, active=True, aired=True, podcast=True, priority=0, child_friendly=False, description=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. Budou mluvit o aktuálních kyberútocích a podvodech na internetu a přidají i tipy, jak chránit sebe i své děti nebo rodiče. Antivirus doplní články na zpravodajském webu iRozhlas.cz.&#39;, description_short=&#39;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa.\xa0&#39;, updated=datetime.datetime(2023, 9, 4, 10, 0, 10, tzinfo=tzoffset(None, 7200)))]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="list-shows-as-string-object">
-<h2>List shows as string object<a class="headerlink" href="#list-shows-as-string-object" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sh</span> <span class="ow">in</span> <span class="n">shows</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sh</span> <span class="ow">in</span> <span class="n">shows</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-  &quot;uuid&quot;: &quot;c239aa59-bc78-3180-9b58-5c911846630d&quot;,
-  &quot;type&quot;: &quot;show&quot;,
-  &quot;content&quot;: true,
-  &quot;title&quot;: &quot;100 statečných&quot;,
-  &quot;active&quot;: false,
-  &quot;aired&quot;: false,
-  &quot;podcast&quot;: false,
-  &quot;priority&quot;: 0,
-  &quot;child_friendly&quot;: false,
-  &quot;description&quot;: &quot;100 hostů, 52 hodin a dva zkušení moderátoři.&quot;,
-  &quot;description_short&quot;: &quot;100 hostů, 52 hodin a dva zkušení moderátoři.&quot;,
-  &quot;updated&quot;: &quot;2021-03-20T23:30:09+01:00&quot;
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;uuid&#34;: &#34;c239aa59-bc78-3180-9b58-5c911846630d&#34;,
+  &#34;type&#34;: &#34;show&#34;,
+  &#34;content&#34;: true,
+  &#34;title&#34;: &#34;100 statečných&#34;,
+  &#34;active&#34;: false,
+  &#34;aired&#34;: false,
+  &#34;podcast&#34;: false,
+  &#34;priority&#34;: 0,
+  &#34;child_friendly&#34;: false,
+  &#34;description&#34;: &#34;100 hostů, 52 hodin a dva zkušení moderátoři.&#34;,
+  &#34;description_short&#34;: &#34;100 hostů, 52 hodin a dva zkušení moderátoři.&#34;,
+  &#34;updated&#34;: &#34;2021-03-20T23:30:09+01:00&#34;
 }
 {
-  &quot;uuid&quot;: &quot;af62bd59-1e49-3dae-a68b-90b11f5d2ae6&quot;,
-  &quot;type&quot;: &quot;show&quot;,
-  &quot;content&quot;: true,
-  &quot;title&quot;: &quot;90 statečných&quot;,
-  &quot;active&quot;: false,
-  &quot;aired&quot;: false,
-  &quot;podcast&quot;: false,
-  &quot;priority&quot;: 0,
-  &quot;child_friendly&quot;: false,
-  &quot;description&quot;: &quot;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&quot;,
-  &quot;description_short&quot;: &quot;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&quot;,
-  &quot;updated&quot;: &quot;2021-03-20T23:30:09+01:00&quot;
+  &#34;uuid&#34;: &#34;af62bd59-1e49-3dae-a68b-90b11f5d2ae6&#34;,
+  &#34;type&#34;: &#34;show&#34;,
+  &#34;content&#34;: true,
+  &#34;title&#34;: &#34;90 statečných&#34;,
+  &#34;active&#34;: false,
+  &#34;aired&#34;: false,
+  &#34;podcast&#34;: false,
+  &#34;priority&#34;: 0,
+  &#34;child_friendly&#34;: false,
+  &#34;description&#34;: &#34;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#34;,
+  &#34;description_short&#34;: &#34;Dokázali jsme to a vytvořili jsme nový rekord v rozhlasovém moderování!&#34;,
+  &#34;updated&#34;: &#34;2021-03-20T23:30:09+01:00&#34;
 }
 {
-  &quot;uuid&quot;: &quot;d88f0d67-6ba1-3ba5-8fea-01e41a614037&quot;,
-  &quot;type&quot;: &quot;show&quot;,
-  &quot;content&quot;: true,
-  &quot;title&quot;: &quot;Antivirus&quot;,
-  &quot;active&quot;: true,
-  &quot;aired&quot;: true,
-  &quot;podcast&quot;: true,
-  &quot;priority&quot;: 0,
-  &quot;child_friendly&quot;: false,
-  &quot;description&quot;: &quot;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. Budou mluvit o aktuálních kyberútocích a podvodech na internetu a přidají i tipy, jak chránit sebe i své děti nebo rodiče. Antivirus doplní články na zpravodajském webu iRozhlas.cz.&quot;,
-  &quot;description_short&quot;: &quot;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. &quot;,
-  &quot;updated&quot;: &quot;2023-09-04T10:00:10+02:00&quot;
+  &#34;uuid&#34;: &#34;d88f0d67-6ba1-3ba5-8fea-01e41a614037&#34;,
+  &#34;type&#34;: &#34;show&#34;,
+  &#34;content&#34;: true,
+  &#34;title&#34;: &#34;Antivirus&#34;,
+  &#34;active&#34;: true,
+  &#34;aired&#34;: true,
+  &#34;podcast&#34;: true,
+  &#34;priority&#34;: 0,
+  &#34;child_friendly&#34;: false,
+  &#34;description&#34;: &#34;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. Budou mluvit o aktuálních kyberútocích a podvodech na internetu a přidají i tipy, jak chránit sebe i své děti nebo rodiče. Antivirus doplní články na zpravodajském webu iRozhlas.cz.&#34;,
+  &#34;description_short&#34;: &#34;Pořad o technologiích a bezpečnosti na internetu. Jan Cibulka a Jana Magdoňová se zaměří na nástrahy on-line světa. &#34;,
+  &#34;updated&#34;: &#34;2023-09-04T10:00:10+02:00&#34;
 }
-</pre></div>
-</div>
-</div>
+</pre></div></div>
 </div>
 </section>
 </section>
@@ -379,11 +399,11 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Get all shows for given station</a><ul>
-<li><a class="reference internal" href="#create-client">Create client</a></li>
-<li><a class="reference internal" href="#create-station-shows-iterator">Create station shows iterator</a></li>
-<li><a class="reference internal" href="#number-of-shows">Number of shows</a></li>
-<li><a class="reference internal" href="#list-shows-as-python-object">List shows as python object</a></li>
-<li><a class="reference internal" href="#list-shows-as-string-object">List shows as string object</a></li>
+<li><a class="reference internal" href="#Create-client">Create client</a></li>
+<li><a class="reference internal" href="#Create-station-shows-iterator">Create station shows iterator</a></li>
+<li><a class="reference internal" href="#Number-of-shows">Number of shows</a></li>
+<li><a class="reference internal" href="#List-shows-as-python-object">List shows as python object</a></li>
+<li><a class="reference internal" href="#List-shows-as-string-object">List shows as string object</a></li>
 </ul>
 </li>
 </ul>
@@ -402,5 +422,8 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

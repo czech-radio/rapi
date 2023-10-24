@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Get all shows for given station" href="station_shows.html" /><link rel="prev" title="Api documentation" href="../api_documentation.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Get all shows for given station" href="station_shows.html" /><link rel="prev" title="REST API Overview" href="../original.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Get all available stations - RAPI documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -144,8 +144,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
   
   <span class="sidebar-brand-text">RAPI  documentation</span>
   
@@ -155,10 +158,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">rapi userguide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original.html">REST API Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">rapi userguide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_documentation.html">Api documentation</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Get all available stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="station_shows.html">Get all shows for given station</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_episodes.html">Get episodes for given show</a></li>
@@ -168,10 +174,10 @@
 <li class="toctree-l1"><a class="reference internal" href="client_usage.html">Library Showcase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="show_schedule_vs_episodes.html">Get schedules for given show</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Develop:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../issues.html">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../features_discusion.html">Features discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discusion.html">Discussion</a></li>
 </ul>
 
 </div>
@@ -206,107 +212,121 @@
           </label>
         </div>
         <article role="main">
-          <section id="get-all-available-stations">
-<h1>Get all available stations<a class="headerlink" href="#get-all-available-stations" title="Permalink to this heading">#</a></h1>
-<section id="create-client">
-<h2>Create client<a class="headerlink" href="#create-client" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+          <section id="Get-all-available-stations">
+<h1>Get all available stations<a class="headerlink" href="#Get-all-available-stations" title="Permalink to this heading">#</a></h1>
+<section id="Create-client">
+<h2>Create client<a class="headerlink" href="#Create-client" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">cl</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</div>
 </section>
-<section id="create-stations-iterator">
-<h2>Create stations iterator<a class="headerlink" href="#create-stations-iterator" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stations_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_stations</span><span class="p">()</span>
+<section id="Create-stations-iterator">
+<h2>Create stations iterator<a class="headerlink" href="#Create-stations-iterator" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stations_iterator</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">get_stations</span><span class="p">()</span>
 <span class="n">stations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stations_iterator</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="Number-of-stations">
+<h2>Number of stations<a class="headerlink" href="#Number-of-stations" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stations</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+27
+</pre></div></div>
 </div>
 </section>
-<section id="number-of-stations">
-<h2>Number of stations<a class="headerlink" href="#number-of-stations" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stations</span><span class="p">))</span>
+<section id="List-stations-as-python-object">
+<h2>List stations as python object<a class="headerlink" href="#List-stations-as-python-object" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stations</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27
-</pre></div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[Station(uuid=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, title=&#39;Český rozhlas Radiožurnál&#39;, title_short=&#39;Radiožurnál&#39;, subtitle=&#39;&#39;, color=&#39;#ED2E38&#39;, code=&#39;radiozurnal&#39;, priority=100, span=&#39;allover&#39;, broadcast_name=&#39;radiozurnal&#39;), Station(uuid=&#39;17821883-be2d-3880-b971-eceb794388fa&#39;, title=&#39;Český rozhlas Dvojka&#39;, title_short=&#39;Dvojka&#39;, subtitle=&#39;&#39;, color=&#39;#85248F&#39;, code=&#39;dvojka&#39;, priority=200, span=&#39;allover&#39;, broadcast_name=&#39;dvojka&#39;), Station(uuid=&#39;0134ce01-8684-3556-b568-f208392ac0bd&#39;, title=&#39;Český rozhlas Vltava&#39;, title_short=&#39;Vltava&#39;, subtitle=&#39;&#39;, color=&#39;#00B8E0&#39;, code=&#39;vltava&#39;, priority=300, span=&#39;allover&#39;, broadcast_name=&#39;vltava&#39;)]
+</pre></div></div>
 </div>
 </section>
-<section id="list-stations-as-python-object">
-<h2>List stations as python object<a class="headerlink" href="#list-stations-as-python-object" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stations</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<section id="List-stations-as-string-object">
+<h2>List stations as string object<a class="headerlink" href="#List-stations-as-string-object" title="Permalink to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Station(uuid=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, title=&#39;Český rozhlas Radiožurnál&#39;, title_short=&#39;Radiožurnál&#39;, subtitle=&#39;&#39;, color=&#39;#ED2E38&#39;, code=&#39;radiozurnal&#39;, priority=100, span=&#39;allover&#39;, broadcast_name=&#39;radiozurnal&#39;), Station(uuid=&#39;17821883-be2d-3880-b971-eceb794388fa&#39;, title=&#39;Český rozhlas Dvojka&#39;, title_short=&#39;Dvojka&#39;, subtitle=&#39;&#39;, color=&#39;#85248F&#39;, code=&#39;dvojka&#39;, priority=200, span=&#39;allover&#39;, broadcast_name=&#39;dvojka&#39;), Station(uuid=&#39;0134ce01-8684-3556-b568-f208392ac0bd&#39;, title=&#39;Český rozhlas Vltava&#39;, title_short=&#39;Vltava&#39;, subtitle=&#39;&#39;, color=&#39;#00B8E0&#39;, code=&#39;vltava&#39;, priority=300, span=&#39;allover&#39;, broadcast_name=&#39;vltava&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="list-stations-as-string-object">
-<h2>List stations as string object<a class="headerlink" href="#list-stations-as-string-object" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-  &quot;uuid&quot;: &quot;4082f63f-30e8-375d-a326-b32cf7d86e02&quot;,
-  &quot;title&quot;: &quot;Český rozhlas Radiožurnál&quot;,
-  &quot;title_short&quot;: &quot;Radiožurnál&quot;,
-  &quot;subtitle&quot;: &quot;&quot;,
-  &quot;color&quot;: &quot;#ED2E38&quot;,
-  &quot;code&quot;: &quot;radiozurnal&quot;,
-  &quot;priority&quot;: 100,
-  &quot;span&quot;: &quot;allover&quot;,
-  &quot;broadcast_name&quot;: &quot;radiozurnal&quot;
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;uuid&#34;: &#34;4082f63f-30e8-375d-a326-b32cf7d86e02&#34;,
+  &#34;title&#34;: &#34;Český rozhlas Radiožurnál&#34;,
+  &#34;title_short&#34;: &#34;Radiožurnál&#34;,
+  &#34;subtitle&#34;: &#34;&#34;,
+  &#34;color&#34;: &#34;#ED2E38&#34;,
+  &#34;code&#34;: &#34;radiozurnal&#34;,
+  &#34;priority&#34;: 100,
+  &#34;span&#34;: &#34;allover&#34;,
+  &#34;broadcast_name&#34;: &#34;radiozurnal&#34;
 }
 {
-  &quot;uuid&quot;: &quot;17821883-be2d-3880-b971-eceb794388fa&quot;,
-  &quot;title&quot;: &quot;Český rozhlas Dvojka&quot;,
-  &quot;title_short&quot;: &quot;Dvojka&quot;,
-  &quot;subtitle&quot;: &quot;&quot;,
-  &quot;color&quot;: &quot;#85248F&quot;,
-  &quot;code&quot;: &quot;dvojka&quot;,
-  &quot;priority&quot;: 200,
-  &quot;span&quot;: &quot;allover&quot;,
-  &quot;broadcast_name&quot;: &quot;dvojka&quot;
+  &#34;uuid&#34;: &#34;17821883-be2d-3880-b971-eceb794388fa&#34;,
+  &#34;title&#34;: &#34;Český rozhlas Dvojka&#34;,
+  &#34;title_short&#34;: &#34;Dvojka&#34;,
+  &#34;subtitle&#34;: &#34;&#34;,
+  &#34;color&#34;: &#34;#85248F&#34;,
+  &#34;code&#34;: &#34;dvojka&#34;,
+  &#34;priority&#34;: 200,
+  &#34;span&#34;: &#34;allover&#34;,
+  &#34;broadcast_name&#34;: &#34;dvojka&#34;
 }
 {
-  &quot;uuid&quot;: &quot;0134ce01-8684-3556-b568-f208392ac0bd&quot;,
-  &quot;title&quot;: &quot;Český rozhlas Vltava&quot;,
-  &quot;title_short&quot;: &quot;Vltava&quot;,
-  &quot;subtitle&quot;: &quot;&quot;,
-  &quot;color&quot;: &quot;#00B8E0&quot;,
-  &quot;code&quot;: &quot;vltava&quot;,
-  &quot;priority&quot;: 300,
-  &quot;span&quot;: &quot;allover&quot;,
-  &quot;broadcast_name&quot;: &quot;vltava&quot;
+  &#34;uuid&#34;: &#34;0134ce01-8684-3556-b568-f208392ac0bd&#34;,
+  &#34;title&#34;: &#34;Český rozhlas Vltava&#34;,
+  &#34;title_short&#34;: &#34;Vltava&#34;,
+  &#34;subtitle&#34;: &#34;&#34;,
+  &#34;color&#34;: &#34;#00B8E0&#34;,
+  &#34;code&#34;: &#34;vltava&#34;,
+  &#34;priority&#34;: 300,
+  &#34;span&#34;: &#34;allover&#34;,
+  &#34;broadcast_name&#34;: &#34;vltava&#34;
 }
-</pre></div>
-</div>
-</div>
+</pre></div></div>
 </div>
 </section>
 </section>
@@ -325,14 +345,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../api_documentation.html">
+          <a class="prev-page" href="../original.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Api documentation</div>
+                <div class="title">REST API Overview</div>
                 
               </div>
             </a>
@@ -367,11 +387,11 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Get all available stations</a><ul>
-<li><a class="reference internal" href="#create-client">Create client</a></li>
-<li><a class="reference internal" href="#create-stations-iterator">Create stations iterator</a></li>
-<li><a class="reference internal" href="#number-of-stations">Number of stations</a></li>
-<li><a class="reference internal" href="#list-stations-as-python-object">List stations as python object</a></li>
-<li><a class="reference internal" href="#list-stations-as-string-object">List stations as string object</a></li>
+<li><a class="reference internal" href="#Create-client">Create client</a></li>
+<li><a class="reference internal" href="#Create-stations-iterator">Create stations iterator</a></li>
+<li><a class="reference internal" href="#Number-of-stations">Number of stations</a></li>
+<li><a class="reference internal" href="#List-stations-as-python-object">List stations as python object</a></li>
+<li><a class="reference internal" href="#List-stations-as-string-object">List stations as string object</a></li>
 </ul>
 </li>
 </ul>
@@ -390,5 +410,8 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
