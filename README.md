@@ -1,31 +1,32 @@
 # RAPI
 
-[![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)  ![version](https://img.shields.io/badge/version-0.9.0-blue.svg)  ![GitHub stars](https://img.shields.io/github/stars/czech-radio/rapi?style=social)
+[![main](https://github.com/czech-radio/rapi/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/czech-radio/rapi/actions/workflows/main.yml)  ![version](https://img.shields.io/badge/version-0.9.0-blue.svg)  ![language](https://img.shields.io/badge/language-Python-blue.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/238d42622d25443c8dc71b60e38efb6b)](https://app.codacy.com/gh/czech-radio/rapi/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![GitHub stars](https://img.shields.io/github/stars/czech-radio/rapi?style=social) 
 
 **Python REST API client for [mujrozhlas.cz](https://rapidoc.croapp.cz/).**
 
-*Under the term Python client, think of classes, methods and functions that will allow you to work with data obtained with the REST API
+*Under the term Python client, think of classes, methods, and functions that will allow you to work with data obtained with the REST API.
 as Python objects.*
 
-## TODO
+The `rapi` package is a library that queries the REST API available at <https://api.mujrozhlas.cz>, for example, this endpoint <https://api.mujrozhlas.cz/stations>, which returns the metadata of all stations in JSON form. The JSON format must be saved or represented as an Python object for further work. This library therefore converts JSON into Python objects or a list of objects that can be directly used in Python code.
 
-Please, remove when resolved.
+## Usage
 
-- Check the development dependencies in `requirements.txt` and `pyproject.toml` whenever they are up-to-date.
-- Check the pytest markers in `pyproject.toml` whenever they are up-to-date.
-- Check the script in `scripts/` names and whenever they are up-to-date.
-- Change parameter `date_from` and `date_to` to `since` and `till` in `Client.show_episodes_filter()`.
+1. nejdříve se vytvoří instance rapi clientu
+2. následně se pomocí rapi clienta zavolá požadovaná funkce s požadovanými parametry:
+například: chci získat všechny pořady pro zadanou stanici. Standardně je id stanice číslo tzv. openmedia_id. Tabulka id stanic je [zde](../../src/rapi/data/stations_ids.csv)
+3. rapi client vrátí objekt, který obsahuje jednotlivé stanice: list[Stations], se kterým lze přímo pracovat jako s list of dictionaries nebo lze převést jednoduše na pandas dataframe: pandas.DataFrame(data). Tento dataframe lze pak uložit jako csv soubor, nebo s ním pracovat podobně jako s tabulkou.
 
-## Features (cs)
+## Examples
 
-- [x] 1. Získej všechny pořady aktuálně vysílané na zadané stanici. [usage](./docs/build/notebooks/station_shows.html)
-- [x] 2. Získej všechny epizody vysílané pro zadaný pořad, období, časový úsek a stanici. [usage](./docs/build/notebooks/show_episodes.html)
-- [x] 3. Získej všechny moderátory pro zadaný pořad. [usage](./docs/build/notebooks/moderators.html)
-- [partial] 4. Získej premiéry a reprízy pro zadaný pořad. [usage](./docs/build/notebooks/show_schedules.html)
+- Get shows for the given station. [usage](notebooks/get_shows_for_the_given_station.ipynb)
+- Get episodes for the given show. [usage](notebooks/get_episodes_for_the_given_show.ipynb)
+- Get participants for the given show. [usage](notebooks/get_participants_for_the_given_show.ipynb)
+- Get schedules for the given show. [usage](notebooks/get_schedules_for_the_given_show.ipynb)
 
 ## Installation
 
-Install package from GitHub repository.
+Install the lates package version from repository main branch.
 
 ```shell
 python -m pip install git+https://github.com/czech-radio/rapi.git
@@ -39,103 +40,4 @@ You can build documentation localy with help of Sphinx. Be sure you have [Pandoc
 
 ```shell
 sphinx-build source build
-```
-
-#### station IDs
-
-- csv [file](./src/rapi/data/stations_ids.csv) containing table of station IDs and their equivalents
-
-### Use as library
-
-- instantiate client
-
-```python
-import pandas as pd
-from rapi import Client
-cl = Client()
-```
-
-- request some data
-
-```python
-stations=cl.get_station_shows("11")
-```
-
-- create list from data and loop over it
-
-```python
-stations_list=list(stations)
-for i in range(station_list):
-    print(i)
-```
-- create pandas dataframe and loop over it
-
-```python
-stations_df=pd.DataFrame(stations_list)
-stations_df.info()
-for idx, row in stations_df.iterrows():
-    print(idx,row['id','title'])
-
-```
-
-### Use as program
-
-- get help
-
-```shell
-rapi -h
-```
-
-- get list of station_ids (default openmedia_id)
-
-```shell
-rapi station_ids
-```
-
-- get station guid (globally unique id)
-
-```shell
-rapi station_guid -id 11
-```
-
-- get station shows
-
-```shell
-rapi station_shows -id 11
-```
-
-- get show episodes
-
-```shell
-rapi show_episodes -id "9f36ee8f-73a7-3ed5-aafb-41210b7fb935"
-```
-
-## Tests
-
-### Api test
-
-Test the REST API <https://rapidev.croapp.cz/> with CURL (use `-g, --globoff flag`) e.g.
-
-```shell
-curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"
-```
-
-### rapi package testing
-
-- test client
-
-```shell
-pytest -m client 
-```
-
-- show also test debug logs
-
-```shell
-pytest -o log_cli=true -m client 
-```
-
-- show also tests outputs
-
-```shell
-pytest --capture=tee-sys -m client 
 ```
