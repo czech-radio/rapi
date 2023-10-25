@@ -11,7 +11,10 @@ as Python objects.*
 
 Please, remove when resolved.
 
-- Check the development dependencies in `requirements.txt` whenever they are up-to-date.
+- Check the development dependencies in `requirements.txt` and `pyproject.toml` whenever they are up-to-date.
+- Check the pytest markers in `pyproject.toml` whenever they are up-to-date.
+- Check the script in `scripts/` names and whenever they are up-to-date.
+- Change parameter `date_from` and `date_to` to `since` and `till` in `Client.show_episodes_filter()`.
 
 ## Features (cs)
 

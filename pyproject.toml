@@ -47,15 +47,8 @@ line-length = 79
 log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
 markers = [
 	"client:",
-	"config:",
-	"command:",
-	"current: adhoc select test",
-	"debug:",
-	"domain: make domain",
 	"helpers:",
-	"model:",
 	"station_ids:",
-  "client_debug:",
 ]
 
 [tool.isort]

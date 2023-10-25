@@ -28,7 +28,8 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  python -m pip install --upgrade pip --editable .[dev]
+                  python -m pip install --upgrade pip --editable .
+                  python -m pip install -r requirements.txt
 
             - name: Check package installation
               run: |

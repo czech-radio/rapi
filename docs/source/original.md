@@ -2,9 +2,9 @@
 
 ## API URLs
 
-- [api address](https://api.mujrozhlas.cz)
-- [api swagger page](https://rapidoc.croapp.cz/)
-- [api swagger yaml](https://rapidoc.croapp.cz/apifile/openapi.yaml)
+- [REST API URL](https://api.mujrozhlas.cz)
+- [REST API Documentation](https://rapidoc.croapp.cz/)
+- [REST API Swagger Specification](https://rapidoc.croapp.cz/apifile/openapi.yaml)
 
 ## REST API vs Client
 
