@@ -1,6 +1,3 @@
-import os
-import re
-
 import pytest
 
 import rapi._helpers as helpers
@@ -70,8 +67,6 @@ def test_parse_date_optional_fields() -> None:
     print()
     sd = sample_dates
     _func = helpers.parse_date_optional_fields
-    for d in sd:
-        result = _func(d)
     result1 = _func(sd[-1])
     result2 = _func(sd[-2])
     assert result1 < result2

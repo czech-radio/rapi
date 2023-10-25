@@ -1,3 +1,4 @@
+import logging
 import urllib.parse
 
 import pandas as pd
@@ -8,7 +9,6 @@ pd.set_option("display.max_colwidth", None)
 
 cl = Client()
 
-import logging
 
 log_stdout = logging.getLogger("log_stdout")
 log_stdout.setLevel(logging.DEBUG)
@@ -18,7 +18,7 @@ show_withepsschedule = "c7374f41-ae14-3b5c-8c04-385e3241deb4"
 sch1 = cl.get_show_episodes_schedule(show_noepsschedule)
 sch2 = cl.get_show_episodes_schedule(show_withepsschedule)
 
-# # Get stations shows
+# Get stations shows
 shows = list(cl.get_station_shows("11"))
 spdf = pd.DataFrame(
     shows,
@@ -31,11 +31,9 @@ spdf_uniq = spdf.drop_duplicates(subset=["title"])
 assert len(spdf) == len(spdf_uniq)
 print(spdf)
 
-# EPISODES
 ## Get show episodes
 for s in range(len(spdf)):
     show_idx = s
-    # show_idx=3
     show_title = spdf["title"].values[show_idx]
     print(s, show_title)
     show_uuid = spdf["uuid"].values[show_idx]
@@ -43,19 +41,11 @@ for s in range(len(spdf)):
     eps = list(cl.get_show_episodes(show_uuid))
     epspdf = pd.DataFrame(eps, columns=["uuid", "title", "since", "till"])
 
-    ## sort
-    # print(epspdf.sort_values(by=['since']))
-    # print(epspdf.sort_values(by=['till']))
-    # print(len(shows))
-
-    ## Get show episodes schedule
+    # Get show episodes schedule
     epssch = list(cl.get_show_episodes_schedule(show_uuid))
-    # print(len(epssch))
 
-    ## Get episodes filter
+    # Get episodes filter
     epars = urllib.parse.quote(show_title)
-    # link=f"episodes?filter[title]={epars}"
-    # link=f"episodes?filter[mirroredShow]={epars}"
     link = "episodes?filter[since]=2014-10-02"
     epsf = cl._get_endpoint_full_json(link)
     if len(epsf) > 0:

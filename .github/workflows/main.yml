@@ -45,7 +45,7 @@ jobs:
 
             - name: Lint the code
               run: |
-                  flake8 src/rapi --count --select=E9,F63,F7,F82 --show-source --statistics --max-line-length=99 --exit-zero --max-complexity=10
+                  ruff .
                   
             - name: Test the code
               run: |

@@ -1,6 +1,4 @@
 import logging
-import sys
-from typing import Union
 
 import pandas as pd
 import pytest
