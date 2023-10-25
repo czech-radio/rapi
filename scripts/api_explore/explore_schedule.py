@@ -3,7 +3,6 @@ import urllib.parse
 import pandas as pd
 
 from rapi import Client
-from rapi import _helpers as hp
 
 pd.set_option("display.max_colwidth", None)
 import logging
@@ -35,7 +34,7 @@ for show_idx in range(len(spdf)):
 
     ## Get episodes filter
     epars = urllib.parse.quote(show_title)
-    link = f"schedule"
+    link = "schedule"
     epsf = cl._get_endpoint_full_json(link)
     if len(epsf) > 0:
         print("correct", len(epsf), show_idx, show_title, show_uuid)

@@ -4,7 +4,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 
-import os, sys
+import os
+import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.insert(0, os.path.abspath("../.."))
@@ -19,7 +20,7 @@ author = "Czech Radio"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [    
+extensions = [
     "myst_parser",
     "nbsphinx",
     "sphinx.ext.viewcode",
@@ -27,13 +28,16 @@ extensions = [
 ]
 
 suppress_warnings = [
-    'nbsphinx', # PandocMissing ... https://nbsphinx.readthedocs.io/en/0.9.3/configuration.html#suppress_warnings
+    "nbsphinx",  # PandocMissing ... https://nbsphinx.readthedocs.io/en/0.9.3/configuration.html#suppress_warnings
 ]
 
 # autoapi_dirs = ["../../src"]
 
 templates_path = ["_templates"]
-exclude_patterns = ["_static", "_build",]
+exclude_patterns = [
+    "_static",
+    "_build",
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

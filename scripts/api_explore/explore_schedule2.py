@@ -1,8 +1,6 @@
-import urllib.parse
 
 import pandas as pd
 
-import rapi._helpers as hp
 from rapi import Client
 
 pd.set_option("display.max_colwidth", None)

@@ -1,10 +1,8 @@
 import logging
-import urllib.parse
 
 import pandas as pd
 
 from rapi import Client
-from rapi import _helpers as hp
 
 pd.set_option("display.max_colwidth", None)
 cl = Client()
