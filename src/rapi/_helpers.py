@@ -13,6 +13,7 @@ from typing import Any, Sequence, Union
 from dateutil import parser
 
 from rapi._logger import log_stdout as logo
+from rapi._model import Anotated
 
 
 def current_timezone():
@@ -102,7 +103,7 @@ def dict_get_path(general_dictionary: dict, json_path: list[str]) -> Any:
 
 
 def json_value_parse(
-    field_type: type[object],
+    field_type: object,
     json_value: Any,
 ) -> Any:
     """
@@ -119,8 +120,7 @@ def json_value_parse(
 
 def class_attrs_by_anotation_dict(
     data: dict,
-    datacls: type[object],
-    anotation: dict,
+    datacls: Anotated,
 ) -> object:
     """
     parse json data fields specified in anotation to dataclass instance
@@ -129,27 +129,25 @@ def class_attrs_by_anotation_dict(
     fields = {field.name: field.type for field in dc.fields(datacls)}  # type: ignore
     values: list = list()
     for field in fields:
-        # path = anotation[f]["json"].split(".")
-        path = dict_get_path(anotation, [field, "json"])
+        path = dict_get_path(datacls.anotation, [field, "json"])
         if path is not None:
             json_value = dict_get_path(data, path.split("."))
             value = json_value_parse(fields[field], json_value)
         else:
             value = None
         values.append(value)
-    return datacls(*values)
+    return type(datacls)(*values)
 
 
 def class_attrs_by_anotation_list(
     data: list[dict],
-    datacls: type[object],
-    anotation: dict,
+    datacls: Anotated,
 ) -> list[Any]:
     """
     parse json data fields specified in anotation to list of dataclasses instances
     """
     out: list = list()
     for d in data:
-        res = class_attrs_by_anotation_dict(d, datacls, anotation)
+        res = class_attrs_by_anotation_dict(d, datacls)
         out = out + [res]
     return out

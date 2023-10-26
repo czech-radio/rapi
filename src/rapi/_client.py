@@ -17,11 +17,6 @@ from rapi._model import (
     Show,
     Station,
     StationIDs,
-    episode_anotation,
-    episode_schedule_anotation,
-    person_anotation,
-    show_anotation,
-    station_anotation,
 )
 
 
@@ -168,7 +163,6 @@ class Client:
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
             Station,
-            station_anotation,
         )
         if out is not None:
             assert isinstance(out, Station)
@@ -181,11 +175,7 @@ class Client:
             >>> Client.get_stations()
         """
         data = self._get_endpoint_full_json("stations", limit_page_length)
-        stations = helpers.class_attrs_by_anotation_list(
-            data,
-            Station,
-            station_anotation,
-        )
+        stations = helpers.class_attrs_by_anotation_list(data, Station)
         for station in stations:
             yield station
 
@@ -200,11 +190,7 @@ class Client:
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        shows = helpers.class_attrs_by_anotation_list(
-            data,
-            Show,
-            show_anotation,
-        )
+        shows = helpers.class_attrs_by_anotation_list(data, Show)
         for show in shows:
             yield show
 
@@ -218,11 +204,7 @@ class Client:
         """
         endpoint = "shows/" + show_id
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        out = helpers.class_attrs_by_anotation_dict(
-            data[0],
-            Show,
-            show_anotation,
-        )
+        out = helpers.class_attrs_by_anotation_dict(data[0], Show)
         return out  # type: ignore
 
     def get_show_episodes(
@@ -239,7 +221,6 @@ class Client:
         episodes = helpers.class_attrs_by_anotation_list(
             data,
             Episode,
-            episode_anotation,
         )
         for episode in episodes:
             yield episode
@@ -297,9 +278,7 @@ class Client:
         endpoint = "shows/" + show_id + "/schedule-episodes?sort=since"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         episodes_schedules = helpers.class_attrs_by_anotation_list(
-            data,
-            Episode_schedule,
-            episode_schedule_anotation,
+            data, Episode_schedule
         )
         for episode_schedule in episodes_schedules:
             yield episode_schedule
@@ -323,9 +302,7 @@ class Client:
         endpoint = f"schedule-day-flat?filter[day]={day}"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data,
-            Episode_schedule,
-            episode_schedule_anotation,
+            data, Episode_schedule
         )
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
@@ -355,9 +332,7 @@ class Client:
         endpoint = f"schedule-day?filter[day]={day}"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data,
-            Episode_schedule,
-            episode_schedule_anotation,
+            data, Episode_schedule
         )
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
@@ -402,9 +377,7 @@ class Client:
         link = endpoint + "?" + "&".join(urlfilters) + "&sort=since"
         data = self._get_endpoint_full_json(link, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data,
-            Episode_schedule,
-            episode_schedule_anotation,
+            data, Episode_schedule
         )
         for episode_schedule in epschedules:
             yield episode_schedule
@@ -436,11 +409,10 @@ class Client:
             limit_page_length,
         )
         epschedules = helpers.class_attrs_by_anotation_list(
-            data,
-            Episode_schedule,
-            episode_schedule_anotation,
+            data, Episode_schedule
         )
-        # endpoint=f"{endpoint}&filter[station]={station_uuid}" # NOT WORKING STATION FILTER
+        # NOTE: This station filter does not work!
+        # endpoint=f"{endpoint}&filter[station]={station_uuid}"
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
             epschedules = list(
@@ -464,11 +436,7 @@ class Client:
         """
         endpoint = "persons/" + person_id
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        out = helpers.class_attrs_by_anotation_dict(
-            data[0],
-            Person,
-            person_anotation,
-        )
+        out = helpers.class_attrs_by_anotation_dict(data[0], Person)
         if out is not None:
             assert isinstance(out, Person)
         return out
@@ -536,11 +504,7 @@ class Client:
         """
         endpoint = "shows/" + show_id + "/participants"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        persons = helpers.class_attrs_by_anotation_list(
-            data,
-            Person,
-            person_anotation,
-        )
+        persons = helpers.class_attrs_by_anotation_list(data, Person)
         for person in persons:
             yield person
 
@@ -561,9 +525,7 @@ class Client:
         # endpoint="program/" # very slow
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data,
-            Episode_schedule,
-            episode_schedule_anotation,
+            data, Episode_schedule
         )
 
         for episode_schedule in epschedules:

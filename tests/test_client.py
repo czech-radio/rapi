@@ -142,9 +142,9 @@ def test_class_attrs_by_anotation_dict_dates(client) -> None:
     id = shows_with_schedule_episodes[0]
     endp = "shows/" + id + "/schedule-episodes"
     result = client._get_endpoint_full_json(endp)
-    es = _model.Episode_schedule
-    ea = _model.episode_schedule_anotation
-    result1 = helpers.class_attrs_by_anotation_dict(result[0], es, ea)
+    result1 = helpers.class_attrs_by_anotation_dict(
+        result[0], _model.Episode_schedule
+    )
     assert result1
 
 
@@ -181,10 +181,8 @@ def test_get_stations(client) -> None:
     # NOTE: Number of stations seems to be rather dynamic in time: 27, 28, 33, 34
     # get stations limit result to 10 stations in one request
     stations1 = list(client.get_stations())
-    assert stations1
     # get stations limit result limit to maximum allowed? in one request
     stations2 = list(client.get_stations(10))
-    assert stations2
     # NOTE: Sometimes this fails 28 == 31
     assert len(stations2) == len(stations1)
 
@@ -219,25 +217,20 @@ def test_get_show_episodes(client) -> None:
 @pytest.mark.client
 def test_show_episodes_filter(client) -> None:
     result = client.show_episodes_filter(sample_shows[0])
-    assert result
     result = client.show_episodes_filter(
         sample_shows[0],
         "2010",
     )
-    assert result
-
     result1 = client.show_episodes_filter(
         sample_shows[0],
         "2014",
         "2014-12",
     )
-    assert result1
     result2 = client.show_episodes_filter(
         sample_shows[0],
         "2014",
         "2015-12",
     )
-    assert result2
     assert len(list(result1)) < len(list(result2))
 
 
@@ -253,7 +246,6 @@ def test_get_station_schedule_day_flat(client) -> None:
     result = client.get_station_schedule_day_flat("2023-09-11", "11")
     # NOTE: WTF I get error occasionally when I run len(list(result)), result is iterator
     result1 = list(result)
-    assert result1
     assert len(result1) == 173
     result2 = pd.DataFrame(result1, columns=["station"])
     assert len(result2) > 0
@@ -307,7 +299,6 @@ def test_get_show_participants(client) -> None:
     sp = sample_shows_with_schedule[0]
     show_id = sample_radio_11_shows[sp]
     result = list(client.get_show_participants(show_id))
-    assert result
     assert len(result) > 0
 
 
@@ -316,7 +307,6 @@ def test_get_show_participants_with_roles(client) -> None:
     sp = sample_shows_with_schedule[0]
     show_id = sample_radio_11_shows[sp]
     result = list(client.get_show_participants_with_roles(show_id))
-    assert result
     assert len(result) > 0
 
 
