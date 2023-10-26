@@ -35,11 +35,11 @@ jobs:
               run: |
                   python -c "import rapi"
 
-            - name: Check code format with 'black'
+            - name: Check errors with 'ruff'
               run: |
                   ruff check .
 
-            - name: Check import order with 'isort'
+            - name: Check format with 'ruff'
               run: |
                   ruff format .
 
