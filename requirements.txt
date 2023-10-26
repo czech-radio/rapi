@@ -18,3 +18,4 @@ visidata
 jupytext
 types-requests
 pandas-stubs
+pre-commit
