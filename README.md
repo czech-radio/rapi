@@ -17,7 +17,7 @@ for station in stations:
     print(station)
 ```
 
-```json
+```shell
 {
   "uuid": "4082f63f-30e8-375d-a326-b32cf7d86e02",
   "title": "Český rozhlas Radiožurnál",
