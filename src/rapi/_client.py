@@ -7,17 +7,10 @@ from typing import ClassVar, Iterator
 
 import requests
 
+import rapi._model as _model
 from rapi import _helpers as helpers
 from rapi import _station_ids
 from rapi._logger import log_stdout as logo
-from rapi._model import (
-    Episode,
-    Episode_schedule,
-    Person,
-    Show,
-    Station,
-    StationIDs,
-)
 
 
 class Client:
@@ -61,7 +54,7 @@ class Client:
             >>> client.get_station_guid("11")
             4082f63f-30e8-375d-a326-b32cf7d86e02
         """
-        sid = StationIDs()
+        sid = _model.StationIDs()
         fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
             raise ValueError(f"guid not found for station_id: {station_id}")
@@ -79,7 +72,7 @@ class Client:
             radiouzurnal
 
         """
-        sid = StationIDs()
+        sid = _model.StationIDs()
         fkey = self._station_ids.get_fkey(station_id, sid.croapp_code)
         if fkey is None:
             raise ValueError(f"code not found for station_id: {station_id}")
@@ -145,9 +138,7 @@ class Client:
                 raise type(ex)(str(ex), request_msg) from None
             except Exception as exf:
                 if response is not None:
-                    raise type(exf)(
-                        str(exf), request_msg, response.text
-                    ) from None
+                    raise type(exf)(str(exf), request_msg, response.text) from None
                 else:
                     raise type(exf)(str(exf), request_msg) from None
             jdata = response.json()
@@ -166,7 +157,7 @@ class Client:
 
     def get_station(
         self, station_id: str, limit_page_length: int = 0
-    ) -> Station | None:
+    ) -> _model.Station | None:
         """
         Get the station metadata.
 
@@ -178,13 +169,13 @@ class Client:
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         out = helpers.class_attrs_by_anotation_dict(
             data[0],
-            Station,
+            _model.Station,
         )
         if out is not None:
-            assert isinstance(out, Station)
+            assert isinstance(out, _model.Station)
         return out
 
-    def get_stations(self, limit_page_length: int = 0) -> Iterator[Station]:
+    def get_stations(self, limit_page_length: int = 0) -> Iterator[_model.Station]:
         """
         Get all broadcast stations metadata.
 
@@ -192,13 +183,13 @@ class Client:
             >>> Client.get_stations()
         """
         data = self._get_endpoint_full_json("stations", limit_page_length)
-        stations = helpers.class_attrs_by_anotation_list(data, Station)
+        stations = helpers.class_attrs_by_anotation_list(data, _model.Station)
         for station in stations:
             yield station
 
     def get_station_shows(
         self, station_id: str, limit_page_length: int = 0
-    ) -> Iterator[Show]:
+    ) -> Iterator[_model.Show]:
         """
         Get shows aired on specified station
 
@@ -208,13 +199,11 @@ class Client:
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        shows = helpers.class_attrs_by_anotation_list(data, Show)
+        shows = helpers.class_attrs_by_anotation_list(data, _model.Show)
         for show in shows:
             yield show
 
-    def get_show(
-        self, show_id: str, limit_page_length: int = 0
-    ) -> Show | None:
+    def get_show(self, show_id: str, limit_page_length: int = 0) -> _model.Show | None:
         """
         Get metada for given show specified by show guid
 
@@ -223,12 +212,12 @@ class Client:
         """
         endpoint = "shows/" + show_id
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        out = helpers.class_attrs_by_anotation_dict(data[0], Show)
+        out = helpers.class_attrs_by_anotation_dict(data[0], _model.Show)
         return out  # type: ignore
 
     def get_show_episodes(
         self, show_id: str, limit_page_length: int = 0
-    ) -> Iterator[Episode]:
+    ) -> Iterator[_model.Episode]:
         """
         Get episodes of specified show by show UUID.
 
@@ -239,7 +228,7 @@ class Client:
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         episodes = helpers.class_attrs_by_anotation_list(
             data,
-            Episode,
+            _model.Episode,
         )
         for episode in episodes:
             yield episode
@@ -251,7 +240,7 @@ class Client:
         date_to: datetime | str | None = None,
         station_id: str | None = None,
         limit_page_length: int = 0,
-    ) -> Iterator[Episode]:
+    ) -> Iterator[_model.Episode]:
         """
         Get show episodes and filter them by optonal fields.
 
@@ -286,7 +275,7 @@ class Client:
 
     def get_show_episodes_schedule(
         self, show_id: str, limit_page_length: int = 0
-    ) -> Iterator[Episode_schedule]:
+    ) -> Iterator[_model.EpisodeSchedule]:
         """
         Get all show episodes schedules.
 
@@ -295,7 +284,7 @@ class Client:
         endpoint = "shows/" + show_id + "/schedule-episodes?sort=since"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         episodes_schedules = helpers.class_attrs_by_anotation_list(
-            data, Episode_schedule
+            data, _model.EpisodeSchedule
         )
         for episode_schedule in episodes_schedules:
             yield episode_schedule
@@ -305,7 +294,7 @@ class Client:
         day: str,
         station_id: str = "",
         limit_page_length: int = 0,
-    ) -> Iterator[Episode_schedule]:
+    ) -> Iterator[_model.EpisodeSchedule]:
         """
         Get station schedule without relationships for given day by datetime string"
 
@@ -319,7 +308,7 @@ class Client:
         endpoint = f"schedule-day-flat?filter[day]={day}"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data, Episode_schedule
+            data, _model.EpisodeSchedule
         )
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
@@ -338,7 +327,7 @@ class Client:
         day: str,
         station_id: str = "",
         limit_page_length: int = 0,
-    ) -> Iterator[Episode_schedule]:
+    ) -> Iterator[_model.EpisodeSchedule]:
         """
         Get station schedule without relationships for given day by datetime string"
 
@@ -349,7 +338,7 @@ class Client:
         endpoint = f"schedule-day?filter[day]={day}"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data, Episode_schedule
+            data, _model.EpisodeSchedule
         )
         if station_id != "":
             station_uuid = self.get_station_guid(station_id)
@@ -395,7 +384,7 @@ class Client:
         link = endpoint + "?" + "&".join(urlfilters) + "&sort=since"
         data = self._get_endpoint_full_json(link, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data, Episode_schedule
+            data, _model.EpisodeSchedule
         )
         for episode_schedule in epschedules:
             yield episode_schedule
@@ -406,7 +395,7 @@ class Client:
         date_to: datetime | str,
         station_id: str = "",
         limit_page_length: int = 0,
-    ) -> Iterator[Episode_schedule]:
+    ) -> Iterator[_model.EpisodeSchedule]:
         """
         Get show schedule and filter it by datetime given by datetime object or datetime string. The string is parsed as date. Optionaly filter by station_id.
 
@@ -428,7 +417,7 @@ class Client:
             limit_page_length,
         )
         epschedules = helpers.class_attrs_by_anotation_list(
-            data, Episode_schedule
+            data, _model.EpisodeSchedule
         )
         # NOTE: This station filter does not work!
         # endpoint=f"{endpoint}&filter[station]={station_uuid}"
@@ -445,7 +434,7 @@ class Client:
 
     def get_person(
         self, person_id: str, limit_page_length: int = 0
-    ) -> Person | None:
+    ) -> _model.Person | None:
         """
         Get person metadata by person guid.
 
@@ -453,16 +442,16 @@ class Client:
         """
         endpoint = "persons/" + person_id
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        out = helpers.class_attrs_by_anotation_dict(data[0], Person)
+        out = helpers.class_attrs_by_anotation_dict(data[0], _model.Person)
         if out is not None:
-            assert isinstance(out, Person)
+            assert isinstance(out, _model.Person)
         return out
 
     def get_show_participants_with_roles(
         self,
         show_id: str,
         limit_page_length: int = 0,
-    ) -> Iterator[Person]:
+    ) -> Iterator[_model.Person]:
         """
         Get show participants and their roles in show
 
@@ -487,15 +476,13 @@ class Client:
         self,
         show_id: str,
         limit_page_length: int = 0,
-    ) -> Iterator[Person]:
+    ) -> Iterator[_model.Person]:
         """
         Get show participants and filter them by role "moderator"
 
         >>> client.get_show_moderators("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
-        persons = self.get_show_participants_with_roles(
-            show_id, limit_page_length
-        )
+        persons = self.get_show_participants_with_roles(show_id, limit_page_length)
         moderators = list(
             filter(
                 lambda person: (person.role == "moderator"),  # type: ignore
@@ -507,7 +494,7 @@ class Client:
 
     def get_show_participants(
         self, show_id: str, limit_page_length: int = 0
-    ) -> Iterator[Person]:
+    ) -> Iterator[_model.Person]:
         """
         Get show participants regardless of their roles. Alternative to get_show_participants_with_roles
 
@@ -515,13 +502,13 @@ class Client:
         """
         endpoint = "shows/" + show_id + "/participants"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
-        persons = helpers.class_attrs_by_anotation_list(data, Person)
+        persons = helpers.class_attrs_by_anotation_list(data, _model.Person)
         for person in persons:
             yield person
 
     def get_show_episodes_last_repetition(
         self, show_id: str, limit_page_length: int = 0
-    ) -> Iterator[Episode_schedule]:
+    ) -> Iterator[_model.EpisodeSchedule]:
         """
         Get show episodes last repetitions.
 
@@ -534,14 +521,14 @@ class Client:
         # endpoint="program/" # very slow
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         epschedules = helpers.class_attrs_by_anotation_list(
-            data, Episode_schedule
+            data, _model.EpisodeSchedule
         )
 
         for episode_schedule in epschedules:
             yield episode_schedule
 
-    def get_show_episodes_premieres(self) -> Iterator[Episode]:
+    def get_show_episodes_premieres(self) -> Iterator[_model.Episode]:
         return NotImplemented
 
-    def get_show_episodes_repetitions(self) -> Iterator[Episode]:
+    def get_show_episodes_repetitions(self) -> Iterator[_model.Episode]:
         return NotImplemented

@@ -148,7 +148,7 @@ class Episode:
 
 @dataclass(frozen=True)
 @str_pretty_json
-class Episode_schedule:
+class EpisodeSchedule:
     uuid: str
     title: str
     description: str
@@ -191,8 +191,6 @@ class Person:
         "description": {"json": "attributes.description"},
         "profile_id": {"json": "attributes.profile_id"},
         "role": {"json": "meta.role"},
-        "participation_link": {
-            "json": "relationships.participation.links.related"
-        },
+        "participation_link": {"json": "relationships.participation.links.related"},
         "participation_data": {"json": "relationships.participation.data"},
     }

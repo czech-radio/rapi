@@ -37,16 +37,12 @@ jobs:
 
             - name: Check code format with 'black'
               run: |
-                  black . --check --exclude "(docs/|build/|dist/|\.git/|\.mypy_cache/|\.tox/|\.venv/\.asv/|env|\.eggs)"
+                  ruff check .
 
             - name: Check import order with 'isort'
               run: |
-                  isort . --check --profile black
+                  ruff format .
 
-            - name: Lint the code
-              run: |
-                  ruff .
-                  
             - name: Test the code
               run: |
                   pip install pytest

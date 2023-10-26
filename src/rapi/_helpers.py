@@ -141,9 +141,7 @@ def class_attrs_by_anotation_dict(data: dict, entity: Anotated) -> object:
     return entity(*values)  # type: ignore
 
 
-def class_attrs_by_anotation_list(
-    data: list[dict], entity: Anotated
-) -> list[Any]:
+def class_attrs_by_anotation_list(data: list[dict], entity: Anotated) -> list[Any]:
     """
     Parse JSON data fields specified in anotation to list of dataclasses instances.
 

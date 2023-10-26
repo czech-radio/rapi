@@ -142,9 +142,7 @@ def test_class_attrs_by_anotation_dict_dates(client) -> None:
     id = shows_with_schedule_episodes[0]
     endp = "shows/" + id + "/schedule-episodes"
     result = client._get_endpoint_full_json(endp)
-    result1 = helpers.class_attrs_by_anotation_dict(
-        result[0], _model.Episode_schedule
-    )
+    result1 = helpers.class_attrs_by_anotation_dict(result[0], _model.EpisodeSchedule)
     assert result1
 
 
@@ -216,21 +214,27 @@ def test_get_show_episodes(client) -> None:
 
 @pytest.mark.client
 def test_show_episodes_filter(client) -> None:
+    # FIXME: This should be splitted to several tests.
     result = client.show_episodes_filter(sample_shows[0])
+    assert result
     result = client.show_episodes_filter(
         sample_shows[0],
         "2010",
     )
+    assert result
+
     result1 = client.show_episodes_filter(
         sample_shows[0],
         "2014",
         "2014-12",
     )
+
     result2 = client.show_episodes_filter(
         sample_shows[0],
         "2014",
         "2015-12",
     )
+
     assert len(list(result1)) < len(list(result2))
 
 
@@ -272,9 +276,7 @@ def test_get_schedule(client) -> None:
     assert len(result1) > 0
     result2 = list(client.get_schedule(show, station, "2023-10-01"))
     assert len(result2) > 0
-    result3 = list(
-        client.get_schedule(show, station, "2023-10-20", "2023-10-21")
-    )
+    result3 = list(client.get_schedule(show, station, "2023-10-20", "2023-10-21"))
     assert len(result3) > 0
 
 
@@ -283,9 +285,7 @@ def test_get_schedule_by_date(client) -> None:
     result1 = list(client.get_schedule_by_date("2023-09-17", "2023-09-18"))
     assert result1
 
-    result2 = list(
-        client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00")
-    )
+    result2 = list(client.get_schedule_by_date("2023-09-17T8:00", "2023-09-17T9:00"))
     assert result2
 
     result3 = list(

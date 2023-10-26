@@ -1,7 +1,6 @@
 pytest
 pytest-html
 black[jupyter]
-isort
 ruff
 mypy
 pydocstyle
