@@ -3,7 +3,7 @@ FIXME
 """
 
 from datetime import datetime
-from typing import Iterator
+from typing import ClassVar, Iterator
 
 import requests
 
@@ -22,53 +22,65 @@ from rapi._model import (
 
 class Client:
     """
-    The Czech Radio client to fetch station, show, episodes and participants metadata
+    The REST client to fetch station, show, episodes and participants data.
     """
 
-    api_url: str = "https://api.mujrozhlas.cz"
-    session_connection_timeout: int = 15
-    session_response_timeout: int = 60
-    limit_page_length: int = 500  # maximum number of entitites (e.g.: stations, episodes, shows, etc) which should be returned in one http request. If there are more entities then the maximum, further pages are requested sequentialy
-    limit_page_str: str = "page[limit]="  # part of url address. limits the maximum pagelength. Takes limit_page_length as value.
+    api_url: ClassVar[str] = "https://api.mujrozhlas.cz"
+    session_connection_timeout: ClassVar[int] = 15
+    session_response_timeout: ClassVar[int] = 60
+    limit_page_length: ClassVar[int] = 500
+    # The maximum number of entitites per page.
+    limit_page_str: ClassVar[str] = "page[limit]="
+    # The part of url address to limit the maximum page length.
 
-    def __init__(self):
-        self.StationIDs = _station_ids.StationIDs()
-        session = requests.Session()
-        headers = {"User-Agent": __name__}
-        session.headers.update(headers)
-        self._session = session
+    def __init__(self) -> None:
+        self._session = requests.Session()
+        self._session.headers.update({"User-Agent": __name__})
+        self._station_ids = _station_ids.StationIDs()
 
     def __del__(self):
-        """Destroy session when all reference to it are destroyed"""
+        """
+        Close the the session when all reference to it are deleted.
+
+        TODO: Use context manager.
+
+        """
         if self._session:
             self._session.close()
 
     def get_station_guid(self, station_id: str) -> str:
         """
-        get station guid: (globally unique identificator)
-        params:
-            station_id: from openmedia_id column inside ./data/stations_ids.csv
-        Examples:
-            >>> Client.get_station_guid("11")
-            <<< 4082f63f-30e8-375d-a326-b32cf7d86e02
+        Get station guid: (globally unique identificator)
+
+        :param station_id:
+            The station serial identifier (ID) stored in `./data/stations_ids.csv`.
+        :returns: The station unique identifier (UUID) as string.
+
+        Example:
+            >>> client = Client()
+            >>> client.get_station_guid("11")
+            4082f63f-30e8-375d-a326-b32cf7d86e02
         """
         sid = StationIDs()
-        fkey = self.StationIDs.get_fkey(station_id, sid.croapp_guid)
+        fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
             raise ValueError(f"guid not found for station_id: {station_id}")
         return fkey
 
     def get_station_code(self, station_id: str) -> str:
         """
-        get station code i.e. id from croap_code column inside ./data/stations_ids.csv
-        params:
-            station_id: from openmedia_id column inside ./data/stations_ids.csv
+        Get the station code i.e. id from croap_code column inside ./data/stations_ids.csv
+
+        :param station_id: from openmedia_id column inside ./data/stations_ids.csv
+
         Examples:
-            >>> Client.get_station_code("11")
-            <<< radiouzurnal
+            >>> client = Client()
+            >>> client.get_station_code("11")
+            radiouzurnal
+
         """
         sid = StationIDs()
-        fkey = self.StationIDs.get_fkey(station_id, sid.croapp_code)
+        fkey = self._station_ids.get_fkey(station_id, sid.croapp_code)
         if fkey is None:
             raise ValueError(f"code not found for station_id: {station_id}")
         return fkey
@@ -79,10 +91,13 @@ class Client:
         limit_page_length: int = 0,
     ) -> str:
         """
-        construct api url from given parameters
-        Examples:
-            >>> Client_get_endpoint_link("schedule","10")
-            <<< https://api.mujrozhlas.cz/schedule?page[limit]=10
+        Create API URL from the given parameters.
+
+        Example:
+            >>> client = Client()
+            >>> client.get_endpoint_link("schedule", "10")
+            https://api.mujrozhlas.cz/schedule?page[limit]=10
+
         """
         endpoint_url = "/".join((self.api_url, endpoint))
         if limit_page_length == 0:
@@ -153,8 +168,9 @@ class Client:
         self, station_id: str, limit_page_length: int = 0
     ) -> Station | None:
         """
-        get station metadata:
-        Examples:
+        Get the station metadata.
+
+        Example:
             >>> Client.get_station("11")
         """
         guid = self.get_station_guid(str(station_id))
@@ -170,8 +186,9 @@ class Client:
 
     def get_stations(self, limit_page_length: int = 0) -> Iterator[Station]:
         """
-        get all broadcast stations metadata:
-        Examples:
+        Get all broadcast stations metadata.
+
+        Example:
             >>> Client.get_stations()
         """
         data = self._get_endpoint_full_json("stations", limit_page_length)
@@ -183,7 +200,8 @@ class Client:
         self, station_id: str, limit_page_length: int = 0
     ) -> Iterator[Show]:
         """
-        get shows aired on specified station
+        Get shows aired on specified station
+
         Examples:
             >>> Client.get_station_shows("11")
         """
@@ -198,8 +216,9 @@ class Client:
         self, show_id: str, limit_page_length: int = 0
     ) -> Show | None:
         """
-        get metada for given show specified by show guid
-        Examples:
+        Get metada for given show specified by show guid
+
+        Example:
             >>> Client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
         """
         endpoint = "shows/" + show_id
@@ -211,9 +230,9 @@ class Client:
         self, show_id: str, limit_page_length: int = 0
     ) -> Iterator[Episode]:
         """
-        get episodes of specified show by show guid
-        Examples:
-            >>> Clien.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+        Get episodes of specified show by show UUID.
+
+        >>> Clien.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
         """
         endpoint = "shows/" + show_id + "/episodes"
         endpoint = endpoint + "?sort=since"
@@ -235,13 +254,13 @@ class Client:
     ) -> Iterator[Episode]:
         """
         Get show episodes and filter them by optonal fields.
-        Examples:
-            >>> Client.shows_episodes_filter(
-                "9f36ee8f-73a7-3ed5-aafb-41210b7fb935",
-                "2022-09-10",
-                "2023-09-11",
-                "11",
-            )
+
+        >>> Client.shows_episodes_filter(
+            "9f36ee8f-73a7-3ed5-aafb-41210b7fb935",
+            "2022-09-10",
+            "2023-09-11",
+            "11",
+        )
         """
         tzinfo = helpers.current_timezone()
         eps = self.get_show_episodes(show_id, limit_page_length)
@@ -256,8 +275,8 @@ class Client:
             date_to = datetime.now(tzinfo)
         if isinstance(date_to, str):
             date_to = helpers.parse_date_optional_fields(date_to)
-        # NOTE: In the following lines mypy is disabled cause
-        # I don't know how to make proper type hints.
+        # NOTE: In the following lines mypy is disabled cause I don't
+        # know how to make proper type hints.
         episodes = filter(
             lambda ep: (ep.since >= date_from) and (ep.till <= date_to),  # type: ignore
             eps,
@@ -270,10 +289,8 @@ class Client:
     ) -> Iterator[Episode_schedule]:
         """
         Get all show episodes schedules.
-        Examples
-            >>> Client.get_show_episodes_schedule(
-            "9f36ee8f-73a7-3ed5-aafb-41210b7fb935"
-            )
+
+        >>> Client.get_show_episodes_schedule("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
         """
         endpoint = "shows/" + show_id + "/schedule-episodes?sort=since"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
@@ -291,9 +308,9 @@ class Client:
     ) -> Iterator[Episode_schedule]:
         """
         Get station schedule without relationships for given day by datetime string"
-        Examples:
-            >>> Client.get_station_schedule_day("2023-10-09")
-            >>> Client.get_station_schedule_day("2023-10-09","11")
+
+        >>> Client.get_station_schedule_day("2023-10-09")
+        >>> Client.get_station_schedule_day("2023-10-09","11")
         """
         # NOTE:
         # https://rapidev.croapp.cz/schedule-day-flat?station=radiozurnal
@@ -324,9 +341,9 @@ class Client:
     ) -> Iterator[Episode_schedule]:
         """
         Get station schedule without relationships for given day by datetime string"
-        Examples:
-            >>> Client.get_station_schedule_day("2023-10-09")
-            >>> Client.get_station_schedule_day("2023-10-09","11")
+
+        >>> Client.get_station_schedule_day("2023-10-09")
+        >>> Client.get_station_schedule_day("2023-10-09","11")
         """
 
         endpoint = f"schedule-day?filter[day]={day}"
@@ -355,10 +372,11 @@ class Client:
     ):
         """
         Get show schedule and filter it by optional parameters.
-        Examples:
-            >>> Cient.get_schedule("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
-            >>> Cient.get_schedule("","11")
-            >>> Cient.get_schedule("","","2021-09-01","2021-09-02")
+
+        >>> client = Client()
+        >>> client.get_schedule("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+        >>> client.get_schedule("","11")
+        >>> Client.get_schedule("","","2021-09-01","2021-09-02")
         """
         endpoint = "schedule"
         urlfilters: list = list()
@@ -391,9 +409,10 @@ class Client:
     ) -> Iterator[Episode_schedule]:
         """
         Get show schedule and filter it by datetime given by datetime object or datetime string. The string is parsed as date. Optionaly filter by station_id.
-        Examples:
-            >>> Cient.get_schedule_by_date(datefrom,dateto)
-            >>> Cient.get_schedule_by_date(datefrom,dateto,"11")
+
+
+        >>> Client.get_schedule_by_date(datefrom, dateto)
+        >>> Client.get_schedule_by_date(datefrom, dateto, "11")
         """
         # e.g.: https://rapidev.croapp.cz/schedule?filter[title][eq]=Zpr%C3%A1vy
         if not isinstance(date_from, str):
@@ -429,10 +448,8 @@ class Client:
     ) -> Person | None:
         """
         Get person metadata by person guid.
-        Example:
-            >>> Client.get_person(
-            "1cb35d9d-fb24-37ee-8993-9f74e57ab2c7"
-            )
+
+        >>> Client.get_person("1cb35d9d-fb24-37ee-8993-9f74e57ab2c7")
         """
         endpoint = "persons/" + person_id
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
@@ -448,10 +465,8 @@ class Client:
     ) -> Iterator[Person]:
         """
         Get show participants and their roles in show
-        Examples:
-            >>> Client.get_show_participants_with_roles(
-                "c7374f41-ae14-3b5c-8c04-385e3241deb4"
-            )
+
+        >>> Client.get_show_participants_with_roles("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
         # NOTE: relationships.participants.data:
         # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
@@ -475,10 +490,8 @@ class Client:
     ) -> Iterator[Person]:
         """
         Get show participants and filter them by role "moderator"
-        Example:
-            >>> client.get_show_moderators(
-                "c7374f41-ae14-3b5c-8c04-385e3241deb4"
-            )
+
+        >>> client.get_show_moderators("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
         persons = self.get_show_participants_with_roles(
             show_id, limit_page_length
@@ -497,10 +510,8 @@ class Client:
     ) -> Iterator[Person]:
         """
         Get show participants regardless of their roles. Alternative to get_show_participants_with_roles
-        Example:
-            >>> client.get_show_participants(
-                "c7374f41-ae14-3b5c-8c04-385e3241deb4"
-            )
+
+        >>> client.get_show_participants("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
         endpoint = "shows/" + show_id + "/participants"
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
@@ -513,10 +524,8 @@ class Client:
     ) -> Iterator[Episode_schedule]:
         """
         Get show episodes last repetitions.
-        Example:
-            >>> client.get_show_episode_last_repetition(
-                "c7374f41-ae14-3b5c-8c04-385e3241deb4"
-            )
+
+        >>> client.get_show_episode_last_repetition("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
         # NOTE: Acording to Jan Hejzl (see features discussion: file:./docs/build/features_discusion.html) the date of premiere is automaticaly rewritten with the date of episode repetition
         endpoint = "shows/" + show_id + "/schedule-episodes"  # Returns empty

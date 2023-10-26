@@ -6,7 +6,7 @@ import datetime
 import datetime as dt
 import json
 from dataclasses import asdict, dataclass
-from typing import ClassVar, Protocol, Any
+from typing import Any, ClassVar, Protocol
 
 
 def str_pretty_json(cls):
