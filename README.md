@@ -4,7 +4,7 @@
 
 **Python REST API client for [mujrozhlas.cz](https://rapidoc.croapp.cz/).**
 
-The *rapi* package is a library that queries the REST API available at <https://api.mujrozhlas.cz>. For example, this endpoint <https://api.mujrozhlas.cz/stations>, which returns the metadata of all stations in JSON form. The JSON is then converted to Python domain object for further work. This library therefore converts JSON into Python objects that can be directly used in Python code.
+The *rapi* package is a library that queries the REST API available at <https://api.mujrozhlas.cz>. For example, this [endpoint](https://api.mujrozhlas.cz/stations), which returns the metadata of all stations in JSON form. The JSON is then converted to Python domain object for further work. This library therefore converts JSON into Python objects that can be directly used in Python code.
 
 ## Features and Usage
 
