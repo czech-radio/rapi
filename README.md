@@ -50,12 +50,8 @@ python -m pip install git+https://github.com/czech-radio/rapi.git
 
 ## Documentation
 
-See the published [documentation](https://czech-radio.githup.io/rapi) for more information.
+See the [documentation](https://czech-radio.github.io/rapi) for more information.
 
-You can build documentation localy with help of Sphinx. Be sure you have [Pandoc](https://pandoc.org/installing.html) installed and in the path. 
-Go to `docs` folder in the project direcotry and build it with following command. 
-The result is located in `docs/build` folder, open the `index.html` in your browser.
+## Contribution
 
-```shell
-sphinx-build source build
-```
+See the documentation [section](https://czech-radio.github.io/rapi) how to contribute.
