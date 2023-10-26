@@ -6,7 +6,14 @@
 
 The *rapi* package is a library that queries the REST API available at <https://api.mujrozhlas.cz>. For example, this endpoint <https://api.mujrozhlas.cz/stations>, which returns the metadata of all stations in JSON form. The JSON is then converted to Python domain object for further work. This library therefore converts JSON into Python objects that can be directly used in Python code.
 
-## Usage
+## Features and Usage
+
+- Get shows for the given station
+- Get episodes for the given show
+- Get participants for the given show
+- Get schedules for the given show
+
+A quick overview how to list stations.
 
 ```py
 from rapi import Client
@@ -29,10 +36,9 @@ for station in stations:
   "span": "allover",
   "broadcast_name": "radiozurnal"
 }
-...
 ```
 
-See examples more examples [here](https://czech-radio.github.io/rapi/).
+See  more examples [here](https://czech-radio.github.io/rapi/).
 
 ## Installation
 
@@ -46,7 +52,9 @@ python -m pip install git+https://github.com/czech-radio/rapi.git
 
 See the published [documentation](https://czech-radio.githup.io/rapi) for more information.
 
-You can build documentation localy with help of Sphinx. Be sure you have [Pandoc](https://pandoc.org/installing.html) installed and in the path. Go to `docs` folder in the project direcotry and build it with following command. The result is located in `docs/build` folder, open the `index.html` in your browser.
+You can build documentation localy with help of Sphinx. Be sure you have [Pandoc](https://pandoc.org/installing.html) installed and in the path. 
+Go to `docs` folder in the project direcotry and build it with following command. 
+The result is located in `docs/build` folder, open the `index.html` in your browser.
 
 ```shell
 sphinx-build source build
