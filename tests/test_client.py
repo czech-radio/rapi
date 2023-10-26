@@ -14,7 +14,6 @@ lg.setLevel(logging.DEBUG)
 @pytest.fixture
 def client():
     _client = Client()
-    assert _client
     return _client
 
 

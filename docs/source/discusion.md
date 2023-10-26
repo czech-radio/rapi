@@ -1,6 +1,5 @@
 # Discussion
 
-
 ## TODO
 
 Please, remove when resolved.
@@ -9,7 +8,6 @@ Please, remove when resolved.
 - Check the pytest markers in `pyproject.toml` whenever they are up-to-date.
 - Check the script in `scripts/` names and whenever they are up-to-date.
 - Change parameter `date_from` and `date_to` to `since` and `till` in `Client.show_episodes_filter()`.
-
 
 ## Automatic schema parsing
 
@@ -52,7 +50,6 @@ src/rapi/command.py:9: note: See <https://mypy.readthedocs.io/en/stable/running_
 -without iporting __version__ checking with mypy is susccesful
 
 -will have to find another way automatic versioning using "single point of truth" to update: git tag, projcet.toml version, hardcoded version in code, version in README.md
-
 
 ## Dotaz pro pana Kubelíka na rAPI
 
@@ -128,11 +125,9 @@ Pokud potřebujete filtrovat nějak konkrétně, napište mi, co potřebujete, m
 2. Veřejně přístupná dokumentace k croapi neexistuje mimo <https://rapidoc.croapp.cz>.
 Není tedy zcela jasné, co jednotlivé endpointy vrací a kde data vznikají. Některé filtry nefungují.
 
-
 ## I DONT KNOW
 
-
-#### station IDs
+### station IDs
 
 - csv [file](./src/rapi/data/stations_ids.csv) containing table of station IDs and their equivalents
 
@@ -159,6 +154,7 @@ stations_list=list(stations)
 for i in range(station_list):
     print(i)
 ```
+
 - create pandas dataframe and loop over it
 
 ```python
@@ -230,8 +226,6 @@ pytest -o log_cli=true -m client
 ```shell
 pytest --capture=tee-sys -m client 
 ```
-
-
 
 Doménový model json třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
 Zatím jasně vidíme tyto entity:

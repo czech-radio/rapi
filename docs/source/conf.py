@@ -25,13 +25,23 @@ extensions = [
     "nbsphinx",
     "sphinx.ext.viewcode",
     # "autoapi.extension",
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    # 'sphinx.ext.autodoc',
+    # 'sphinx.ext.autosummary',
+    # "sphinx_autodoc_typehints",
+    # "sphinx.ext.linkcode",
 ]
+
+# generate autosummary even if no references
+autosummary_generate = True
+autosummary_imported_members = True
 
 suppress_warnings = [
     "nbsphinx",  # PandocMissing ... https://nbsphinx.readthedocs.io/en/0.9.3/configuration.html#suppress_warnings
 ]
 
-# autoapi_dirs = ["../../src"]
+# autoapi_dirs = ["../../src"] # Unfortunately it fails for furo!
 
 templates_path = ["_templates"]
 exclude_patterns = [
@@ -42,6 +52,7 @@ exclude_patterns = [
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+# html_theme = "sphinx_rtd_theme"
 html_theme = "furo"
 html_static_path = ["_static"]
 html_logo = "_static/CRo-Czech_Radio-H-RGB.png"

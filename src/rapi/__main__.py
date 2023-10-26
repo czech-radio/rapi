@@ -1,3 +1,7 @@
+"""
+This module also needs documentation!
+"""
+
 from rapi._cli import main
 
 if __name__ == "__main__":

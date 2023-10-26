@@ -1,4 +1,4 @@
-# REST API Overview
+# Overview
 
 ## API URLs
 
@@ -6,22 +6,15 @@
 - [REST API Documentation](https://rapidoc.croapp.cz/)
 - [REST API Swagger Specification](https://rapidoc.croapp.cz/apifile/openapi.yaml)
 
-## REST API vs Client
+## Domain model overview
 
-- client volá různé endpointy (link) v api pomocí https protokolu.
-- api vrátí json textový objekt (soubor) s různými typy dat v datovém poli
-- client se pak snaží textový objekt sparsovat do python objektu tzv. dataclass (případně listu objektů) viz [model](../../src/rapi/_model.py)
-- client případně zavolá i jiné endpointy a výsledné data poskládá tak, aby získal všechna pole v požadovaném typu dataclass
+- `Station`
+- `Show`
+- `Episode`
+- `ScheduleEpisode`
+- `Person` (participant/moderator)
 
-### REST API returned types
-
-- Station
-- Show
-- Episode
-- ScheduleEpisode
-- Person
-
-## Episode vs ScheduleEpisode
+### Episode vs ScheduleEpisode
 
 - ScheduleEpisode je programová epizoda, kterou nám dodává systém AIS. Slouží většinou jen k zobrazení v programu, v některých případech k vytváření samotných 'episode' epizod (více způsoby). Epizoda typu 'episode' je pak základní kámen celého obsahu v rAPI stejně jako webu mujRozhlas. Ta už má přímou a jistou (deterministickou) návaznost na pořady, seriály, případně stanice.
 - scheduleEpisode (since/till), to je opravdu čas vysílání (plánovaného vysílání), a opravdu bez rozlišení premiéry/reprízy.
@@ -31,87 +24,42 @@
 - ScheduleEpisodes a z nich odvozené pořady, shows, jsou víceméně dočasná záležitost. Vůbec to nelze brát ani jako archiv čehokoli, protože za normálního stavu je po půl roce mažeme. Teď toho tam bude víc, protože jsme nechali mazání od letního hacku dočasně vypnuté kvůli rekonstrukci dat.
 - Není moc jak zjistit, jestli je to nová věc, nebo věc vydaná znovu po dvou letech na jiné stanici. (Spousta pořadů probíhá samozřejmě na více stanicích a stanice si je navzájem přebírají.)
 
-## Endpoints
+## Endpoints and client methods
 
-### `/stations`
+- `/stations`
+  - `Client.get_stations()`:  returns all stations
+  - `Client.get_station("11")`: -> returns station with given id
 
-client methods:
+- `/stations/{show_guid}/shows`
+  - `Client.get_station_shows()`
 
-- Cleint.get_stations() -> všechny stanice
-- Cleint.get_station("11") -> určitá stanice
+- `/shows/{show_guid}`: returns show object
+  - `Client.get_show()`
+  - `Client.get_show_participants_with_roles()`
+      (calls Client.get_person for each member guid in participants relation table and filters result by role="moderator".)
+`/shows/{show_guid}/participants`: returns persons (participants/moderators)
+  - `Client.get_show_participants()`
 
-### `/stations/{show_guid}/shows`
+- `/shows/{show_guid}/schedule-episodes`
+  - `Client.get_show_episodes()`
+  - `Client.show_episodes_filter()`
 
-- vrací shows
-    client methods:
-  - Client.get_station_shows
+- `/shows/{show_guid}/schedule-episodes?sort=since`
+  - `Client.get_show_episodes_schedule`
+- `/schedule`: vrací scheduleEpisodes podle posloupnosti vysílání bez ohledu na to, jestli se jedná o premiéru/reprízu. asi nejstarší s nejširší podporou filtrů, nevýhoda je v tom, že by měl obsahovat celou strukturu včetně zanořených položek (což je pro běžný provoz a filtraci málo praktické), časově se musí filtrovat explicitně (něco jako since/till)
+  - `Client.get_schedule()`
+  - `Client.get_schedule_by_date()`
 
-### `/shows/{show_guid}`
+- `/schedule-day`: vrací scheduleEpisode
+  program pro den, pokud vím, nepoužívá se podobně jako /schedule, protože obsahuje vnořené položky
+  - `Client.get_station_schedule_day`
 
-- vrací show
-    client_methods:
-  - Client.get_show
-  - Client.get_show_participants_with_roles
-        (calls Client.get_person for each member guid in participants relation table and filters result by role="moderator".)
+- `/schedule-day-flat`: vrací scheduleEpisode, program pro den bez vnořených položek (relationship)
+  - `Client.get_station_schedule_day_flat`
+- `/schedule-day-flat-sparse`: vrací scheduleEpisode, program pro den bez vnořených položek + bez epizod kratších než 4 minuty
 
-### `/shows/{show_guid}/participants`
-
-- vrací person
-
-    client_methods:
-  - Client.get_show_participants
-
-### `/shows/{show_guid}/schedule-episodes`
-
-- vrací scheduleEpisode
-
-    client_methods:
-  - Client.get_show_episodes
-  - Client.show_episodes_filter
-
-### `/shows/{show_guid}/schedule-episodes?sort=since`
-
-- vrací scheduleEpisode
-
-    client_methods:
-  - Client.get_show_episodes_schedule
-
-### `/schedule`
-
-- vrací scheduleEpisodes podle posloupnosti vysílání bez ohledu na to, jestli se jedná o premiéru/reprízu.
-- asi nejstarší s nejširší podporou filtrů, nevýhoda je v tom, že by měl obsahovat celou strukturu včetně zanořených položek (což je pro běžný provoz a filtraci málo praktické), časově se musí filtrovat explicitně (něco jako since/till)
-
-    client methods:
-  - Client.get_schedule
-  - Client.get_schedule_by_date
-
-### `/schedule-day`
-
-- vrací scheduleEpisode
-- program pro den, pokud vím, nepoužívá se podobně jako /schedule, protože obsahuje vnořené položky
-
-    client methods:
-  - Client.get_station_schedule_day
-
-### `/schedule-day-flat`
-
-- vrací scheduleEpisode
-- program pro den bez vnořených položek (relationship)
-
-    client methods:
-  - Client.get_station_schedule_day_flat
-
-### `/schedule-day-flat-sparse`
-
-- vrací scheduleEpisode
-- program pro den bez vnořených položek + bez epizod kratších než 4 minuty
-
-### `/persons/{person_guid}`
-
-- vrací person
-
-    client_methods:
-  - Client.get_person
+- `/persons/{person_guid}`
+  - `Client.get_person()`
 
 ## Použití filtrů při přímém volání api
 
@@ -121,7 +69,7 @@ client methods:
 
 ## REST API with CURL
 
-Test the REST API <https://rapidev.croapp.cz/> with CURL (use `-g, --globoff flag`) e.g.
+Uyou can call REST API with CURL `-g/--globoff` flag e.g.
 
 ```shell
 curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4" -H  "accept: application/vnd.api+json"

@@ -10,7 +10,8 @@ from dataclasses import asdict, dataclass
 
 def str_pretty_json(cls):
     """
-    __srt__ method for datalass which prints dataclass as formated json. dataclass field values must be compatible with json requirements
+    Replace  `__str__` method for datalass to print dataclass as JSON.
+    A dataclass field values must be compatible with JSON requirements.
     """
 
     def __str__(self):
@@ -23,6 +24,7 @@ def str_pretty_json(cls):
         return df
 
     cls.__str__ = __str__
+
     return cls
 
 

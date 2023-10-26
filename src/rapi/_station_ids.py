@@ -9,6 +9,8 @@ from rapi._logger import log_stdout as loge
 
 
 class StationIDs:
+    """ """
+
     station_ids_pkey = "openmedia_id"
     station_ids_embeded_path = "/data/stations_ids.csv"
 

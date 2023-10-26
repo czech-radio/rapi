@@ -11,7 +11,8 @@ hide-toc: true
 :caption: Overview
 :hidden:
 
-original
+installation
+overview
 ```
 
 ```{toctree}
@@ -41,6 +42,7 @@ discusion
 :caption: Reference
 :hidden:
 
+reference
 ```
 ## Indices and tables
 
