@@ -31,7 +31,9 @@ def datenow_with_timezone():
 def parse_date_optional_fields(date_string: str):
     try:
         """
-        parse date string:
+        parse date string
+
+        param: date string with optional increasing datetime precision defined in string e.g: 2023, 2023-09, 2023-09-10
         """
         pdate = parser.parse(date_string)
         if pdate.tzinfo is None:

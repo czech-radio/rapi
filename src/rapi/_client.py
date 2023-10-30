@@ -117,6 +117,12 @@ class Client:
         )
         """
         get all json pages from endpoint
+
+        :param endpoint: specific part or url which targets specific resource
+        returns: json string
+        Example:
+            >>> client = Client()
+            >>> client._get_endpoint_link("stations")
         """
         out: list = list()
         response_ttl = self.session_connection_timeout

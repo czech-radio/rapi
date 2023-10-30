@@ -139,8 +139,8 @@ sample_episodes = [
 
 @pytest.mark.client
 def test_class_attrs_by_anotation_dict_dates(client) -> None:
-    id = shows_with_schedule_episodes[0]
-    endp = "shows/" + id + "/schedule-episodes"
+    show_id = shows_with_schedule_episodes[0]
+    endp = "shows/" + show_id + "/schedule-episodes"
     result = client._get_endpoint_full_json(endp)
     result1 = helpers.class_attrs_by_anotation_dict(result[0], _model.EpisodeSchedule)
     assert result1
