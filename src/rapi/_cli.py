@@ -8,4 +8,3 @@ __all__ = ["main"]
 
 def main() -> None:
     """FIXME"""
-    pass

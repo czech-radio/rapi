@@ -13,7 +13,7 @@ fi
 dstdir_reply_all="${repodir}/runtime/rapidev_reply_all"
 dstdir_reply_samples="${repodir}/runtime/rapidev_reply_samples"
 
-api_doc='https://rapidoc.croapp.cz'
+# api_doc='https://rapidoc.croapp.cz'
 api_dev='https://rapidev.croapp.cz'
 
 declare -a url_all_sublinks=(

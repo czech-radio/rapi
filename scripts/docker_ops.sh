@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 # Build docker image with non root user. User will have name, ID, GID as user running the docker commands.
 
 SCRIPT_PATH="${BASH_SOURCE[0]:-$0}"

@@ -66,7 +66,7 @@ def csv_is_row_valid(row: dict) -> bool:
     """
     check if csw row has all cells defined. i.e. no cell in row can be empty/undefined.
     """
-    for ckey, cval in row.items():
+    for _, cval in row.items():
         if cval == "":
             return False
     return True

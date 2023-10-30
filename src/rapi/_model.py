@@ -3,7 +3,6 @@ FIXME
 """
 
 import datetime
-import datetime as dt
 import json
 from dataclasses import asdict, dataclass
 from typing import Any, ClassVar, Protocol
@@ -96,7 +95,7 @@ class Show:
     child_friendly: bool
     description: str
     description_short: str
-    updated: dt.datetime
+    updated: datetime.datetime
 
     anotation: ClassVar[dict] = {
         "uuid": {"json": "id"},
@@ -121,9 +120,9 @@ class Episode:
     title: str
     title_short: str
     description: str
-    since: dt.datetime
-    till: dt.datetime
-    updated: dt.datetime
+    since: datetime.datetime
+    till: datetime.datetime
+    updated: datetime.datetime
     part: str
     title_mirrored: str
     content_creator: str
@@ -156,8 +155,8 @@ class EpisodeSchedule:
     station_code: int
     show_priority: int
     show_times: str
-    since: dt.datetime
-    till: dt.datetime
+    since: datetime.datetime
+    till: datetime.datetime
 
     anotation: ClassVar[dict] = {
         "uuid": {"json": "id"},

@@ -240,8 +240,8 @@ def test_show_episodes_filter(client) -> None:
 
 @pytest.mark.client
 def test_get_show_episodes_schedule(client) -> None:
-    id = shows_with_schedule_episodes[0]
-    result = client.get_show_episodes_schedule(id)
+    show_id = shows_with_schedule_episodes[0]
+    result = client.get_show_episodes_schedule(show_id)
     assert result
 
 

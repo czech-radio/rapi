@@ -8,10 +8,10 @@ The *rapi* package is a library that queries the REST API available at <https://
 
 ## Features and Usage
 
-- Get shows for the given station
-- Get episodes for the given show
-- Get participants for the given show
-- Get schedules for the given show
+-   Get shows for the given station
+-   Get episodes for the given show
+-   Get participants for the given show
+-   Get schedules for the given show
 
 A quick overview how to list stations.
 
