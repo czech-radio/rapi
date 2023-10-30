@@ -3,9 +3,9 @@ SCRIPT_PATH="${BASH_SOURCE[0]:-$0}"
 SCRIPT_DIR="${SCRIPT_PATH%/*}"
 NOTEBOOK_DIR="${SCRIPT_DIR}/../docs/source/notebooks/"
 
-create_pyfile(){
+build_pyscript(){
   notebook="$1"
-  jupytext --to ipynb $notebook
+  jupytext --to ipynb "$notebook"
 }
 
 build_notebook(){
@@ -14,7 +14,7 @@ build_notebook(){
   jupytext --execute "$pfile"
 }
 
-build_dir(){
+build_notebooks_indir(){
   declare -a notebooks=(
   $(find "$NOTEBOOK_DIR" -type f -iname "*.py")
   )

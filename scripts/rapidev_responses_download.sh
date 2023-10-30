@@ -1,4 +1,7 @@
 #!/bin/bash
+###
+# Downloads json data for each endpoint to runtime directory
+###
 scriptpath="${BASH_SOURCE[0]:-$0}"
 scriptdir="${scriptpath%/*}"
 if [[ "$scriptdir" == "." ]] ; then
