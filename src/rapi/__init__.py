@@ -1,5 +1,5 @@
 """
-FIXME This module also needs documentation!
+The client and domain model to work with schedule, stations , shows, episodes, participants, persons.
 """
 
 from rapi._client import Client as Client

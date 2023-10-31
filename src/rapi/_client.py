@@ -1,5 +1,5 @@
 """
-FIXME
+Module contains HTTP REST API client.
 """
 
 from datetime import datetime
@@ -34,9 +34,6 @@ class Client:
     def __del__(self):
         """
         Close the the session when all reference to it are deleted.
-
-        TODO: Use context manager.
-
         """
         if self._session:
             self._session.close()
@@ -116,7 +113,7 @@ class Client:
             limit_page_length,
         )
         """
-        get all json pages from endpoint
+        Get all json pages from endpoint.
 
         :param endpoint: specific part or url which targets specific resource
         returns: json string
@@ -405,7 +402,6 @@ class Client:
         """
         Get show schedule and filter it by datetime given by datetime object or datetime string. The string is parsed as date. Optionaly filter by station_id.
 
-
         >>> Client.get_schedule_by_date(datefrom, dateto)
         >>> Client.get_schedule_by_date(datefrom, dateto, "11")
         """
@@ -484,7 +480,7 @@ class Client:
         limit_page_length: int = 0,
     ) -> Iterator[_model.Person]:
         """
-        Get show participants and filter them by role "moderator"
+        Get show participants and filter them by role "moderator".
 
         >>> client.get_show_moderators("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
@@ -502,7 +498,7 @@ class Client:
         self, show_id: str, limit_page_length: int = 0
     ) -> Iterator[_model.Person]:
         """
-        Get show participants regardless of their roles. Alternative to get_show_participants_with_roles
+        Get show participants regardless of their roles. Alternative to get_show_participants_with_roles.
 
         >>> client.get_show_participants("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """

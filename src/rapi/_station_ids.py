@@ -1,5 +1,5 @@
 """
-FIXME
+Module contains class which queries table of staion IDs used across various databases and translate between them.
 """
 
 from typing import Union
@@ -9,7 +9,7 @@ from rapi._logger import log_stdout as loge
 
 
 class StationIDs:
-    """ """
+    """Class serving to query table. Table contains row for each CRo station. One row contains various IDs for one station. ./data/station_ids.csv"""
 
     station_ids_pkey = "openmedia_id"
     station_ids_embeded_path = "/data/stations_ids.csv"
@@ -19,7 +19,7 @@ class StationIDs:
 
     def db_csv_init(self) -> list:
         """
-        parse default station ids table
+        Parse default station ids table.
         """
         csvr = helpers.read_embeded_csv_to_ram(
             self.station_ids_embeded_path, __package__
@@ -30,6 +30,7 @@ class StationIDs:
         return helpers.csv_valid_rows(csvr)
 
     def get_pkey_list(self) -> list:
+        """ Get list of primary stations' keys"""
         out: list = []
         for row in self.DB:
             val = row.get(self.station_ids_pkey, None)
@@ -38,7 +39,7 @@ class StationIDs:
         return out
 
     def get_table(self) -> list:
-        """get whole staion ids table"""
+        """Get whole staion ids table."""
         out = []
         for row in self.DB:
             out.append(row)

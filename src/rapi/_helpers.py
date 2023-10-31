@@ -17,13 +17,13 @@ from rapi._model import Anotated
 
 
 def current_timezone():
-    """get current timezone from users system"""
+    """Get current timezone from host system."""
     return datetime.datetime.now().astimezone().tzinfo
 
 
 def datenow_with_timezone():
     """
-    get current datetime with current timezone from system
+    Get current datetime with current timezone from host system.
     """
     return datetime.datetime.now().astimezone()
 
@@ -31,7 +31,7 @@ def datenow_with_timezone():
 def parse_date_optional_fields(date_string: str):
     try:
         """
-        parse date string
+        Parses date string with optional date time precision.
 
         param: date string with optional increasing datetime precision defined in string e.g: 2023, 2023-09, 2023-09-10
         """
@@ -66,7 +66,7 @@ def read_csv_path_to_ram(fname: str) -> csv.DictReader:
 
 def csv_is_row_valid(row: dict) -> bool:
     """
-    check if csw row has all cells defined. i.e. no cell in row can be empty/undefined.
+    Check if csw row has all cells defined. i.e. no cell in row can be empty/undefined.
     """
     for _, cval in row.items():
         if cval == "":
@@ -75,7 +75,7 @@ def csv_is_row_valid(row: dict) -> bool:
 
 
 def csv_valid_rows(csv: csv.DictReader) -> list:
-    """get valid csv rows"""
+    """Get valid csv rows."""
     out: list = []
     for row in csv:
         if csv_is_row_valid(row):
@@ -84,7 +84,7 @@ def csv_valid_rows(csv: csv.DictReader) -> list:
 
 
 def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
-    """join list of strings, omit empty strings"""
+    """Join list of strings, omit empty strings."""
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)
 
@@ -109,8 +109,8 @@ def json_value_parse(
     json_value: Any,
 ) -> Any:
     """
-    json field parsers list:
-    parse json value according to ist type
+    Json fields parsers list.
+    Parse json value according to ist type.
     """
     match field_type:
         case datetime.datetime:

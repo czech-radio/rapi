@@ -1,6 +1,4 @@
-"""
-FIXME
-"""
+"""This module contains domain model."""
 
 import datetime
 import json
@@ -10,11 +8,11 @@ from typing import Any, ClassVar, Protocol
 
 def str_pretty_json(cls):
     """
-    Replace  `__str__` method for datalass to print dataclass as JSON.
+    Redefine  `__str__` method for datalass to print dataclass as JSON.
     A dataclass field values must be compatible with JSON requirements.
     """
 
-    def __str__(self):
+    def json_pretty_print(self):
         df = json.dumps(
             asdict(self),
             indent=2,
@@ -23,13 +21,13 @@ def str_pretty_json(cls):
         )
         return df
 
-    cls.__str__ = __str__
+    cls.__str__ = json_pretty_print
 
     return cls
 
 
 class DatetimeEncoder(json.JSONEncoder):
-    """format json datetime value when duming the json"""
+    """Format json datetime value when dumping the json."""
 
     def default(self, obj):
         if isinstance(obj, datetime.datetime):

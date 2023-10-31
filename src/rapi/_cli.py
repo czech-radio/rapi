@@ -7,4 +7,4 @@ __all__ = ["main"]
 
 
 def main() -> None:
-    """FIXME"""
+    """Main function which is called when running program from commandline."""
