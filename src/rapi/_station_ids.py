@@ -30,7 +30,7 @@ class StationIDs:
         return helpers.csv_valid_rows(csvr)
 
     def get_pkey_list(self) -> list:
-        """ Get list of primary stations' keys"""
+        """Get list of primary stations' keys"""
         out: list = []
         for row in self.DB:
             val = row.get(self.station_ids_pkey, None)

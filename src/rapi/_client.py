@@ -39,7 +39,7 @@ class Client:
         if self._session is not None:
             self._session.close()
 
-    def get_station_guid(self, station_id: str | uuid.UUID) -> str | UUID:
+    def get_station_guid(self, station_id: str | uuid.UUID) -> str | uuid.UUID:
         """
         Get the station UUID.
 
@@ -56,7 +56,7 @@ class Client:
         fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
             raise ValueError(f"guid not found for station_id: {station_id}")
-        return uuid.UUID(fkey)
+        return fkey  # TODO We should prefer UUID.
 
     def get_station_code(self, station_id: str) -> str:
         """
@@ -116,7 +116,7 @@ class Client:
 
         :param endpoint: specific part or url which targets specific resource
         returns: json string
-        
+
         Example:
         >>> client = Client()
         >>> client._get_endpoint_link("stations")
