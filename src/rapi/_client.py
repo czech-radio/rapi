@@ -56,7 +56,7 @@ class Client:
         fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
             raise ValueError(f"guid not found for station_id: {station_id}")
-        return UUID(fkey)
+        return uuid.UUID(fkey)
 
     def get_station_code(self, station_id: str) -> str:
         """
