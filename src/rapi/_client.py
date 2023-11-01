@@ -4,6 +4,7 @@ Module contains HTTP REST API client.
 
 from datetime import datetime
 from typing import ClassVar, Iterator
+import uuid
 
 import requests
 
@@ -33,29 +34,29 @@ class Client:
 
     def __del__(self):
         """
-        Close the the session when all reference to it are deleted.
+        Close the the session when the reference is deleted.
         """
-        if self._session:
+        if self._session is not None:
             self._session.close()
 
-    def get_station_guid(self, station_id: str) -> str:
+    def get_station_guid(self, station_id: str | uuid.UUID) -> str | UUID:
         """
-        Get station guid: (globally unique identificator)
+        Get the station UUID.
 
         :param station_id:
             The station serial identifier (ID) stored in `./data/stations_ids.csv`.
-        :returns: The station unique identifier (UUID) as string.
+        :returns: The station unique identifier UUID or string.
 
         Example:
-            >>> client = Client()
-            >>> client.get_station_guid("11")
-            4082f63f-30e8-375d-a326-b32cf7d86e02
+        >>> client = Client()
+        >>> client.get_station_guid("11")
+        4082f63f-30e8-375d-a326-b32cf7d86e02
         """
         sid = _model.StationIDs()
         fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
         if fkey is None:
             raise ValueError(f"guid not found for station_id: {station_id}")
-        return fkey
+        return UUID(fkey)
 
     def get_station_code(self, station_id: str) -> str:
         """
@@ -63,11 +64,10 @@ class Client:
 
         :param station_id: from openmedia_id column inside ./data/stations_ids.csv
 
-        Examples:
-            >>> client = Client()
-            >>> client.get_station_code("11")
-            radiouzurnal
-
+        Example:
+        >>> client = Client()
+        >>> client.get_station_code("11")
+        radiouzurnal
         """
         sid = _model.StationIDs()
         fkey = self._station_ids.get_fkey(station_id, sid.croapp_code)
@@ -81,13 +81,12 @@ class Client:
         limit_page_length: int = 0,
     ) -> str:
         """
-        Create API URL from the given parameters.
+        Create target URL from the given parameters.
 
         Example:
-            >>> client = Client()
-            >>> client.get_endpoint_link("schedule", "10")
-            https://api.mujrozhlas.cz/schedule?page[limit]=10
-
+        >>> client = Client()
+        >>> client.get_endpoint_link("schedule", "10")
+        https://api.mujrozhlas.cz/schedule?page[limit]=10
         """
         endpoint_url = "/".join((self.api_url, endpoint))
         if limit_page_length == 0:
@@ -117,9 +116,10 @@ class Client:
 
         :param endpoint: specific part or url which targets specific resource
         returns: json string
+        
         Example:
-            >>> client = Client()
-            >>> client._get_endpoint_link("stations")
+        >>> client = Client()
+        >>> client._get_endpoint_link("stations")
         """
         out: list = list()
         response_ttl = self.session_connection_timeout
@@ -165,7 +165,7 @@ class Client:
         Get the station metadata.
 
         Example:
-            >>> Client.get_station("11")
+        >>> Client.get_station("11")
         """
         guid = self.get_station_guid(str(station_id))
         endpoint = "stations/" + guid
@@ -183,7 +183,7 @@ class Client:
         Get all broadcast stations metadata.
 
         Example:
-            >>> Client.get_stations()
+        >>> stations = Client.get_stations()
         """
         data = self._get_endpoint_full_json("stations", limit_page_length)
         stations = helpers.class_attrs_by_anotation_list(data, _model.Station)
@@ -196,8 +196,8 @@ class Client:
         """
         Get shows aired on specified station
 
-        Examples:
-            >>> Client.get_station_shows("11")
+        Example:
+        >>> Client.get_station_shows("11")
         """
         guid = self.get_station_guid(station_id)
         endpoint = "stations/" + guid + "/shows"
@@ -211,7 +211,7 @@ class Client:
         Get metada for given show specified by show guid
 
         Example:
-            >>> Client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+        >>> Client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
         """
         endpoint = "shows/" + show_id
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
@@ -224,6 +224,7 @@ class Client:
         """
         Get episodes of specified show by show UUID.
 
+        >>> client = Client()
         >>> Clien.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
         """
         endpoint = "shows/" + show_id + "/episodes"
@@ -367,8 +368,8 @@ class Client:
 
         >>> client = Client()
         >>> client.get_schedule("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
-        >>> client.get_schedule("","11")
-        >>> Client.get_schedule("","","2021-09-01","2021-09-02")
+        >>> client.get_schedule("", "11")
+        >>> Client.get_schedule("", "", "2021-09-01", "2021-09-02")
         """
         endpoint = "schedule"
         urlfilters: list = list()
