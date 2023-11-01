@@ -1,0 +1,244 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "f962ab0c",
+   "metadata": {
+    "lines_to_next_cell": 0
+   },
+   "source": [
+    "# Get stations\n",
+    "\n",
+    "This example shows how to get `Station` objects."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "49d0c5ab",
+   "metadata": {},
+   "source": [
+    "## Create client"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "41efb5bc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2023-10-23T19:18:20.904675Z",
+     "iopub.status.busy": "2023-10-23T19:18:20.903824Z",
+     "iopub.status.idle": "2023-10-23T19:18:20.973250Z",
+     "shell.execute_reply": "2023-10-23T19:18:20.972547Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "from rapi import Client\n",
+    "\n",
+    "client = Client()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8b65a85c",
+   "metadata": {
+    "lines_to_next_cell": 0
+   },
+   "source": [
+    "## Get stations \n",
+    "\n",
+    "\n",
+    "Be aware that method returns an iterator. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "1c6906b5",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2023-10-23T19:18:20.976027Z",
+     "iopub.status.busy": "2023-10-23T19:18:20.975799Z",
+     "iopub.status.idle": "2023-10-23T19:18:21.047853Z",
+     "shell.execute_reply": "2023-10-23T19:18:21.047216Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "stations = list(client.get_stations())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c5e2d3f0",
+   "metadata": {},
+   "source": [
+    "## Count stations"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "847cca76",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The number of stations is 27.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(f\"The number of stations is {len(stations)}.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25b0d555",
+   "metadata": {
+    "lines_to_next_cell": 0
+   },
+   "source": [
+    "## List stations using `__repr__`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "adb1a8da",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2023-10-23T19:18:21.062014Z",
+     "iopub.status.busy": "2023-10-23T19:18:21.061738Z",
+     "iopub.status.idle": "2023-10-23T19:18:21.065933Z",
+     "shell.execute_reply": "2023-10-23T19:18:21.065112Z"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Station(uuid='4082f63f-30e8-375d-a326-b32cf7d86e02', title='Český rozhlas Radiožurnál', title_short='Radiožurnál', subtitle='', color='#ED2E38', code='radiozurnal', priority=100, span='allover', broadcast_name='radiozurnal')\n",
+      "Station(uuid='17821883-be2d-3880-b971-eceb794388fa', title='Český rozhlas Dvojka', title_short='Dvojka', subtitle='', color='#85248F', code='dvojka', priority=200, span='allover', broadcast_name='dvojka')\n",
+      "Station(uuid='0134ce01-8684-3556-b568-f208392ac0bd', title='Český rozhlas Vltava', title_short='Vltava', subtitle='', color='#00B8E0', code='vltava', priority=300, span='allover', broadcast_name='vltava')\n",
+      "Station(uuid='c639d927-f37b-3db8-a64f-1d64ee1469b2', title='Český rozhlas Plus', title_short='Plus', subtitle='', color='#DE7008', code='plus', priority=400, span='allover', broadcast_name='plus')\n",
+      "Station(uuid='93eabdcd-ccc5-311d-825b-6f5d6509db53', title='Český rozhlas Radiožurnál Sport', title_short='Radiožurnál Sport', subtitle='', color='#ED2E38', code='radiozurnal-sport', priority=500, span='allover', broadcast_name='radiozurnal-sport')\n",
+      "Station(uuid='6ab28be7-cdc8-3222-bd6e-c229553125fb', title='Český rozhlas Radio Wave', title_short='Radio Wave', subtitle='', color='#CDA200', code='radiowave', priority=600, span='allover', broadcast_name='radio-wave')\n",
+      "Station(uuid='e26a14b0-35d5-3b55-a6c8-679d2c6e0526', title='Český rozhlas D-dur', title_short='D-dur', subtitle='', color='#AB035C', code='d-dur', priority=700, span='allover', broadcast_name='d-dur')\n",
+      "Station(uuid='97c7be64-fdbf-39aa-812b-8be31e9438db', title='Český rozhlas Jazz', title_short='Jazz', subtitle='', color='#00809E', code='jazz', priority=800, span='allover', broadcast_name='jazz')\n",
+      "Station(uuid='ebbbe99a-bf40-30b4-9e90-a9406b20e5a2', title='Český rozhlas Pohoda', title_short='Pohoda', subtitle='Český rozhlas', color='#000f37', code='pohoda', priority=900, span='allover', broadcast_name='pohoda')\n",
+      "Station(uuid='e48436b0-281b-49fd-ad11-6bd2145be928', title='Radio Ukrajina', title_short='Radio Ukrajina', subtitle='', color='#000F37', code='radio-ua', priority=996, span='allover', broadcast_name='radio-ua')\n",
+      "Station(uuid='598a62af-86b5-3485-b89d-65379562694a', title='Rádio Junior', title_short='Rádio Junior', subtitle='', color='#000F37', code='radiojunior', priority=1000, span='allover', broadcast_name='radio-junior')\n",
+      "Station(uuid='05ff6a99-a278-35b9-b602-b40f71861e08', title='Rádio Junior Písničky', title_short='Rádio Junior Písničky', subtitle='Český rozhlas', color='#000F37', code='webik', priority=1100, span='webradio', broadcast_name='radio-junior')\n",
+      "Station(uuid='6731e7ee-98e7-36c3-993b-3122ad1317d1', title='Český rozhlas Radio Prague International', title_short='Radio Prague Int.', subtitle='', color='#000F37', code='cro7', priority=1200, span='abroad', broadcast_name='radio-prague')\n",
+      "Station(uuid='184a888f-3d06-3a88-a07f-901bd9b09396', title='Český rozhlas Brno', title_short='Brno', subtitle='', color='#00AB96', code='brno', priority=1300, span='regional', broadcast_name='brno')\n",
+      "Station(uuid='1e6c0c0b-aba4-3357-95fc-c64edc9e75e6', title='Český rozhlas České Budějovice', title_short='České Budějovice', subtitle='', color='#00AB96', code='cb', priority=1400, span='regional', broadcast_name='ceske-budejovice')\n",
+      "Station(uuid='a831a457-9b80-3271-b153-ddf0ee63a18c', title='Český rozhlas Hradec Králové', title_short='Hradec Králové', subtitle='', color='#00AB96', code='hradec', priority=1500, span='regional', broadcast_name='hradec-kralove')\n",
+      "Station(uuid='663e7133-bb52-3477-8d7f-635e43371962', title='Český rozhlas Karlovy Vary', title_short='Karlovy Vary', subtitle='', color='#00AB96', code='kv', priority=1600, span='regional', broadcast_name='karlovy-vary')\n",
+      "Station(uuid='ad541211-198e-30b7-995c-10bf08c3aea0', title='Český rozhlas Liberec', title_short='Liberec', subtitle='', color='#00AB96', code='liberec', priority=1700, span='regional', broadcast_name='liberec')\n",
+      "Station(uuid='c49f6468-acd3-3f98-9db9-92d5e5c0f038', title='Český rozhlas Olomouc', title_short='Olomouc', subtitle='', color='#00AB96', code='olomouc', priority=1800, span='regional', broadcast_name='olomouc')\n",
+      "Station(uuid='318fc506-4dc9-33c6-b0f4-88df17cafa20', title='Český rozhlas Ostrava', title_short='Ostrava', subtitle='', color='#00AB96', code='ostrava', priority=1900, span='regional', broadcast_name='ostrava')\n",
+      "Station(uuid='67e26b4a-af56-3153-bb09-eaaaa61a7fc7', title='Český rozhlas Pardubice', title_short='Pardubice', subtitle='', color='#00AB96', code='pardubice', priority=2000, span='regional', broadcast_name='pardubice')\n",
+      "Station(uuid='bbe67c0f-4848-355e-a0ab-28f40ade3d38', title='Český rozhlas Plzeň', title_short='Plzeň', subtitle='', color='#00AB96', code='plzen', priority=2100, span='regional', broadcast_name='plzen')\n",
+      "Station(uuid='ddbecf17-6f48-3ac5-9b79-33b954245943', title='Český rozhlas Rádio Praha', title_short='Rádio Praha', subtitle='', color='#00AB96', code='regina', priority=2200, span='regional', broadcast_name='praha')\n",
+      "Station(uuid='f8b5ee83-c786-3c67-8e37-4fdee1007147', title='Český rozhlas Region', title_short='Region', subtitle='', color='#00AB96', code='strednicechy', priority=2300, span='regional', broadcast_name='region-praha-a-stredni-cechy')\n",
+      "Station(uuid='5e94e06f-5435-3291-87c5-aeca8bc9c884', title='Český rozhlas Sever', title_short='Sever', subtitle='', color='#00AB96', code='sever', priority=2400, span='regional', broadcast_name='sever')\n",
+      "Station(uuid='36dc9675-1fe8-3c69-b362-ee6784b04ef0', title='Český rozhlas Vysočina', title_short='Vysočina', subtitle='', color='#00AB96', code='vysocina', priority=2500, span='regional', broadcast_name='vysocina')\n",
+      "Station(uuid='b0f03203-0809-3363-bb3d-ccda436d6760', title='Český rozhlas Zlín', title_short='Zlín', subtitle='', color='#00AB96', code='zlin', priority=2600, span='regional', broadcast_name='zlin')\n"
+     ]
+    }
+   ],
+   "source": [
+    "for station in stations:\n",
+    "    print(repr(station))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f7d2c777",
+   "metadata": {
+    "lines_to_next_cell": 0
+   },
+   "source": [
+    "## List stations with `__str__` method\n",
+    "\n",
+    "This prints the station represenattion as JSON."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "b932985a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2023-10-23T19:18:21.069670Z",
+     "iopub.status.busy": "2023-10-23T19:18:21.069379Z",
+     "iopub.status.idle": "2023-10-23T19:18:21.074530Z",
+     "shell.execute_reply": "2023-10-23T19:18:21.073828Z"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{\n",
+      "  \"uuid\": \"4082f63f-30e8-375d-a326-b32cf7d86e02\",\n",
+      "  \"title\": \"Český rozhlas Radiožurnál\",\n",
+      "  \"title_short\": \"Radiožurnál\",\n",
+      "  \"subtitle\": \"\",\n",
+      "  \"color\": \"#ED2E38\",\n",
+      "  \"code\": \"radiozurnal\",\n",
+      "  \"priority\": 100,\n",
+      "  \"span\": \"allover\",\n",
+      "  \"broadcast_name\": \"radiozurnal\"\n",
+      "}\n",
+      "{\n",
+      "  \"uuid\": \"17821883-be2d-3880-b971-eceb794388fa\",\n",
+      "  \"title\": \"Český rozhlas Dvojka\",\n",
+      "  \"title_short\": \"Dvojka\",\n",
+      "  \"subtitle\": \"\",\n",
+      "  \"color\": \"#85248F\",\n",
+      "  \"code\": \"dvojka\",\n",
+      "  \"priority\": 200,\n",
+      "  \"span\": \"allover\",\n",
+      "  \"broadcast_name\": \"dvojka\"\n",
+      "}\n"
+     ]
+    }
+   ],
+   "source": [
+    "for st in stations[:2]:\n",
+    "    print(st)"
+   ]
+  }
+ ],
+ "metadata": {
+  "jupytext": {
+   "formats": "ipynb,py:percent"
+  },
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
