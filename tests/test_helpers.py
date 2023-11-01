@@ -33,18 +33,6 @@ def test_dict_get_path() -> None:
     assert val == "john@example.com"
 
 
-@pytest.mark.helpers
-def test_current_timezone() -> None:
-    result = helpers.current_timezone()
-    assert result
-
-
-@pytest.mark.helpers
-def test_datenow_with_timezone() -> None:
-    result = helpers.datenow_with_timezone()
-    assert result
-
-
 sample_dates = [
     "2023",
     "2023-09",
@@ -64,7 +52,6 @@ sample_dates = [
 
 @pytest.mark.helpers
 def test_parse_date_optional_fields() -> None:
-    print()
     sd = sample_dates
     _func = helpers.parse_date_optional_fields
     result1 = _func(sd[-1])

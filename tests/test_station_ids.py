@@ -7,16 +7,16 @@ from rapi._station_ids import StationIDs
 @pytest.fixture
 def station_ids():
     _station_ids = StationIDs()
-    assert _station_ids
     return _station_ids
 
 
 @pytest.mark.station_ids
-def test_get_pkey_list(station_ids) -> None:
-    result = station_ids.get_pkey_list()
-    assert result
+def test_that_primary_keys_are_retuned(station_ids) -> None:
+    result = station_ids.get_primary_keys()
+    assert len(result) > 0
 
 
+# FIXME Use better naming for all methods bellow.
 @pytest.mark.station_ids
 def test_get_table(station_ids) -> None:
     result = station_ids.get_table()
@@ -31,8 +31,6 @@ def test_get_row_by_pkey(station_ids) -> None:
 
 @pytest.mark.station_ids
 def test_get_fkey(station_ids) -> None:
-    si = _model.StationIDs()
-    sid = si.__dict__
-    for k in sid:
-        val = station_ids.get_fkey("11", sid[k])
-        assert val
+    sid = _model.StationIDs().__dict__
+    for key in sid:
+        assert station_ids.get_fkey("11", sid[key])

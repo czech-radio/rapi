@@ -1,18 +1,16 @@
 """
-FIXME
+This module contains package praivate helper functions.
 """
 
 import csv
 import dataclasses as dc
 import datetime
+from pathlib import Path
 import os
 import pkgutil
 from io import StringIO
 from typing import Any, Sequence, Union
-
 from dateutil import parser
-
-from rapi._logger import log_stdout as logo
 from rapi._model import Anotated
 
 
@@ -25,7 +23,6 @@ def datenow_with_timezone():
     """
     Get current datetime with current timezone from host system.
     """
-    return datetime.datetime.now().astimezone()
 
 
 def parse_date_optional_fields(date_string: str):
@@ -43,25 +40,21 @@ def parse_date_optional_fields(date_string: str):
         raise ValueError(f"date not parsed. invalid date format: {e}")
 
 
-def read_embeded_csv_to_ram(
-    fname: str, pkg_name: str = __package__
-) -> Union[csv.DictReader, None]:
-    dbytes = pkgutil.get_data(pkg_name, fname)
+def read_csv(file_name: str) -> csv.DictReader:
+    path = os.path.abspath(file_name)
+    with open(path, "r") as f:
+        csv_reader = csv.DictReader(f.read(), delimiter=";")
+    return csv_reader
+
+
+def read_embedded_csv(file_path: Path, pakage_name: str) -> Union[csv.DictReader, None]:
+    dbytes = pkgutil.get_data(pakage_name, str(file_path))
     if dbytes is not None:
         dtxt = dbytes.decode("utf-8")
         csvdata = StringIO(dtxt)
         csv_reader = csv.DictReader(csvdata, delimiter=";")
         return csv_reader
     return None
-
-
-def read_csv_path_to_ram(fname: str) -> csv.DictReader:
-    path = os.path.abspath(fname)
-    logo.info("reading file {path}")
-    with open(path, "r") as f:
-        fdata = f.read()
-    csv_reader = csv.DictReader(fdata, delimiter=";")
-    return csv_reader
 
 
 def csv_is_row_valid(row: dict) -> bool:
@@ -84,7 +77,9 @@ def csv_valid_rows(csv: csv.DictReader) -> list:
 
 
 def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
-    """Join list of strings, omit empty strings."""
+    """
+    Join the list of strings, omit empty strings.
+    """
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)
 

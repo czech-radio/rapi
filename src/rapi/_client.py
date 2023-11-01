@@ -39,42 +39,6 @@ class Client:
         if self._session is not None:
             self._session.close()
 
-    def get_station_guid(self, station_id: str | uuid.UUID) -> str | uuid.UUID:
-        """
-        Get the station UUID.
-
-        :param station_id:
-            The station serial identifier (ID) stored in `./data/stations_ids.csv`.
-        :returns: The station unique identifier UUID or string.
-
-        Example:
-        >>> client = Client()
-        >>> client.get_station_guid("11")
-        4082f63f-30e8-375d-a326-b32cf7d86e02
-        """
-        sid = _model.StationIDs()
-        fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
-        if fkey is None:
-            raise ValueError(f"guid not found for station_id: {station_id}")
-        return fkey  # TODO We should prefer UUID.
-
-    def get_station_code(self, station_id: str) -> str:
-        """
-        Get the station code i.e. id from croap_code column inside ./data/stations_ids.csv
-
-        :param station_id: from openmedia_id column inside ./data/stations_ids.csv
-
-        Example:
-        >>> client = Client()
-        >>> client.get_station_code("11")
-        radiouzurnal
-        """
-        sid = _model.StationIDs()
-        fkey = self._station_ids.get_fkey(station_id, sid.croapp_code)
-        if fkey is None:
-            raise ValueError(f"code not found for station_id: {station_id}")
-        return fkey
-
     def _get_endpoint_link(
         self,
         endpoint: str,
@@ -157,6 +121,42 @@ class Client:
     ) -> list[dict]:
         data = self._get_endpoint_full_json(endpoint, limit_page_length)
         return data
+
+    def get_station_guid(self, station_id: str | uuid.UUID) -> str | uuid.UUID:
+        """
+        Get the station UUID.
+
+        :param station_id:
+            The station serial identifier (ID) stored in `./data/stations_ids.csv`.
+        :returns: The station unique identifier UUID or string.
+
+        Example:
+        >>> client = Client()
+        >>> client.get_station_guid("11")
+        4082f63f-30e8-375d-a326-b32cf7d86e02
+        """
+        sid = _model.StationIDs()
+        fkey = self._station_ids.get_fkey(station_id, sid.croapp_guid)
+        if fkey is None:
+            raise ValueError(f"guid not found for station_id: {station_id}")
+        return fkey  # TODO We should prefer UUID.
+
+    def get_station_code(self, station_id: str) -> str:
+        """
+        Get the station code i.e. id from croap_code column inside ./data/stations_ids.csv
+
+        :param station_id: from openmedia_id column inside ./data/stations_ids.csv
+
+        Example:
+        >>> client = Client()
+        >>> client.get_station_code("11")
+        radiouzurnal
+        """
+        sid = _model.StationIDs()
+        fkey = self._station_ids.get_fkey(station_id, sid.croapp_code)
+        if fkey is None:
+            raise ValueError(f"code not found for station_id: {station_id}")
+        return fkey
 
     def get_station(
         self, station_id: str, limit_page_length: int = 0
@@ -515,7 +515,10 @@ class Client:
         """
         Get show episodes last repetitions.
 
-        >>> client.get_show_episode_last_repetition("c7374f41-ae14-3b5c-8c04-385e3241deb4")
+        >>> client = Client()
+        >>> result = client.get_show_episode_last_repetition("c7374f41-ae14-3b5c-8c04-385e3241deb4")
+        >>> result != None
+        True
         """
         # NOTE: Acording to Jan Hejzl (see features discussion: file:./docs/build/features_discusion.html) the date of premiere is automaticaly rewritten with the date of episode repetition
         endpoint = "shows/" + show_id + "/schedule-episodes"  # Returns empty
@@ -535,3 +538,9 @@ class Client:
 
     def get_show_episodes_repetitions(self) -> Iterator[_model.Episode]:
         return NotImplemented
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()
