@@ -6,22 +6,21 @@ from dataclasses import asdict, dataclass
 from typing import Any, ClassVar, Protocol
 
 
-def str_pretty_json(cls):
+def output_json(cls):
     """
-    Redefine  `__str__` method for datalass to print dataclass as JSON.
-    A dataclass field values must be compatible with JSON requirements.
+    Modify :py:method:`__str__` method of a dataclass to output JSON.
     """
 
-    def json_pretty_print(self):
-        df = json.dumps(
+    def __str__(self):
+        result = json.dumps(
             asdict(self),
             indent=2,
             ensure_ascii=False,
             cls=DatetimeEncoder,
         )
-        return df
+        return result
 
-    cls.__str__ = json_pretty_print
+    cls.__str__ = __str__
 
     return cls
 
@@ -36,21 +35,13 @@ class DatetimeEncoder(json.JSONEncoder):
 
 
 class Anotated(Protocol):
+    """This type contains annotation for JSON."""
+
     anotation: dict[str, Any]
 
 
-@dataclass
-@str_pretty_json
-class StationIDs:
-    openmedia_id: str = "openmedia_id"
-    openmedia_stanice: str = "openmedia_stanice"
-    croapp_code: str = "croapp_code"
-    croapp_stitle: str = "croapp_shortTitle"
-    croapp_guid: str = "croapp_id"
-
-
 @dataclass(frozen=True, slots=True)
-@str_pretty_json
+@output_json
 class Station:
     uuid: str
     title: str
@@ -76,7 +67,7 @@ class Station:
 
 
 @dataclass(frozen=True, slots=True)
-@str_pretty_json
+@output_json
 class Show:
     """
     FIXME
@@ -112,8 +103,12 @@ class Show:
 
 
 @dataclass(frozen=True)
-@str_pretty_json
+@output_json
 class Episode:
+    """
+    FIXME
+    """
+
     uuid: str
     title: str
     title_short: str
@@ -144,8 +139,12 @@ class Episode:
 
 
 @dataclass(frozen=True)
-@str_pretty_json
+@output_json
 class EpisodeSchedule:
+    """
+    FIXME
+    """
+
     uuid: str
     title: str
     description: str
@@ -170,8 +169,12 @@ class EpisodeSchedule:
 
 
 @dataclass
-@str_pretty_json
+@output_json
 class Person:
+    """
+    FIXME
+    """
+
     uuid: str
     title: str
     description_short: str

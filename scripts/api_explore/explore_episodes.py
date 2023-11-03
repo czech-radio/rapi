@@ -47,6 +47,6 @@ for s in range(len(spdf)):
     # Get episodes filter
     epars = urllib.parse.quote(show_title)
     link = "episodes?filter[since]=2014-10-02"
-    epsf = cl._get_endpoint_full_json(link)
+    epsf = cl._get_endpoint_data(link)
     if len(epsf) > 0:
         print("correct", len(epsf), show_idx, show_title, show_uuid)

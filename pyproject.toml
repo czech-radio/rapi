@@ -38,14 +38,14 @@ namespaces = false
 # keep
 
 [project.scripts]
-rapi = "rapi._cli:main"
+rapi = "rapi.__main__:main"
 
 [tool.pytest.ini_options]
 log_cli_format='%(asctime)s %(name)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s'
 markers = [
 	"client:",
-	"helpers:",
-	"station_ids:",
+	"shared:",
+	"services:",
 ]
 
 [tool.ruff]
@@ -80,8 +80,8 @@ extend-include = ["*.ipynb"]
 line-length = 88
 indent-width = 4
 
-# Assume Python 3.8
-target-version = "py38"
+# Assume Python 3.12
+target-version = "py312"
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.

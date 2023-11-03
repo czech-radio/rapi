@@ -1,6 +1,6 @@
 import pytest
 
-import rapi._helpers as helpers
+import rapi._shared as helpers
 
 simple_dict_list = [
     {"name": "John", "age": 30, "city": "New York"},

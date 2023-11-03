@@ -212,19 +212,19 @@ curl -g -X GET "https://rapidev.croapp.cz/stations?page[offset]=0&page[limit]=4"
 - test client
 
 ```shell
-pytest -m client 
+pytest -m client
 ```
 
 - show also test debug logs
 
 ```shell
-pytest -o log_cli=true -m client 
+pytest -o log_cli=true -m client
 ```
 
 - show also tests outputs
 
 ```shell
-pytest --capture=tee-sys -m client 
+pytest --capture=tee-sys -m client
 ```
 
 Doménový model json třídy reprezentující jednotlivé objekty se musí namodelovat s citem.
@@ -254,3 +254,14 @@ Zatím jasně vidíme tyto entity:
 - *rozsah* (čas) např. od 12:00 do 15:00
 - *název* pořadu např. Zprávy
 - *premiéra/repríza*
+
+
+
+## Problems
+
+https://rapidev.croapp.cz/schedule-day-flat?station=radiozurnal not valid request when filtering by station
+endpoint = "schedule-day?filter[station.id]=" + uuid # NOT WORKING
+
+
+Number of stations seems to be rather dynamic in time: 27, 28, 33, 34
+get stations limit result to 10 stations in one request
