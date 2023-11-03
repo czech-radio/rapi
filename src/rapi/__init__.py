@@ -3,9 +3,9 @@ The client and domain model to work with schedule, stations , shows, episodes, p
 """
 
 from rapi._client import Client as Client
-from rapi._model import Show as Show
-from rapi._model import Station as Station
+from rapi._domain import Show as Show
+from rapi._domain import Station as Station
 
 __all__ = ("Client", "Station", "Show")
 
-__version__ = "0.9.0"
+__version__ = "0.10.0"

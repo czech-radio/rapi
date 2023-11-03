@@ -1,6 +1,6 @@
 import pytest
 
-import rapi._shared as helpers
+import rapi._shared as _shared
 
 simple_dict_list = [
     {"name": "John", "age": 30, "city": "New York"},
@@ -25,11 +25,11 @@ nested_dict = {
 }
 
 
-@pytest.mark.helpers
+@pytest.mark.shared
 def test_dict_get_path() -> None:
-    val = helpers.dict_get_path(nested_dict, ["person1", "name"])
+    val = _shared.dict_get_path(nested_dict, ["person1", "name"])
     assert val == "John Doe"
-    val = helpers.dict_get_path(nested_dict, ["person1", "contact", "email"])
+    val = _shared.dict_get_path(nested_dict, ["person1", "contact", "email"])
     assert val == "john@example.com"
 
 
@@ -50,10 +50,10 @@ sample_dates = [
 ]
 
 
-@pytest.mark.helpers
+@pytest.mark.shared
 def test_parse_date_optional_fields() -> None:
     sd = sample_dates
-    _func = helpers.parse_date_optional_fields
+    _func = _shared.parse_date_optional_fields
     result1 = _func(sd[-1])
     result2 = _func(sd[-2])
     assert result1 < result2

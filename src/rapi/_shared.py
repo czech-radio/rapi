@@ -5,20 +5,19 @@ This module contains package various private functions or classes shared accross
 import csv
 import dataclasses as dc
 import datetime
+import logging
 import os
 import pkgutil
+import sys
 from io import StringIO
 from pathlib import Path
 from typing import Any, Sequence
 
 from dateutil import parser
 
-from rapi._model import Anotated
+from rapi._domain import Anotated
 
-
-def current_timezone():
-    """Get current timezone from host system."""
-    return datetime.datetime.now().astimezone().tzinfo
+DEFAULT_FORMAT = "%(asctime)s [%(levelname)1s] %(filename)s:%(funcName)s:%(lineno)d - %(message)s - %(name)s"
 
 
 def parse_date_optional_fields(date_string: str):
@@ -131,3 +130,55 @@ def class_attrs_by_anotation_list(data: list[dict], entity: Anotated) -> list[An
         result = result + [class_attrs_by_anotation_dict(item, entity)]
 
     return result
+
+
+class ShortenedLevelFormatter(logging.Formatter):
+    """Shorten level name to one letter."""
+
+    def format(self, record):
+        if record.levelname:
+            record.levelname = record.levelname[0]
+        return super().format(record)
+
+
+# Standard Output Logger Configuration
+log_stdout = logging.getLogger("log_stdout")
+log_stdout.setLevel(logging.INFO)
+info_handler = logging.StreamHandler(sys.stdout)
+info_formatter = logging.Formatter(DEFAULT_FORMAT)
+info_handler.setFormatter(info_formatter)
+log_stdout.addHandler(info_handler)
+
+# Standard Error Logger Configuration
+log_stderr = logging.getLogger("log_stderr")
+log_stderr.setLevel(logging.ERROR)
+error_handler = logging.StreamHandler()
+error_formatter = logging.Formatter(DEFAULT_FORMAT)
+error_handler.setFormatter(error_formatter)
+log_stderr.addHandler(error_handler)
+
+
+def set_level(verbose_level: int = 0) -> None:
+    # NOTE: The log level can be set also as:
+    # log = logging.getLogger("log_stdout")
+    # log.setLevel(logging.DEBUG)
+    levels = [
+        logging.WARNING,
+        logging.INFO,
+        logging.DEBUG,
+    ]
+    level = levels[min(verbose_level, len(levels) - 1)]
+    log_stderr.setLevel(level)
+    log_stdout.setLevel(level)
+
+
+def current_timezone():
+    """Get current timezone from host system."""
+    return datetime.datetime.now().astimezone().tzinfo
+
+
+if __name__ == "__main__":
+    log_stdout.debug("test debug")
+    log_stdout.info("test info")
+    log_stdout.warning("test warning")
+    log_stderr.error("test error")

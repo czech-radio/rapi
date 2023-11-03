@@ -19,15 +19,16 @@ class StationDataField(_enum.Enum):
 class StationsProvider:
     """
     Retrieve informations about Czech Radio stations.
+
+    NOTE: These are stored in package data directory.
     """
 
-    STATIONS_FILE_PATH: str = "data/stations.csv"
-    # The file patch of CSV file relative to the package directory.  .
+    _DATA_PATH: str = "data/stations.csv"
+    # The file patch of CSV file relative to the package directory.
 
     def __init__(self) -> None:
         # Load and store station data from CSV file.
-        data = _shared.read_package_csv(self.STATIONS_FILE_PATH, __package__)
-        self._storage = data
+        self._storage = _shared.read_package_csv(self._DATA_PATH, __package__)
 
     @property
     def items(self) -> list:

@@ -1,14 +1,9 @@
-import logging
-
 import pandas as pd
 import pytest
 
-import rapi._model as _model
+import rapi._domain as _domain
 import rapi._shared as _shared
 from rapi._client import Client
-
-lg = logging.getLogger("log_stdout")
-lg.setLevel(logging.DEBUG)
 
 
 @pytest.fixture
@@ -177,7 +172,7 @@ def test_class_attrs_by_anotation_dict_dates(client) -> None:
     show_id = shows_with_schedule_episodes[0]
     endp = "shows/" + show_id + "/schedule-episodes"
     result = client._get_endpoint_data(endp)
-    result1 = _shared.class_attrs_by_anotation_dict(result[0], _model.EpisodeSchedule)
+    result1 = _shared.class_attrs_by_anotation_dict(result[0], _domain.EpisodeSchedule)
     assert result1
 
 
