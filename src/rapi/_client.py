@@ -4,12 +4,13 @@ This module contains REST client class.
 
 from datetime import datetime
 from typing import ClassVar, Iterator
+from functools import singledispatch
 
 import requests
 
-import rapi._domain as _domain
-import rapi._service as _service
-import rapi._shared as _shared
+from . import _domain
+from . import _service
+from . import _shared
 
 
 class Client:
@@ -42,6 +43,14 @@ class Client:
             self._session.close()
 
     def _fetch(self, endpoint: str, limit: int = 100) -> list[dict]:
+        """
+        Fetch data from the endpoint.
+
+        :param endpoint: FIXME
+        :param limit: FIXME
+        :raises: :class:`requests.HTTPError`:
+        """
+
         #  'https://api.mujrozhlas.cz/schedule?page[limit]=10'
         def build_route(path: str, limit: int = 0) -> str:
             route = f"{self.__url__}/{path}"
@@ -54,40 +63,42 @@ class Client:
         output = []
         link = build_route(endpoint, limit)
         while link:
-            try:
-                response = self._session.get(
-                    link,
-                    timeout=(
-                        connect_ttl,
-                        response_ttl,
-                    ),
-                )
-                response.raise_for_status()
-            except requests.HTTPError as ex:
-                raise ex from ex
+            response = self._session.get(
+                link,
+                timeout=(
+                    connect_ttl,
+                    response_ttl,
+                ),
+            )
+            response.raise_for_status()
             json_data = response.json()
             json_data["data"] = [json_data["data"]]
             output += json_data["data"]
             link = json_data.get("links", dict()).get("next")
         return output
 
-    def get_station(self, station_id: int | str) -> _domain.Station | None:
+    # @singledispatch
+    def get_station(self, station_id: int) -> _domain.Station | None:
         """
         Get a specified station.
+
+        :param station_id: The station identifier either serial or unique.
 
         Examples:
         >>> client = Client()
         >>> client.get_station(11)
         """
-        guid = self._station_provider.get_station_guid(str(station_id))
         try:
+            guid = self._station_provider.find_station_uuid(station_id)
             data = self._fetch(f"stations/{guid}", 0)
+            result = _shared.class_attrs_by_anotation_dict(data[0], _domain.Station)
+            return result
         except requests.HTTPError as ex:
-            print(ex)
-        result = _shared.class_attrs_by_anotation_dict(data[0], _domain.Station)
-        return result
+            pass  # TODO Return Result/Failure type
 
-    def get_stations(self, limit: int = 100) -> Iterator[_domain.Station]:
+    def get_stations(
+        self, limit: int = 100, offset: int = 0
+    ) -> Iterator[_domain.Station]:
         """
         Get available stations.
 
@@ -95,11 +106,8 @@ class Client:
         >>> client = Client()
         >>> result = client.get_stations(limit=10)
         """
-        data = self._fetch("stations", limit)
-        for item in data:
-            # model = _domain.Station(**item)
-            print(item)
-            yield item
+        for item in self._fetch("stations", limit):
+            yield _domain.Station
 
     def get_show(self, show_id: str) -> _domain.Show | None:
         """
@@ -109,7 +117,7 @@ class Client:
         >>> client = Client()
         >>> client.get_show(uuid.UUID("9f36ee8f-73a7-3ed5-aafb-41210b7fb935"))
         """
-        data = self._fetch(f"shows/{show_id}", limit=0)
+        data = self._fetch(f"shows/{show_id}")
         result = _shared.class_attrs_by_anotation_dict(data[0], _domain.Show)
         return result
 

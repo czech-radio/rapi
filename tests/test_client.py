@@ -9,7 +9,7 @@ Don't copy the method names blindly. Thanks and happy coding.
 import pandas as pd
 import pytest
 
-from rapi import Client, Show
+from rapi import Client, Show, Station
 
 
 @pytest.fixture
@@ -80,10 +80,22 @@ sample_episodes = [
 # ########################################################################### #
 
 
+# @pytest.mark.client
+# def test_that_available_stations_are_retrieved(client) -> None:
+#     result = list(client.get_stations())
+#     assert len(result) > 10
+
+
+# @pytest.mark.client
+# def test_that_available_stations_are_retrieved_with_limit(client) -> None:
+#     result = list(client.get_stations(limit=10))
+#     assert len(result) == 10
+
+
 @pytest.mark.client
-def test_get_stations(client) -> None:
-    result = list(client.get_stations(limit=10))
-    assert len(result) > 0
+def test_that_specified_station_is_retrived(client) -> None:
+    result = client.get_station(station_id=11)
+    assert isinstance(result, Station) and result.title_short == "Radiožurnál"
 
 
 # @pytest.mark.client
@@ -116,20 +128,22 @@ def test_get_stations(client) -> None:
 #     assert len(list(result)) == 10
 
 
-# @pytest.mark.client
-# def test_that_show_is_retrieved(client) -> None:
-#     result = client.get_show("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
-#     assert isinstance(result, Show)
+@pytest.mark.client
+def test_that_show_is_retrieved(client) -> None:
+    result = client.get_show(show_id="9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+    assert isinstance(result, Show) and len(result.title) > 0
 
 
 # ########################################################################### #
 # Episodes
 # ########################################################################### #
 
-# @pytest.mark.client
-# def test_get_show_episodes(client) -> None:
-#     result = client.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
-#     assert result
+
+@pytest.mark.client
+def test_get_show_episodes(client) -> None:
+    result = client.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
+    print(list(result))
+    assert result
 
 
 # @pytest.mark.client

@@ -28,7 +28,10 @@ class StationsProvider:
 
     def __init__(self) -> None:
         # Load and store station data from CSV file.
-        self._storage = _shared.read_package_csv(self._DATA_PATH, __package__)
+        self._storage: list[dict] = list(
+            _shared.read_package_csv(self._DATA_PATH, __package__)
+        )
+        # FIXME This should be dict with key == primary_key not a list of dicts!
 
     @property
     def items(self) -> list:
@@ -46,52 +49,45 @@ class StationsProvider:
             if primary_key is not None:
                 yield primary_key
 
-    def find(self, primary_key: str, field_name: str) -> str | None:
-        """FIXME
+    def _find_station_field(self, station_id: str, field_name: str) -> str | None:
+        """Find the value of attribute of the specified station.
 
-        :param primary_key: FIXME
+        :param station_id: FIXME
         :param field_name: FIXME
         :returns: FIXME
         """
-        result = None
-        for row in self._storage:
-            value = row.get("openmedia_id", None)
-            if value == primary_key:
-                result = row
-        return result or row.get(field_name, None)
+        found = None
+        for item in self._storage:
+            if str(station_id) == item.get("openmedia_id", None):
+                found = item.get(field_name, None)
+        return found
 
-        # FIXME This should be in StationProvider service.
+    def find_station_uuid(self, station_id: int) -> uuid.UUID | None:
+        """Get the station's UUID.
 
-    def get_station_guid(self, station_id: int) -> str | uuid.UUID:
-        """
-        Get the station's UUID.
+        :param station_id: The station serial identifier.
+        :returns: The station's UUID or `None`.
 
-        :param station_id:
-            The station serial identifier stored in `./data/stations.csv`.
-        :returns: The station unique identifier or string.
-
-        Example:
+        Examples:
         >>> client = Client()
-        >>> client._get_station_guid("11")
-        4082f63f-30e8-375d-a326-b32cf7d86e02
+        >>> client._get_station_guid(11)
+        UUID('4082f63f-30e8-375d-a326-b32cf7d86e02')
         """
-        fkey = self.find(station_id, "croapp_id")
-        if fkey is None:
-            raise ValueError(f"Could not find UUID for station with ID {station_id}")
-        return fkey  # TODO We should prefer UUID.
+        found = self._find_station_field(station_id, "croapp_id")
+        if found is not None:
+            found = uuid.UUID(found)
+        return found
 
-    def get_station_code(self, station_id: str) -> str:
-        """
-        Get the station code i.e. id from croap_code column inside ./data/stations_ids.csv
+    def find_station_code(self, station_id: int) -> str | None:
+        """Get the station's code (name).
 
-        :param station_id: from openmedia_id column inside ./data/stations_ids.csv
+        :param station_id: The station serial identifier.
+        :returns: The station's code or `None`.
 
-        Example:
+        Examples:
         >>> client = Client()
-        >>> client._get_station_code("11")
+        >>> client._get_station_code(11)
         radiouzurnal
         """
-        fkey = self._station_provider.find(station_id, "croapp_code")
-        if fkey is None:
-            raise ValueError(f"code not found for station_id: {station_id}")
-        return fkey
+        found = self._find_station_field(station_id, "croapp_code")
+        return found
