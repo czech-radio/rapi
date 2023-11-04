@@ -56,22 +56,20 @@ def read_package_csv(file_path: Path, package_name: str) -> csv.DictReader:
 
 def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
     """
-    Join the list of strings, omit empty strings.
+    Join the list of strings, omit the empty strings.
     """
     non_empty_strings = [s for s in strings if s]
     return delim.join(non_empty_strings)
 
 
-def dict_get_path(general_dictionary: dict, json_path: list[str]) -> Any:
+def extract_fields(data: dict, keys: list[str]) -> Any:
     """
-    Get path value in json-like object.
-    Get subset of dictionary giving list of path or keyname
+    Get subset of dictionary  keys.
     """
-    gd = general_dictionary
-    for path in json_path:
-        result = gd.get(path, None)
-        if result is not None:
-            gd = result
+    data: dict = data.copy()
+    for key in keys:
+        if result := data.get(key, None):
+            data = result
         else:
             return None
     return result

@@ -1,4 +1,6 @@
-"""This module contains domain model."""
+"""
+This module contains domain models and functions.
+"""
 
 import datetime
 import json
@@ -26,7 +28,9 @@ def output_json(cls):
 
 
 class DatetimeEncoder(json.JSONEncoder):
-    """Format json datetime value when dumping the json."""
+    """
+    Format the datetime value to conform to ISO 8601.
+    """
 
     def default(self, obj):
         if isinstance(obj, datetime.datetime):
@@ -35,7 +39,9 @@ class DatetimeEncoder(json.JSONEncoder):
 
 
 class Anotated(Protocol):
-    """This type contains annotation for JSON."""
+    """
+    This type contains annotation class variable used for JSON export.
+    """
 
     anotation: dict[str, Any]
 
@@ -53,7 +59,7 @@ class Station:
     span: str
     broadcast_name: str
 
-    anotation: ClassVar[dict] = {
+    anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "title": {"json": "attributes.title"},
         "title_short": {"json": "attributes.shortTitle"},
@@ -86,7 +92,7 @@ class Show:
     description_short: str
     updated: datetime.datetime
 
-    anotation: ClassVar[dict] = {
+    anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "type": {"json": "attributes.showType"},
         "content": {"json": "attributes.showContent"},
@@ -122,7 +128,7 @@ class Episode:
     content_id: str
     base_id: str
 
-    anotation: ClassVar[dict] = {
+    anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "title": {"json": "attributes.title"},
         "title_short": {"json": "attributes.shortTitle"},
@@ -140,7 +146,7 @@ class Episode:
 
 @dataclass(frozen=True)
 @output_json
-class EpisodeSchedule:
+class ScheduledEpisode:
     """
     FIXME
     """
@@ -155,7 +161,7 @@ class EpisodeSchedule:
     since: datetime.datetime
     till: datetime.datetime
 
-    anotation: ClassVar[dict] = {
+    anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "title": {"json": "attributes.title"},
         "description": {"json": "attributes.description"},
@@ -184,7 +190,7 @@ class Person:
     participation_link: str
     participation_data: str
 
-    anotation: ClassVar[dict] = {
+    anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "title": {"json": "attributes.title"},
         "description_short": {"json": "attributes.short_description"},
