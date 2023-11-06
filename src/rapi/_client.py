@@ -131,7 +131,9 @@ class Client:
         """
         guid = self._station_provider.get_station_guid(str(station_id))
         data = self._fetch(f"stations/{guid}/shows", limit)
-        result = _shared.class_attrs_by_anotation_list(data, _domain.Show)
+        result = [
+            _shared.class_attrs_by_anotation_dict(item, _domain.Show) for item in data
+        ]
         for item in result:
             yield item
 
@@ -145,9 +147,12 @@ class Client:
         >>> client.get_show_episodes("9f36ee8f-73a7-3ed5-aafb-41210b7fb935")
         """
         data = self._fetch(f"shows/{show_id}/episodes?sort=since", limit)
-        episodes = _shared.class_attrs_by_anotation_list(data, _domain.Episode)
-        for episode in episodes:
-            yield episode
+        result = [
+            _shared.class_attrs_by_anotation_dict(item, _domain.Episode)
+            for item in data
+        ]
+        for item in result:
+            yield result
 
     def get_show_episodes_filter(
         self,
@@ -333,36 +338,25 @@ class Client:
 
         >>> Client.get_person("1cb35d9d-fb24-37ee-8993-9f74e57ab2c7")
         """
-        path = "persons/" + person_id
-        data = self._fetch(path, limit)
-        out = _shared.class_attrs_by_anotation_dict(data[0], _domain.Person)
-        if out is not None:
-            assert isinstance(out, _domain.Person)
-        return out
+        data = self._fetch(f"persons/{person_id}", limit)
+        result = _shared.class_attrs_by_anotation_dict(data[0], _domain.Person)
+        return result
 
     def get_show_participants_with_roles(
-        self,
-        show_id: str,
-        limit: int = 0,
+        self, show_id: str, limit: int = 0
     ) -> Iterator[_domain.Person]:
         """
         Get show participants and their roles in show
 
         >>> Client.get_show_participants_with_roles("c7374f41-ae14-3b5c-8c04-385e3241deb4")
         """
-        # NOTE: relationships.participants.data:
-        # [{'type': 'person', 'id': '1cb35d9d-fb24-37ee-8993-9f74e57ab2c7', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': '7b9d1544-8aab-3730-8f0a-4d0b463322be', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'c5b35399-08c6-3057-8145-c6aaaac76d4d', 'meta': {'role': 'moderator'}}, {'type': 'person', 'id': 'fcb6babc-e5f6-3b30-b126-583885584454', 'meta': {'role': 'moderator'}}]
-
-        path = "shows/" + show_id
-        data = self._fetch(path, limit)
+        data = self._fetch(f"shows/{show_id}", limit)
         json_base_path = ["relationships", "participants", "data"]
         persons_meta = _shared.dict_get_path(data[0], [*json_base_path])
-        for p in persons_meta:
-            puuid = p["id"]
-            prole = p["meta"]["role"]
-            person = self.get_person(puuid)
+        for person in persons_meta:
+            person = self.get_person(person["id"])
             if person is not None:
-                person.role = prole
+                person.role = person["meta"]["role"]
                 yield person
 
     def get_show_moderators(
@@ -410,11 +404,7 @@ class Client:
         >>> result != None
         True
         """
-        # NOTE: Acording to Jan Hejzl (see features discussion: file:./docs/build/features_discusion.html) the date of premiere is automaticaly rewritten with the date of episode repetition
         path = "shows/" + show_id + "/schedule-episodes"  # Returns empty
-        # endpoint="serials/"
-        # endpoint="schedule/"+id
-        # endpoint="program/" # very slow
         data = self._fetch(path, limit)
         epschedules = _shared.class_attrs_by_anotation_list(
             data, _domain.ScheduledEpisode

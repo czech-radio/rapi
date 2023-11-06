@@ -10,7 +10,7 @@ import pkgutil
 import sys
 from io import StringIO
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Sequence, Mapping
 
 from dateutil import parser
 
@@ -37,7 +37,9 @@ def read_package_csv(file_path: Path, package_name: str) -> csv.DictReader:
     if data is None:
         ValueError(f"Could open specified file {file_path}")
     reader = csv.DictReader(
-        StringIO(data.decode("utf-8")), delimiter=";", quoting=csv.QUOTE_NONE
+        StringIO(data.decode("utf-8")),
+        delimiter=";",
+        quoting=csv.QUOTE_NONE,
     )
     return reader
 
@@ -50,33 +52,29 @@ def str_join_no_empty(strings: Sequence[str], delim: str = "_") -> str:
     return delim.join(non_empty_strings)
 
 
-def json_value_parse(
-    field_type: object,
-    json_value: Any,
-) -> Any:
+def json_value_parse(field_type: object, field_value: Any) -> Any:
     """
     Json fields parsers list.
     Parse json value according to ist type.
     """
     match field_type:
         case datetime.datetime:
-            value = parse_date_optional_fields(json_value)
+            value = parse_date_optional_fields(field_value)
         case _:
-            value = json_value
+            value = field_value
     return value
 
 
-def _extract_fields(data: dict, fields: list[str]) -> Any:
+def deep_get(data: Mapping[Any, Any], *keys: str, default=None) -> Any:
     """
-    Get subset of dictionary  keys.
+    Get the value from nested dictionaries.
     """
-    data: dict = data.copy()
-    for key in fields:
-        if result := data.get(key, None):
-            data = result
-        else:
-            return None
-    return result
+    assert len(keys) > 0  # debugging
+    for key in keys:
+        data = data.get(key, None)
+        if data is None:
+            break
+    return data or default
 
 
 # FIXME Rename, remove or move to dataclass itself.
@@ -92,29 +90,15 @@ def class_attrs_by_anotation_dict(data: dict, entity: Anotated) -> object:
     values: list = []
 
     for field in fields:
-        path = _extract_fields(entity.anotation, [field, "json"])
+        path = deep_get(entity.anotation, field, "json")
         if path is not None:
-            json_value = _extract_fields(data, path.split("."))
+            json_value = deep_get(data, *path.split("."))
             value = json_value_parse(fields[field], json_value)
         else:
             value = None
         values.append(value)
 
     return entity(*values)  # type: ignore
-
-
-def class_attrs_by_anotation_list(data: list[dict], entity: Anotated) -> list[Any]:
-    """
-    Parse JSON data fields specified in anotation to list of dataclasses instances.
-
-    :param data: FIXME
-    :param entity: The model represented with dataclass.
-    :returns: FIXME
-    """
-    result: list[Any] = []
-    for item in data:
-        result = result + [class_attrs_by_anotation_dict(item, entity)]
-    return result
 
 
 # ######################################################################### #

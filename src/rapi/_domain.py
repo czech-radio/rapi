@@ -53,12 +53,13 @@ class Station:
     title: str
     title_short: str
     subtitle: str
-    color: str
+    color: str  # The color in hexadecimal notation e.g. '#abcdef'
     code: str
     priority: int
     span: str
     broadcast_name: str
 
+    # The path of the retrieved JSON field.
     anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "title": {"json": "attributes.title"},
@@ -92,6 +93,7 @@ class Show:
     description_short: str
     updated: datetime.datetime
 
+    # The name of the retrieved JSON field.
     anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "type": {"json": "attributes.showType"},
@@ -128,6 +130,7 @@ class Episode:
     content_id: str
     base_id: str
 
+    # The name of the retrieved JSON field.
     anotation: ClassVar[dict[str, dict]] = {
         "uuid": {"json": "id"},
         "title": {"json": "attributes.title"},

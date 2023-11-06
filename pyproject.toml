@@ -78,8 +78,9 @@ exclude = [
 extend-include = ["*.ipynb"]
 
 # Same as Black.
-line-length = 88
-indent-width = 4
+line-length = 88 # use 99! Read https://peps.python.org/pep-0008/
+indent-width = 4 # spaces
+                 # Note: I still prefer tabs such as Guido!
 
 # Assume Python 3.12
 target-version = "py312"

@@ -93,7 +93,7 @@ sample_episodes = [
 
 
 @pytest.mark.client
-def test_that_specified_station_is_retrived(client) -> None:
+def test_that_station_is_retrived(client) -> None:
     result = client.get_station(station_id=11)
     assert isinstance(result, Station) and result.title_short == "Radiožurnál"
 
