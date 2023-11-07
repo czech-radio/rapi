@@ -49,6 +49,10 @@ class Anotated(Protocol):
 @dataclass(frozen=True, slots=True)
 @output_json
 class Station:
+    """
+    The station e.g. 'Plus', see <https://plus.rozhlas.cz/>.
+    """
+
     uuid: str
     title: str
     title_short: str
@@ -60,16 +64,16 @@ class Station:
     broadcast_name: str
 
     # The path of the retrieved JSON field.
-    anotation: ClassVar[dict[str, dict]] = {
-        "uuid": {"json": "id"},
-        "title": {"json": "attributes.title"},
-        "title_short": {"json": "attributes.shortTitle"},
-        "subtitle": {"json": "attributes.subtitle"},
-        "color": {"json": "attributes.color"},
-        "code": {"json": "attributes.code"},
-        "priority": {"json": "attributes.priority"},
-        "span": {"json": "attributes.stationType"},
-        "broadcast_name": {"json": "meta.ga.siteBroadcastStation"},
+    anotation: ClassVar[dict[str, str]] = {
+        "uuid": "id",
+        "title": "attributes.title",
+        "title_short": "attributes.shortTitle",
+        "subtitle": "attributes.subtitle",
+        "color": "attributes.color",
+        "code": "attributes.code",
+        "priority": "attributes.priority",
+        "span": "attributes.stationType",
+        "broadcast_name": "meta.ga.siteBroadcastStation",
     }
 
 
@@ -77,7 +81,7 @@ class Station:
 @output_json
 class Show:
     """
-    FIXME
+    The aired show e.g 'Pro a proti', see <https://plus.rozhlas.cz/pro-a-proti-6482952>.
     """
 
     uuid: str
@@ -93,20 +97,20 @@ class Show:
     description_short: str
     updated: datetime.datetime
 
-    # The name of the retrieved JSON field.
-    anotation: ClassVar[dict[str, dict]] = {
-        "uuid": {"json": "id"},
-        "type": {"json": "attributes.showType"},
-        "content": {"json": "attributes.showContent"},
-        "title": {"json": "attributes.title"},
-        "active": {"json": "attributes.active"},
-        "aired": {"json": "attributes.aired"},
-        "podcast": {"json": "attributes.podcast"},
-        "priority": {"json": "attributes.priority"},
-        "child_friendly": {"json": "attributes.childFriendly"},
-        "description": {"json": "attributes.description"},
-        "description_short": {"json": "attributes.shortDescription"},
-        "updated": {"json": "attributes.updated"},
+    # The mapping between class attribute and possibly nested JSON field.
+    anotation: ClassVar[dict[str, str]] = {
+        "uuid": "id",
+        "type": "attributes.showType",
+        "content": "attributes.showContent",
+        "title": "attributes.title",
+        "active": "attributes.active",
+        "aired": "attributes.aired",
+        "podcast": "attributes.podcast",
+        "priority": "attributes.priority",
+        "child_friendly": "attributes.childFriendly",
+        "description": "attributes.description",
+        "description_short": "attributes.shortDescription",
+        "updated": "attributes.updated",
     }
 
 
@@ -114,7 +118,7 @@ class Show:
 @output_json
 class Episode:
     """
-    FIXME
+    The episode of show e.g. <https://shorturl.at/zGHUV>.
     """
 
     uuid: str
@@ -130,20 +134,20 @@ class Episode:
     content_id: str
     base_id: str
 
-    # The name of the retrieved JSON field.
-    anotation: ClassVar[dict[str, dict]] = {
-        "uuid": {"json": "id"},
-        "title": {"json": "attributes.title"},
-        "title_short": {"json": "attributes.shortTitle"},
-        "description": {"json": "attributes.description"},
-        "since": {"json": "attributes.since"},
-        "till": {"json": "attributes.till"},
-        "updated": {"json": "attributes.updated"},
-        "part": {"json": "attributes.part"},
-        "title_mirrored": {"json": "attributes.mirroredShow.title"},
-        "content_creator": {"json": "meta.ga.contentCreator"},
-        "content_id": {"json": "meta.ga.contentId"},
-        "base_id": {"json": "meta.ga.baseId"},
+    # The mapping between class attribute and possibly nested JSON field.
+    anotation: ClassVar[dict[str, str]] = {
+        "uuid": "id",
+        "title": "attributes.title",
+        "title_short": "attributes.shortTitle",
+        "description": "attributes.description",
+        "since": "attributes.since",
+        "till": "attributes.till",
+        "updated": "attributes.updated",
+        "part": "attributes.part",
+        "title_mirrored": "attributes.mirroredShow.title",
+        "content_creator": "meta.ga.contentCreator",
+        "content_id": "meta.ga.contentId",
+        "base_id": "meta.ga.baseId",
     }
 
 
@@ -164,16 +168,16 @@ class ScheduledEpisode:
     since: datetime.datetime
     till: datetime.datetime
 
-    anotation: ClassVar[dict[str, dict]] = {
-        "uuid": {"json": "id"},
-        "title": {"json": "attributes.title"},
-        "description": {"json": "attributes.description"},
-        "station": {"json": "relationships.station.data.id"},
-        "station_code": {"json": "attributes.station_code"},
-        "show_priority": {"json": "attributes.showPriority"},
-        "show_times": {"json": "attributes.showTimes"},
-        "since": {"json": "attributes.since"},
-        "till": {"json": "attributes.till"},
+    anotation: ClassVar[dict[str, str]] = {
+        "uuid": "id",
+        "title": "attributes.title",
+        "description": "attributes.description",
+        "station": "relationships.station.data.id",
+        "station_code": "attributes.station_code",
+        "show_priority": "attributes.showPriority",
+        "show_times": "attributes.showTimes",
+        "since": "attributes.since",
+        "till": "attributes.till",
     }
 
 
@@ -181,25 +185,25 @@ class ScheduledEpisode:
 @output_json
 class Person:
     """
-    FIXME
+    A respondent or  moderator appearing in an episode.
     """
 
     uuid: str
     title: str
-    description_short: str
     description: str
+    description_short: str
     profile_id: str
     role: str
     participation_link: str
     participation_data: str
 
-    anotation: ClassVar[dict[str, dict]] = {
-        "uuid": {"json": "id"},
-        "title": {"json": "attributes.title"},
-        "description_short": {"json": "attributes.short_description"},
-        "description": {"json": "attributes.description"},
-        "profile_id": {"json": "attributes.profile_id"},
-        "role": {"json": "meta.role"},
-        "participation_link": {"json": "relationships.participation.links.related"},
-        "participation_data": {"json": "relationships.participation.data"},
+    anotation: ClassVar[dict[str, str]] = {
+        "uuid": "id",
+        "title": "attributes.title",
+        "description_short": "attributes.short_description",
+        "description": "attributes.description",
+        "profile_id": "attributes.profile_id",
+        "role": "meta.role",
+        "participation_link": "relationships.participation.links.related",
+        "participation_data": "relationships.participation.data",
     }

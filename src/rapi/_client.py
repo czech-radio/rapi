@@ -4,13 +4,10 @@ This module contains REST client class.
 
 from datetime import datetime
 from typing import ClassVar, Iterator
-from functools import singledispatch
 
 import requests
 
-from . import _domain
-from . import _service
-from . import _shared
+from . import _domain, _service, _shared
 
 
 class Client:
@@ -93,7 +90,7 @@ class Client:
             data = self._fetch(f"stations/{guid}", 0)
             result = _shared.class_attrs_by_anotation_dict(data[0], _domain.Station)
             return result
-        except requests.HTTPError as ex:
+        except requests.HTTPError:
             pass  # TODO Return Result/Failure type
 
     def get_stations(

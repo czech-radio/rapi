@@ -10,7 +10,7 @@ import pkgutil
 import sys
 from io import StringIO
 from pathlib import Path
-from typing import Any, Sequence, Mapping
+from typing import Any, Mapping, Sequence
 
 from dateutil import parser
 
