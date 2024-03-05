@@ -1,0 +1,434 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Get shows for the given station" href="get_shows_for_the_given_station.html" /><link rel="prev" title="Overview" href="../overview.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Get stations - RAPI documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">RAPI  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/CRo-Czech_Radio-H-RGB.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">RAPI  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Get stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_shows_for_the_given_station.html">Get shows for the given station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_episodes_for_the_given_show.html">Get episodes for the given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_participants_for_the_given_show.html">Get participants for the given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_schedules_for_the_given_show.html">Get schedules for the given show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="explore_data_with_pandas.html">Explore data wih Pandas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discusion.html">Discussion</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Package API</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="Get-stations">
+<h1>Get stations<a class="headerlink" href="#Get-stations" title="Link to this heading">#</a></h1>
+<p>This example shows how to get <code class="docutils literal notranslate"><span class="pre">Station</span></code> objects.</p>
+<section id="Create-client">
+<h2>Create client<a class="headerlink" href="#Create-client" title="Link to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rapi</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Get stations<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Be aware that method returns an iterator.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_stations</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Count-stations">
+<h2>Count stations<a class="headerlink" href="#Count-stations" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The number of stations is </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">stations</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number of stations is 27.
+</pre></div></div>
+</div>
+</section>
+<section id="List-stations-using-__repr__">
+<h2>List stations using <code class="docutils literal notranslate"><span class="pre">__repr__</span></code><a class="headerlink" href="#List-stations-using-__repr__" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">station</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Station(uuid=&#39;4082f63f-30e8-375d-a326-b32cf7d86e02&#39;, title=&#39;Český rozhlas Radiožurnál&#39;, title_short=&#39;Radiožurnál&#39;, subtitle=&#39;&#39;, color=&#39;#ED2E38&#39;, code=&#39;radiozurnal&#39;, priority=100, span=&#39;allover&#39;, broadcast_name=&#39;radiozurnal&#39;)
+Station(uuid=&#39;17821883-be2d-3880-b971-eceb794388fa&#39;, title=&#39;Český rozhlas Dvojka&#39;, title_short=&#39;Dvojka&#39;, subtitle=&#39;&#39;, color=&#39;#85248F&#39;, code=&#39;dvojka&#39;, priority=200, span=&#39;allover&#39;, broadcast_name=&#39;dvojka&#39;)
+Station(uuid=&#39;0134ce01-8684-3556-b568-f208392ac0bd&#39;, title=&#39;Český rozhlas Vltava&#39;, title_short=&#39;Vltava&#39;, subtitle=&#39;&#39;, color=&#39;#00B8E0&#39;, code=&#39;vltava&#39;, priority=300, span=&#39;allover&#39;, broadcast_name=&#39;vltava&#39;)
+Station(uuid=&#39;c639d927-f37b-3db8-a64f-1d64ee1469b2&#39;, title=&#39;Český rozhlas Plus&#39;, title_short=&#39;Plus&#39;, subtitle=&#39;&#39;, color=&#39;#DE7008&#39;, code=&#39;plus&#39;, priority=400, span=&#39;allover&#39;, broadcast_name=&#39;plus&#39;)
+Station(uuid=&#39;93eabdcd-ccc5-311d-825b-6f5d6509db53&#39;, title=&#39;Český rozhlas Radiožurnál Sport&#39;, title_short=&#39;Radiožurnál Sport&#39;, subtitle=&#39;&#39;, color=&#39;#ED2E38&#39;, code=&#39;radiozurnal-sport&#39;, priority=500, span=&#39;allover&#39;, broadcast_name=&#39;radiozurnal-sport&#39;)
+Station(uuid=&#39;6ab28be7-cdc8-3222-bd6e-c229553125fb&#39;, title=&#39;Český rozhlas Radio Wave&#39;, title_short=&#39;Radio Wave&#39;, subtitle=&#39;&#39;, color=&#39;#CDA200&#39;, code=&#39;radiowave&#39;, priority=600, span=&#39;allover&#39;, broadcast_name=&#39;radio-wave&#39;)
+Station(uuid=&#39;e26a14b0-35d5-3b55-a6c8-679d2c6e0526&#39;, title=&#39;Český rozhlas D-dur&#39;, title_short=&#39;D-dur&#39;, subtitle=&#39;&#39;, color=&#39;#AB035C&#39;, code=&#39;d-dur&#39;, priority=700, span=&#39;allover&#39;, broadcast_name=&#39;d-dur&#39;)
+Station(uuid=&#39;97c7be64-fdbf-39aa-812b-8be31e9438db&#39;, title=&#39;Český rozhlas Jazz&#39;, title_short=&#39;Jazz&#39;, subtitle=&#39;&#39;, color=&#39;#00809E&#39;, code=&#39;jazz&#39;, priority=800, span=&#39;allover&#39;, broadcast_name=&#39;jazz&#39;)
+Station(uuid=&#39;ebbbe99a-bf40-30b4-9e90-a9406b20e5a2&#39;, title=&#39;Český rozhlas Pohoda&#39;, title_short=&#39;Pohoda&#39;, subtitle=&#39;Český rozhlas&#39;, color=&#39;#000f37&#39;, code=&#39;pohoda&#39;, priority=900, span=&#39;allover&#39;, broadcast_name=&#39;pohoda&#39;)
+Station(uuid=&#39;e48436b0-281b-49fd-ad11-6bd2145be928&#39;, title=&#39;Radio Ukrajina&#39;, title_short=&#39;Radio Ukrajina&#39;, subtitle=&#39;&#39;, color=&#39;#000F37&#39;, code=&#39;radio-ua&#39;, priority=996, span=&#39;allover&#39;, broadcast_name=&#39;radio-ua&#39;)
+Station(uuid=&#39;598a62af-86b5-3485-b89d-65379562694a&#39;, title=&#39;Rádio Junior&#39;, title_short=&#39;Rádio Junior&#39;, subtitle=&#39;&#39;, color=&#39;#000F37&#39;, code=&#39;radiojunior&#39;, priority=1000, span=&#39;allover&#39;, broadcast_name=&#39;radio-junior&#39;)
+Station(uuid=&#39;05ff6a99-a278-35b9-b602-b40f71861e08&#39;, title=&#39;Rádio Junior Písničky&#39;, title_short=&#39;Rádio Junior Písničky&#39;, subtitle=&#39;Český rozhlas&#39;, color=&#39;#000F37&#39;, code=&#39;webik&#39;, priority=1100, span=&#39;webradio&#39;, broadcast_name=&#39;radio-junior&#39;)
+Station(uuid=&#39;6731e7ee-98e7-36c3-993b-3122ad1317d1&#39;, title=&#39;Český rozhlas Radio Prague International&#39;, title_short=&#39;Radio Prague Int.&#39;, subtitle=&#39;&#39;, color=&#39;#000F37&#39;, code=&#39;cro7&#39;, priority=1200, span=&#39;abroad&#39;, broadcast_name=&#39;radio-prague&#39;)
+Station(uuid=&#39;184a888f-3d06-3a88-a07f-901bd9b09396&#39;, title=&#39;Český rozhlas Brno&#39;, title_short=&#39;Brno&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;brno&#39;, priority=1300, span=&#39;regional&#39;, broadcast_name=&#39;brno&#39;)
+Station(uuid=&#39;1e6c0c0b-aba4-3357-95fc-c64edc9e75e6&#39;, title=&#39;Český rozhlas České Budějovice&#39;, title_short=&#39;České Budějovice&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;cb&#39;, priority=1400, span=&#39;regional&#39;, broadcast_name=&#39;ceske-budejovice&#39;)
+Station(uuid=&#39;a831a457-9b80-3271-b153-ddf0ee63a18c&#39;, title=&#39;Český rozhlas Hradec Králové&#39;, title_short=&#39;Hradec Králové&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;hradec&#39;, priority=1500, span=&#39;regional&#39;, broadcast_name=&#39;hradec-kralove&#39;)
+Station(uuid=&#39;663e7133-bb52-3477-8d7f-635e43371962&#39;, title=&#39;Český rozhlas Karlovy Vary&#39;, title_short=&#39;Karlovy Vary&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;kv&#39;, priority=1600, span=&#39;regional&#39;, broadcast_name=&#39;karlovy-vary&#39;)
+Station(uuid=&#39;ad541211-198e-30b7-995c-10bf08c3aea0&#39;, title=&#39;Český rozhlas Liberec&#39;, title_short=&#39;Liberec&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;liberec&#39;, priority=1700, span=&#39;regional&#39;, broadcast_name=&#39;liberec&#39;)
+Station(uuid=&#39;c49f6468-acd3-3f98-9db9-92d5e5c0f038&#39;, title=&#39;Český rozhlas Olomouc&#39;, title_short=&#39;Olomouc&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;olomouc&#39;, priority=1800, span=&#39;regional&#39;, broadcast_name=&#39;olomouc&#39;)
+Station(uuid=&#39;318fc506-4dc9-33c6-b0f4-88df17cafa20&#39;, title=&#39;Český rozhlas Ostrava&#39;, title_short=&#39;Ostrava&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;ostrava&#39;, priority=1900, span=&#39;regional&#39;, broadcast_name=&#39;ostrava&#39;)
+Station(uuid=&#39;67e26b4a-af56-3153-bb09-eaaaa61a7fc7&#39;, title=&#39;Český rozhlas Pardubice&#39;, title_short=&#39;Pardubice&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;pardubice&#39;, priority=2000, span=&#39;regional&#39;, broadcast_name=&#39;pardubice&#39;)
+Station(uuid=&#39;bbe67c0f-4848-355e-a0ab-28f40ade3d38&#39;, title=&#39;Český rozhlas Plzeň&#39;, title_short=&#39;Plzeň&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;plzen&#39;, priority=2100, span=&#39;regional&#39;, broadcast_name=&#39;plzen&#39;)
+Station(uuid=&#39;ddbecf17-6f48-3ac5-9b79-33b954245943&#39;, title=&#39;Český rozhlas Rádio Praha&#39;, title_short=&#39;Rádio Praha&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;regina&#39;, priority=2200, span=&#39;regional&#39;, broadcast_name=&#39;praha&#39;)
+Station(uuid=&#39;f8b5ee83-c786-3c67-8e37-4fdee1007147&#39;, title=&#39;Český rozhlas Region&#39;, title_short=&#39;Region&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;strednicechy&#39;, priority=2300, span=&#39;regional&#39;, broadcast_name=&#39;region-praha-a-stredni-cechy&#39;)
+Station(uuid=&#39;5e94e06f-5435-3291-87c5-aeca8bc9c884&#39;, title=&#39;Český rozhlas Sever&#39;, title_short=&#39;Sever&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;sever&#39;, priority=2400, span=&#39;regional&#39;, broadcast_name=&#39;sever&#39;)
+Station(uuid=&#39;36dc9675-1fe8-3c69-b362-ee6784b04ef0&#39;, title=&#39;Český rozhlas Vysočina&#39;, title_short=&#39;Vysočina&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;vysocina&#39;, priority=2500, span=&#39;regional&#39;, broadcast_name=&#39;vysocina&#39;)
+Station(uuid=&#39;b0f03203-0809-3363-bb3d-ccda436d6760&#39;, title=&#39;Český rozhlas Zlín&#39;, title_short=&#39;Zlín&#39;, subtitle=&#39;&#39;, color=&#39;#00AB96&#39;, code=&#39;zlin&#39;, priority=2600, span=&#39;regional&#39;, broadcast_name=&#39;zlin&#39;)
+</pre></div></div>
+</div>
+</section>
+<section id="List-stations-with-__str__-method">
+<h2>List stations with <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method<a class="headerlink" href="#List-stations-with-__str__-method" title="Link to this heading">#</a></h2>
+<p>This prints the station represenattion as JSON.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">[:</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;uuid&#34;: &#34;4082f63f-30e8-375d-a326-b32cf7d86e02&#34;,
+  &#34;title&#34;: &#34;Český rozhlas Radiožurnál&#34;,
+  &#34;title_short&#34;: &#34;Radiožurnál&#34;,
+  &#34;subtitle&#34;: &#34;&#34;,
+  &#34;color&#34;: &#34;#ED2E38&#34;,
+  &#34;code&#34;: &#34;radiozurnal&#34;,
+  &#34;priority&#34;: 100,
+  &#34;span&#34;: &#34;allover&#34;,
+  &#34;broadcast_name&#34;: &#34;radiozurnal&#34;
+}
+{
+  &#34;uuid&#34;: &#34;17821883-be2d-3880-b971-eceb794388fa&#34;,
+  &#34;title&#34;: &#34;Český rozhlas Dvojka&#34;,
+  &#34;title_short&#34;: &#34;Dvojka&#34;,
+  &#34;subtitle&#34;: &#34;&#34;,
+  &#34;color&#34;: &#34;#85248F&#34;,
+  &#34;code&#34;: &#34;dvojka&#34;,
+  &#34;priority&#34;: 200,
+  &#34;span&#34;: &#34;allover&#34;,
+  &#34;broadcast_name&#34;: &#34;dvojka&#34;
+}
+</pre></div></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="get_shows_for_the_given_station.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Get shows for the given station</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../overview.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Overview</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Czech Radio
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Get stations</a><ul>
+<li><a class="reference internal" href="#Create-client">Create client</a></li>
+<li><a class="reference internal" href="#id1">Get stations</a></li>
+<li><a class="reference internal" href="#Count-stations">Count stations</a></li>
+<li><a class="reference internal" href="#List-stations-using-__repr__">List stations using <code class="docutils literal notranslate"><span class="pre">__repr__</span></code></a></li>
+<li><a class="reference internal" href="#List-stations-with-__str__-method">List stations with <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
