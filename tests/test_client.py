@@ -6,7 +6,6 @@ Test names should be descriptive and describe the feature/intent.
 Don't copy the method names blindly. Thanks and happy coding.
 """
 
-import pandas as pd
 import pytest
 
 from rapi import Client, Show, Station
